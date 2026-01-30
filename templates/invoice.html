@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invoice OCR</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; max-width: 1200px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    button { padding: 10px 14px; border-radius: 10px; border: 1px solid #111827; background: #111827; color: #fff; cursor: pointer; }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+    input[type=file] { padding: 10px; border: 1px solid #e5e7eb; border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { border-bottom: 1px solid #e5e7eb; text-align: left; padding: 8px; font-size: 14px; }
+    th { background: #f9fafb; position: sticky; top: 0; }
+    .muted { color: #6b7280; font-size: 13px; }
+    .err { color: #b91c1c; white-space: pre-wrap; }
+    .grid { display: grid; grid-template-columns: 220px 1fr; gap: 8px; margin-top: 12px; }
+    .k { color: #374151; font-size: 13px; }
+    .v { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>Invoice OCR</h1>
+  <div class="card">
+    <div class="row">
+      <input id="pdf" type="file" accept="application/pdf" />
+      <button id="btn" type="button">Extract Fields</button>
+      <a href="/">Home</a>
+    </div>
+
+    <div class="muted" style="margin-top:8px;">
+      Extracts: Sold By (supplier), Date (document_date), Make, Model, Colour, Registration No (reg_no), Price (buying_price).
+    </div>
+
+    <div id="err" class="err" style="margin-top:10px;"></div>
+
+    <div id="fields" class="grid" style="display:none;"></div>
+
+    <div style="max-height: 420px; overflow:auto;">
+      <table id="tbl" style="display:none;">
+        <thead>
+          <tr>
+            <th>sr_no</th>
+            <th>category</th>
+            <th>document_date</th>
+            <th>supplier</th>
+            <th>inv_ref_no</th>
+            <th>make</th>
+            <th>model</th>
+            <th>colour</th>
+            <th>reg_no</th>
+            <th>buying_price</th>
+            <th>non_vat</th>
+            <th>std_net</th>
+            <th>vat_amount</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+<script>
+const btn = document.getElementById('btn');
+const fileInput = document.getElementById('pdf');
+const err = document.getElementById('err');
+const tbl = document.getElementById('tbl');
+const tbody = document.getElementById('tbody');
+const fieldsEl = document.getElementById('fields');
+
+function td(txt) {
+  const e = document.createElement('td');
+  e.textContent = txt ?? '';
+  return e;
+}
+
+function renderFields(obj) {
+  const keys = ['supplier','document_date','make','model','colour','reg_no','buying_price'];
+  fieldsEl.innerHTML = '';
+  for (const k of keys) {
+    const kEl = document.createElement('div');
+    kEl.className = 'k';
+    kEl.textContent = k;
+    const vEl = document.createElement('div');
+    vEl.className = 'v';
+    vEl.textContent = obj?.[k] ?? '';
+    fieldsEl.appendChild(kEl);
+    fieldsEl.appendChild(vEl);
+  }
+}
+
+btn.addEventListener('click', async () => {
+  err.textContent = '';
+  tbody.innerHTML = '';
+  tbl.style.display = 'none';
+  fieldsEl.style.display = 'none';
+
+  const f = fileInput.files?.[0];
+  if (!f) {
+    err.textContent = 'Please choose a PDF.';
+    return;
+  }
+
+  btn.disabled = true;
+  try {
+    const form = new FormData();
+    form.append('file', f);
+    const res = await fetch('/api/invoice-convert-review', { method: 'POST', body: form });
+    const data = await res.json();
+    if (!res.ok) {
+      err.textContent = data?.detail || JSON.stringify(data);
+      return;
+    }
+
+    if (data?.fields) {
+      renderFields(data.fields);
+      fieldsEl.style.display = '';
+    }
+
+    const rows = data?.rows || [];
+    for (const r of rows) {
+      const tr = document.createElement('tr');
+      tr.appendChild(td(r.sr_no));
+      tr.appendChild(td(r.category));
+      tr.appendChild(td(r.document_date));
+      tr.appendChild(td(r.supplier));
+      tr.appendChild(td(r.inv_ref_no));
+      tr.appendChild(td(r.make));
+      tr.appendChild(td(r.model));
+      tr.appendChild(td(r.colour));
+      tr.appendChild(td(r.reg_no));
+      tr.appendChild(td(r.buying_price));
+      tr.appendChild(td(r.non_vat));
+      tr.appendChild(td(r.std_net));
+      tr.appendChild(td(r.vat_amount));
+      tbody.appendChild(tr);
+    }
+    tbl.style.display = rows.length ? '' : 'none';
+  } catch (e) {
+    err.textContent = String(e);
+  } finally {
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bank Statement PDF → CSV</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; max-width: 1100px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    button { padding: 10px 14px; border-radius: 10px; border: 1px solid #111827; background: #111827; color: #fff; cursor: pointer; }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+    input[type=file] { padding: 10px; border: 1px solid #e5e7eb; border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { border-bottom: 1px solid #e5e7eb; text-align: left; padding: 8px; font-size: 14px; }
+    th { background: #f9fafb; position: sticky; top: 0; }
+    .muted { color: #6b7280; font-size: 13px; }
+    .err { color: #b91c1c; white-space: pre-wrap; }
+    .warn { color: #d97706; white-space: pre-wrap; }
+    #drop { border: 2px dashed #d1d5db; border-radius: 12px; padding: 32px; text-align: center; margin-bottom: 12px; transition: all 0.2s; }
+    #drop.dragover { border-color: #3b82f6; background: #eff6ff; }
+  </style>
+</head>
+<body>
+  <h1>Bank Statement PDF → CSV</h1>
+  <div class="card">
+    <div id="drop">
+      <div>Drag & drop bank statement PDFs here or</div>
+      <input id="pdf" type="file" accept="application/pdf" multiple style="margin-top: 8px;" />
+    </div>
+    <div class="row">
+      <button id="btn" type="button">Convert</button>
+      <a href="/invoice">Open Invoice Page</a>
+    </div>
+    <div class="muted" style="margin-top:8px;">
+      Supports Barclays, Monzo, Virgin Money, Tide, Revolut Business statements.
+    </div>
+    <div id="err" class="err" style="margin-top:10px;"></div>
+    <div id="warn" class="warn" style="margin-top:10px;"></div>
+    <div style="max-height: 420px; overflow:auto;">
+      <table id="tbl" style="display:none;">
+        <thead>
+          <tr>
+            <th>source_file</th>
+            <th>account</th>
+            <th>subcategory</th>
+            <th>date</th>
+            <th>description</th>
+            <th>money_in</th>
+            <th>money_out</th>
+            <th>amount</th>
+            <th>balance</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div id="download" style="margin-top:12px;"></div>
+  </div>
+
+<script>
+const btn = document.getElementById('btn');
+const fileInput = document.getElementById('pdf');
+const err = document.getElementById('err');
+const warn = document.getElementById('warn');
+const tbl = document.getElementById('tbl');
+const tbody = document.getElementById('tbody');
+const drop = document.getElementById('drop');
+const download = document.getElementById('download');
+
+function td(txt) {
+  const e = document.createElement('td');
+  e.textContent = txt ?? '';
+  return e;
+}
+
+drop.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  drop.classList.add('dragover');
+});
+
+drop.addEventListener('dragleave', () => {
+  drop.classList.remove('dragover');
+});
+
+drop.addEventListener('drop', (e) => {
+  e.preventDefault();
+  drop.classList.remove('dragover');
+  fileInput.files = e.dataTransfer.files;
+});
+
+btn.addEventListener('click', async () => {
+  err.textContent = '';
+  warn.textContent = '';
+  tbody.innerHTML = '';
+  tbl.style.display = 'none';
+  download.innerHTML = '';
+
+  const files = fileInput.files;
+  if (!files || files.length === 0) {
+    err.textContent = 'Please choose bank statement PDF files.';
+    return;
+  }
+
+  btn.disabled = true;
+  try {
+    const form = new FormData();
+    for (const f of files) {
+      form.append('files', f);
+    }
+    const res = await fetch('/api/convert', { method: 'POST', body: form });
+    const data = await res.json();
+    if (!res.ok) {
+      err.textContent = data?.detail || JSON.stringify(data);
+      return;
+    }
+
+    const rows = data?.preview || [];
+    for (const r of rows) {
+      const tr = document.createElement('tr');
+      tr.appendChild(td(r.source_file));
+      tr.appendChild(td(r.account));
+      tr.appendChild(td(r.subcategory));
+      tr.appendChild(td(r.date));
+      tr.appendChild(td(r.description));
+      tr.appendChild(td(r.money_in));
+      tr.appendChild(td(r.money_out));
+      tr.appendChild(td(r.amount));
+      tr.appendChild(td(r.balance));
+      tbody.appendChild(tr);
+    }
+    tbl.style.display = rows.length ? '' : 'none';
+
+    if (data?.warnings?.length) {
+      warn.textContent = data.warnings.join('\n');
+    }
+
+    if (data?.download_url) {
+      download.innerHTML = `<a href="${data.download_url}" download>Download CSV (${data.rows_total} rows)</a>`;
+    }
+  } catch (e) {
+    err.textContent = String(e);
+  } finally {
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PDF Converter</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; max-width: 1200px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    button { padding: 10px 14px; border-radius: 10px; border: 1px solid #111827; background: #111827; color: #fff; cursor: pointer; }
+    button.secondary { background: #fff; color: #111827; }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+    input[type=file] { padding: 10px; border: 1px solid #e5e7eb; border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { border-bottom: 1px solid #e5e7eb; text-align: left; padding: 8px; font-size: 14px; }
+    th { background: #f9fafb; position: sticky; top: 0; }
+    .muted { color: #6b7280; font-size: 13px; }
+    .err { color: #b91c1c; white-space: pre-wrap; }
+    .warn { color: #d97706; white-space: pre-wrap; }
+    #dropBank, #dropInvoice { border: 2px dashed #d1d5db; border-radius: 12px; padding: 26px; text-align: center; margin-bottom: 12px; transition: all 0.2s; }
+    #dropBank.dragover, #dropInvoice.dragover { border-color: #3b82f6; background: #eff6ff; }
+    .tabs { display: flex; gap: 8px; margin-bottom: 12px; }
+    .tabs button { border-color: #e5e7eb; background: #fff; color: #111827; }
+    .tabs button.active { border-color: #111827; background: #111827; color: #fff; }
+    .grid { display: grid; grid-template-columns: 220px 1fr; gap: 8px; margin-top: 12px; }
+    .k { color: #374151; font-size: 13px; }
+    .v { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>PDF Converter</h1>
+
+  <div class="tabs">
+    <button id="tabBank" type="button" class="active">Bank Statements</button>
+    <button id="tabInvoice" type="button">Invoices</button>
+  </div>
+
+  <div id="bankSection" class="card">
+    <h2 style="margin:0 0 8px 0;">Bank Statements</h2>
+    <div id="dropBank">
+      <div>Drag & drop bank statement PDFs here or</div>
+      <input id="bankFiles" type="file" accept="application/pdf,image/*" multiple style="margin-top: 8px;" />
+    </div>
+    <div class="row">
+      <button id="bankBtn" type="button">Convert Bank Statements</button>
+    </div>
+    <div class="muted" style="margin-top:8px;">
+      Supports Barclays, Monzo, Virgin Money, Tide, Revolut Business statements.
+    </div>
+    <div id="bankErr" class="err" style="margin-top:10px;"></div>
+    <div id="bankWarn" class="warn" style="margin-top:10px;"></div>
+    <div style="max-height: 420px; overflow:auto;">
+      <table id="bankTbl" style="display:none;">
+        <thead>
+          <tr>
+            <th>source_file</th>
+            <th>account</th>
+            <th>subcategory</th>
+            <th>date</th>
+            <th>description</th>
+            <th>money_in</th>
+            <th>money_out</th>
+            <th>amount</th>
+            <th>balance</th>
+          </tr>
+        </thead>
+        <tbody id="bankTbody"></tbody>
+      </table>
+    </div>
+    <div id="bankDownload" style="margin-top:12px;"></div>
+  </div>
+
+  <div id="invoiceSection" class="card" style="display:none; margin-top: 14px;">
+    <h2 style="margin:0 0 8px 0;">Invoices</h2>
+    <div id="dropInvoice">
+      <div>Drag & drop invoice PDFs here or</div>
+      <input id="invoiceFiles" type="file" accept="application/pdf,image/*" multiple style="margin-top: 8px;" />
+    </div>
+    <div class="row">
+      <button id="invoiceBtn" type="button">Extract Invoice Fields</button>
+      <button id="invoiceFinalizeBtn" type="button" class="secondary" disabled>Finalize + Generate CSV</button>
+    </div>
+    <div class="muted" style="margin-top:8px;">
+      Extracts: supplier, document_date, make, model, colour, reg_no, buying_price.
+    </div>
+    <div id="invoiceErr" class="err" style="margin-top:10px;"></div>
+    <div id="invoiceWarn" class="warn" style="margin-top:10px;"></div>
+
+    <div id="invoiceFields" class="grid" style="display:none;"></div>
+
+    <div style="max-height: 420px; overflow:auto;">
+      <table id="invoiceTbl" style="display:none;">
+        <thead>
+          <tr>
+            <th>sr_no</th>
+            <th>category</th>
+            <th>document_date</th>
+            <th>supplier</th>
+            <th>inv_ref_no</th>
+            <th>make</th>
+            <th>model</th>
+            <th>colour</th>
+            <th>reg_no</th>
+            <th>buying_price</th>
+            <th>non_vat</th>
+            <th>std_net</th>
+            <th>vat_amount</th>
+          </tr>
+        </thead>
+        <tbody id="invoiceTbody"></tbody>
+      </table>
+    </div>
+    <div id="invoiceDownload" style="margin-top:12px;"></div>
+  </div>
+
+<script>
+const tabBank = document.getElementById('tabBank');
+const tabInvoice = document.getElementById('tabInvoice');
+const bankSection = document.getElementById('bankSection');
+const invoiceSection = document.getElementById('invoiceSection');
+
+function setTab(which) {
+  if (which === 'bank') {
+    tabBank.classList.add('active');
+    tabInvoice.classList.remove('active');
+    bankSection.style.display = '';
+    invoiceSection.style.display = 'none';
+  } else {
+    tabInvoice.classList.add('active');
+    tabBank.classList.remove('active');
+    bankSection.style.display = 'none';
+    invoiceSection.style.display = '';
+  }
+}
+
+tabBank.addEventListener('click', () => setTab('bank'));
+tabInvoice.addEventListener('click', () => setTab('invoice'));
+
+function wireDrop(dropEl, inputEl) {
+  dropEl.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropEl.classList.add('dragover');
+  });
+  dropEl.addEventListener('dragleave', () => {
+    dropEl.classList.remove('dragover');
+  });
+  dropEl.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropEl.classList.remove('dragover');
+    inputEl.files = e.dataTransfer.files;
+  });
+}
+
+// Bank
+const bankBtn = document.getElementById('bankBtn');
+const bankFiles = document.getElementById('bankFiles');
+const bankErr = document.getElementById('bankErr');
+const bankWarn = document.getElementById('bankWarn');
+const bankTbl = document.getElementById('bankTbl');
+const bankTbody = document.getElementById('bankTbody');
+const bankDownload = document.getElementById('bankDownload');
+const dropBank = document.getElementById('dropBank');
+
+wireDrop(dropBank, bankFiles);
+
+function bankTd(txt) {
+  const e = document.createElement('td');
+  e.textContent = txt ?? '';
+  return e;
+}
+
+bankBtn.addEventListener('click', async () => {
+  bankErr.textContent = '';
+  bankWarn.textContent = '';
+  bankTbody.innerHTML = '';
+  bankTbl.style.display = 'none';
+  bankDownload.innerHTML = '';
+
+  const files = bankFiles.files;
+  if (!files || files.length === 0) {
+    bankErr.textContent = 'Please choose bank statement PDF files.';
+    return;
+  }
+
+  bankBtn.disabled = true;
+  bankBtn.textContent = 'Processing...';
+  
+  // Add timeout handling for large files (5 minutes)
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => {
+    controller.abort();
+    bankErr.textContent = 'Processing timed out after 5 minutes. The file may be very large or complex. Try with a smaller file or check if OCR is working properly.';
+  }, 300000); // 5 minutes (300 seconds)
+
+  try {
+    const form = new FormData();
+    for (const f of files) form.append('files', f);
+
+    const res = await fetch('/api/convert', { 
+      method: 'POST', 
+      body: form,
+      signal: controller.signal
+    });
+    clearTimeout(timeoutId);
+    
+    const data = await res.json();
+    if (!res.ok) {
+      bankErr.textContent = data?.detail || data?.error || JSON.stringify(data);
+      return;
+    }
+
+    const rows = data?.preview || [];
+    for (const r of rows) {
+      const tr = document.createElement('tr');
+      tr.appendChild(bankTd(r.source_file));
+      tr.appendChild(bankTd(r.account));
+      tr.appendChild(bankTd(r.subcategory));
+      tr.appendChild(bankTd(r.date));
+      tr.appendChild(bankTd(r.description));
+      tr.appendChild(bankTd(r.money_in));
+      tr.appendChild(bankTd(r.money_out));
+      tr.appendChild(bankTd(r.amount));
+      tr.appendChild(bankTd(r.balance));
+      bankTbody.appendChild(tr);
+    }
+    bankTbl.style.display = rows.length ? '' : 'none';
+
+    if (data?.warnings?.length) bankWarn.textContent = data.warnings.join('\n');
+
+    if (data?.download_url) {
+      bankDownload.innerHTML = `<a href="${data.download_url}" download>Download CSV (${data.rows_total} rows)</a>`;
+    }
+  } catch (e) {
+    clearTimeout(timeoutId);
+    if (e.name === 'AbortError') {
+      bankErr.textContent = 'Processing timed out after 5 minutes. The file may be very large or scanned. Try with a smaller text-based PDF or check OCR configuration.';
+    } else {
+      bankErr.textContent = String(e);
+    }
+  } finally {
+    bankBtn.disabled = false;
+    bankBtn.textContent = 'Convert Bank Statements';
+  }
+});
+
+// Invoice
+const invoiceBtn = document.getElementById('invoiceBtn');
+const invoiceFinalizeBtn = document.getElementById('invoiceFinalizeBtn');
+const invoiceFiles = document.getElementById('invoiceFiles');
+const invoiceErr = document.getElementById('invoiceErr');
+const invoiceWarn = document.getElementById('invoiceWarn');
+const invoiceTbl = document.getElementById('invoiceTbl');
+const invoiceTbody = document.getElementById('invoiceTbody');
+const invoiceFieldsEl = document.getElementById('invoiceFields');
+const invoiceDownload = document.getElementById('invoiceDownload');
+const dropInvoice = document.getElementById('dropInvoice');
+
+wireDrop(dropInvoice, invoiceFiles);
+
+let lastInvoiceJobId = null;
+let lastInvoiceDraftRows = null;
+
+function invoiceTd(txt) {
+  const e = document.createElement('td');
+  e.textContent = txt ?? '';
+  return e;
+}
+
+function renderInvoiceFieldsFromFirstRow(row) {
+  const keys = ['supplier','document_date','make','model','colour','reg_no','buying_price'];
+  invoiceFieldsEl.innerHTML = '';
+  for (const k of keys) {
+    const kEl = document.createElement('div');
+    kEl.className = 'k';
+    kEl.textContent = k;
+    const vEl = document.createElement('div');
+    vEl.className = 'v';
+    vEl.textContent = row?.[k] ?? '';
+    invoiceFieldsEl.appendChild(kEl);
+    invoiceFieldsEl.appendChild(vEl);
+  }
+}
+
+invoiceBtn.addEventListener('click', async () => {
+  invoiceErr.textContent = '';
+  invoiceWarn.textContent = '';
+  invoiceTbody.innerHTML = '';
+  invoiceTbl.style.display = 'none';
+  invoiceFieldsEl.style.display = 'none';
+  invoiceDownload.innerHTML = '';
+  invoiceFinalizeBtn.disabled = true;
+  lastInvoiceJobId = null;
+  lastInvoiceDraftRows = null;
+
+  const files = invoiceFiles.files;
+  if (!files || files.length === 0) {
+    invoiceErr.textContent = 'Please choose invoice PDF files.';
+    return;
+  }
+
+  invoiceBtn.disabled = true;
+  invoiceBtn.textContent = 'Processing...';
+  
+  // Add timeout handling for large files (5 minutes)
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => {
+    controller.abort();
+    invoiceErr.textContent = 'Processing timed out after 5 minutes. The file may be very large or complex. Try with a smaller file or check if OCR is working properly.';
+  }, 300000); // 5 minutes (300 seconds)
+
+  try {
+    const form = new FormData();
+    for (const f of files) form.append('files', f);
+
+    const res = await fetch('/api/invoice-convert-review', { 
+      method: 'POST', 
+      body: form,
+      signal: controller.signal
+    });
+    clearTimeout(timeoutId);
+    
+    const data = await res.json();
+    if (!res.ok) {
+      invoiceErr.textContent = data?.detail || data?.error || JSON.stringify(data);
+      return;
+    }
+
+    lastInvoiceJobId = data?.job_id;
+    lastInvoiceDraftRows = data?.draft_rows || [];
+
+    const preview = data?.preview || [];
+    for (const r of preview) {
+      const tr = document.createElement('tr');
+      tr.appendChild(invoiceTd(r.sr_no));
+      tr.appendChild(invoiceTd(r.category));
+      tr.appendChild(invoiceTd(r.document_date));
+      tr.appendChild(invoiceTd(r.supplier));
+      tr.appendChild(invoiceTd(r.inv_ref_no));
+      tr.appendChild(invoiceTd(r.make));
+      tr.appendChild(invoiceTd(r.model));
+      tr.appendChild(invoiceTd(r.colour));
+      tr.appendChild(invoiceTd(r.reg_no));
+      tr.appendChild(invoiceTd(r.buying_price));
+      tr.appendChild(invoiceTd(r.non_vat));
+      tr.appendChild(invoiceTd(r.std_net));
+      tr.appendChild(invoiceTd(r.vat_amount));
+      invoiceTbody.appendChild(tr);
+    }
+    invoiceTbl.style.display = preview.length ? '' : 'none';
+
+    if (preview.length) {
+      renderInvoiceFieldsFromFirstRow(preview[0]);
+      invoiceFieldsEl.style.display = '';
+    }
+
+    if (data?.warnings?.length) invoiceWarn.textContent = data.warnings.join('\n');
+
+    if (lastInvoiceJobId && Array.isArray(lastInvoiceDraftRows)) {
+      invoiceFinalizeBtn.disabled = false;
+    }
+  } catch (e) {
+    clearTimeout(timeoutId);
+    if (e.name === 'AbortError') {
+      invoiceErr.textContent = 'Processing timed out after 5 minutes. The file may be very large or scanned. Try with a smaller text-based PDF or check OCR configuration.';
+    } else {
+      invoiceErr.textContent = String(e);
+    }
+  } finally {
+    invoiceBtn.disabled = false;
+    invoiceBtn.textContent = 'Extract Invoice Fields';
+  }
+});
+
+invoiceFinalizeBtn.addEventListener('click', async () => {
+  invoiceErr.textContent = '';
+  invoiceDownload.innerHTML = '';
+
+  if (!lastInvoiceJobId || !Array.isArray(lastInvoiceDraftRows)) {
+    invoiceErr.textContent = 'Please extract invoice fields first.';
+    return;
+  }
+
+  invoiceFinalizeBtn.disabled = true;
+  try {
+    const res = await fetch(`/api/invoice-confirm/${lastInvoiceJobId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ rows: lastInvoiceDraftRows }),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      invoiceErr.textContent = data?.detail || data?.error || JSON.stringify(data);
+      return;
+    }
+    if (data?.download_url) {
+      invoiceDownload.innerHTML = `<a href="${data.download_url}" download>Download Invoice CSV (${data.rows_total} rows)</a>`;
+    }
+  } catch (e) {
+    invoiceErr.textContent = String(e);
+  } finally {
+    invoiceFinalizeBtn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
