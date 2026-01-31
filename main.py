@@ -92,7 +92,7 @@ BANK_ENABLE_LABEL_OCR = os.getenv("BANK_ENABLE_LABEL_OCR", "").strip().lower() i
 BANKPDF_OCR = os.getenv("BANKPDF_OCR", "").strip().lower() not in {"0", "false", "no", "n", "off"}
 
 
-CURRENCY_RE = re.compile(r"(?:£|\$|€)?\s*\(?-?\d[\d,]*\.\d{2}\)?")
+CURRENCY_RE = re.compile(r"\(?\s*-?\s*(?:£|\$|€)?\s*\d[\d,]*\.\d{2}\s*\)?")
 
 
 
@@ -479,8 +479,8 @@ def _extract_text_simplified(pdf_path: str) -> Tuple[List[str], bool]:
             try:
                 if pdfium is not None:
                     doc = pdfium.PdfDocument(pdf_path)
-                    # Process up to 10 pages for larger files
-                    max_pages = min(10, len(doc))
+                    # Process ALL pages for large documents (up to 72 pages)
+                    max_pages = len(doc)
                     for i in range(max_pages):
                         page = doc[i]
                         # Good balance of quality and speed
@@ -493,13 +493,10 @@ def _extract_text_simplified(pdf_path: str) -> Tuple[List[str], bool]:
                                 ocr_lines.extend(txt.splitlines())
                         except Exception:
                             continue
-                        # Collect more text for larger files
-                        if len(ocr_lines) > 50:
-                            break
                 else:
                     doc = fitz.open(pdf_path)  # type: ignore[union-attr]
-                    # Process up to 10 pages for larger files
-                    max_pages = min(10, len(doc))
+                    # Process ALL pages for large documents (up to 72 pages)
+                    max_pages = len(doc)
                     for page in doc[:max_pages]:
                         # Good balance of quality and speed
                         pix = page.get_pixmap(matrix=fitz.Matrix(2.5, 2.5))
@@ -512,9 +509,6 @@ def _extract_text_simplified(pdf_path: str) -> Tuple[List[str], bool]:
                                 ocr_lines.extend(txt.splitlines())
                         except Exception:
                             continue
-                        # Collect more text for larger files
-                        if len(ocr_lines) > 50:
-                            break
             except Exception:
                 result_container['success'] = False
                 return
@@ -528,11 +522,11 @@ def _extract_text_simplified(pdf_path: str) -> Tuple[List[str], bool]:
             logging.error(f"OCR thread error: {e}")
             result_container['success'] = False
     
-    # Extended timeout for larger files (4 minutes)
+    # Extended timeout for larger files (up to 5 minutes)
     thread = threading.Thread(target=run_ocr)
     thread.daemon = True
     thread.start()
-    thread.join(timeout=240)  # 4 minutes timeout
+    thread.join(timeout=300)  # 5 minutes timeout
     
     if thread.is_alive():
         logging.warning(f"OCR processing timed out for {pdf_path}")
@@ -564,12 +558,38 @@ def _extract_barclays_header_info(lines: List[str]) -> Dict[str, Any]:
     info: Dict[str, Any] = {}
     cleaned = [_clean_text(ln) for ln in lines[:80]]
     for ln in cleaned:
+        # Account number patterns
         m = re.search(r"\b(?:Account\s*No\.?|Account)\s*[:\-]?\s*([A-Z0-9\s\-]{4,20})", ln, flags=re.IGNORECASE)
         if m and not info.get("account"):
             info["account"] = _clean_text(m.group(1))
-        m = re.search(r"\b(?:Statement\s*Date|Period)\s*[:\-]?\s*(\d{1,2}\s+\w+\s+\d{4})", ln, flags=re.IGNORECASE)
+        
+        # Sort code pattern
+        m = re.search(r"\b(?:Sort\s*Code)\s*[:\-]?\s*([\d\s\-]{6,10})", ln, flags=re.IGNORECASE)
+        if m and not info.get("sort_code"):
+            info["sort_code"] = _clean_text(m.group(1)).replace(" ", "").replace("-", "")
+        
+        # Statement date pattern
+        m = re.search(r"\b(?:Statement\s*Date|Period|Issued\s*on)\s*[:\-]?\s*(\d{1,2}\s+\w+\s+\d{4})", ln, flags=re.IGNORECASE)
         if m and not info.get("statement_date"):
             info["statement_date"] = _clean_text(m.group(1))
+        
+        # Company name pattern
+        m = re.search(r"([A-Z\s&]+(?:STORE|LTD|LIMITED|COMPANY|CORP))", ln, flags=re.IGNORECASE)
+        if m and not info.get("company_name"):
+            company = _clean_text(m.group(1))
+            if len(company) > 3 and not any(skip in company.lower() for skip in ['account', 'sort', 'code']):
+                info["company_name"] = company
+        
+        # IBAN pattern
+        m = re.search(r"\b(?:IBAN)\s*[:\-]?\s*([A-Z0-9\s]{15,34})", ln, flags=re.IGNORECASE)
+        if m and not info.get("iban"):
+            info["iban"] = _clean_text(m.group(1))
+        
+        # SWIFT/BIC pattern
+        m = re.search(r"\b(?:SWIFT|BIC|SWIFTBIC)\s*[:\-]?\s*([A-Z]{6,})", ln, flags=re.IGNORECASE)
+        if m and not info.get("swift"):
+            info["swift"] = _clean_text(m.group(1))
+    
     return info
 
 
@@ -782,85 +802,137 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
 
     def _extract_barclays_transactions(lines: List[str]) -> List[Dict[str, Any]]:
         """Special parser for Barclays statements"""
-        rows = []
+        rows: List[Dict[str, Any]] = []
+
+        # Barclays table statements often use dd/mm/yyyy.
+        barclays_date_patterns = [
+            re.compile(r"\b(\d{1,2}/\d{1,2}/\d{2,4})\b"),
+            re.compile(r"\b(\d{1,2}-\d{1,2}-\d{2,4})\b"),
+            re.compile(r"\b(\d{1,2}\.\d{1,2}\.\d{2,4})\b"),
+            re.compile(r"\b(\d{1,2}\s+\w{3,9}\s+\d{2,4})\b", flags=re.IGNORECASE),
+        ]
+
+        def _find_barclays_date(line: str) -> str:
+            for pat in barclays_date_patterns:
+                m = pat.search(line)
+                if m:
+                    return _clean_text(m.group(1))
+            return ""
+
+        date_any_re = re.compile(
+            r"(\d{1,2}/\d{1,2}/\d{2,4}|\d{1,2}-\d{1,2}-\d{2,4}|\d{1,2}\.\d{1,2}\.\d{2,4}|\d{1,2}\s+\w{3,9}\s+\d{2,4})",
+            flags=re.IGNORECASE,
+        )
         
-        for i, line in enumerate(lines):
-            # Skip header lines
-            if any(keyword in line.lower() for keyword in ['barclays', 'account', 'sort code', 'swift', 'iban', 'issued', 'director', 'ltd', 'high street']):
+        current_date = ""
+        current_parts: List[str] = []
+
+        def _emit_row(date_str: str, blob: str) -> None:
+            b = _clean_text(blob)
+            if not b:
+                return
+
+            low = b.lower()
+            if any(k in low for k in [
+                'card number', 'available balance', "last night's balance", 'overdraft',
+                'showing', 'transactions between', 'pending debit card transactions',
+                'date description money in money out balance', 'date transaction amount',
+            ]):
+                return
+
+            amounts = [m.group(0) for m in CURRENCY_RE.finditer(b)]
+            if not amounts:
+                return
+
+            if len(amounts) >= 2:
+                txn_amount_raw = amounts[-2]
+                bal_amount_raw = amounts[-1]
+            else:
+                txn_amount_raw = amounts[-1]
+                bal_amount_raw = ""
+
+            txn_clean = _normalize_amount_token(txn_amount_raw)
+            txn_val = _to_float_or_none(txn_clean)
+
+            money_in = ""
+            money_out = ""
+            if txn_val is not None:
+                if txn_val >= 0:
+                    money_in = txn_clean
+                else:
+                    money_out = txn_clean.replace("-", "")
+            else:
+                if "(" in txn_amount_raw and ")" in txn_amount_raw:
+                    money_out = txn_clean.replace("(", "").replace(")", "")
+                else:
+                    money_in = txn_clean
+
+            balance = _normalize_amount_token(bal_amount_raw) if bal_amount_raw else ""
+
+            cut_pos = b.rfind(txn_amount_raw)
+            desc_blob = b[:cut_pos] if cut_pos > 0 else b
+            if desc_blob.lower().startswith(date_str.lower()):
+                desc_blob = desc_blob[len(date_str):]
+            description = _clean_text(desc_blob)
+            if description and (money_in or money_out):
+                rows.append(
+                    {
+                        "date": date_str,
+                        "description": description,
+                        "money_in": money_in,
+                        "money_out": money_out,
+                        "balance": balance,
+                        "amount": txn_val,
+                        "used_ocr": bool(used_ocr_hint),
+                    }
+                )
+
+        def _flush_current() -> None:
+            nonlocal current_date, current_parts
+            if not current_date or not current_parts:
+                current_date = ""
+                current_parts = []
+                return
+
+            joined = " ".join([p for p in current_parts if p]).strip()
+            if not joined:
+                current_date = ""
+                current_parts = []
+                return
+
+            matches = list(date_any_re.finditer(joined))
+            if len(matches) >= 2:
+                for idx, m in enumerate(matches):
+                    seg_start = m.start()
+                    seg_end = matches[idx + 1].start() if idx + 1 < len(matches) else len(joined)
+                    seg = joined[seg_start:seg_end]
+                    seg_date = _clean_text(m.group(1))
+                    _emit_row(seg_date, seg)
+            else:
+                _emit_row(current_date, joined)
+
+            current_date = ""
+            current_parts = []
+
+        for _i, line in enumerate(lines):
+            date_str = _find_barclays_date(line)
+            low = line.lower()
+
+            if date_str:
+                _flush_current()
+                current_date = date_str
+                current_parts = [line]
                 continue
-                
-            # Look for transaction patterns
-            # Pattern 1: Date + Description + Amount + Balance
-            date_match = re.search(r'\b(\d{1,2}\s+\w{3,9}\s+\d{2,4})\b', line, re.IGNORECASE)
-            if date_match:
-                date_str = date_match.group(1)
-                
-                # Find all amounts in the line
-                amounts = CURRENCY_RE.findall(line)
-                if len(amounts) >= 1:
-                    # Extract description (between date and first amount)
-                    date_pos = line.find(date_str)
-                    first_amount_pos = len(line)
-                    for amount in amounts:
-                        amount_pos = line.find(amount)
-                        if amount_pos > date_pos:
-                            first_amount_pos = amount_pos
-                            break
-                    
-                    description = line[date_pos + len(date_str):first_amount_pos].strip()
-                    description = re.sub(r'\s+', ' ', description)
-                    
-                    if len(amounts) == 1:
-                        # Single amount (either money in or money out)
-                        amount = amounts[0]
-                        balance = ""
-                        amount_clean = _normalize_amount_token(amount)
-                        amount_val = _to_float_or_none(amount_clean)
-                        
-                        if amount_val and amount_val > 0:
-                            money_in = amount_clean
-                            money_out = ""
-                        elif amount_val and amount_val < 0:
-                            money_in = ""
-                            money_out = amount_clean.replace("-", "")
-                        else:
-                            money_in = amount_clean
-                            money_out = ""
-                    else:
-                        # Multiple amounts (transaction + balance)
-                        transaction_amount = amounts[0]
-                        balance_amount = amounts[-1] if len(amounts) > 1 else ""
-                        
-                        amount_clean = _normalize_amount_token(transaction_amount)
-                        amount_val = _to_float_or_none(amount_clean)
-                        
-                        if amount_val and amount_val > 0:
-                            money_in = amount_clean
-                            money_out = ""
-                        elif amount_val and amount_val < 0:
-                            money_in = ""
-                            money_out = amount_clean.replace("-", "")
-                        else:
-                            # Check if it's a payment out (usually in parentheses)
-                            if "(" in transaction_amount and ")" in transaction_amount:
-                                money_out = amount_clean.replace("(", "").replace(")", "")
-                                money_in = ""
-                            else:
-                                money_in = amount_clean
-                                money_out = ""
-                        
-                        balance = _normalize_amount_token(balance_amount)
-                    
-                    if description and (money_in or money_out):
-                        rows.append({
-                            "date": date_str,
-                            "description": description,
-                            "money_in": money_in,
-                            "money_out": money_out,
-                            "balance": balance,
-                            "amount": _to_float_or_none(_normalize_amount_token(amounts[0]) if amounts else ""),
-                            "used_ocr": bool(used_ocr_hint),
-                        })
+
+            if not current_date:
+                continue
+
+            if any(k in low for k in ['page', 'barclays', 'account', 'sort code', 'swift', 'iban', 'issued']):
+                continue
+
+            current_parts.append(line)
+
+        _flush_current()
         
         return rows
 
@@ -5029,7 +5101,8 @@ async def convert_bank_statements(request: Request) -> JSONResponse:
             msg += ". Skipped: " + ", ".join(skipped[:20])
         return JSONResponse({"error": msg}, status_code=400)
     combined_path = os.path.join(job_folder, "combined.csv")
-    if combined_preamble and len(per_file_csv_paths) == 1:
+    # Always include preamble if available, regardless of file count
+    if combined_preamble:
         _write_csv_with_preamble(combined_path, combined_preamble, all_rows, fieldnames)
     else:
         _write_csv(combined_path, all_rows, fieldnames)
