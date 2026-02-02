@@ -92,7 +92,7 @@ BANK_ENABLE_LABEL_OCR = os.getenv("BANK_ENABLE_LABEL_OCR", "").strip().lower() i
 BANKPDF_OCR = os.getenv("BANKPDF_OCR", "").strip().lower() not in {"0", "false", "no", "n", "off"}
 
 
-CURRENCY_RE = re.compile(r"\(?\s*-?\s*(?:£|\$|€)?\s*\d[\d,]*\.\d{2}\s*\)?")
+CURRENCY_RE = re.compile(r"\(?\s*-?\s*(?:£|Â£|\$|€)?\s*\d[\d,]*\.\d{2}\s*\)?")
 
 
 
@@ -549,15 +549,41 @@ def _extract_account_from_lines(lines: List[str]) -> str:
 
 
 def _looks_like_barclays_statement(lines: List[str]) -> bool:
-    cleaned = [_clean_text(ln).lower() for ln in lines[:50]]
+    cleaned = [_clean_text(ln).lower() for ln in lines[:250]]
     joined = " ".join(cleaned)
-    return any(k in joined for k in ["barclays", "barclaycard", "barclays bank"])
+    return any(
+        k in joined
+        for k in [
+            "barclays",
+            "barclaycard",
+            "barclays bank",
+            "available balance",
+            "last night's balance",
+            "last nights balance",
+            "overdraft limit",
+            "showing",
+            "transactions between",
+            "e-payments plan",
+        ]
+    )
 
 
 def _extract_barclays_header_info(lines: List[str]) -> Dict[str, Any]:
     info: Dict[str, Any] = {}
-    cleaned = [_clean_text(ln) for ln in lines[:80]]
+    cleaned = [_clean_text(ln) for ln in lines[:250]]
     for ln in cleaned:
+        # e-Payments Plan line often includes sort code and account number, e.g. "e-Payments Plan 20-25-19 30470120"
+        m = re.search(
+            r"\be\s*[-–]?\s*payments\s+plan\b\s+([0-9]{2}[\-\s]?[0-9]{2}[\-\s]?[0-9]{2})\s+([0-9]{6,10})\b",
+            ln,
+            flags=re.IGNORECASE,
+        )
+        if m:
+            if not info.get("sort_code"):
+                info["sort_code"] = _clean_text(m.group(1)).replace(" ", "").replace("-", "")
+            if not info.get("account"):
+                info["account"] = _clean_text(m.group(2))
+
         # Account number patterns
         m = re.search(r"\b(?:Account\s*No\.?|Account)\s*[:\-]?\s*([A-Z0-9\s\-]{4,20})", ln, flags=re.IGNORECASE)
         if m and not info.get("account"):
@@ -589,16 +615,84 @@ def _extract_barclays_header_info(lines: List[str]) -> Dict[str, Any]:
         m = re.search(r"\b(?:SWIFT|BIC|SWIFTBIC)\s*[:\-]?\s*([A-Z]{6,})", ln, flags=re.IGNORECASE)
         if m and not info.get("swift"):
             info["swift"] = _clean_text(m.group(1))
+
+        # Client name (often printed in upper-right on Barclays PDFs)
+        if not info.get("client_name"):
+            name_candidate = _clean_text(ln)
+            if (
+                len(name_candidate) >= 8
+                and name_candidate.upper() == name_candidate
+                and not any(
+                    bad in name_candidate.lower()
+                    for bad in [
+                        "barclays",
+                        "transactions",
+                        "statement",
+                        "account",
+                        "sort code",
+                        "iban",
+                        "swift",
+                        "available balance",
+                        "last night's balance",
+                        "overdraft",
+                        "showing",
+                        "page",
+                        "today",
+                    ]
+                )
+            ):
+                info["client_name"] = name_candidate
+
+        # Available balance / last night's balance / overdraft limit
+        m = re.search(r"\bAvailable\s+balance\b\s*(£?\s*[\d,]+(?:\.\d{2})?)", ln, flags=re.IGNORECASE)
+        if m and not info.get("available_balance"):
+            info["available_balance"] = _clean_text(m.group(1))
+
+        m = re.search(r"\bLast\s+night'?s\s+balance\b\s*(£?\s*[\d,]+(?:\.\d{2})?)", ln, flags=re.IGNORECASE)
+        if m and not info.get("last_nights_balance"):
+            info["last_nights_balance"] = _clean_text(m.group(1))
+
+        m = re.search(r"\bOverdraft\s+limit\b\s*(£?\s*[\d,]+(?:\.\d{2})?)", ln, flags=re.IGNORECASE)
+        if m and not info.get("overdraft_limit"):
+            info["overdraft_limit"] = _clean_text(m.group(1))
+
+        # Showing X transactions between START and END (sometimes repeated as from START to END)
+        m = re.search(
+            r"\bShowing\s+(\d+)\s+transactions\s+between\s+([0-9]{1,2}[\/\-\.][0-9]{1,2}[\/\-\.][0-9]{2,4})\s+and\s+([0-9]{1,2}[\/\-\.][0-9]{1,2}[\/\-\.][0-9]{2,4})",
+            ln,
+            flags=re.IGNORECASE,
+        )
+        if m and not info.get("transactions_count"):
+            info["transactions_count"] = _clean_text(m.group(1))
+            info["period_start"] = _clean_text(m.group(2))
+            info["period_end"] = _clean_text(m.group(3))
+
+        m = re.search(
+            r"\bfrom\s+([0-9]{1,2}[\/\-\.][0-9]{1,2}[\/\-\.][0-9]{2,4})\s+to\s+([0-9]{1,2}[\/\-\.][0-9]{1,2}[\/\-\.][0-9]{2,4})\b",
+            ln,
+            flags=re.IGNORECASE,
+        )
+        if m and (not info.get("period_start") or not info.get("period_end")):
+            info.setdefault("period_start", _clean_text(m.group(1)))
+            info.setdefault("period_end", _clean_text(m.group(2)))
     
     return info
 
 
 def _barclays_header_preamble_lines(info: Dict[str, Any]) -> List[List[str]]:
     rows = []
-    if info.get("account"):
-        rows.append(["Account Number", info["account"]])
-    if info.get("statement_date"):
-        rows.append(["Statement Date", info["statement_date"]])
+    rows.append(["Client Name", info.get("client_name") or "N/A"])
+    rows.append(["Account Number", info.get("account") or "N/A"])
+    rows.append(["Statement Date", info.get("statement_date") or "N/A"])
+    rows.append(["Available balance", info.get("available_balance") or "N/A"])
+    rows.append(["Last night's balance", info.get("last_nights_balance") or "N/A"])
+    rows.append(["Overdraft limit", info.get("overdraft_limit") or "N/A"])
+    rows.append(["Showing transactions", info.get("transactions_count") or "N/A"])
+    if info.get("period_start") or info.get("period_end"):
+        period = f"{info.get('period_start','')} to {info.get('period_end','')}".strip()
+    else:
+        period = "N/A"
+    rows.append(["Transactions period", period])
     return rows
 
 
@@ -797,6 +891,7 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
     def _normalize_amount_token(tok: str) -> str:
         s = _clean_text(tok)
         s = s.replace("GBP", "").replace("gbp", "").replace("£", "")
+        s = s.replace("Â£", "")
         s = s.replace(",", "").replace(" ", "")
         return s
 
@@ -844,12 +939,9 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
             if not amounts:
                 return
 
-            if len(amounts) >= 2:
-                txn_amount_raw = amounts[-2]
-                bal_amount_raw = amounts[-1]
-            else:
-                txn_amount_raw = amounts[-1]
-                bal_amount_raw = ""
+            # For Barclays, prefer rightmost two amounts: transaction amount and balance
+            bal_amount_raw = amounts[-1]
+            txn_amount_raw = amounts[-2] if len(amounts) >= 2 else amounts[-1]
 
             txn_clean = _normalize_amount_token(txn_amount_raw)
             txn_val = _to_float_or_none(txn_clean)
@@ -869,8 +961,14 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
 
             balance = _normalize_amount_token(bal_amount_raw) if bal_amount_raw else ""
 
-            cut_pos = b.rfind(txn_amount_raw)
+            # Cut description before the rightmost amount (balance) to avoid leftover amounts in description
+            cut_pos = b.rfind(bal_amount_raw)
             desc_blob = b[:cut_pos] if cut_pos > 0 else b
+            # Also strip trailing transaction amount if present at the end
+            if txn_amount_raw != bal_amount_raw:
+                txn_pos = desc_blob.rfind(txn_amount_raw)
+                if txn_pos > 0:
+                    desc_blob = desc_blob[:txn_pos]
             if desc_blob.lower().startswith(date_str.lower()):
                 desc_blob = desc_blob[len(date_str):]
             description = _clean_text(desc_blob)
@@ -937,7 +1035,7 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
         return rows
 
     # First try Barclays-specific parsing
-    if any('barclays' in line.lower() for line in cleaned[:20]):
+    if _looks_like_barclays_statement(cleaned):
         barclays_rows = _extract_barclays_transactions(cleaned)
         if barclays_rows:
             return barclays_rows
@@ -5001,6 +5099,8 @@ async def convert_bank_statements(request: Request) -> JSONResponse:
                 barclays_preamble = _barclays_business_premium_preamble_lines(info2)
             else:
                 info = _extract_barclays_header_info(lines)
+                if info.get("account"):
+                    account = str(info.get("account") or "")
                 barclays_preamble = _barclays_header_preamble_lines(info)
             combined_preamble = barclays_preamble
         monzo_preamble: Optional[List[List[str]]] = None
