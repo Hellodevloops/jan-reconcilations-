@@ -5,138 +5,248 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PDF Converter</title>
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
-    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; max-width: 1200px; }
-    .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-    button { padding: 10px 14px; border-radius: 10px; border: 1px solid #111827; background: #111827; color: #fff; cursor: pointer; }
-    button.secondary { background: #fff; color: #111827; }
-    button:disabled { opacity: .6; cursor: not-allowed; }
-    input[type=file] { padding: 10px; border: 1px solid #e5e7eb; border-radius: 10px; }
+    :root {
+      --bg: #0b1220;
+      --surface: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.72);
+      --muted2: rgba(255,255,255,0.62);
+      --danger: #fecaca;
+      --warn: #fde68a;
+      --accent: #60a5fa;
+      --accent2: #93c5fd;
+      --btn: #111827;
+      --btnBorder: rgba(255,255,255,0.16);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(1000px 600px at 20% 0%, rgba(96,165,250,0.28), transparent 60%),
+        radial-gradient(900px 600px at 80% 10%, rgba(147,197,253,0.18), transparent 55%),
+        var(--bg);
+    }
+
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 1280px;
+      padding: 22px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 0.2px;
+    }
+
+    .header .sub {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .shell {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      .shell { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .cardHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .cardHeader h2 {
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: 0.2px;
+    }
+
+    .pill {
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+    button {
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--btnBorder);
+      background: rgba(255,255,255,0.10);
+      color: var(--text);
+      cursor: pointer;
+      transition: transform 0.05s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+    button:hover { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.22); }
+    button:active { transform: translateY(1px); }
+    button.secondary { background: rgba(255,255,255,0.04); }
+    button:disabled { opacity: .55; cursor: not-allowed; }
+
+    input[type=file] {
+      padding: 10px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.12);
+      color: var(--text);
+      border-radius: 12px;
+    }
+
     table { width: 100%; border-collapse: collapse; margin-top: 12px; }
-    th, td { border-bottom: 1px solid #e5e7eb; text-align: left; padding: 8px; font-size: 14px; }
-    th { background: #f9fafb; position: sticky; top: 0; }
-    .muted { color: #6b7280; font-size: 13px; }
-    .err { color: #b91c1c; white-space: pre-wrap; }
-    .warn { color: #d97706; white-space: pre-wrap; }
-    #dropBank, #dropInvoice { border: 2px dashed #d1d5db; border-radius: 12px; padding: 26px; text-align: center; margin-bottom: 12px; transition: all 0.2s; }
-    #dropBank.dragover, #dropInvoice.dragover { border-color: #3b82f6; background: #eff6ff; }
-    .tabs { display: flex; gap: 8px; margin-bottom: 12px; }
-    .tabs button { border-color: #e5e7eb; background: #fff; color: #111827; }
-    .tabs button.active { border-color: #111827; background: #111827; color: #fff; }
+    th, td { border-bottom: 1px solid rgba(255,255,255,0.10); text-align: left; padding: 9px 8px; font-size: 13px; }
+    th { background: rgba(0,0,0,0.20); position: sticky; top: 0; }
+    .muted { color: var(--muted2); font-size: 13px; }
+    .err { color: var(--danger); white-space: pre-wrap; }
+    .warn { color: var(--warn); white-space: pre-wrap; }
+    #dropBank, #dropInvoice {
+      border: 1px dashed rgba(255,255,255,0.22);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 12px;
+      transition: all 0.18s ease;
+      background: rgba(0,0,0,0.12);
+    }
+    #dropBank.dragover, #dropInvoice.dragover {
+      border-color: var(--accent);
+      background: rgba(96,165,250,0.12);
+    }
     .grid { display: grid; grid-template-columns: 220px 1fr; gap: 8px; margin-top: 12px; }
-    .k { color: #374151; font-size: 13px; }
+    .k { color: var(--muted2); font-size: 13px; }
     .v { font-weight: 600; }
   </style>
 </head>
 <body>
-  <h1>PDF Converter</h1>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>PDF Converter Dashboard</h1>
+        <div class="sub">Convert bank statements to CSV and extract invoice fields in one place.</div>
+      </div>
+      <div class="pill">Upload PDFs | Preview | Download CSV</div>
+    </div>
 
-  <div class="tabs">
-    <button id="tabBank" type="button" class="active">Bank Statements</button>
-    <button id="tabInvoice" type="button">Invoices</button>
-  </div>
+    <div class="shell">
+      <div id="bankSection" class="card">
+        <div class="cardHeader">
+          <h2>Bank Statements</h2>
+          <div class="pill">Barclays • Monzo • Virgin Money • Tide • Revolut</div>
+        </div>
+        <div id="dropBank">
+          <div>Drag & drop bank statement PDFs here or</div>
+          <input id="bankFiles" type="file" accept="application/pdf,image/*" multiple style="margin-top: 8px;" />
+        </div>
+        <div class="row">
+          <button id="bankBtn" type="button">Convert Bank Statements</button>
+        </div>
+        <div id="bankErr" class="err" style="margin-top:10px;"></div>
+        <div id="bankWarn" class="warn" style="margin-top:10px;"></div>
+        <div style="max-height: 420px; overflow:auto;">
+          <table id="bankTbl" style="display:none;">
+            <thead>
+              <tr>
+                <th>source_file</th>
+                <th>account</th>
+                <th>subcategory</th>
+                <th>date</th>
+                <th>description</th>
+                <th>money_in</th>
+                <th>money_out</th>
+                <th>amount</th>
+                <th>balance</th>
+              </tr>
+            </thead>
+            <tbody id="bankTbody"></tbody>
+          </table>
+        </div>
+        <div id="bankDownload" style="margin-top:12px;"></div>
+      </div>
 
-  <div id="bankSection" class="card">
-    <h2 style="margin:0 0 8px 0;">Bank Statements</h2>
-    <div id="dropBank">
-      <div>Drag & drop bank statement PDFs here or</div>
-      <input id="bankFiles" type="file" accept="application/pdf,image/*" multiple style="margin-top: 8px;" />
-    </div>
-    <div class="row">
-      <button id="bankBtn" type="button">Convert Bank Statements</button>
-    </div>
-    <div class="muted" style="margin-top:8px;">
-      Supports Barclays, Monzo, Virgin Money, Tide, Revolut Business statements.
-    </div>
-    <div id="bankErr" class="err" style="margin-top:10px;"></div>
-    <div id="bankWarn" class="warn" style="margin-top:10px;"></div>
-    <div style="max-height: 420px; overflow:auto;">
-      <table id="bankTbl" style="display:none;">
-        <thead>
-          <tr>
-            <th>source_file</th>
-            <th>account</th>
-            <th>subcategory</th>
-            <th>date</th>
-            <th>description</th>
-            <th>money_in</th>
-            <th>money_out</th>
-            <th>amount</th>
-            <th>balance</th>
-          </tr>
-        </thead>
-        <tbody id="bankTbody"></tbody>
-      </table>
-    </div>
-    <div id="bankDownload" style="margin-top:12px;"></div>
-  </div>
+      <div id="invoiceSection" class="card">
+        <div class="cardHeader">
+          <h2>Invoices</h2>
+          <div class="pill">Extract + Review + Finalize CSV</div>
+        </div>
+        <div id="dropInvoice">
+          <div>Drag & drop invoice PDFs here or</div>
+          <input id="invoiceFiles" type="file" accept="application/pdf,image/*" multiple style="margin-top: 8px;" />
+        </div>
+        <div class="row">
+          <button id="invoiceBtn" type="button">Extract Invoice Fields</button>
+          <button id="invoiceFinalizeBtn" type="button" class="secondary" disabled>Finalize + Generate CSV</button>
+        </div>
+        <div class="muted" style="margin-top:8px;">
+          Extracts: supplier, document_date, make, model, colour, reg_no, buying_price.
+        </div>
+        <div id="invoiceErr" class="err" style="margin-top:10px;"></div>
+        <div id="invoiceWarn" class="warn" style="margin-top:10px;"></div>
 
-  <div id="invoiceSection" class="card" style="display:none; margin-top: 14px;">
-    <h2 style="margin:0 0 8px 0;">Invoices</h2>
-    <div id="dropInvoice">
-      <div>Drag & drop invoice PDFs here or</div>
-      <input id="invoiceFiles" type="file" accept="application/pdf,image/*" multiple style="margin-top: 8px;" />
-    </div>
-    <div class="row">
-      <button id="invoiceBtn" type="button">Extract Invoice Fields</button>
-      <button id="invoiceFinalizeBtn" type="button" class="secondary" disabled>Finalize + Generate CSV</button>
-    </div>
-    <div class="muted" style="margin-top:8px;">
-      Extracts: supplier, document_date, make, model, colour, reg_no, buying_price.
-    </div>
-    <div id="invoiceErr" class="err" style="margin-top:10px;"></div>
-    <div id="invoiceWarn" class="warn" style="margin-top:10px;"></div>
+        <div id="invoiceFields" class="grid" style="display:none;"></div>
 
-    <div id="invoiceFields" class="grid" style="display:none;"></div>
-
-    <div style="max-height: 420px; overflow:auto;">
-      <table id="invoiceTbl" style="display:none;">
-        <thead>
-          <tr>
-            <th>sr_no</th>
-            <th>category</th>
-            <th>document_date</th>
-            <th>supplier</th>
-            <th>inv_ref_no</th>
-            <th>make</th>
-            <th>model</th>
-            <th>colour</th>
-            <th>reg_no</th>
-            <th>buying_price</th>
-            <th>non_vat</th>
-            <th>std_net</th>
-            <th>vat_amount</th>
-          </tr>
-        </thead>
-        <tbody id="invoiceTbody"></tbody>
-      </table>
+        <div style="max-height: 420px; overflow:auto;">
+          <table id="invoiceTbl" style="display:none;">
+            <thead>
+              <tr>
+                <th>sr_no</th>
+                <th>category</th>
+                <th>document_date</th>
+                <th>supplier</th>
+                <th>inv_ref_no</th>
+                <th>make</th>
+                <th>model</th>
+                <th>colour</th>
+                <th>reg_no</th>
+                <th>buying_price</th>
+                <th>non_vat</th>
+                <th>std_net</th>
+                <th>vat_amount</th>
+              </tr>
+            </thead>
+            <tbody id="invoiceTbody"></tbody>
+          </table>
+        </div>
+        <div id="invoiceDownload" style="margin-top:12px;"></div>
+      </div>
     </div>
-    <div id="invoiceDownload" style="margin-top:12px;"></div>
   </div>
 
 <script>
-const tabBank = document.getElementById('tabBank');
-const tabInvoice = document.getElementById('tabInvoice');
-const bankSection = document.getElementById('bankSection');
-const invoiceSection = document.getElementById('invoiceSection');
-
-function setTab(which) {
-  if (which === 'bank') {
-    tabBank.classList.add('active');
-    tabInvoice.classList.remove('active');
-    bankSection.style.display = '';
-    invoiceSection.style.display = 'none';
-  } else {
-    tabInvoice.classList.add('active');
-    tabBank.classList.remove('active');
-    bankSection.style.display = 'none';
-    invoiceSection.style.display = '';
-  }
-}
-
-tabBank.addEventListener('click', () => setTab('bank'));
-tabInvoice.addEventListener('click', () => setTab('invoice'));
-
 function wireDrop(dropEl, inputEl) {
   dropEl.addEventListener('dragover', (e) => {
     e.preventDefault();
@@ -302,12 +412,12 @@ invoiceBtn.addEventListener('click', async () => {
   invoiceBtn.disabled = true;
   invoiceBtn.textContent = 'Processing...';
   
-  // Add timeout handling for large files (5 minutes)
+  // Add timeout handling for large files (20 minutes)
   const controller = new AbortController();
   const timeoutId = setTimeout(() => {
     controller.abort();
-    invoiceErr.textContent = 'Processing timed out after 5 minutes. The file may be very large or complex. Try with a smaller file or check if OCR is working properly.';
-  }, 300000); // 5 minutes (300 seconds)
+    invoiceErr.textContent = 'Processing timed out after 20 minutes. The file may be very large or complex. Try with a smaller file or check if OCR is working properly.';
+  }, 1200000); // 20 minutes
 
   try {
     const form = new FormData();
@@ -362,7 +472,7 @@ invoiceBtn.addEventListener('click', async () => {
   } catch (e) {
     clearTimeout(timeoutId);
     if (e.name === 'AbortError') {
-      invoiceErr.textContent = 'Processing timed out after 5 minutes. The file may be very large or scanned. Try with a smaller text-based PDF or check OCR configuration.';
+      invoiceErr.textContent = 'Processing timed out after 20 minutes. The file may be very large or scanned. Try with a smaller text-based PDF or check OCR configuration.';
     } else {
       invoiceErr.textContent = String(e);
     }

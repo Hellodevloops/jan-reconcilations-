@@ -1,0 +1,32 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "29/07/24",
+      "supplier": "BRITISH CAR AUCTIONS LIMITED",
+      "inv_ref_no": "EN/1176632",
+      "make": "EN87S0/U114EN DN64 VPK SUZUKI SPLASH 1.0 SZ2 AS SEEN BLACK 1,350.00 0.00 1,350.00 | ODOMETER:37016WARRANTED 1ST REG:20/11/14 MOT:29/06/22-NO DOC",
+      "reg_no": "GB 188 1552 38",
+      "buying_price": 1651.96,
+      "non_vat": 1651.96,
+      "std_net": "N/A",
+      "vat_amount": null
+    }
+  ]
+}

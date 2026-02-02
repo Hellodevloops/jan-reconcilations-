@@ -8,12 +8,36 @@ import shutil
 import subprocess
 import asyncio
 import logging
+import base64
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
+
+try:
+
+    from dotenv import load_dotenv  # type: ignore
+
+except Exception:
+
+    load_dotenv = None  # type: ignore
+
+
+if load_dotenv is not None:
+    try:
+        load_dotenv()
+    except Exception:
+        pass
 
 
 
 import pdfplumber
+
+try:
+
+    import httpx
+
+except Exception:
+
+    httpx = None  # type: ignore
 
 try:
 
@@ -91,6 +115,12 @@ BANK_ENABLE_LABEL_OCR = os.getenv("BANK_ENABLE_LABEL_OCR", "").strip().lower() i
 
 BANKPDF_OCR = os.getenv("BANKPDF_OCR", "").strip().lower() not in {"0", "false", "no", "n", "off"}
 
+OCR_PROVIDER = os.getenv("OCR_PROVIDER", "tesseract").strip().lower()
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "").strip()
+DEEPSEEK_OCR2_URL = os.getenv("DEEPSEEK_OCR2_URL", "").strip()
+DEEPSEEK_OCR_MODEL = os.getenv("DEEPSEEK_OCR_MODEL", "deepseek-vl").strip()
+DEEPSEEK_OCR_TEMPERATURE = os.getenv("DEEPSEEK_OCR_TEMPERATURE", "0").strip()
+
 
 CURRENCY_RE = re.compile(r"\(?\s*-?\s*(?:£|Â£|\$|€)?\s*\d[\d,]*\.\d{2}\s*\)?")
 
@@ -124,7 +154,7 @@ async def home(request: Request) -> HTMLResponse:
 
 async def invoice_page(request: Request) -> HTMLResponse:
 
-    return templates.TemplateResponse("invoice.html", {"request": request})
+    return templates.TemplateResponse("home.html", {"request": request})
 
 
 def _clean_text(value: Any) -> str:
@@ -168,13 +198,35 @@ def _parse_money(value: str) -> float:
     if s.startswith("(") and s.endswith(")"):
         neg = True
         s = s[1:-1]
+    s = s.replace("Â£", "£")
+    s = s.replace("GBP", "").replace("gbp", "")
     s = s.replace("£", "").replace("$", "").replace("€", "")
     s = s.replace(",", "").replace(" ", "")
     if s.endswith("-"):
         neg = True
         s = s[:-1]
-    amt = float(s)
+    m = re.search(r"-?\d+(?:\.\d{1,2})?", s)
+    if not m:
+        raise ValueError("Invalid amount")
+    amt = float(m.group(0))
+    if amt < 0:
+        return amt
     return -amt if neg else amt
+
+
+def _format_money_token(value: Any) -> str:
+    s = _clean_text(value)
+    if not s:
+        return ""
+    try:
+        return f"{_parse_money(s):.2f}"
+    except Exception:
+        s = s.replace("Â£", "£")
+        s = s.replace("GBP", "").replace("gbp", "")
+        s = s.replace("£", "").replace("$", "").replace("€", "")
+        s = s.replace(",", "").replace(" ", "")
+        m = re.search(r"-?\d+(?:\.\d{1,2})?", s)
+        return _clean_text(m.group(0)) if m else ""
 
 
 def _format_csv_value(value: Any) -> str:
@@ -362,6 +414,18 @@ def _extract_text_lines_from_pdf_without_ocr(pdf_path: str) -> List[str]:
 
 
 def _extract_text_lines_from_image_with_ocr(image_path: str) -> Tuple[List[str], bool]:
+    if OCR_PROVIDER == "deepseek":
+        try:
+            with open(image_path, "rb") as f:
+                img_bytes = f.read()
+        except Exception:
+            img_bytes = b""
+
+        if img_bytes:
+            lines_ds, ok_ds = _extract_text_lines_from_image_with_deepseek(img_bytes)
+            if ok_ds and lines_ds:
+                return lines_ds, True
+
     ok, _detail = _tesseract_available()
     if not ok:
         return [], False
@@ -422,6 +486,171 @@ def _extract_text_lines_from_image_with_ocr(image_path: str) -> Tuple[List[str],
     return cleaned, bool(cleaned)
 
 
+def _extract_text_lines_from_image_with_deepseek(image_bytes: bytes) -> Tuple[List[str], bool]:
+    if not BANKPDF_OCR:
+        return [], False
+    if httpx is None:
+        return [], False
+    if not DEEPSEEK_API_KEY or not DEEPSEEK_OCR2_URL:
+        return [], False
+
+    txt = _deepseek_vision_ocr_text(image_bytes)
+    if not txt:
+        return [], False
+
+    cleaned = [_clean_text(x) for x in (txt.splitlines() if txt else [])]
+    cleaned = [x for x in cleaned if x]
+    return cleaned, bool(cleaned)
+
+
+def _deepseek_vision_ocr_text(image_bytes: bytes, prompt: str = "") -> str:
+    if httpx is None:
+        return ""
+    if not DEEPSEEK_API_KEY or not DEEPSEEK_OCR2_URL:
+        return ""
+
+    p = _clean_text(prompt) or "Extract all readable text from this image. Output plain text only."
+    try:
+        temperature = float(DEEPSEEK_OCR_TEMPERATURE) if _clean_text(DEEPSEEK_OCR_TEMPERATURE) else 0.0
+    except Exception:
+        temperature = 0.0
+
+    # DeepSeek API is OpenAI-compatible for chat/completions. For vision-capable models,
+    # we send a mixed content array with text + an image data URI.
+    image_b64 = base64.b64encode(image_bytes).decode("ascii")
+    data_uri = f"data:image/png;base64,{image_b64}"
+    payload = {
+        "model": DEEPSEEK_OCR_MODEL or "deepseek-vl",
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": p},
+                    {"type": "image_url", "image_url": {"url": data_uri}},
+                ],
+            }
+        ],
+        "temperature": temperature,
+    }
+    headers = {
+        "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+        "Content-Type": "application/json",
+    }
+
+    try:
+        with httpx.Client(timeout=90) as client:  # type: ignore[union-attr]
+            r = client.post(DEEPSEEK_OCR2_URL, headers=headers, json=payload)
+            r.raise_for_status()
+            data = r.json()
+    except Exception:
+        return ""
+
+    # Parse OpenAI-style response
+    try:
+        if isinstance(data, dict):
+            choices = data.get("choices")
+            if isinstance(choices, list) and choices:
+                msg = (choices[0] or {}).get("message") or {}
+                content = msg.get("content")
+                if isinstance(content, str):
+                    return _clean_text(content)
+                if isinstance(content, list):
+                    # Some variants return structured content blocks
+                    parts = []
+                    for it in content:
+                        if isinstance(it, dict) and isinstance(it.get("text"), str):
+                            parts.append(it.get("text"))
+                    if parts:
+                        return _clean_text("\n".join(parts))
+
+            # Fallback for non-chat custom OCR endpoints
+            t = data.get("text") or data.get("result") or data.get("data")
+            if isinstance(t, str):
+                return _clean_text(t)
+    except Exception:
+        return ""
+    return ""
+
+
+def _deepseek_extract_used_vehicle_fields_from_pdf(pdf_path: str) -> Dict[str, Any]:
+    if Image is None:
+        return {}
+    if not DEEPSEEK_API_KEY or not DEEPSEEK_OCR2_URL or httpx is None:
+        return {}
+
+    img = _invoice_render_first_page(pdf_path)
+    if img is None:
+        return {}
+
+    prompt = (
+        "This is a scanned 'Used Vehicle Purchase Invoice' with handwritten entries. "
+        "Extract ONLY these handwritten fields and output STRICT JSON with keys: "
+        "document_date (dd/mm/yy or dd/mm/yyyy), supplier, make, model, colour, reg_no (UK plate like AB12 CDE), buying_price (number). "
+        "Return JSON only, no explanation."
+    )
+
+    def _score(d: Dict[str, Any]) -> int:
+        if not isinstance(d, dict):
+            return -1
+        score = 0
+        dd = _clean_text(d.get("document_date")).replace("-", "/")
+        if _is_valid_uk_date(dd):
+            score += 4
+        rn = _clean_text(d.get("reg_no")).upper()
+        if re.search(r"\b[A-Z]{2}[0-9O]{2}\s*[A-Z]{3}\b", rn):
+            score += 4
+        try:
+            bp = d.get("buying_price")
+            bp_num = float(bp) if bp not in (None, "") else None
+        except Exception:
+            bp_num = None
+        if bp_num is not None and 0 < bp_num < 100000:
+            score += 4
+        if _clean_text(d.get("supplier")):
+            score += 2
+        if _clean_text(d.get("make")):
+            score += 2
+        return score
+
+    best: Dict[str, Any] = {}
+    best_score = -1
+
+    for angle in (0, 90, 180, 270):
+        try:
+            img2 = img.rotate(angle, expand=True) if angle else img
+        except Exception:
+            img2 = img
+        try:
+            buf = io.BytesIO()
+            img2.save(buf, format="PNG")
+            img_bytes = buf.getvalue()
+        except Exception:
+            continue
+
+        txt = _deepseek_vision_ocr_text(img_bytes, prompt=prompt)
+        if not txt:
+            continue
+
+        data: Any = None
+        try:
+            data = json.loads(txt)
+        except Exception:
+            try:
+                m = re.search(r"\{[\s\S]*\}", txt)
+                if m:
+                    data = json.loads(m.group(0))
+            except Exception:
+                data = None
+
+        if isinstance(data, dict):
+            sc = _score(data)
+            if sc > best_score:
+                best_score = sc
+                best = data
+
+    return best
+
+
 def _extract_text_lines_from_pdf_with_ocr(pdf_path: str, force_ocr: bool = False) -> Tuple[List[str], bool]:
     lines: List[str] = []
     if not force_ocr:
@@ -434,6 +663,14 @@ def _extract_text_lines_from_pdf_with_ocr(pdf_path: str, force_ocr: bool = False
 
     if not BANKPDF_OCR and force_ocr:
         return [], False
+
+    if OCR_PROVIDER == "deepseek":
+        try:
+            lines_ds, ok_ds = _extract_text_lines_from_pdf_with_deepseek(pdf_path)
+            if ok_ds and lines_ds:
+                return lines_ds, True
+        except Exception:
+            pass
 
     ok, _detail = _tesseract_available()
     if not ok:
@@ -449,6 +686,75 @@ def _extract_text_lines_from_pdf_with_ocr(pdf_path: str, force_ocr: bool = False
     except Exception as e:
         logging.error(f"OCR processing failed for {pdf_path}: {e}")
         return [], False
+
+
+def _extract_text_lines_from_pdf_with_deepseek(pdf_path: str) -> Tuple[List[str], bool]:
+    if httpx is None:
+        return [], False
+    if not DEEPSEEK_API_KEY or not DEEPSEEK_OCR2_URL:
+        return [], False
+    if Image is None:
+        return [], False
+    if fitz is None and pdfium is None:
+        return [], False
+
+    ocr_lines: List[str] = []
+
+    def _best_lines_for_pil_image(img_in: Any) -> List[str]:
+        best: List[str] = []
+        best_score = -1
+        for angle in (0, 90, 180, 270):
+            try:
+                img2 = img_in.rotate(angle, expand=True) if angle else img_in
+            except Exception:
+                img2 = img_in
+            try:
+                buf = io.BytesIO()
+                img2.save(buf, format="PNG")
+                lines_i, ok_i = _extract_text_lines_from_image_with_deepseek(buf.getvalue())
+            except Exception:
+                lines_i, ok_i = [], False
+            if not ok_i or not lines_i:
+                continue
+            sc = len("\n".join(lines_i))
+            if sc > best_score:
+                best_score = sc
+                best = lines_i
+        return best
+
+    try:
+        if pdfium is not None:
+            doc = pdfium.PdfDocument(pdf_path)
+            for i in range(len(doc)):
+                page = doc[i]
+                bitmap = page.render(scale=2.5)
+                pil_img = bitmap.to_pil()  # type: ignore[union-attr]
+                best_lines = _best_lines_for_pil_image(pil_img)
+                if best_lines:
+                    ocr_lines.extend(best_lines)
+        else:
+            doc = fitz.open(pdf_path)  # type: ignore[union-attr]
+            for page in doc:
+                pix = page.get_pixmap(matrix=fitz.Matrix(2.5, 2.5))
+                img_bytes = pix.tobytes("png")
+                try:
+                    pil_img2 = Image.open(io.BytesIO(img_bytes))
+                except Exception:
+                    pil_img2 = None
+                if pil_img2 is None:
+                    lines_i, ok_i = _extract_text_lines_from_image_with_deepseek(img_bytes)
+                    if ok_i and lines_i:
+                        ocr_lines.extend(lines_i)
+                else:
+                    best_lines2 = _best_lines_for_pil_image(pil_img2)
+                    if best_lines2:
+                        ocr_lines.extend(best_lines2)
+    except Exception:
+        return [], False
+
+    cleaned = [_clean_text(x) for x in ocr_lines]
+    cleaned = [x for x in cleaned if x]
+    return cleaned, bool(cleaned)
 
 
 def _extract_text_simplified(pdf_path: str) -> Tuple[List[str], bool]:
@@ -683,6 +989,9 @@ def _barclays_header_preamble_lines(info: Dict[str, Any]) -> List[List[str]]:
     rows = []
     rows.append(["Client Name", info.get("client_name") or "N/A"])
     rows.append(["Account Number", info.get("account") or "N/A"])
+    rows.append(["Sort Code", info.get("sort_code") or "N/A"])
+    rows.append(["IBAN", info.get("iban") or "N/A"])
+    rows.append(["SWIFT/BIC", info.get("swift") or "N/A"])
     rows.append(["Statement Date", info.get("statement_date") or "N/A"])
     rows.append(["Available balance", info.get("available_balance") or "N/A"])
     rows.append(["Last night's balance", info.get("last_nights_balance") or "N/A"])
@@ -863,6 +1172,35 @@ def _write_csv_with_preamble(csv_path: str, preamble: List[List[str]], rows: Lis
             dict_writer.writerow({k: _format_csv_value(r.get(k)) for k in fieldnames})
 
 
+def _write_barclays_csv_with_pending(
+    csv_path: str,
+    preamble: List[List[str]],
+    pending_rows: List[Dict[str, Any]],
+    rows: List[Dict[str, Any]],
+    fieldnames: List[str],
+) -> None:
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        for row in preamble:
+            writer.writerow(row)
+        writer.writerow([])
+        if pending_rows:
+            writer.writerow(["Date", "Transaction", "Amount"])
+            for r in pending_rows:
+                writer.writerow(
+                    [
+                        _format_csv_value(r.get("date")),
+                        _format_csv_value(r.get("description")),
+                        _format_csv_value(r.get("amount")),
+                    ]
+                )
+            writer.writerow([])
+        writer.writerow(fieldnames)
+        dict_writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+        for r in rows:
+            dict_writer.writerow({k: _format_csv_value(r.get(k)) for k in fieldnames})
+
+
 def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] = None, used_ocr_hint: bool = False) -> List[Dict[str, Any]]:
     if preextracted_lines is None:
         lines, _ = _extract_text_lines_from_pdf_with_ocr(pdf_path)
@@ -895,9 +1233,193 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
         s = s.replace(",", "").replace(" ", "")
         return s
 
+    date_any_re = re.compile(
+        r"(\d{1,2}/\d{1,2}/\d{2,4}|\d{1,2}-\d{1,2}-\d{2,4}|\d{1,2}\.\d{1,2}\.\d{2,4}|\d{1,2}\s+\w{3,9}\s+\d{2,4})",
+        flags=re.IGNORECASE,
+    )
+
+    def _emit_generic_row(date_str: str, blob: str) -> Optional[Dict[str, Any]]:
+        b = _clean_text(blob)
+        if not b:
+            return None
+        low = b.lower()
+        if any(
+            k in low
+            for k in [
+                "available balance",
+                "last night's balance",
+                "overdraft",
+                "pending",
+                "transactions between",
+                "date description money in money out balance",
+                "date transaction amount",
+            ]
+        ):
+            return None
+
+        amounts_raw = [m.group(0) for m in CURRENCY_RE.finditer(b)]
+        amounts = [_normalize_amount_token(a) for a in amounts_raw]
+
+        money_in = ""
+        money_out = ""
+        amount_val: Optional[float] = None
+        balance = ""
+
+        if len(amounts) >= 2:
+            a_txn, a_bal = amounts[0], amounts[-1]
+            txn_val = _to_float_or_none(a_txn)
+            amount_val = txn_val
+            if txn_val is not None and txn_val < 0:
+                money_out = a_txn
+            elif txn_val is not None and txn_val > 0:
+                money_in = a_txn
+            elif txn_val is None:
+                money_in = a_txn
+            balance = a_bal
+        elif len(amounts) == 1:
+            a_txn = amounts[0]
+            txn_val = _to_float_or_none(a_txn)
+            amount_val = txn_val
+            if txn_val is not None and txn_val < 0:
+                money_out = a_txn
+            elif txn_val is not None and txn_val > 0:
+                money_in = a_txn
+            elif txn_val is None:
+                money_in = a_txn
+
+        desc_part = b
+        if amounts_raw:
+            first_amt_match = CURRENCY_RE.search(b)
+            if first_amt_match:
+                desc_part = b[: first_amt_match.start()]
+        if date_str and desc_part.lower().startswith(date_str.lower()):
+            desc_part = desc_part[len(date_str) :]
+        description = _clean_text(desc_part)
+        if not description:
+            description = "N/A"
+
+        if not date_str:
+            date_str = "N/A"
+
+        return {
+            "date": date_str,
+            "description": description,
+            "money_in": money_in,
+            "money_out": money_out,
+            "balance": balance,
+            "amount": amount_val,
+            "used_ocr": bool(used_ocr_hint),
+        }
+
+    def _extract_generic_transactions(lines: List[str]) -> List[Dict[str, Any]]:
+        rows: List[Dict[str, Any]] = []
+        current_date = ""
+        current_parts: List[str] = []
+
+        def _flush_current() -> None:
+            nonlocal current_date, current_parts
+            if not current_date or not current_parts:
+                current_date = ""
+                current_parts = []
+                return
+            joined = " ".join([p for p in current_parts if p]).strip()
+            if not joined:
+                current_date = ""
+                current_parts = []
+                return
+            matches = list(date_any_re.finditer(joined))
+            if len(matches) >= 2:
+                for idx, m in enumerate(matches):
+                    seg_start = m.start()
+                    seg_end = matches[idx + 1].start() if idx + 1 < len(matches) else len(joined)
+                    seg = joined[seg_start:seg_end]
+                    seg_date = _clean_text(m.group(1))
+                    r = _emit_generic_row(seg_date, seg)
+                    if r is not None:
+                        rows.append(r)
+            else:
+                r = _emit_generic_row(current_date, joined)
+                if r is not None:
+                    rows.append(r)
+            current_date = ""
+            current_parts = []
+
+        for line in lines:
+            date_str = _find_date_in_line(line)
+            low = line.lower()
+
+            if date_str:
+                _flush_current()
+                current_date = date_str
+                current_parts = [line]
+                continue
+
+            if not current_date:
+                continue
+
+            if any(
+                k in low
+                for k in [
+                    "page ",
+                    "account",
+                    "sort code",
+                    "swift",
+                    "iban",
+                    "issued",
+                    "statement",
+                ]
+            ):
+                continue
+
+            current_parts.append(line)
+
+        _flush_current()
+        return rows
+
     def _extract_barclays_transactions(lines: List[str]) -> List[Dict[str, Any]]:
         """Special parser for Barclays statements"""
         rows: List[Dict[str, Any]] = []
+        pending_rows: List[Dict[str, Any]] = []
+
+        barclays_amount_re = re.compile(r"\(?\s*-?\s*(?:£|Â£|\$|€)?\s*\d[\d,]*(?:\.\d{1,2})?\s*\)?")
+
+        def _barclays_amount_display(tok: str) -> str:
+            s = _clean_text(tok)
+            s = s.replace("Â£", "£")
+            return _format_money_token(s)
+
+        def _barclays_amount_for_parse(tok: str) -> str:
+            s = _clean_text(tok)
+            s = s.replace("Â£", "£")
+            s = s.replace("GBP", "").replace("gbp", "")
+            return s
+
+        def _barclays_subcategory_and_clean_description(description: str) -> Tuple[str, str]:
+            d = _clean_text(description)
+            low = d.lower()
+            if "credit card" in low:
+                cleaned_desc = re.sub(r"\bcredit\s+card\b", "", d, flags=re.IGNORECASE)
+                return "Credit Card", _clean_text(cleaned_desc)
+            if "debit card" in low:
+                cleaned_desc = re.sub(r"\bdebit\s+card\b", "", d, flags=re.IGNORECASE)
+                return "Debit Card", _clean_text(cleaned_desc)
+            return "", d
+
+        barclays_info = _extract_barclays_header_info(lines)
+        base_month: Optional[int] = None
+        base_year: Optional[int] = None
+        try:
+            period_end = _clean_text(barclays_info.get("period_end", ""))
+            if period_end:
+                m_end = re.search(r"(\d{1,2})[\/\-\.](\d{1,2})[\/\-\.](\d{2,4})", period_end)
+                if m_end:
+                    base_month = int(m_end.group(2))
+                    base_year = int(m_end.group(3))
+                    if base_year < 100:
+                        base_year += 2000
+        except Exception:
+            base_month = None
+            base_year = None
 
         # Barclays table statements often use dd/mm/yyyy.
         barclays_date_patterns = [
@@ -907,20 +1429,135 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
             re.compile(r"\b(\d{1,2}\s+\w{3,9}\s+\d{2,4})\b", flags=re.IGNORECASE),
         ]
 
+        day_only_re = re.compile(r"^(\d{1,2})\s+(?=[A-Z])")
+
+        last_dt: Optional[datetime] = None
+
+        def _add_one_month(dt: datetime) -> datetime:
+            y, m = dt.year, dt.month
+            if m == 12:
+                return datetime(y + 1, 1, 1)
+            return datetime(y, m + 1, 1)
+
+        def _infer_date_from_day(day: int) -> str:
+            nonlocal last_dt
+            if last_dt is not None:
+                y = last_dt.year
+                m = last_dt.month
+                # If day resets (e.g. 31 -> 01), advance the month.
+                if day < (last_dt.day - 10):
+                    next_month = _add_one_month(datetime(y, m, 1))
+                    y, m = next_month.year, next_month.month
+                try:
+                    cand = datetime(y, m, day)
+                    last_dt = cand
+                    return f"{day:02d}/{m:02d}/{y:04d}"
+                except Exception:
+                    return ""
+
+            if base_month is not None and base_year is not None:
+                try:
+                    cand2 = datetime(base_year, base_month, day)
+                    last_dt = cand2
+                    return f"{day:02d}/{base_month:02d}/{base_year:04d}"
+                except Exception:
+                    return ""
+            return ""
+
+        def _track_last_dt(date_str: str) -> None:
+            nonlocal last_dt
+            s = _clean_text(date_str)
+            for fmt in ["%d/%m/%Y", "%d/%m/%y", "%d-%m-%Y", "%d-%m-%y", "%d.%m.%Y", "%d.%m.%y"]:
+                try:
+                    last_dt = datetime.strptime(s, fmt)
+                    return
+                except Exception:
+                    continue
+
         def _find_barclays_date(line: str) -> str:
             for pat in barclays_date_patterns:
                 m = pat.search(line)
                 if m:
-                    return _clean_text(m.group(1))
+                    ds = _clean_text(m.group(1))
+                    _track_last_dt(ds)
+                    return ds
+
+            m_day = day_only_re.search(_clean_text(line))
+            if m_day:
+                try:
+                    day = int(m_day.group(1))
+                except Exception:
+                    return ""
+                return _infer_date_from_day(day)
             return ""
 
         date_any_re = re.compile(
-            r"(\d{1,2}/\d{1,2}/\d{2,4}|\d{1,2}-\d{1,2}-\d{2,4}|\d{1,2}\.\d{1,2}\.\d{2,4}|\d{1,2}\s+\w{3,9}\s+\d{2,4})",
+            r"(\d{1,2}/\d{1,2}/\d{2,4}|\d{1,2}-\d{1,2}-\d{2,4}|\d{1,2}\.\d{1,2}\.\d{2,4}|\d{1,2}\s+\w{3,9}\s+\d{2,4}|(?:(?:^|\s)\d{1,2})(?=\s+[A-Z]))",
             flags=re.IGNORECASE,
         )
         
         current_date = ""
         current_parts: List[str] = []
+        in_pending_debit_card = False
+
+        def _try_emit_pending_row(line: str) -> bool:
+            b = _clean_text(line)
+            if not b:
+                return False
+
+            low = b.lower()
+            if any(
+                k in low
+                for k in [
+                    "pending debit card transactions",
+                    "date transaction amount",
+                    "card number",
+                ]
+            ):
+                return True
+
+            date_str = _find_barclays_date(b)
+            if not date_str:
+                return False
+
+            amounts = [m.group(0) for m in barclays_amount_re.finditer(b)]
+            if not amounts:
+                return False
+
+            amt_raw = amounts[-1]
+            amt_disp = _barclays_amount_display(amt_raw)
+            amt_val = _to_float_or_none(_barclays_amount_for_parse(amt_raw))
+
+            money_in = ""
+            money_out = ""
+            if amt_val is not None:
+                if amt_val >= 0:
+                    money_in = amt_disp
+                else:
+                    money_out = amt_disp
+            else:
+                if "(" in amt_raw and ")" in amt_raw:
+                    money_out = amt_disp
+                else:
+                    money_in = amt_disp
+
+            cut_pos = b.rfind(amt_raw)
+            desc_blob = b[:cut_pos] if cut_pos > 0 else b
+            if desc_blob.lower().startswith(date_str.lower()):
+                desc_blob = desc_blob[len(date_str) :]
+            subcat, desc_clean = _barclays_subcategory_and_clean_description(desc_blob)
+            description = _clean_text(desc_clean) or "N/A"
+
+            pending_rows.append(
+                {
+                    "__section": "barclays_pending_debit_card",
+                    "date": date_str or "N/A",
+                    "description": description,
+                    "amount": amt_val,
+                    "used_ocr": bool(used_ocr_hint),
+                }
+            )
+            return True
 
         def _emit_row(date_str: str, blob: str) -> None:
             b = _clean_text(blob)
@@ -935,7 +1572,7 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
             ]):
                 return
 
-            amounts = [m.group(0) for m in CURRENCY_RE.finditer(b)]
+            amounts = [m.group(0) for m in barclays_amount_re.finditer(b)]
             if not amounts:
                 return
 
@@ -943,23 +1580,23 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
             bal_amount_raw = amounts[-1]
             txn_amount_raw = amounts[-2] if len(amounts) >= 2 else amounts[-1]
 
-            txn_clean = _normalize_amount_token(txn_amount_raw)
-            txn_val = _to_float_or_none(txn_clean)
+            txn_disp = _barclays_amount_display(txn_amount_raw)
+            txn_val = _to_float_or_none(_barclays_amount_for_parse(txn_amount_raw))
 
             money_in = ""
             money_out = ""
             if txn_val is not None:
                 if txn_val >= 0:
-                    money_in = txn_clean
+                    money_in = txn_disp
                 else:
-                    money_out = txn_clean.replace("-", "")
+                    money_out = txn_disp
             else:
                 if "(" in txn_amount_raw and ")" in txn_amount_raw:
-                    money_out = txn_clean.replace("(", "").replace(")", "")
+                    money_out = txn_disp
                 else:
-                    money_in = txn_clean
+                    money_in = txn_disp
 
-            balance = _normalize_amount_token(bal_amount_raw) if bal_amount_raw else ""
+            balance = _barclays_amount_display(bal_amount_raw) if bal_amount_raw else ""
 
             # Cut description before the rightmost amount (balance) to avoid leftover amounts in description
             cut_pos = b.rfind(bal_amount_raw)
@@ -971,12 +1608,14 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
                     desc_blob = desc_blob[:txn_pos]
             if desc_blob.lower().startswith(date_str.lower()):
                 desc_blob = desc_blob[len(date_str):]
-            description = _clean_text(desc_blob)
+            subcat, desc_clean = _barclays_subcategory_and_clean_description(desc_blob)
+            description = _clean_text(desc_clean)
             if description and (money_in or money_out):
                 rows.append(
                     {
                         "date": date_str,
                         "description": description,
+                        "subcategory": subcat or "",
                         "money_in": money_in,
                         "money_out": money_out,
                         "balance": balance,
@@ -1004,7 +1643,7 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
                     seg_start = m.start()
                     seg_end = matches[idx + 1].start() if idx + 1 < len(matches) else len(joined)
                     seg = joined[seg_start:seg_end]
-                    seg_date = _clean_text(m.group(1))
+                    seg_date = _find_barclays_date(seg)
                     _emit_row(seg_date, seg)
             else:
                 _emit_row(current_date, joined)
@@ -1015,6 +1654,25 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
         for _i, line in enumerate(lines):
             date_str = _find_barclays_date(line)
             low = line.lower()
+
+            if "pending debit card transactions" in low:
+                _flush_current()
+                in_pending_debit_card = True
+                continue
+
+            if in_pending_debit_card:
+                if any(k in low for k in [
+                    'date description money in money out balance',
+                    'transactions between',
+                    'available balance',
+                    "last night's balance",
+                    'overdraft',
+                ]):
+                    in_pending_debit_card = False
+                else:
+                    handled = _try_emit_pending_row(line)
+                    if handled:
+                        continue
 
             if date_str:
                 _flush_current()
@@ -1031,8 +1689,8 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
             current_parts.append(line)
 
         _flush_current()
-        
-        return rows
+
+        return pending_rows + rows
 
     # First try Barclays-specific parsing
     if _looks_like_barclays_statement(cleaned):
@@ -1040,64 +1698,8 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
         if barclays_rows:
             return barclays_rows
 
-    # Fallback to original parsing logic
-    rows: List[Dict[str, Any]] = []
-    for ln in cleaned:
-        date_str = _find_date_in_line(ln)
-        if not date_str:
-            continue
-
-        amounts_raw = [m.group(0) for m in CURRENCY_RE.finditer(ln)]
-        if len(amounts_raw) < 1:  # Reduced requirement from 2 to 1
-            continue
-
-        amounts = [_normalize_amount_token(a) for a in amounts_raw]
-        
-        money_in = ""
-        money_out = ""
-        amount_val: Optional[float] = None
-        balance = ""
-
-        if len(amounts) >= 2:
-            a_txn, a_bal = amounts[0], amounts[-1]
-            txn_val = _to_float_or_none(a_txn)
-            money_in = a_txn if (txn_val is not None and txn_val > 0) else ""
-            money_out = a_txn if (txn_val is not None and txn_val < 0) else (a_txn if not money_in else "")
-            balance = a_bal
-            amount_val = txn_val
-        else:
-            # Single amount case
-            a_txn = amounts[0]
-            txn_val = _to_float_or_none(a_txn)
-            money_in = a_txn if (txn_val is not None and txn_val > 0) else ""
-            money_out = a_txn if (txn_val is not None and txn_val < 0) else (a_txn if not money_in else "")
-            balance = ""
-            amount_val = txn_val
-            
-        # Extract description
-        first_amt_match = CURRENCY_RE.search(ln)
-        desc_part = ""
-        if first_amt_match:
-            desc_part = ln[: first_amt_match.start()]
-        if desc_part.lower().startswith(date_str.lower()):
-            desc_part = desc_part[len(date_str) :]
-        description = _clean_text(desc_part)
-        
-        if not description:
-            continue
-
-        rows.append(
-            {
-                "date": date_str,
-                "description": description,
-                "money_in": money_in,
-                "money_out": money_out,
-                "balance": balance,
-                "amount": amount_val,
-                "used_ocr": bool(used_ocr_hint),
-            }
-        )
-
+    # Generic, date-anchored parser (multi-line safe). Emits rows even when amount/description is missing.
+    rows = _extract_generic_transactions(cleaned)
     return rows
 
 
@@ -1182,6 +1784,41 @@ def _extract_invoice_fields(lines: List[str]) -> Dict[str, Any]:
                 return _to_float_or_none(m.group(0))
 
             for j in range(1, 4):
+
+                if i + j >= len(cleaned):
+
+                    break
+
+                nxt = cleaned[i + j]
+
+                m2 = CURRENCY_RE.search(nxt)
+
+                if m2:
+
+                    return _to_float_or_none(m2.group(0))
+
+        return None
+
+
+
+    def _find_amount_after_phrase_spanning(phrases: List[str]) -> Optional[float]:
+
+        # OCR may split labels like "TOTAL"/"DUE" across lines (and/or place the £ amount on the next line).
+        # This scans the matching line and a short forward window.
+        for i, ln in enumerate(cleaned[:900]):
+
+            low = ln.lower()
+
+            if not any(p in low for p in phrases):
+
+                continue
+
+            m = CURRENCY_RE.search(ln)
+            if m:
+
+                return _to_float_or_none(m.group(0))
+
+            for j in range(1, 6):
 
                 if i + j >= len(cleaned):
 
@@ -1703,11 +2340,12 @@ def _extract_invoice_fields(lines: List[str]) -> Dict[str, Any]:
 
 
 
-        buying_price = _find_amount_after_phrase(["total due"])
+        buying_price = _find_amount_after_phrase_spanning(["total due", "total\u00a0due", "total  due"])
 
         if buying_price is None:
 
-            buying_price = _find_amount_after_phrase(["total"])  # fallback
+            # Fallback: look for TOTAL label (often appears as "TOTAL £") near bottom
+            buying_price = _find_amount_after_phrase_spanning(["total £", "total\u00a3", "total"])  # fallback
 
 
 
@@ -2171,6 +2809,10 @@ def _parse_money(value: str) -> float:
 
 
 
+    s = s.replace("Â£", "£")
+
+    s = s.replace("GBP", "").replace("gbp", "")
+
     s = s.replace("£", "").replace("$", "").replace("€", "")
 
     s = s.replace(",", "").replace(" ", "")
@@ -2183,7 +2825,19 @@ def _parse_money(value: str) -> float:
 
 
 
-    amt = float(s)
+    m = re.search(r"-?\d+(?:\.\d{1,2})?", s)
+
+    if not m:
+
+        raise ValueError("Invalid amount")
+
+
+
+    amt = float(m.group(0))
+
+    if amt < 0:
+
+        return amt
 
     return -amt if neg else amt
 
@@ -2242,13 +2896,96 @@ def _invoice_tesseract_available() -> Tuple[bool, str]:
     return _tesseract_available()
 
 
+def _invoice_score_text_lines(lines: List[str]) -> int:
+
+    cleaned = [_clean_text(x) for x in lines]
+    cleaned = [x for x in cleaned if x]
+    if not cleaned:
+        return -1
+
+    t = "\n".join(cleaned).lower()
+    score = 0
+
+    if "invoice" in t:
+        score += 6
+    if "document" in t and "date" in t:
+        score += 6
+    if "total" in t:
+        score += 4
+    if "total due" in t:
+        score += 8
+    if "vat" in t:
+        score += 2
+    if "bca" in t or "british car auctions" in t:
+        score += 4
+
+    score += len(re.findall(r"\b\d{1,2}/\d{1,2}/\d{2,4}\b", t)) * 2
+    score += len(CURRENCY_RE.findall(t)) * 2
+
+    # Prefer outputs that look like real text and have enough content.
+    score += min(len(t) // 80, 30)
+    return score
+
+
+def _invoice_extract_text_lines_from_pdf_without_ocr(pdf_path: str) -> List[str]:
+
+    # First try the standard fast extractor.
+    base = _extract_text_lines_from_pdf_without_ocr(pdf_path)
+
+    # For rotated / multi-column digital PDFs, block-based extraction (x/y ordered)
+    # can preserve reading order better than plain text extraction.
+    alt: List[str] = []
+    if fitz is not None:
+        try:
+            doc = fitz.open(pdf_path)  # type: ignore[union-attr]
+            for page in doc:
+                try:
+                    blocks = page.get_text("blocks")
+                except Exception:
+                    blocks = []
+
+                # blocks: (x0, y0, x1, y1, "text", block_no, block_type)
+                parts: List[str] = []
+                try:
+                    blocks_sorted = sorted(blocks, key=lambda b: (float(b[1]), float(b[0])))
+                except Exception:
+                    blocks_sorted = blocks
+
+                for b in blocks_sorted:
+                    try:
+                        txt = b[4]
+                    except Exception:
+                        txt = ""
+                    if txt:
+                        parts.append(str(txt))
+
+                if parts:
+                    alt.extend("\n".join(parts).splitlines())
+        except Exception:
+            alt = []
+
+    base_clean = [_clean_text(x) for x in base]
+    base_clean = [x for x in base_clean if x]
+    alt_clean = [_clean_text(x) for x in alt]
+    alt_clean = [x for x in alt_clean if x]
+
+    if not alt_clean:
+        return base_clean
+    if not base_clean:
+        return alt_clean
+
+    sb = _invoice_score_text_lines(base_clean)
+    sa = _invoice_score_text_lines(alt_clean)
+    return alt_clean if sa > sb else base_clean
+
+
 
 def _invoice_extract_text_lines_from_pdf_with_ocr(pdf_path: str, force_ocr: bool = False) -> Tuple[List[str], bool]:
 
     lines: List[str] = []
 
     if not force_ocr:
-        cleaned = _extract_text_lines_from_pdf_without_ocr(pdf_path)
+        cleaned = _invoice_extract_text_lines_from_pdf_without_ocr(pdf_path)
         if cleaned:
             return cleaned, False
 
@@ -2523,6 +3260,292 @@ def _invoice_ocr_bca_fields(pdf_path: str) -> Dict[str, Any]:
     if img is None:
 
         return out
+
+
+
+    def _deepseek_ocr_roi(rel_box: Tuple[float, float, float, float], prompt: str) -> str:
+
+        if not deepseek_enabled or Image is None:
+
+            return ""
+
+        try:
+
+            base_img = _auto_crop_to_red_border(img)
+
+            W, H = base_img.size
+
+            lx, ty, rx, by = rel_box
+
+            crop = base_img.crop((int(lx * W), int(ty * H), int(rx * W), int(by * H)))
+
+            crop = crop.resize((max(1, crop.size[0] * 2), max(1, crop.size[1] * 2)))
+
+            try:
+
+                crop = _invoice_remove_red_print(crop)
+
+            except Exception:
+
+                pass
+
+            try:
+
+                crop = _invoice_preprocess_handwriting(crop)
+
+            except Exception:
+
+                pass
+
+            buf = io.BytesIO()
+
+            crop.save(buf, format="PNG")
+
+            txt = _deepseek_vision_ocr_text(buf.getvalue(), prompt=prompt)
+
+            return _clean_text(txt)
+
+        except Exception:
+
+            return ""
+
+
+
+    if deepseek_enabled:
+
+        try:
+
+            def _norm_colour(v: str) -> str:
+
+                s = _clean_text(v).upper()
+
+                s = re.sub(r"[^A-Z ]", " ", s)
+
+                s = re.sub(r"\s{2,}", " ", s).strip()
+
+                if not s:
+
+                    return ""
+
+                tok = s.split(" ")[0]
+
+                return tok
+
+
+
+            def _norm_model(v: str) -> str:
+
+                s = _clean_text(v).upper()
+
+                s = re.sub(r"[^A-Z0-9 \-]", " ", s)
+
+                s = re.sub(r"\s{2,}", " ", s).strip()
+
+                if not s:
+
+                    return ""
+
+                s = re.sub(r"\bMODEL\b", " ", s)
+
+                s = re.sub(r"\bTYPE\b", " ", s)
+
+                s = re.sub(r"\s{2,}", " ", s).strip()
+
+                parts = s.split(" ")
+
+                return (parts[0] if parts else s)[:60]
+
+            date_txt = _deepseek_ocr_roi(
+
+                (0.72, 0.13, 0.95, 0.19),
+
+                "Read the handwritten Date field. Return only the date in dd/mm/yy or dd/mm/yyyy format.",
+
+            )
+
+            m = re.search(r"\b(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})\b", date_txt)
+
+            if m:
+
+                out["document_date"] = _clean_text(m.group(1)).replace("-", "/")
+
+            if not _is_valid_uk_date(out.get("document_date")):
+
+                date_txt2 = _deepseek_ocr_roi(
+
+                    (0.62, 0.10, 0.98, 0.22),
+
+                    "Extract the handwritten Date value only (dd/mm/yy or dd/mm/yyyy).",
+
+                )
+
+                m = re.search(r"\b(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})\b", date_txt2)
+
+                if m and _is_valid_uk_date(m.group(1).replace("-", "/")):
+
+                    out["document_date"] = _clean_text(m.group(1)).replace("-", "/")
+
+
+
+            sup_txt = _deepseek_ocr_roi(
+
+                (0.13, 0.155, 0.55, 0.205),
+
+                "Read the handwritten 'Sold by' name. Return only the name (no extra words).",
+
+            )
+
+            if sup_txt:
+
+                out["supplier"] = _normalize_supplier(sup_txt)[:120]
+
+
+
+            addr_txt = _deepseek_ocr_roi(
+
+                (0.13, 0.205, 0.55, 0.255),
+
+                "Read the handwritten address under 'Sold by'. Return only the address line.",
+
+            )
+
+            if addr_txt:
+
+                addr_clean = _clean_text(addr_txt)
+
+                if addr_clean and (not _clean_text(out.get("supplier"))):
+
+                    out["supplier"] = _normalize_supplier(addr_clean)[:120]
+
+                elif addr_clean and _clean_text(out.get("supplier")):
+
+                    out["supplier"] = _clean_text(out.get("supplier") + " " + addr_clean)[:120]
+
+
+
+            make_txt = _deepseek_ocr_roi(
+
+                (0.20, 0.295, 0.55, 0.345),
+
+                "Read the handwritten vehicle Make. Return only the make.",
+
+            )
+
+            if make_txt:
+
+                out["make"] = _normalize_make(make_txt)[:80]
+
+
+
+            model_txt = _deepseek_ocr_roi(
+
+                (0.20, 0.335, 0.55, 0.385),
+
+                "Read the handwritten vehicle Model/Type. Return only the model/type.",
+
+            )
+
+            if model_txt:
+
+                out["model"] = _norm_model(model_txt)
+
+
+
+            colour_txt = _deepseek_ocr_roi(
+
+                (0.20, 0.375, 0.55, 0.425),
+
+                "Read the handwritten vehicle Colour. Return only the colour.",
+
+            )
+
+            if colour_txt:
+
+                out["colour"] = _norm_colour(colour_txt)
+
+
+
+            reg_txt = _deepseek_ocr_roi(
+
+                (0.76, 0.37, 0.95, 0.44),
+
+                "Read the handwritten UK Registration Number (VRM). Return only the registration like AB12 CDE.",
+
+            )
+
+            if reg_txt:
+
+                m2 = re.search(r"\b([A-Z]{2}[0-9O]{2}\s*[A-Z]{3})\b", reg_txt.upper())
+
+                if m2:
+
+                    reg_raw = _clean_text(m2.group(1)).upper().replace(" ", "")
+
+                    reg_raw = reg_raw[:2] + reg_raw[2:4].replace("O", "0") + reg_raw[4:]
+
+                    out["reg_no"] = reg_raw[:4] + " " + reg_raw[4:]
+
+            if not _clean_text(out.get("reg_no")):
+
+                reg_txt2 = _deepseek_ocr_roi(
+
+                    (0.74, 0.35, 0.97, 0.47),
+
+                    "Extract the handwritten UK Registration Number (VRM) only.",
+
+                )
+
+                m2 = re.search(r"\b([A-Z]{2}[0-9O]{2}\s*[A-Z]{3})\b", reg_txt2.upper())
+
+                if m2:
+
+                    reg_raw = _clean_text(m2.group(1)).upper().replace(" ", "")
+
+                    reg_raw = reg_raw[:2] + reg_raw[2:4].replace("O", "0") + reg_raw[4:]
+
+                    out["reg_no"] = reg_raw[:4] + " " + reg_raw[4:]
+
+
+
+            price_txt = _deepseek_ocr_roi(
+
+                (0.70, 0.545, 0.92, 0.62),
+
+                "Read the handwritten price (amount). Return only the numeric amount, optionally with £.",
+
+            )
+
+            if price_txt:
+
+                v = _pick_invoice_price(price_txt)
+
+                if v is not None:
+
+                    out["buying_price"] = float(v)
+
+                    out["non_vat"] = float(v)
+
+            if out.get("buying_price") in (None, ""):
+
+                price_txt2 = _deepseek_ocr_roi(
+
+                    (0.66, 0.52, 0.96, 0.65),
+
+                    "Extract the handwritten price amount only (e.g., 1500 or £1500).",
+
+                )
+
+                v2 = _pick_invoice_price(price_txt2)
+
+                if v2 is not None:
+
+                    out["buying_price"] = float(v2)
+
+                    out["non_vat"] = float(v2)
+
+        except Exception:
+
+            pass
 
 
 
@@ -3212,9 +4235,16 @@ def _invoice_ocr_used_vehicle_purchase_fields(pdf_path: str) -> Dict[str, Any]:
 
     out: Dict[str, Any] = {}
 
+    deepseek_enabled = (
+        OCR_PROVIDER == "deepseek"
+        and httpx is not None
+        and bool(DEEPSEEK_API_KEY)
+        and bool(DEEPSEEK_OCR2_URL)
+    )
+
     ok, _detail = _invoice_tesseract_available()
 
-    if not ok or pytesseract is None:
+    if (not deepseek_enabled) and (not ok or pytesseract is None):
 
         return out
 
@@ -5030,26 +6060,126 @@ async def convert_bank_statements(request: Request) -> JSONResponse:
     job_folder = os.path.join(OUTPUT_DIR, job_id)
     os.makedirs(job_folder, exist_ok=True)
     all_rows: List[Dict[str, Any]] = []
+    all_pending_rows: List[Dict[str, Any]] = []
     per_file_csv_paths: List[Tuple[str, str]] = []
     warnings: List[str] = []
     fieldnames = ["source_file", "account", "subcategory", "date", "description", "money_in", "money_out", "amount", "balance"]
     combined_preamble: Optional[List[List[str]]] = None
-    seen_any_pdf = False
+    combined_preamble_is_barclays = False
+    seen_any_file = False
     skipped: List[str] = []
+
+    def _read_csv_bytes_to_rows(content_bytes: bytes) -> List[Dict[str, Any]]:
+        try:
+            text = content_bytes.decode("utf-8-sig", errors="replace")
+        except Exception:
+            try:
+                text = content_bytes.decode("latin-1", errors="replace")
+            except Exception:
+                return []
+
+        # Sniff delimiter lightly
+        sample = text[:2000]
+        try:
+            dialect = csv.Sniffer().sniff(sample, delimiters=[",", "\t", ";", "|"])
+        except Exception:
+            dialect = csv.excel
+
+        f = io.StringIO(text)
+        try:
+            reader = csv.DictReader(f, dialect=dialect)
+        except Exception:
+            f.seek(0)
+            reader = csv.DictReader(f)
+
+        def _pick(d: Dict[str, Any], keys: List[str]) -> Any:
+            for k in keys:
+                for kk, vv in d.items():
+                    if _clean_text(kk).lower() == k:
+                        return vv
+            return ""
+
+        out: List[Dict[str, Any]] = []
+        for row in reader:
+            if not row:
+                continue
+            date_v = _pick(row, ["date", "transaction date", "txn date"])
+            desc_v = _pick(row, ["description", "transaction", "details", "narrative"])
+            mi_v = _pick(row, ["money_in", "money in", "credit", "in"])
+            mo_v = _pick(row, ["money_out", "money out", "debit", "out"])
+            bal_v = _pick(row, ["balance", "running balance"])
+            amt_v = _pick(row, ["amount", "transaction amount", "txn amount"])
+            sub_v = _pick(row, ["subcategory", "category", "type"])
+            acc_v = _pick(row, ["account", "account number"])
+
+            rr: Dict[str, Any] = {
+                "source_file": "",
+                "account": _clean_text(acc_v) or "",
+                "subcategory": _clean_text(sub_v) or "",
+                "date": _clean_text(date_v) or "",
+                "description": _clean_text(desc_v) or "",
+                "money_in": _clean_text(mi_v) or "",
+                "money_out": _clean_text(mo_v) or "",
+                "balance": _clean_text(bal_v) or "",
+            }
+
+            if amt_v not in (None, ""):
+                rr["amount"] = _to_float_or_none(amt_v)
+            else:
+                rr["amount"] = _to_float_or_none(rr.get("money_in") or rr.get("money_out") or "")
+
+            # Skip empty rows
+            if not any(_clean_text(rr.get(k)) for k in ["date", "description", "money_in", "money_out", "balance"]):
+                continue
+            out.append(rr)
+
+        return out
+
     for f in files:
         filename = os.path.basename(f.filename or "statement.pdf")
         content_type = (f.content_type or "").lower()
         ext = os.path.splitext(filename.lower())[1]
         is_pdf = ext == ".pdf" or content_type == "application/pdf"
         is_image = (content_type.startswith("image/") or ext in {".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff", ".webp"})
-        if not is_pdf and not is_image:
+        is_csv = ext == ".csv" or content_type in {"text/csv", "application/csv", "application/vnd.ms-excel"}
+        if not is_pdf and not is_image and not is_csv:
             skipped.append(f"{filename} ({content_type or 'unknown'})")
             continue
-        seen_any_pdf = True
+        seen_any_file = True
         tmp_path = os.path.join(job_folder, filename)
         content = await f.read()
         with open(tmp_path, "wb") as out:
             out.write(content)
+
+        if is_csv:
+            csv_rows = _read_csv_bytes_to_rows(content)
+            normalized: List[Dict[str, Any]] = []
+            for r in csv_rows:
+                rr = {
+                    "source_file": filename,
+                    "account": r.get("account") or "",
+                    "subcategory": r.get("subcategory")
+                    or _infer_subcategory(
+                        r.get("description") or "",
+                        r.get("amount"),
+                        r.get("money_in"),
+                        r.get("money_out"),
+                    ),
+                    "date": r.get("date"),
+                    "description": r.get("description"),
+                    "money_in": r.get("money_in"),
+                    "money_out": r.get("money_out"),
+                    "amount": r.get("amount"),
+                    "balance": r.get("balance"),
+                }
+                normalized.append(rr)
+
+            csv_name = os.path.splitext(filename)[0] + ".csv"
+            csv_path = os.path.join(job_folder, csv_name)
+            _write_csv(csv_path, normalized, fieldnames)
+            per_file_csv_paths.append((csv_name, csv_path))
+            all_rows.extend(normalized)
+            continue
 
         used_ocr = False
         lines: List[str] = []
@@ -5103,30 +6233,36 @@ async def convert_bank_statements(request: Request) -> JSONResponse:
                     account = str(info.get("account") or "")
                 barclays_preamble = _barclays_header_preamble_lines(info)
             combined_preamble = barclays_preamble
+            combined_preamble_is_barclays = True
         monzo_preamble: Optional[List[List[str]]] = None
         if _looks_like_monzo_statement(lines):
             minfo = _extract_monzo_header_info(lines)
             monzo_preamble = _monzo_header_preamble_lines(minfo)
             combined_preamble = monzo_preamble
+            combined_preamble_is_barclays = False
         virgin_preamble: Optional[List[List[str]]] = None
         if _looks_like_virgin_money_statement(lines):
             vinfo = _extract_virgin_money_header_info(lines)
             virgin_preamble = _virgin_money_header_preamble_lines(vinfo)
             combined_preamble = virgin_preamble
+            combined_preamble_is_barclays = False
         tide_preamble: Optional[List[List[str]]] = None
         if _looks_like_tide_statement(lines):
             tinfo = _extract_tide_header_info(lines)
             tide_preamble = _tide_header_preamble_lines(tinfo)
             combined_preamble = tide_preamble
+            combined_preamble_is_barclays = False
         revolut_preamble: Optional[List[List[str]]] = None
         if _looks_like_revolut_business_statement(lines):
             rinfo = _extract_revolut_business_header_info(lines)
             revolut_preamble = _revolut_business_preamble_lines(rinfo)
             combined_preamble = revolut_preamble
+            combined_preamble_is_barclays = False
         rows = convert_pdf_to_rows(tmp_path, preextracted_lines=lines, used_ocr_hint=used_ocr)
         normalized: List[Dict[str, Any]] = []
         for r in rows:
             rr = {
+                "__section": r.get("__section"),
                 "source_file": filename,
                 "account": account,
                 "subcategory": r.get("subcategory")
@@ -5144,6 +6280,8 @@ async def convert_bank_statements(request: Request) -> JSONResponse:
                 "balance": r.get("balance"),
             }
             normalized.append(rr)
+        pending_norm = [r for r in normalized if r.get("__section") == "barclays_pending_debit_card"]
+        main_norm = [r for r in normalized if r.get("__section") != "barclays_pending_debit_card"]
         if not normalized and not used_ocr:
             if is_pdf:
                 lines2, used_ocr2 = _extract_text_lines_from_pdf_with_ocr(tmp_path, force_ocr=True)
@@ -5182,27 +6320,30 @@ async def convert_bank_statements(request: Request) -> JSONResponse:
         csv_name = os.path.splitext(filename)[0] + ".csv"
         csv_path = os.path.join(job_folder, csv_name)
         if barclays_preamble:
-            _write_csv_with_preamble(csv_path, barclays_preamble, normalized, fieldnames)
+            _write_barclays_csv_with_pending(csv_path, barclays_preamble, pending_norm, main_norm, fieldnames)
         elif monzo_preamble:
-            _write_csv_with_preamble(csv_path, monzo_preamble, normalized, fieldnames)
+            _write_csv_with_preamble(csv_path, monzo_preamble, main_norm, fieldnames)
         elif virgin_preamble:
-            _write_csv_with_preamble(csv_path, virgin_preamble, normalized, fieldnames)
+            _write_csv_with_preamble(csv_path, virgin_preamble, main_norm, fieldnames)
         elif tide_preamble:
-            _write_csv_with_preamble(csv_path, tide_preamble, normalized, fieldnames)
+            _write_csv_with_preamble(csv_path, tide_preamble, main_norm, fieldnames)
         elif revolut_preamble:
-            _write_csv_with_preamble(csv_path, revolut_preamble, normalized, fieldnames)
+            _write_csv_with_preamble(csv_path, revolut_preamble, main_norm, fieldnames)
         else:
-            _write_csv(csv_path, normalized, fieldnames)
+            _write_csv(csv_path, main_norm, fieldnames)
         per_file_csv_paths.append((csv_name, csv_path))
-        all_rows.extend(normalized)
-    if not seen_any_pdf:
-        msg = "No valid PDF files found"
+        all_rows.extend(main_norm)
+        all_pending_rows.extend(pending_norm)
+    if not seen_any_file:
+        msg = "No valid files found"
         if skipped:
             msg += ". Skipped: " + ", ".join(skipped[:20])
         return JSONResponse({"error": msg}, status_code=400)
     combined_path = os.path.join(job_folder, "combined.csv")
     # Always include preamble if available, regardless of file count
-    if combined_preamble:
+    if combined_preamble and combined_preamble_is_barclays:
+        _write_barclays_csv_with_pending(combined_path, combined_preamble, all_pending_rows, all_rows, fieldnames)
+    elif combined_preamble:
         _write_csv_with_preamble(combined_path, combined_preamble, all_rows, fieldnames)
     else:
         _write_csv(combined_path, all_rows, fieldnames)
@@ -5354,7 +6495,163 @@ async def invoice_convert(request: Request) -> JSONResponse:
 
 
 
-        lines, used_ocr = _invoice_extract_text_lines_from_pdf_with_ocr(tmp_pdf)
+        fn_low = filename.lower()
+
+        # Always try the fast region OCR first (cheap) and accept it only when it yields
+        # plausible key fields. This avoids long full-page OCR timeouts on scanned PDFs,
+        # even when the filename doesn't contain useful hints.
+        quick_used_vehicle = bool(
+            ("used vehicle" in fn_low and "invoice" in fn_low)
+            or ("vehicle purchase" in fn_low and "invoice" in fn_low)
+            or ("used_vehicle" in fn_low and "invoice" in fn_low)
+        )
+
+        # Fast-path: for used vehicle purchase invoices, avoid full-PDF OCR (slow on scanned PDFs).
+        # Try first-page region OCR (DeepSeek/Tesseract) immediately.
+        parsed: Dict[str, Any] = {}
+
+        used_ocr = False
+
+        is_used_vehicle_purchase = False
+
+        if quick_used_vehicle:
+
+            try:
+
+                extra0 = _invoice_ocr_used_vehicle_purchase_fields(tmp_pdf)
+
+            except Exception:
+
+                extra0 = {}
+
+            def _has_key_fields(x: Dict[str, Any]) -> bool:
+
+                if not isinstance(x, dict):
+
+                    return False
+
+                # Require at least one strong identifier (valid date or valid UK VRM).
+                # This prevents accepting noisy OCR output that only contains some random amount.
+                dd = _clean_text(x.get("document_date")).replace("-", "/")
+                rn = _clean_text(x.get("reg_no")).upper()
+                has_date = _is_valid_uk_date(dd)
+                has_vrm = bool(re.search(r"\b[A-Z]{2}[0-9O]{2}\s*[A-Z]{3}\b", rn))
+                has_amount = x.get("buying_price") not in (None, "")
+                return bool((has_date or has_vrm) and has_amount)
+
+
+
+            if extra0 and _has_key_fields(extra0):
+
+                parsed = {
+
+                    "document_date": extra0.get("document_date") or "",
+
+                    "supplier": extra0.get("supplier") or "",
+
+                    "inv_ref_no": "",
+
+                    "make": extra0.get("make") or "",
+
+                    "model": extra0.get("model") or "",
+
+                    "colour": extra0.get("colour") or "",
+
+                    "reg_no": extra0.get("reg_no") or "",
+
+                    "buying_price": extra0.get("buying_price"),
+
+                    "non_vat": extra0.get("non_vat") if extra0.get("non_vat") not in (None, "") else extra0.get("buying_price"),
+
+                    "std_net": "N/A",
+
+                    "vat_amount": "N/A",
+
+                }
+
+                used_ocr = True
+
+                is_used_vehicle_purchase = True
+
+                warnings.append(f"'{filename}': Used fast region OCR for handwritten fields (skipped full-page OCR).")
+
+
+
+            # Structured fallback: when ROI OCR doesn't capture handwriting well, ask DeepSeek to
+            # output strict JSON for the fields from the first page.
+            if (not parsed) and OCR_PROVIDER == "deepseek":
+
+                try:
+
+                    ds = _deepseek_extract_used_vehicle_fields_from_pdf(tmp_pdf)
+
+                except Exception:
+
+                    ds = {}
+
+                if ds and isinstance(ds, dict):
+
+                    dd = _clean_text(ds.get("document_date")).replace("-", "/")
+
+                    rn = _clean_text(ds.get("reg_no")).upper()
+
+                    mreg = re.search(r"\b([A-Z]{2}[0-9O]{2}\s*[A-Z]{3})\b", rn)
+
+                    bp: Any = ds.get("buying_price")
+
+                    try:
+
+                        bp_num = float(bp) if bp not in (None, "") else None
+
+                    except Exception:
+
+                        bp_num = None
+
+                    if _is_valid_uk_date(dd) and mreg and (bp_num is not None and 0 < bp_num < 100000):
+
+                        reg_raw = _clean_text(mreg.group(1)).upper().replace(" ", "")
+
+                        reg_raw = reg_raw[:2] + reg_raw[2:4].replace("O", "0") + reg_raw[4:]
+
+                        parsed = {
+
+                            "document_date": dd,
+
+                            "supplier": _clean_text(ds.get("supplier"))[:120],
+
+                            "inv_ref_no": "",
+
+                            "make": _clean_text(ds.get("make"))[:80],
+
+                            "model": _clean_text(ds.get("model"))[:60],
+
+                            "colour": _clean_text(ds.get("colour"))[:40],
+
+                            "reg_no": reg_raw[:4] + " " + reg_raw[4:],
+
+                            "buying_price": float(bp_num),
+
+                            "non_vat": float(bp_num),
+
+                            "std_net": "N/A",
+
+                            "vat_amount": "N/A",
+
+                        }
+
+                        used_ocr = True
+
+                        is_used_vehicle_purchase = True
+
+                        warnings.append(f"'{filename}': Used DeepSeek structured extraction for handwritten fields.")
+
+
+
+        lines: List[str] = []
+
+        if not is_used_vehicle_purchase:
+
+            lines, used_ocr = _invoice_extract_text_lines_from_pdf_with_ocr(tmp_pdf)
 
         if len(lines) < 1:
 
@@ -5386,25 +6683,27 @@ async def invoice_convert(request: Request) -> JSONResponse:
 
 
 
-        parsed = _extract_invoice_fields(lines)
+        if not parsed:
+
+            parsed = _extract_invoice_fields(lines)
 
 
 
         joined_low = "\n".join([_clean_text(x) for x in lines]).lower()
 
-        fn_low = filename.lower()
-
+        # Avoid overly-broad filename heuristics (e.g. "PURCHASE INV") which can misclassify
+        # unrelated invoices and cause region OCR to overwrite correct totals.
         is_used_vehicle_purchase = (
-
-            "used vehicle purchase invoice" in joined_low
-
-            or "vehicle purchase invoice" in joined_low
-
-            or ("purchase" in fn_low and "inv" in fn_low)
-
+            is_used_vehicle_purchase
+            or ("used vehicle purchase invoice" in joined_low)
+            or ("vehicle purchase invoice" in joined_low)
             or ("used" in fn_low and "vehicle" in fn_low and "invoice" in fn_low)
-
         )
+
+        # If it looks like a BCA invoice, do NOT treat it as used-vehicle unless the explicit phrase exists.
+        is_bca_like = ("british car auctions" in joined_low) or ("document date" in joined_low and bool(re.search(r"\bbca\b", joined_low)))
+        if is_bca_like and ("used vehicle purchase invoice" not in joined_low and "vehicle purchase invoice" not in joined_low):
+            is_used_vehicle_purchase = False
 
 
 
@@ -5462,14 +6761,16 @@ async def invoice_convert(request: Request) -> JSONResponse:
 
             if extra:
 
-                for k, v in extra.items():
+                # Only merge when region OCR has strong identifiers; otherwise it can overwrite totals
+                # with random amounts on rotated/scanned non-matching invoices.
+                ddx = _clean_text(extra.get("document_date")).replace("-", "/")
+                rnx = _clean_text(extra.get("reg_no")).upper()
+                ok_merge = bool((_is_valid_uk_date(ddx) or re.search(r"\b[A-Z]{2}[0-9O]{2}\s*[A-Z]{3}\b", rnx)) and (extra.get("buying_price") not in (None, "")))
 
-                    if v not in (None, ""):
-
-                        parsed[k] = v
-
-                if _clean_text(extra.get("supplier")) or _clean_text(extra.get("make")) or _clean_text(extra.get("reg_no")):
-
+                if ok_merge:
+                    for k, v in extra.items():
+                        if v not in (None, ""):
+                            parsed[k] = v
                     warnings.append(f"'{filename}': Applied region OCR for handwritten fields.")
 
             else:
@@ -5843,6 +7144,10 @@ async def invoice_convert_review(request: Request) -> JSONResponse:
         "inv_ref_no",
 
         "make",
+
+        "model",
+
+        "colour",
 
         "reg_no",
 

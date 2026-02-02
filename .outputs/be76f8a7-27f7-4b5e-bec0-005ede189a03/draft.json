@@ -1,0 +1,30 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "N/A",
+      "supplier": "a eevooeoere eeeee Ocese eeecececes ore r76C 305 wemeeee oe eeeuaneeene ene eeee ee 1 re nw W a fay La oO fy 0 7 a w Ssr",
+      "inv_ref_no": "BJ12 CWT PURCHASE INV",
+      "make": "Don",
+      "reg_no": "BOOK HAS",
+      "buying_price": 222.0,
+      "non_vat": 222.0,
+      "std_net": "N/A",
+      "vat_amount": "N/A"
+    }
+  ]
+}

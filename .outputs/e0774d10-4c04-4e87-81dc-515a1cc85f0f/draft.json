@@ -1,0 +1,32 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "4/05/24",
+      "supplier": "r UIIFNINU UE ee Interm Check rge of 12 OG VAT c f 12 00 00 VAT 1 Scheme DUNT CAI wwe i Va Foe ediate 00 VAT jay startin",
+      "inv_ref_no": "EF09 FBY PURCHASE INV",
+      "make": "start",
+      "reg_no": "GB 188 1552 38",
+      "buying_price": 329.0,
+      "non_vat": 329.0,
+      "std_net": "N/A",
+      "vat_amount": "N/A"
+    }
+  ]
+}

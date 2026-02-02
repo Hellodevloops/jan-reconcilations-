@@ -1,0 +1,407 @@
+Account Number,number
+
+source_file,account,subcategory,date,description,money_in,money_out,amount,balance
+Bank 18352625.pdf,number,Other,1 Feb 2024,Account number: 18352625 Balance on 1 Feb 2024,553.11,,553.11,
+Bank 18352625.pdf,number,Other,1 Feb 2024,-,,,,
+Bank 18352625.pdf,number,Other,29 Feb 2024,Total paid out,35599.18,,35599.18,
+Bank 18352625.pdf,number,Other,29 Feb 2024,Balance on 29 Feb 2024,192.99,,192.99,
+Bank 18352625.pdf,number,Income,29 Feb 2024,Domestic Transfer IMOGEN PRIOR / ref: Reference - Wages,91.50,,91.50,192.99
+Bank 18352625.pdf,number,Income,29 Feb 2024,Domestic Transfer NED RAYNER / ref: Reference - Wages,46.20,,46.20,284.49
+Bank 18352625.pdf,number,Income,29 Feb 2024,Domestic Transfer GEORGE H HOOPER / ref: Wages,1337.08,,1337.08,330.69
+Bank 18352625.pdf,number,Income,29 Feb 2024,Domestic Transfer FRED MITCHELL / ref: Wages,1490.68,,1490.68,1667.77
+Bank 18352625.pdf,number,Transfer,29 Feb 2024,Internal Book Transfer BEETROOT CATERING LTD / ref: Reference - Loan,3000.00,,3000.00,3158.45
+Bank 18352625.pdf,number,Income,29 Feb 2024,Domestic Transfer OJ GAUZA / ref: Wages,1600.33,,1600.33,158.45
+Bank 18352625.pdf,number,Income,29 Feb 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - Wages,1875.27,,1875.27,1758.78
+Bank 18352625.pdf,number,Income,29 Feb 2024,Domestic Transfer AMELIA SCHOLES / ref: Wages,1400.76,,1400.76,3634.05
+Bank 18352625.pdf,number,Transfer,29 Feb 2024,Internal Book Transfer TIDE CAPITAL II LIMITED / ref: Credit Line Loan,4148.69,,4148.69,5034.81
+Bank 18352625.pdf,number,Transfer,29 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,718.52,,718.52,886.12
+Bank 18352625.pdf,number,Transfer,28 Feb 2024,Domestic Transfer GLUTEN FREE DINING / ref: K A POLEBROOK,100.00,,100.00,167.60
+Bank 18352625.pdf,number,Transfer,28 Feb 2024,Domestic Transfer,303.18,,303.18,267.60
+Bank 18352625.pdf,number,Other,28 Feb 2024,"Card Transaction Worship Street, LONDON",23.97,,23.97,570.78
+Bank 18352625.pdf,number,Income,27 Feb 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Wages,200.00,,200.00,594.75
+Bank 18352625.pdf,number,Transfer,27 Feb 2024,Internal Book Transfer TIDE CAPITAL II LIMITED / ref: Credit Line Loan,750.00,,750.00,794.75
+Bank 18352625.pdf,number,Transfer,26 Feb 2024,Domestic Transfer P.W.AMPS LTD / ref: KA POLEBROOK,6205.32,,6205.32,44.75
+Bank 18352625.pdf,number,Transfer,26 Feb 2024,Internal Book Transfer Well Hung Biltong Company / ref: KA POLEBROOK,28.50,,28.50,6250.07
+Bank 18352625.pdf,number,Transfer,26 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1055.96,,1055.96,6278.57
+Bank 18352625.pdf,number,Transfer,26 Feb 2024,Direct Debit DOJOUK / ref: PST1FT-GB00648500,392.09,,392.09,5222.61
+Bank 18352625.pdf,number,Transfer,26 Feb 2024,Direct Debit NFU MUTUAL INS-BC / ref: 002889980,510.52,,510.52,5614.70
+Bank 18352625.pdf,number,Transfer,26 Feb 2024,Direct Debit BIFFA WASTE SERVIC / ref: P42183,308.42,,308.42,6125.22
+Bank 18352625.pdf,number,Transfer,25 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1759.36,,1759.36,6433.64
+Bank 18352625.pdf,number,Other,24 Feb 2024,Card Transaction 632100,151.94,,151.94,4674.28
+Bank 18352625.pdf,number,Transfer,24 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1560.08,,1560.08,4826.22
+Bank 18352625.pdf,number,Other,23 Feb 2024,Card Transaction 632100,15.79,,15.79,3266.14
+Bank 18352625.pdf,number,Transfer,23 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,829.72,,829.72,3281.93
+Bank 18352625.pdf,number,Transfer,22 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,343.80,,343.80,2452.21
+Bank 18352625.pdf,number,Groceries,22 Feb 2024,Direct Debit TESCO MOBILE / ref: 330174659056A-0008,51.49,,51.49,2108.41
+Bank 18352625.pdf,number,Income,21 Feb 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Wages,200.00,,200.00,2159.90
+Bank 18352625.pdf,number,Transfer,21 Feb 2024,Domestic Transfer,790.16,,790.16,2359.90
+Bank 18352625.pdf,number,Transfer,21 Feb 2024,Domestic Transfer,46.00,,46.00,3150.06
+Bank 18352625.pdf,number,Bills,19 Feb 2024,Domestic Transfer CHANDLERS OIL & GAS / ref: KA POLEBROOK,1594.95,,1594.95,3196.06
+Bank 18352625.pdf,number,Transfer,19 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,2203.39,,2203.39,4791.01
+Bank 18352625.pdf,number,Transfer,18 Feb 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Funeral,50.00,,50.00,2587.62
+Bank 18352625.pdf,number,Transfer,18 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1147.52,,1147.52,2637.62
+Bank 18352625.pdf,number,Transfer,17 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,949.96,,949.96,1490.10
+Bank 18352625.pdf,number,Other,17 Feb 2024,Card Transaction,23.98,,23.98,540.14
+Bank 18352625.pdf,number,Other,17 Feb 2024,Card Transaction WELLINGBOROUG,207.35,,207.35,564.12
+Bank 18352625.pdf,number,Transfer,16 Feb 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - Tips,90.00,,90.00,771.47
+Bank 18352625.pdf,number,Transfer,16 Feb 2024,Domestic Transfer FRED MITCHELL / ref: Reference - Tips,90.00,,90.00,861.47
+Bank 18352625.pdf,number,Transfer,16 Feb 2024,Domestic Transfer ANGLE SALLAI / ref: Reference - Tips,50.00,,50.00,951.47
+Bank 18352625.pdf,number,Transfer,16 Feb 2024,Domestic Transfer AMELIA SCHOLES / ref: Reference - Tips,65.00,,65.00,1001.47
+Bank 18352625.pdf,number,Transfer,16 Feb 2024,Domestic Transfer GEORGE H HOOPER / ref: Reference - Tips,68.00,,68.00,1066.47
+Bank 18352625.pdf,number,Other,16 Feb 2024,Card Transaction,399.36,,399.36,1134.47
+Bank 18352625.pdf,number,Other,16 Feb 2024,Card Transaction 632100,150.51,,150.51,1533.83
+Bank 18352625.pdf,number,Transfer,16 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,476.51,,476.51,1684.34
+Bank 18352625.pdf,number,Other,15 Feb 2024,Card Transaction 632100,87.78,,87.78,1207.83
+Bank 18352625.pdf,number,Transfer,15 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1176.12,,1176.12,1295.61
+Bank 18352625.pdf,number,Other,15 Feb 2024,Card Transaction WELLINGBOROUG,254.33,,254.33,119.49
+Bank 18352625.pdf,number,Transfer,15 Feb 2024,Direct Debit PURE GYM LTD / ref: 040600012530010002,17.99,,17.99,373.82
+Bank 18352625.pdf,number,Income,14 Feb 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Reference - Wages,200.00,,200.00,391.81
+Bank 18352625.pdf,number,Transfer,13 Feb 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Cleaning,48.00,,48.00,22.39
+Bank 18352625.pdf,number,Transfer,13 Feb 2024,Internal Book Transfer,22.39,,22.39,
+Bank 18352625.pdf,number,Other,81 period 2024,-01-01 - 20,,,,
+Bank 18352625.pdf,number,Other,24-01-31,N/A,,,,
+Bank 18352625.pdf,number,Transfer,13 Feb 2024,Domestic Transfer ILLYCAFFE UK LIMITED / ref: KA POLEBROOK,77.77,,77.77,617.42
+Bank 18352625.pdf,number,Transfer,12 Feb 2024,Domestic Transfer,98.00,,98.00,695.19
+Bank 18352625.pdf,number,Transfer,12 Feb 2024,Domestic Transfer,1235.95,,1235.95,793.19
+Bank 18352625.pdf,number,Transfer,12 Feb 2024,Domestic Transfer DIGFIELD ALES / ref: KA POLEBROOK,714.00,,714.00,2029.14
+Bank 18352625.pdf,number,Transfer,12 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1985.32,,1985.32,2743.14
+Bank 18352625.pdf,number,Other,12 Feb 2024,Card Transaction LONGTHORPE,122.99,,122.99,757.82
+Bank 18352625.pdf,number,Transfer,12 Feb 2024,Internal Book Transfer TIDE CAPITAL II LIMITED / ref: Credit Line,1961.88,,1961.88,880.81
+Bank 18352625.pdf,number,Transfer,12 Feb 2024,Internal Book Transfer TIDE CAPITAL II LIMITED / ref: Credit Line,65.00,,65.00,2842.69
+Bank 18352625.pdf,number,Transfer,11 Feb 2024,Domestic Transfer ANGLE SALLAI / ref: Reference - TIPS,59.00,,59.00,2907.69
+Bank 18352625.pdf,number,Transfer,11 Feb 2024,Domestic Transfer FRED MITCHELL / ref: Reference - TIPS,100.00,,100.00,2966.69
+Bank 18352625.pdf,number,Transfer,11 Feb 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - TIPS,61.00,,61.00,3066.69
+Bank 18352625.pdf,number,Transfer,11 Feb 2024,Domestic Transfer AMELIA SCHOLES / ref: Reference - TIPS,70.00,,70.00,3127.69
+Bank 18352625.pdf,number,Transfer,11 Feb 2024,Domestic Transfer KEITH MICKLEBURGH / ref: Reference - Tips,500.00,,500.00,3197.69
+Bank 18352625.pdf,number,Bills,11 Feb 2024,Domestic Transfer KEITH MICKLEBURGH / ref: Reference - Rent,2000.00,,2000.00,3697.69
+Bank 18352625.pdf,number,Transfer,11 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,2980.28,,2980.28,5697.69
+Bank 18352625.pdf,number,Other,10 Feb 2024,Card Transaction 632100,85.70,,85.70,2717.41
+Bank 18352625.pdf,number,Transfer,10 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1788.60,,1788.60,2803.11
+Bank 18352625.pdf,number,Other,10 Feb 2024,"Card Transaction TOWNSHIP, PETERBOROUGH",94.01,,94.01,1014.51
+Bank 18352625.pdf,number,Income,9 Feb 2024,Domestic Transfer ABIGAIL EWEN / ref: Beetroot wages,220.00,,220.00,1108.52
+Bank 18352625.pdf,number,Transfer,9 Feb 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Reference - Tios,130.00,,130.00,1328.52
+Bank 18352625.pdf,number,Transfer,9 Feb 2024,Domestic Transfer M BRIGGS / ref: K A POLEBROOK,130.00,,130.00,1458.52
+Bank 18352625.pdf,number,Other,9 Feb 2024,Card Transaction,570.96,,570.96,1588.52
+Bank 18352625.pdf,number,Transfer,9 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,913.00,,913.00,2159.48
+Bank 18352625.pdf,number,Transfer,8 Feb 2024,Domestic Transfer KING BROS LADY LODGE LTD / ref: KA POLEBROOK,2043.95,,2043.95,1246.48
+Bank 18352625.pdf,number,Other,8 Feb 2024,Card Transaction,76.63,,76.63,3290.43
+Bank 18352625.pdf,number,Transfer,8 Feb 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Cleaning,48.00,,48.00,3367.06
+Bank 18352625.pdf,number,Transfer,8 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60136916OUT YL60,551.16,,551.16,3415.06
+Bank 18352625.pdf,number,Other,8 Feb 2024,Card Transaction LONDON,7.99,,7.99,2863.90
+Bank 18352625.pdf,number,Other,8 Feb 2024,Card Transaction,52.97,,52.97,2871.89
+Bank 18352625.pdf,number,Transfer,8 Feb 2024,Direct Debit AIG LIFE LTD / ref: P465870200-B,497.35,,497.35,2924.86
+Bank 18352625.pdf,number,Transfer,6 Feb 2024,Domestic Transfer J AND S CAPP / ref: KA POLEBROOK,200.00,,200.00,3422.21
+Bank 18352625.pdf,number,Transfer,6 Feb 2024,Domestic Transfer MEE FARMS / ref: KA POLEBROOK,35.00,,35.00,3622.21
+Bank 18352625.pdf,number,Transfer,6 Feb 2024,Domestic Transfer,621.46,,621.46,3657.21
+Bank 18352625.pdf,number,Transfer,6 Feb 2024,Direct Debit BT GROUP PLC / ref: GP00942675-000027,88.73,,88.73,4278.67
+Bank 18352625.pdf,number,Transfer,6 Feb 2024,Direct Debit NEST / ref: IT000007260786,399.28,,399.28,4367.40
+Bank 18352625.pdf,number,Transfer,5 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60136916OUT YL60,1246.16,,1246.16,4766.68
+Bank 18352625.pdf,number,Transfer,4 Feb 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Reference - Tips,200.00,,200.00,3520.52
+Bank 18352625.pdf,number,Transfer,4 Feb 2024,Domestic Transfer GEORGE H HOOPER / ref: Reference - Tips,52.00,,52.00,3720.52
+Bank 18352625.pdf,number,Transfer,4 Feb 2024,Domestic Transfer OJ GAUZA / ref: Reference - Tip,53.00,,53.00,3772.52
+Bank 18352625.pdf,number,Transfer,4 Feb 2024,Domestic Transfer ANGLE SALLAI / ref: Reference - Tips,54.00,,54.00,3825.52
+Bank 18352625.pdf,number,Transfer,4 Feb 2024,Domestic Transfer FRED MITCHELL / ref: Reference - Tips,80.00,,80.00,3879.52
+Bank 18352625.pdf,number,Transfer,4 Feb 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - Tips,80.00,,80.00,3959.52
+Bank 18352625.pdf,number,Cash,4 Feb 2024,Internal Book Transfer TPL Ltd / ref: Tide fees: Cashback plan payment,59.99,,59.99,4039.52
+Bank 18352625.pdf,number,Transfer,4 Feb 2024,Domestic Transfer KEITH MICKLEBURGH / ref: Reference - Tips,500.00,,500.00,4099.51
+Bank 18352625.pdf,number,Transfer,4 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60136916OUT YL60,2854.36,,2854.36,
+Bank 18352625.pdf,number,Other,51 WAITROSE 758,"- 66 EAST ROAD, OUNDLE",,,,
+Bank 18352625.pdf,number,Other,3 Feb 2024,Card Transaction,85.55,,85.55,1745.15
+Bank 18352625.pdf,number,Transfer,3 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60136916OUT YL60,1001.52,,1001.52,1830.70
+Bank 18352625.pdf,number,Other,2 Feb 2024,Card Transaction LANE,69.20,,69.20,829.18
+Bank 18352625.pdf,number,Income,2 Feb 2024,Domestic Transfer KEITH MICKLEBURGH / ref: Wages,1000.00,,1000.00,898.38
+Bank 18352625.pdf,number,Transfer,2 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60136916OUT YL60,803.12,,803.12,1898.38
+Bank 18352625.pdf,number,Transfer,1 Feb 2024,Domestic Transfer MICHELLE JEWEL / ref: KA POLEBROOK,325.00,,325.00,1095.26
+Bank 18352625.pdf,number,Transfer,1 Feb 2024,Internal Book Transfer Well Hung Biltong Company / ref: KA POLEBROOK,28.50,,28.50,1420.26
+Bank 18352625.pdf,number,Transfer,1 Feb 2024,Domestic Transfer YouLend Limited / ref: YL60136916OUT YL60,973.52,,973.52,1448.76
+Bank 18352625.pdf,number,Transfer,1 Feb 2024,Direct Debit DVLA-OW18GCF / ref: 000000000059657102,49.87,,49.87,475.24
+Bank 18352625.pdf,number,Transfer,1 Feb 2024,Direct Debit DVLA-LC60LRL / ref: 000000000058954808,28.00,,28.00,525.11
+Bank 18352625.pdf,number,Other,1 Mar 2024,Account number: 18352625 Balance on 1 Mar 2024,192.99,,192.99,
+Bank 18352625.pdf,number,Other,1 Mar 2024,-,,,,
+Bank 18352625.pdf,number,Other,31 Mar 2024,Total paid out,35755.65,,35755.65,
+Bank 18352625.pdf,number,Other,1 Apr 2024,Balance on 1 Apr 2024,3860.45,,3860.45,
+Bank 18352625.pdf,number,Income,31 Mar 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Wages,200.00,,200.00,3860.45
+Bank 18352625.pdf,number,Transfer,31 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1903.76,,1903.76,4060.45
+Bank 18352625.pdf,number,Other,31 Mar 2024,Card Transaction WELLINGBOROUG,99.39,,99.39,2156.69
+Bank 18352625.pdf,number,Other,31 Mar 2024,Card Transaction PETERBOROUGH,68.01,,68.01,2256.08
+Bank 18352625.pdf,number,Other,30 Mar 2024,Card Transaction 632100,98.50,,98.50,2324.09
+Bank 18352625.pdf,number,Other,30 Mar 2024,Card Transaction,51.00,,51.00,2422.59
+Bank 18352625.pdf,number,Transfer,30 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1080.16,,1080.16,2473.59
+Bank 18352625.pdf,number,Other,29 Mar 2024,Card Transaction 632100,151.91,,151.91,1393.43
+Bank 18352625.pdf,number,Transfer,29 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1206.60,,1206.60,1545.34
+Bank 18352625.pdf,number,Other,28 Mar 2024,Card Transaction 632100,87.15,,87.15,338.74
+Bank 18352625.pdf,number,Transfer,28 Mar 2024,Domestic Transfer,993.74,,993.74,425.89
+Bank 18352625.pdf,number,Transfer,28 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,750.68,,750.68,1419.63
+Bank 18352625.pdf,number,Transfer,27 Mar 2024,Domestic Transfer,205.00,,205.00,668.95
+Bank 18352625.pdf,number,Transfer,26 Mar 2024,Domestic Transfer HMRC CUMBERNAULD / ref: P A NORTHANTS LTD,2000.00,,2000.00,873.95
+Bank 18352625.pdf,number,Transfer,26 Mar 2024,Internal Book Transfer TIDE CAPITAL II LIMITED / ref: Credit Line Loan,2094.80,,2094.80,2873.95
+Bank 18352625.pdf,number,Transfer,26 Mar 2024,Domestic Transfer HMRC VAT / ref: P A Northants ltd,5000.00,,5000.00,779.15
+Bank 18352625.pdf,number,Transfer,26 Mar 2024,Internal Book Transfer BEETROOT CATERING LTD / ref: LOAN HMRC,2000.00,,2000.00,5779.15
+Bank 18352625.pdf,number,Transfer,26 Mar 2024,Direct Debit DOJOUK / ref: PST1FT-GB00768742,395.86,,395.86,3779.15
+Bank 18352625.pdf,number,Income,25 Mar 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Wages,200.00,,200.00,4175.01
+Bank 18352625.pdf,number,Transfer,25 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1604.72,,1604.72,4375.01
+Bank 18352625.pdf,number,Transfer,25 Mar 2024,Direct Debit NFU MUTUAL INS-BC / ref: 002889980,510.52,,510.52,2770.29
+Bank 18352625.pdf,number,Transfer,25 Mar 2024,Direct Debit BIFFA WASTE SERVIC / ref: P42183,321.42,,321.42,3280.81
+Bank 18352625.pdf,number,Transfer,24 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1285.84,,1285.84,3602.23
+Bank 18352625.pdf,number,Other,23 Mar 2024,Card Transaction 632100,91.49,,91.49,2316.39
+Bank 18352625.pdf,number,Other,23 Mar 2024,Card Transaction Kitzbuehel,295.15,,295.15,2407.88
+Bank 18352625.pdf,number,Transfer,23 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1827.40,,1827.40,2703.03
+Bank 18352625.pdf,number,Transfer,22 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,516.60,,516.60,875.63
+Bank 18352625.pdf,number,Other,22 Mar 2024,Card Transaction,31.96,,31.96,359.03
+Bank 18352625.pdf,number,Groceries,22 Mar 2024,Direct Debit TESCO MOBILE / ref: 330174659056A-0009,53.99,,53.99,390.99
+Bank 18352625.pdf,number,Transfer,21 Mar 2024,Domestic Transfer BREWSTERS BREWING CO LTD / ref: KA POLEBROOK,1391.04,,1391.04,444.98
+Bank 18352625.pdf,number,Transfer,21 Mar 2024,Domestic Transfer DIGFIELD ALES / ref: KA POLEBROOK,1020.00,,1020.00,1836.02
+Bank 18352625.pdf,number,Transfer,21 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,625.96,,625.96,2856.02
+Bank 18352625.pdf,number,Other,21 Mar 2024,"Card Transaction Worship Str, AMAZON.CO.UK",75.90,,75.90,2230.06
+Bank 18352625.pdf,number,Other,21 Mar 2024,Card Transaction WELLINGBOROUG,411.82,,411.82,2305.96
+Bank 18352625.pdf,number,Transfer,20 Mar 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Cleaning,48.00,,48.00,2717.78
+Bank 18352625.pdf,number,Transfer,20 Mar 2024,Domestic Transfer ALICE DOVE / ref: KA POLEBROOK,158.24,,158.24,2765.78
+Bank 18352625.pdf,number,Transfer,20 Mar 2024,Domestic Transfer,970.86,,970.86,2924.02
+Bank 18352625.pdf,number,Transfer,20 Mar 2024,Domestic Transfer P.W.AMPS LTD / ref: KA POLEBROOK,1458.83,,1458.83,3894.88
+Bank 18352625.pdf,number,Other,20 Mar 2024,Card Transaction 632100,122.17,,122.17,5353.71
+Bank 18352625.pdf,number,Transfer,20 Mar 2024,Direct Debit HMRC NDDS / ref: 108314173923812781,1000.00,,1000.00,5475.88
+Bank 18352625.pdf,number,Transfer,19 Mar 2024,Domestic Transfer,92.00,,92.00,6475.88
+Bank 18352625.pdf,number,Other,19 Mar 2024,Card Transaction,83.73,,83.73,6567.88
+Bank 18352625.pdf,number,Other,19 Mar 2024,"Card Transaction TOWNSHIP, PETERBOROUGH",90.00,,90.00,6651.61
+Bank 18352625.pdf,number,Income,18 Mar 2024,Domestic Transfer GRACE MICKLEBURGH / ref: Wages,200.00,,200.00,6741.61
+Bank 18352625.pdf,number,Transfer,18 Mar 2024,Domestic Transfer SUMMER MAUGHAN / ref: Reference - Tips,34.00,,34.00,6941.61
+Bank 18352625.pdf,number,Transfer,18 Mar 2024,Domestic Transfer FLORENCE PATTERSON / ref: Reference - Tips,45.00,,45.00,6975.61
+Bank 18352625.pdf,number,Transfer,18 Mar 2024,Domestic Transfer GEORGE H HOOPER / ref: Reference - Tips,51.00,,51.00,7020.61
+Bank 18352625.pdf,number,Transfer,18 Mar 2024,Domestic Transfer OJ GAUZA / ref: Reference - Tips,65.00,,65.00,7071.61
+Bank 18352625.pdf,number,Transfer,18 Mar 2024,Domestic Transfer AMELIA SCHOLES / ref: Reference - Tips,79.00,,79.00,7136.61
+Bank 18352625.pdf,number,Transfer,18 Mar 2024,Domestic Transfer FRED MITCHELL / ref: Reference - Tips,80.00,,80.00,7215.61
+Bank 18352625.pdf,number,Transfer,18 Mar 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - Tips,90.00,,90.00,7295.61
+Bank 18352625.pdf,number,Income,18 Mar 2024,Domestic Transfer KEITH MICKLEBURGH / ref: Wages LATE,1000.00,,1000.00,7385.61
+Bank 18352625.pdf,number,Transfer,18 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,2131.20,,2131.20,8385.61
+Bank 18352625.pdf,number,Transfer,18 Mar 2024,Direct Debit BT GROUP PLC / ref: GP00942675-000029,88.73,,88.73,6254.41
+Bank 18352625.pdf,number,Transfer,17 Mar 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Reference - Tips,200.00,,200.00,6343.14
+Bank 18352625.pdf,number,Transfer,17 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,2385.36,,2385.36,6543.14
+Bank 18352625.pdf,number,Other,16 Mar 2024,Card Transaction 632100,55.59,,55.59,4157.78
+Bank 18352625.pdf,number,Transfer,16 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,2266.41,,2266.41,4213.37
+Bank 18352625.pdf,number,Transfer,15 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,270.84,,270.84,1946.96
+Bank 18352625.pdf,number,Transfer,15 Mar 2024,Direct Debit PURE GYM LTD / ref: 040600012530010003,17.99,,17.99,1676.12
+Bank 18352625.pdf,number,Transfer,14 Mar 2024,Domestic Transfer,1221.56,,1221.56,1694.11
+Bank 18352625.pdf,number,Transfer,14 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,330.04,,330.04,2915.67
+Bank 18352625.pdf,number,Transfer,13 Mar 2024,Domestic Transfer,661.45,,661.45,2585.63
+Bank 18352625.pdf,number,Transfer,12 Mar 2024,Domestic Transfer PROGROWTH LTD / ref: KA POLEBROOK,3025.83,,3025.83,3247.08
+Bank 18352625.pdf,number,Transfer,12 Mar 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Cleaning,48.00,,48.00,6272.91
+Bank 18352625.pdf,number,Other,12 Mar 2024,Card Transaction SPALDWICK,80.01,,80.01,6320.91
+Bank 18352625.pdf,number,Other,12 Mar 2024,Card Transaction,500.00,,500.00,6400.92
+Bank 18352625.pdf,number,Transfer,12 Mar 2024,Internal Book Transfer TIDE CAPITAL II LIMITED / ref: Credit Line,2201.36,,2201.36,6900.92
+Bank 18352625.pdf,number,Transfer,12 Mar 2024,Internal Book Transfer TIDE CAPITAL II LIMITED / ref: Credit Line,65.00,,65.00,9102.28
+Bank 18352625.pdf,number,Other,11 Mar 2024,Card Transaction co.uk,99.00,,99.00,9167.28
+Bank 18352625.pdf,number,Transfer,11 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,5158.60,,5158.60,9266.28
+Bank 18352625.pdf,number,Income,10 Mar 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Reference - Wages,200.00,,200.00,10.41
+Bank 18352625.pdf,number,Transfer,10 Mar 2024,Internal Book Transfer,10.41,,10.41,
+Bank 18352625.pdf,number,Other,68 period 2024,-02-01 - 20,,,,
+Bank 18352625.pdf,number,Other,24-02-29,N/A,,,,
+Bank 18352625.pdf,number,Transfer,10 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,3024.76,,3024.76,4297.27
+Bank 18352625.pdf,number,Other,9 Mar 2024,Card Transaction 632100,254.25,,254.25,1272.51
+Bank 18352625.pdf,number,Transfer,9 Mar 2024,Domestic Transfer ROCKYS GELATO LTD / ref: KA POLEBROOK,165.00,,165.00,1526.76
+Bank 18352625.pdf,number,Transfer,9 Mar 2024,Domestic Transfer ILLYCAFFE UK LIMITED / ref: KA POLEBROOK,208.47,,208.47,1691.76
+Bank 18352625.pdf,number,Transfer,9 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1340.56,,1340.56,1900.23
+Bank 18352625.pdf,number,Other,8 Mar 2024,"Card Transaction Worship Str, AMAZON.CO.UK",21.50,,21.50,559.67
+Bank 18352625.pdf,number,Other,8 Mar 2024,Card Transaction 632100,594.19,,594.19,581.17
+Bank 18352625.pdf,number,Transfer,8 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,558.75,,558.75,1175.36
+Bank 18352625.pdf,number,Income,7 Mar 2024,Domestic Transfer ANGLE SALLAI / ref: WAGES,650.00,,650.00,616.61
+Bank 18352625.pdf,number,Transfer,7 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,718.56,,718.56,1266.61
+Bank 18352625.pdf,number,Other,7 Mar 2024,"Card Transaction Worship Street, LONDON",45.65,,45.65,548.05
+Bank 18352625.pdf,number,Transfer,7 Mar 2024,Direct Debit NEST / ref: IT000007260786,493.71,,493.71,593.70
+Bank 18352625.pdf,number,Transfer,6 Mar 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - Tips,33.00,,33.00,1087.41
+Bank 18352625.pdf,number,Other,6 Mar 2024,Card Transaction 632100,120.43,,120.43,1120.41
+Bank 18352625.pdf,number,Other,6 Mar 2024,Card Transaction INTERNET,45.00,,45.00,1240.84
+Bank 18352625.pdf,number,Other,6 Mar 2024,Card Transaction INTERNET,45.00,,45.00,1285.84
+Bank 18352625.pdf,number,Other,6 Mar 2024,Card Transaction INTERNET,30.00,,30.00,1330.84
+Bank 18352625.pdf,number,Bills,6 Mar 2024,Direct Debit ANGLIAN WATER BUSI / ref: 1055034,398.45,,398.45,1360.84
+Bank 18352625.pdf,number,Transfer,5 Mar 2024,Domestic Transfer SUMMER MAUGHAN / ref: Reference - Tips,29.00,,29.00,1759.29
+Bank 18352625.pdf,number,Transfer,5 Mar 2024,Domestic Transfer MARK DAVIES / ref: Reference - Tips,34.00,,34.00,1788.29
+Bank 18352625.pdf,number,Transfer,5 Mar 2024,Domestic Transfer AMELIA SCHOLES / ref: Reference - Tips,39.00,,39.00,1822.29
+Bank 18352625.pdf,number,Transfer,5 Mar 2024,Domestic Transfer ANGLE SALLAI / ref: Reference - Tips,40.00,,40.00,1861.29
+Bank 18352625.pdf,number,Transfer,5 Mar 2024,Domestic Transfer OJ GAUZA / ref: Reference - Tips,62.00,,62.00,1901.29
+Bank 18352625.pdf,number,Transfer,5 Mar 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - Tips,90.00,,90.00,1963.29
+Bank 18352625.pdf,number,Transfer,5 Mar 2024,Domestic Transfer GEORGE H HOOPER / ref: Reference - Tips,66.00,,66.00,2053.29
+Bank 18352625.pdf,number,Income,5 Mar 2024,Domestic Transfer GRACE MICKLEBURGH / ref: Reference - Wages,100.00,,100.00,2119.29
+Bank 18352625.pdf,number,Transfer,5 Mar 2024,Domestic Transfer GRACE MICKLEBURGH / ref: Reference - Tips,25.00,,25.00,2219.29
+Bank 18352625.pdf,number,Transfer,5 Mar 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Cleaning,144.00,,144.00,2244.29
+Bank 18352625.pdf,number,Transfer,5 Mar 2024,Domestic Transfer,1124.50,,1124.50,2388.29
+Bank 18352625.pdf,number,Transfer,5 Mar 2024,Domestic Transfer MARR FISH / ref: KA POLEBROOK,726.41,,726.41,3512.79
+Bank 18352625.pdf,number,Income,4 Mar 2024,Domestic Transfer SAMUEL FATIREGUN / ref: Wages,50.00,,50.00,4239.20
+Bank 18352625.pdf,number,Cash,4 Mar 2024,Internal Book Transfer TPL Ltd / ref: Tide fees: Cashback plan payment,59.99,,59.99,4289.20
+Bank 18352625.pdf,number,Transfer,4 Mar 2024,Domestic Transfer,303.02,,303.02,4349.19
+Bank 18352625.pdf,number,Transfer,4 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,2040.98,,2040.98,4652.21
+Bank 18352625.pdf,number,Income,4 Mar 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Reference - Wages,200.00,,200.00,2611.23
+Bank 18352625.pdf,number,Transfer,3 Mar 2024,Domestic Transfer OJ GAUZA / ref: Reference - TIPS,48.00,,48.00,2811.23
+Bank 18352625.pdf,number,Transfer,3 Mar 2024,Domestic Transfer GEORGE H HOOPER / ref: Reference - TIPS,34.00,,34.00,2859.23
+Bank 18352625.pdf,number,Transfer,3 Mar 2024,Domestic Transfer ANGLE SALLAI / ref: Reference - TIPS,36.50,,36.50,2893.23
+Bank 18352625.pdf,number,Transfer,3 Mar 2024,Domestic Transfer AMELIA SCHOLES / ref: Reference - TIPS,88.00,,88.00,2929.73
+Bank 18352625.pdf,number,Transfer,3 Mar 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - TIPS,139.00,,139.00,3017.73
+Bank 18352625.pdf,number,Transfer,3 Mar 2024,Domestic Transfer FRED MITCHELL / ref: Reference - TIPS,139.00,,139.00,3156.73
+Bank 18352625.pdf,number,Transfer,3 Mar 2024,Domestic Transfer ALICE DOVE / ref: KA POLEBROOK,283.68,,283.68,3295.73
+Bank 18352625.pdf,number,Income,3 Mar 2024,Domestic Transfer SUMMER MAUGHAN / ref: K A Wages,368.00,,368.00,3579.41
+Bank 18352625.pdf,number,Income,3 Mar 2024,Domestic Transfer WILLIAM REID / ref: K. A Wages,97.50,,97.50,3947.41
+Bank 18352625.pdf,number,Income,3 Mar 2024,Domestic Transfer FLORENCE PATTERSON / ref: K A Wages,204.75,,204.75,4044.91
+Bank 18352625.pdf,number,Transfer,3 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,2381.44,,2381.44,4249.66
+Bank 18352625.pdf,number,Other,3 Mar 2024,Card Transaction,42.64,,42.64,1868.22
+Bank 18352625.pdf,number,Other,2 Mar 2024,Card Transaction 632100,102.94,,102.94,1910.86
+Bank 18352625.pdf,number,Transfer,2 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1639.92,,1639.92,2013.80
+Bank 18352625.pdf,number,Transfer,1 Mar 2024,Domestic Transfer BARBARA ROJEK / ref: Shopping,10.00,,10.00,373.88
+Bank 18352625.pdf,number,Transfer,1 Mar 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,268.76,,268.76,383.88
+Bank 18352625.pdf,number,Transfer,1 Mar 2024,Direct Debit DVLA-LC60LRL / ref: 000000000058954808,28.00,,28.00,115.12
+Bank 18352625.pdf,number,Transfer,1 Mar 2024,Direct Debit DVLA-OW18GCF / ref: 000000000059657102,49.87,,49.87,143.12
+Bank 18352625.pdf,number,Other,1 Apr 2024,Account number: 18352625 Balance on 1 Apr 2024,3860.45,,3860.45,
+Bank 18352625.pdf,number,Other,1 Apr 2024,-,,,,
+Bank 18352625.pdf,number,Other,30 Apr 2024,Total paid out,39914.23,,39914.23,
+Bank 18352625.pdf,number,Other,1 May 2024,Balance on 1 May 2024,317.38,,317.38,
+Bank 18352625.pdf,number,Income,30 Apr 2024,Domestic Transfer GRACE MICKLEBURGH / ref: Reference - Wages,200.00,,200.00,317.38
+Bank 18352625.pdf,number,Income,30 Apr 2024,Domestic Transfer AMELIA SCHOLES / ref: Reference - Wages,1237.92,,1237.92,517.38
+Bank 18352625.pdf,number,Income,30 Apr 2024,Domestic Transfer OJ GAUZA / ref: Reference - Wages,1617.71,,1617.71,1755.30
+Bank 18352625.pdf,number,Income,30 Apr 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - Wages,1823.97,,1823.97,3373.01
+Bank 18352625.pdf,number,Income,30 Apr 2024,Domestic Transfer GEORGE H HOOPER / ref: Wages,1377.96,,1377.96,5196.98
+Bank 18352625.pdf,number,Income,30 Apr 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Reference - Wages,200.00,,200.00,6574.94
+Bank 18352625.pdf,number,Other,30 Apr 2024,Card Transaction LONDON,38.40,,38.40,6774.94
+Bank 18352625.pdf,number,Transfer,29 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1873.40,,1873.40,6813.34
+Bank 18352625.pdf,number,Transfer,29 Apr 2024,Direct Debit BIFFA WASTE SERVIC / ref: P42183,392.03,,392.03,
+Bank 18352625.pdf,number,Other,94 WAITROSE 758,"- 66 EAST ROAD, OUNDLE",,,,
+Bank 18352625.pdf,number,Other,28 Apr 2024,Card Transaction,109.42,,109.42,5331.97
+Bank 18352625.pdf,number,Transfer,28 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,2819.36,,2819.36,5441.39
+Bank 18352625.pdf,number,Other,27 Apr 2024,Card Transaction 632100,42.96,,42.96,2622.03
+Bank 18352625.pdf,number,Other,27 Apr 2024,Card Transaction,170.00,,170.00,2664.99
+Bank 18352625.pdf,number,Transfer,27 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1566.74,,1566.74,2834.99
+Bank 18352625.pdf,number,Transfer,27 Apr 2024,Domestic Transfer,205.00,,205.00,1268.25
+Bank 18352625.pdf,number,Other,27 Apr 2024,Card Transaction WELLINGBOROUG,522.06,,522.06,1473.25
+Bank 18352625.pdf,number,Other,26 Apr 2024,Card Transaction 632100,72.72,,72.72,1995.31
+Bank 18352625.pdf,number,Other,26 Apr 2024,Card Transaction 632100,70.26,,70.26,2068.03
+Bank 18352625.pdf,number,Transfer,26 Apr 2024,Domestic Transfer ANGLE SALLAI / ref: Reference - TIPS,29.00,,29.00,2138.29
+Bank 18352625.pdf,number,Transfer,26 Apr 2024,Domestic Transfer SUMMER MAUGHAN / ref: Reference - TIPS,37.00,,37.00,2167.29
+Bank 18352625.pdf,number,Transfer,26 Apr 2024,Domestic Transfer OJ GAUZA / ref: Reference - TIPS,38.00,,38.00,2204.29
+Bank 18352625.pdf,number,Transfer,26 Apr 2024,Domestic Transfer AMELIA SCHOLES / ref: Reference - TIPS,51.00,,51.00,2242.29
+Bank 18352625.pdf,number,Transfer,26 Apr 2024,Domestic Transfer GEORGE H HOOPER / ref: Reference - TIPS,63.00,,63.00,2293.29
+Bank 18352625.pdf,number,Transfer,26 Apr 2024,Domestic Transfer FRED MITCHELL / ref: Reference - TIPS,106.00,,106.00,2356.29
+Bank 18352625.pdf,number,Transfer,26 Apr 2024,Domestic Transfer MICHAEL BUTTERLY / ref: CLEANING,42.00,,42.00,2462.29
+Bank 18352625.pdf,number,Transfer,26 Apr 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - TIPS,106.00,,106.00,2504.29
+Bank 18352625.pdf,number,Transfer,26 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,2017.80,,2017.80,2610.29
+Bank 18352625.pdf,number,Transfer,25 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,473.32,,473.32,592.49
+Bank 18352625.pdf,number,Other,25 Apr 2024,Card Transaction,100.79,,100.79,119.17
+Bank 18352625.pdf,number,Transfer,25 Apr 2024,Direct Debit NFU MUTUAL INS-BC / ref: 002889980,510.52,,510.52,219.96
+Bank 18352625.pdf,number,Transfer,24 Apr 2024,Domestic Transfer T AND J FINE FOODS / ref: K A POLEBROOK,1000.00,,1000.00,730.48
+Bank 18352625.pdf,number,Other,24 Apr 2024,Card Transaction 632100,33.95,,33.95,1730.48
+Bank 18352625.pdf,number,Transfer,24 Apr 2024,Domestic Transfer,1385.04,,1385.04,1764.43
+Bank 18352625.pdf,number,Transfer,24 Apr 2024,Direct Debit DOJOUK / ref: PST1FT-GB00890824,448.09,,448.09,3149.47
+Bank 18352625.pdf,number,Other,23 Apr 2024,Card Transaction BARCELONA,22.78,,22.78,3597.56
+Bank 18352625.pdf,number,Other,23 Apr 2024,"Card Transaction ARGENTER0, BARCELONA",4.81,,4.81,3620.34
+Bank 18352625.pdf,number,Other,23 Apr 2024,Card Transaction,51.42,,51.42,3625.15
+Bank 18352625.pdf,number,Income,22 Apr 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Wages,200.00,,200.00,3676.57
+Bank 18352625.pdf,number,Transfer,22 Apr 2024,Domestic Transfer P.W.AMPS LTD / ref: KA POLEBROOK,327.62,,327.62,3876.57
+Bank 18352625.pdf,number,Other,22 Apr 2024,"Card Transaction D44, BARCELONA",44.68,,44.68,4204.19
+Bank 18352625.pdf,number,Transfer,22 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,2555.00,,2555.00,4248.87
+Bank 18352625.pdf,number,Groceries,22 Apr 2024,Direct Debit TESCO MOBILE / ref: 330174659056A-0010,51.49,,51.49,1693.87
+Bank 18352625.pdf,number,Transfer,22 Apr 2024,Direct Debit HMRC NDDS / ref: 108314173976467083,1000.00,,1000.00,1745.36
+Bank 18352625.pdf,number,Other,22 Apr 2024,Card Transaction BARCELONA,42.13,,42.13,2745.36
+Bank 18352625.pdf,number,Transfer,21 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1561.64,,1561.64,2787.49
+Bank 18352625.pdf,number,Other,20 Apr 2024,Card Transaction 632100,51.01,,51.01,1225.85
+Bank 18352625.pdf,number,Bills,20 Apr 2024,Domestic Transfer PROGROWTH LTD / ref: KA RENT,3025.83,,3025.83,1276.86
+Bank 18352625.pdf,number,Transfer,20 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1977.32,,1977.32,4302.69
+Bank 18352625.pdf,number,Other,20 Apr 2024,Card Transaction WELLINGBOROUG,369.10,,369.10,2325.37
+Bank 18352625.pdf,number,Transfer,19 Apr 2024,Domestic Transfer M BRIGGS / ref: KA POLEBROOK,130.00,,130.00,2694.47
+Bank 18352625.pdf,number,Transfer,19 Apr 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Cleaning,42.00,,42.00,2824.47
+Bank 18352625.pdf,number,Other,19 Apr 2024,Card Transaction 632100,96.56,,96.56,2866.47
+Bank 18352625.pdf,number,Transfer,19 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1073.92,,1073.92,2963.03
+Bank 18352625.pdf,number,Other,19 Apr 2024,Card Transaction SPALDWICK,85.00,,85.00,1889.11
+Bank 18352625.pdf,number,Transfer,18 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1060.92,,1060.92,1974.11
+Bank 18352625.pdf,number,Other,18 Apr 2024,Card Transaction,11.50,,11.50,913.19
+Bank 18352625.pdf,number,Income,17 Apr 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Wages,200.00,,200.00,924.69
+Bank 18352625.pdf,number,Transfer,17 Apr 2024,Domestic Transfer FRED MITCHELL / ref: Reference - TIPS,113.00,,113.00,1124.69
+Bank 18352625.pdf,number,Transfer,17 Apr 2024,Domestic Transfer GEORGE H HOOPER / ref: Reference - TIPS,83.62,,83.62,1237.69
+Bank 18352625.pdf,number,Transfer,17 Apr 2024,Domestic Transfer AMELIA SCHOLES / ref: Reference - TIPS,48.87,,48.87,1321.31
+Bank 18352625.pdf,number,Transfer,17 Apr 2024,Domestic Transfer OJ GAUZA / ref: Reference - TIPS,43.00,,43.00,1370.18
+Bank 18352625.pdf,number,Transfer,17 Apr 2024,Domestic Transfer SUMMER MAUGHAN / ref: Reference - TIPS,32.00,,32.00,1413.18
+Bank 18352625.pdf,number,Transfer,17 Apr 2024,Domestic Transfer ANGLE SALLAI / ref: Reference - TIPS,34.00,,34.00,1445.18
+Bank 18352625.pdf,number,Other,17 Apr 2024,Card Transaction 632100,64.00,,64.00,1479.18
+Bank 18352625.pdf,number,Transfer,17 Apr 2024,Domestic Transfer,834.51,,834.51,1543.18
+Bank 18352625.pdf,number,Other,17 Apr 2024,Card Transaction,193.05,,193.05,2377.69
+Bank 18352625.pdf,number,Other,16 Apr 2024,"Card Transaction ROAD, MARLDON",153.26,,153.26,2570.74
+Bank 18352625.pdf,number,Transfer,15 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,2365.68,,2365.68,2724.00
+Bank 18352625.pdf,number,Transfer,15 Apr 2024,Direct Debit PURE GYM LTD / ref: 040600012530010004,17.99,,17.99,358.32
+Bank 18352625.pdf,number,Transfer,15 Apr 2024,Direct Debit AIG LIFE LTD / ref: P465870200-B,994.70,,994.70,376.31
+Bank 18352625.pdf,number,Transfer,14 Apr 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - TIPS,25.00,,25.00,1371.01
+Bank 18352625.pdf,number,Transfer,14 Apr 2024,Domestic Transfer FRED MITCHELL / ref: Reference - TIPS,67.00,,67.00,1396.01
+Bank 18352625.pdf,number,Transfer,14 Apr 2024,Domestic Transfer SUMMER MAUGHAN / ref: Reference - TIPS,28.00,,28.00,1463.01
+Bank 18352625.pdf,number,Transfer,14 Apr 2024,Domestic Transfer OJ GAUZA / ref: Reference - TIPS,30.00,,30.00,1491.01
+Bank 18352625.pdf,number,Transfer,14 Apr 2024,Domestic Transfer GEORGE H HOOPER / ref: Reference - TIPS,61.42,,61.42,1521.01
+Bank 18352625.pdf,number,Transfer,14 Apr 2024,Domestic Transfer ROCKYS GELATO LTD / ref: KA POLEBROOK,99.00,,99.00,1582.43
+Bank 18352625.pdf,number,Transfer,14 Apr 2024,Internal Book Transfer TIDE CAPITAL II LIMITED / ref: Credit Line,213.45,,213.45,1681.43
+Bank 18352625.pdf,number,Transfer,14 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1894.88,,1894.88,1894.88
+Bank 18352625.pdf,number,Transfer,13 Apr 2024,Internal Book Transfer TIDE CAPITAL II LIMITED / ref: Credit Line,1587.80,,1587.80,0.00
+Bank 18352625.pdf,number,Transfer,13 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1587.80,,1587.80,1587.80
+Bank 18352625.pdf,number,Transfer,13 Apr 2024,Internal Book Transfer,199.56,,199.56,0.00
+Bank 18352625.pdf,number,Other,12 Apr 2024,Card Transaction 632100,144.29,,144.29,199.56
+Bank 18352625.pdf,number,Other,12 Apr 2024,"Card Transaction TOWNSHIP, PETERBOROUGH",56.01,,56.01,343.85
+Bank 18352625.pdf,number,Other,12 Apr 2024,Card Transaction WELLINGBOROUG,275.64,,275.64,399.86
+Bank 18352625.pdf,number,Income,12 Apr 2024,Domestic Transfer KEITH MICKLEBURGH / ref: Reference - Wages,1000.00,,1000.00,675.50
+Bank 18352625.pdf,number,Transfer,12 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1199.56,,1199.56,1675.50
+Bank 18352625.pdf,number,Transfer,12 Apr 2024,Internal Book Transfer TIDE CAPITAL II LIMITED / ref: Credit Line,207.25,,207.25,18.97
+Bank 18352625.pdf,number,Transfer,12 Apr 2024,Internal Book Transfer,18.97,,18.97,
+Bank 18352625.pdf,number,Other,19 period 2024,-03-01 - 20,,,,
+Bank 18352625.pdf,number,Other,24-03-31,N/A,,,,
+Bank 18352625.pdf,number,Transfer,11 Apr 2024,Domestic Transfer KING BROS LADY LODGE LTD / ref: KA POLEBROOK,300.44,,300.44,664.22
+Bank 18352625.pdf,number,Transfer,11 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,886.41,,886.41,964.66
+Bank 18352625.pdf,number,Other,11 Apr 2024,Card Transaction,3.70,,3.70,78.25
+Bank 18352625.pdf,number,Transfer,10 Apr 2024,Domestic Transfer,1065.44,,1065.44,81.95
+Bank 18352625.pdf,number,Transfer,10 Apr 2024,Internal Book Transfer BEETROOT CATERING LTD / ref: Reference - LOAN,1000.00,,1000.00,1147.39
+Bank 18352625.pdf,number,Other,10 Apr 2024,Card Transaction,110.00,,110.00,147.39
+Bank 18352625.pdf,number,Other,39 WAITROSE 758,"- 66 EAST ROAD, OUNDLE",,,,
+Bank 18352625.pdf,number,Other,10 Apr 2024,Card Transaction,67.78,,67.78,257.39
+Bank 18352625.pdf,number,Transfer,10 Apr 2024,Domestic Transfer ROCKYS GELATO LTD / ref: KA POLEBROOK,66.00,,66.00,325.17
+Bank 18352625.pdf,number,Other,10 Apr 2024,"Card Transaction Worship Street, LONDON",50.39,,50.39,391.17
+Bank 18352625.pdf,number,Transfer,10 Apr 2024,Direct Debit PPLPRS LIMITED / ref: DD00096580,170.99,,170.99,441.56
+Bank 18352625.pdf,number,Transfer,9 Apr 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Cleaning,42.00,,42.00,612.55
+Bank 18352625.pdf,number,Transfer,9 Apr 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Reference - Tips,200.00,,200.00,654.55
+Bank 18352625.pdf,number,Other,9 Apr 2024,"Card Transaction Worship Street, LONDON",131.55,,131.55,854.55
+Bank 18352625.pdf,number,Other,9 Apr 2024,Card Transaction,500.00,,500.00,986.10
+Bank 18352625.pdf,number,Transfer,8 Apr 2024,Domestic Transfer AMELIA SCHOLES / ref: Reference - Tips,175.00,,175.00,1486.10
+Bank 18352625.pdf,number,Transfer,8 Apr 2024,Domestic Transfer J L ASHBY AND CO LTD / ref: BEETROOT,400.00,,400.00,1661.10
+Bank 18352625.pdf,number,Transfer,8 Apr 2024,Domestic Transfer,172.50,,172.50,2061.10
+Bank 18352625.pdf,number,Transfer,8 Apr 2024,Domestic Transfer MARR FISH / ref: KA POLEBROOK,1379.12,,1379.12,2233.60
+Bank 18352625.pdf,number,Transfer,8 Apr 2024,Domestic Transfer SMITHS FIRE LLP / ref: KA POLEBROOK,216.00,,216.00,3612.72
+Bank 18352625.pdf,number,Transfer,8 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1415.68,,1415.68,3828.72
+Bank 18352625.pdf,number,Transfer,8 Apr 2024,Direct Debit DVLA-OW18GCF / ref: 000000000059657102,49.87,,49.87,2413.04
+Bank 18352625.pdf,number,Transfer,8 Apr 2024,Direct Debit DVLA-LC60LRL / ref: 000000000058954808,28.00,,28.00,2462.91
+Bank 18352625.pdf,number,Transfer,8 Apr 2024,Direct Debit BT GROUP PLC / ref: GP00942675-000030,88.73,,88.73,2490.91
+Bank 18352625.pdf,number,Other,7 Apr 2024,Card Transaction WELLINGBOROUG,262.50,,262.50,2579.64
+Bank 18352625.pdf,number,Transfer,7 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1402.68,,1402.68,2842.14
+Bank 18352625.pdf,number,Other,7 Apr 2024,"Card Transaction PHOENIX, BUSINESS PARK, HARROW",34.79,,34.79,1439.46
+Bank 18352625.pdf,number,Transfer,6 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1433.08,,1433.08,1474.25
+Bank 18352625.pdf,number,Income,5 Apr 2024,Domestic Transfer ANGLE SALLAI / ref: Wages,73.50,,73.50,41.17
+Bank 18352625.pdf,number,Transfer,5 Apr 2024,Domestic Transfer MARK DAVIES / ref: Reference - TIPS,30.00,,30.00,114.67
+Bank 18352625.pdf,number,Transfer,5 Apr 2024,Domestic Transfer SUMMER MAUGHAN / ref: TIPS KA,60.00,,60.00,144.67
+Bank 18352625.pdf,number,Income,5 Apr 2024,Domestic Transfer MARK DAVIES / ref: KA WAGES,297.00,,297.00,204.67
+Bank 18352625.pdf,number,Transfer,5 Apr 2024,Domestic Transfer FRED MITCHELL / ref: Reference - TIPS,57.00,,57.00,501.67
+Bank 18352625.pdf,number,Transfer,5 Apr 2024,Domestic Transfer GEORGE H HOOPER / ref: KA TIPS,78.64,,78.64,558.67
+Bank 18352625.pdf,number,Transfer,5 Apr 2024,Domestic Transfer OJ GAUZA / ref: KA TIPS,85.00,,85.00,637.31
+Bank 18352625.pdf,number,Transfer,5 Apr 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - TIPS,95.00,,95.00,722.31
+Bank 18352625.pdf,number,Income,5 Apr 2024,Domestic Transfer SUMMER MAUGHAN / ref: KA WAGES,356.00,,356.00,817.31
+Bank 18352625.pdf,number,Income,5 Apr 2024,Domestic Transfer ANGLE SALLAI / ref: KA WAGES,325.50,,325.50,1173.31
+Bank 18352625.pdf,number,Income,5 Apr 2024,Domestic Transfer FRED MITCHELL / ref: Reference - WAGES,1304.93,,1304.93,1498.81
+Bank 18352625.pdf,number,Income,5 Apr 2024,Domestic Transfer MR WILLIAM FREEMAN / ref: KA wages,138.00,,138.00,2803.74
+Bank 18352625.pdf,number,Cash,5 Apr 2024,Internal Book Transfer TPL Ltd / ref: Tide fees: Cashback plan payment,59.99,,59.99,2941.74
+Bank 18352625.pdf,number,Transfer,5 Apr 2024,Domestic Transfer A Mickleburgh / ref: No Reference,2000.00,,2000.00,3001.73
+Bank 18352625.pdf,number,Transfer,5 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,762.76,,762.76,1001.73
+Bank 18352625.pdf,number,Transfer,5 Apr 2024,Direct Debit NEST / ref: IT000007260786,422.48,,422.48,238.97
+Bank 18352625.pdf,number,Transfer,4 Apr 2024,Domestic Transfer GEORGE MICKLEBURGH / ref: Reference - Tips,100.00,,100.00,661.45
+Bank 18352625.pdf,number,Transfer,4 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,575.20,,575.20,761.45
+Bank 18352625.pdf,number,Transfer,2 Apr 2024,Domestic Transfer OJ GAUZA / ref: Reference - TIPS,65.00,,65.00,186.25
+Bank 18352625.pdf,number,Transfer,2 Apr 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - TIPS,57.00,,57.00,251.25
+Bank 18352625.pdf,number,Transfer,2 Apr 2024,Domestic Transfer GEORGE H HOOPER / ref: Reference - TIPS,7.00,,7.00,308.25
+Bank 18352625.pdf,number,Transfer,2 Apr 2024,Domestic Transfer AMELIA SCHOLES / ref: Reference - TIPS,109.00,,109.00,315.25
+Bank 18352625.pdf,number,Income,2 Apr 2024,Domestic Transfer IMOGEN PRIOR / ref: Reference - WAGES,51.00,,51.00,424.25
+Bank 18352625.pdf,number,Income,2 Apr 2024,Domestic Transfer FLORENCE PATTERSON / ref: WAGES,183.75,,183.75,475.25
+Bank 18352625.pdf,number,Income,2 Apr 2024,Domestic Transfer WILLIAM REID / ref: WAGES,88.50,,88.50,659.00
+Bank 18352625.pdf,number,Income,2 Apr 2024,Domestic Transfer NED RAYNER / ref: Reference - WAGES,100.32,,100.32,747.50
+Bank 18352625.pdf,number,Transfer,2 Apr 2024,Domestic Transfer MICHAEL BUTTERLY / ref: CLEANING,84.00,,84.00,847.82
+Bank 18352625.pdf,number,Income,2 Apr 2024,Domestic Transfer SAMUEL FATIREGUN / ref: Wages,50.00,,50.00,931.82
+Bank 18352625.pdf,number,Transfer,2 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,976.12,,976.12,981.82
+Bank 18352625.pdf,number,Income,1 Apr 2024,Domestic Transfer OJ GAUZA / ref: Wages,1600.33,,1600.33,5.70
+Bank 18352625.pdf,number,Income,1 Apr 2024,Domestic Transfer AMELIA SCHOLES / ref: Reference - Wages,1123.56,,1123.56,1606.03
+Bank 18352625.pdf,number,Income,1 Apr 2024,Domestic Transfer GEORGE H HOOPER / ref: Reference - Wages,1128.51,,1128.51,2729.59
+Bank 18352625.pdf,number,Income,1 Apr 2024,Domestic Transfer MICHAEL BUTTERLY / ref: Reference - Wages,1875.27,,1875.27,3858.10
+Bank 18352625.pdf,number,Transfer,1 Apr 2024,Domestic Transfer YouLend Limited / ref: YL60146362OUT YL60,1872.92,,1872.92,5733.37
