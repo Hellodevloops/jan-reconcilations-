@@ -1,0 +1,79 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "08/01/2024",
+      "supplier": "One Stop Builders Merchants (Enfield) Ltd",
+      "inv_ref_no": "93847",
+      "make": "Tel: 0208 804 6011 One Stop Builders Merchants Enfield Limited",
+      "model": null,
+      "colour": null,
+      "reg_no": "156268883",
+      "buying_price": 1041.0,
+      "non_vat": 1041.0,
+      "std_net": 867.5,
+      "vat_amount": 20.0
+    },
+    {
+      "sr_no": 2,
+      "category": "purchase",
+      "document_date": "10/01/2024",
+      "supplier": "One Stop Builders Merchants (Enfield) Ltd",
+      "inv_ref_no": "93991",
+      "make": "Tel: 0208 804 6011 One Stop Builders Merchants Enfield Limited",
+      "model": null,
+      "colour": null,
+      "reg_no": "156268883",
+      "buying_price": 45.46,
+      "non_vat": 45.46,
+      "std_net": 37.88,
+      "vat_amount": 4.0
+    },
+    {
+      "sr_no": 3,
+      "category": "purchase",
+      "document_date": "17/01/2024",
+      "supplier": "One Stop Builders Merchants (Enfield) Ltd",
+      "inv_ref_no": "94232",
+      "make": "Tel: 0208 804 6011 One Stop Builders Merchants Enfield Limited",
+      "model": null,
+      "colour": null,
+      "reg_no": "156268883",
+      "buying_price": 277.2,
+      "non_vat": 277.2,
+      "std_net": 231.0,
+      "vat_amount": 10.0
+    },
+    {
+      "sr_no": 4,
+      "category": "purchase",
+      "document_date": "22/01/2024",
+      "supplier": "One Stop Builders Merchants (Enfield) Ltd",
+      "inv_ref_no": "94409",
+      "make": "Tel: 0208 804 6011 One Stop Builders Merchants Enfield Limited",
+      "model": null,
+      "colour": null,
+      "reg_no": "156268883",
+      "buying_price": 250.02,
+      "non_vat": 250.02,
+      "std_net": 208.34,
+      "vat_amount": 6.0
+    }
+  ]
+}

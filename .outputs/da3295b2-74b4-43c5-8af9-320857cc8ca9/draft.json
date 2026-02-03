@@ -1,0 +1,32 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "12/05/2009",
+      "supplier": "22 Jun 2024 22 Jun 2024 AJO9 LZV ss gw th mharnesc and any applicaDie Ser vivte ils",
+      "inv_ref_no": "AJ09 LZV PURCHASE INV",
+      "make": "N/A",
+      "reg_no": "N/A",
+      "buying_price": "N/A",
+      "non_vat": "N/A",
+      "std_net": "N/A",
+      "vat_amount": "N/A"
+    }
+  ]
+}
