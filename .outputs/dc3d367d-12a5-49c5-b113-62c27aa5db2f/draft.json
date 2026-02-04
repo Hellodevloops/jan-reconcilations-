@@ -1,0 +1,34 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "",
+      "supplier": "",
+      "inv_ref_no": "01-11834-66831 2_p1",
+      "make": "",
+      "model": null,
+      "colour": null,
+      "reg_no": "",
+      "buying_price": null,
+      "non_vat": null,
+      "std_net": "N/A",
+      "vat_amount": null
+    }
+  ]
+}

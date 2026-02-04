@@ -24,6 +24,8 @@ from datetime import datetime
 
 from typing import Any, Dict, List, Optional, Tuple
 
+from collections import OrderedDict
+
 
 
 try:
@@ -77,6 +79,42 @@ except Exception:
 
 
     httpx = None  # type: ignore
+
+
+
+try:
+
+    import torch  # type: ignore
+
+except Exception:
+
+    torch = None  # type: ignore
+
+
+
+try:
+
+    from transformers import LightOnOcrForConditionalGeneration, LightOnOcrProcessor  # type: ignore
+
+except Exception:
+
+    LightOnOcrForConditionalGeneration = None  # type: ignore
+
+    LightOnOcrProcessor = None  # type: ignore
+
+
+
+try:
+
+    from transformers import AutoProcessor, AutoModelForVision2Seq, AutoModelForCausalLM  # type: ignore
+
+except Exception:
+
+    AutoProcessor = None  # type: ignore
+
+    AutoModelForVision2Seq = None  # type: ignore
+
+    AutoModelForCausalLM = None  # type: ignore
 
 
 
@@ -141,6 +179,38 @@ except Exception:
 
 
     ImageFilter = None  # type: ignore
+
+
+
+try:
+
+
+
+    import cv2  # type: ignore
+
+
+
+except Exception:
+
+
+
+    cv2 = None  # type: ignore
+
+
+
+try:
+
+
+
+    import numpy as np  # type: ignore
+
+
+
+except Exception:
+
+
+
+    np = None  # type: ignore
 
 
 
@@ -216,6 +286,432 @@ DEBUG = os.getenv("BANKPDF_DEBUG", "").strip().lower() in {"1", "true", "yes", "
 
 
 
+
+
+def _clean_output_text(text: str) -> str:
+
+    s = _clean_text(text)
+
+    if not s:
+
+        return ""
+
+    markers_to_remove = {"system", "user", "assistant"}
+
+    lines = s.split("\n")
+
+    cleaned_lines = []
+
+    for ln in lines:
+
+        stripped = ln.strip().lower()
+
+        if stripped in markers_to_remove:
+
+            continue
+
+        cleaned_lines.append(ln)
+
+    cleaned = "\n".join(cleaned_lines).strip()
+
+    low = s.lower()
+
+    if "assistant" in low:
+
+        try:
+
+            parts = re.split(r"assistant", s, maxsplit=1, flags=re.IGNORECASE)
+
+            if len(parts) > 1:
+
+                cleaned = parts[1].strip()
+
+        except Exception:
+
+            pass
+
+    return cleaned
+
+
+
+
+
+BBOX_PATTERN = r"!\[image\]\((image_\d+\.png)\)\s*(\d+),(\d+),(\d+),(\d+)"
+
+
+
+
+
+def _parse_bbox_output(text: str) -> Tuple[str, List[Dict[str, Any]]]:
+
+    detections: List[Dict[str, Any]] = []
+
+    for match in re.finditer(BBOX_PATTERN, text or ""):
+
+        image_ref, x1, y1, x2, y2 = match.groups()
+
+        try:
+
+            detections.append({"ref": image_ref, "coords": (int(x1), int(y1), int(x2), int(y2))})
+
+        except Exception:
+
+            continue
+
+    cleaned = re.sub(BBOX_PATTERN, r"![image](\1)", text or "")
+
+    return _clean_output_text(cleaned), detections
+
+
+
+
+
+def _crop_from_bbox(source_image: Any, bbox: Dict[str, Any], padding: int = 5) -> Optional[Any]:
+
+    if source_image is None:
+
+        return None
+
+    try:
+
+        w, h = source_image.size
+
+    except Exception:
+
+        return None
+
+    coords = bbox.get("coords")
+
+    if not (isinstance(coords, (list, tuple)) and len(coords) == 4):
+
+        return None
+
+    try:
+
+        x1, y1, x2, y2 = [int(x) for x in coords]
+
+    except Exception:
+
+        return None
+
+    px1 = int(x1 * w / 1000)
+
+    py1 = int(y1 * h / 1000)
+
+    px2 = int(x2 * w / 1000)
+
+    py2 = int(y2 * h / 1000)
+
+    px1, py1 = max(0, px1 - padding), max(0, py1 - padding)
+
+    px2, py2 = min(w, px2 + padding), min(h, py2 + padding)
+
+    try:
+
+        return source_image.crop((px1, py1, px2, py2))
+
+    except Exception:
+
+        return None
+
+
+
+
+
+def _image_to_data_uri_png(image_bytes: bytes) -> str:
+
+    b64 = base64.b64encode(image_bytes).decode("ascii")
+
+    return f"data:image/png;base64,{b64}"
+
+
+
+
+
+def _vllm_chat_ocr(image_png_bytes: bytes, model_id: str, base_url: str, temperature: float, max_tokens: int) -> str:
+
+    if httpx is None:
+
+        return ""
+
+    endpoint = (base_url or "").strip().rstrip("/")
+
+    if not endpoint:
+
+        return ""
+
+    url = endpoint + "/chat/completions"
+
+    payload = {
+
+        "model": model_id,
+
+        "messages": [
+
+            {
+
+                "role": "user",
+
+                "content": [
+
+                    {"type": "image_url", "image_url": {"url": _image_to_data_uri_png(image_png_bytes)}},
+
+                ],
+
+            }
+
+        ],
+
+        "max_tokens": int(max_tokens) if max_tokens else 2048,
+
+        "temperature": float(temperature) if temperature and float(temperature) > 0 else 0.0,
+
+        "top_p": 0.9,
+
+        "stream": False,
+
+    }
+
+    try:
+
+        with httpx.Client(timeout=120) as client:  # type: ignore[union-attr]
+
+            r = client.post(url, json=payload)
+
+            r.raise_for_status()
+
+            data = r.json()
+
+    except Exception:
+
+        return ""
+
+    try:
+
+        if isinstance(data, dict):
+
+            choices = data.get("choices")
+
+            if isinstance(choices, list) and choices:
+
+                msg = (choices[0] or {}).get("message") or {}
+
+                content = msg.get("content")
+
+                if isinstance(content, str):
+
+                    return _clean_output_text(content)
+
+    except Exception:
+
+        return ""
+
+    return ""
+
+
+
+
+
+def _lighton_local_chat_ocr(image_png_bytes: bytes, model_name: str, temperature: float, max_tokens: int) -> str:
+
+    if torch is None:
+
+        return ""
+
+    if Image is None:
+
+        return ""
+
+    try:
+
+        img = Image.open(io.BytesIO(image_png_bytes)).convert("RGB")
+
+    except Exception:
+
+        return ""
+
+    try:
+
+        model, processor, device = model_manager.get_model(model_name)
+
+    except Exception:
+
+        return ""
+
+    try:
+
+        chat = [
+
+            {
+
+                "role": "user",
+
+                "content": [
+
+                    {"type": "image", "url": img},
+
+                ],
+
+            }
+
+        ]
+
+        if hasattr(processor, "apply_chat_template"):
+
+            inputs = processor.apply_chat_template(
+
+                chat,
+
+                add_generation_prompt=True,
+
+                tokenize=True,
+
+                return_dict=True,
+
+                return_tensors="pt",
+
+            )
+
+        else:
+
+            inputs = processor(images=img, return_tensors="pt")
+
+        if isinstance(inputs, dict):
+
+            inputs = {k: (v.to(device) if hasattr(v, "to") else v) for k, v in inputs.items()}
+
+        gen = model.generate(
+
+            **inputs,
+
+            max_new_tokens=int(max_tokens) if max_tokens else 2048,
+
+            temperature=float(temperature) if temperature and float(temperature) > 0 else 0.0,
+
+            top_p=0.9,
+
+            top_k=0,
+
+            use_cache=True,
+
+            do_sample=bool(temperature and float(temperature) > 0),
+
+        )
+
+        if hasattr(processor, "decode"):
+
+            out = processor.decode(gen[0], skip_special_tokens=True)
+
+        elif hasattr(processor, "batch_decode"):
+
+            out_list = processor.batch_decode(gen, skip_special_tokens=True)
+
+            out = out_list[0] if isinstance(out_list, list) and out_list else ""
+
+        else:
+
+            out = ""
+
+        return _clean_output_text(str(out))
+
+    except Exception:
+
+        return ""
+
+
+
+
+
+def _handwritten_lighton_multimodel_ocr(image_png_bytes: bytes, model_name: str, temperature: float, max_tokens: int) -> str:
+
+    cfg = MODEL_REGISTRY.get(model_name) or {}
+
+    model_id = _clean_text(cfg.get("model_id"))
+
+    vllm = _clean_text(cfg.get("vllm_endpoint"))
+
+    if vllm and model_id:
+
+        txt = _vllm_chat_ocr(image_png_bytes, model_id=model_id, base_url=vllm, temperature=temperature, max_tokens=max_tokens)
+
+        if txt:
+
+            return txt
+
+    if LIGHTON_LOCAL_ENABLED:
+
+        txt2 = _lighton_local_chat_ocr(image_png_bytes, model_name=model_name, temperature=temperature, max_tokens=max_tokens)
+
+        if txt2:
+
+            return txt2
+
+    if model_id:
+
+        txt3 = _lighton_vision_ocr_text(image_png_bytes, prompt="Extract all readable text from this image. Output plain text only.")
+
+        return _clean_output_text(txt3)
+
+    return ""
+
+
+
+
+
+def _invoice_render_page(pdf_path: str, page_num: int) -> Optional[Any]:
+
+    if Image is None:
+
+        return None
+
+    p = int(page_num) if page_num and int(page_num) > 0 else 1
+
+    idx = p - 1
+
+    try:
+
+        if pdfium is not None:
+
+            doc = pdfium.PdfDocument(pdf_path)
+
+            if len(doc) < 1:
+
+                return None
+
+            idx2 = max(0, min(idx, len(doc) - 1))
+
+            page = doc[idx2]
+
+            bitmap = page.render(scale=5)
+
+            return bitmap.to_pil()  # type: ignore[union-attr]
+
+        if fitz is not None:
+
+            doc2 = fitz.open(pdf_path)  # type: ignore[union-attr]
+
+            if doc2.page_count < 1:  # type: ignore[union-attr]
+
+                return None
+
+            idx3 = max(0, min(idx, doc2.page_count - 1))  # type: ignore[union-attr]
+
+            page2 = doc2.load_page(idx3)  # type: ignore[union-attr]
+
+            pix = page2.get_pixmap(matrix=fitz.Matrix(5, 5))  # type: ignore[union-attr]
+
+            img_bytes = pix.tobytes("png")
+
+            return Image.open(io.BytesIO(img_bytes))
+
+        return None
+
+    except Exception:
+
+        return None
+
+
+
 APP_VERSION = os.getenv("APP_VERSION", "dev")
 
 
@@ -241,6 +737,24 @@ DEEPSEEK_OCR2_URL = os.getenv("DEEPSEEK_OCR2_URL", "").strip()
 DEEPSEEK_OCR_MODEL = os.getenv("DEEPSEEK_OCR_MODEL", "deepseek-vl").strip()
 
 DEEPSEEK_OCR_TEMPERATURE = os.getenv("DEEPSEEK_OCR_TEMPERATURE", "0").strip()
+
+LIGHTON_API_KEY = os.getenv("LIGHTON_API_KEY", "").strip()
+
+LIGHTON_OCR2_URL = os.getenv("LIGHTON_OCR2_URL", "").strip()
+
+LIGHTON_OCR_MODEL = os.getenv("LIGHTON_OCR_MODEL", "lightonai/LightOnOCR-2-1B").strip()
+
+LIGHTON_OCR_TEMPERATURE = os.getenv("LIGHTON_OCR_TEMPERATURE", "0").strip()
+
+LIGHTON_LOCAL_ENABLED = os.getenv("LIGHTON_LOCAL_ENABLED", "").strip().lower() in {"1", "true", "yes", "y", "on"}
+
+LIGHTON_LOCAL_MODEL_NAME = os.getenv("LIGHTON_LOCAL_MODEL_NAME", "LightOnOCR-2-1B (Best OCR)").strip()
+
+
+
+VLLM_ENDPOINT_OCR = os.getenv("VLLM_ENDPOINT_OCR", "").strip()
+
+VLLM_ENDPOINT_BBOX = os.getenv("VLLM_ENDPOINT_BBOX", "").strip()
 
 
 
@@ -279,6 +793,14 @@ INVOICE_JOBS: Dict[str, str] = {}
 
 
 INVOICE_REVIEW_JOBS: Dict[str, str] = {}
+
+
+
+HANDWRITTEN_REVIEW_JOBS: Dict[str, str] = {}
+
+
+
+HANDWRITTEN_JOBS: Dict[str, str] = {}
 
 
 
@@ -333,6 +855,214 @@ def _clean_text(value: Any) -> str:
     s = re.sub(r"\n{2,}", "\n", s)
 
     return s.strip()
+
+
+
+
+
+MODEL_REGISTRY: Dict[str, Dict[str, Any]] = {
+
+    "LightOnOCR-2-1B (Best OCR)": {
+
+        "model_id": "lightonai/LightOnOCR-2-1B",
+
+        "has_bbox": False,
+
+        "description": "Best overall OCR performance",
+
+        "vllm_endpoint": VLLM_ENDPOINT_OCR,
+
+    },
+
+    "LightOnOCR-2-1B-bbox (Best Bbox)": {
+
+        "model_id": "lightonai/LightOnOCR-2-1B-bbox",
+
+        "has_bbox": True,
+
+        "description": "Best bounding box detection",
+
+        "vllm_endpoint": VLLM_ENDPOINT_BBOX,
+
+    },
+
+    "LightOnOCR-2-1B-base": {
+
+        "model_id": "lightonai/LightOnOCR-2-1B-base",
+
+        "has_bbox": False,
+
+        "description": "Base OCR model",
+
+    },
+
+    "LightOnOCR-2-1B-bbox-base": {
+
+        "model_id": "lightonai/LightOnOCR-2-1B-bbox-base",
+
+        "has_bbox": True,
+
+        "description": "Base bounding box model",
+
+    },
+
+    "LightOnOCR-2-1B-ocr-soup": {
+
+        "model_id": "lightonai/LightOnOCR-2-1B-ocr-soup",
+
+        "has_bbox": False,
+
+        "description": "OCR soup variant",
+
+    },
+
+    "LightOnOCR-2-1B-bbox-soup": {
+
+        "model_id": "lightonai/LightOnOCR-2-1B-bbox-soup",
+
+        "has_bbox": True,
+
+        "description": "Bounding box soup variant",
+
+    },
+
+}
+
+
+
+class ModelManager:
+
+    def __init__(self, max_cached: int = 2):
+
+        self._cache: "OrderedDict[str, Tuple[Any, Any, str]]" = OrderedDict()
+
+        self._max_cached = max_cached
+
+    def get_model(self, model_name: str) -> Tuple[Any, Any, str]:
+
+        config = MODEL_REGISTRY.get(model_name)
+
+        if config is None:
+
+            raise ValueError(f"Unknown model: {model_name}")
+
+        model_id = str(config.get("model_id") or "").strip()
+
+        if not model_id:
+
+            raise ValueError(f"Model id missing for: {model_name}")
+
+        if model_id in self._cache:
+
+            self._cache.move_to_end(model_id)
+
+            return self._cache[model_id]
+
+        while len(self._cache) >= self._max_cached:
+
+            _evicted_id, (evicted_model, _evicted_processor, evicted_device) = self._cache.popitem(last=False)
+
+            try:
+
+                del evicted_model
+
+            except Exception:
+
+                pass
+
+            if torch is not None and evicted_device == "cuda":
+
+                try:
+
+                    torch.cuda.empty_cache()  # type: ignore[union-attr]
+
+                except Exception:
+
+                    pass
+
+        if torch is None:
+
+            raise RuntimeError("Local LightOnOCR requires torch")
+
+        use_lighton = LightOnOcrForConditionalGeneration is not None and LightOnOcrProcessor is not None
+
+        use_auto = (AutoProcessor is not None) and (AutoModelForVision2Seq is not None or AutoModelForCausalLM is not None)
+
+        if not use_lighton and not use_auto:
+
+            raise RuntimeError("Local LightOnOCR requires transformers (LightOn classes or AutoModel/AutoProcessor)")
+
+        device = "cuda" if bool(getattr(torch, "cuda", None)) and torch.cuda.is_available() else "cpu"  # type: ignore[union-attr]
+
+        if device == "cuda":
+
+            attn_implementation = "sdpa"
+
+            torch_dtype = getattr(torch, "bfloat16", None) or getattr(torch, "float16")
+
+        else:
+
+            attn_implementation = "eager"
+
+            torch_dtype = getattr(torch, "float32")
+
+        if use_lighton:
+
+            model = (
+
+                LightOnOcrForConditionalGeneration.from_pretrained(
+
+                    model_id,
+
+                    attn_implementation=attn_implementation,
+
+                    torch_dtype=torch_dtype,
+
+                    trust_remote_code=True,
+
+                )
+
+                .to(device)
+
+                .eval()
+
+            )
+
+            processor = LightOnOcrProcessor.from_pretrained(model_id, trust_remote_code=True)
+
+        else:
+
+            model_cls = AutoModelForVision2Seq or AutoModelForCausalLM
+
+            model = (
+
+                model_cls.from_pretrained(
+
+                    model_id,
+
+                    attn_implementation=attn_implementation,
+
+                    torch_dtype=torch_dtype,
+
+                    trust_remote_code=True,
+
+                )
+
+                .to(device)
+
+                .eval()
+
+            )
+
+            processor = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
+
+        self._cache[model_id] = (model, processor, device)
+
+        return model, processor, device
+
+
+
+model_manager = ModelManager(max_cached=2)
 
 
 
@@ -714,6 +1444,288 @@ def _tesseract_available() -> Tuple[bool, str]:
 
 
 
+def _ocr_preprocess_variants(pil_img: Any) -> List[Any]:
+
+    if Image is None:
+
+        return [pil_img]
+
+
+
+    def _safe_copy(img: Any) -> Any:
+
+        try:
+
+            return img.copy()
+
+        except Exception:
+
+            return img
+
+
+
+    def _rotate_from_osd(img: Any) -> Any:
+
+        if pytesseract is None or TesseractOutput is None:
+
+            return img
+
+        try:
+
+            osd = pytesseract.image_to_osd(img, output_type=TesseractOutput.DICT)  # type: ignore[union-attr]
+
+        except Exception:
+
+            return img
+
+        try:
+
+            rotate = int(osd.get("rotate", 0) or 0)
+
+        except Exception:
+
+            rotate = 0
+
+        if rotate not in (0, 90, 180, 270):
+
+            return img
+
+        if not rotate:
+
+            return img
+
+        try:
+
+            return img.rotate(-rotate, expand=True)
+
+        except Exception:
+
+            return img
+
+
+
+    def _pil_to_bgr(img: Any) -> Any:
+
+        if cv2 is None or np is None:
+
+            return None
+
+        try:
+
+            rgb = img.convert("RGB")
+
+            arr = np.array(rgb)
+
+            return cv2.cvtColor(arr, cv2.COLOR_RGB2BGR)
+
+        except Exception:
+
+            return None
+
+
+
+    def _bgr_to_pil(bgr: Any) -> Any:
+
+        if cv2 is None or np is None or Image is None:
+
+            return None
+
+        try:
+
+            rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
+
+            return Image.fromarray(rgb)
+
+        except Exception:
+
+            return None
+
+
+
+    def _deskew_bgr(bgr: Any) -> Any:
+
+        if cv2 is None or np is None:
+
+            return bgr
+
+        try:
+
+            gray = cv2.cvtColor(bgr, cv2.COLOR_BGR2GRAY)
+
+            gray = cv2.GaussianBlur(gray, (5, 5), 0)
+
+            thr = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
+
+            coords = np.column_stack(np.where(thr > 0))
+
+            if coords.size == 0:
+
+                return bgr
+
+            rect = cv2.minAreaRect(coords)
+
+            angle = float(rect[-1])
+
+            if angle < -45:
+
+                angle = 90 + angle
+
+            angle = -angle
+
+            if abs(angle) < 0.6:
+
+                return bgr
+
+            (h, w) = bgr.shape[:2]
+
+            M = cv2.getRotationMatrix2D((w / 2.0, h / 2.0), angle, 1.0)
+
+            return cv2.warpAffine(bgr, M, (w, h), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
+
+        except Exception:
+
+            return bgr
+
+
+
+    def _perspective_fix_bgr(bgr: Any) -> Any:
+
+        if cv2 is None or np is None:
+
+            return bgr
+
+        try:
+
+            gray = cv2.cvtColor(bgr, cv2.COLOR_BGR2GRAY)
+
+            gray = cv2.GaussianBlur(gray, (5, 5), 0)
+
+            edges = cv2.Canny(gray, 50, 150)
+
+            edges = cv2.dilate(edges, None, iterations=2)
+
+            cnts, _hier = cv2.findContours(edges, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+
+            if not cnts:
+
+                return bgr
+
+            cnts = sorted(cnts, key=cv2.contourArea, reverse=True)[:10]
+
+            doc = None
+
+            for c in cnts:
+
+                peri = cv2.arcLength(c, True)
+
+                approx = cv2.approxPolyDP(c, 0.02 * peri, True)
+
+                if len(approx) == 4:
+
+                    doc = approx
+
+                    break
+
+            if doc is None:
+
+                return bgr
+
+            pts = doc.reshape(4, 2).astype("float32")
+
+            s = pts.sum(axis=1)
+
+            diff = np.diff(pts, axis=1)
+
+            tl = pts[np.argmin(s)]
+
+            br = pts[np.argmax(s)]
+
+            tr = pts[np.argmin(diff)]
+
+            bl = pts[np.argmax(diff)]
+
+            widthA = np.linalg.norm(br - bl)
+
+            widthB = np.linalg.norm(tr - tl)
+
+            maxW = int(max(widthA, widthB))
+
+            heightA = np.linalg.norm(tr - br)
+
+            heightB = np.linalg.norm(tl - bl)
+
+            maxH = int(max(heightA, heightB))
+
+            if maxW < 200 or maxH < 200:
+
+                return bgr
+
+            dst = np.array([[0, 0], [maxW - 1, 0], [maxW - 1, maxH - 1], [0, maxH - 1]], dtype="float32")
+
+            M = cv2.getPerspectiveTransform(np.array([tl, tr, br, bl], dtype="float32"), dst)
+
+            warped = cv2.warpPerspective(bgr, M, (maxW, maxH))
+
+            return warped
+
+        except Exception:
+
+            return bgr
+
+
+
+    variants: List[Any] = []
+
+    base = _safe_copy(pil_img)
+
+    variants.append(base)
+
+    variants.append(_rotate_from_osd(_safe_copy(base)))
+
+    bgr0 = _pil_to_bgr(base)
+
+    if bgr0 is not None:
+
+        bgr1 = _perspective_fix_bgr(bgr0)
+
+        bgr2 = _deskew_bgr(bgr1)
+
+        pil2 = _bgr_to_pil(bgr2)
+
+        if pil2 is not None:
+
+            variants.append(pil2)
+
+            variants.append(_rotate_from_osd(_safe_copy(pil2)))
+
+
+
+    out: List[Any] = []
+
+    seen: set = set()
+
+    for v in variants:
+
+        try:
+
+            key = (int(getattr(v, "size", (0, 0))[0]), int(getattr(v, "size", (0, 0))[1]), str(getattr(v, "mode", "")))
+
+        except Exception:
+
+            key = (id(v),)
+
+        if key in seen:
+
+            continue
+
+        seen.add(key)
+
+        out.append(v)
+
+    return out or [pil_img]
+
+
+
 
 
 def _extract_text_lines_from_pdf_without_ocr(pdf_path: str) -> List[str]:
@@ -932,35 +1944,37 @@ def _extract_text_lines_from_image_with_ocr(image_path: str) -> Tuple[List[str],
 
     best_score = -1
 
-    for angle in (0, 90, 180, 270):
+    for base_img in _ocr_preprocess_variants(pil_img):
 
-        try:
-
-            img2 = pil_img.rotate(angle, expand=True) if angle else pil_img
-
-        except Exception:
-
-            img2 = pil_img
-
-        img2 = _preprocess_for_ocr(img2)
-
-        for cfg in cfgs:
+        for angle in (0, 90, 180, 270):
 
             try:
 
-                txt = pytesseract.image_to_string(img2, config=cfg, lang="eng")  # type: ignore[union-attr]
+                img2 = base_img.rotate(angle, expand=True) if angle else base_img
 
             except Exception:
 
-                continue
+                img2 = base_img
 
-            sc = _score_ocr_text(txt)
+            img2 = _preprocess_for_ocr(img2)
 
-            if sc > best_score:
+            for cfg in cfgs:
 
-                best_score = sc
+                try:
 
-                best_txt = txt
+                    txt = pytesseract.image_to_string(img2, config=cfg, lang="eng")  # type: ignore[union-attr]
+
+                except Exception:
+
+                    continue
+
+                sc = _score_ocr_text(txt)
+
+                if sc > best_score:
+
+                    best_score = sc
+
+                    best_txt = txt
 
 
 
@@ -969,6 +1983,142 @@ def _extract_text_lines_from_image_with_ocr(image_path: str) -> Tuple[List[str],
     cleaned = [x for x in cleaned if x]
 
     return cleaned, bool(cleaned)
+
+
+
+
+
+def _ocr_words_and_lines_from_pil_image(img: Any) -> Dict[str, Any]:
+
+    out: Dict[str, Any] = {"lines": [], "words": []}
+
+    if img is None:
+
+        return out
+
+    if pytesseract is None:
+
+        return out
+
+    ok, _detail = _invoice_tesseract_available() if "_invoice_tesseract_available" in globals() else _tesseract_available()
+
+    if not ok:
+
+        return out
+
+    try:
+
+        txt = pytesseract.image_to_string(img, config="--oem 1 --psm 6")
+
+    except Exception:
+
+        txt = ""
+
+    lines = [_clean_text(x) for x in str(txt).splitlines()]
+
+    lines = [x for x in lines if x]
+
+    out["lines"] = [{"index": i + 1, "text": ln} for i, ln in enumerate(lines)]
+
+    try:
+
+        data = pytesseract.image_to_data(img, output_type=pytesseract.Output.DICT, config="--oem 1 --psm 6")
+
+        n = len(data.get("text") or [])
+
+        words: List[Dict[str, Any]] = []
+
+        for i in range(n):
+
+            w = _clean_text((data.get("text") or [""])[i])
+
+            if not w:
+
+                continue
+
+            try:
+
+                conf_raw = (data.get("conf") or [""])[i]
+
+                conf = float(conf_raw) if conf_raw not in (None, "", "-1") else None
+
+            except Exception:
+
+                conf = None
+
+            try:
+
+                left = int((data.get("left") or [0])[i])
+
+                top = int((data.get("top") or [0])[i])
+
+                width = int((data.get("width") or [0])[i])
+
+                height = int((data.get("height") or [0])[i])
+
+            except Exception:
+
+                left, top, width, height = 0, 0, 0, 0
+
+            words.append(
+
+                {
+
+                    "index": int(len(words) + 1),
+
+                    "text": w,
+
+                    "confidence": conf,
+
+                    "bbox": {"x": left, "y": top, "w": width, "h": height},
+
+                }
+
+            )
+
+        out["words"] = words
+
+    except Exception:
+
+        out["words"] = []
+
+    return out
+
+
+
+
+
+def _ocr_words_and_lines_from_image_bytes(img_bytes: bytes) -> Dict[str, Any]:
+
+    if not img_bytes:
+
+        return {"lines": [], "words": []}
+
+    if Image is None:
+
+        return {"lines": [], "words": []}
+
+    try:
+
+        img = Image.open(io.BytesIO(img_bytes))
+
+    except Exception:
+
+        img = None
+
+    if img is None:
+
+        return {"lines": [], "words": []}
+
+    try:
+
+        img2 = img.convert("RGB")
+
+    except Exception:
+
+        img2 = img
+
+    return _ocr_words_and_lines_from_pil_image(img2)
 
 
 
@@ -1141,6 +2291,195 @@ def _deepseek_vision_ocr_text(image_bytes: bytes, prompt: str = "") -> str:
         return ""
 
     return ""
+
+
+
+
+
+def _lighton_vision_ocr_text(image_bytes: bytes, prompt: str = "") -> str:
+
+    if LIGHTON_LOCAL_ENABLED:
+
+        if Image is None:
+
+            return ""
+
+        try:
+
+            img = Image.open(io.BytesIO(image_bytes))
+
+            img = img.convert("RGB")
+
+        except Exception:
+
+            return ""
+
+        try:
+
+            model, processor, device = model_manager.get_model(LIGHTON_LOCAL_MODEL_NAME)
+
+        except Exception:
+
+            return ""
+
+        try:
+
+            p = _clean_text(prompt) or "Extract all readable text from this image. Output plain text only."
+
+            try:
+
+                inputs = processor(text=p, images=img, return_tensors="pt")
+
+            except Exception:
+
+                inputs = processor(images=img, return_tensors="pt")
+
+            if device == "cuda":
+
+                inputs = {k: v.to(device) for k, v in inputs.items()}
+
+            gen = model.generate(**inputs, max_new_tokens=768)
+
+            out = processor.batch_decode(gen, skip_special_tokens=True)
+
+            txt = out[0] if isinstance(out, list) and out else ""
+
+            return _clean_text(txt)
+
+        except Exception:
+
+            return ""
+
+    if httpx is None:
+
+        return ""
+
+    if not LIGHTON_OCR2_URL:
+
+        return ""
+
+
+
+    p = _clean_text(prompt) or "Extract all readable text from this image. Output plain text only."
+
+    try:
+
+        temperature = float(LIGHTON_OCR_TEMPERATURE) if _clean_text(LIGHTON_OCR_TEMPERATURE) else 0.0
+
+    except Exception:
+
+        temperature = 0.0
+
+
+
+    image_b64 = base64.b64encode(image_bytes).decode("ascii")
+
+    data_uri = f"data:image/png;base64,{image_b64}"
+
+    payload = {
+
+        "model": LIGHTON_OCR_MODEL or "lightonai/LightOnOCR-2-1B",
+
+        "messages": [
+
+            {
+
+                "role": "user",
+
+                "content": [
+
+                    {"type": "text", "text": p},
+
+                    {"type": "image_url", "image_url": {"url": data_uri}},
+
+                ],
+
+            }
+
+        ],
+
+        "temperature": temperature,
+
+    }
+
+
+
+    headers = {"Content-Type": "application/json"}
+
+    if _clean_text(LIGHTON_API_KEY):
+
+        headers["Authorization"] = f"Bearer {LIGHTON_API_KEY}"
+
+
+
+    try:
+
+        with httpx.Client(timeout=90) as client:  # type: ignore[union-attr]
+
+            r = client.post(LIGHTON_OCR2_URL, headers=headers, json=payload)
+
+            r.raise_for_status()
+
+            data = r.json()
+
+    except Exception:
+
+        return ""
+
+
+
+    try:
+
+        if isinstance(data, dict):
+
+            choices = data.get("choices")
+
+            if isinstance(choices, list) and choices:
+
+                msg = (choices[0] or {}).get("message") or {}
+
+                content = msg.get("content")
+
+                if isinstance(content, str):
+
+                    return _clean_text(content)
+
+                if isinstance(content, list):
+
+                    parts = []
+
+                    for it in content:
+
+                        if isinstance(it, dict) and isinstance(it.get("text"), str):
+
+                            parts.append(it.get("text"))
+
+                    if parts:
+
+                        return _clean_text("\n".join(parts))
+
+
+
+            t = data.get("text") or data.get("result") or data.get("data")
+
+            if isinstance(t, str):
+
+                return _clean_text(t)
+
+    except Exception:
+
+        return ""
+
+    return ""
+
+
+
+
+
+def _lighton_extract_used_vehicle_fields_from_image_bytes(image_bytes: bytes) -> Dict[str, Any]:
+    # Extract all readable text from the image without field filtering
+    txt = _lighton_vision_ocr_text(image_bytes, prompt="Extract all readable text from this image. Output plain text only.")
+    return {"raw_text": txt, "parsed": {}}
 
 
 
@@ -1718,19 +3057,21 @@ def _extract_text_simplified(pdf_path: str) -> Tuple[List[str], bool]:
 
                         pil_img = bitmap.to_pil()  # type: ignore[union-attr]
 
-                        img2 = _preprocess_for_ocr(pil_img)
+                        for base_img in _ocr_preprocess_variants(pil_img):
 
-                        try:
+                            img2 = _preprocess_for_ocr(base_img)
 
-                            txt = pytesseract.image_to_string(img2, config=cfg, lang="eng")  # type: ignore[union-attr]
+                            try:
 
-                            if txt and len(txt.strip()) > 5:
+                                txt = pytesseract.image_to_string(img2, config=cfg, lang="eng")  # type: ignore[union-attr]
 
-                                ocr_lines.extend(txt.splitlines())
+                                if txt and len(txt.strip()) > 5:
 
-                        except Exception:
+                                    ocr_lines.extend(txt.splitlines())
 
-                            continue
+                            except Exception:
+
+                                continue
 
                 else:
 
@@ -10960,59 +12301,63 @@ def _invoice_extract_text_lines_from_pdf_with_ocr(pdf_path: str, force_ocr: bool
 
 
 
-                for angle in (0, 90, 180, 270):
+                for base_img in _ocr_preprocess_variants(pil_img):
 
 
 
-                    try:
+                    for angle in (0, 90, 180, 270):
 
 
 
-                        img2 = pil_img.rotate(angle, expand=True) if angle else pil_img
+                        try:
 
 
 
-                    except Exception:
+                            img2 = base_img.rotate(angle, expand=True) if angle else base_img
 
 
 
-                        img2 = pil_img
+                        except Exception:
 
 
 
-                    img2 = _preprocess_for_ocr(img2)
+                            img2 = base_img
 
 
 
-                    try:
+                        img2 = _preprocess_for_ocr(img2)
 
 
 
-                        txt = pytesseract.image_to_string(img2, config=tesseract_cfg)  # type: ignore[union-attr]
+                        try:
 
 
 
-                    except Exception:
+                            txt = pytesseract.image_to_string(img2, config=tesseract_cfg)  # type: ignore[union-attr]
 
 
 
-                        continue
+                        except Exception:
 
 
 
-                    sc = _score_ocr_text(txt)
+                            continue
 
 
 
-                    if sc > best_score:
+                        sc = _score_ocr_text(txt)
 
 
 
-                        best_score = sc
+                        if sc > best_score:
 
 
 
-                        best_txt = txt
+                            best_score = sc
+
+
+
+                            best_txt = txt
 
 
 
@@ -11056,59 +12401,63 @@ def _invoice_extract_text_lines_from_pdf_with_ocr(pdf_path: str, force_ocr: bool
 
 
 
-                for angle in (0, 90, 180, 270):
+                for base_img in _ocr_preprocess_variants(pil_img):
 
 
 
-                    try:
+                    for angle in (0, 90, 180, 270):
 
 
 
-                        img2 = pil_img.rotate(angle, expand=True) if angle else pil_img
+                        try:
 
 
 
-                    except Exception:
+                            img2 = base_img.rotate(angle, expand=True) if angle else base_img
 
 
 
-                        img2 = pil_img
+                        except Exception:
 
 
 
-                    img2 = _preprocess_for_ocr(img2)
+                            img2 = base_img
 
 
 
-                    try:
+                        img2 = _preprocess_for_ocr(img2)
 
 
 
-                        txt = pytesseract.image_to_string(img2, config=tesseract_cfg)  # type: ignore[union-attr]
+                        try:
 
 
 
-                    except Exception:
+                            txt = pytesseract.image_to_string(img2, config=tesseract_cfg)  # type: ignore[union-attr]
 
 
 
-                        continue
+                        except Exception:
 
 
 
-                    sc = _score_ocr_text(txt)
+                            continue
 
 
 
-                    if sc > best_score:
+                        sc = _score_ocr_text(txt)
 
 
 
-                        best_score = sc
+                        if sc > best_score:
 
 
 
-                        best_txt = txt
+                            best_score = sc
+
+
+
+                            best_txt = txt
 
 
 
@@ -20622,7 +21971,528 @@ async def invoice_convert_review(request: Request) -> JSONResponse:
 
 
 
+@app.post("/api/handwritten-invoice-convert-review")
 
+
+
+async def handwritten_invoice_convert_review(request: Request) -> JSONResponse:
+
+    form = await request.form()
+
+    model_name_in = _clean_text(form.get("model_name") if hasattr(form, "get") else "")
+
+    if not model_name_in:
+
+        model_name_in = _clean_text(form.get("model") if hasattr(form, "get") else "")
+
+    model_name = model_name_in if model_name_in in MODEL_REGISTRY else (LIGHTON_LOCAL_MODEL_NAME if LIGHTON_LOCAL_MODEL_NAME in MODEL_REGISTRY else "LightOnOCR-2-1B (Best OCR)")
+
+    try:
+
+        temperature = float(_clean_text(form.get("temperature") if hasattr(form, "get") else "") or "0.2")
+
+    except Exception:
+
+        temperature = 0.2
+
+    try:
+
+        max_tokens = int(_clean_text(form.get("max_tokens") if hasattr(form, "get") else "") or _clean_text(form.get("max_output_tokens") if hasattr(form, "get") else "") or "2048")
+
+    except Exception:
+
+        max_tokens = 2048
+
+    try:
+
+        page_num = int(_clean_text(form.get("page_num") if hasattr(form, "get") else "") or "1")
+
+    except Exception:
+
+        page_num = 1
+
+    include_crops = _clean_text(form.get("include_crops") if hasattr(form, "get") else "").strip().lower() in {"1", "true", "yes", "y", "on"}
+
+    try:
+
+        crops_limit = int(_clean_text(form.get("crops_limit") if hasattr(form, "get") else "") or "25")
+
+    except Exception:
+
+        crops_limit = 25
+
+    files: List[UploadFile] = []
+
+    for key in ("files", "file"):
+
+        try:
+
+            items = form.getlist(key)  # type: ignore[attr-defined]
+
+        except Exception:
+
+            items = []
+
+        for it in items:
+
+            if isinstance(it, (UploadFile, StarletteUploadFile)):
+
+                files.append(it)  # type: ignore[arg-type]
+
+            elif hasattr(it, "filename") and hasattr(it, "read"):
+
+                files.append(it)  # type: ignore[arg-type]
+
+    if not files:
+
+        return JSONResponse({"error": "No files uploaded"}, status_code=400)
+
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+    job_id = str(uuid.uuid4())
+
+    job_folder = os.path.join(OUTPUT_DIR, job_id)
+
+    os.makedirs(job_folder, exist_ok=True)
+
+    outputs: List[Dict[str, Any]] = []
+
+    warnings: List[str] = []
+
+    skipped: List[str] = []
+
+    for f in files:
+
+        filename = os.path.basename(f.filename or "handwritten")
+
+        content_type = (f.content_type or "").lower()
+
+        is_pdf = filename.lower().endswith(".pdf") or content_type == "application/pdf"
+
+        is_image = content_type.startswith("image/") or filename.lower().endswith((".png", ".jpg", ".jpeg", ".webp"))
+
+        if not (is_pdf or is_image):
+
+            skipped.append(f"{filename} ({content_type or 'unknown'})")
+
+            continue
+
+        content = await f.read()
+
+        if not content:
+
+            warnings.append(f"'{filename}': Empty file.")
+
+            continue
+
+        pil_img: Any = None
+
+        png_bytes: bytes = b""
+
+        if is_image:
+
+            if Image is not None:
+
+                try:
+
+                    pil_img = Image.open(io.BytesIO(content)).convert("RGB")
+
+                    buf0 = io.BytesIO()
+
+                    pil_img.save(buf0, format="PNG")
+
+                    png_bytes = buf0.getvalue()
+
+                except Exception:
+
+                    pil_img = None
+
+                    png_bytes = b""
+
+        else:
+
+            tmp_pdf = os.path.join(job_folder, filename)
+
+            try:
+
+                with open(tmp_pdf, "wb") as out:
+
+                    out.write(content)
+
+            except Exception:
+
+                tmp_pdf = ""
+
+            if tmp_pdf and os.path.exists(tmp_pdf):
+
+                try:
+
+                    pil_img = _invoice_render_page(tmp_pdf, page_num)
+
+                except Exception:
+
+                    pil_img = None
+
+                if pil_img is None:
+
+                    try:
+
+                        pil_img = _invoice_render_first_page(tmp_pdf)
+
+                    except Exception:
+
+                        pil_img = None
+
+                if pil_img is not None:
+
+                    try:
+
+                        buf1 = io.BytesIO()
+
+                        pil_img.save(buf1, format="PNG")
+
+                        png_bytes = buf1.getvalue()
+
+                    except Exception:
+
+                        png_bytes = b""
+
+        raw_output = ""
+
+        cleaned_text = ""
+
+        detections: List[Dict[str, Any]] = []
+
+        crops: List[Dict[str, Any]] = []
+
+        engine = ""
+
+        has_bbox = bool((MODEL_REGISTRY.get(model_name) or {}).get("has_bbox"))
+
+        if png_bytes:
+
+            try:
+
+                raw_output = _handwritten_lighton_multimodel_ocr(png_bytes, model_name=model_name, temperature=temperature, max_tokens=max_tokens)
+
+            except Exception:
+
+                raw_output = ""
+
+            if raw_output:
+
+                engine = "lighton"
+
+                if has_bbox:
+
+                    cleaned_text, detections = _parse_bbox_output(raw_output)
+
+                else:
+
+                    cleaned_text = _clean_output_text(raw_output)
+
+        if not cleaned_text:
+
+            if pil_img is not None:
+
+                try:
+
+                    t_ocr = _ocr_words_and_lines_from_pil_image(pil_img)
+
+                except Exception:
+
+                    t_ocr = {"lines": [], "words": []}
+
+            else:
+
+                t_ocr = {"lines": [], "words": []}
+
+            if (t_ocr.get("lines") or t_ocr.get("words")) and isinstance(t_ocr, dict):
+
+                engine = engine or "tesseract"
+
+                line_txt = "\n".join([_clean_text(x.get("text")) for x in (t_ocr.get("lines") or []) if isinstance(x, dict)])
+
+                cleaned_text = _clean_output_text(line_txt)
+
+        if include_crops and has_bbox and detections and pil_img is not None:
+
+            for det in detections[: max(0, crops_limit)]:
+
+                crop_img = _crop_from_bbox(pil_img, det)
+
+                if crop_img is None:
+
+                    continue
+
+                try:
+
+                    b = io.BytesIO()
+
+                    crop_img.save(b, format="PNG")
+
+                    crops.append({"ref": det.get("ref"), "coords": det.get("coords"), "png_base64": base64.b64encode(b.getvalue()).decode("ascii")})
+
+                except Exception:
+
+                    continue
+
+        lines_out = [x for x in [_clean_text(x) for x in str(cleaned_text or "").splitlines()] if x]
+
+        words_out = [x for x in re.split(r"\s+", _clean_text(cleaned_text)) if x]
+
+        payload_out: Dict[str, Any] = {
+
+            "filename": filename,
+
+            "content_type": content_type,
+
+            "model_name": model_name,
+
+            "has_bbox": bool(has_bbox),
+
+            "engine": engine or "",
+
+            "raw_output": raw_output,
+
+            "cleaned_text": cleaned_text,
+
+            "lines": [{"index": i + 1, "text": ln} for i, ln in enumerate(lines_out)],
+
+            "words": [{"index": i + 1, "text": w} for i, w in enumerate(words_out)],
+
+            "detections": detections,
+
+        }
+
+        if include_crops:
+
+            payload_out["crops"] = crops
+
+        if cleaned_text:
+
+            warnings.append(f"'{filename}': Extracted handwritten OCR text.")
+
+        else:
+
+            warnings.append(f"'{filename}': No OCR text could be extracted.")
+
+        outputs.append(payload_out)
+    if not outputs:
+
+        msg = "No valid handwritten invoice files found"
+
+        if skipped:
+
+            msg += ". Skipped: " + ", ".join(skipped[:20])
+
+        return JSONResponse({"error": msg, "warnings": warnings, "skipped": skipped}, status_code=400)
+
+    return JSONResponse(
+
+        {
+
+            "job_id": job_id,
+
+            "files_total": int(len(files)),
+
+            "files_output": int(len(outputs)),
+
+            "warnings": warnings,
+
+            "skipped": skipped,
+
+            "outputs": outputs,
+
+        }
+
+    )
+
+
+
+
+
+@app.post("/api/handwritten-invoice-confirm/{job_id}")
+
+
+
+async def handwritten_invoice_confirm(job_id: str, request: Request) -> JSONResponse:
+
+    draft_path = HANDWRITTEN_REVIEW_JOBS.get(job_id)
+
+    if not draft_path or not os.path.exists(draft_path):
+
+        return JSONResponse({"error": "Invalid or expired job_id"}, status_code=404)
+
+    try:
+
+        payload_in = await request.json()
+
+    except Exception:
+
+        return JSONResponse({"error": "Invalid JSON body"}, status_code=400)
+
+    rows_in = payload_in.get("rows") if isinstance(payload_in, dict) else None
+
+    if not isinstance(rows_in, list):
+
+        return JSONResponse({"error": "'rows' must be a list"}, status_code=400)
+
+    try:
+
+        draft = _read_json(draft_path)
+
+        fieldnames = draft.get("fieldnames") or []
+
+    except Exception:
+
+        return JSONResponse({"error": "Draft data could not be read"}, status_code=500)
+
+    if not isinstance(fieldnames, list) or not fieldnames:
+
+        fieldnames = [
+
+            "sr_no",
+
+            "category",
+
+            "document_date",
+
+            "supplier",
+
+            "inv_ref_no",
+
+            "make",
+
+            "model",
+
+            "colour",
+
+            "reg_no",
+
+            "buying_price",
+
+            "non_vat",
+
+            "std_net",
+
+            "vat_amount",
+
+        ]
+
+    cleaned_rows: List[Dict[str, Any]] = []
+
+    for idx, r in enumerate(rows_in, start=1):
+
+        if not isinstance(r, dict):
+
+            continue
+
+        sr_no = r.get("sr_no")
+
+        try:
+
+            sr_val = int(sr_no) if sr_no not in (None, "") else idx
+
+        except Exception:
+
+            sr_val = idx
+
+        category = _clean_text(r.get("category")) or "purchase"
+
+        document_date = _clean_text(r.get("document_date"))
+
+        supplier = _clean_text(r.get("supplier"))
+
+        inv_ref_no = _clean_text(r.get("inv_ref_no"))
+
+        make = _clean_text(r.get("make"))
+
+        model = _clean_text(r.get("model"))
+
+        colour = _clean_text(r.get("colour"))
+
+        reg_no = _clean_text(r.get("reg_no"))
+
+        buying_price_in = r.get("buying_price")
+
+        non_vat_in = r.get("non_vat")
+
+        vat_amount_in = r.get("vat_amount")
+
+        buying_price: Any = "N/A" if _clean_text(buying_price_in).upper() in {"N/A", "NA"} else _to_float_or_none(buying_price_in)
+
+        non_vat: Any = "N/A" if _clean_text(non_vat_in).upper() in {"N/A", "NA"} else _to_float_or_none(non_vat_in)
+
+        std_net_raw: Any = r.get("std_net")
+
+        std_net = _to_float_or_none(std_net_raw) if _clean_text(std_net_raw).upper() not in {"N/A", "NA"} else "N/A"
+
+        vat_amount: Any = "N/A" if _clean_text(vat_amount_in).upper() in {"N/A", "NA"} else _to_float_or_none(vat_amount_in)
+
+        cleaned_rows.append(
+
+            {
+
+                "sr_no": sr_val,
+
+                "category": category,
+
+                "document_date": document_date,
+
+                "supplier": supplier,
+
+                "inv_ref_no": inv_ref_no,
+
+                "make": make,
+
+                "model": model,
+
+                "colour": colour,
+
+                "reg_no": reg_no,
+
+                "buying_price": buying_price,
+
+                "non_vat": non_vat,
+
+                "std_net": std_net,
+
+                "vat_amount": vat_amount,
+
+            }
+
+        )
+
+    job_folder = os.path.dirname(draft_path)
+
+    confirmed_path = os.path.join(job_folder, "confirmed.json")
+
+    _write_json(confirmed_path, {"fieldnames": fieldnames, "rows": cleaned_rows})
+
+    preview = []
+
+    for r in cleaned_rows[:25]:
+
+        preview.append({k: _format_csv_value(r.get(k)) for k in fieldnames})
+
+    return JSONResponse(
+
+        {
+
+            "job_id": job_id,
+
+            "rows_total": int(len(cleaned_rows)),
+
+            "fieldnames": fieldnames,
+
+            "preview": preview,
+
+            "confirmed_rows": cleaned_rows,
+
+        }
+
+    )
 
 
 
@@ -21079,13 +22949,13 @@ def invoice_download(job_id: str) -> FileResponse:
     return FileResponse(csv_path, filename=f"invoices_{job_id}.csv", media_type="text/csv")
 
 
+@app.get("/api/handwritten-invoice-download/{job_id}")
 
-
-
-
-
-
-
+def handwritten_invoice_download(job_id: str) -> FileResponse:
+    csv_path = HANDWRITTEN_JOBS.get(job_id)
+    if not csv_path or not os.path.exists(csv_path):
+        return FileResponse(path="", status_code=404)
+    return FileResponse(csv_path, filename=f"handwritten_invoices_{job_id}.csv", media_type="text/csv")
 
 
 @app.get("/api/download/{job_id}")

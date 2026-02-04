@@ -243,6 +243,29 @@
         </div>
         <div id="invoiceDownload" style="margin-top:12px;"></div>
       </div>
+
+      <div id="handwrittenSection" class="card">
+        <div class="cardHeader">
+          <h2>Handwritten Invoices</h2>
+          <div class="pill">OCR -> JSON Output</div>
+        </div>
+        <div id="dropHandwritten">
+          <div>Drag & drop handwritten invoice PDFs/images here or</div>
+          <input id="handwrittenFiles" type="file" accept="application/pdf,image/*" multiple style="margin-top: 8px;" />
+        </div>
+        <div class="row">
+          <button id="handwrittenBtn" type="button">Extract Handwritten Fields</button>
+        </div>
+        <div class="muted" style="margin-top:8px;">
+          Extracts: supplier, document_date, make, model, colour, reg_no, buying_price.
+        </div>
+        <div id="handwrittenErr" class="err" style="margin-top:10px;"></div>
+        <div id="handwrittenWarn" class="warn" style="margin-top:10px;"></div>
+
+        <div style="margin-top:12px;">
+          <textarea id="handwrittenJson" readonly style="width:100%; min-height: 260px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;"></textarea>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -510,6 +533,75 @@ invoiceFinalizeBtn.addEventListener('click', async () => {
     invoiceErr.textContent = String(e);
   } finally {
     invoiceFinalizeBtn.disabled = false;
+  }
+});
+
+// Handwritten
+const handwrittenBtn = document.getElementById('handwrittenBtn');
+const handwrittenFiles = document.getElementById('handwrittenFiles');
+const handwrittenErr = document.getElementById('handwrittenErr');
+const handwrittenWarn = document.getElementById('handwrittenWarn');
+const handwrittenJson = document.getElementById('handwrittenJson');
+const dropHandwritten = document.getElementById('dropHandwritten');
+
+wireDrop(dropHandwritten, handwrittenFiles);
+
+let lastHandwrittenJobId = null;
+
+handwrittenBtn.addEventListener('click', async () => {
+  handwrittenErr.textContent = '';
+  handwrittenWarn.textContent = '';
+  handwrittenJson.value = '';
+  lastHandwrittenJobId = null;
+
+  const files = handwrittenFiles.files;
+  if (!files || files.length === 0) {
+    handwrittenErr.textContent = 'Please choose handwritten invoice files.';
+    return;
+  }
+
+  handwrittenBtn.disabled = true;
+  handwrittenBtn.textContent = 'Processing...';
+
+  // Add timeout handling (20 minutes)
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => {
+    controller.abort();
+    handwrittenErr.textContent = 'Processing timed out after 20 minutes. The file may be very large or complex. Try with a smaller file or check OCR configuration.';
+  }, 1200000);
+
+  try {
+    const form = new FormData();
+    for (const f of files) form.append('files', f);
+
+    const res = await fetch('/api/handwritten-invoice-convert-review', {
+      method: 'POST',
+      body: form,
+      signal: controller.signal
+    });
+    clearTimeout(timeoutId);
+
+    const data = await res.json();
+    if (!res.ok) {
+      handwrittenErr.textContent = data?.detail || data?.error || JSON.stringify(data);
+      if (data?.warnings?.length) handwrittenWarn.textContent = data.warnings.join('\n');
+      if (data?.skipped?.length) handwrittenWarn.textContent = (handwrittenWarn.textContent ? (handwrittenWarn.textContent + '\n') : '') + ('Skipped: ' + data.skipped.join(', '));
+      return;
+    }
+
+    lastHandwrittenJobId = data?.job_id;
+    if (data?.warnings?.length) handwrittenWarn.textContent = data.warnings.join('\n');
+    handwrittenJson.value = JSON.stringify(data, null, 2);
+  } catch (e) {
+    clearTimeout(timeoutId);
+    if (e.name === 'AbortError') {
+      handwrittenErr.textContent = 'Processing timed out after 20 minutes. The file may be very large or scanned. Try with a smaller file or check OCR configuration.';
+    } else {
+      handwrittenErr.textContent = String(e);
+    }
+  } finally {
+    handwrittenBtn.disabled = false;
+    handwrittenBtn.textContent = 'Extract Handwritten Fields';
   }
 });
 </script>
