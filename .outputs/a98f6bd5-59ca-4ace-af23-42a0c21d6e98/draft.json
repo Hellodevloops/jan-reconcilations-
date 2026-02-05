@@ -1,0 +1,560 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "",
+      "supplier": "",
+      "inv_ref_no": "",
+      "make": "",
+      "model": "",
+      "colour": "",
+      "reg_no": "N/A",
+      "buying_price": "N/A",
+      "non_vat": "N/A",
+      "std_net": "N/A",
+      "vat_amount": "N/A"
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "img20250223_11350174.pdf",
+      "content_type": "application/pdf",
+      "model_name": "LightOnOCR-2-1B (Best OCR)",
+      "has_bbox": false,
+      "engine": "easyocr",
+      "raw_output": "Seq. Number 0 00 AID 2 A0000000031010 App_ Crypt . 108E40477C513C74 XXXXXXXXXXXX6469 Visa Contact less Expires SALE AMOUNT GBP 84.24 Response 000 APPROVED Auth Code 087224 Ver i fication ODCVM Ver i fied By Device Please retain th $ €opy for your",
+      "cleaned_text": "Seq. Number 0 00 AID 2 A0000000031010 App_ Crypt . 108E40477C513C74 XXXXXXXXXXXX6469 Visa Contact less Expires SALE AMOUNT GBP 84.24 Response 000 APPROVED Auth Code 087224 Ver i fication ODCVM Ver i fied By Device Please retain th $ €opy for your",
+      "lines": [
+        {
+          "index": 1,
+          "text": "Seq. Number 0 00 AID 2 A0000000031010 App_ Crypt . 108E40477C513C74 XXXXXXXXXXXX6469 Visa Contact less Expires SALE AMOUNT GBP 84.24 Response 000 APPROVED Auth Code 087224 Ver i fication ODCVM Ver i fied By Device Please retain th $ €opy for your"
+        }
+      ],
+      "words": [
+        {
+          "index": 1,
+          "text": "Seq."
+        },
+        {
+          "index": 2,
+          "text": "Number"
+        },
+        {
+          "index": 3,
+          "text": "0"
+        },
+        {
+          "index": 4,
+          "text": "00"
+        },
+        {
+          "index": 5,
+          "text": "AID"
+        },
+        {
+          "index": 6,
+          "text": "2"
+        },
+        {
+          "index": 7,
+          "text": "A0000000031010"
+        },
+        {
+          "index": 8,
+          "text": "App_"
+        },
+        {
+          "index": 9,
+          "text": "Crypt"
+        },
+        {
+          "index": 10,
+          "text": "."
+        },
+        {
+          "index": 11,
+          "text": "108E40477C513C74"
+        },
+        {
+          "index": 12,
+          "text": "XXXXXXXXXXXX6469"
+        },
+        {
+          "index": 13,
+          "text": "Visa"
+        },
+        {
+          "index": 14,
+          "text": "Contact"
+        },
+        {
+          "index": 15,
+          "text": "less"
+        },
+        {
+          "index": 16,
+          "text": "Expires"
+        },
+        {
+          "index": 17,
+          "text": "SALE"
+        },
+        {
+          "index": 18,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 19,
+          "text": "GBP"
+        },
+        {
+          "index": 20,
+          "text": "84.24"
+        },
+        {
+          "index": 21,
+          "text": "Response"
+        },
+        {
+          "index": 22,
+          "text": "000"
+        },
+        {
+          "index": 23,
+          "text": "APPROVED"
+        },
+        {
+          "index": 24,
+          "text": "Auth"
+        },
+        {
+          "index": 25,
+          "text": "Code"
+        },
+        {
+          "index": 26,
+          "text": "087224"
+        },
+        {
+          "index": 27,
+          "text": "Ver"
+        },
+        {
+          "index": 28,
+          "text": "i"
+        },
+        {
+          "index": 29,
+          "text": "fication"
+        },
+        {
+          "index": 30,
+          "text": "ODCVM"
+        },
+        {
+          "index": 31,
+          "text": "Ver"
+        },
+        {
+          "index": 32,
+          "text": "i"
+        },
+        {
+          "index": 33,
+          "text": "fied"
+        },
+        {
+          "index": 34,
+          "text": "By"
+        },
+        {
+          "index": 35,
+          "text": "Device"
+        },
+        {
+          "index": 36,
+          "text": "Please"
+        },
+        {
+          "index": 37,
+          "text": "retain"
+        },
+        {
+          "index": 38,
+          "text": "th"
+        },
+        {
+          "index": 39,
+          "text": "$"
+        },
+        {
+          "index": 40,
+          "text": "€opy"
+        },
+        {
+          "index": 41,
+          "text": "for"
+        },
+        {
+          "index": 42,
+          "text": "your"
+        }
+      ],
+      "all_words": [
+        "Seq.",
+        "Number",
+        "0",
+        "00",
+        "AID",
+        "2",
+        "A0000000031010",
+        "App_",
+        "Crypt",
+        ".",
+        "108E40477C513C74",
+        "XXXXXXXXXXXX6469",
+        "Visa",
+        "Contact",
+        "less",
+        "Expires",
+        "SALE",
+        "AMOUNT",
+        "GBP",
+        "84.24",
+        "Response",
+        "000",
+        "APPROVED",
+        "Auth",
+        "Code",
+        "087224",
+        "Ver",
+        "i",
+        "fication",
+        "ODCVM",
+        "Ver",
+        "i",
+        "fied",
+        "By",
+        "Device",
+        "Please",
+        "retain",
+        "th",
+        "$",
+        "€opy",
+        "for",
+        "your"
+      ],
+      "ocr_items": [],
+      "ocr_debug": {
+        "lighton_error": "",
+        "easyocr_error": "",
+        "tesseract_error": "",
+        "lighton_raw_len": 0,
+        "easyocr_items": 0,
+        "cleaned_len": 246
+      },
+      "detections": [],
+      "receipts": [
+        {
+          "index": 1,
+          "page_index": 1,
+          "bbox": [
+            1001,
+            2389,
+            1705,
+            3108
+          ],
+          "engine": "easyocr",
+          "raw_output": "Seq. Number 0 00 AID 2 A0000000031010 App_ Crypt . 108E40477C513C74 XXXXXXXXXXXX6469 Visa Contact less Expires SALE AMOUNT GBP 84.24 Response 000 APPROVED Auth Code 087224 Ver i fication ODCVM Ver i fied By Device Please retain th $ €opy for your",
+          "cleaned_text": "Seq. Number 0 00 AID 2 A0000000031010 App_ Crypt . 108E40477C513C74 XXXXXXXXXXXX6469 Visa Contact less Expires SALE AMOUNT GBP 84.24 Response 000 APPROVED Auth Code 087224 Ver i fication ODCVM Ver i fied By Device Please retain th $ €opy for your",
+          "lines": [
+            {
+              "index": 1,
+              "text": "Seq. Number 0 00 AID 2 A0000000031010 App_ Crypt . 108E40477C513C74 XXXXXXXXXXXX6469 Visa Contact less Expires SALE AMOUNT GBP 84.24 Response 000 APPROVED Auth Code 087224 Ver i fication ODCVM Ver i fied By Device Please retain th $ €opy for your"
+            }
+          ],
+          "words": [
+            {
+              "index": 1,
+              "text": "Seq."
+            },
+            {
+              "index": 2,
+              "text": "Number"
+            },
+            {
+              "index": 3,
+              "text": "0"
+            },
+            {
+              "index": 4,
+              "text": "00"
+            },
+            {
+              "index": 5,
+              "text": "AID"
+            },
+            {
+              "index": 6,
+              "text": "2"
+            },
+            {
+              "index": 7,
+              "text": "A0000000031010"
+            },
+            {
+              "index": 8,
+              "text": "App_"
+            },
+            {
+              "index": 9,
+              "text": "Crypt"
+            },
+            {
+              "index": 10,
+              "text": "."
+            },
+            {
+              "index": 11,
+              "text": "108E40477C513C74"
+            },
+            {
+              "index": 12,
+              "text": "XXXXXXXXXXXX6469"
+            },
+            {
+              "index": 13,
+              "text": "Visa"
+            },
+            {
+              "index": 14,
+              "text": "Contact"
+            },
+            {
+              "index": 15,
+              "text": "less"
+            },
+            {
+              "index": 16,
+              "text": "Expires"
+            },
+            {
+              "index": 17,
+              "text": "SALE"
+            },
+            {
+              "index": 18,
+              "text": "AMOUNT"
+            },
+            {
+              "index": 19,
+              "text": "GBP"
+            },
+            {
+              "index": 20,
+              "text": "84.24"
+            },
+            {
+              "index": 21,
+              "text": "Response"
+            },
+            {
+              "index": 22,
+              "text": "000"
+            },
+            {
+              "index": 23,
+              "text": "APPROVED"
+            },
+            {
+              "index": 24,
+              "text": "Auth"
+            },
+            {
+              "index": 25,
+              "text": "Code"
+            },
+            {
+              "index": 26,
+              "text": "087224"
+            },
+            {
+              "index": 27,
+              "text": "Ver"
+            },
+            {
+              "index": 28,
+              "text": "i"
+            },
+            {
+              "index": 29,
+              "text": "fication"
+            },
+            {
+              "index": 30,
+              "text": "ODCVM"
+            },
+            {
+              "index": 31,
+              "text": "Ver"
+            },
+            {
+              "index": 32,
+              "text": "i"
+            },
+            {
+              "index": 33,
+              "text": "fied"
+            },
+            {
+              "index": 34,
+              "text": "By"
+            },
+            {
+              "index": 35,
+              "text": "Device"
+            },
+            {
+              "index": 36,
+              "text": "Please"
+            },
+            {
+              "index": 37,
+              "text": "retain"
+            },
+            {
+              "index": 38,
+              "text": "th"
+            },
+            {
+              "index": 39,
+              "text": "$"
+            },
+            {
+              "index": 40,
+              "text": "€opy"
+            },
+            {
+              "index": 41,
+              "text": "for"
+            },
+            {
+              "index": 42,
+              "text": "your"
+            }
+          ],
+          "all_words": [
+            "Seq.",
+            "Number",
+            "0",
+            "00",
+            "AID",
+            "2",
+            "A0000000031010",
+            "App_",
+            "Crypt",
+            ".",
+            "108E40477C513C74",
+            "XXXXXXXXXXXX6469",
+            "Visa",
+            "Contact",
+            "less",
+            "Expires",
+            "SALE",
+            "AMOUNT",
+            "GBP",
+            "84.24",
+            "Response",
+            "000",
+            "APPROVED",
+            "Auth",
+            "Code",
+            "087224",
+            "Ver",
+            "i",
+            "fication",
+            "ODCVM",
+            "Ver",
+            "i",
+            "fied",
+            "By",
+            "Device",
+            "Please",
+            "retain",
+            "th",
+            "$",
+            "€opy",
+            "for",
+            "your"
+          ],
+          "ocr_items": [],
+          "detections": [],
+          "ocr_debug": {
+            "lighton_error": "",
+            "easyocr_error": "",
+            "tesseract_error": "",
+            "easyocr_items": 25,
+            "cleaned_len": 246
+          }
+        }
+      ],
+      "receipts_count": 1,
+      "receipts_summary": [
+        {
+          "index": 1,
+          "page_index": 1,
+          "bbox": [
+            1001,
+            2389,
+            1705,
+            3108
+          ],
+          "engine": "easyocr",
+          "text_len": 246,
+          "words": 42,
+          "preview": "Seq. Number 0 00 AID 2 A0000000031010 App_ Crypt . 108E40477C513C74 XXXXXXXXXXXX6469 Visa Contact less Expires SALE AMOUNT GBP 84.24 Response 000 APPROVED Auth Code 087224 Ver i fication ODCVM Ver i fied By Device Please retain th $ €opy fo"
+        }
+      ],
+      "segmentation_debug": [
+        {
+          "enabled": true,
+          "method": "connected_components",
+          "regions": [
+            {
+              "bbox": [
+                1001,
+                2389,
+                1705,
+                3108
+              ],
+              "area": 506176
+            }
+          ],
+          "page_index": 1,
+          "image_wh": [
+            2975,
+            4205
+          ],
+          "candidates": 1,
+          "regions_count": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7921 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "",
+      "supplier": "",
+      "inv_ref_no": "",
+      "make": "Tel : 01442575773 Tel: 01992814580 VA 91\"m10 1,2,3,' VAT: GB126348810 (Retai ler) 1,2,3,4,5 RECETIPT VA 0 VAT: GB235763255 6 USTOMER LE VAT AMOUNT RECEIPT leaded 6 € 20.06 Cl' | OMER RECEIPT CUSTOMER 2 6; 13.94 & * € 1.439/0) AMOUNT AR! ICi ( VAT AMOUNT ARTICLE VAT #FS (iesel 6 : 84.24 #FS Diesel 6 f 104.19 TAL € 20 06 (PUMP 3; 58.14 Q * € 1.449/0) (PUMP 1; 67.70 & 4 : 1,539/0) € 20.06 TOTAL € 84.24 TOTAL € 104 . 19 VISA € 84.24 VISA 8 104.19 a| ID. : 05052101 no : 1337 ction ne 000159 IPT IPT 000159 Termina / ID. : 05091901 Terminal ID_ 05052101 t no. 1457 ime: 10-01-2025 11:05 Per iod no. : 2059 Per iod no. \" Transact ion no : 000168 Transact no. 0oooo= A Receipt no. : 000168 Receipt no : 0oooo Datelt 18-01-2025 12:22 Date/time: 11-02-2025 14:38 10/01/25 11:05:42 VISA VISA Customer 05052101 18/01/25 12:22:45 11/02/25 14:38.44 na | ID 0000031606/000159/0000001337 Customer Copy Customer Copy Mode Contact less Name Visa DEBIT Termina ID 05091901 Termina| ID 05052101 Number 00 EFT 0000509840/000168/0000002059 EFT 0000048935/000003/0000001457 A0000000031010 Entry Mode Contact less Entry Mode Contact less Crypt. DICBE274F891F?OC Card Name Visa DEBIT Card Name Visa DEBIT XXXXXXX6469 Seq . Number 00 Seq. Number 00 Contact less AID A0000000031010 AID A0000000031010 e5 44 App. Crypt . 1D8E40477C513C74 App. Crypt. FD4EA34D67278037 AMOUNT GBP 20 . 06 XXXXXXXXXXXX6469 XXXXXXXXXXXX29g] nse 000 APPROVED Visa Contact less Visa Contact less Code 013600 Expires #/** Expires Ix ication ODCVM SALE AMOUNT GBP 84.24 SALE AMOUNT GBP 104.19 fied By Device Response 000 APPROVED Response 00o APPROVED se retain this copy Ta)r yourrecords Auth Code 087224 Auth Code 020826 Ver i fication ODCVM Ver fication ODCVM Ver i fied By Device Ver ified By Device type % Nett VAT amount Please retain th' $ €py for your records Please retain this copy for 5 20.00 : 16.72 € 3.34 1-2025 11:05:42 521 0918 1156110316 VAT type 9 Nett VAT amount VAT type % 55409-50582233 4485 6 20.00 € 70.20 1 14.04 6 20.L k you for choos ing Shel / 18-01-2025 12:22:45 919 0985 1041110217 11-02-2025 14: 36 . 11-054684-52452321 2065 11-079665-62660232 Thank you for choos ing Shel | Thank you for choos ing ion ime: Copy in",
+      "model": "",
+      "colour": "",
+      "reg_no": "CM16 SHW",
+      "buying_price": 20.06,
+      "non_vat": 20.06,
+      "std_net": "N/A",
+      "vat_amount": 20.06
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "img20250223_11350174.pdf",
+      "content_type": "application/pdf",
+      "model_name": "LightOnOCR-2-1B (Best OCR)",
+      "has_bbox": false,
+      "engine": "easyocr",
+      "raw_output": "pping ad ms Roundabout Epp She L ttle Waitrose Ha/ fmoon She | | Epping ; 0521 28-26 #igh Street High Road IW Epp ing Wake Arms Roundabout Epping 11992814580 B126348810 (Retai ler) 1,2,3,4,5 Stat No: 0919 Stat No: 0521 3235763255 6 CM16 4AE CM16 SHW Tel : 01442575773 Tel: 01992814580 VA 91\"m10 1,2,3,' VAT: GB126348810 (Retai ler) 1,2,3,4,5 RECETIPT VA 0 VAT: GB235763255 6 USTOMER LE VAT AMOUNT RECEIPT leaded 6 € 20.06 Cl' | OMER RECEIPT CUSTOMER 2 6; 13.94 & * € 1.439/0) AMOUNT AR! ICi ( VAT AMOUNT ARTICLE VAT #FS (iesel 6 : 84.24 #FS Diesel 6 f 104.19 TAL € 20 06 (PUMP 3; 58.14 Q * € 1.449/0) (PUMP 1; 67.70 & 4 : 1,539/0) € 20.06 TOTAL € 84.24 TOTAL € 104 . 19 VISA € 84.24 VISA 8 104.19 a| ID. : 05052101 no : 1337 ction ne 000159 IPT IPT 000159 Termina / ID. : 05091901 Terminal ID_ 05052101 t no. 1457 ime: 10-01-2025 11:05 Per iod no. : 2059 Per iod no. \" Transact ion no : 000168 Transact no. 0oooo= A Receipt no. : 000168 Receipt no : 0oooo Datelt 18-01-2025 12:22 Date/time: 11-02-2025 14:38 10/01/25 11:05:42 VISA VISA Customer 05052101 18/01/25 12:22:45 11/02/25 14:38.44 na | ID 0000031606/000159/0000001337 Customer Copy Customer Copy Mode Contact less Name Visa DEBIT Termina ID 05091901 Termina| ID 05052101 Number 00 EFT 0000509840/000168/0000002059 EFT 0000048935/000003/0000001457 A0000000031010 Entry Mode Contact less Entry Mode Contact less Crypt. DICBE274F891F?OC Card Name Visa DEBIT Card Name Visa DEBIT XXXXXXX6469 Seq . Number 00 Seq. Number 00 Contact less AID A0000000031010 AID A0000000031010 e5 44 App. Crypt . 1D8E40477C513C74 App. Crypt. FD4EA34D67278037 AMOUNT GBP 20 . 06 XXXXXXXXXXXX6469 XXXXXXXXXXXX29g] nse 000 APPROVED Visa Contact less Visa Contact less Code 013600 Expires #/** Expires Ix ication ODCVM SALE AMOUNT GBP 84.24 SALE AMOUNT GBP 104.19 fied By Device Response 000 APPROVED Response 00o APPROVED se retain this copy Ta)r yourrecords Auth Code 087224 Auth Code 020826 Ver i fication ODCVM Ver fication ODCVM Ver i fied By Device Ver ified By Device type % Nett VAT amount Please retain th' $ €py for your records Please retain this copy for 5 20.00 : 16.72 € 3.34 1-2025 11:05:42 521 0918 1156110316 VAT type 9 Nett VAT amount VAT type % 55409-50582233 4485 6 20.00 € 70.20 1 14.04 6 20.L k you for choos ing Shel / 18-01-2025 12:22:45 919 0985 1041110217 11-02-2025 14: 36 . 11-054684-52452321 2065 11-079665-62660232 Thank you for choos ing Shel | Thank you for choos ing ion ime: Copy in",
+      "cleaned_text": "pping ad ms Roundabout Epp She L ttle Waitrose Ha/ fmoon She | | Epping ; 0521 28-26 #igh Street High Road IW Epp ing Wake Arms Roundabout Epping 11992814580 B126348810 (Retai ler) 1,2,3,4,5 Stat No: 0919 Stat No: 0521 3235763255 6 CM16 4AE CM16 SHW Tel : 01442575773 Tel: 01992814580 VA 91\"m10 1,2,3,' VAT: GB126348810 (Retai ler) 1,2,3,4,5 RECETIPT VA 0 VAT: GB235763255 6 USTOMER LE VAT AMOUNT RECEIPT leaded 6 € 20.06 Cl' | OMER RECEIPT CUSTOMER 2 6; 13.94 & * € 1.439/0) AMOUNT AR! ICi ( VAT AMOUNT ARTICLE VAT #FS (iesel 6 : 84.24 #FS Diesel 6 f 104.19 TAL € 20 06 (PUMP 3; 58.14 Q * € 1.449/0) (PUMP 1; 67.70 & 4 : 1,539/0) € 20.06 TOTAL € 84.24 TOTAL € 104 . 19 VISA € 84.24 VISA 8 104.19 a| ID. : 05052101 no : 1337 ction ne 000159 IPT IPT 000159 Termina / ID. : 05091901 Terminal ID_ 05052101 t no. 1457 ime: 10-01-2025 11:05 Per iod no. : 2059 Per iod no. \" Transact ion no : 000168 Transact no. 0oooo= A Receipt no. : 000168 Receipt no : 0oooo Datelt 18-01-2025 12:22 Date/time: 11-02-2025 14:38 10/01/25 11:05:42 VISA VISA Customer 05052101 18/01/25 12:22:45 11/02/25 14:38.44 na | ID 0000031606/000159/0000001337 Customer Copy Customer Copy Mode Contact less Name Visa DEBIT Termina ID 05091901 Termina| ID 05052101 Number 00 EFT 0000509840/000168/0000002059 EFT 0000048935/000003/0000001457 A0000000031010 Entry Mode Contact less Entry Mode Contact less Crypt. DICBE274F891F?OC Card Name Visa DEBIT Card Name Visa DEBIT XXXXXXX6469 Seq . Number 00 Seq. Number 00 Contact less AID A0000000031010 AID A0000000031010 e5 44 App. Crypt . 1D8E40477C513C74 App. Crypt. FD4EA34D67278037 AMOUNT GBP 20 . 06 XXXXXXXXXXXX6469 XXXXXXXXXXXX29g] nse 000 APPROVED Visa Contact less Visa Contact less Code 013600 Expires #/** Expires Ix ication ODCVM SALE AMOUNT GBP 84.24 SALE AMOUNT GBP 104.19 fied By Device Response 000 APPROVED Response 00o APPROVED se retain this copy Ta)r yourrecords Auth Code 087224 Auth Code 020826 Ver i fication ODCVM Ver fication ODCVM Ver i fied By Device Ver ified By Device type % Nett VAT amount Please retain th' $ €py for your records Please retain this copy for 5 20.00 : 16.72 € 3.34 1-2025 11:05:42 521 0918 1156110316 VAT type 9 Nett VAT amount VAT type % 55409-50582233 4485 6 20.00 € 70.20 1 14.04 6 20.L k you for choos ing Shel / 18-01-2025 12:22:45 919 0985 1041110217 11-02-2025 14: 36 . 11-054684-52452321 2065 11-079665-62660232 Thank you for choos ing Shel | Thank you for choos ing ion ime: Copy in",
+      "lines": [
+        {
+          "index": 1,
+          "text": "pping ad ms Roundabout Epp She L ttle Waitrose Ha/ fmoon She | | Epping ; 0521 28-26 #igh Street High Road IW Epp ing Wake Arms Roundabout Epping 11992814580 B126348810 (Retai ler) 1,2,3,4,5 Stat No: 0919 Stat No: 0521 3235763255 6 CM16 4AE CM16 SHW Tel : 01442575773 Tel: 01992814580 VA 91\"m10 1,2,3,' VAT: GB126348810 (Retai ler) 1,2,3,4,5 RECETIPT VA 0 VAT: GB235763255 6 USTOMER LE VAT AMOUNT RECEIPT leaded 6 € 20.06 Cl' | OMER RECEIPT CUSTOMER 2 6; 13.94 & * € 1.439/0) AMOUNT AR! ICi ( VAT AMOUNT ARTICLE VAT #FS (iesel 6 : 84.24 #FS Diesel 6 f 104.19 TAL € 20 06 (PUMP 3; 58.14 Q * € 1.449/0) (PUMP 1; 67.70 & 4 : 1,539/0) € 20.06 TOTAL € 84.24 TOTAL € 104 . 19 VISA € 84.24 VISA 8 104.19 a| ID. : 05052101 no : 1337 ction ne 000159 IPT IPT 000159 Termina / ID. : 05091901 Terminal ID_ 05052101 t no. 1457 ime: 10-01-2025 11:05 Per iod no. : 2059 Per iod no. \" Transact ion no : 000168 Transact no. 0oooo= A Receipt no. : 000168 Receipt no : 0oooo Datelt 18-01-2025 12:22 Date/time: 11-02-2025 14:38 10/01/25 11:05:42 VISA VISA Customer 05052101 18/01/25 12:22:45 11/02/25 14:38.44 na | ID 0000031606/000159/0000001337 Customer Copy Customer Copy Mode Contact less Name Visa DEBIT Termina ID 05091901 Termina| ID 05052101 Number 00 EFT 0000509840/000168/0000002059 EFT 0000048935/000003/0000001457 A0000000031010 Entry Mode Contact less Entry Mode Contact less Crypt. DICBE274F891F?OC Card Name Visa DEBIT Card Name Visa DEBIT XXXXXXX6469 Seq . Number 00 Seq. Number 00 Contact less AID A0000000031010 AID A0000000031010 e5 44 App. Crypt . 1D8E40477C513C74 App. Crypt. FD4EA34D67278037 AMOUNT GBP 20 . 06 XXXXXXXXXXXX6469 XXXXXXXXXXXX29g] nse 000 APPROVED Visa Contact less Visa Contact less Code 013600 Expires #/** Expires Ix ication ODCVM SALE AMOUNT GBP 84.24 SALE AMOUNT GBP 104.19 fied By Device Response 000 APPROVED Response 00o APPROVED se retain this copy Ta)r yourrecords Auth Code 087224 Auth Code 020826 Ver i fication ODCVM Ver fication ODCVM Ver i fied By Device Ver ified By Device type % Nett VAT amount Please retain th' $ €py for your records Please retain this copy for 5 20.00 : 16.72 € 3.34 1-2025 11:05:42 521 0918 1156110316 VAT type 9 Nett VAT amount VAT type % 55409-50582233 4485 6 20.00 € 70.20 1 14.04 6 20.L k you for choos ing Shel / 18-01-2025 12:22:45 919 0985 1041110217 11-02-2025 14: 36 . 11-054684-52452321 2065 11-079665-62660232 Thank you for choos ing Shel | Thank you for choos ing ion ime: Copy in"
+        }
+      ],
+      "words": [
+        {
+          "index": 1,
+          "text": "pping"
+        },
+        {
+          "index": 2,
+          "text": "ad"
+        },
+        {
+          "index": 3,
+          "text": "ms"
+        },
+        {
+          "index": 4,
+          "text": "Roundabout"
+        },
+        {
+          "index": 5,
+          "text": "Epp"
+        },
+        {
+          "index": 6,
+          "text": "She"
+        },
+        {
+          "index": 7,
+          "text": "L"
+        },
+        {
+          "index": 8,
+          "text": "ttle"
+        },
+        {
+          "index": 9,
+          "text": "Waitrose"
+        },
+        {
+          "index": 10,
+          "text": "Ha/"
+        },
+        {
+          "index": 11,
+          "text": "fmoon"
+        },
+        {
+          "index": 12,
+          "text": "She"
+        },
+        {
+          "index": 13,
+          "text": "|"
+        },
+        {
+          "index": 14,
+          "text": "|"
+        },
+        {
+          "index": 15,
+          "text": "Epping"
+        },
+        {
+          "index": 16,
+          "text": ";"
+        },
+        {
+          "index": 17,
+          "text": "0521"
+        },
+        {
+          "index": 18,
+          "text": "28-26"
+        },
+        {
+          "index": 19,
+          "text": "#igh"
+        },
+        {
+          "index": 20,
+          "text": "Street"
+        },
+        {
+          "index": 21,
+          "text": "High"
+        },
+        {
+          "index": 22,
+          "text": "Road"
+        },
+        {
+          "index": 23,
+          "text": "IW"
+        },
+        {
+          "index": 24,
+          "text": "Epp"
+        },
+        {
+          "index": 25,
+          "text": "ing"
+        },
+        {
+          "index": 26,
+          "text": "Wake"
+        },
+        {
+          "index": 27,
+          "text": "Arms"
+        },
+        {
+          "index": 28,
+          "text": "Roundabout"
+        },
+        {
+          "index": 29,
+          "text": "Epping"
+        },
+        {
+          "index": 30,
+          "text": "11992814580"
+        },
+        {
+          "index": 31,
+          "text": "B126348810"
+        },
+        {
+          "index": 32,
+          "text": "(Retai"
+        },
+        {
+          "index": 33,
+          "text": "ler)"
+        },
+        {
+          "index": 34,
+          "text": "1,2,3,4,5"
+        },
+        {
+          "index": 35,
+          "text": "Stat"
+        },
+        {
+          "index": 36,
+          "text": "No:"
+        },
+        {
+          "index": 37,
+          "text": "0919"
+        },
+        {
+          "index": 38,
+          "text": "Stat"
+        },
+        {
+          "index": 39,
+          "text": "No:"
+        },
+        {
+          "index": 40,
+          "text": "0521"
+        },
+        {
+          "index": 41,
+          "text": "3235763255"
+        },
+        {
+          "index": 42,
+          "text": "6"
+        },
+        {
+          "index": 43,
+          "text": "CM16"
+        },
+        {
+          "index": 44,
+          "text": "4AE"
+        },
+        {
+          "index": 45,
+          "text": "CM16"
+        },
+        {
+          "index": 46,
+          "text": "SHW"
+        },
+        {
+          "index": 47,
+          "text": "Tel"
+        },
+        {
+          "index": 48,
+          "text": ":"
+        },
+        {
+          "index": 49,
+          "text": "01442575773"
+        },
+        {
+          "index": 50,
+          "text": "Tel:"
+        },
+        {
+          "index": 51,
+          "text": "01992814580"
+        },
+        {
+          "index": 52,
+          "text": "VA"
+        },
+        {
+          "index": 53,
+          "text": "91\"m10"
+        },
+        {
+          "index": 54,
+          "text": "1,2,3,'"
+        },
+        {
+          "index": 55,
+          "text": "VAT:"
+        },
+        {
+          "index": 56,
+          "text": "GB126348810"
+        },
+        {
+          "index": 57,
+          "text": "(Retai"
+        },
+        {
+          "index": 58,
+          "text": "ler)"
+        },
+        {
+          "index": 59,
+          "text": "1,2,3,4,5"
+        },
+        {
+          "index": 60,
+          "text": "RECETIPT"
+        },
+        {
+          "index": 61,
+          "text": "VA"
+        },
+        {
+          "index": 62,
+          "text": "0"
+        },
+        {
+          "index": 63,
+          "text": "VAT:"
+        },
+        {
+          "index": 64,
+          "text": "GB235763255"
+        },
+        {
+          "index": 65,
+          "text": "6"
+        },
+        {
+          "index": 66,
+          "text": "USTOMER"
+        },
+        {
+          "index": 67,
+          "text": "LE"
+        },
+        {
+          "index": 68,
+          "text": "VAT"
+        },
+        {
+          "index": 69,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 70,
+          "text": "RECEIPT"
+        },
+        {
+          "index": 71,
+          "text": "leaded"
+        },
+        {
+          "index": 72,
+          "text": "6"
+        },
+        {
+          "index": 73,
+          "text": "€"
+        },
+        {
+          "index": 74,
+          "text": "20.06"
+        },
+        {
+          "index": 75,
+          "text": "Cl'"
+        },
+        {
+          "index": 76,
+          "text": "|"
+        },
+        {
+          "index": 77,
+          "text": "OMER"
+        },
+        {
+          "index": 78,
+          "text": "RECEIPT"
+        },
+        {
+          "index": 79,
+          "text": "CUSTOMER"
+        },
+        {
+          "index": 80,
+          "text": "2"
+        },
+        {
+          "index": 81,
+          "text": "6;"
+        },
+        {
+          "index": 82,
+          "text": "13.94"
+        },
+        {
+          "index": 83,
+          "text": "&"
+        },
+        {
+          "index": 84,
+          "text": "*"
+        },
+        {
+          "index": 85,
+          "text": "€"
+        },
+        {
+          "index": 86,
+          "text": "1.439/0)"
+        },
+        {
+          "index": 87,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 88,
+          "text": "AR!"
+        },
+        {
+          "index": 89,
+          "text": "ICi"
+        },
+        {
+          "index": 90,
+          "text": "("
+        },
+        {
+          "index": 91,
+          "text": "VAT"
+        },
+        {
+          "index": 92,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 93,
+          "text": "ARTICLE"
+        },
+        {
+          "index": 94,
+          "text": "VAT"
+        },
+        {
+          "index": 95,
+          "text": "#FS"
+        },
+        {
+          "index": 96,
+          "text": "(iesel"
+        },
+        {
+          "index": 97,
+          "text": "6"
+        },
+        {
+          "index": 98,
+          "text": ":"
+        },
+        {
+          "index": 99,
+          "text": "84.24"
+        },
+        {
+          "index": 100,
+          "text": "#FS"
+        },
+        {
+          "index": 101,
+          "text": "Diesel"
+        },
+        {
+          "index": 102,
+          "text": "6"
+        },
+        {
+          "index": 103,
+          "text": "f"
+        },
+        {
+          "index": 104,
+          "text": "104.19"
+        },
+        {
+          "index": 105,
+          "text": "TAL"
+        },
+        {
+          "index": 106,
+          "text": "€"
+        },
+        {
+          "index": 107,
+          "text": "20"
+        },
+        {
+          "index": 108,
+          "text": "06"
+        },
+        {
+          "index": 109,
+          "text": "(PUMP"
+        },
+        {
+          "index": 110,
+          "text": "3;"
+        },
+        {
+          "index": 111,
+          "text": "58.14"
+        },
+        {
+          "index": 112,
+          "text": "Q"
+        },
+        {
+          "index": 113,
+          "text": "*"
+        },
+        {
+          "index": 114,
+          "text": "€"
+        },
+        {
+          "index": 115,
+          "text": "1.449/0)"
+        },
+        {
+          "index": 116,
+          "text": "(PUMP"
+        },
+        {
+          "index": 117,
+          "text": "1;"
+        },
+        {
+          "index": 118,
+          "text": "67.70"
+        },
+        {
+          "index": 119,
+          "text": "&"
+        },
+        {
+          "index": 120,
+          "text": "4"
+        },
+        {
+          "index": 121,
+          "text": ":"
+        },
+        {
+          "index": 122,
+          "text": "1,539/0)"
+        },
+        {
+          "index": 123,
+          "text": "€"
+        },
+        {
+          "index": 124,
+          "text": "20.06"
+        },
+        {
+          "index": 125,
+          "text": "TOTAL"
+        },
+        {
+          "index": 126,
+          "text": "€"
+        },
+        {
+          "index": 127,
+          "text": "84.24"
+        },
+        {
+          "index": 128,
+          "text": "TOTAL"
+        },
+        {
+          "index": 129,
+          "text": "€"
+        },
+        {
+          "index": 130,
+          "text": "104"
+        },
+        {
+          "index": 131,
+          "text": "."
+        },
+        {
+          "index": 132,
+          "text": "19"
+        },
+        {
+          "index": 133,
+          "text": "VISA"
+        },
+        {
+          "index": 134,
+          "text": "€"
+        },
+        {
+          "index": 135,
+          "text": "84.24"
+        },
+        {
+          "index": 136,
+          "text": "VISA"
+        },
+        {
+          "index": 137,
+          "text": "8"
+        },
+        {
+          "index": 138,
+          "text": "104.19"
+        },
+        {
+          "index": 139,
+          "text": "a|"
+        },
+        {
+          "index": 140,
+          "text": "ID."
+        },
+        {
+          "index": 141,
+          "text": ":"
+        },
+        {
+          "index": 142,
+          "text": "05052101"
+        },
+        {
+          "index": 143,
+          "text": "no"
+        },
+        {
+          "index": 144,
+          "text": ":"
+        },
+        {
+          "index": 145,
+          "text": "1337"
+        },
+        {
+          "index": 146,
+          "text": "ction"
+        },
+        {
+          "index": 147,
+          "text": "ne"
+        },
+        {
+          "index": 148,
+          "text": "000159"
+        },
+        {
+          "index": 149,
+          "text": "IPT"
+        },
+        {
+          "index": 150,
+          "text": "IPT"
+        },
+        {
+          "index": 151,
+          "text": "000159"
+        },
+        {
+          "index": 152,
+          "text": "Termina"
+        },
+        {
+          "index": 153,
+          "text": "/"
+        },
+        {
+          "index": 154,
+          "text": "ID."
+        },
+        {
+          "index": 155,
+          "text": ":"
+        },
+        {
+          "index": 156,
+          "text": "05091901"
+        },
+        {
+          "index": 157,
+          "text": "Terminal"
+        },
+        {
+          "index": 158,
+          "text": "ID_"
+        },
+        {
+          "index": 159,
+          "text": "05052101"
+        },
+        {
+          "index": 160,
+          "text": "t"
+        },
+        {
+          "index": 161,
+          "text": "no."
+        },
+        {
+          "index": 162,
+          "text": "1457"
+        },
+        {
+          "index": 163,
+          "text": "ime:"
+        },
+        {
+          "index": 164,
+          "text": "10-01-2025"
+        },
+        {
+          "index": 165,
+          "text": "11:05"
+        },
+        {
+          "index": 166,
+          "text": "Per"
+        },
+        {
+          "index": 167,
+          "text": "iod"
+        },
+        {
+          "index": 168,
+          "text": "no."
+        },
+        {
+          "index": 169,
+          "text": ":"
+        },
+        {
+          "index": 170,
+          "text": "2059"
+        },
+        {
+          "index": 171,
+          "text": "Per"
+        },
+        {
+          "index": 172,
+          "text": "iod"
+        },
+        {
+          "index": 173,
+          "text": "no."
+        },
+        {
+          "index": 174,
+          "text": "\""
+        },
+        {
+          "index": 175,
+          "text": "Transact"
+        },
+        {
+          "index": 176,
+          "text": "ion"
+        },
+        {
+          "index": 177,
+          "text": "no"
+        },
+        {
+          "index": 178,
+          "text": ":"
+        },
+        {
+          "index": 179,
+          "text": "000168"
+        },
+        {
+          "index": 180,
+          "text": "Transact"
+        },
+        {
+          "index": 181,
+          "text": "no."
+        },
+        {
+          "index": 182,
+          "text": "0oooo="
+        },
+        {
+          "index": 183,
+          "text": "A"
+        },
+        {
+          "index": 184,
+          "text": "Receipt"
+        },
+        {
+          "index": 185,
+          "text": "no."
+        },
+        {
+          "index": 186,
+          "text": ":"
+        },
+        {
+          "index": 187,
+          "text": "000168"
+        },
+        {
+          "index": 188,
+          "text": "Receipt"
+        },
+        {
+          "index": 189,
+          "text": "no"
+        },
+        {
+          "index": 190,
+          "text": ":"
+        },
+        {
+          "index": 191,
+          "text": "0oooo"
+        },
+        {
+          "index": 192,
+          "text": "Datelt"
+        },
+        {
+          "index": 193,
+          "text": "18-01-2025"
+        },
+        {
+          "index": 194,
+          "text": "12:22"
+        },
+        {
+          "index": 195,
+          "text": "Date/time:"
+        },
+        {
+          "index": 196,
+          "text": "11-02-2025"
+        },
+        {
+          "index": 197,
+          "text": "14:38"
+        },
+        {
+          "index": 198,
+          "text": "10/01/25"
+        },
+        {
+          "index": 199,
+          "text": "11:05:42"
+        },
+        {
+          "index": 200,
+          "text": "VISA"
+        },
+        {
+          "index": 201,
+          "text": "VISA"
+        },
+        {
+          "index": 202,
+          "text": "Customer"
+        },
+        {
+          "index": 203,
+          "text": "05052101"
+        },
+        {
+          "index": 204,
+          "text": "18/01/25"
+        },
+        {
+          "index": 205,
+          "text": "12:22:45"
+        },
+        {
+          "index": 206,
+          "text": "11/02/25"
+        },
+        {
+          "index": 207,
+          "text": "14:38.44"
+        },
+        {
+          "index": 208,
+          "text": "na"
+        },
+        {
+          "index": 209,
+          "text": "|"
+        },
+        {
+          "index": 210,
+          "text": "ID"
+        },
+        {
+          "index": 211,
+          "text": "0000031606/000159/0000001337"
+        },
+        {
+          "index": 212,
+          "text": "Customer"
+        },
+        {
+          "index": 213,
+          "text": "Copy"
+        },
+        {
+          "index": 214,
+          "text": "Customer"
+        },
+        {
+          "index": 215,
+          "text": "Copy"
+        },
+        {
+          "index": 216,
+          "text": "Mode"
+        },
+        {
+          "index": 217,
+          "text": "Contact"
+        },
+        {
+          "index": 218,
+          "text": "less"
+        },
+        {
+          "index": 219,
+          "text": "Name"
+        },
+        {
+          "index": 220,
+          "text": "Visa"
+        },
+        {
+          "index": 221,
+          "text": "DEBIT"
+        },
+        {
+          "index": 222,
+          "text": "Termina"
+        },
+        {
+          "index": 223,
+          "text": "ID"
+        },
+        {
+          "index": 224,
+          "text": "05091901"
+        },
+        {
+          "index": 225,
+          "text": "Termina|"
+        },
+        {
+          "index": 226,
+          "text": "ID"
+        },
+        {
+          "index": 227,
+          "text": "05052101"
+        },
+        {
+          "index": 228,
+          "text": "Number"
+        },
+        {
+          "index": 229,
+          "text": "00"
+        },
+        {
+          "index": 230,
+          "text": "EFT"
+        },
+        {
+          "index": 231,
+          "text": "0000509840/000168/0000002059"
+        },
+        {
+          "index": 232,
+          "text": "EFT"
+        },
+        {
+          "index": 233,
+          "text": "0000048935/000003/0000001457"
+        },
+        {
+          "index": 234,
+          "text": "A0000000031010"
+        },
+        {
+          "index": 235,
+          "text": "Entry"
+        },
+        {
+          "index": 236,
+          "text": "Mode"
+        },
+        {
+          "index": 237,
+          "text": "Contact"
+        },
+        {
+          "index": 238,
+          "text": "less"
+        },
+        {
+          "index": 239,
+          "text": "Entry"
+        },
+        {
+          "index": 240,
+          "text": "Mode"
+        },
+        {
+          "index": 241,
+          "text": "Contact"
+        },
+        {
+          "index": 242,
+          "text": "less"
+        },
+        {
+          "index": 243,
+          "text": "Crypt."
+        },
+        {
+          "index": 244,
+          "text": "DICBE274F891F?OC"
+        },
+        {
+          "index": 245,
+          "text": "Card"
+        },
+        {
+          "index": 246,
+          "text": "Name"
+        },
+        {
+          "index": 247,
+          "text": "Visa"
+        },
+        {
+          "index": 248,
+          "text": "DEBIT"
+        },
+        {
+          "index": 249,
+          "text": "Card"
+        },
+        {
+          "index": 250,
+          "text": "Name"
+        },
+        {
+          "index": 251,
+          "text": "Visa"
+        },
+        {
+          "index": 252,
+          "text": "DEBIT"
+        },
+        {
+          "index": 253,
+          "text": "XXXXXXX6469"
+        },
+        {
+          "index": 254,
+          "text": "Seq"
+        },
+        {
+          "index": 255,
+          "text": "."
+        },
+        {
+          "index": 256,
+          "text": "Number"
+        },
+        {
+          "index": 257,
+          "text": "00"
+        },
+        {
+          "index": 258,
+          "text": "Seq."
+        },
+        {
+          "index": 259,
+          "text": "Number"
+        },
+        {
+          "index": 260,
+          "text": "00"
+        },
+        {
+          "index": 261,
+          "text": "Contact"
+        },
+        {
+          "index": 262,
+          "text": "less"
+        },
+        {
+          "index": 263,
+          "text": "AID"
+        },
+        {
+          "index": 264,
+          "text": "A0000000031010"
+        },
+        {
+          "index": 265,
+          "text": "AID"
+        },
+        {
+          "index": 266,
+          "text": "A0000000031010"
+        },
+        {
+          "index": 267,
+          "text": "e5"
+        },
+        {
+          "index": 268,
+          "text": "44"
+        },
+        {
+          "index": 269,
+          "text": "App."
+        },
+        {
+          "index": 270,
+          "text": "Crypt"
+        },
+        {
+          "index": 271,
+          "text": "."
+        },
+        {
+          "index": 272,
+          "text": "1D8E40477C513C74"
+        },
+        {
+          "index": 273,
+          "text": "App."
+        },
+        {
+          "index": 274,
+          "text": "Crypt."
+        },
+        {
+          "index": 275,
+          "text": "FD4EA34D67278037"
+        },
+        {
+          "index": 276,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 277,
+          "text": "GBP"
+        },
+        {
+          "index": 278,
+          "text": "20"
+        },
+        {
+          "index": 279,
+          "text": "."
+        },
+        {
+          "index": 280,
+          "text": "06"
+        },
+        {
+          "index": 281,
+          "text": "XXXXXXXXXXXX6469"
+        },
+        {
+          "index": 282,
+          "text": "XXXXXXXXXXXX29g]"
+        },
+        {
+          "index": 283,
+          "text": "nse"
+        },
+        {
+          "index": 284,
+          "text": "000"
+        },
+        {
+          "index": 285,
+          "text": "APPROVED"
+        },
+        {
+          "index": 286,
+          "text": "Visa"
+        },
+        {
+          "index": 287,
+          "text": "Contact"
+        },
+        {
+          "index": 288,
+          "text": "less"
+        },
+        {
+          "index": 289,
+          "text": "Visa"
+        },
+        {
+          "index": 290,
+          "text": "Contact"
+        },
+        {
+          "index": 291,
+          "text": "less"
+        },
+        {
+          "index": 292,
+          "text": "Code"
+        },
+        {
+          "index": 293,
+          "text": "013600"
+        },
+        {
+          "index": 294,
+          "text": "Expires"
+        },
+        {
+          "index": 295,
+          "text": "#/**"
+        },
+        {
+          "index": 296,
+          "text": "Expires"
+        },
+        {
+          "index": 297,
+          "text": "Ix"
+        },
+        {
+          "index": 298,
+          "text": "ication"
+        },
+        {
+          "index": 299,
+          "text": "ODCVM"
+        },
+        {
+          "index": 300,
+          "text": "SALE"
+        },
+        {
+          "index": 301,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 302,
+          "text": "GBP"
+        },
+        {
+          "index": 303,
+          "text": "84.24"
+        },
+        {
+          "index": 304,
+          "text": "SALE"
+        },
+        {
+          "index": 305,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 306,
+          "text": "GBP"
+        },
+        {
+          "index": 307,
+          "text": "104.19"
+        },
+        {
+          "index": 308,
+          "text": "fied"
+        },
+        {
+          "index": 309,
+          "text": "By"
+        },
+        {
+          "index": 310,
+          "text": "Device"
+        },
+        {
+          "index": 311,
+          "text": "Response"
+        },
+        {
+          "index": 312,
+          "text": "000"
+        },
+        {
+          "index": 313,
+          "text": "APPROVED"
+        },
+        {
+          "index": 314,
+          "text": "Response"
+        },
+        {
+          "index": 315,
+          "text": "00o"
+        },
+        {
+          "index": 316,
+          "text": "APPROVED"
+        },
+        {
+          "index": 317,
+          "text": "se"
+        },
+        {
+          "index": 318,
+          "text": "retain"
+        },
+        {
+          "index": 319,
+          "text": "this"
+        },
+        {
+          "index": 320,
+          "text": "copy"
+        },
+        {
+          "index": 321,
+          "text": "Ta)r"
+        },
+        {
+          "index": 322,
+          "text": "yourrecords"
+        },
+        {
+          "index": 323,
+          "text": "Auth"
+        },
+        {
+          "index": 324,
+          "text": "Code"
+        },
+        {
+          "index": 325,
+          "text": "087224"
+        },
+        {
+          "index": 326,
+          "text": "Auth"
+        },
+        {
+          "index": 327,
+          "text": "Code"
+        },
+        {
+          "index": 328,
+          "text": "020826"
+        },
+        {
+          "index": 329,
+          "text": "Ver"
+        },
+        {
+          "index": 330,
+          "text": "i"
+        },
+        {
+          "index": 331,
+          "text": "fication"
+        },
+        {
+          "index": 332,
+          "text": "ODCVM"
+        },
+        {
+          "index": 333,
+          "text": "Ver"
+        },
+        {
+          "index": 334,
+          "text": "fication"
+        },
+        {
+          "index": 335,
+          "text": "ODCVM"
+        },
+        {
+          "index": 336,
+          "text": "Ver"
+        },
+        {
+          "index": 337,
+          "text": "i"
+        },
+        {
+          "index": 338,
+          "text": "fied"
+        },
+        {
+          "index": 339,
+          "text": "By"
+        },
+        {
+          "index": 340,
+          "text": "Device"
+        },
+        {
+          "index": 341,
+          "text": "Ver"
+        },
+        {
+          "index": 342,
+          "text": "ified"
+        },
+        {
+          "index": 343,
+          "text": "By"
+        },
+        {
+          "index": 344,
+          "text": "Device"
+        },
+        {
+          "index": 345,
+          "text": "type"
+        },
+        {
+          "index": 346,
+          "text": "%"
+        },
+        {
+          "index": 347,
+          "text": "Nett"
+        },
+        {
+          "index": 348,
+          "text": "VAT"
+        },
+        {
+          "index": 349,
+          "text": "amount"
+        },
+        {
+          "index": 350,
+          "text": "Please"
+        },
+        {
+          "index": 351,
+          "text": "retain"
+        },
+        {
+          "index": 352,
+          "text": "th'"
+        },
+        {
+          "index": 353,
+          "text": "$"
+        },
+        {
+          "index": 354,
+          "text": "€py"
+        },
+        {
+          "index": 355,
+          "text": "for"
+        },
+        {
+          "index": 356,
+          "text": "your"
+        },
+        {
+          "index": 357,
+          "text": "records"
+        },
+        {
+          "index": 358,
+          "text": "Please"
+        },
+        {
+          "index": 359,
+          "text": "retain"
+        },
+        {
+          "index": 360,
+          "text": "this"
+        },
+        {
+          "index": 361,
+          "text": "copy"
+        },
+        {
+          "index": 362,
+          "text": "for"
+        },
+        {
+          "index": 363,
+          "text": "5"
+        },
+        {
+          "index": 364,
+          "text": "20.00"
+        },
+        {
+          "index": 365,
+          "text": ":"
+        },
+        {
+          "index": 366,
+          "text": "16.72"
+        },
+        {
+          "index": 367,
+          "text": "€"
+        },
+        {
+          "index": 368,
+          "text": "3.34"
+        },
+        {
+          "index": 369,
+          "text": "1-2025"
+        },
+        {
+          "index": 370,
+          "text": "11:05:42"
+        },
+        {
+          "index": 371,
+          "text": "521"
+        },
+        {
+          "index": 372,
+          "text": "0918"
+        },
+        {
+          "index": 373,
+          "text": "1156110316"
+        },
+        {
+          "index": 374,
+          "text": "VAT"
+        },
+        {
+          "index": 375,
+          "text": "type"
+        },
+        {
+          "index": 376,
+          "text": "9"
+        },
+        {
+          "index": 377,
+          "text": "Nett"
+        },
+        {
+          "index": 378,
+          "text": "VAT"
+        },
+        {
+          "index": 379,
+          "text": "amount"
+        },
+        {
+          "index": 380,
+          "text": "VAT"
+        },
+        {
+          "index": 381,
+          "text": "type"
+        },
+        {
+          "index": 382,
+          "text": "%"
+        },
+        {
+          "index": 383,
+          "text": "55409-50582233"
+        },
+        {
+          "index": 384,
+          "text": "4485"
+        },
+        {
+          "index": 385,
+          "text": "6"
+        },
+        {
+          "index": 386,
+          "text": "20.00"
+        },
+        {
+          "index": 387,
+          "text": "€"
+        },
+        {
+          "index": 388,
+          "text": "70.20"
+        },
+        {
+          "index": 389,
+          "text": "1"
+        },
+        {
+          "index": 390,
+          "text": "14.04"
+        },
+        {
+          "index": 391,
+          "text": "6"
+        },
+        {
+          "index": 392,
+          "text": "20.L"
+        },
+        {
+          "index": 393,
+          "text": "k"
+        },
+        {
+          "index": 394,
+          "text": "you"
+        },
+        {
+          "index": 395,
+          "text": "for"
+        },
+        {
+          "index": 396,
+          "text": "choos"
+        },
+        {
+          "index": 397,
+          "text": "ing"
+        },
+        {
+          "index": 398,
+          "text": "Shel"
+        },
+        {
+          "index": 399,
+          "text": "/"
+        },
+        {
+          "index": 400,
+          "text": "18-01-2025"
+        },
+        {
+          "index": 401,
+          "text": "12:22:45"
+        },
+        {
+          "index": 402,
+          "text": "919"
+        },
+        {
+          "index": 403,
+          "text": "0985"
+        },
+        {
+          "index": 404,
+          "text": "1041110217"
+        },
+        {
+          "index": 405,
+          "text": "11-02-2025"
+        },
+        {
+          "index": 406,
+          "text": "14:"
+        },
+        {
+          "index": 407,
+          "text": "36"
+        },
+        {
+          "index": 408,
+          "text": "."
+        },
+        {
+          "index": 409,
+          "text": "11-054684-52452321"
+        },
+        {
+          "index": 410,
+          "text": "2065"
+        },
+        {
+          "index": 411,
+          "text": "11-079665-62660232"
+        },
+        {
+          "index": 412,
+          "text": "Thank"
+        },
+        {
+          "index": 413,
+          "text": "you"
+        },
+        {
+          "index": 414,
+          "text": "for"
+        },
+        {
+          "index": 415,
+          "text": "choos"
+        },
+        {
+          "index": 416,
+          "text": "ing"
+        },
+        {
+          "index": 417,
+          "text": "Shel"
+        },
+        {
+          "index": 418,
+          "text": "|"
+        },
+        {
+          "index": 419,
+          "text": "Thank"
+        },
+        {
+          "index": 420,
+          "text": "you"
+        },
+        {
+          "index": 421,
+          "text": "for"
+        },
+        {
+          "index": 422,
+          "text": "choos"
+        },
+        {
+          "index": 423,
+          "text": "ing"
+        },
+        {
+          "index": 424,
+          "text": "ion"
+        },
+        {
+          "index": 425,
+          "text": "ime:"
+        },
+        {
+          "index": 426,
+          "text": "Copy"
+        },
+        {
+          "index": 427,
+          "text": "in"
+        }
+      ],
+      "all_words": [
+        "pping",
+        "ad",
+        "ms",
+        "Roundabout",
+        "Epp",
+        "She",
+        "L",
+        "ttle",
+        "Waitrose",
+        "Ha/",
+        "fmoon",
+        "She",
+        "|",
+        "|",
+        "Epping",
+        ";",
+        "0521",
+        "28-26",
+        "#igh",
+        "Street",
+        "High",
+        "Road",
+        "IW",
+        "Epp",
+        "ing",
+        "Wake",
+        "Arms",
+        "Roundabout",
+        "Epping",
+        "11992814580",
+        "B126348810",
+        "(Retai",
+        "ler)",
+        "1,2,3,4,5",
+        "Stat",
+        "No:",
+        "0919",
+        "Stat",
+        "No:",
+        "0521",
+        "3235763255",
+        "6",
+        "CM16",
+        "4AE",
+        "CM16",
+        "SHW",
+        "Tel",
+        ":",
+        "01442575773",
+        "Tel:",
+        "01992814580",
+        "VA",
+        "91\"m10",
+        "1,2,3,'",
+        "VAT:",
+        "GB126348810",
+        "(Retai",
+        "ler)",
+        "1,2,3,4,5",
+        "RECETIPT",
+        "VA",
+        "0",
+        "VAT:",
+        "GB235763255",
+        "6",
+        "USTOMER",
+        "LE",
+        "VAT",
+        "AMOUNT",
+        "RECEIPT",
+        "leaded",
+        "6",
+        "€",
+        "20.06",
+        "Cl'",
+        "|",
+        "OMER",
+        "RECEIPT",
+        "CUSTOMER",
+        "2",
+        "6;",
+        "13.94",
+        "&",
+        "*",
+        "€",
+        "1.439/0)",
+        "AMOUNT",
+        "AR!",
+        "ICi",
+        "(",
+        "VAT",
+        "AMOUNT",
+        "ARTICLE",
+        "VAT",
+        "#FS",
+        "(iesel",
+        "6",
+        ":",
+        "84.24",
+        "#FS",
+        "Diesel",
+        "6",
+        "f",
+        "104.19",
+        "TAL",
+        "€",
+        "20",
+        "06",
+        "(PUMP",
+        "3;",
+        "58.14",
+        "Q",
+        "*",
+        "€",
+        "1.449/0)",
+        "(PUMP",
+        "1;",
+        "67.70",
+        "&",
+        "4",
+        ":",
+        "1,539/0)",
+        "€",
+        "20.06",
+        "TOTAL",
+        "€",
+        "84.24",
+        "TOTAL",
+        "€",
+        "104",
+        ".",
+        "19",
+        "VISA",
+        "€",
+        "84.24",
+        "VISA",
+        "8",
+        "104.19",
+        "a|",
+        "ID.",
+        ":",
+        "05052101",
+        "no",
+        ":",
+        "1337",
+        "ction",
+        "ne",
+        "000159",
+        "IPT",
+        "IPT",
+        "000159",
+        "Termina",
+        "/",
+        "ID.",
+        ":",
+        "05091901",
+        "Terminal",
+        "ID_",
+        "05052101",
+        "t",
+        "no.",
+        "1457",
+        "ime:",
+        "10-01-2025",
+        "11:05",
+        "Per",
+        "iod",
+        "no.",
+        ":",
+        "2059",
+        "Per",
+        "iod",
+        "no.",
+        "\"",
+        "Transact",
+        "ion",
+        "no",
+        ":",
+        "000168",
+        "Transact",
+        "no.",
+        "0oooo=",
+        "A",
+        "Receipt",
+        "no.",
+        ":",
+        "000168",
+        "Receipt",
+        "no",
+        ":",
+        "0oooo",
+        "Datelt",
+        "18-01-2025",
+        "12:22",
+        "Date/time:",
+        "11-02-2025",
+        "14:38",
+        "10/01/25",
+        "11:05:42",
+        "VISA",
+        "VISA",
+        "Customer",
+        "05052101",
+        "18/01/25",
+        "12:22:45",
+        "11/02/25",
+        "14:38.44",
+        "na",
+        "|",
+        "ID",
+        "0000031606/000159/0000001337",
+        "Customer",
+        "Copy",
+        "Customer",
+        "Copy",
+        "Mode",
+        "Contact",
+        "less",
+        "Name",
+        "Visa",
+        "DEBIT",
+        "Termina",
+        "ID",
+        "05091901",
+        "Termina|",
+        "ID",
+        "05052101",
+        "Number",
+        "00",
+        "EFT",
+        "0000509840/000168/0000002059",
+        "EFT",
+        "0000048935/000003/0000001457",
+        "A0000000031010",
+        "Entry",
+        "Mode",
+        "Contact",
+        "less",
+        "Entry",
+        "Mode",
+        "Contact",
+        "less",
+        "Crypt.",
+        "DICBE274F891F?OC",
+        "Card",
+        "Name",
+        "Visa",
+        "DEBIT",
+        "Card",
+        "Name",
+        "Visa",
+        "DEBIT",
+        "XXXXXXX6469",
+        "Seq",
+        ".",
+        "Number",
+        "00",
+        "Seq.",
+        "Number",
+        "00",
+        "Contact",
+        "less",
+        "AID",
+        "A0000000031010",
+        "AID",
+        "A0000000031010",
+        "e5",
+        "44",
+        "App.",
+        "Crypt",
+        ".",
+        "1D8E40477C513C74",
+        "App.",
+        "Crypt.",
+        "FD4EA34D67278037",
+        "AMOUNT",
+        "GBP",
+        "20",
+        ".",
+        "06",
+        "XXXXXXXXXXXX6469",
+        "XXXXXXXXXXXX29g]",
+        "nse",
+        "000",
+        "APPROVED",
+        "Visa",
+        "Contact",
+        "less",
+        "Visa",
+        "Contact",
+        "less",
+        "Code",
+        "013600",
+        "Expires",
+        "#/**",
+        "Expires",
+        "Ix",
+        "ication",
+        "ODCVM",
+        "SALE",
+        "AMOUNT",
+        "GBP",
+        "84.24",
+        "SALE",
+        "AMOUNT",
+        "GBP",
+        "104.19",
+        "fied",
+        "By",
+        "Device",
+        "Response",
+        "000",
+        "APPROVED",
+        "Response",
+        "00o",
+        "APPROVED",
+        "se",
+        "retain",
+        "this",
+        "copy",
+        "Ta)r",
+        "yourrecords",
+        "Auth",
+        "Code",
+        "087224",
+        "Auth",
+        "Code",
+        "020826",
+        "Ver",
+        "i",
+        "fication",
+        "ODCVM",
+        "Ver",
+        "fication",
+        "ODCVM",
+        "Ver",
+        "i",
+        "fied",
+        "By",
+        "Device",
+        "Ver",
+        "ified",
+        "By",
+        "Device",
+        "type",
+        "%",
+        "Nett",
+        "VAT",
+        "amount",
+        "Please",
+        "retain",
+        "th'",
+        "$",
+        "€py",
+        "for",
+        "your",
+        "records",
+        "Please",
+        "retain",
+        "this",
+        "copy",
+        "for",
+        "5",
+        "20.00",
+        ":",
+        "16.72",
+        "€",
+        "3.34",
+        "1-2025",
+        "11:05:42",
+        "521",
+        "0918",
+        "1156110316",
+        "VAT",
+        "type",
+        "9",
+        "Nett",
+        "VAT",
+        "amount",
+        "VAT",
+        "type",
+        "%",
+        "55409-50582233",
+        "4485",
+        "6",
+        "20.00",
+        "€",
+        "70.20",
+        "1",
+        "14.04",
+        "6",
+        "20.L",
+        "k",
+        "you",
+        "for",
+        "choos",
+        "ing",
+        "Shel",
+        "/",
+        "18-01-2025",
+        "12:22:45",
+        "919",
+        "0985",
+        "1041110217",
+        "11-02-2025",
+        "14:",
+        "36",
+        ".",
+        "11-054684-52452321",
+        "2065",
+        "11-079665-62660232",
+        "Thank",
+        "you",
+        "for",
+        "choos",
+        "ing",
+        "Shel",
+        "|",
+        "Thank",
+        "you",
+        "for",
+        "choos",
+        "ing",
+        "ion",
+        "ime:",
+        "Copy",
+        "in"
+      ],
+      "ocr_items": [
+        {
+          "text": "pping",
+          "confidence": 0.9999695054725404,
+          "bbox": [
+            [
+              0,
+              48
+            ],
+            [
+              122,
+              48
+            ],
+            [
+              122,
+              108
+            ],
+            [
+              0,
+              108
+            ]
+          ]
+        },
+        {
+          "text": "ad",
+          "confidence": 0.9730985178582946,
+          "bbox": [
+            [
+              0,
+              107
+            ],
+            [
+              56,
+              107
+            ],
+            [
+              56,
+              161
+            ],
+            [
+              0,
+              161
+            ]
+          ]
+        },
+        {
+          "text": "ms Roundabout Epp",
+          "confidence": 0.8386237468155409,
+          "bbox": [
+            [
+              0,
+              163
+            ],
+            [
+              375,
+              163
+            ],
+            [
+              375,
+              220
+            ],
+            [
+              0,
+              220
+            ]
+          ]
+        },
+        {
+          "text": "She",
+          "confidence": 0.9176837677513225,
+          "bbox": [
+            [
+              955,
+              206
+            ],
+            [
+              1035,
+              206
+            ],
+            [
+              1035,
+              256
+            ],
+            [
+              955,
+              256
+            ]
+          ]
+        },
+        {
+          "text": "L ttle Waitrose Ha/ fmoon",
+          "confidence": 0.3627328370550924,
+          "bbox": [
+            [
+              1080,
+              193
+            ],
+            [
+              1607,
+              193
+            ],
+            [
+              1607,
+              250
+            ],
+            [
+              1080,
+              250
+            ]
+          ]
+        },
+        {
+          "text": "She | | Epping",
+          "confidence": 0.4724588540665627,
+          "bbox": [
+            [
+              2085,
+              199
+            ],
+            [
+              2356,
+              199
+            ],
+            [
+              2356,
+              253
+            ],
+            [
+              2085,
+              253
+            ]
+          ]
+        },
+        {
+          "text": ";",
+          "confidence": 0.7855730652500483,
+          "bbox": [
+            [
+              0,
+              237
+            ],
+            [
+              24,
+              237
+            ],
+            [
+              24,
+              274
+            ],
+            [
+              0,
+              274
+            ]
+          ]
+        },
+        {
+          "text": "0521",
+          "confidence": 0.9999936819076538,
+          "bbox": [
+            [
+              64,
+              225
+            ],
+            [
+              161,
+              225
+            ],
+            [
+              161,
+              276
+            ],
+            [
+              64,
+              276
+            ]
+          ]
+        },
+        {
+          "text": "28-26 #igh Street",
+          "confidence": 0.4921116172118709,
+          "bbox": [
+            [
+              954,
+              257
+            ],
+            [
+              1332,
+              257
+            ],
+            [
+              1332,
+              317
+            ],
+            [
+              954,
+              317
+            ]
+          ]
+        },
+        {
+          "text": "High Road",
+          "confidence": 0.9989407948538105,
+          "bbox": [
+            [
+              2084,
+              257
+            ],
+            [
+              2298,
+              257
+            ],
+            [
+              2298,
+              317
+            ],
+            [
+              2084,
+              317
+            ]
+          ]
+        },
+        {
+          "text": "IW",
+          "confidence": 0.6280449874286482,
+          "bbox": [
+            [
+              0,
+              289
+            ],
+            [
+              39,
+              289
+            ],
+            [
+              39,
+              338
+            ],
+            [
+              0,
+              338
+            ]
+          ]
+        },
+        {
+          "text": "Epp ing",
+          "confidence": 0.6029993037658047,
+          "bbox": [
+            [
+              981,
+              324
+            ],
+            [
+              1117,
+              324
+            ],
+            [
+              1117,
+              378
+            ],
+            [
+              981,
+              378
+            ]
+          ]
+        },
+        {
+          "text": "Wake Arms Roundabout Epping",
+          "confidence": 0.9461868597853523,
+          "bbox": [
+            [
+              2087,
+              307
+            ],
+            [
+              2679,
+              307
+            ],
+            [
+              2679,
+              376
+            ],
+            [
+              2087,
+              376
+            ]
+          ]
+        },
+        {
+          "text": "11992814580",
+          "confidence": 0.5676221834499318,
+          "bbox": [
+            [
+              0,
+              344
+            ],
+            [
+              230,
+              344
+            ],
+            [
+              230,
+              398
+            ],
+            [
+              0,
+              398
+            ]
+          ]
+        },
+        {
+          "text": "B126348810 (Retai ler) 1,2,3,4,5",
+          "confidence": 0.5573195640342816,
+          "bbox": [
+            [
+              0,
+              395
+            ],
+            [
+              675,
+              395
+            ],
+            [
+              675,
+              458
+            ],
+            [
+              0,
+              458
+            ]
+          ]
+        },
+        {
+          "text": "Stat No:",
+          "confidence": 0.802508517626205,
+          "bbox": [
+            [
+              958,
+              380
+            ],
+            [
+              1137,
+              380
+            ],
+            [
+              1137,
+              431
+            ],
+            [
+              958,
+              431
+            ]
+          ]
+        },
+        {
+          "text": "0919",
+          "confidence": 0.9998094439506531,
+          "bbox": [
+            [
+              1172,
+              377
+            ],
+            [
+              1275,
+              377
+            ],
+            [
+              1275,
+              431
+            ],
+            [
+              1172,
+              431
+            ]
+          ]
+        },
+        {
+          "text": "Stat No:",
+          "confidence": 0.9837970647856361,
+          "bbox": [
+            [
+              2091,
+              380
+            ],
+            [
+              2270,
+              380
+            ],
+            [
+              2270,
+              434
+            ],
+            [
+              2091,
+              434
+            ]
+          ]
+        },
+        {
+          "text": "0521",
+          "confidence": 0.9999682903289795,
+          "bbox": [
+            [
+              2302,
+              373
+            ],
+            [
+              2402,
+              373
+            ],
+            [
+              2402,
+              424
+            ],
+            [
+              2302,
+              424
+            ]
+          ]
+        },
+        {
+          "text": "3235763255 6",
+          "confidence": 0.8715002384518542,
+          "bbox": [
+            [
+              0,
+              462
+            ],
+            [
+              250,
+              462
+            ],
+            [
+              250,
+              516
+            ],
+            [
+              0,
+              516
+            ]
+          ]
+        },
+        {
+          "text": "CM16 4AE",
+          "confidence": 0.7176098959021926,
+          "bbox": [
+            [
+              958,
+              439
+            ],
+            [
+              1147,
+              439
+            ],
+            [
+              1147,
+              493
+            ],
+            [
+              958,
+              493
+            ]
+          ]
+        },
+        {
+          "text": "CM16 SHW",
+          "confidence": 0.6595326442360153,
+          "bbox": [
+            [
+              2089,
+              433
+            ],
+            [
+              2281,
+              433
+            ],
+            [
+              2281,
+              495
+            ],
+            [
+              2089,
+              495
+            ]
+          ]
+        },
+        {
+          "text": "Tel :",
+          "confidence": 0.7826638321443407,
+          "bbox": [
+            [
+              961,
+              501
+            ],
+            [
+              1055,
+              501
+            ],
+            [
+              1055,
+              549
+            ],
+            [
+              961,
+              549
+            ]
+          ]
+        },
+        {
+          "text": "01442575773",
+          "confidence": 0.9433701730212465,
+          "bbox": [
+            [
+              1087,
+              489
+            ],
+            [
+              1342,
+              489
+            ],
+            [
+              1342,
+              553
+            ],
+            [
+              1087,
+              553
+            ]
+          ]
+        },
+        {
+          "text": "Tel:",
+          "confidence": 0.993786633014679,
+          "bbox": [
+            [
+              2095,
+              498
+            ],
+            [
+              2188,
+              498
+            ],
+            [
+              2188,
+              549
+            ],
+            [
+              2095,
+              549
+            ]
+          ]
+        },
+        {
+          "text": "01992814580",
+          "confidence": 0.7220622295117769,
+          "bbox": [
+            [
+              2221,
+              486
+            ],
+            [
+              2473,
+              486
+            ],
+            [
+              2473,
+              549
+            ],
+            [
+              2221,
+              549
+            ]
+          ]
+        },
+        {
+          "text": "VA",
+          "confidence": 0.7036400410571511,
+          "bbox": [
+            [
+              966,
+              568
+            ],
+            [
+              1018,
+              568
+            ],
+            [
+              1018,
+              604
+            ],
+            [
+              966,
+              604
+            ]
+          ]
+        },
+        {
+          "text": "91\"m10 1,2,3,'",
+          "confidence": 0.12662465376218207,
+          "bbox": [
+            [
+              1102,
+              551
+            ],
+            [
+              1508,
+              551
+            ],
+            [
+              1508,
+              606
+            ],
+            [
+              1102,
+              606
+            ]
+          ]
+        },
+        {
+          "text": "VAT:",
+          "confidence": 0.7926768660545349,
+          "bbox": [
+            [
+              2098,
+              557
+            ],
+            [
+              2191,
+              557
+            ],
+            [
+              2191,
+              611
+            ],
+            [
+              2098,
+              611
+            ]
+          ]
+        },
+        {
+          "text": "GB126348810 (Retai ler) 1,2,3,4,5",
+          "confidence": 0.5766367088162042,
+          "bbox": [
+            [
+              2220,
+              532
+            ],
+            [
+              2919,
+              532
+            ],
+            [
+              2919,
+              609
+            ],
+            [
+              2220,
+              609
+            ]
+          ]
+        },
+        {
+          "text": "RECETIPT",
+          "confidence": 0.3288276433553803,
+          "bbox": [
+            [
+              326,
+              627
+            ],
+            [
+              636,
+              627
+            ],
+            [
+              636,
+              689
+            ],
+            [
+              326,
+              689
+            ]
+          ]
+        },
+        {
+          "text": "VA",
+          "confidence": 0.4016801016028705,
+          "bbox": [
+            [
+              966,
+              624
+            ],
+            [
+              1018,
+              624
+            ],
+            [
+              1018,
+              663
+            ],
+            [
+              966,
+              663
+            ]
+          ]
+        },
+        {
+          "text": "0",
+          "confidence": 0.9807749573775624,
+          "bbox": [
+            [
+              1336,
+              626
+            ],
+            [
+              1357,
+              626
+            ],
+            [
+              1357,
+              654
+            ],
+            [
+              1336,
+              654
+            ]
+          ]
+        },
+        {
+          "text": "VAT: GB235763255 6",
+          "confidence": 0.8311944018047656,
+          "bbox": [
+            [
+              2097,
+              604
+            ],
+            [
+              2495,
+              604
+            ],
+            [
+              2495,
+              670
+            ],
+            [
+              2097,
+              670
+            ]
+          ]
+        },
+        {
+          "text": "USTOMER",
+          "confidence": 0.998711943642362,
+          "bbox": [
+            [
+              0,
+              636
+            ],
+            [
+              296,
+              636
+            ],
+            [
+              296,
+              690
+            ],
+            [
+              0,
+              690
+            ]
+          ]
+        },
+        {
+          "text": "LE",
+          "confidence": 0.5773326391491111,
+          "bbox": [
+            [
+              0,
+              755
+            ],
+            [
+              42,
+              755
+            ],
+            [
+              42,
+              811
+            ],
+            [
+              0,
+              811
+            ]
+          ]
+        },
+        {
+          "text": "VAT",
+          "confidence": 0.37593733637685367,
+          "bbox": [
+            [
+              347,
+              754
+            ],
+            [
+              424,
+              754
+            ],
+            [
+              424,
+              805
+            ],
+            [
+              347,
+              805
+            ]
+          ]
+        },
+        {
+          "text": "AMOUNT",
+          "confidence": 0.9955492680143808,
+          "bbox": [
+            [
+              580,
+              748
+            ],
+            [
+              723,
+              748
+            ],
+            [
+              723,
+              802
+            ],
+            [
+              580,
+              802
+            ]
+          ]
+        },
+        {
+          "text": "RECEIPT",
+          "confidence": 0.9972028217335125,
+          "bbox": [
+            [
+              2569,
+              770
+            ],
+            [
+              2880,
+              770
+            ],
+            [
+              2880,
+              834
+            ],
+            [
+              2569,
+              834
+            ]
+          ]
+        },
+        {
+          "text": "leaded",
+          "confidence": 0.7938202316289326,
+          "bbox": [
+            [
+              0,
+              818
+            ],
+            [
+              127,
+              818
+            ],
+            [
+              127,
+              863
+            ],
+            [
+              0,
+              863
+            ]
+          ]
+        },
+        {
+          "text": "6",
+          "confidence": 0.9989191831522568,
+          "bbox": [
+            [
+              372,
+              816
+            ],
+            [
+              402,
+              816
+            ],
+            [
+              402,
+              856
+            ],
+            [
+              372,
+              856
+            ]
+          ]
+        },
+        {
+          "text": "€ 20.06",
+          "confidence": 0.6682128893005977,
+          "bbox": [
+            [
+              557,
+              807
+            ],
+            [
+              726,
+              807
+            ],
+            [
+              726,
+              861
+            ],
+            [
+              557,
+              861
+            ]
+          ]
+        },
+        {
+          "text": "Cl' | OMER",
+          "confidence": 0.37207757504994815,
+          "bbox": [
+            [
+              1049,
+              786
+            ],
+            [
+              1411,
+              786
+            ],
+            [
+              1411,
+              846
+            ],
+            [
+              1049,
+              846
+            ]
+          ]
+        },
+        {
+          "text": "RECEIPT",
+          "confidence": 0.8459869591353625,
+          "bbox": [
+            [
+              1438,
+              784
+            ],
+            [
+              1745,
+              784
+            ],
+            [
+              1745,
+              838
+            ],
+            [
+              1438,
+              838
+            ]
+          ]
+        },
+        {
+          "text": "CUSTOMER",
+          "confidence": 0.9967924736327413,
+          "bbox": [
+            [
+              2185,
+              780
+            ],
+            [
+              2545,
+              780
+            ],
+            [
+              2545,
+              846
+            ],
+            [
+              2185,
+              846
+            ]
+          ]
+        },
+        {
+          "text": "2",
+          "confidence": 0.5243073351375784,
+          "bbox": [
+            [
+              0,
+              882
+            ],
+            [
+              17,
+              882
+            ],
+            [
+              17,
+              920
+            ],
+            [
+              0,
+              920
+            ]
+          ]
+        },
+        {
+          "text": "6; 13.94 & * € 1.439/0)",
+          "confidence": 0.5163033575463463,
+          "bbox": [
+            [
+              50,
+              865
+            ],
+            [
+              550,
+              865
+            ],
+            [
+              550,
+              928
+            ],
+            [
+              50,
+              928
+            ]
+          ]
+        },
+        {
+          "text": "AMOUNT",
+          "confidence": 0.8194497495009008,
+          "bbox": [
+            [
+              2825,
+              885
+            ],
+            [
+              2972,
+              885
+            ],
+            [
+              2972,
+              945
+            ],
+            [
+              2825,
+              945
+            ]
+          ]
+        },
+        {
+          "text": "AR! ICi (",
+          "confidence": 0.12024518520916018,
+          "bbox": [
+            [
+              991,
+              915
+            ],
+            [
+              1157,
+              915
+            ],
+            [
+              1157,
+              966
+            ],
+            [
+              991,
+              966
+            ]
+          ]
+        },
+        {
+          "text": "VAT",
+          "confidence": 0.9915845767743225,
+          "bbox": [
+            [
+              1461,
+              905
+            ],
+            [
+              1538,
+              905
+            ],
+            [
+              1538,
+              956
+            ],
+            [
+              1461,
+              956
+            ]
+          ]
+        },
+        {
+          "text": "AMOUNT",
+          "confidence": 0.9958553388274174,
+          "bbox": [
+            [
+              1694,
+              899
+            ],
+            [
+              1837,
+              899
+            ],
+            [
+              1837,
+              953
+            ],
+            [
+              1694,
+              953
+            ]
+          ]
+        },
+        {
+          "text": "ARTICLE",
+          "confidence": 0.9998277878308176,
+          "bbox": [
+            [
+              2128,
+              909
+            ],
+            [
+              2293,
+              909
+            ],
+            [
+              2293,
+              963
+            ],
+            [
+              2128,
+              963
+            ]
+          ]
+        },
+        {
+          "text": "VAT",
+          "confidence": 0.9572920869631478,
+          "bbox": [
+            [
+              2594,
+              896
+            ],
+            [
+              2674,
+              896
+            ],
+            [
+              2674,
+              950
+            ],
+            [
+              2594,
+              950
+            ]
+          ]
+        },
+        {
+          "text": "#FS (iesel",
+          "confidence": 0.6352622095463887,
+          "bbox": [
+            [
+              974,
+              974
+            ],
+            [
+              1193,
+              974
+            ],
+            [
+              1193,
+              1025
+            ],
+            [
+              974,
+              1025
+            ]
+          ]
+        },
+        {
+          "text": "6",
+          "confidence": 0.9999356280196139,
+          "bbox": [
+            [
+              1486,
+              967
+            ],
+            [
+              1516,
+              967
+            ],
+            [
+              1516,
+              1010
+            ],
+            [
+              1486,
+              1010
+            ]
+          ]
+        },
+        {
+          "text": ": 84.24",
+          "confidence": 0.4543187764105981,
+          "bbox": [
+            [
+              1674,
+              958
+            ],
+            [
+              1840,
+              958
+            ],
+            [
+              1840,
+              1012
+            ],
+            [
+              1674,
+              1012
+            ]
+          ]
+        },
+        {
+          "text": "#FS Diesel",
+          "confidence": 0.9882712399470852,
+          "bbox": [
+            [
+              2108,
+              968
+            ],
+            [
+              2326,
+              968
+            ],
+            [
+              2326,
+              1022
+            ],
+            [
+              2108,
+              1022
+            ]
+          ]
+        },
+        {
+          "text": "6",
+          "confidence": 0.9999892711927174,
+          "bbox": [
+            [
+              2619,
+              960
+            ],
+            [
+              2649,
+              960
+            ],
+            [
+              2649,
+              1003
+            ],
+            [
+              2619,
+              1003
+            ]
+          ]
+        },
+        {
+          "text": "f 104.19",
+          "confidence": 0.38685545807786076,
+          "bbox": [
+            [
+              2788,
+              948
+            ],
+            [
+              2973,
+              948
+            ],
+            [
+              2973,
+              1002
+            ],
+            [
+              2788,
+              1002
+            ]
+          ]
+        },
+        {
+          "text": "TAL",
+          "confidence": 0.996283247641308,
+          "bbox": [
+            [
+              0,
+              991
+            ],
+            [
+              128,
+              991
+            ],
+            [
+              128,
+              1045
+            ],
+            [
+              0,
+              1045
+            ]
+          ]
+        },
+        {
+          "text": "€",
+          "confidence": 0.4892687642809257,
+          "bbox": [
+            [
+              416,
+              988
+            ],
+            [
+              470,
+              988
+            ],
+            [
+              470,
+              1038
+            ],
+            [
+              416,
+              1038
+            ]
+          ]
+        },
+        {
+          "text": "20",
+          "confidence": 0.9977598594394261,
+          "bbox": [
+            [
+              501,
+              988
+            ],
+            [
+              601,
+              988
+            ],
+            [
+              601,
+              1038
+            ],
+            [
+              501,
+              1038
+            ]
+          ]
+        },
+        {
+          "text": "06",
+          "confidence": 0.9995139971407297,
+          "bbox": [
+            [
+              630,
+              984
+            ],
+            [
+              726,
+              984
+            ],
+            [
+              726,
+              1035
+            ],
+            [
+              630,
+              1035
+            ]
+          ]
+        },
+        {
+          "text": "(PUMP",
+          "confidence": 0.9993954734902184,
+          "bbox": [
+            [
+              1020,
+              1034
+            ],
+            [
+              1140,
+              1034
+            ],
+            [
+              1140,
+              1088
+            ],
+            [
+              1020,
+              1088
+            ]
+          ]
+        },
+        {
+          "text": "3; 58.14 Q * € 1.449/0)",
+          "confidence": 0.716833148271878,
+          "bbox": [
+            [
+              1164,
+              1016
+            ],
+            [
+              1664,
+              1016
+            ],
+            [
+              1664,
+              1085
+            ],
+            [
+              1164,
+              1085
+            ]
+          ]
+        },
+        {
+          "text": "(PUMP",
+          "confidence": 0.9967983278354549,
+          "bbox": [
+            [
+              2155,
+              1025
+            ],
+            [
+              2276,
+              1025
+            ],
+            [
+              2276,
+              1087
+            ],
+            [
+              2155,
+              1087
+            ]
+          ]
+        },
+        {
+          "text": "1; 67.70 &",
+          "confidence": 0.5181361612025123,
+          "bbox": [
+            [
+              2301,
+              1016
+            ],
+            [
+              2531,
+              1016
+            ],
+            [
+              2531,
+              1082
+            ],
+            [
+              2301,
+              1082
+            ]
+          ]
+        },
+        {
+          "text": "4",
+          "confidence": 0.3113315045595897,
+          "bbox": [
+            [
+              2537,
+              1029
+            ],
+            [
+              2570,
+              1029
+            ],
+            [
+              2570,
+              1059
+            ],
+            [
+              2537,
+              1059
+            ]
+          ]
+        },
+        {
+          "text": ": 1,539/0)",
+          "confidence": 0.5232937338787184,
+          "bbox": [
+            [
+              2570,
+              1007
+            ],
+            [
+              2802,
+              1007
+            ],
+            [
+              2802,
+              1074
+            ],
+            [
+              2570,
+              1074
+            ]
+          ]
+        },
+        {
+          "text": "€ 20.06",
+          "confidence": 0.5625347979338415,
+          "bbox": [
+            [
+              564,
+              1099
+            ],
+            [
+              730,
+              1099
+            ],
+            [
+              730,
+              1153
+            ],
+            [
+              564,
+              1153
+            ]
+          ]
+        },
+        {
+          "text": "TOTAL",
+          "confidence": 0.9779530504014321,
+          "bbox": [
+            [
+              1022,
+              1146
+            ],
+            [
+              1244,
+              1146
+            ],
+            [
+              1244,
+              1207
+            ],
+            [
+              1022,
+              1207
+            ]
+          ]
+        },
+        {
+          "text": "€",
+          "confidence": 0.42183942647342576,
+          "bbox": [
+            [
+              1530,
+              1142
+            ],
+            [
+              1584,
+              1142
+            ],
+            [
+              1584,
+              1193
+            ],
+            [
+              1530,
+              1193
+            ]
+          ]
+        },
+        {
+          "text": "84.24",
+          "confidence": 0.8621779573504643,
+          "bbox": [
+            [
+              1615,
+              1139
+            ],
+            [
+              1840,
+              1139
+            ],
+            [
+              1840,
+              1189
+            ],
+            [
+              1615,
+              1189
+            ]
+          ]
+        },
+        {
+          "text": "TOTAL",
+          "confidence": 0.9860616827787773,
+          "bbox": [
+            [
+              2158,
+              1140
+            ],
+            [
+              2381,
+              1140
+            ],
+            [
+              2381,
+              1205
+            ],
+            [
+              2158,
+              1205
+            ]
+          ]
+        },
+        {
+          "text": "€",
+          "confidence": 0.2639139090570666,
+          "bbox": [
+            [
+              2624,
+              1135
+            ],
+            [
+              2678,
+              1135
+            ],
+            [
+              2678,
+              1186
+            ],
+            [
+              2624,
+              1186
+            ]
+          ]
+        },
+        {
+          "text": "104 .",
+          "confidence": 0.53467635786133,
+          "bbox": [
+            [
+              2712,
+              1132
+            ],
+            [
+              2855,
+              1132
+            ],
+            [
+              2855,
+              1183
+            ],
+            [
+              2712,
+              1183
+            ]
+          ]
+        },
+        {
+          "text": "19",
+          "confidence": 0.9999967125473989,
+          "bbox": [
+            [
+              2874,
+              1122
+            ],
+            [
+              2975,
+              1122
+            ],
+            [
+              2975,
+              1183
+            ],
+            [
+              2874,
+              1183
+            ]
+          ]
+        },
+        {
+          "text": "VISA",
+          "confidence": 0.9957277774810791,
+          "bbox": [
+            [
+              981,
+              1270
+            ],
+            [
+              1078,
+              1270
+            ],
+            [
+              1078,
+              1324
+            ],
+            [
+              981,
+              1324
+            ]
+          ]
+        },
+        {
+          "text": "€ 84.24",
+          "confidence": 0.2988304578452759,
+          "bbox": [
+            [
+              1684,
+              1257
+            ],
+            [
+              1846,
+              1257
+            ],
+            [
+              1846,
+              1308
+            ],
+            [
+              1684,
+              1308
+            ]
+          ]
+        },
+        {
+          "text": "VISA",
+          "confidence": 0.9973982572555542,
+          "bbox": [
+            [
+              2118,
+              1267
+            ],
+            [
+              2214,
+              1267
+            ],
+            [
+              2214,
+              1321
+            ],
+            [
+              2118,
+              1321
+            ]
+          ]
+        },
+        {
+          "text": "8 104.19",
+          "confidence": 0.6099952351220229,
+          "bbox": [
+            [
+              2798,
+              1244
+            ],
+            [
+              2975,
+              1244
+            ],
+            [
+              2975,
+              1298
+            ],
+            [
+              2798,
+              1298
+            ]
+          ]
+        },
+        {
+          "text": "a| ID. :",
+          "confidence": 0.47606789640035346,
+          "bbox": [
+            [
+              0,
+              1287
+            ],
+            [
+              145,
+              1287
+            ],
+            [
+              145,
+              1341
+            ],
+            [
+              0,
+              1341
+            ]
+          ]
+        },
+        {
+          "text": "05052101",
+          "confidence": 0.9999675467085171,
+          "bbox": [
+            [
+              547,
+              1280
+            ],
+            [
+              730,
+              1280
+            ],
+            [
+              730,
+              1331
+            ],
+            [
+              547,
+              1331
+            ]
+          ]
+        },
+        {
+          "text": "no :",
+          "confidence": 0.889306814809018,
+          "bbox": [
+            [
+              16,
+              1357
+            ],
+            [
+              108,
+              1357
+            ],
+            [
+              108,
+              1395
+            ],
+            [
+              16,
+              1395
+            ]
+          ]
+        },
+        {
+          "text": "1337",
+          "confidence": 0.6996303094325361,
+          "bbox": [
+            [
+              633,
+              1339
+            ],
+            [
+              733,
+              1339
+            ],
+            [
+              733,
+              1390
+            ],
+            [
+              633,
+              1390
+            ]
+          ]
+        },
+        {
+          "text": "ction",
+          "confidence": 0.9939373703719927,
+          "bbox": [
+            [
+              0,
+              1408
+            ],
+            [
+              115,
+              1408
+            ],
+            [
+              115,
+              1456
+            ],
+            [
+              0,
+              1456
+            ]
+          ]
+        },
+        {
+          "text": "ne",
+          "confidence": 0.7171798943194435,
+          "bbox": [
+            [
+              125,
+              1416
+            ],
+            [
+              180,
+              1416
+            ],
+            [
+              180,
+              1455
+            ],
+            [
+              125,
+              1455
+            ]
+          ]
+        },
+        {
+          "text": "000159",
+          "confidence": 0.9808471433102014,
+          "bbox": [
+            [
+              593,
+              1395
+            ],
+            [
+              736,
+              1395
+            ],
+            [
+              736,
+              1449
+            ],
+            [
+              593,
+              1449
+            ]
+          ]
+        },
+        {
+          "text": "IPT",
+          "confidence": 0.9925192598514486,
+          "bbox": [
+            [
+              984,
+              1392
+            ],
+            [
+              1061,
+              1392
+            ],
+            [
+              1061,
+              1442
+            ],
+            [
+              984,
+              1442
+            ]
+          ]
+        },
+        {
+          "text": "IPT",
+          "confidence": 0.9947368450257614,
+          "bbox": [
+            [
+              2121,
+              1385
+            ],
+            [
+              2198,
+              1385
+            ],
+            [
+              2198,
+              1439
+            ],
+            [
+              2121,
+              1439
+            ]
+          ]
+        },
+        {
+          "text": "000159",
+          "confidence": 0.9974433234032453,
+          "bbox": [
+            [
+              593,
+              1454
+            ],
+            [
+              736,
+              1454
+            ],
+            [
+              736,
+              1505
+            ],
+            [
+              593,
+              1505
+            ]
+          ]
+        },
+        {
+          "text": "Termina /",
+          "confidence": 0.40426978863455776,
+          "bbox": [
+            [
+              985,
+              1452
+            ],
+            [
+              1159,
+              1452
+            ],
+            [
+              1159,
+              1497
+            ],
+            [
+              985,
+              1497
+            ]
+          ]
+        },
+        {
+          "text": "ID. :",
+          "confidence": 0.4984260192664586,
+          "bbox": [
+            [
+              1177,
+              1443
+            ],
+            [
+              1269,
+              1443
+            ],
+            [
+              1269,
+              1503
+            ],
+            [
+              1177,
+              1503
+            ]
+          ]
+        },
+        {
+          "text": "05091901",
+          "confidence": 0.9999417523526805,
+          "bbox": [
+            [
+              1664,
+              1434
+            ],
+            [
+              1846,
+              1434
+            ],
+            [
+              1846,
+              1488
+            ],
+            [
+              1664,
+              1488
+            ]
+          ]
+        },
+        {
+          "text": "Terminal ID_",
+          "confidence": 0.5590267996296441,
+          "bbox": [
+            [
+              2124,
+              1441
+            ],
+            [
+              2372,
+              1441
+            ],
+            [
+              2372,
+              1495
+            ],
+            [
+              2124,
+              1495
+            ]
+          ]
+        },
+        {
+          "text": "05052101",
+          "confidence": 0.9999488331836879,
+          "bbox": [
+            [
+              2801,
+              1421
+            ],
+            [
+              2975,
+              1421
+            ],
+            [
+              2975,
+              1475
+            ],
+            [
+              2801,
+              1475
+            ]
+          ]
+        },
+        {
+          "text": "t no.",
+          "confidence": 0.8706662593982245,
+          "bbox": [
+            [
+              0,
+              1467
+            ],
+            [
+              112,
+              1467
+            ],
+            [
+              112,
+              1515
+            ],
+            [
+              0,
+              1515
+            ]
+          ]
+        },
+        {
+          "text": "1457",
+          "confidence": 0.9973263144493103,
+          "bbox": [
+            [
+              2890,
+              1484
+            ],
+            [
+              2975,
+              1484
+            ],
+            [
+              2975,
+              1534
+            ],
+            [
+              2890,
+              1534
+            ]
+          ]
+        },
+        {
+          "text": "ime:",
+          "confidence": 0.9825364351272583,
+          "bbox": [
+            [
+              0,
+              1523
+            ],
+            [
+              92,
+              1523
+            ],
+            [
+              92,
+              1574
+            ],
+            [
+              0,
+              1574
+            ]
+          ]
+        },
+        {
+          "text": "10-01-2025 11:05",
+          "confidence": 0.9050600865729309,
+          "bbox": [
+            [
+              381,
+              1511
+            ],
+            [
+              740,
+              1511
+            ],
+            [
+              740,
+              1572
+            ],
+            [
+              381,
+              1572
+            ]
+          ]
+        },
+        {
+          "text": "Per iod no. :",
+          "confidence": 0.8210867916790764,
+          "bbox": [
+            [
+              984,
+              1510
+            ],
+            [
+              1222,
+              1510
+            ],
+            [
+              1222,
+              1564
+            ],
+            [
+              984,
+              1564
+            ]
+          ]
+        },
+        {
+          "text": "2059",
+          "confidence": 0.9997995495796204,
+          "bbox": [
+            [
+              1753,
+              1494
+            ],
+            [
+              1853,
+              1494
+            ],
+            [
+              1853,
+              1548
+            ],
+            [
+              1753,
+              1548
+            ]
+          ]
+        },
+        {
+          "text": "Per iod no.",
+          "confidence": 0.7660725586590122,
+          "bbox": [
+            [
+              2121,
+              1503
+            ],
+            [
+              2343,
+              1503
+            ],
+            [
+              2343,
+              1557
+            ],
+            [
+              2121,
+              1557
+            ]
+          ]
+        },
+        {
+          "text": "\"",
+          "confidence": 0.0459885795477446,
+          "bbox": [
+            [
+              2344,
+              1520
+            ],
+            [
+              2356,
+              1520
+            ],
+            [
+              2356,
+              1541
+            ],
+            [
+              2344,
+              1541
+            ]
+          ]
+        },
+        {
+          "text": "Transact ion",
+          "confidence": 0.8215976471163897,
+          "bbox": [
+            [
+              988,
+              1569
+            ],
+            [
+              1232,
+              1569
+            ],
+            [
+              1232,
+              1620
+            ],
+            [
+              988,
+              1620
+            ]
+          ]
+        },
+        {
+          "text": "no :",
+          "confidence": 0.7017488671619068,
+          "bbox": [
+            [
+              1242,
+              1573
+            ],
+            [
+              1333,
+              1573
+            ],
+            [
+              1333,
+              1612
+            ],
+            [
+              1242,
+              1612
+            ]
+          ]
+        },
+        {
+          "text": "000168",
+          "confidence": 0.9968837394151358,
+          "bbox": [
+            [
+              1710,
+              1553
+            ],
+            [
+              1853,
+              1553
+            ],
+            [
+              1853,
+              1607
+            ],
+            [
+              1710,
+              1607
+            ]
+          ]
+        },
+        {
+          "text": "Transact",
+          "confidence": 0.9999238238132557,
+          "bbox": [
+            [
+              2125,
+              1567
+            ],
+            [
+              2305,
+              1567
+            ],
+            [
+              2305,
+              1612
+            ],
+            [
+              2125,
+              1612
+            ]
+          ]
+        },
+        {
+          "text": "no.",
+          "confidence": 0.9566238871941588,
+          "bbox": [
+            [
+              2382,
+              1567
+            ],
+            [
+              2450,
+              1567
+            ],
+            [
+              2450,
+              1606
+            ],
+            [
+              2382,
+              1606
+            ]
+          ]
+        },
+        {
+          "text": "0oooo=",
+          "confidence": 0.1460296059252466,
+          "bbox": [
+            [
+              2847,
+              1543
+            ],
+            [
+              2975,
+              1543
+            ],
+            [
+              2975,
+              1594
+            ],
+            [
+              2847,
+              1594
+            ]
+          ]
+        },
+        {
+          "text": "A",
+          "confidence": 0.9990575151123835,
+          "bbox": [
+            [
+              0,
+              1641
+            ],
+            [
+              53,
+              1641
+            ],
+            [
+              53,
+              1692
+            ],
+            [
+              0,
+              1692
+            ]
+          ]
+        },
+        {
+          "text": "Receipt no. :",
+          "confidence": 0.6964897510786616,
+          "bbox": [
+            [
+              988,
+              1628
+            ],
+            [
+              1252,
+              1628
+            ],
+            [
+              1252,
+              1682
+            ],
+            [
+              988,
+              1682
+            ]
+          ]
+        },
+        {
+          "text": "000168",
+          "confidence": 0.9993355973245269,
+          "bbox": [
+            [
+              1708,
+              1609
+            ],
+            [
+              1855,
+              1609
+            ],
+            [
+              1855,
+              1669
+            ],
+            [
+              1708,
+              1669
+            ]
+          ]
+        },
+        {
+          "text": "Receipt no",
+          "confidence": 0.9145186301692123,
+          "bbox": [
+            [
+              2128,
+              1625
+            ],
+            [
+              2352,
+              1625
+            ],
+            [
+              2352,
+              1676
+            ],
+            [
+              2128,
+              1676
+            ]
+          ]
+        },
+        {
+          "text": ":",
+          "confidence": 0.33442592554729345,
+          "bbox": [
+            [
+              2367,
+              1635
+            ],
+            [
+              2382,
+              1635
+            ],
+            [
+              2382,
+              1663
+            ],
+            [
+              2367,
+              1663
+            ]
+          ]
+        },
+        {
+          "text": "0oooo",
+          "confidence": 0.18187435744390842,
+          "bbox": [
+            [
+              2850,
+              1602
+            ],
+            [
+              2975,
+              1602
+            ],
+            [
+              2975,
+              1653
+            ],
+            [
+              2850,
+              1653
+            ]
+          ]
+        },
+        {
+          "text": "Datelt",
+          "confidence": 0.7226614467234018,
+          "bbox": [
+            [
+              988,
+              1687
+            ],
+            [
+              1130,
+              1687
+            ],
+            [
+              1130,
+              1741
+            ],
+            [
+              988,
+              1741
+            ]
+          ]
+        },
+        {
+          "text": "18-01-2025 12:22",
+          "confidence": 0.9379772580818032,
+          "bbox": [
+            [
+              1500,
+              1674
+            ],
+            [
+              1856,
+              1674
+            ],
+            [
+              1856,
+              1728
+            ],
+            [
+              1500,
+              1728
+            ]
+          ]
+        },
+        {
+          "text": "Date/time:",
+          "confidence": 0.9167394582450802,
+          "bbox": [
+            [
+              2128,
+              1681
+            ],
+            [
+              2346,
+              1681
+            ],
+            [
+              2346,
+              1735
+            ],
+            [
+              2128,
+              1735
+            ]
+          ]
+        },
+        {
+          "text": "11-02-2025 14:38",
+          "confidence": 0.49380830495528094,
+          "bbox": [
+            [
+              2637,
+              1661
+            ],
+            [
+              2975,
+              1661
+            ],
+            [
+              2975,
+              1715
+            ],
+            [
+              2637,
+              1715
+            ]
+          ]
+        },
+        {
+          "text": "10/01/25 11:05:42",
+          "confidence": 0.6076682020553138,
+          "bbox": [
+            [
+              131,
+              1811
+            ],
+            [
+              510,
+              1811
+            ],
+            [
+              510,
+              1874
+            ],
+            [
+              131,
+              1874
+            ]
+          ]
+        },
+        {
+          "text": "VISA",
+          "confidence": 0.9986127614974976,
+          "bbox": [
+            [
+              997,
+              1802
+            ],
+            [
+              1170,
+              1802
+            ],
+            [
+              1170,
+              1856
+            ],
+            [
+              997,
+              1856
+            ]
+          ]
+        },
+        {
+          "text": "VISA",
+          "confidence": 0.999483585357666,
+          "bbox": [
+            [
+              2135,
+              1794
+            ],
+            [
+              2315,
+              1794
+            ],
+            [
+              2315,
+              1856
+            ],
+            [
+              2135,
+              1856
+            ]
+          ]
+        },
+        {
+          "text": "Customer",
+          "confidence": 0.9671558761803846,
+          "bbox": [
+            [
+              152,
+              1874
+            ],
+            [
+              336,
+              1874
+            ],
+            [
+              336,
+              1931
+            ],
+            [
+              152,
+              1931
+            ]
+          ]
+        },
+        {
+          "text": "05052101",
+          "confidence": 0.9999869765886829,
+          "bbox": [
+            [
+              222,
+              1990
+            ],
+            [
+              404,
+              1990
+            ],
+            [
+              404,
+              2044
+            ],
+            [
+              222,
+              2044
+            ]
+          ]
+        },
+        {
+          "text": "18/01/25 12:22:45",
+          "confidence": 0.9848059867230061,
+          "bbox": [
+            [
+              1250,
+              1973
+            ],
+            [
+              1630,
+              1973
+            ],
+            [
+              1630,
+              2030
+            ],
+            [
+              1250,
+              2030
+            ]
+          ]
+        },
+        {
+          "text": "11/02/25 14:38.44",
+          "confidence": 0.7113589481605997,
+          "bbox": [
+            [
+              2389,
+              1962
+            ],
+            [
+              2767,
+              1962
+            ],
+            [
+              2767,
+              2025
+            ],
+            [
+              2389,
+              2025
+            ]
+          ]
+        },
+        {
+          "text": "na |",
+          "confidence": 0.6075772980816541,
+          "bbox": [
+            [
+              0,
+              2004
+            ],
+            [
+              58,
+              2004
+            ],
+            [
+              58,
+              2046
+            ],
+            [
+              0,
+              2046
+            ]
+          ]
+        },
+        {
+          "text": "ID",
+          "confidence": 0.9765711907418456,
+          "bbox": [
+            [
+              74,
+              1996
+            ],
+            [
+              132,
+              1996
+            ],
+            [
+              132,
+              2047
+            ],
+            [
+              74,
+              2047
+            ]
+          ]
+        },
+        {
+          "text": "0000031606/000159/0000001337",
+          "confidence": 0.8519147168040262,
+          "bbox": [
+            [
+              6,
+              2040
+            ],
+            [
+              620,
+              2040
+            ],
+            [
+              620,
+              2113
+            ],
+            [
+              6,
+              2113
+            ]
+          ]
+        },
+        {
+          "text": "Customer Copy",
+          "confidence": 0.9495325861083165,
+          "bbox": [
+            [
+              1269,
+              2033
+            ],
+            [
+              1568,
+              2033
+            ],
+            [
+              1568,
+              2094
+            ],
+            [
+              1269,
+              2094
+            ]
+          ]
+        },
+        {
+          "text": "Customer Copy",
+          "confidence": 0.937673049234752,
+          "bbox": [
+            [
+              2413,
+              2024
+            ],
+            [
+              2706,
+              2024
+            ],
+            [
+              2706,
+              2080
+            ],
+            [
+              2413,
+              2080
+            ]
+          ]
+        },
+        {
+          "text": "Mode",
+          "confidence": 0.9996049404144287,
+          "bbox": [
+            [
+              12,
+              2114
+            ],
+            [
+              112,
+              2114
+            ],
+            [
+              112,
+              2165
+            ],
+            [
+              12,
+              2165
+            ]
+          ]
+        },
+        {
+          "text": "Contact less",
+          "confidence": 0.8550749823139312,
+          "bbox": [
+            [
+              222,
+              2111
+            ],
+            [
+              467,
+              2111
+            ],
+            [
+              467,
+              2159
+            ],
+            [
+              222,
+              2159
+            ]
+          ]
+        },
+        {
+          "text": "Name",
+          "confidence": 0.9977055191993713,
+          "bbox": [
+            [
+              0,
+              2175
+            ],
+            [
+              88,
+              2175
+            ],
+            [
+              88,
+              2220
+            ],
+            [
+              0,
+              2220
+            ]
+          ]
+        },
+        {
+          "text": "Visa DEBIT",
+          "confidence": 0.6656705489086513,
+          "bbox": [
+            [
+              222,
+              2164
+            ],
+            [
+              450,
+              2164
+            ],
+            [
+              450,
+              2218
+            ],
+            [
+              222,
+              2218
+            ]
+          ]
+        },
+        {
+          "text": "Termina",
+          "confidence": 0.996234558788835,
+          "bbox": [
+            [
+              1001,
+              2160
+            ],
+            [
+              1160,
+              2160
+            ],
+            [
+              1160,
+              2211
+            ],
+            [
+              1001,
+              2211
+            ]
+          ]
+        },
+        {
+          "text": "ID",
+          "confidence": 0.7977998910114247,
+          "bbox": [
+            [
+              1191,
+              2157
+            ],
+            [
+              1249,
+              2157
+            ],
+            [
+              1249,
+              2211
+            ],
+            [
+              1191,
+              2211
+            ]
+          ]
+        },
+        {
+          "text": "05091901",
+          "confidence": 0.6881951920202299,
+          "bbox": [
+            [
+              1339,
+              2154
+            ],
+            [
+              1521,
+              2154
+            ],
+            [
+              1521,
+              2208
+            ],
+            [
+              1339,
+              2208
+            ]
+          ]
+        },
+        {
+          "text": "Termina|",
+          "confidence": 0.5400932289379134,
+          "bbox": [
+            [
+              2137,
+              2153
+            ],
+            [
+              2321,
+              2153
+            ],
+            [
+              2321,
+              2215
+            ],
+            [
+              2137,
+              2215
+            ]
+          ]
+        },
+        {
+          "text": "ID",
+          "confidence": 0.6892599837147724,
+          "bbox": [
+            [
+              2335,
+              2151
+            ],
+            [
+              2392,
+              2151
+            ],
+            [
+              2392,
+              2205
+            ],
+            [
+              2335,
+              2205
+            ]
+          ]
+        },
+        {
+          "text": "05052101",
+          "confidence": 0.9886514419593833,
+          "bbox": [
+            [
+              2482,
+              2144
+            ],
+            [
+              2664,
+              2144
+            ],
+            [
+              2664,
+              2198
+            ],
+            [
+              2482,
+              2198
+            ]
+          ]
+        },
+        {
+          "text": "Number",
+          "confidence": 0.9999654463038776,
+          "bbox": [
+            [
+              0,
+              2233
+            ],
+            [
+              132,
+              2233
+            ],
+            [
+              132,
+              2287
+            ],
+            [
+              0,
+              2287
+            ]
+          ]
+        },
+        {
+          "text": "00",
+          "confidence": 0.9701861160189375,
+          "bbox": [
+            [
+              225,
+              2226
+            ],
+            [
+              283,
+              2226
+            ],
+            [
+              283,
+              2280
+            ],
+            [
+              225,
+              2280
+            ]
+          ]
+        },
+        {
+          "text": "EFT",
+          "confidence": 0.9984212409151709,
+          "bbox": [
+            [
+              1001,
+              2220
+            ],
+            [
+              1078,
+              2220
+            ],
+            [
+              1078,
+              2274
+            ],
+            [
+              1001,
+              2274
+            ]
+          ]
+        },
+        {
+          "text": "0000509840/000168/0000002059",
+          "confidence": 0.6060806098780865,
+          "bbox": [
+            [
+              1126,
+              2202
+            ],
+            [
+              1741,
+              2202
+            ],
+            [
+              1741,
+              2274
+            ],
+            [
+              1126,
+              2274
+            ]
+          ]
+        },
+        {
+          "text": "EFT",
+          "confidence": 0.9995679947435423,
+          "bbox": [
+            [
+              2144,
+              2213
+            ],
+            [
+              2221,
+              2213
+            ],
+            [
+              2221,
+              2267
+            ],
+            [
+              2144,
+              2267
+            ]
+          ]
+        },
+        {
+          "text": "0000048935/000003/0000001457",
+          "confidence": 0.8145000091687847,
+          "bbox": [
+            [
+              2269,
+              2190
+            ],
+            [
+              2884,
+              2190
+            ],
+            [
+              2884,
+              2269
+            ],
+            [
+              2269,
+              2269
+            ]
+          ]
+        },
+        {
+          "text": "A0000000031010",
+          "confidence": 0.34370495611175716,
+          "bbox": [
+            [
+              224,
+              2277
+            ],
+            [
+              541,
+              2277
+            ],
+            [
+              541,
+              2341
+            ],
+            [
+              224,
+              2341
+            ]
+          ]
+        },
+        {
+          "text": "Entry Mode",
+          "confidence": 0.950494087943694,
+          "bbox": [
+            [
+              998,
+              2277
+            ],
+            [
+              1230,
+              2277
+            ],
+            [
+              1230,
+              2338
+            ],
+            [
+              998,
+              2338
+            ]
+          ]
+        },
+        {
+          "text": "Contact less",
+          "confidence": 0.7739000278240712,
+          "bbox": [
+            [
+              1339,
+              2275
+            ],
+            [
+              1587,
+              2275
+            ],
+            [
+              1587,
+              2323
+            ],
+            [
+              1339,
+              2323
+            ]
+          ]
+        },
+        {
+          "text": "Entry Mode",
+          "confidence": 0.6611716302770132,
+          "bbox": [
+            [
+              2144,
+              2272
+            ],
+            [
+              2375,
+              2272
+            ],
+            [
+              2375,
+              2329
+            ],
+            [
+              2144,
+              2329
+            ]
+          ]
+        },
+        {
+          "text": "Contact less",
+          "confidence": 0.8508506027984764,
+          "bbox": [
+            [
+              2486,
+              2261
+            ],
+            [
+              2733,
+              2261
+            ],
+            [
+              2733,
+              2315
+            ],
+            [
+              2486,
+              2315
+            ]
+          ]
+        },
+        {
+          "text": "Crypt.",
+          "confidence": 0.9982444785809066,
+          "bbox": [
+            [
+              0,
+              2345
+            ],
+            [
+              122,
+              2345
+            ],
+            [
+              122,
+              2411
+            ],
+            [
+              0,
+              2411
+            ]
+          ]
+        },
+        {
+          "text": "DICBE274F891F?OC",
+          "confidence": 0.5200495321726668,
+          "bbox": [
+            [
+              223,
+              2336
+            ],
+            [
+              586,
+              2336
+            ],
+            [
+              586,
+              2400
+            ],
+            [
+              223,
+              2400
+            ]
+          ]
+        },
+        {
+          "text": "Card Name",
+          "confidence": 0.990026170882398,
+          "bbox": [
+            [
+              1001,
+              2338
+            ],
+            [
+              1206,
+              2338
+            ],
+            [
+              1206,
+              2392
+            ],
+            [
+              1001,
+              2392
+            ]
+          ]
+        },
+        {
+          "text": "Visa DEBIT",
+          "confidence": 0.9317891060431255,
+          "bbox": [
+            [
+              1342,
+              2328
+            ],
+            [
+              1571,
+              2328
+            ],
+            [
+              1571,
+              2382
+            ],
+            [
+              1342,
+              2382
+            ]
+          ]
+        },
+        {
+          "text": "Card Name",
+          "confidence": 0.889213861824017,
+          "bbox": [
+            [
+              2145,
+              2336
+            ],
+            [
+              2351,
+              2336
+            ],
+            [
+              2351,
+              2381
+            ],
+            [
+              2145,
+              2381
+            ]
+          ]
+        },
+        {
+          "text": "Visa DEBIT",
+          "confidence": 0.8970701102443506,
+          "bbox": [
+            [
+              2489,
+              2318
+            ],
+            [
+              2714,
+              2318
+            ],
+            [
+              2714,
+              2372
+            ],
+            [
+              2489,
+              2372
+            ]
+          ]
+        },
+        {
+          "text": "XXXXXXX6469",
+          "confidence": 0.9359000883704715,
+          "bbox": [
+            [
+              0,
+              2404
+            ],
+            [
+              243,
+              2404
+            ],
+            [
+              243,
+              2458
+            ],
+            [
+              0,
+              2458
+            ]
+          ]
+        },
+        {
+          "text": "Seq . Number",
+          "confidence": 0.6197036078673636,
+          "bbox": [
+            [
+              1002,
+              2397
+            ],
+            [
+              1249,
+              2397
+            ],
+            [
+              1249,
+              2452
+            ],
+            [
+              1002,
+              2452
+            ]
+          ]
+        },
+        {
+          "text": "00",
+          "confidence": 0.9282773815292624,
+          "bbox": [
+            [
+              1346,
+              2394
+            ],
+            [
+              1403,
+              2394
+            ],
+            [
+              1403,
+              2444
+            ],
+            [
+              1346,
+              2444
+            ]
+          ]
+        },
+        {
+          "text": "Seq.",
+          "confidence": 0.997159481048584,
+          "bbox": [
+            [
+              2147,
+              2394
+            ],
+            [
+              2241,
+              2394
+            ],
+            [
+              2241,
+              2444
+            ],
+            [
+              2147,
+              2444
+            ]
+          ]
+        },
+        {
+          "text": "Number",
+          "confidence": 0.9999877359019542,
+          "bbox": [
+            [
+              2256,
+              2390
+            ],
+            [
+              2395,
+              2390
+            ],
+            [
+              2395,
+              2444
+            ],
+            [
+              2256,
+              2444
+            ]
+          ]
+        },
+        {
+          "text": "00",
+          "confidence": 0.9780767272254643,
+          "bbox": [
+            [
+              2489,
+              2384
+            ],
+            [
+              2546,
+              2384
+            ],
+            [
+              2546,
+              2435
+            ],
+            [
+              2489,
+              2435
+            ]
+          ]
+        },
+        {
+          "text": "Contact less",
+          "confidence": 0.9212274048525814,
+          "bbox": [
+            [
+              0,
+              2466
+            ],
+            [
+              240,
+              2466
+            ],
+            [
+              240,
+              2517
+            ],
+            [
+              0,
+              2517
+            ]
+          ]
+        },
+        {
+          "text": "AID",
+          "confidence": 0.9534295584441587,
+          "bbox": [
+            [
+              1004,
+              2459
+            ],
+            [
+              1084,
+              2459
+            ],
+            [
+              1084,
+              2510
+            ],
+            [
+              1004,
+              2510
+            ]
+          ]
+        },
+        {
+          "text": "A0000000031010",
+          "confidence": 0.6008958422898659,
+          "bbox": [
+            [
+              1344,
+              2444
+            ],
+            [
+              1661,
+              2444
+            ],
+            [
+              1661,
+              2506
+            ],
+            [
+              1344,
+              2506
+            ]
+          ]
+        },
+        {
+          "text": "AID",
+          "confidence": 0.9788908836234994,
+          "bbox": [
+            [
+              2151,
+              2453
+            ],
+            [
+              2231,
+              2453
+            ],
+            [
+              2231,
+              2507
+            ],
+            [
+              2151,
+              2507
+            ]
+          ]
+        },
+        {
+          "text": "A0000000031010",
+          "confidence": 0.5731544633869121,
+          "bbox": [
+            [
+              2490,
+              2433
+            ],
+            [
+              2808,
+              2433
+            ],
+            [
+              2808,
+              2497
+            ],
+            [
+              2490,
+              2497
+            ]
+          ]
+        },
+        {
+          "text": "e5",
+          "confidence": 0.7618208750100928,
+          "bbox": [
+            [
+              0,
+              2536
+            ],
+            [
+              48,
+              2536
+            ],
+            [
+              48,
+              2575
+            ],
+            [
+              0,
+              2575
+            ]
+          ]
+        },
+        {
+          "text": "44",
+          "confidence": 0.5163741919985212,
+          "bbox": [
+            [
+              300,
+              2530
+            ],
+            [
+              346,
+              2530
+            ],
+            [
+              346,
+              2561
+            ],
+            [
+              300,
+              2561
+            ]
+          ]
+        },
+        {
+          "text": "App. Crypt .",
+          "confidence": 0.9368628495879014,
+          "bbox": [
+            [
+              1007,
+              2518
+            ],
+            [
+              1247,
+              2518
+            ],
+            [
+              1247,
+              2572
+            ],
+            [
+              1007,
+              2572
+            ]
+          ]
+        },
+        {
+          "text": "1D8E40477C513C74",
+          "confidence": 0.6502330463124975,
+          "bbox": [
+            [
+              1347,
+              2504
+            ],
+            [
+              1703,
+              2504
+            ],
+            [
+              1703,
+              2565
+            ],
+            [
+              1347,
+              2565
+            ]
+          ]
+        },
+        {
+          "text": "App. Crypt.",
+          "confidence": 0.9923668554466664,
+          "bbox": [
+            [
+              2150,
+              2507
+            ],
+            [
+              2394,
+              2507
+            ],
+            [
+              2394,
+              2567
+            ],
+            [
+              2150,
+              2567
+            ]
+          ]
+        },
+        {
+          "text": "FD4EA34D67278037",
+          "confidence": 0.8205919062383338,
+          "bbox": [
+            [
+              2490,
+              2490
+            ],
+            [
+              2847,
+              2490
+            ],
+            [
+              2847,
+              2556
+            ],
+            [
+              2490,
+              2556
+            ]
+          ]
+        },
+        {
+          "text": "AMOUNT",
+          "confidence": 0.9924053488645721,
+          "bbox": [
+            [
+              0,
+              2584
+            ],
+            [
+              141,
+              2584
+            ],
+            [
+              141,
+              2638
+            ],
+            [
+              0,
+              2638
+            ]
+          ]
+        },
+        {
+          "text": "GBP 20 . 06",
+          "confidence": 0.24209316873521616,
+          "bbox": [
+            [
+              232,
+              2578
+            ],
+            [
+              440,
+              2578
+            ],
+            [
+              440,
+              2632
+            ],
+            [
+              232,
+              2632
+            ]
+          ]
+        },
+        {
+          "text": "XXXXXXXXXXXX6469",
+          "confidence": 0.9705212612682738,
+          "bbox": [
+            [
+              1005,
+              2568
+            ],
+            [
+              1365,
+              2568
+            ],
+            [
+              1365,
+              2632
+            ],
+            [
+              1005,
+              2632
+            ]
+          ]
+        },
+        {
+          "text": "XXXXXXXXXXXX29g]",
+          "confidence": 0.5002475364201177,
+          "bbox": [
+            [
+              2152,
+              2561
+            ],
+            [
+              2509,
+              2561
+            ],
+            [
+              2509,
+              2627
+            ],
+            [
+              2152,
+              2627
+            ]
+          ]
+        },
+        {
+          "text": "nse",
+          "confidence": 0.9999949757390659,
+          "bbox": [
+            [
+              0,
+              2654
+            ],
+            [
+              75,
+              2654
+            ],
+            [
+              75,
+              2693
+            ],
+            [
+              0,
+              2693
+            ]
+          ]
+        },
+        {
+          "text": "000 APPROVED",
+          "confidence": 0.601169105521746,
+          "bbox": [
+            [
+              232,
+              2637
+            ],
+            [
+              503,
+              2637
+            ],
+            [
+              503,
+              2691
+            ],
+            [
+              232,
+              2691
+            ]
+          ]
+        },
+        {
+          "text": "Visa Contact less",
+          "confidence": 0.9203448739640142,
+          "bbox": [
+            [
+              1006,
+              2633
+            ],
+            [
+              1360,
+              2633
+            ],
+            [
+              1360,
+              2688
+            ],
+            [
+              1006,
+              2688
+            ]
+          ]
+        },
+        {
+          "text": "Visa Contact less",
+          "confidence": 0.842287594202626,
+          "bbox": [
+            [
+              2154,
+              2630
+            ],
+            [
+              2507,
+              2630
+            ],
+            [
+              2507,
+              2681
+            ],
+            [
+              2154,
+              2681
+            ]
+          ]
+        },
+        {
+          "text": "Code",
+          "confidence": 0.8998951694114555,
+          "bbox": [
+            [
+              0,
+              2702
+            ],
+            [
+              102,
+              2702
+            ],
+            [
+              102,
+              2756
+            ],
+            [
+              0,
+              2756
+            ]
+          ]
+        },
+        {
+          "text": "013600",
+          "confidence": 0.9983934558871089,
+          "bbox": [
+            [
+              235,
+              2696
+            ],
+            [
+              378,
+              2696
+            ],
+            [
+              378,
+              2750
+            ],
+            [
+              235,
+              2750
+            ]
+          ]
+        },
+        {
+          "text": "Expires",
+          "confidence": 0.9999835992536014,
+          "bbox": [
+            [
+              1011,
+              2696
+            ],
+            [
+              1170,
+              2696
+            ],
+            [
+              1170,
+              2750
+            ],
+            [
+              1011,
+              2750
+            ]
+          ]
+        },
+        {
+          "text": "#/**",
+          "confidence": 0.1763916164636612,
+          "bbox": [
+            [
+              1352,
+              2689
+            ],
+            [
+              1469,
+              2689
+            ],
+            [
+              1469,
+              2737
+            ],
+            [
+              1352,
+              2737
+            ]
+          ]
+        },
+        {
+          "text": "Expires",
+          "confidence": 0.9999685501406623,
+          "bbox": [
+            [
+              2157,
+              2689
+            ],
+            [
+              2316,
+              2689
+            ],
+            [
+              2316,
+              2743
+            ],
+            [
+              2157,
+              2743
+            ]
+          ]
+        },
+        {
+          "text": "Ix",
+          "confidence": 0.17732794104700345,
+          "bbox": [
+            [
+              2542,
+              2684
+            ],
+            [
+              2614,
+              2684
+            ],
+            [
+              2614,
+              2723
+            ],
+            [
+              2542,
+              2723
+            ]
+          ]
+        },
+        {
+          "text": "ication",
+          "confidence": 0.9304426053961343,
+          "bbox": [
+            [
+              0,
+              2758
+            ],
+            [
+              164,
+              2758
+            ],
+            [
+              164,
+              2812
+            ],
+            [
+              0,
+              2812
+            ]
+          ]
+        },
+        {
+          "text": "ODCVM",
+          "confidence": 0.9993595385510494,
+          "bbox": [
+            [
+              235,
+              2755
+            ],
+            [
+              358,
+              2755
+            ],
+            [
+              358,
+              2809
+            ],
+            [
+              235,
+              2809
+            ]
+          ]
+        },
+        {
+          "text": "SALE AMOUNT",
+          "confidence": 0.9077185450733912,
+          "bbox": [
+            [
+              1011,
+              2752
+            ],
+            [
+              1258,
+              2752
+            ],
+            [
+              1258,
+              2806
+            ],
+            [
+              1011,
+              2806
+            ]
+          ]
+        },
+        {
+          "text": "GBP 84.24",
+          "confidence": 0.8588400143132409,
+          "bbox": [
+            [
+              1349,
+              2745
+            ],
+            [
+              1557,
+              2745
+            ],
+            [
+              1557,
+              2799
+            ],
+            [
+              1349,
+              2799
+            ]
+          ]
+        },
+        {
+          "text": "SALE AMOUNT",
+          "confidence": 0.9872394773987166,
+          "bbox": [
+            [
+              2155,
+              2743
+            ],
+            [
+              2409,
+              2743
+            ],
+            [
+              2409,
+              2805
+            ],
+            [
+              2155,
+              2805
+            ]
+          ]
+        },
+        {
+          "text": "GBP 104.19",
+          "confidence": 0.6562463844359951,
+          "bbox": [
+            [
+              2499,
+              2732
+            ],
+            [
+              2727,
+              2732
+            ],
+            [
+              2727,
+              2789
+            ],
+            [
+              2499,
+              2789
+            ]
+          ]
+        },
+        {
+          "text": "fied By Device",
+          "confidence": 0.7840311140070723,
+          "bbox": [
+            [
+              0,
+              2817
+            ],
+            [
+              293,
+              2817
+            ],
+            [
+              293,
+              2871
+            ],
+            [
+              0,
+              2871
+            ]
+          ]
+        },
+        {
+          "text": "Response",
+          "confidence": 0.999996164633739,
+          "bbox": [
+            [
+              1008,
+              2812
+            ],
+            [
+              1198,
+              2812
+            ],
+            [
+              1198,
+              2872
+            ],
+            [
+              1008,
+              2872
+            ]
+          ]
+        },
+        {
+          "text": "000 APPROVED",
+          "confidence": 0.7548286767432298,
+          "bbox": [
+            [
+              1352,
+              2804
+            ],
+            [
+              1623,
+              2804
+            ],
+            [
+              1623,
+              2858
+            ],
+            [
+              1352,
+              2858
+            ]
+          ]
+        },
+        {
+          "text": "Response",
+          "confidence": 0.9999950266667531,
+          "bbox": [
+            [
+              2160,
+              2810
+            ],
+            [
+              2343,
+              2810
+            ],
+            [
+              2343,
+              2864
+            ],
+            [
+              2160,
+              2864
+            ]
+          ]
+        },
+        {
+          "text": "00o APPROVED",
+          "confidence": 0.7590883470784046,
+          "bbox": [
+            [
+              2501,
+              2791
+            ],
+            [
+              2775,
+              2791
+            ],
+            [
+              2775,
+              2853
+            ],
+            [
+              2501,
+              2853
+            ]
+          ]
+        },
+        {
+          "text": "se retain this copy",
+          "confidence": 0.9549558327069698,
+          "bbox": [
+            [
+              0,
+              2877
+            ],
+            [
+              398,
+              2877
+            ],
+            [
+              398,
+              2931
+            ],
+            [
+              0,
+              2931
+            ]
+          ]
+        },
+        {
+          "text": "Ta)r",
+          "confidence": 0.0422179251909256,
+          "bbox": [
+            [
+              414,
+              2878
+            ],
+            [
+              482,
+              2878
+            ],
+            [
+              482,
+              2920
+            ],
+            [
+              414,
+              2920
+            ]
+          ]
+        },
+        {
+          "text": "yourrecords",
+          "confidence": 0.9946274813247813,
+          "bbox": [
+            [
+              495,
+              2868
+            ],
+            [
+              761,
+              2868
+            ],
+            [
+              761,
+              2924
+            ],
+            [
+              495,
+              2924
+            ]
+          ]
+        },
+        {
+          "text": "Auth Code",
+          "confidence": 0.9977571702825478,
+          "bbox": [
+            [
+              1014,
+              2873
+            ],
+            [
+              1222,
+              2873
+            ],
+            [
+              1222,
+              2927
+            ],
+            [
+              1014,
+              2927
+            ]
+          ]
+        },
+        {
+          "text": "087224",
+          "confidence": 0.9999843778692133,
+          "bbox": [
+            [
+              1356,
+              2867
+            ],
+            [
+              1495,
+              2867
+            ],
+            [
+              1495,
+              2917
+            ],
+            [
+              1356,
+              2917
+            ]
+          ]
+        },
+        {
+          "text": "Auth Code",
+          "confidence": 0.9097368175634064,
+          "bbox": [
+            [
+              2164,
+              2867
+            ],
+            [
+              2369,
+              2867
+            ],
+            [
+              2369,
+              2921
+            ],
+            [
+              2164,
+              2921
+            ]
+          ]
+        },
+        {
+          "text": "020826",
+          "confidence": 0.998862117598976,
+          "bbox": [
+            [
+              2500,
+              2852
+            ],
+            [
+              2647,
+              2852
+            ],
+            [
+              2647,
+              2913
+            ],
+            [
+              2500,
+              2913
+            ]
+          ]
+        },
+        {
+          "text": "Ver i fication",
+          "confidence": 0.8000686339474493,
+          "bbox": [
+            [
+              1014,
+              2929
+            ],
+            [
+              1281,
+              2929
+            ],
+            [
+              1281,
+              2986
+            ],
+            [
+              1014,
+              2986
+            ]
+          ]
+        },
+        {
+          "text": "ODCVM",
+          "confidence": 0.9985065987796187,
+          "bbox": [
+            [
+              1352,
+              2926
+            ],
+            [
+              1479,
+              2926
+            ],
+            [
+              1479,
+              2977
+            ],
+            [
+              1352,
+              2977
+            ]
+          ]
+        },
+        {
+          "text": "Ver",
+          "confidence": 0.9996425976563401,
+          "bbox": [
+            [
+              2164,
+              2929
+            ],
+            [
+              2237,
+              2929
+            ],
+            [
+              2237,
+              2977
+            ],
+            [
+              2164,
+              2977
+            ]
+          ]
+        },
+        {
+          "text": "fication",
+          "confidence": 0.9934082839133462,
+          "bbox": [
+            [
+              2249,
+              2923
+            ],
+            [
+              2435,
+              2923
+            ],
+            [
+              2435,
+              2973
+            ],
+            [
+              2249,
+              2973
+            ]
+          ]
+        },
+        {
+          "text": "ODCVM",
+          "confidence": 0.9974602611413363,
+          "bbox": [
+            [
+              2502,
+              2916
+            ],
+            [
+              2628,
+              2916
+            ],
+            [
+              2628,
+              2970
+            ],
+            [
+              2502,
+              2970
+            ]
+          ]
+        },
+        {
+          "text": "Ver i fied By Device",
+          "confidence": 0.9550988615061262,
+          "bbox": [
+            [
+              1016,
+              2987
+            ],
+            [
+              1414,
+              2987
+            ],
+            [
+              1414,
+              3047
+            ],
+            [
+              1016,
+              3047
+            ]
+          ]
+        },
+        {
+          "text": "Ver ified By Device",
+          "confidence": 0.9895386444663661,
+          "bbox": [
+            [
+              2166,
+              2977
+            ],
+            [
+              2564,
+              2977
+            ],
+            [
+              2564,
+              3040
+            ],
+            [
+              2166,
+              3040
+            ]
+          ]
+        },
+        {
+          "text": "type",
+          "confidence": 0.9850323797721128,
+          "bbox": [
+            [
+              0,
+              3062
+            ],
+            [
+              85,
+              3062
+            ],
+            [
+              85,
+              3107
+            ],
+            [
+              0,
+              3107
+            ]
+          ]
+        },
+        {
+          "text": "%",
+          "confidence": 0.8341792352894686,
+          "bbox": [
+            [
+              154,
+              3055
+            ],
+            [
+              190,
+              3055
+            ],
+            [
+              190,
+              3104
+            ],
+            [
+              154,
+              3104
+            ]
+          ]
+        },
+        {
+          "text": "Nett",
+          "confidence": 0.9999887943267822,
+          "bbox": [
+            [
+              390,
+              3051
+            ],
+            [
+              490,
+              3051
+            ],
+            [
+              490,
+              3101
+            ],
+            [
+              390,
+              3101
+            ]
+          ]
+        },
+        {
+          "text": "VAT amount",
+          "confidence": 0.8926365192199986,
+          "bbox": [
+            [
+              541,
+              3044
+            ],
+            [
+              764,
+              3044
+            ],
+            [
+              764,
+              3098
+            ],
+            [
+              541,
+              3098
+            ]
+          ]
+        },
+        {
+          "text": "Please retain th' $ €py",
+          "confidence": 0.6119139037491464,
+          "bbox": [
+            [
+              1013,
+              3043
+            ],
+            [
+              1519,
+              3043
+            ],
+            [
+              1519,
+              3106
+            ],
+            [
+              1013,
+              3106
+            ]
+          ]
+        },
+        {
+          "text": "for",
+          "confidence": 0.9945555514005164,
+          "bbox": [
+            [
+              1534,
+              3042
+            ],
+            [
+              1599,
+              3042
+            ],
+            [
+              1599,
+              3087
+            ],
+            [
+              1534,
+              3087
+            ]
+          ]
+        },
+        {
+          "text": "your",
+          "confidence": 0.9962185621261597,
+          "bbox": [
+            [
+              1612,
+              3047
+            ],
+            [
+              1705,
+              3047
+            ],
+            [
+              1705,
+              3095
+            ],
+            [
+              1612,
+              3095
+            ]
+          ]
+        },
+        {
+          "text": "records",
+          "confidence": 0.9999744075885222,
+          "bbox": [
+            [
+              1719,
+              3041
+            ],
+            [
+              1883,
+              3041
+            ],
+            [
+              1883,
+              3091
+            ],
+            [
+              1719,
+              3091
+            ]
+          ]
+        },
+        {
+          "text": "Please retain this copy for",
+          "confidence": 0.8120688885133146,
+          "bbox": [
+            [
+              2166,
+              3030
+            ],
+            [
+              2751,
+              3030
+            ],
+            [
+              2751,
+              3099
+            ],
+            [
+              2166,
+              3099
+            ]
+          ]
+        },
+        {
+          "text": "5",
+          "confidence": 0.9134475587011934,
+          "bbox": [
+            [
+              0,
+              3119
+            ],
+            [
+              20,
+              3119
+            ],
+            [
+              20,
+              3161
+            ],
+            [
+              0,
+              3161
+            ]
+          ]
+        },
+        {
+          "text": "20.00",
+          "confidence": 0.9837815475301405,
+          "bbox": [
+            [
+              94,
+              3113
+            ],
+            [
+              217,
+              3113
+            ],
+            [
+              217,
+              3167
+            ],
+            [
+              94,
+              3167
+            ]
+          ]
+        },
+        {
+          "text": ": 16.72",
+          "confidence": 0.28336417726346,
+          "bbox": [
+            [
+              327,
+              3107
+            ],
+            [
+              493,
+              3107
+            ],
+            [
+              493,
+              3161
+            ],
+            [
+              327,
+              3161
+            ]
+          ]
+        },
+        {
+          "text": "€ 3.34",
+          "confidence": 0.47204946473646164,
+          "bbox": [
+            [
+              630,
+              3100
+            ],
+            [
+              769,
+              3100
+            ],
+            [
+              769,
+              3154
+            ],
+            [
+              630,
+              3154
+            ]
+          ]
+        },
+        {
+          "text": "1-2025 11:05:42",
+          "confidence": 0.8764737524573357,
+          "bbox": [
+            [
+              0,
+              3228
+            ],
+            [
+              325,
+              3228
+            ],
+            [
+              325,
+              3285
+            ],
+            [
+              0,
+              3285
+            ]
+          ]
+        },
+        {
+          "text": "521 0918 1156110316",
+          "confidence": 0.9480420045484909,
+          "bbox": [
+            [
+              353,
+              3217
+            ],
+            [
+              774,
+              3217
+            ],
+            [
+              774,
+              3280
+            ],
+            [
+              353,
+              3280
+            ]
+          ]
+        },
+        {
+          "text": "VAT type",
+          "confidence": 0.9375494440888078,
+          "bbox": [
+            [
+              1020,
+              3228
+            ],
+            [
+              1206,
+              3228
+            ],
+            [
+              1206,
+              3285
+            ],
+            [
+              1020,
+              3285
+            ]
+          ]
+        },
+        {
+          "text": "9",
+          "confidence": 0.1879995083652517,
+          "bbox": [
+            [
+              1279,
+              3233
+            ],
+            [
+              1306,
+              3233
+            ],
+            [
+              1306,
+              3270
+            ],
+            [
+              1279,
+              3270
+            ]
+          ]
+        },
+        {
+          "text": "Nett",
+          "confidence": 0.9999226331710815,
+          "bbox": [
+            [
+              1510,
+              3222
+            ],
+            [
+              1607,
+              3222
+            ],
+            [
+              1607,
+              3272
+            ],
+            [
+              1510,
+              3272
+            ]
+          ]
+        },
+        {
+          "text": "VAT amount",
+          "confidence": 0.9276556880939988,
+          "bbox": [
+            [
+              1658,
+              3215
+            ],
+            [
+              1884,
+              3215
+            ],
+            [
+              1884,
+              3269
+            ],
+            [
+              1658,
+              3269
+            ]
+          ]
+        },
+        {
+          "text": "VAT type",
+          "confidence": 0.6764197104524075,
+          "bbox": [
+            [
+              2174,
+              3222
+            ],
+            [
+              2359,
+              3222
+            ],
+            [
+              2359,
+              3279
+            ],
+            [
+              2174,
+              3279
+            ]
+          ]
+        },
+        {
+          "text": "%",
+          "confidence": 0.7255111913991641,
+          "bbox": [
+            [
+              2429,
+              3220
+            ],
+            [
+              2462,
+              3220
+            ],
+            [
+              2462,
+              3264
+            ],
+            [
+              2429,
+              3264
+            ]
+          ]
+        },
+        {
+          "text": "55409-50582233",
+          "confidence": 0.906471842777492,
+          "bbox": [
+            [
+              0,
+              3286
+            ],
+            [
+              307,
+              3286
+            ],
+            [
+              307,
+              3346
+            ],
+            [
+              0,
+              3346
+            ]
+          ]
+        },
+        {
+          "text": "4485",
+          "confidence": 0.9999890327453613,
+          "bbox": [
+            [
+              672,
+              3277
+            ],
+            [
+              772,
+              3277
+            ],
+            [
+              772,
+              3331
+            ],
+            [
+              672,
+              3331
+            ]
+          ]
+        },
+        {
+          "text": "6",
+          "confidence": 0.9978200170073173,
+          "bbox": [
+            [
+              1108,
+              3289
+            ],
+            [
+              1138,
+              3289
+            ],
+            [
+              1138,
+              3333
+            ],
+            [
+              1108,
+              3333
+            ]
+          ]
+        },
+        {
+          "text": "20.00",
+          "confidence": 0.6844734675130918,
+          "bbox": [
+            [
+              1214,
+              3284
+            ],
+            [
+              1334,
+              3284
+            ],
+            [
+              1334,
+              3338
+            ],
+            [
+              1214,
+              3338
+            ]
+          ]
+        },
+        {
+          "text": "€ 70.20",
+          "confidence": 0.49825406740267897,
+          "bbox": [
+            [
+              1451,
+              3277
+            ],
+            [
+              1613,
+              3277
+            ],
+            [
+              1613,
+              3331
+            ],
+            [
+              1451,
+              3331
+            ]
+          ]
+        },
+        {
+          "text": "1 14.04",
+          "confidence": 0.38556663926256096,
+          "bbox": [
+            [
+              1723,
+              3274
+            ],
+            [
+              1889,
+              3274
+            ],
+            [
+              1889,
+              3325
+            ],
+            [
+              1723,
+              3325
+            ]
+          ]
+        },
+        {
+          "text": "6",
+          "confidence": 0.9998068902746695,
+          "bbox": [
+            [
+              2264,
+              3283
+            ],
+            [
+              2295,
+              3283
+            ],
+            [
+              2295,
+              3326
+            ],
+            [
+              2264,
+              3326
+            ]
+          ]
+        },
+        {
+          "text": "20.L",
+          "confidence": 0.31078431010246277,
+          "bbox": [
+            [
+              2367,
+              3277
+            ],
+            [
+              2464,
+              3277
+            ],
+            [
+              2464,
+              3328
+            ],
+            [
+              2367,
+              3328
+            ]
+          ]
+        },
+        {
+          "text": "k you for",
+          "confidence": 0.9895621867711967,
+          "bbox": [
+            [
+              0,
+              3409
+            ],
+            [
+              197,
+              3409
+            ],
+            [
+              197,
+              3463
+            ],
+            [
+              0,
+              3463
+            ]
+          ]
+        },
+        {
+          "text": "choos ing Shel /",
+          "confidence": 0.7568239322764497,
+          "bbox": [
+            [
+              209,
+              3402
+            ],
+            [
+              513,
+              3402
+            ],
+            [
+              513,
+              3459
+            ],
+            [
+              209,
+              3459
+            ]
+          ]
+        },
+        {
+          "text": "18-01-2025 12:22:45",
+          "confidence": 0.8001531056294306,
+          "bbox": [
+            [
+              1027,
+              3399
+            ],
+            [
+              1446,
+              3399
+            ],
+            [
+              1446,
+              3456
+            ],
+            [
+              1027,
+              3456
+            ]
+          ]
+        },
+        {
+          "text": "919 0985 1041110217",
+          "confidence": 0.7760123364380889,
+          "bbox": [
+            [
+              1470,
+              3391
+            ],
+            [
+              1890,
+              3391
+            ],
+            [
+              1890,
+              3451
+            ],
+            [
+              1470,
+              3451
+            ]
+          ]
+        },
+        {
+          "text": "11-02-2025 14: 36 .",
+          "confidence": 0.5398887723336895,
+          "bbox": [
+            [
+              2178,
+              3391
+            ],
+            [
+              2537,
+              3391
+            ],
+            [
+              2537,
+              3455
+            ],
+            [
+              2178,
+              3455
+            ]
+          ]
+        },
+        {
+          "text": "11-054684-52452321",
+          "confidence": 0.7904896774263045,
+          "bbox": [
+            [
+              1022,
+              3457
+            ],
+            [
+              1421,
+              3457
+            ],
+            [
+              1421,
+              3520
+            ],
+            [
+              1022,
+              3520
+            ]
+          ]
+        },
+        {
+          "text": "2065",
+          "confidence": 0.9994027018547058,
+          "bbox": [
+            [
+              1792,
+              3451
+            ],
+            [
+              1892,
+              3451
+            ],
+            [
+              1892,
+              3502
+            ],
+            [
+              1792,
+              3502
+            ]
+          ]
+        },
+        {
+          "text": "11-079665-62660232",
+          "confidence": 0.8047344334995795,
+          "bbox": [
+            [
+              2181,
+              3445
+            ],
+            [
+              2578,
+              3445
+            ],
+            [
+              2578,
+              3514
+            ],
+            [
+              2181,
+              3514
+            ]
+          ]
+        },
+        {
+          "text": "Thank you for",
+          "confidence": 0.870924792133719,
+          "bbox": [
+            [
+              1027,
+              3583
+            ],
+            [
+              1311,
+              3583
+            ],
+            [
+              1311,
+              3637
+            ],
+            [
+              1027,
+              3637
+            ]
+          ]
+        },
+        {
+          "text": "choos ing Shel |",
+          "confidence": 0.9205680985170486,
+          "bbox": [
+            [
+              1326,
+              3576
+            ],
+            [
+              1630,
+              3576
+            ],
+            [
+              1630,
+              3632
+            ],
+            [
+              1326,
+              3632
+            ]
+          ]
+        },
+        {
+          "text": "Thank you for choos",
+          "confidence": 0.5301241055606287,
+          "bbox": [
+            [
+              2186,
+              3569
+            ],
+            [
+              2600,
+              3569
+            ],
+            [
+              2600,
+              3631
+            ],
+            [
+              2186,
+              3631
+            ]
+          ]
+        },
+        {
+          "text": "ing",
+          "confidence": 0.948913268829061,
+          "bbox": [
+            [
+              366.94525616909806,
+              158.0934345469491
+            ],
+            [
+              445.50017578825054,
+              172.60248747691642
+            ],
+            [
+              435.05474383090194,
+              225.9065654530509
+            ],
+            [
+              356.49982421174946,
+              211.39751252308358
+            ]
+          ]
+        },
+        {
+          "text": "ion",
+          "confidence": 0.965081354666116,
+          "bbox": [
+            [
+              2298.9594617776756,
+              1559.109470355076
+            ],
+            [
+              2375.6635154252185,
+              1571.1967740355822
+            ],
+            [
+              2368.0405382223244,
+              1615.890529644924
+            ],
+            [
+              2291.3364845747815,
+              1603.8032259644178
+            ]
+          ]
+        },
+        {
+          "text": "ime:",
+          "confidence": 0.7997731214700566,
+          "bbox": [
+            [
+              1122.9594617776756,
+              1685.109470355076
+            ],
+            [
+              1212.7487852108145,
+              1697.4350594191633
+            ],
+            [
+              1205.0405382223244,
+              1741.890529644924
+            ],
+            [
+              1115.2512147891855,
+              1729.5649405808367
+            ]
+          ]
+        },
+        {
+          "text": "Copy",
+          "confidence": 0.755366185075912,
+          "bbox": [
+            [
+              347.94525616909806,
+              1867.093434546949
+            ],
+            [
+              452.7346740523317,
+              1883.2354849069748
+            ],
+            [
+              442.05474383090194,
+              1934.906565453051
+            ],
+            [
+              337.2653259476683,
+              1918.7645150930252
+            ]
+          ]
+        },
+        {
+          "text": "in",
+          "confidence": 0.9997939081314868,
+          "bbox": [
+            [
+              2597.98022872944,
+              3563.105097901312
+            ],
+            [
+              2663.613344869165,
+              3576.0720349800504
+            ],
+            [
+              2654.01977127056,
+              3620.894902098688
+            ],
+            [
+              2587.386655130835,
+              3607.9279650199496
+            ]
+          ]
+        }
+      ],
+      "ocr_debug": {
+        "lighton_error": "",
+        "easyocr_error": "",
+        "tesseract_error": "",
+        "lighton_raw_len": 0,
+        "easyocr_items": 260,
+        "cleaned_len": 2447
+      },
+      "detections": []
+    }
+  ]
+}

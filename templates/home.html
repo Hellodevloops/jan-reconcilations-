@@ -254,13 +254,56 @@
           <input id="handwrittenFiles" type="file" accept="application/pdf,image/*" multiple style="margin-top: 8px;" />
         </div>
         <div class="row">
+          <label style="display:flex; align-items:center; gap:8px; border:1px solid var(--border); padding:8px 10px; border-radius:12px; background: rgba(0,0,0,0.12);">
+            <input id="handwrittenMultiReceipts" type="checkbox" />
+            <span class="muted">Multiple receipts</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:8px; border:1px solid var(--border); padding:8px 10px; border-radius:12px; background: rgba(0,0,0,0.12);">
+            <input id="handwrittenIncludeOcrItems" type="checkbox" />
+            <span class="muted">Include OCR items</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:8px; border:1px solid var(--border); padding:8px 10px; border-radius:12px; background: rgba(0,0,0,0.12);">
+            <span class="muted">Receipts limit</span>
+            <input id="handwrittenReceiptsLimit" type="number" min="1" max="50" value="10" style="width:92px; padding:8px; border-radius:10px; border:1px solid var(--border); background: rgba(0,0,0,0.12); color: var(--text);" />
+          </label>
+          <label style="display:flex; align-items:center; gap:8px; border:1px solid var(--border); padding:8px 10px; border-radius:12px; background: rgba(0,0,0,0.12);">
+            <span class="muted">PDF pages</span>
+            <input id="handwrittenPdfPagesLimit" type="number" min="1" max="200" value="1" style="width:92px; padding:8px; border-radius:10px; border:1px solid var(--border); background: rgba(0,0,0,0.12); color: var(--text);" />
+          </label>
           <button id="handwrittenBtn" type="button">Extract Handwritten Fields</button>
+          <button id="handwrittenFinalizeBtn" type="button" class="secondary" disabled>Finalize + Generate CSV</button>
         </div>
         <div class="muted" style="margin-top:8px;">
           Extracts: supplier, document_date, make, model, colour, reg_no, buying_price.
         </div>
         <div id="handwrittenErr" class="err" style="margin-top:10px;"></div>
         <div id="handwrittenWarn" class="warn" style="margin-top:10px;"></div>
+
+        <div id="handwrittenFields" class="grid" style="display:none;"></div>
+
+        <div style="max-height: 420px; overflow:auto;">
+          <table id="handwrittenTbl" style="display:none;">
+            <thead>
+              <tr>
+                <th>sr_no</th>
+                <th>category</th>
+                <th>document_date</th>
+                <th>supplier</th>
+                <th>inv_ref_no</th>
+                <th>make</th>
+                <th>model</th>
+                <th>colour</th>
+                <th>reg_no</th>
+                <th>buying_price</th>
+                <th>non_vat</th>
+                <th>std_net</th>
+                <th>vat_amount</th>
+              </tr>
+            </thead>
+            <tbody id="handwrittenTbody"></tbody>
+          </table>
+        </div>
+        <div id="handwrittenDownload" style="margin-top:12px;"></div>
 
         <div style="margin-top:12px;">
           <textarea id="handwrittenJson" readonly style="width:100%; min-height: 260px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;"></textarea>
@@ -538,21 +581,57 @@ invoiceFinalizeBtn.addEventListener('click', async () => {
 
 // Handwritten
 const handwrittenBtn = document.getElementById('handwrittenBtn');
+const handwrittenFinalizeBtn = document.getElementById('handwrittenFinalizeBtn');
 const handwrittenFiles = document.getElementById('handwrittenFiles');
 const handwrittenErr = document.getElementById('handwrittenErr');
 const handwrittenWarn = document.getElementById('handwrittenWarn');
+const handwrittenTbl = document.getElementById('handwrittenTbl');
+const handwrittenTbody = document.getElementById('handwrittenTbody');
+const handwrittenFieldsEl = document.getElementById('handwrittenFields');
+const handwrittenDownload = document.getElementById('handwrittenDownload');
 const handwrittenJson = document.getElementById('handwrittenJson');
 const dropHandwritten = document.getElementById('dropHandwritten');
+const handwrittenMultiReceipts = document.getElementById('handwrittenMultiReceipts');
+const handwrittenIncludeOcrItems = document.getElementById('handwrittenIncludeOcrItems');
+const handwrittenReceiptsLimit = document.getElementById('handwrittenReceiptsLimit');
+const handwrittenPdfPagesLimit = document.getElementById('handwrittenPdfPagesLimit');
 
 wireDrop(dropHandwritten, handwrittenFiles);
 
 let lastHandwrittenJobId = null;
+let lastHandwrittenDraftRows = null;
+
+function handwrittenTd(txt) {
+  const e = document.createElement('td');
+  e.textContent = txt ?? '';
+  return e;
+}
+
+function renderHandwrittenFieldsFromFirstRow(row) {
+  const keys = ['supplier','document_date','make','model','colour','reg_no','buying_price'];
+  handwrittenFieldsEl.innerHTML = '';
+  for (const k of keys) {
+    const kEl = document.createElement('div');
+    kEl.className = 'k';
+    kEl.textContent = k;
+    const vEl = document.createElement('div');
+    vEl.className = 'v';
+    vEl.textContent = row?.[k] ?? '';
+    handwrittenFieldsEl.appendChild(kEl);
+    handwrittenFieldsEl.appendChild(vEl);
+  }
+}
 
 handwrittenBtn.addEventListener('click', async () => {
   handwrittenErr.textContent = '';
   handwrittenWarn.textContent = '';
-  handwrittenJson.value = '';
+  handwrittenTbody.innerHTML = '';
+  handwrittenTbl.style.display = 'none';
+  handwrittenFieldsEl.style.display = 'none';
+  handwrittenDownload.innerHTML = '';
+  handwrittenFinalizeBtn.disabled = true;
   lastHandwrittenJobId = null;
+  lastHandwrittenDraftRows = null;
 
   const files = handwrittenFiles.files;
   if (!files || files.length === 0) {
@@ -574,6 +653,20 @@ handwrittenBtn.addEventListener('click', async () => {
     const form = new FormData();
     for (const f of files) form.append('files', f);
 
+    const multiReceiptsEnabled = !!handwrittenMultiReceipts?.checked;
+    const includeOcrItemsEnabled = !!handwrittenIncludeOcrItems?.checked;
+    if (multiReceiptsEnabled) {
+      form.append('multi_receipts', 'true');
+      const rl = parseInt(handwrittenReceiptsLimit?.value || '10', 10);
+      if (Number.isFinite(rl) && rl > 0) form.append('receipts_limit', String(rl));
+      const pl = parseInt(handwrittenPdfPagesLimit?.value || '1', 10);
+      if (Number.isFinite(pl) && pl > 0) form.append('pdf_pages_limit', String(pl));
+    }
+
+    if (includeOcrItemsEnabled) {
+      form.append('include_ocr_items', 'true');
+    }
+
     const res = await fetch('/api/handwritten-invoice-convert-review', {
       method: 'POST',
       body: form,
@@ -590,7 +683,46 @@ handwrittenBtn.addEventListener('click', async () => {
     }
 
     lastHandwrittenJobId = data?.job_id;
+    lastHandwrittenDraftRows = data?.draft_rows || [];
     if (data?.warnings?.length) handwrittenWarn.textContent = data.warnings.join('\n');
+    if (data?.skipped?.length) handwrittenWarn.textContent = (handwrittenWarn.textContent ? (handwrittenWarn.textContent + '\n') : '') + ('Skipped: ' + data.skipped.join(', '));
+
+    // Remove the direct download link since we now have a finalize step
+    // if (data?.download_url) {
+    //   handwrittenDownload.innerHTML = `<a href="${data.download_url}" download>Download Handwritten CSV</a>`;
+    // }
+
+    // Populate the table with preview data
+    const preview = data?.preview || [];
+    for (const r of preview) {
+      const tr = document.createElement('tr');
+      tr.appendChild(handwrittenTd(r.sr_no));
+      tr.appendChild(handwrittenTd(r.category));
+      tr.appendChild(handwrittenTd(r.document_date));
+      tr.appendChild(handwrittenTd(r.supplier));
+      tr.appendChild(handwrittenTd(r.inv_ref_no));
+      tr.appendChild(handwrittenTd(r.make));
+      tr.appendChild(handwrittenTd(r.model));
+      tr.appendChild(handwrittenTd(r.colour));
+      tr.appendChild(handwrittenTd(r.reg_no));
+      tr.appendChild(handwrittenTd(r.buying_price));
+      tr.appendChild(handwrittenTd(r.non_vat));
+      tr.appendChild(handwrittenTd(r.std_net));
+      tr.appendChild(handwrittenTd(r.vat_amount));
+      handwrittenTbody.appendChild(tr);
+    }
+    handwrittenTbl.style.display = preview.length ? '' : 'none';
+
+    if (preview.length) {
+      renderHandwrittenFieldsFromFirstRow(preview[0]);
+      handwrittenFieldsEl.style.display = '';
+    }
+
+    // Enable finalize button if we have draft rows
+    if (lastHandwrittenJobId && Array.isArray(lastHandwrittenDraftRows)) {
+      handwrittenFinalizeBtn.disabled = false;
+    }
+
     handwrittenJson.value = JSON.stringify(data, null, 2);
   } catch (e) {
     clearTimeout(timeoutId);
@@ -602,6 +734,37 @@ handwrittenBtn.addEventListener('click', async () => {
   } finally {
     handwrittenBtn.disabled = false;
     handwrittenBtn.textContent = 'Extract Handwritten Fields';
+  }
+});
+
+handwrittenFinalizeBtn.addEventListener('click', async () => {
+  handwrittenErr.textContent = '';
+  handwrittenDownload.innerHTML = '';
+
+  if (!lastHandwrittenJobId || !Array.isArray(lastHandwrittenDraftRows)) {
+    handwrittenErr.textContent = 'Please extract handwritten fields first.';
+    return;
+  }
+
+  handwrittenFinalizeBtn.disabled = true;
+  try {
+    const res = await fetch(`/api/handwritten-invoice-confirm/${lastHandwrittenJobId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ rows: lastHandwrittenDraftRows }),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      handwrittenErr.textContent = data?.detail || data?.error || JSON.stringify(data);
+      return;
+    }
+    if (data?.download_url) {
+      handwrittenDownload.innerHTML = `<a href="${data.download_url}" download>Download Handwritten CSV (${data.rows_total} rows)</a>`;
+    }
+  } catch (e) {
+    handwrittenErr.textContent = String(e);
+  } finally {
+    handwrittenFinalizeBtn.disabled = false;
   }
 });
 </script>

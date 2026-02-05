@@ -1,0 +1,4350 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "23/01/2025",
+      "supplier": "EQREST' CROWN HILL CUSTORIER COPY FARM, EN9STF Forest Car Name Address 4920 S/n: #1395 Date: 23/01/2025,1852915065 11:19.37 VAT No Custom EB489 . 00 Total E3489.00 SOLD TO: Name 4ELL IALk VAT No. Addr",
+      "inv_ref_no": "Fcc",
+      "make": "L Ad MODEL OR TYPE f0 eldrdr Mask: +*4065 Response Code 00 REG No COLOUR 3l1X Auth Code: 001792 CHASSIS No ENGINE No. DATE FIRST REG IN UK SPEEDOMETER READING €",
+      "model": "OR TYPE f0 eldrdr Mask: +*4065 Response Code 00 REG No COLOUR 3l1X Auth Code: 001792 CHASSIS No ENGINE No. DATE FIRST REG IN UK SPEEDOMETER READING € p NETT PRI",
+      "colour": "3l1X Auth Code: 001792 CHASSIS No ENGINE No. DATE FIRST REG IN UK SPEEDOMETER RE",
+      "reg_no": "COLOUR 3l1X Auth Code: 001792 CHASSIS No ENGINE No. DATE FIRST REG IN UK SPEEDOMETER READING € p NETT PRICE declare that | am the buyer of the vehicle described above at the price stated below EXTRAS Or (where the vehicle is sold to a finance company) #VAT@ % acknowledge receiving delivery of the vehicle described above. *Commercial Vehicles only IOTAL CASH PRICE Lisq Date: 222 Lcl Signature: DEDUCT: Allowance for used vehicle which Vwe certify conforms CAve) to the following description (is mylour own property and free from E any lien or legal encumbranceslis subject to H.P as stated): p MAKE MODEL REG. No COLOUR CHASSIS No W0 ENGINE No. huavaka FIRST REG LESS Amount outstanding(subject to H.P with Mch( (Company) NET ALLOWANCE Qxlkr CASH DEPOSIT Declaration by the seller: Input tax deduction has not been and will not beclaimed by me In respect of the vehicle sold on this invoice. Date Signature UCiOOS/a Corpany Order 03 404z MeYe",
+      "buying_price": 19.37,
+      "non_vat": 19.37,
+      "std_net": "N/A",
+      "vat_amount": 19.37
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "AD07 RXU SALES.pdf",
+      "content_type": "application/pdf",
+      "model_name": "LightOnOCR-2-1B (Best OCR)",
+      "has_bbox": false,
+      "engine": "easyocr",
+      "raw_output": "USED VEHICLE INVOICE Fcc FCC takepayrents+ receipt SOLD By: EQREST' CROWN HILL CUSTORIER COPY FARM, EN9STF Forest Car Name Address 4920 S/n: #1395 Date: 23/01/2025,1852915065 11:19.37 VAT No Custom EB489 . 00 Total E3489.00 SOLD TO: Name 4ELL IALk VAT No. Address (o HExWt4 SILEs Invoice No_ SALE Rw(ESEC PIN CODE VERIFIED Nv 0 6 Date Amount: E3489 . 00 MID: tt* Tel No. 220396.2 Folio No. TID: +1749 AID: AOOOOOO00? 1010 Mob Noj Stock Book N RECEIPT A3AE 10918008F28B NO: 353 APP SEQ: 001 Type: INe the undersigned agree to purchase from the above named seller Scheme ' EMV Visa MAKE L Ad MODEL OR TYPE f0 eldrdr Mask: +*4065 Response Code 00 REG No COLOUR 3l1X Auth Code: 001792 CHASSIS No ENGINE No. DATE FIRST REG IN UK SPEEDOMETER READING € p NETT PRICE declare that | am the buyer of the vehicle described above at the price stated below EXTRAS Or (where the vehicle is sold to a finance company) #VAT@ % acknowledge receiving delivery of the vehicle described above. *Commercial Vehicles only IOTAL CASH PRICE Lisq Date: 222 Lcl Signature: DEDUCT: Allowance for used vehicle which Vwe certify conforms CAve) to the following description (is mylour own property and free from E any lien or legal encumbranceslis subject to H.P as stated): p MAKE MODEL REG. No COLOUR CHASSIS No W0 ENGINE No. huavaka FIRST REG LESS Amount outstanding(subject to H.P with Mch( (Company) NET ALLOWANCE Qxlkr CASH DEPOSIT Declaration by the seller: Input tax deduction has not been and will not beclaimed by me In respect of the vehicle sold on this invoice. Date Signature UCiOOS/a Corpany Order 03 404z MeYe",
+      "cleaned_text": "USED VEHICLE INVOICE Fcc FCC takepayrents+ receipt SOLD By: EQREST' CROWN HILL CUSTORIER COPY FARM, EN9STF Forest Car Name Address 4920 S/n: #1395 Date: 23/01/2025,1852915065 11:19.37 VAT No Custom EB489 . 00 Total E3489.00 SOLD TO: Name 4ELL IALk VAT No. Address (o HExWt4 SILEs Invoice No_ SALE Rw(ESEC PIN CODE VERIFIED Nv 0 6 Date Amount: E3489 . 00 MID: tt* Tel No. 220396.2 Folio No. TID: +1749 AID: AOOOOOO00? 1010 Mob Noj Stock Book N RECEIPT A3AE 10918008F28B NO: 353 APP SEQ: 001 Type: INe the undersigned agree to purchase from the above named seller Scheme ' EMV Visa MAKE L Ad MODEL OR TYPE f0 eldrdr Mask: +*4065 Response Code 00 REG No COLOUR 3l1X Auth Code: 001792 CHASSIS No ENGINE No. DATE FIRST REG IN UK SPEEDOMETER READING € p NETT PRICE declare that | am the buyer of the vehicle described above at the price stated below EXTRAS Or (where the vehicle is sold to a finance company) #VAT@ % acknowledge receiving delivery of the vehicle described above. *Commercial Vehicles only IOTAL CASH PRICE Lisq Date: 222 Lcl Signature: DEDUCT: Allowance for used vehicle which Vwe certify conforms CAve) to the following description (is mylour own property and free from E any lien or legal encumbranceslis subject to H.P as stated): p MAKE MODEL REG. No COLOUR CHASSIS No W0 ENGINE No. huavaka FIRST REG LESS Amount outstanding(subject to H.P with Mch( (Company) NET ALLOWANCE Qxlkr CASH DEPOSIT Declaration by the seller: Input tax deduction has not been and will not beclaimed by me In respect of the vehicle sold on this invoice. Date Signature UCiOOS/a Corpany Order 03 404z MeYe",
+      "lines": [
+        {
+          "index": 1,
+          "text": "USED VEHICLE INVOICE Fcc FCC takepayrents+ receipt SOLD By: EQREST' CROWN HILL CUSTORIER COPY FARM, EN9STF Forest Car Name Address 4920 S/n: #1395 Date: 23/01/2025,1852915065 11:19.37 VAT No Custom EB489 . 00 Total E3489.00 SOLD TO: Name 4ELL IALk VAT No. Address (o HExWt4 SILEs Invoice No_ SALE Rw(ESEC PIN CODE VERIFIED Nv 0 6 Date Amount: E3489 . 00 MID: tt* Tel No. 220396.2 Folio No. TID: +1749 AID: AOOOOOO00? 1010 Mob Noj Stock Book N RECEIPT A3AE 10918008F28B NO: 353 APP SEQ: 001 Type: INe the undersigned agree to purchase from the above named seller Scheme ' EMV Visa MAKE L Ad MODEL OR TYPE f0 eldrdr Mask: +*4065 Response Code 00 REG No COLOUR 3l1X Auth Code: 001792 CHASSIS No ENGINE No. DATE FIRST REG IN UK SPEEDOMETER READING € p NETT PRICE declare that | am the buyer of the vehicle described above at the price stated below EXTRAS Or (where the vehicle is sold to a finance company) #VAT@ % acknowledge receiving delivery of the vehicle described above. *Commercial Vehicles only IOTAL CASH PRICE Lisq Date: 222 Lcl Signature: DEDUCT: Allowance for used vehicle which Vwe certify conforms CAve) to the following description (is mylour own property and free from E any lien or legal encumbranceslis subject to H.P as stated): p MAKE MODEL REG. No COLOUR CHASSIS No W0 ENGINE No. huavaka FIRST REG LESS Amount outstanding(subject to H.P with Mch( (Company) NET ALLOWANCE Qxlkr CASH DEPOSIT Declaration by the seller: Input tax deduction has not been and will not beclaimed by me In respect of the vehicle sold on this invoice. Date Signature UCiOOS/a Corpany Order 03 404z MeYe"
+        }
+      ],
+      "words": [
+        {
+          "index": 1,
+          "text": "USED"
+        },
+        {
+          "index": 2,
+          "text": "VEHICLE"
+        },
+        {
+          "index": 3,
+          "text": "INVOICE"
+        },
+        {
+          "index": 4,
+          "text": "Fcc"
+        },
+        {
+          "index": 5,
+          "text": "FCC"
+        },
+        {
+          "index": 6,
+          "text": "takepayrents+"
+        },
+        {
+          "index": 7,
+          "text": "receipt"
+        },
+        {
+          "index": 8,
+          "text": "SOLD"
+        },
+        {
+          "index": 9,
+          "text": "By:"
+        },
+        {
+          "index": 10,
+          "text": "EQREST'"
+        },
+        {
+          "index": 11,
+          "text": "CROWN"
+        },
+        {
+          "index": 12,
+          "text": "HILL"
+        },
+        {
+          "index": 13,
+          "text": "CUSTORIER"
+        },
+        {
+          "index": 14,
+          "text": "COPY"
+        },
+        {
+          "index": 15,
+          "text": "FARM,"
+        },
+        {
+          "index": 16,
+          "text": "EN9STF"
+        },
+        {
+          "index": 17,
+          "text": "Forest"
+        },
+        {
+          "index": 18,
+          "text": "Car"
+        },
+        {
+          "index": 19,
+          "text": "Name"
+        },
+        {
+          "index": 20,
+          "text": "Address"
+        },
+        {
+          "index": 21,
+          "text": "4920"
+        },
+        {
+          "index": 22,
+          "text": "S/n:"
+        },
+        {
+          "index": 23,
+          "text": "#1395"
+        },
+        {
+          "index": 24,
+          "text": "Date:"
+        },
+        {
+          "index": 25,
+          "text": "23/01/2025,1852915065"
+        },
+        {
+          "index": 26,
+          "text": "11:19.37"
+        },
+        {
+          "index": 27,
+          "text": "VAT"
+        },
+        {
+          "index": 28,
+          "text": "No"
+        },
+        {
+          "index": 29,
+          "text": "Custom"
+        },
+        {
+          "index": 30,
+          "text": "EB489"
+        },
+        {
+          "index": 31,
+          "text": "."
+        },
+        {
+          "index": 32,
+          "text": "00"
+        },
+        {
+          "index": 33,
+          "text": "Total"
+        },
+        {
+          "index": 34,
+          "text": "E3489.00"
+        },
+        {
+          "index": 35,
+          "text": "SOLD"
+        },
+        {
+          "index": 36,
+          "text": "TO:"
+        },
+        {
+          "index": 37,
+          "text": "Name"
+        },
+        {
+          "index": 38,
+          "text": "4ELL"
+        },
+        {
+          "index": 39,
+          "text": "IALk"
+        },
+        {
+          "index": 40,
+          "text": "VAT"
+        },
+        {
+          "index": 41,
+          "text": "No."
+        },
+        {
+          "index": 42,
+          "text": "Address"
+        },
+        {
+          "index": 43,
+          "text": "(o"
+        },
+        {
+          "index": 44,
+          "text": "HExWt4"
+        },
+        {
+          "index": 45,
+          "text": "SILEs"
+        },
+        {
+          "index": 46,
+          "text": "Invoice"
+        },
+        {
+          "index": 47,
+          "text": "No_"
+        },
+        {
+          "index": 48,
+          "text": "SALE"
+        },
+        {
+          "index": 49,
+          "text": "Rw(ESEC"
+        },
+        {
+          "index": 50,
+          "text": "PIN"
+        },
+        {
+          "index": 51,
+          "text": "CODE"
+        },
+        {
+          "index": 52,
+          "text": "VERIFIED"
+        },
+        {
+          "index": 53,
+          "text": "Nv"
+        },
+        {
+          "index": 54,
+          "text": "0"
+        },
+        {
+          "index": 55,
+          "text": "6"
+        },
+        {
+          "index": 56,
+          "text": "Date"
+        },
+        {
+          "index": 57,
+          "text": "Amount:"
+        },
+        {
+          "index": 58,
+          "text": "E3489"
+        },
+        {
+          "index": 59,
+          "text": "."
+        },
+        {
+          "index": 60,
+          "text": "00"
+        },
+        {
+          "index": 61,
+          "text": "MID:"
+        },
+        {
+          "index": 62,
+          "text": "tt*"
+        },
+        {
+          "index": 63,
+          "text": "Tel"
+        },
+        {
+          "index": 64,
+          "text": "No."
+        },
+        {
+          "index": 65,
+          "text": "220396.2"
+        },
+        {
+          "index": 66,
+          "text": "Folio"
+        },
+        {
+          "index": 67,
+          "text": "No."
+        },
+        {
+          "index": 68,
+          "text": "TID:"
+        },
+        {
+          "index": 69,
+          "text": "+1749"
+        },
+        {
+          "index": 70,
+          "text": "AID:"
+        },
+        {
+          "index": 71,
+          "text": "AOOOOOO00?"
+        },
+        {
+          "index": 72,
+          "text": "1010"
+        },
+        {
+          "index": 73,
+          "text": "Mob"
+        },
+        {
+          "index": 74,
+          "text": "Noj"
+        },
+        {
+          "index": 75,
+          "text": "Stock"
+        },
+        {
+          "index": 76,
+          "text": "Book"
+        },
+        {
+          "index": 77,
+          "text": "N"
+        },
+        {
+          "index": 78,
+          "text": "RECEIPT"
+        },
+        {
+          "index": 79,
+          "text": "A3AE"
+        },
+        {
+          "index": 80,
+          "text": "10918008F28B"
+        },
+        {
+          "index": 81,
+          "text": "NO:"
+        },
+        {
+          "index": 82,
+          "text": "353"
+        },
+        {
+          "index": 83,
+          "text": "APP"
+        },
+        {
+          "index": 84,
+          "text": "SEQ:"
+        },
+        {
+          "index": 85,
+          "text": "001"
+        },
+        {
+          "index": 86,
+          "text": "Type:"
+        },
+        {
+          "index": 87,
+          "text": "INe"
+        },
+        {
+          "index": 88,
+          "text": "the"
+        },
+        {
+          "index": 89,
+          "text": "undersigned"
+        },
+        {
+          "index": 90,
+          "text": "agree"
+        },
+        {
+          "index": 91,
+          "text": "to"
+        },
+        {
+          "index": 92,
+          "text": "purchase"
+        },
+        {
+          "index": 93,
+          "text": "from"
+        },
+        {
+          "index": 94,
+          "text": "the"
+        },
+        {
+          "index": 95,
+          "text": "above"
+        },
+        {
+          "index": 96,
+          "text": "named"
+        },
+        {
+          "index": 97,
+          "text": "seller"
+        },
+        {
+          "index": 98,
+          "text": "Scheme"
+        },
+        {
+          "index": 99,
+          "text": "'"
+        },
+        {
+          "index": 100,
+          "text": "EMV"
+        },
+        {
+          "index": 101,
+          "text": "Visa"
+        },
+        {
+          "index": 102,
+          "text": "MAKE"
+        },
+        {
+          "index": 103,
+          "text": "L"
+        },
+        {
+          "index": 104,
+          "text": "Ad"
+        },
+        {
+          "index": 105,
+          "text": "MODEL"
+        },
+        {
+          "index": 106,
+          "text": "OR"
+        },
+        {
+          "index": 107,
+          "text": "TYPE"
+        },
+        {
+          "index": 108,
+          "text": "f0"
+        },
+        {
+          "index": 109,
+          "text": "eldrdr"
+        },
+        {
+          "index": 110,
+          "text": "Mask:"
+        },
+        {
+          "index": 111,
+          "text": "+*4065"
+        },
+        {
+          "index": 112,
+          "text": "Response"
+        },
+        {
+          "index": 113,
+          "text": "Code"
+        },
+        {
+          "index": 114,
+          "text": "00"
+        },
+        {
+          "index": 115,
+          "text": "REG"
+        },
+        {
+          "index": 116,
+          "text": "No"
+        },
+        {
+          "index": 117,
+          "text": "COLOUR"
+        },
+        {
+          "index": 118,
+          "text": "3l1X"
+        },
+        {
+          "index": 119,
+          "text": "Auth"
+        },
+        {
+          "index": 120,
+          "text": "Code:"
+        },
+        {
+          "index": 121,
+          "text": "001792"
+        },
+        {
+          "index": 122,
+          "text": "CHASSIS"
+        },
+        {
+          "index": 123,
+          "text": "No"
+        },
+        {
+          "index": 124,
+          "text": "ENGINE"
+        },
+        {
+          "index": 125,
+          "text": "No."
+        },
+        {
+          "index": 126,
+          "text": "DATE"
+        },
+        {
+          "index": 127,
+          "text": "FIRST"
+        },
+        {
+          "index": 128,
+          "text": "REG"
+        },
+        {
+          "index": 129,
+          "text": "IN"
+        },
+        {
+          "index": 130,
+          "text": "UK"
+        },
+        {
+          "index": 131,
+          "text": "SPEEDOMETER"
+        },
+        {
+          "index": 132,
+          "text": "READING"
+        },
+        {
+          "index": 133,
+          "text": "€"
+        },
+        {
+          "index": 134,
+          "text": "p"
+        },
+        {
+          "index": 135,
+          "text": "NETT"
+        },
+        {
+          "index": 136,
+          "text": "PRICE"
+        },
+        {
+          "index": 137,
+          "text": "declare"
+        },
+        {
+          "index": 138,
+          "text": "that"
+        },
+        {
+          "index": 139,
+          "text": "|"
+        },
+        {
+          "index": 140,
+          "text": "am"
+        },
+        {
+          "index": 141,
+          "text": "the"
+        },
+        {
+          "index": 142,
+          "text": "buyer"
+        },
+        {
+          "index": 143,
+          "text": "of"
+        },
+        {
+          "index": 144,
+          "text": "the"
+        },
+        {
+          "index": 145,
+          "text": "vehicle"
+        },
+        {
+          "index": 146,
+          "text": "described"
+        },
+        {
+          "index": 147,
+          "text": "above"
+        },
+        {
+          "index": 148,
+          "text": "at"
+        },
+        {
+          "index": 149,
+          "text": "the"
+        },
+        {
+          "index": 150,
+          "text": "price"
+        },
+        {
+          "index": 151,
+          "text": "stated"
+        },
+        {
+          "index": 152,
+          "text": "below"
+        },
+        {
+          "index": 153,
+          "text": "EXTRAS"
+        },
+        {
+          "index": 154,
+          "text": "Or"
+        },
+        {
+          "index": 155,
+          "text": "(where"
+        },
+        {
+          "index": 156,
+          "text": "the"
+        },
+        {
+          "index": 157,
+          "text": "vehicle"
+        },
+        {
+          "index": 158,
+          "text": "is"
+        },
+        {
+          "index": 159,
+          "text": "sold"
+        },
+        {
+          "index": 160,
+          "text": "to"
+        },
+        {
+          "index": 161,
+          "text": "a"
+        },
+        {
+          "index": 162,
+          "text": "finance"
+        },
+        {
+          "index": 163,
+          "text": "company)"
+        },
+        {
+          "index": 164,
+          "text": "#VAT@"
+        },
+        {
+          "index": 165,
+          "text": "%"
+        },
+        {
+          "index": 166,
+          "text": "acknowledge"
+        },
+        {
+          "index": 167,
+          "text": "receiving"
+        },
+        {
+          "index": 168,
+          "text": "delivery"
+        },
+        {
+          "index": 169,
+          "text": "of"
+        },
+        {
+          "index": 170,
+          "text": "the"
+        },
+        {
+          "index": 171,
+          "text": "vehicle"
+        },
+        {
+          "index": 172,
+          "text": "described"
+        },
+        {
+          "index": 173,
+          "text": "above."
+        },
+        {
+          "index": 174,
+          "text": "*Commercial"
+        },
+        {
+          "index": 175,
+          "text": "Vehicles"
+        },
+        {
+          "index": 176,
+          "text": "only"
+        },
+        {
+          "index": 177,
+          "text": "IOTAL"
+        },
+        {
+          "index": 178,
+          "text": "CASH"
+        },
+        {
+          "index": 179,
+          "text": "PRICE"
+        },
+        {
+          "index": 180,
+          "text": "Lisq"
+        },
+        {
+          "index": 181,
+          "text": "Date:"
+        },
+        {
+          "index": 182,
+          "text": "222"
+        },
+        {
+          "index": 183,
+          "text": "Lcl"
+        },
+        {
+          "index": 184,
+          "text": "Signature:"
+        },
+        {
+          "index": 185,
+          "text": "DEDUCT:"
+        },
+        {
+          "index": 186,
+          "text": "Allowance"
+        },
+        {
+          "index": 187,
+          "text": "for"
+        },
+        {
+          "index": 188,
+          "text": "used"
+        },
+        {
+          "index": 189,
+          "text": "vehicle"
+        },
+        {
+          "index": 190,
+          "text": "which"
+        },
+        {
+          "index": 191,
+          "text": "Vwe"
+        },
+        {
+          "index": 192,
+          "text": "certify"
+        },
+        {
+          "index": 193,
+          "text": "conforms"
+        },
+        {
+          "index": 194,
+          "text": "CAve)"
+        },
+        {
+          "index": 195,
+          "text": "to"
+        },
+        {
+          "index": 196,
+          "text": "the"
+        },
+        {
+          "index": 197,
+          "text": "following"
+        },
+        {
+          "index": 198,
+          "text": "description"
+        },
+        {
+          "index": 199,
+          "text": "(is"
+        },
+        {
+          "index": 200,
+          "text": "mylour"
+        },
+        {
+          "index": 201,
+          "text": "own"
+        },
+        {
+          "index": 202,
+          "text": "property"
+        },
+        {
+          "index": 203,
+          "text": "and"
+        },
+        {
+          "index": 204,
+          "text": "free"
+        },
+        {
+          "index": 205,
+          "text": "from"
+        },
+        {
+          "index": 206,
+          "text": "E"
+        },
+        {
+          "index": 207,
+          "text": "any"
+        },
+        {
+          "index": 208,
+          "text": "lien"
+        },
+        {
+          "index": 209,
+          "text": "or"
+        },
+        {
+          "index": 210,
+          "text": "legal"
+        },
+        {
+          "index": 211,
+          "text": "encumbranceslis"
+        },
+        {
+          "index": 212,
+          "text": "subject"
+        },
+        {
+          "index": 213,
+          "text": "to"
+        },
+        {
+          "index": 214,
+          "text": "H.P"
+        },
+        {
+          "index": 215,
+          "text": "as"
+        },
+        {
+          "index": 216,
+          "text": "stated):"
+        },
+        {
+          "index": 217,
+          "text": "p"
+        },
+        {
+          "index": 218,
+          "text": "MAKE"
+        },
+        {
+          "index": 219,
+          "text": "MODEL"
+        },
+        {
+          "index": 220,
+          "text": "REG."
+        },
+        {
+          "index": 221,
+          "text": "No"
+        },
+        {
+          "index": 222,
+          "text": "COLOUR"
+        },
+        {
+          "index": 223,
+          "text": "CHASSIS"
+        },
+        {
+          "index": 224,
+          "text": "No"
+        },
+        {
+          "index": 225,
+          "text": "W0"
+        },
+        {
+          "index": 226,
+          "text": "ENGINE"
+        },
+        {
+          "index": 227,
+          "text": "No."
+        },
+        {
+          "index": 228,
+          "text": "huavaka"
+        },
+        {
+          "index": 229,
+          "text": "FIRST"
+        },
+        {
+          "index": 230,
+          "text": "REG"
+        },
+        {
+          "index": 231,
+          "text": "LESS"
+        },
+        {
+          "index": 232,
+          "text": "Amount"
+        },
+        {
+          "index": 233,
+          "text": "outstanding(subject"
+        },
+        {
+          "index": 234,
+          "text": "to"
+        },
+        {
+          "index": 235,
+          "text": "H.P"
+        },
+        {
+          "index": 236,
+          "text": "with"
+        },
+        {
+          "index": 237,
+          "text": "Mch("
+        },
+        {
+          "index": 238,
+          "text": "(Company)"
+        },
+        {
+          "index": 239,
+          "text": "NET"
+        },
+        {
+          "index": 240,
+          "text": "ALLOWANCE"
+        },
+        {
+          "index": 241,
+          "text": "Qxlkr"
+        },
+        {
+          "index": 242,
+          "text": "CASH"
+        },
+        {
+          "index": 243,
+          "text": "DEPOSIT"
+        },
+        {
+          "index": 244,
+          "text": "Declaration"
+        },
+        {
+          "index": 245,
+          "text": "by"
+        },
+        {
+          "index": 246,
+          "text": "the"
+        },
+        {
+          "index": 247,
+          "text": "seller:"
+        },
+        {
+          "index": 248,
+          "text": "Input"
+        },
+        {
+          "index": 249,
+          "text": "tax"
+        },
+        {
+          "index": 250,
+          "text": "deduction"
+        },
+        {
+          "index": 251,
+          "text": "has"
+        },
+        {
+          "index": 252,
+          "text": "not"
+        },
+        {
+          "index": 253,
+          "text": "been"
+        },
+        {
+          "index": 254,
+          "text": "and"
+        },
+        {
+          "index": 255,
+          "text": "will"
+        },
+        {
+          "index": 256,
+          "text": "not"
+        },
+        {
+          "index": 257,
+          "text": "beclaimed"
+        },
+        {
+          "index": 258,
+          "text": "by"
+        },
+        {
+          "index": 259,
+          "text": "me"
+        },
+        {
+          "index": 260,
+          "text": "In"
+        },
+        {
+          "index": 261,
+          "text": "respect"
+        },
+        {
+          "index": 262,
+          "text": "of"
+        },
+        {
+          "index": 263,
+          "text": "the"
+        },
+        {
+          "index": 264,
+          "text": "vehicle"
+        },
+        {
+          "index": 265,
+          "text": "sold"
+        },
+        {
+          "index": 266,
+          "text": "on"
+        },
+        {
+          "index": 267,
+          "text": "this"
+        },
+        {
+          "index": 268,
+          "text": "invoice."
+        },
+        {
+          "index": 269,
+          "text": "Date"
+        },
+        {
+          "index": 270,
+          "text": "Signature"
+        },
+        {
+          "index": 271,
+          "text": "UCiOOS/a"
+        },
+        {
+          "index": 272,
+          "text": "Corpany"
+        },
+        {
+          "index": 273,
+          "text": "Order"
+        },
+        {
+          "index": 274,
+          "text": "03"
+        },
+        {
+          "index": 275,
+          "text": "404z"
+        },
+        {
+          "index": 276,
+          "text": "MeYe"
+        }
+      ],
+      "all_words": [
+        "USED",
+        "VEHICLE",
+        "INVOICE",
+        "Fcc",
+        "FCC",
+        "takepayrents+",
+        "receipt",
+        "SOLD",
+        "By:",
+        "EQREST'",
+        "CROWN",
+        "HILL",
+        "CUSTORIER",
+        "COPY",
+        "FARM,",
+        "EN9STF",
+        "Forest",
+        "Car",
+        "Name",
+        "Address",
+        "4920",
+        "S/n:",
+        "#1395",
+        "Date:",
+        "23/01/2025,1852915065",
+        "11:19.37",
+        "VAT",
+        "No",
+        "Custom",
+        "EB489",
+        ".",
+        "00",
+        "Total",
+        "E3489.00",
+        "SOLD",
+        "TO:",
+        "Name",
+        "4ELL",
+        "IALk",
+        "VAT",
+        "No.",
+        "Address",
+        "(o",
+        "HExWt4",
+        "SILEs",
+        "Invoice",
+        "No_",
+        "SALE",
+        "Rw(ESEC",
+        "PIN",
+        "CODE",
+        "VERIFIED",
+        "Nv",
+        "0",
+        "6",
+        "Date",
+        "Amount:",
+        "E3489",
+        ".",
+        "00",
+        "MID:",
+        "tt*",
+        "Tel",
+        "No.",
+        "220396.2",
+        "Folio",
+        "No.",
+        "TID:",
+        "+1749",
+        "AID:",
+        "AOOOOOO00?",
+        "1010",
+        "Mob",
+        "Noj",
+        "Stock",
+        "Book",
+        "N",
+        "RECEIPT",
+        "A3AE",
+        "10918008F28B",
+        "NO:",
+        "353",
+        "APP",
+        "SEQ:",
+        "001",
+        "Type:",
+        "INe",
+        "the",
+        "undersigned",
+        "agree",
+        "to",
+        "purchase",
+        "from",
+        "the",
+        "above",
+        "named",
+        "seller",
+        "Scheme",
+        "'",
+        "EMV",
+        "Visa",
+        "MAKE",
+        "L",
+        "Ad",
+        "MODEL",
+        "OR",
+        "TYPE",
+        "f0",
+        "eldrdr",
+        "Mask:",
+        "+*4065",
+        "Response",
+        "Code",
+        "00",
+        "REG",
+        "No",
+        "COLOUR",
+        "3l1X",
+        "Auth",
+        "Code:",
+        "001792",
+        "CHASSIS",
+        "No",
+        "ENGINE",
+        "No.",
+        "DATE",
+        "FIRST",
+        "REG",
+        "IN",
+        "UK",
+        "SPEEDOMETER",
+        "READING",
+        "€",
+        "p",
+        "NETT",
+        "PRICE",
+        "declare",
+        "that",
+        "|",
+        "am",
+        "the",
+        "buyer",
+        "of",
+        "the",
+        "vehicle",
+        "described",
+        "above",
+        "at",
+        "the",
+        "price",
+        "stated",
+        "below",
+        "EXTRAS",
+        "Or",
+        "(where",
+        "the",
+        "vehicle",
+        "is",
+        "sold",
+        "to",
+        "a",
+        "finance",
+        "company)",
+        "#VAT@",
+        "%",
+        "acknowledge",
+        "receiving",
+        "delivery",
+        "of",
+        "the",
+        "vehicle",
+        "described",
+        "above.",
+        "*Commercial",
+        "Vehicles",
+        "only",
+        "IOTAL",
+        "CASH",
+        "PRICE",
+        "Lisq",
+        "Date:",
+        "222",
+        "Lcl",
+        "Signature:",
+        "DEDUCT:",
+        "Allowance",
+        "for",
+        "used",
+        "vehicle",
+        "which",
+        "Vwe",
+        "certify",
+        "conforms",
+        "CAve)",
+        "to",
+        "the",
+        "following",
+        "description",
+        "(is",
+        "mylour",
+        "own",
+        "property",
+        "and",
+        "free",
+        "from",
+        "E",
+        "any",
+        "lien",
+        "or",
+        "legal",
+        "encumbranceslis",
+        "subject",
+        "to",
+        "H.P",
+        "as",
+        "stated):",
+        "p",
+        "MAKE",
+        "MODEL",
+        "REG.",
+        "No",
+        "COLOUR",
+        "CHASSIS",
+        "No",
+        "W0",
+        "ENGINE",
+        "No.",
+        "huavaka",
+        "FIRST",
+        "REG",
+        "LESS",
+        "Amount",
+        "outstanding(subject",
+        "to",
+        "H.P",
+        "with",
+        "Mch(",
+        "(Company)",
+        "NET",
+        "ALLOWANCE",
+        "Qxlkr",
+        "CASH",
+        "DEPOSIT",
+        "Declaration",
+        "by",
+        "the",
+        "seller:",
+        "Input",
+        "tax",
+        "deduction",
+        "has",
+        "not",
+        "been",
+        "and",
+        "will",
+        "not",
+        "beclaimed",
+        "by",
+        "me",
+        "In",
+        "respect",
+        "of",
+        "the",
+        "vehicle",
+        "sold",
+        "on",
+        "this",
+        "invoice.",
+        "Date",
+        "Signature",
+        "UCiOOS/a",
+        "Corpany",
+        "Order",
+        "03",
+        "404z",
+        "MeYe"
+      ],
+      "ocr_items": [
+        {
+          "text": "USED VEHICLE INVOICE",
+          "confidence": 0.5240854339076976,
+          "bbox": [
+            [
+              865,
+              133
+            ],
+            [
+              1952,
+              133
+            ],
+            [
+              1952,
+              234
+            ],
+            [
+              865,
+              234
+            ]
+          ]
+        },
+        {
+          "text": "Fcc",
+          "confidence": 0.8703753611039705,
+          "bbox": [
+            [
+              694,
+              237
+            ],
+            [
+              737,
+              237
+            ],
+            [
+              737,
+              261
+            ],
+            [
+              694,
+              261
+            ]
+          ]
+        },
+        {
+          "text": "FCC",
+          "confidence": 0.9999437009407194,
+          "bbox": [
+            [
+              795,
+              220
+            ],
+            [
+              886,
+              220
+            ],
+            [
+              886,
+              265
+            ],
+            [
+              795,
+              265
+            ]
+          ]
+        },
+        {
+          "text": "takepayrents+ receipt",
+          "confidence": 0.7192758053524747,
+          "bbox": [
+            [
+              2214,
+              197
+            ],
+            [
+              2681,
+              197
+            ],
+            [
+              2681,
+              286
+            ],
+            [
+              2214,
+              286
+            ]
+          ]
+        },
+        {
+          "text": "SOLD By:",
+          "confidence": 0.9996437311726386,
+          "bbox": [
+            [
+              47,
+              307
+            ],
+            [
+              274,
+              307
+            ],
+            [
+              274,
+              372
+            ],
+            [
+              47,
+              372
+            ]
+          ]
+        },
+        {
+          "text": "EQREST' CROWN HILL",
+          "confidence": 0.718274305657428,
+          "bbox": [
+            [
+              631,
+              271
+            ],
+            [
+              1080,
+              271
+            ],
+            [
+              1080,
+              344
+            ],
+            [
+              631,
+              344
+            ]
+          ]
+        },
+        {
+          "text": "CUSTORIER COPY",
+          "confidence": 0.8176917990710879,
+          "bbox": [
+            [
+              2291,
+              288
+            ],
+            [
+              2590,
+              288
+            ],
+            [
+              2590,
+              365
+            ],
+            [
+              2291,
+              365
+            ]
+          ]
+        },
+        {
+          "text": "FARM, EN9STF",
+          "confidence": 0.8824243879211915,
+          "bbox": [
+            [
+              791,
+              334
+            ],
+            [
+              1097,
+              334
+            ],
+            [
+              1097,
+              388
+            ],
+            [
+              791,
+              388
+            ]
+          ]
+        },
+        {
+          "text": "Forest Car",
+          "confidence": 0.6604150137590579,
+          "bbox": [
+            [
+              2245,
+              374
+            ],
+            [
+              2468,
+              374
+            ],
+            [
+              2468,
+              435
+            ],
+            [
+              2245,
+              435
+            ]
+          ]
+        },
+        {
+          "text": "Name",
+          "confidence": 0.9963487254359444,
+          "bbox": [
+            [
+              51,
+              403
+            ],
+            [
+              197,
+              403
+            ],
+            [
+              197,
+              457
+            ],
+            [
+              51,
+              457
+            ]
+          ]
+        },
+        {
+          "text": "Address",
+          "confidence": 0.999652769289582,
+          "bbox": [
+            [
+              48,
+              498
+            ],
+            [
+              247,
+              498
+            ],
+            [
+              247,
+              552
+            ],
+            [
+              48,
+              552
+            ]
+          ]
+        },
+        {
+          "text": "4920 S/n:",
+          "confidence": 0.4569313508886475,
+          "bbox": [
+            [
+              2134,
+              501
+            ],
+            [
+              2335,
+              501
+            ],
+            [
+              2335,
+              555
+            ],
+            [
+              2134,
+              555
+            ]
+          ]
+        },
+        {
+          "text": "#1395",
+          "confidence": 0.5779323552166123,
+          "bbox": [
+            [
+              2627,
+              488
+            ],
+            [
+              2747,
+              488
+            ],
+            [
+              2747,
+              539
+            ],
+            [
+              2627,
+              539
+            ]
+          ]
+        },
+        {
+          "text": "Date:",
+          "confidence": 0.9967628085168397,
+          "bbox": [
+            [
+              2128,
+              539
+            ],
+            [
+              2249,
+              539
+            ],
+            [
+              2249,
+              594
+            ],
+            [
+              2128,
+              594
+            ]
+          ]
+        },
+        {
+          "text": "23/01/2025,1852915065",
+          "confidence": 0.7814919713437855,
+          "bbox": [
+            [
+              2292,
+              514
+            ],
+            [
+              2749,
+              514
+            ],
+            [
+              2749,
+              619
+            ],
+            [
+              2292,
+              619
+            ]
+          ]
+        },
+        {
+          "text": "11:19.37",
+          "confidence": 0.6140190894639208,
+          "bbox": [
+            [
+              2558,
+              569
+            ],
+            [
+              2739,
+              569
+            ],
+            [
+              2739,
+              624
+            ],
+            [
+              2558,
+              624
+            ]
+          ]
+        },
+        {
+          "text": "VAT No",
+          "confidence": 0.9996798994079208,
+          "bbox": [
+            [
+              1720,
+              774
+            ],
+            [
+              1899,
+              774
+            ],
+            [
+              1899,
+              831
+            ],
+            [
+              1720,
+              831
+            ]
+          ]
+        },
+        {
+          "text": "Custom",
+          "confidence": 0.9324046582058159,
+          "bbox": [
+            [
+              2112,
+              752
+            ],
+            [
+              2263,
+              752
+            ],
+            [
+              2263,
+              809
+            ],
+            [
+              2112,
+              809
+            ]
+          ]
+        },
+        {
+          "text": "EB489 . 00",
+          "confidence": 0.6813936108486741,
+          "bbox": [
+            [
+              2540,
+              776
+            ],
+            [
+              2728,
+              776
+            ],
+            [
+              2728,
+              836
+            ],
+            [
+              2540,
+              836
+            ]
+          ]
+        },
+        {
+          "text": "Total",
+          "confidence": 0.9999112883425834,
+          "bbox": [
+            [
+              2112,
+              881
+            ],
+            [
+              2230,
+              881
+            ],
+            [
+              2230,
+              936
+            ],
+            [
+              2112,
+              936
+            ]
+          ]
+        },
+        {
+          "text": "E3489.00",
+          "confidence": 0.9875156501008667,
+          "bbox": [
+            [
+              2534,
+              901
+            ],
+            [
+              2721,
+              901
+            ],
+            [
+              2721,
+              964
+            ],
+            [
+              2534,
+              964
+            ]
+          ]
+        },
+        {
+          "text": "SOLD TO:",
+          "confidence": 0.9468418537459636,
+          "bbox": [
+            [
+              74,
+              991
+            ],
+            [
+              319,
+              991
+            ],
+            [
+              319,
+              1045
+            ],
+            [
+              74,
+              1045
+            ]
+          ]
+        },
+        {
+          "text": "Name",
+          "confidence": 0.9999831914901733,
+          "bbox": [
+            [
+              459,
+              994
+            ],
+            [
+              605,
+              994
+            ],
+            [
+              605,
+              1048
+            ],
+            [
+              459,
+              1048
+            ]
+          ]
+        },
+        {
+          "text": "4ELL",
+          "confidence": 0.22781512141227722,
+          "bbox": [
+            [
+              658,
+              954
+            ],
+            [
+              894,
+              954
+            ],
+            [
+              894,
+              1052
+            ],
+            [
+              658,
+              1052
+            ]
+          ]
+        },
+        {
+          "text": "IALk",
+          "confidence": 0.30964183807373047,
+          "bbox": [
+            [
+              940,
+              945
+            ],
+            [
+              1208,
+              945
+            ],
+            [
+              1208,
+              1054
+            ],
+            [
+              940,
+              1054
+            ]
+          ]
+        },
+        {
+          "text": "VAT No.",
+          "confidence": 0.734424667211858,
+          "bbox": [
+            [
+              74,
+              1084
+            ],
+            [
+              262,
+              1084
+            ],
+            [
+              262,
+              1141
+            ],
+            [
+              74,
+              1141
+            ]
+          ]
+        },
+        {
+          "text": "Address",
+          "confidence": 0.9999908534406047,
+          "bbox": [
+            [
+              459,
+              1086
+            ],
+            [
+              657,
+              1086
+            ],
+            [
+              657,
+              1143
+            ],
+            [
+              459,
+              1143
+            ]
+          ]
+        },
+        {
+          "text": "(o",
+          "confidence": 0.6617325465685097,
+          "bbox": [
+            [
+              701,
+              1059
+            ],
+            [
+              770,
+              1059
+            ],
+            [
+              770,
+              1125
+            ],
+            [
+              701,
+              1125
+            ]
+          ]
+        },
+        {
+          "text": "HExWt4",
+          "confidence": 0.08577446120437265,
+          "bbox": [
+            [
+              872,
+              1040
+            ],
+            [
+              1133,
+              1040
+            ],
+            [
+              1133,
+              1139
+            ],
+            [
+              872,
+              1139
+            ]
+          ]
+        },
+        {
+          "text": "SILEs",
+          "confidence": 0.18532955054540753,
+          "bbox": [
+            [
+              1168,
+              1049
+            ],
+            [
+              1404,
+              1049
+            ],
+            [
+              1404,
+              1147
+            ],
+            [
+              1168,
+              1147
+            ]
+          ]
+        },
+        {
+          "text": "Invoice No_",
+          "confidence": 0.6709317473765314,
+          "bbox": [
+            [
+              1717,
+              1093
+            ],
+            [
+              1975,
+              1093
+            ],
+            [
+              1975,
+              1147
+            ],
+            [
+              1717,
+              1147
+            ]
+          ]
+        },
+        {
+          "text": "SALE",
+          "confidence": 0.9977228045463562,
+          "bbox": [
+            [
+              2355,
+              1065
+            ],
+            [
+              2459,
+              1065
+            ],
+            [
+              2459,
+              1122
+            ],
+            [
+              2355,
+              1122
+            ]
+          ]
+        },
+        {
+          "text": "Rw(ESEC",
+          "confidence": 0.07226859975668253,
+          "bbox": [
+            [
+              600,
+              1152
+            ],
+            [
+              936,
+              1152
+            ],
+            [
+              936,
+              1238
+            ],
+            [
+              600,
+              1238
+            ]
+          ]
+        },
+        {
+          "text": "PIN CODE VERIFIED",
+          "confidence": 0.8474314741155679,
+          "bbox": [
+            [
+              2202,
+              1141
+            ],
+            [
+              2583,
+              1141
+            ],
+            [
+              2583,
+              1210
+            ],
+            [
+              2202,
+              1210
+            ]
+          ]
+        },
+        {
+          "text": "Nv 0",
+          "confidence": 0.41827567049394454,
+          "bbox": [
+            [
+              601,
+              1242
+            ],
+            [
+              784,
+              1242
+            ],
+            [
+              784,
+              1323
+            ],
+            [
+              601,
+              1323
+            ]
+          ]
+        },
+        {
+          "text": "6",
+          "confidence": 0.9807416653529799,
+          "bbox": [
+            [
+              872,
+              1246
+            ],
+            [
+              937,
+              1246
+            ],
+            [
+              937,
+              1332
+            ],
+            [
+              872,
+              1332
+            ]
+          ]
+        },
+        {
+          "text": "Date",
+          "confidence": 0.9999983906745911,
+          "bbox": [
+            [
+              1720,
+              1218
+            ],
+            [
+              1837,
+              1218
+            ],
+            [
+              1837,
+              1275
+            ],
+            [
+              1720,
+              1275
+            ]
+          ]
+        },
+        {
+          "text": "Amount:",
+          "confidence": 0.9992717051223212,
+          "bbox": [
+            [
+              2092,
+              1223
+            ],
+            [
+              2253,
+              1223
+            ],
+            [
+              2253,
+              1280
+            ],
+            [
+              2092,
+              1280
+            ]
+          ]
+        },
+        {
+          "text": "E3489 . 00",
+          "confidence": 0.8543228936057542,
+          "bbox": [
+            [
+              2516,
+              1242
+            ],
+            [
+              2705,
+              1242
+            ],
+            [
+              2705,
+              1302
+            ],
+            [
+              2516,
+              1302
+            ]
+          ]
+        },
+        {
+          "text": "MID:",
+          "confidence": 0.9831293225288391,
+          "bbox": [
+            [
+              2086,
+              1307
+            ],
+            [
+              2187,
+              1307
+            ],
+            [
+              2187,
+              1364
+            ],
+            [
+              2086,
+              1364
+            ]
+          ]
+        },
+        {
+          "text": "tt*",
+          "confidence": 0.2185230646548201,
+          "bbox": [
+            [
+              2539,
+              1330
+            ],
+            [
+              2611,
+              1330
+            ],
+            [
+              2611,
+              1366
+            ],
+            [
+              2539,
+              1366
+            ]
+          ]
+        },
+        {
+          "text": "Tel No.",
+          "confidence": 0.49752881243270947,
+          "bbox": [
+            [
+              454,
+              1369
+            ],
+            [
+              628,
+              1369
+            ],
+            [
+              628,
+              1431
+            ],
+            [
+              454,
+              1431
+            ]
+          ]
+        },
+        {
+          "text": "220396.2",
+          "confidence": 0.37027431531887345,
+          "bbox": [
+            [
+              686,
+              1331
+            ],
+            [
+              1125,
+              1331
+            ],
+            [
+              1125,
+              1447
+            ],
+            [
+              686,
+              1447
+            ]
+          ]
+        },
+        {
+          "text": "Folio No.",
+          "confidence": 0.9114834574024672,
+          "bbox": [
+            [
+              1718,
+              1344
+            ],
+            [
+              1923,
+              1344
+            ],
+            [
+              1923,
+              1405
+            ],
+            [
+              1718,
+              1405
+            ]
+          ]
+        },
+        {
+          "text": "TID:",
+          "confidence": 0.6092343926429749,
+          "bbox": [
+            [
+              2091,
+              1352
+            ],
+            [
+              2178,
+              1352
+            ],
+            [
+              2178,
+              1400
+            ],
+            [
+              2091,
+              1400
+            ]
+          ]
+        },
+        {
+          "text": "+1749",
+          "confidence": 0.5640386565879196,
+          "bbox": [
+            [
+              2510,
+              1332
+            ],
+            [
+              2705,
+              1332
+            ],
+            [
+              2705,
+              1430
+            ],
+            [
+              2510,
+              1430
+            ]
+          ]
+        },
+        {
+          "text": "AID:",
+          "confidence": 0.9675048589706421,
+          "bbox": [
+            [
+              2089,
+              1396
+            ],
+            [
+              2177,
+              1396
+            ],
+            [
+              2177,
+              1441
+            ],
+            [
+              2089,
+              1441
+            ]
+          ]
+        },
+        {
+          "text": "AOOOOOO00? 1010",
+          "confidence": 0.18635558951468492,
+          "bbox": [
+            [
+              2383,
+              1408
+            ],
+            [
+              2694,
+              1408
+            ],
+            [
+              2694,
+              1465
+            ],
+            [
+              2383,
+              1465
+            ]
+          ]
+        },
+        {
+          "text": "Mob Noj",
+          "confidence": 0.6345673627352844,
+          "bbox": [
+            [
+              459,
+              1471
+            ],
+            [
+              654,
+              1471
+            ],
+            [
+              654,
+              1521
+            ],
+            [
+              459,
+              1521
+            ]
+          ]
+        },
+        {
+          "text": "Stock Book N",
+          "confidence": 0.9464510442059383,
+          "bbox": [
+            [
+              1720,
+              1474
+            ],
+            [
+              2044,
+              1474
+            ],
+            [
+              2044,
+              1528
+            ],
+            [
+              1720,
+              1528
+            ]
+          ]
+        },
+        {
+          "text": "RECEIPT",
+          "confidence": 0.9865648183081916,
+          "bbox": [
+            [
+              2078,
+              1434
+            ],
+            [
+              2251,
+              1434
+            ],
+            [
+              2251,
+              1538
+            ],
+            [
+              2078,
+              1538
+            ]
+          ]
+        },
+        {
+          "text": "A3AE 10918008F28B",
+          "confidence": 0.6345843729539711,
+          "bbox": [
+            [
+              2340,
+              1450
+            ],
+            [
+              2695,
+              1450
+            ],
+            [
+              2695,
+              1512
+            ],
+            [
+              2340,
+              1512
+            ]
+          ]
+        },
+        {
+          "text": "NO:",
+          "confidence": 0.5750803592175152,
+          "bbox": [
+            [
+              2253,
+              1491
+            ],
+            [
+              2325,
+              1491
+            ],
+            [
+              2325,
+              1533
+            ],
+            [
+              2253,
+              1533
+            ]
+          ]
+        },
+        {
+          "text": "353",
+          "confidence": 0.7381345254176223,
+          "bbox": [
+            [
+              2615,
+              1508
+            ],
+            [
+              2690,
+              1508
+            ],
+            [
+              2690,
+              1553
+            ],
+            [
+              2615,
+              1553
+            ]
+          ]
+        },
+        {
+          "text": "APP SEQ:",
+          "confidence": 0.9971098612578283,
+          "bbox": [
+            [
+              2082,
+              1526
+            ],
+            [
+              2264,
+              1526
+            ],
+            [
+              2264,
+              1580
+            ],
+            [
+              2082,
+              1580
+            ]
+          ]
+        },
+        {
+          "text": "001",
+          "confidence": 0.9893698692321777,
+          "bbox": [
+            [
+              2611,
+              1550
+            ],
+            [
+              2683,
+              1550
+            ],
+            [
+              2683,
+              1593
+            ],
+            [
+              2611,
+              1593
+            ]
+          ]
+        },
+        {
+          "text": "Type:",
+          "confidence": 0.48278659999477463,
+          "bbox": [
+            [
+              2078,
+              1609
+            ],
+            [
+              2191,
+              1609
+            ],
+            [
+              2191,
+              1659
+            ],
+            [
+              2078,
+              1659
+            ]
+          ]
+        },
+        {
+          "text": "INe the undersigned agree to purchase from the above named seller",
+          "confidence": 0.8372423864917714,
+          "bbox": [
+            [
+              70,
+              1643
+            ],
+            [
+              1572,
+              1643
+            ],
+            [
+              1572,
+              1707
+            ],
+            [
+              70,
+              1707
+            ]
+          ]
+        },
+        {
+          "text": "Scheme",
+          "confidence": 0.9679188957354943,
+          "bbox": [
+            [
+              2074,
+              1649
+            ],
+            [
+              2216,
+              1649
+            ],
+            [
+              2216,
+              1703
+            ],
+            [
+              2074,
+              1703
+            ]
+          ]
+        },
+        {
+          "text": "'",
+          "confidence": 0.44570986304849214,
+          "bbox": [
+            [
+              2213,
+              1671
+            ],
+            [
+              2225,
+              1671
+            ],
+            [
+              2225,
+              1696
+            ],
+            [
+              2213,
+              1696
+            ]
+          ]
+        },
+        {
+          "text": "EMV",
+          "confidence": 0.9888336707455828,
+          "bbox": [
+            [
+              2607,
+              1632
+            ],
+            [
+              2684,
+              1632
+            ],
+            [
+              2684,
+              1682
+            ],
+            [
+              2607,
+              1682
+            ]
+          ]
+        },
+        {
+          "text": "Visa",
+          "confidence": 0.5354679226875305,
+          "bbox": [
+            [
+              2584,
+              1674
+            ],
+            [
+              2681,
+              1674
+            ],
+            [
+              2681,
+              1722
+            ],
+            [
+              2584,
+              1722
+            ]
+          ]
+        },
+        {
+          "text": "MAKE L",
+          "confidence": 0.9735795721108524,
+          "bbox": [
+            [
+              71,
+              1707
+            ],
+            [
+              263,
+              1707
+            ],
+            [
+              263,
+              1794
+            ],
+            [
+              71,
+              1794
+            ]
+          ]
+        },
+        {
+          "text": "Ad",
+          "confidence": 0.5035204375997879,
+          "bbox": [
+            [
+              337,
+              1711
+            ],
+            [
+              480,
+              1711
+            ],
+            [
+              480,
+              1797
+            ],
+            [
+              337,
+              1797
+            ]
+          ]
+        },
+        {
+          "text": "MODEL OR TYPE",
+          "confidence": 0.8344131903412623,
+          "bbox": [
+            [
+              1053,
+              1740
+            ],
+            [
+              1449,
+              1740
+            ],
+            [
+              1449,
+              1797
+            ],
+            [
+              1053,
+              1797
+            ]
+          ]
+        },
+        {
+          "text": "f0",
+          "confidence": 0.05349056148636712,
+          "bbox": [
+            [
+              1561,
+              1712
+            ],
+            [
+              1648,
+              1712
+            ],
+            [
+              1648,
+              1786
+            ],
+            [
+              1561,
+              1786
+            ]
+          ]
+        },
+        {
+          "text": "eldrdr",
+          "confidence": 0.2930774405672854,
+          "bbox": [
+            [
+              1614,
+              1646
+            ],
+            [
+              2024,
+              1646
+            ],
+            [
+              2024,
+              1819
+            ],
+            [
+              1614,
+              1819
+            ]
+          ]
+        },
+        {
+          "text": "Mask:",
+          "confidence": 0.7382526212943084,
+          "bbox": [
+            [
+              2073,
+              1695
+            ],
+            [
+              2187,
+              1695
+            ],
+            [
+              2187,
+              1740
+            ],
+            [
+              2073,
+              1740
+            ]
+          ]
+        },
+        {
+          "text": "+*4065",
+          "confidence": 0.7022762187442978,
+          "bbox": [
+            [
+              2543,
+              1712
+            ],
+            [
+              2682,
+              1712
+            ],
+            [
+              2682,
+              1764
+            ],
+            [
+              2543,
+              1764
+            ]
+          ]
+        },
+        {
+          "text": "Response Code",
+          "confidence": 0.710298801447227,
+          "bbox": [
+            [
+              2064,
+              1773
+            ],
+            [
+              2362,
+              1773
+            ],
+            [
+              2362,
+              1841
+            ],
+            [
+              2064,
+              1841
+            ]
+          ]
+        },
+        {
+          "text": "00",
+          "confidence": 0.9304739857677273,
+          "bbox": [
+            [
+              2620,
+              1802
+            ],
+            [
+              2678,
+              1802
+            ],
+            [
+              2678,
+              1850
+            ],
+            [
+              2620,
+              1850
+            ]
+          ]
+        },
+        {
+          "text": "REG",
+          "confidence": 0.999470957015617,
+          "bbox": [
+            [
+              71,
+              1832
+            ],
+            [
+              184,
+              1832
+            ],
+            [
+              184,
+              1883
+            ],
+            [
+              71,
+              1883
+            ]
+          ]
+        },
+        {
+          "text": "No",
+          "confidence": 0.9999345887177205,
+          "bbox": [
+            [
+              199,
+              1832
+            ],
+            [
+              273,
+              1832
+            ],
+            [
+              273,
+              1886
+            ],
+            [
+              199,
+              1886
+            ]
+          ]
+        },
+        {
+          "text": "COLOUR",
+          "confidence": 0.9664881956477459,
+          "bbox": [
+            [
+              1050,
+              1835
+            ],
+            [
+              1265,
+              1835
+            ],
+            [
+              1265,
+              1889
+            ],
+            [
+              1050,
+              1889
+            ]
+          ]
+        },
+        {
+          "text": "3l1X",
+          "confidence": 0.09992760419845581,
+          "bbox": [
+            [
+              1325,
+              1792
+            ],
+            [
+              1634,
+              1792
+            ],
+            [
+              1634,
+              1890
+            ],
+            [
+              1325,
+              1890
+            ]
+          ]
+        },
+        {
+          "text": "Auth Code:",
+          "confidence": 0.902494740147536,
+          "bbox": [
+            [
+              2068,
+              1822
+            ],
+            [
+              2288,
+              1822
+            ],
+            [
+              2288,
+              1878
+            ],
+            [
+              2068,
+              1878
+            ]
+          ]
+        },
+        {
+          "text": "001792",
+          "confidence": 0.9981852529934484,
+          "bbox": [
+            [
+              2532,
+              1842
+            ],
+            [
+              2678,
+              1842
+            ],
+            [
+              2678,
+              1896
+            ],
+            [
+              2532,
+              1896
+            ]
+          ]
+        },
+        {
+          "text": "CHASSIS No",
+          "confidence": 0.9990381000295001,
+          "bbox": [
+            [
+              71,
+              1927
+            ],
+            [
+              365,
+              1927
+            ],
+            [
+              365,
+              1981
+            ],
+            [
+              71,
+              1981
+            ]
+          ]
+        },
+        {
+          "text": "ENGINE No.",
+          "confidence": 0.7209355968740183,
+          "bbox": [
+            [
+              71,
+              2022
+            ],
+            [
+              345,
+              2022
+            ],
+            [
+              345,
+              2076
+            ],
+            [
+              71,
+              2076
+            ]
+          ]
+        },
+        {
+          "text": "DATE FIRST REG IN UK",
+          "confidence": 0.9599477364785072,
+          "bbox": [
+            [
+              71,
+              2118
+            ],
+            [
+              598,
+              2118
+            ],
+            [
+              598,
+              2172
+            ],
+            [
+              71,
+              2172
+            ]
+          ]
+        },
+        {
+          "text": "SPEEDOMETER READING",
+          "confidence": 0.7026476655602945,
+          "bbox": [
+            [
+              70,
+              2208
+            ],
+            [
+              655,
+              2208
+            ],
+            [
+              655,
+              2269
+            ],
+            [
+              70,
+              2269
+            ]
+          ]
+        },
+        {
+          "text": "€",
+          "confidence": 0.12411870454915519,
+          "bbox": [
+            [
+              2312,
+              2180
+            ],
+            [
+              2366,
+              2180
+            ],
+            [
+              2366,
+              2241
+            ],
+            [
+              2312,
+              2241
+            ]
+          ]
+        },
+        {
+          "text": "p",
+          "confidence": 0.9807547695930943,
+          "bbox": [
+            [
+              2587,
+              2193
+            ],
+            [
+              2641,
+              2193
+            ],
+            [
+              2641,
+              2251
+            ],
+            [
+              2587,
+              2251
+            ]
+          ]
+        },
+        {
+          "text": "NETT PRICE",
+          "confidence": 0.9945058900717307,
+          "bbox": [
+            [
+              1799,
+              2282
+            ],
+            [
+              2096,
+              2282
+            ],
+            [
+              2096,
+              2336
+            ],
+            [
+              1799,
+              2336
+            ]
+          ]
+        },
+        {
+          "text": "declare that | am the",
+          "confidence": 0.4421680878252287,
+          "bbox": [
+            [
+              94,
+              2308
+            ],
+            [
+              552,
+              2308
+            ],
+            [
+              552,
+              2362
+            ],
+            [
+              94,
+              2362
+            ]
+          ]
+        },
+        {
+          "text": "buyer of the vehicle described above at the",
+          "confidence": 0.9110825866505556,
+          "bbox": [
+            [
+              550,
+              2309
+            ],
+            [
+              1496,
+              2309
+            ],
+            [
+              1496,
+              2377
+            ],
+            [
+              550,
+              2377
+            ]
+          ]
+        },
+        {
+          "text": "price stated below",
+          "confidence": 0.8042046933915553,
+          "bbox": [
+            [
+              64,
+              2357
+            ],
+            [
+              482,
+              2357
+            ],
+            [
+              482,
+              2425
+            ],
+            [
+              64,
+              2425
+            ]
+          ]
+        },
+        {
+          "text": "EXTRAS",
+          "confidence": 0.9997569017503468,
+          "bbox": [
+            [
+              1894,
+              2394
+            ],
+            [
+              2096,
+              2394
+            ],
+            [
+              2096,
+              2448
+            ],
+            [
+              1894,
+              2448
+            ]
+          ]
+        },
+        {
+          "text": "Or",
+          "confidence": 0.6336606436441993,
+          "bbox": [
+            [
+              69,
+              2424
+            ],
+            [
+              124,
+              2424
+            ],
+            [
+              124,
+              2466
+            ],
+            [
+              69,
+              2466
+            ]
+          ]
+        },
+        {
+          "text": "(where the vehicle is sold to a finance company)",
+          "confidence": 0.6520404474387842,
+          "bbox": [
+            [
+              65,
+              2468
+            ],
+            [
+              1113,
+              2468
+            ],
+            [
+              1113,
+              2542
+            ],
+            [
+              65,
+              2542
+            ]
+          ]
+        },
+        {
+          "text": "#VAT@",
+          "confidence": 0.8114883963869435,
+          "bbox": [
+            [
+              1733,
+              2505
+            ],
+            [
+              1886,
+              2505
+            ],
+            [
+              1886,
+              2559
+            ],
+            [
+              1733,
+              2559
+            ]
+          ]
+        },
+        {
+          "text": "%",
+          "confidence": 0.9988755766129067,
+          "bbox": [
+            [
+              2036,
+              2505
+            ],
+            [
+              2093,
+              2505
+            ],
+            [
+              2093,
+              2559
+            ],
+            [
+              2036,
+              2559
+            ]
+          ]
+        },
+        {
+          "text": "acknowledge receiving delivery of the vehicle described",
+          "confidence": 0.8504608154495225,
+          "bbox": [
+            [
+              91,
+              2520
+            ],
+            [
+              1303,
+              2520
+            ],
+            [
+              1303,
+              2596
+            ],
+            [
+              91,
+              2596
+            ]
+          ]
+        },
+        {
+          "text": "above. *Commercial Vehicles only",
+          "confidence": 0.8525455478602599,
+          "bbox": [
+            [
+              67,
+              2580
+            ],
+            [
+              846,
+              2580
+            ],
+            [
+              846,
+              2649
+            ],
+            [
+              67,
+              2649
+            ]
+          ]
+        },
+        {
+          "text": "IOTAL CASH PRICE",
+          "confidence": 0.7490659376809642,
+          "bbox": [
+            [
+              1618,
+              2614
+            ],
+            [
+              2093,
+              2614
+            ],
+            [
+              2093,
+              2668
+            ],
+            [
+              1618,
+              2668
+            ]
+          ]
+        },
+        {
+          "text": "Lisq",
+          "confidence": 0.5859499573707581,
+          "bbox": [
+            [
+              2314,
+              2574
+            ],
+            [
+              2494,
+              2574
+            ],
+            [
+              2494,
+              2675
+            ],
+            [
+              2314,
+              2675
+            ]
+          ]
+        },
+        {
+          "text": "Date: 222",
+          "confidence": 0.9084289216329766,
+          "bbox": [
+            [
+              64,
+              2649
+            ],
+            [
+              300,
+              2649
+            ],
+            [
+              300,
+              2751
+            ],
+            [
+              64,
+              2751
+            ]
+          ]
+        },
+        {
+          "text": "Lcl",
+          "confidence": 0.3150797407252347,
+          "bbox": [
+            [
+              293,
+              2638
+            ],
+            [
+              449,
+              2638
+            ],
+            [
+              449,
+              2755
+            ],
+            [
+              293,
+              2755
+            ]
+          ]
+        },
+        {
+          "text": "Signature:",
+          "confidence": 0.8686500562400098,
+          "bbox": [
+            [
+              815,
+              2694
+            ],
+            [
+              1050,
+              2694
+            ],
+            [
+              1050,
+              2762
+            ],
+            [
+              815,
+              2762
+            ]
+          ]
+        },
+        {
+          "text": "DEDUCT: Allowance for used vehicle which Vwe certify conforms",
+          "confidence": 0.8612757435114022,
+          "bbox": [
+            [
+              67,
+              2773
+            ],
+            [
+              1473,
+              2773
+            ],
+            [
+              1473,
+              2840
+            ],
+            [
+              67,
+              2840
+            ]
+          ]
+        },
+        {
+          "text": "CAve)",
+          "confidence": 0.19657400366170805,
+          "bbox": [
+            [
+              2135,
+              2731
+            ],
+            [
+              2433,
+              2731
+            ],
+            [
+              2433,
+              2876
+            ],
+            [
+              2135,
+              2876
+            ]
+          ]
+        },
+        {
+          "text": "to the following description (is mylour own property and free from",
+          "confidence": 0.8272901995041757,
+          "bbox": [
+            [
+              62,
+              2823
+            ],
+            [
+              1490,
+              2823
+            ],
+            [
+              1490,
+              2900
+            ],
+            [
+              62,
+              2900
+            ]
+          ]
+        },
+        {
+          "text": "E",
+          "confidence": 0.3202204449018531,
+          "bbox": [
+            [
+              1671,
+              2850
+            ],
+            [
+              1725,
+              2850
+            ],
+            [
+              1725,
+              2914
+            ],
+            [
+              1671,
+              2914
+            ]
+          ]
+        },
+        {
+          "text": "any lien or legal encumbranceslis subject to H.P as stated):",
+          "confidence": 0.5275916514560388,
+          "bbox": [
+            [
+              63,
+              2885
+            ],
+            [
+              1348,
+              2885
+            ],
+            [
+              1348,
+              2951
+            ],
+            [
+              63,
+              2951
+            ]
+          ]
+        },
+        {
+          "text": "p",
+          "confidence": 0.9939666474238038,
+          "bbox": [
+            [
+              1944,
+              2863
+            ],
+            [
+              1998,
+              2863
+            ],
+            [
+              1998,
+              2924
+            ],
+            [
+              1944,
+              2924
+            ]
+          ]
+        },
+        {
+          "text": "MAKE",
+          "confidence": 0.9999590516090393,
+          "bbox": [
+            [
+              68,
+              2982
+            ],
+            [
+              214,
+              2982
+            ],
+            [
+              214,
+              3032
+            ],
+            [
+              68,
+              3032
+            ]
+          ]
+        },
+        {
+          "text": "MODEL",
+          "confidence": 0.9999511660535197,
+          "bbox": [
+            [
+              777,
+              2985
+            ],
+            [
+              956,
+              2985
+            ],
+            [
+              956,
+              3039
+            ],
+            [
+              777,
+              3039
+            ]
+          ]
+        },
+        {
+          "text": "REG.",
+          "confidence": 0.8049102425575256,
+          "bbox": [
+            [
+              64,
+              3074
+            ],
+            [
+              178,
+              3074
+            ],
+            [
+              178,
+              3124
+            ],
+            [
+              64,
+              3124
+            ]
+          ]
+        },
+        {
+          "text": "No",
+          "confidence": 0.9999431022286218,
+          "bbox": [
+            [
+              193,
+              3074
+            ],
+            [
+              266,
+              3074
+            ],
+            [
+              266,
+              3128
+            ],
+            [
+              193,
+              3128
+            ]
+          ]
+        },
+        {
+          "text": "COLOUR",
+          "confidence": 0.9998759461164931,
+          "bbox": [
+            [
+              774,
+              3077
+            ],
+            [
+              989,
+              3077
+            ],
+            [
+              989,
+              3131
+            ],
+            [
+              774,
+              3131
+            ]
+          ]
+        },
+        {
+          "text": "CHASSIS No",
+          "confidence": 0.9553567364125898,
+          "bbox": [
+            [
+              64,
+              3166
+            ],
+            [
+              358,
+              3166
+            ],
+            [
+              358,
+              3223
+            ],
+            [
+              64,
+              3223
+            ]
+          ]
+        },
+        {
+          "text": "W0",
+          "confidence": 0.3192505437422593,
+          "bbox": [
+            [
+              2137,
+              3142
+            ],
+            [
+              2324,
+              3142
+            ],
+            [
+              2324,
+              3240
+            ],
+            [
+              2137,
+              3240
+            ]
+          ]
+        },
+        {
+          "text": "ENGINE No.",
+          "confidence": 0.8243785233363824,
+          "bbox": [
+            [
+              64,
+              3261
+            ],
+            [
+              339,
+              3261
+            ],
+            [
+              339,
+              3315
+            ],
+            [
+              64,
+              3315
+            ]
+          ]
+        },
+        {
+          "text": "huavaka",
+          "confidence": 0.28873498272239145,
+          "bbox": [
+            [
+              2113,
+              3241
+            ],
+            [
+              2471,
+              3241
+            ],
+            [
+              2471,
+              3380
+            ],
+            [
+              2113,
+              3380
+            ]
+          ]
+        },
+        {
+          "text": "FIRST REG",
+          "confidence": 0.9987354698483107,
+          "bbox": [
+            [
+              61,
+              3353
+            ],
+            [
+              319,
+              3353
+            ],
+            [
+              319,
+              3407
+            ],
+            [
+              61,
+              3407
+            ]
+          ]
+        },
+        {
+          "text": "LESS Amount outstanding(subject to H.P with",
+          "confidence": 0.8560110248412711,
+          "bbox": [
+            [
+              60,
+              3437
+            ],
+            [
+              908,
+              3437
+            ],
+            [
+              908,
+              3498
+            ],
+            [
+              60,
+              3498
+            ]
+          ]
+        },
+        {
+          "text": "Mch(",
+          "confidence": 0.1766752302646637,
+          "bbox": [
+            [
+              2115,
+              3349
+            ],
+            [
+              2450,
+              3349
+            ],
+            [
+              2450,
+              3482
+            ],
+            [
+              2115,
+              3482
+            ]
+          ]
+        },
+        {
+          "text": "(Company)",
+          "confidence": 0.9556568841197013,
+          "bbox": [
+            [
+              1069,
+              3539
+            ],
+            [
+              1282,
+              3539
+            ],
+            [
+              1282,
+              3595
+            ],
+            [
+              1069,
+              3595
+            ]
+          ]
+        },
+        {
+          "text": "NET ALLOWANCE",
+          "confidence": 0.8755506298186205,
+          "bbox": [
+            [
+              1040,
+              3619
+            ],
+            [
+              1469,
+              3619
+            ],
+            [
+              1469,
+              3673
+            ],
+            [
+              1040,
+              3673
+            ]
+          ]
+        },
+        {
+          "text": "Qxlkr",
+          "confidence": 0.4124262862611287,
+          "bbox": [
+            [
+              2124,
+              3595
+            ],
+            [
+              2356,
+              3595
+            ],
+            [
+              2356,
+              3700
+            ],
+            [
+              2124,
+              3700
+            ]
+          ]
+        },
+        {
+          "text": "CASH DEPOSIT",
+          "confidence": 0.9991504615743778,
+          "bbox": [
+            [
+              1096,
+              3714
+            ],
+            [
+              1469,
+              3714
+            ],
+            [
+              1469,
+              3768
+            ],
+            [
+              1096,
+              3768
+            ]
+          ]
+        },
+        {
+          "text": "Declaration by the seller:",
+          "confidence": 0.9567387811976463,
+          "bbox": [
+            [
+              60,
+              3779
+            ],
+            [
+              602,
+              3779
+            ],
+            [
+              602,
+              3842
+            ],
+            [
+              60,
+              3842
+            ]
+          ]
+        },
+        {
+          "text": "Input tax deduction has not been and will not beclaimed by me In respect of",
+          "confidence": 0.6636778976159879,
+          "bbox": [
+            [
+              54,
+              3827
+            ],
+            [
+              1727,
+              3827
+            ],
+            [
+              1727,
+              3902
+            ],
+            [
+              54,
+              3902
+            ]
+          ]
+        },
+        {
+          "text": "the vehicle sold on this invoice.",
+          "confidence": 0.6649798745948328,
+          "bbox": [
+            [
+              57,
+              3878
+            ],
+            [
+              734,
+              3878
+            ],
+            [
+              734,
+              3940
+            ],
+            [
+              57,
+              3940
+            ]
+          ]
+        },
+        {
+          "text": "Date",
+          "confidence": 0.999997615814209,
+          "bbox": [
+            [
+              61,
+              3974
+            ],
+            [
+              174,
+              3974
+            ],
+            [
+              174,
+              4028
+            ],
+            [
+              61,
+              4028
+            ]
+          ]
+        },
+        {
+          "text": "Signature",
+          "confidence": 0.9999849398363845,
+          "bbox": [
+            [
+              667,
+              3975
+            ],
+            [
+              889,
+              3975
+            ],
+            [
+              889,
+              4043
+            ],
+            [
+              667,
+              4043
+            ]
+          ]
+        },
+        {
+          "text": "UCiOOS/a",
+          "confidence": 0.6694466271977153,
+          "bbox": [
+            [
+              2565,
+              4034
+            ],
+            [
+              2706,
+              4034
+            ],
+            [
+              2706,
+              4073
+            ],
+            [
+              2565,
+              4073
+            ]
+          ]
+        },
+        {
+          "text": "Corpany",
+          "confidence": 0.9494085800473985,
+          "bbox": [
+            [
+              2483.136002609959,
+              390.0752148767684
+            ],
+            [
+              2644.9400601687553,
+              410.228115598632
+            ],
+            [
+              2636.863997390041,
+              456.9247851232316
+            ],
+            [
+              2475.0599398312447,
+              436.771884401368
+            ]
+          ]
+        },
+        {
+          "text": "Order",
+          "confidence": 0.9429370647132983,
+          "bbox": [
+            [
+              2138.019419324309,
+              451.0970966215454
+            ],
+            [
+              2257.8740360476413,
+              466.8847544636753
+            ],
+            [
+              2249.980580675691,
+              510.9029033784546
+            ],
+            [
+              2130.1259639523587,
+              496.1152455363247
+            ]
+          ]
+        },
+        {
+          "text": "03",
+          "confidence": 0.42917354217161574,
+          "bbox": [
+            [
+              949.8972608519762,
+              1241.067812901007
+            ],
+            [
+              1068.1180334174976,
+              1258.1144455437618
+            ],
+            [
+              1053.1027391480238,
+              1339.932187098993
+            ],
+            [
+              934.8819665825024,
+              1321.8855544562382
+            ]
+          ]
+        },
+        {
+          "text": "404z",
+          "confidence": 0.25049251317977905,
+          "bbox": [
+            [
+              513.2836935188574,
+              1618.01222010252
+            ],
+            [
+              990.9985061414167,
+              1788.749520801494
+            ],
+            [
+              923.7163064811426,
+              1952.98777989748
+            ],
+            [
+              446.0014938585833,
+              1783.250479198506
+            ]
+          ]
+        },
+        {
+          "text": "MeYe",
+          "confidence": 0.03817251215885573,
+          "bbox": [
+            [
+              2137.127670687018,
+              3431.017301312857
+            ],
+            [
+              2549.874608412663,
+              3553.6544708928145
+            ],
+            [
+              2489.872329312982,
+              3726.982698687143
+            ],
+            [
+              2077.125391587337,
+              3604.3455291071855
+            ]
+          ]
+        }
+      ],
+      "ocr_debug": {
+        "lighton_error": "",
+        "easyocr_error": "",
+        "tesseract_error": "",
+        "lighton_raw_len": 0,
+        "easyocr_items": 132,
+        "cleaned_len": 1595
+      },
+      "detections": []
+    }
+  ]
+}

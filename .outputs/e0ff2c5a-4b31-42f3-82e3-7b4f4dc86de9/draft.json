@@ -1,0 +1,2406 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "",
+      "supplier": "**FCC**",
+      "inv_ref_no": ". _____",
+      "make": "*Pevacot*",
+      "model": "OR TYPE: *107*",
+      "colour": "*black*",
+      "reg_no": ". No.: *AK62 HNM*",
+      "buying_price": 1400.0,
+      "non_vat": 1400.0,
+      "std_net": "N/A",
+      "vat_amount": "N/A"
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "AK62 HNM SALES.pdf",
+      "content_type": "application/pdf",
+      "model_name": "LightOnOCR-2-1B (Best OCR)",
+      "has_bbox": false,
+      "engine": "lighton",
+      "raw_output": "# USED VEHICLE INVOICE\n## SOLD By:\n**FCC** \n**FOREST** \nCROWN HILL \nFARM, EN93 1F\nName: *JUNE HEATHER*\nAddress: *6, PICKLEY WAY* \n*CHESHUNT HERTS* \n*EN7 5DU*\nVAT No.\n---\n## SOLD TO:\nName: ___________________________\nVAT No. _________________________\nAddress: ________________________\nTel No. _________________________\nMob No.: *07539 382554*\nInvoice No. _____\nDate _____\nFolio No. _____\nStock Book No\n---\nI/We the undersigned agree to purchase from the above named seller\nMAKE: *Pevacot* \nMODEL OR TYPE: *107*\nREG. No.: *AK62 HNM* \nCOLOUR: *black*\nCHASSIS No. _______________________\nENGINE No. _______________________\nDATE FIRST REG IN UK _______________\nSPEEDOMETER READING _______________\nI declare that I am the buyer of the vehicle described above at the price stated below\nor\n(where the vehicle is sold to a finance company)\nI acknowledge receiving delivery of the vehicle described above. *Commercial Vehicles only*\nDate: *13/01/25* \nSignature: _________________________\nDEDUCT: Allowance for used vehicle which I/we certify conforms to the following description (is my/our own property and free from any lien or legal encumbrances/is subject to H.P. as stated).\nMAKE: _________________________ \nMODEL: _________________________\nREG. No.: ______________________ \nCOLOUR: _______________________\nCHASSIS No. _______________________\nENGINE No. _______________________\nFIRST REG _______________________\nLESS Amount outstanding subject to H.P. with _______________________\n(Company)\nNET ALLOWANCE\nCASH DEPOSIT\n---\nDeclaration by the seller:\nInput tax deduction has not been and will not be claimed by me in respect of the vehicle sold on this invoice.\nDate: *13/01/25* \nSignature: _________________________\n---\n**CUSTOMER**\nForest Car Con\nOr: *1384* \nA9: *1852915065* \nDai: *14/01/2025, 14:57:36*\n*** takepayment.\nCust Custom £1400.00\nTotal: Total: £1400.00\n****\nSALE\nPIN VERIFIED\nAmount: Amount: £1400.00\nMID: MID: ***1775 \nTID: TID: ****1149 \nAID: AID: A000000003101 \nTC: TC: A107823CD59A358 \nRECEIPT RECEIPT NO: 34 \nAPP SEQ: APP SEQ: 00\nType: Type: EI \nScheme: Scheme: VI \nMask: Mask: **********93\nResponse Code: 0140 \nAuth Code: Auth Code:\n---\n<table>\n <tr>\n <th>£</th>\n <th>p</th>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td>1.6 00</td>\n <td></td>\n </tr>\n <tr>\n <td>289</td>\n <td></td>\n </tr>\n <tr>\n <td>depq</td>\n <td></td>\n </tr>\n <tr>\n <td>ccird</td>\n <td></td>\n </tr>\n <tr>\n <td>1.4cc</td>\n <td></td>\n </tr>\n <tr>\n <td>to pay</td>\n <td></td>\n </tr>\n <tr>\n <td>Pan</td>\n <td></td>\n </tr>\n <tr>\n <td colspan=\"2\">3 MONTHS WARRANTY INCLUDED</td>\n </tr>\n</table>\n---\n<table>\n <tr>\n <th>£</th>\n <th>p</th>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td>1.6 00</td>\n <td></td>\n </tr>\n <tr>\n <td>289</td>\n <td></td>\n </tr>\n <tr>\n <td>depq</td>\n <td></td>\n </tr>\n <tr>\n <td>ccird</td>\n <td></td>\n </tr>\n <tr>\n <td>1.4cc</td>\n <td></td>\n </tr>\n <tr>\n <td>to pay</td>\n <td></td>\n </tr>\n <tr>\n <td>Pan</td>\n <td></td>\n </tr>\n <tr>\n <td colspan=\"2\">3 MONTHS WARRANTY INCLUDED</td>\n </tr>\n</table>\n---\nUCI005/a",
+      "cleaned_text": "# USED VEHICLE INVOICE\n## SOLD By:\n**FCC** \n**FOREST** \nCROWN HILL \nFARM, EN93 1F\nName: *JUNE HEATHER*\nAddress: *6, PICKLEY WAY* \n*CHESHUNT HERTS* \n*EN7 5DU*\nVAT No.\n---\n## SOLD TO:\nName: ___________________________\nVAT No. _________________________\nAddress: ________________________\nTel No. _________________________\nMob No.: *07539 382554*\nInvoice No. _____\nDate _____\nFolio No. _____\nStock Book No\n---\nI/We the undersigned agree to purchase from the above named seller\nMAKE: *Pevacot* \nMODEL OR TYPE: *107*\nREG. No.: *AK62 HNM* \nCOLOUR: *black*\nCHASSIS No. _______________________\nENGINE No. _______________________\nDATE FIRST REG IN UK _______________\nSPEEDOMETER READING _______________\nI declare that I am the buyer of the vehicle described above at the price stated below\nor\n(where the vehicle is sold to a finance company)\nI acknowledge receiving delivery of the vehicle described above. *Commercial Vehicles only*\nDate: *13/01/25* \nSignature: _________________________\nDEDUCT: Allowance for used vehicle which I/we certify conforms to the following description (is my/our own property and free from any lien or legal encumbrances/is subject to H.P. as stated).\nMAKE: _________________________ \nMODEL: _________________________\nREG. No.: ______________________ \nCOLOUR: _______________________\nCHASSIS No. _______________________\nENGINE No. _______________________\nFIRST REG _______________________\nLESS Amount outstanding subject to H.P. with _______________________\n(Company)\nNET ALLOWANCE\nCASH DEPOSIT\n---\nDeclaration by the seller:\nInput tax deduction has not been and will not be claimed by me in respect of the vehicle sold on this invoice.\nDate: *13/01/25* \nSignature: _________________________\n---\n**CUSTOMER**\nForest Car Con\nOr: *1384* \nA9: *1852915065* \nDai: *14/01/2025, 14:57:36*\n*** takepayment.\nCust Custom £1400.00\nTotal: Total: £1400.00\n****\nSALE\nPIN VERIFIED\nAmount: Amount: £1400.00\nMID: MID: ***1775 \nTID: TID: ****1149 \nAID: AID: A000000003101 \nTC: TC: A107823CD59A358 \nRECEIPT RECEIPT NO: 34 \nAPP SEQ: APP SEQ: 00\nType: Type: EI \nScheme: Scheme: VI \nMask: Mask: **********93\nResponse Code: 0140 \nAuth Code: Auth Code:\n---\n<table>\n <tr>\n <th>£</th>\n <th>p</th>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td>1.6 00</td>\n <td></td>\n </tr>\n <tr>\n <td>289</td>\n <td></td>\n </tr>\n <tr>\n <td>depq</td>\n <td></td>\n </tr>\n <tr>\n <td>ccird</td>\n <td></td>\n </tr>\n <tr>\n <td>1.4cc</td>\n <td></td>\n </tr>\n <tr>\n <td>to pay</td>\n <td></td>\n </tr>\n <tr>\n <td>Pan</td>\n <td></td>\n </tr>\n <tr>\n <td colspan=\"2\">3 MONTHS WARRANTY INCLUDED</td>\n </tr>\n</table>\n---\n<table>\n <tr>\n <th>£</th>\n <th>p</th>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td>1.6 00</td>\n <td></td>\n </tr>\n <tr>\n <td>289</td>\n <td></td>\n </tr>\n <tr>\n <td>depq</td>\n <td></td>\n </tr>\n <tr>\n <td>ccird</td>\n <td></td>\n </tr>\n <tr>\n <td>1.4cc</td>\n <td></td>\n </tr>\n <tr>\n <td>to pay</td>\n <td></td>\n </tr>\n <tr>\n <td>Pan</td>\n <td></td>\n </tr>\n <tr>\n <td colspan=\"2\">3 MONTHS WARRANTY INCLUDED</td>\n </tr>\n</table>\n---\nUCI005/a",
+      "lines": [
+        {
+          "index": 1,
+          "text": "# USED VEHICLE INVOICE"
+        },
+        {
+          "index": 2,
+          "text": "## SOLD By:"
+        },
+        {
+          "index": 3,
+          "text": "**FCC**"
+        },
+        {
+          "index": 4,
+          "text": "**FOREST**"
+        },
+        {
+          "index": 5,
+          "text": "CROWN HILL"
+        },
+        {
+          "index": 6,
+          "text": "FARM, EN93 1F"
+        },
+        {
+          "index": 7,
+          "text": "Name: *JUNE HEATHER*"
+        },
+        {
+          "index": 8,
+          "text": "Address: *6, PICKLEY WAY*"
+        },
+        {
+          "index": 9,
+          "text": "*CHESHUNT HERTS*"
+        },
+        {
+          "index": 10,
+          "text": "*EN7 5DU*"
+        },
+        {
+          "index": 11,
+          "text": "VAT No."
+        },
+        {
+          "index": 12,
+          "text": "---"
+        },
+        {
+          "index": 13,
+          "text": "## SOLD TO:"
+        },
+        {
+          "index": 14,
+          "text": "Name: ___________________________"
+        },
+        {
+          "index": 15,
+          "text": "VAT No. _________________________"
+        },
+        {
+          "index": 16,
+          "text": "Address: ________________________"
+        },
+        {
+          "index": 17,
+          "text": "Tel No. _________________________"
+        },
+        {
+          "index": 18,
+          "text": "Mob No.: *07539 382554*"
+        },
+        {
+          "index": 19,
+          "text": "Invoice No. _____"
+        },
+        {
+          "index": 20,
+          "text": "Date _____"
+        },
+        {
+          "index": 21,
+          "text": "Folio No. _____"
+        },
+        {
+          "index": 22,
+          "text": "Stock Book No"
+        },
+        {
+          "index": 23,
+          "text": "---"
+        },
+        {
+          "index": 24,
+          "text": "I/We the undersigned agree to purchase from the above named seller"
+        },
+        {
+          "index": 25,
+          "text": "MAKE: *Pevacot*"
+        },
+        {
+          "index": 26,
+          "text": "MODEL OR TYPE: *107*"
+        },
+        {
+          "index": 27,
+          "text": "REG. No.: *AK62 HNM*"
+        },
+        {
+          "index": 28,
+          "text": "COLOUR: *black*"
+        },
+        {
+          "index": 29,
+          "text": "CHASSIS No. _______________________"
+        },
+        {
+          "index": 30,
+          "text": "ENGINE No. _______________________"
+        },
+        {
+          "index": 31,
+          "text": "DATE FIRST REG IN UK _______________"
+        },
+        {
+          "index": 32,
+          "text": "SPEEDOMETER READING _______________"
+        },
+        {
+          "index": 33,
+          "text": "I declare that I am the buyer of the vehicle described above at the price stated below"
+        },
+        {
+          "index": 34,
+          "text": "or"
+        },
+        {
+          "index": 35,
+          "text": "(where the vehicle is sold to a finance company)"
+        },
+        {
+          "index": 36,
+          "text": "I acknowledge receiving delivery of the vehicle described above. *Commercial Vehicles only*"
+        },
+        {
+          "index": 37,
+          "text": "Date: *13/01/25*"
+        },
+        {
+          "index": 38,
+          "text": "Signature: _________________________"
+        },
+        {
+          "index": 39,
+          "text": "DEDUCT: Allowance for used vehicle which I/we certify conforms to the following description (is my/our own property and free from any lien or legal encumbrances/is subject to H.P. as stated)."
+        },
+        {
+          "index": 40,
+          "text": "MAKE: _________________________"
+        },
+        {
+          "index": 41,
+          "text": "MODEL: _________________________"
+        },
+        {
+          "index": 42,
+          "text": "REG. No.: ______________________"
+        },
+        {
+          "index": 43,
+          "text": "COLOUR: _______________________"
+        },
+        {
+          "index": 44,
+          "text": "CHASSIS No. _______________________"
+        },
+        {
+          "index": 45,
+          "text": "ENGINE No. _______________________"
+        },
+        {
+          "index": 46,
+          "text": "FIRST REG _______________________"
+        },
+        {
+          "index": 47,
+          "text": "LESS Amount outstanding subject to H.P. with _______________________"
+        },
+        {
+          "index": 48,
+          "text": "(Company)"
+        },
+        {
+          "index": 49,
+          "text": "NET ALLOWANCE"
+        },
+        {
+          "index": 50,
+          "text": "CASH DEPOSIT"
+        },
+        {
+          "index": 51,
+          "text": "---"
+        },
+        {
+          "index": 52,
+          "text": "Declaration by the seller:"
+        },
+        {
+          "index": 53,
+          "text": "Input tax deduction has not been and will not be claimed by me in respect of the vehicle sold on this invoice."
+        },
+        {
+          "index": 54,
+          "text": "Date: *13/01/25*"
+        },
+        {
+          "index": 55,
+          "text": "Signature: _________________________"
+        },
+        {
+          "index": 56,
+          "text": "---"
+        },
+        {
+          "index": 57,
+          "text": "**CUSTOMER**"
+        },
+        {
+          "index": 58,
+          "text": "Forest Car Con"
+        },
+        {
+          "index": 59,
+          "text": "Or: *1384*"
+        },
+        {
+          "index": 60,
+          "text": "A9: *1852915065*"
+        },
+        {
+          "index": 61,
+          "text": "Dai: *14/01/2025, 14:57:36*"
+        },
+        {
+          "index": 62,
+          "text": "*** takepayment."
+        },
+        {
+          "index": 63,
+          "text": "Cust Custom £1400.00"
+        },
+        {
+          "index": 64,
+          "text": "Total: Total: £1400.00"
+        },
+        {
+          "index": 65,
+          "text": "****"
+        },
+        {
+          "index": 66,
+          "text": "SALE"
+        },
+        {
+          "index": 67,
+          "text": "PIN VERIFIED"
+        },
+        {
+          "index": 68,
+          "text": "Amount: Amount: £1400.00"
+        },
+        {
+          "index": 69,
+          "text": "MID: MID: ***1775"
+        },
+        {
+          "index": 70,
+          "text": "TID: TID: ****1149"
+        },
+        {
+          "index": 71,
+          "text": "AID: AID: A000000003101"
+        },
+        {
+          "index": 72,
+          "text": "TC: TC: A107823CD59A358"
+        },
+        {
+          "index": 73,
+          "text": "RECEIPT RECEIPT NO: 34"
+        },
+        {
+          "index": 74,
+          "text": "APP SEQ: APP SEQ: 00"
+        },
+        {
+          "index": 75,
+          "text": "Type: Type: EI"
+        },
+        {
+          "index": 76,
+          "text": "Scheme: Scheme: VI"
+        },
+        {
+          "index": 77,
+          "text": "Mask: Mask: **********93"
+        },
+        {
+          "index": 78,
+          "text": "Response Code: 0140"
+        },
+        {
+          "index": 79,
+          "text": "Auth Code: Auth Code:"
+        },
+        {
+          "index": 80,
+          "text": "---"
+        },
+        {
+          "index": 81,
+          "text": "<table>"
+        },
+        {
+          "index": 82,
+          "text": "<tr>"
+        },
+        {
+          "index": 83,
+          "text": "<th>£</th>"
+        },
+        {
+          "index": 84,
+          "text": "<th>p</th>"
+        },
+        {
+          "index": 85,
+          "text": "</tr>"
+        },
+        {
+          "index": 86,
+          "text": "<tr>"
+        },
+        {
+          "index": 87,
+          "text": "<td></td>"
+        },
+        {
+          "index": 88,
+          "text": "<td></td>"
+        },
+        {
+          "index": 89,
+          "text": "</tr>"
+        },
+        {
+          "index": 90,
+          "text": "<tr>"
+        },
+        {
+          "index": 91,
+          "text": "<td></td>"
+        },
+        {
+          "index": 92,
+          "text": "<td></td>"
+        },
+        {
+          "index": 93,
+          "text": "</tr>"
+        },
+        {
+          "index": 94,
+          "text": "<tr>"
+        },
+        {
+          "index": 95,
+          "text": "<td></td>"
+        },
+        {
+          "index": 96,
+          "text": "<td></td>"
+        },
+        {
+          "index": 97,
+          "text": "</tr>"
+        },
+        {
+          "index": 98,
+          "text": "<tr>"
+        },
+        {
+          "index": 99,
+          "text": "<td>1.6 00</td>"
+        },
+        {
+          "index": 100,
+          "text": "<td></td>"
+        },
+        {
+          "index": 101,
+          "text": "</tr>"
+        },
+        {
+          "index": 102,
+          "text": "<tr>"
+        },
+        {
+          "index": 103,
+          "text": "<td>289</td>"
+        },
+        {
+          "index": 104,
+          "text": "<td></td>"
+        },
+        {
+          "index": 105,
+          "text": "</tr>"
+        },
+        {
+          "index": 106,
+          "text": "<tr>"
+        },
+        {
+          "index": 107,
+          "text": "<td>depq</td>"
+        },
+        {
+          "index": 108,
+          "text": "<td></td>"
+        },
+        {
+          "index": 109,
+          "text": "</tr>"
+        },
+        {
+          "index": 110,
+          "text": "<tr>"
+        },
+        {
+          "index": 111,
+          "text": "<td>ccird</td>"
+        },
+        {
+          "index": 112,
+          "text": "<td></td>"
+        },
+        {
+          "index": 113,
+          "text": "</tr>"
+        },
+        {
+          "index": 114,
+          "text": "<tr>"
+        },
+        {
+          "index": 115,
+          "text": "<td>1.4cc</td>"
+        },
+        {
+          "index": 116,
+          "text": "<td></td>"
+        },
+        {
+          "index": 117,
+          "text": "</tr>"
+        },
+        {
+          "index": 118,
+          "text": "<tr>"
+        },
+        {
+          "index": 119,
+          "text": "<td>to pay</td>"
+        },
+        {
+          "index": 120,
+          "text": "<td></td>"
+        },
+        {
+          "index": 121,
+          "text": "</tr>"
+        },
+        {
+          "index": 122,
+          "text": "<tr>"
+        },
+        {
+          "index": 123,
+          "text": "<td>Pan</td>"
+        },
+        {
+          "index": 124,
+          "text": "<td></td>"
+        },
+        {
+          "index": 125,
+          "text": "</tr>"
+        },
+        {
+          "index": 126,
+          "text": "<tr>"
+        },
+        {
+          "index": 127,
+          "text": "<td colspan=\"2\">3 MONTHS WARRANTY INCLUDED</td>"
+        },
+        {
+          "index": 128,
+          "text": "</tr>"
+        },
+        {
+          "index": 129,
+          "text": "</table>"
+        },
+        {
+          "index": 130,
+          "text": "---"
+        },
+        {
+          "index": 131,
+          "text": "<table>"
+        },
+        {
+          "index": 132,
+          "text": "<tr>"
+        },
+        {
+          "index": 133,
+          "text": "<th>£</th>"
+        },
+        {
+          "index": 134,
+          "text": "<th>p</th>"
+        },
+        {
+          "index": 135,
+          "text": "</tr>"
+        },
+        {
+          "index": 136,
+          "text": "<tr>"
+        },
+        {
+          "index": 137,
+          "text": "<td></td>"
+        },
+        {
+          "index": 138,
+          "text": "<td></td>"
+        },
+        {
+          "index": 139,
+          "text": "</tr>"
+        },
+        {
+          "index": 140,
+          "text": "<tr>"
+        },
+        {
+          "index": 141,
+          "text": "<td></td>"
+        },
+        {
+          "index": 142,
+          "text": "<td></td>"
+        },
+        {
+          "index": 143,
+          "text": "</tr>"
+        },
+        {
+          "index": 144,
+          "text": "<tr>"
+        },
+        {
+          "index": 145,
+          "text": "<td></td>"
+        },
+        {
+          "index": 146,
+          "text": "<td></td>"
+        },
+        {
+          "index": 147,
+          "text": "</tr>"
+        },
+        {
+          "index": 148,
+          "text": "<tr>"
+        },
+        {
+          "index": 149,
+          "text": "<td>1.6 00</td>"
+        },
+        {
+          "index": 150,
+          "text": "<td></td>"
+        },
+        {
+          "index": 151,
+          "text": "</tr>"
+        },
+        {
+          "index": 152,
+          "text": "<tr>"
+        },
+        {
+          "index": 153,
+          "text": "<td>289</td>"
+        },
+        {
+          "index": 154,
+          "text": "<td></td>"
+        },
+        {
+          "index": 155,
+          "text": "</tr>"
+        },
+        {
+          "index": 156,
+          "text": "<tr>"
+        },
+        {
+          "index": 157,
+          "text": "<td>depq</td>"
+        },
+        {
+          "index": 158,
+          "text": "<td></td>"
+        },
+        {
+          "index": 159,
+          "text": "</tr>"
+        },
+        {
+          "index": 160,
+          "text": "<tr>"
+        },
+        {
+          "index": 161,
+          "text": "<td>ccird</td>"
+        },
+        {
+          "index": 162,
+          "text": "<td></td>"
+        },
+        {
+          "index": 163,
+          "text": "</tr>"
+        },
+        {
+          "index": 164,
+          "text": "<tr>"
+        },
+        {
+          "index": 165,
+          "text": "<td>1.4cc</td>"
+        },
+        {
+          "index": 166,
+          "text": "<td></td>"
+        },
+        {
+          "index": 167,
+          "text": "</tr>"
+        },
+        {
+          "index": 168,
+          "text": "<tr>"
+        },
+        {
+          "index": 169,
+          "text": "<td>to pay</td>"
+        },
+        {
+          "index": 170,
+          "text": "<td></td>"
+        },
+        {
+          "index": 171,
+          "text": "</tr>"
+        },
+        {
+          "index": 172,
+          "text": "<tr>"
+        },
+        {
+          "index": 173,
+          "text": "<td>Pan</td>"
+        },
+        {
+          "index": 174,
+          "text": "<td></td>"
+        },
+        {
+          "index": 175,
+          "text": "</tr>"
+        },
+        {
+          "index": 176,
+          "text": "<tr>"
+        },
+        {
+          "index": 177,
+          "text": "<td colspan=\"2\">3 MONTHS WARRANTY INCLUDED</td>"
+        },
+        {
+          "index": 178,
+          "text": "</tr>"
+        },
+        {
+          "index": 179,
+          "text": "</table>"
+        },
+        {
+          "index": 180,
+          "text": "---"
+        },
+        {
+          "index": 181,
+          "text": "UCI005/a"
+        }
+      ],
+      "words": [
+        {
+          "index": 1,
+          "text": "#"
+        },
+        {
+          "index": 2,
+          "text": "USED"
+        },
+        {
+          "index": 3,
+          "text": "VEHICLE"
+        },
+        {
+          "index": 4,
+          "text": "INVOICE"
+        },
+        {
+          "index": 5,
+          "text": "##"
+        },
+        {
+          "index": 6,
+          "text": "SOLD"
+        },
+        {
+          "index": 7,
+          "text": "By:"
+        },
+        {
+          "index": 8,
+          "text": "**FCC**"
+        },
+        {
+          "index": 9,
+          "text": "**FOREST**"
+        },
+        {
+          "index": 10,
+          "text": "CROWN"
+        },
+        {
+          "index": 11,
+          "text": "HILL"
+        },
+        {
+          "index": 12,
+          "text": "FARM,"
+        },
+        {
+          "index": 13,
+          "text": "EN93"
+        },
+        {
+          "index": 14,
+          "text": "1F"
+        },
+        {
+          "index": 15,
+          "text": "Name:"
+        },
+        {
+          "index": 16,
+          "text": "*JUNE"
+        },
+        {
+          "index": 17,
+          "text": "HEATHER*"
+        },
+        {
+          "index": 18,
+          "text": "Address:"
+        },
+        {
+          "index": 19,
+          "text": "*6,"
+        },
+        {
+          "index": 20,
+          "text": "PICKLEY"
+        },
+        {
+          "index": 21,
+          "text": "WAY*"
+        },
+        {
+          "index": 22,
+          "text": "*CHESHUNT"
+        },
+        {
+          "index": 23,
+          "text": "HERTS*"
+        },
+        {
+          "index": 24,
+          "text": "*EN7"
+        },
+        {
+          "index": 25,
+          "text": "5DU*"
+        },
+        {
+          "index": 26,
+          "text": "VAT"
+        },
+        {
+          "index": 27,
+          "text": "No."
+        },
+        {
+          "index": 28,
+          "text": "---"
+        },
+        {
+          "index": 29,
+          "text": "##"
+        },
+        {
+          "index": 30,
+          "text": "SOLD"
+        },
+        {
+          "index": 31,
+          "text": "TO:"
+        },
+        {
+          "index": 32,
+          "text": "Name:"
+        },
+        {
+          "index": 33,
+          "text": "___________________________"
+        },
+        {
+          "index": 34,
+          "text": "VAT"
+        },
+        {
+          "index": 35,
+          "text": "No."
+        },
+        {
+          "index": 36,
+          "text": "_________________________"
+        },
+        {
+          "index": 37,
+          "text": "Address:"
+        },
+        {
+          "index": 38,
+          "text": "________________________"
+        },
+        {
+          "index": 39,
+          "text": "Tel"
+        },
+        {
+          "index": 40,
+          "text": "No."
+        },
+        {
+          "index": 41,
+          "text": "_________________________"
+        },
+        {
+          "index": 42,
+          "text": "Mob"
+        },
+        {
+          "index": 43,
+          "text": "No.:"
+        },
+        {
+          "index": 44,
+          "text": "*07539"
+        },
+        {
+          "index": 45,
+          "text": "382554*"
+        },
+        {
+          "index": 46,
+          "text": "Invoice"
+        },
+        {
+          "index": 47,
+          "text": "No."
+        },
+        {
+          "index": 48,
+          "text": "_____"
+        },
+        {
+          "index": 49,
+          "text": "Date"
+        },
+        {
+          "index": 50,
+          "text": "_____"
+        },
+        {
+          "index": 51,
+          "text": "Folio"
+        },
+        {
+          "index": 52,
+          "text": "No."
+        },
+        {
+          "index": 53,
+          "text": "_____"
+        },
+        {
+          "index": 54,
+          "text": "Stock"
+        },
+        {
+          "index": 55,
+          "text": "Book"
+        },
+        {
+          "index": 56,
+          "text": "No"
+        },
+        {
+          "index": 57,
+          "text": "---"
+        },
+        {
+          "index": 58,
+          "text": "I/We"
+        },
+        {
+          "index": 59,
+          "text": "the"
+        },
+        {
+          "index": 60,
+          "text": "undersigned"
+        },
+        {
+          "index": 61,
+          "text": "agree"
+        },
+        {
+          "index": 62,
+          "text": "to"
+        },
+        {
+          "index": 63,
+          "text": "purchase"
+        },
+        {
+          "index": 64,
+          "text": "from"
+        },
+        {
+          "index": 65,
+          "text": "the"
+        },
+        {
+          "index": 66,
+          "text": "above"
+        },
+        {
+          "index": 67,
+          "text": "named"
+        },
+        {
+          "index": 68,
+          "text": "seller"
+        },
+        {
+          "index": 69,
+          "text": "MAKE:"
+        },
+        {
+          "index": 70,
+          "text": "*Pevacot*"
+        },
+        {
+          "index": 71,
+          "text": "MODEL"
+        },
+        {
+          "index": 72,
+          "text": "OR"
+        },
+        {
+          "index": 73,
+          "text": "TYPE:"
+        },
+        {
+          "index": 74,
+          "text": "*107*"
+        },
+        {
+          "index": 75,
+          "text": "REG."
+        },
+        {
+          "index": 76,
+          "text": "No.:"
+        },
+        {
+          "index": 77,
+          "text": "*AK62"
+        },
+        {
+          "index": 78,
+          "text": "HNM*"
+        },
+        {
+          "index": 79,
+          "text": "COLOUR:"
+        },
+        {
+          "index": 80,
+          "text": "*black*"
+        },
+        {
+          "index": 81,
+          "text": "CHASSIS"
+        },
+        {
+          "index": 82,
+          "text": "No."
+        },
+        {
+          "index": 83,
+          "text": "_______________________"
+        },
+        {
+          "index": 84,
+          "text": "ENGINE"
+        },
+        {
+          "index": 85,
+          "text": "No."
+        },
+        {
+          "index": 86,
+          "text": "_______________________"
+        },
+        {
+          "index": 87,
+          "text": "DATE"
+        },
+        {
+          "index": 88,
+          "text": "FIRST"
+        },
+        {
+          "index": 89,
+          "text": "REG"
+        },
+        {
+          "index": 90,
+          "text": "IN"
+        },
+        {
+          "index": 91,
+          "text": "UK"
+        },
+        {
+          "index": 92,
+          "text": "_______________"
+        },
+        {
+          "index": 93,
+          "text": "SPEEDOMETER"
+        },
+        {
+          "index": 94,
+          "text": "READING"
+        },
+        {
+          "index": 95,
+          "text": "_______________"
+        },
+        {
+          "index": 96,
+          "text": "I"
+        },
+        {
+          "index": 97,
+          "text": "declare"
+        },
+        {
+          "index": 98,
+          "text": "that"
+        },
+        {
+          "index": 99,
+          "text": "I"
+        },
+        {
+          "index": 100,
+          "text": "am"
+        },
+        {
+          "index": 101,
+          "text": "the"
+        },
+        {
+          "index": 102,
+          "text": "buyer"
+        },
+        {
+          "index": 103,
+          "text": "of"
+        },
+        {
+          "index": 104,
+          "text": "the"
+        },
+        {
+          "index": 105,
+          "text": "vehicle"
+        },
+        {
+          "index": 106,
+          "text": "described"
+        },
+        {
+          "index": 107,
+          "text": "above"
+        },
+        {
+          "index": 108,
+          "text": "at"
+        },
+        {
+          "index": 109,
+          "text": "the"
+        },
+        {
+          "index": 110,
+          "text": "price"
+        },
+        {
+          "index": 111,
+          "text": "stated"
+        },
+        {
+          "index": 112,
+          "text": "below"
+        },
+        {
+          "index": 113,
+          "text": "or"
+        },
+        {
+          "index": 114,
+          "text": "(where"
+        },
+        {
+          "index": 115,
+          "text": "the"
+        },
+        {
+          "index": 116,
+          "text": "vehicle"
+        },
+        {
+          "index": 117,
+          "text": "is"
+        },
+        {
+          "index": 118,
+          "text": "sold"
+        },
+        {
+          "index": 119,
+          "text": "to"
+        },
+        {
+          "index": 120,
+          "text": "a"
+        },
+        {
+          "index": 121,
+          "text": "finance"
+        },
+        {
+          "index": 122,
+          "text": "company)"
+        },
+        {
+          "index": 123,
+          "text": "I"
+        },
+        {
+          "index": 124,
+          "text": "acknowledge"
+        },
+        {
+          "index": 125,
+          "text": "receiving"
+        },
+        {
+          "index": 126,
+          "text": "delivery"
+        },
+        {
+          "index": 127,
+          "text": "of"
+        },
+        {
+          "index": 128,
+          "text": "the"
+        },
+        {
+          "index": 129,
+          "text": "vehicle"
+        },
+        {
+          "index": 130,
+          "text": "described"
+        },
+        {
+          "index": 131,
+          "text": "above."
+        },
+        {
+          "index": 132,
+          "text": "*Commercial"
+        },
+        {
+          "index": 133,
+          "text": "Vehicles"
+        },
+        {
+          "index": 134,
+          "text": "only*"
+        },
+        {
+          "index": 135,
+          "text": "Date:"
+        },
+        {
+          "index": 136,
+          "text": "*13/01/25*"
+        },
+        {
+          "index": 137,
+          "text": "Signature:"
+        },
+        {
+          "index": 138,
+          "text": "_________________________"
+        },
+        {
+          "index": 139,
+          "text": "DEDUCT:"
+        },
+        {
+          "index": 140,
+          "text": "Allowance"
+        },
+        {
+          "index": 141,
+          "text": "for"
+        },
+        {
+          "index": 142,
+          "text": "used"
+        },
+        {
+          "index": 143,
+          "text": "vehicle"
+        },
+        {
+          "index": 144,
+          "text": "which"
+        },
+        {
+          "index": 145,
+          "text": "I/we"
+        },
+        {
+          "index": 146,
+          "text": "certify"
+        },
+        {
+          "index": 147,
+          "text": "conforms"
+        },
+        {
+          "index": 148,
+          "text": "to"
+        },
+        {
+          "index": 149,
+          "text": "the"
+        },
+        {
+          "index": 150,
+          "text": "following"
+        },
+        {
+          "index": 151,
+          "text": "description"
+        },
+        {
+          "index": 152,
+          "text": "(is"
+        },
+        {
+          "index": 153,
+          "text": "my/our"
+        },
+        {
+          "index": 154,
+          "text": "own"
+        },
+        {
+          "index": 155,
+          "text": "property"
+        },
+        {
+          "index": 156,
+          "text": "and"
+        },
+        {
+          "index": 157,
+          "text": "free"
+        },
+        {
+          "index": 158,
+          "text": "from"
+        },
+        {
+          "index": 159,
+          "text": "any"
+        },
+        {
+          "index": 160,
+          "text": "lien"
+        },
+        {
+          "index": 161,
+          "text": "or"
+        },
+        {
+          "index": 162,
+          "text": "legal"
+        },
+        {
+          "index": 163,
+          "text": "encumbrances/is"
+        },
+        {
+          "index": 164,
+          "text": "subject"
+        },
+        {
+          "index": 165,
+          "text": "to"
+        },
+        {
+          "index": 166,
+          "text": "H.P."
+        },
+        {
+          "index": 167,
+          "text": "as"
+        },
+        {
+          "index": 168,
+          "text": "stated)."
+        },
+        {
+          "index": 169,
+          "text": "MAKE:"
+        },
+        {
+          "index": 170,
+          "text": "_________________________"
+        },
+        {
+          "index": 171,
+          "text": "MODEL:"
+        },
+        {
+          "index": 172,
+          "text": "_________________________"
+        },
+        {
+          "index": 173,
+          "text": "REG."
+        },
+        {
+          "index": 174,
+          "text": "No.:"
+        },
+        {
+          "index": 175,
+          "text": "______________________"
+        },
+        {
+          "index": 176,
+          "text": "COLOUR:"
+        },
+        {
+          "index": 177,
+          "text": "_______________________"
+        },
+        {
+          "index": 178,
+          "text": "CHASSIS"
+        },
+        {
+          "index": 179,
+          "text": "No."
+        },
+        {
+          "index": 180,
+          "text": "_______________________"
+        },
+        {
+          "index": 181,
+          "text": "ENGINE"
+        },
+        {
+          "index": 182,
+          "text": "No."
+        },
+        {
+          "index": 183,
+          "text": "_______________________"
+        },
+        {
+          "index": 184,
+          "text": "FIRST"
+        },
+        {
+          "index": 185,
+          "text": "REG"
+        },
+        {
+          "index": 186,
+          "text": "_______________________"
+        },
+        {
+          "index": 187,
+          "text": "LESS"
+        },
+        {
+          "index": 188,
+          "text": "Amount"
+        },
+        {
+          "index": 189,
+          "text": "outstanding"
+        },
+        {
+          "index": 190,
+          "text": "subject"
+        },
+        {
+          "index": 191,
+          "text": "to"
+        },
+        {
+          "index": 192,
+          "text": "H.P."
+        },
+        {
+          "index": 193,
+          "text": "with"
+        },
+        {
+          "index": 194,
+          "text": "_______________________"
+        },
+        {
+          "index": 195,
+          "text": "(Company)"
+        },
+        {
+          "index": 196,
+          "text": "NET"
+        },
+        {
+          "index": 197,
+          "text": "ALLOWANCE"
+        },
+        {
+          "index": 198,
+          "text": "CASH"
+        },
+        {
+          "index": 199,
+          "text": "DEPOSIT"
+        },
+        {
+          "index": 200,
+          "text": "---"
+        },
+        {
+          "index": 201,
+          "text": "Declaration"
+        },
+        {
+          "index": 202,
+          "text": "by"
+        },
+        {
+          "index": 203,
+          "text": "the"
+        },
+        {
+          "index": 204,
+          "text": "seller:"
+        },
+        {
+          "index": 205,
+          "text": "Input"
+        },
+        {
+          "index": 206,
+          "text": "tax"
+        },
+        {
+          "index": 207,
+          "text": "deduction"
+        },
+        {
+          "index": 208,
+          "text": "has"
+        },
+        {
+          "index": 209,
+          "text": "not"
+        },
+        {
+          "index": 210,
+          "text": "been"
+        },
+        {
+          "index": 211,
+          "text": "and"
+        },
+        {
+          "index": 212,
+          "text": "will"
+        },
+        {
+          "index": 213,
+          "text": "not"
+        },
+        {
+          "index": 214,
+          "text": "be"
+        },
+        {
+          "index": 215,
+          "text": "claimed"
+        },
+        {
+          "index": 216,
+          "text": "by"
+        },
+        {
+          "index": 217,
+          "text": "me"
+        },
+        {
+          "index": 218,
+          "text": "in"
+        },
+        {
+          "index": 219,
+          "text": "respect"
+        },
+        {
+          "index": 220,
+          "text": "of"
+        },
+        {
+          "index": 221,
+          "text": "the"
+        },
+        {
+          "index": 222,
+          "text": "vehicle"
+        },
+        {
+          "index": 223,
+          "text": "sold"
+        },
+        {
+          "index": 224,
+          "text": "on"
+        },
+        {
+          "index": 225,
+          "text": "this"
+        },
+        {
+          "index": 226,
+          "text": "invoice."
+        },
+        {
+          "index": 227,
+          "text": "Date:"
+        },
+        {
+          "index": 228,
+          "text": "*13/01/25*"
+        },
+        {
+          "index": 229,
+          "text": "Signature:"
+        },
+        {
+          "index": 230,
+          "text": "_________________________"
+        },
+        {
+          "index": 231,
+          "text": "---"
+        },
+        {
+          "index": 232,
+          "text": "**CUSTOMER**"
+        },
+        {
+          "index": 233,
+          "text": "Forest"
+        },
+        {
+          "index": 234,
+          "text": "Car"
+        },
+        {
+          "index": 235,
+          "text": "Con"
+        },
+        {
+          "index": 236,
+          "text": "Or:"
+        },
+        {
+          "index": 237,
+          "text": "*1384*"
+        },
+        {
+          "index": 238,
+          "text": "A9:"
+        },
+        {
+          "index": 239,
+          "text": "*1852915065*"
+        },
+        {
+          "index": 240,
+          "text": "Dai:"
+        },
+        {
+          "index": 241,
+          "text": "*14/01/2025,"
+        },
+        {
+          "index": 242,
+          "text": "14:57:36*"
+        },
+        {
+          "index": 243,
+          "text": "***"
+        },
+        {
+          "index": 244,
+          "text": "takepayment."
+        },
+        {
+          "index": 245,
+          "text": "Cust"
+        },
+        {
+          "index": 246,
+          "text": "Custom"
+        },
+        {
+          "index": 247,
+          "text": "£1400.00"
+        },
+        {
+          "index": 248,
+          "text": "Total:"
+        },
+        {
+          "index": 249,
+          "text": "Total:"
+        },
+        {
+          "index": 250,
+          "text": "£1400.00"
+        },
+        {
+          "index": 251,
+          "text": "****"
+        },
+        {
+          "index": 252,
+          "text": "SALE"
+        },
+        {
+          "index": 253,
+          "text": "PIN"
+        },
+        {
+          "index": 254,
+          "text": "VERIFIED"
+        },
+        {
+          "index": 255,
+          "text": "Amount:"
+        },
+        {
+          "index": 256,
+          "text": "Amount:"
+        },
+        {
+          "index": 257,
+          "text": "£1400.00"
+        },
+        {
+          "index": 258,
+          "text": "MID:"
+        },
+        {
+          "index": 259,
+          "text": "MID:"
+        },
+        {
+          "index": 260,
+          "text": "***1775"
+        },
+        {
+          "index": 261,
+          "text": "TID:"
+        },
+        {
+          "index": 262,
+          "text": "TID:"
+        },
+        {
+          "index": 263,
+          "text": "****1149"
+        },
+        {
+          "index": 264,
+          "text": "AID:"
+        },
+        {
+          "index": 265,
+          "text": "AID:"
+        },
+        {
+          "index": 266,
+          "text": "A000000003101"
+        },
+        {
+          "index": 267,
+          "text": "TC:"
+        },
+        {
+          "index": 268,
+          "text": "TC:"
+        },
+        {
+          "index": 269,
+          "text": "A107823CD59A358"
+        },
+        {
+          "index": 270,
+          "text": "RECEIPT"
+        },
+        {
+          "index": 271,
+          "text": "RECEIPT"
+        },
+        {
+          "index": 272,
+          "text": "NO:"
+        },
+        {
+          "index": 273,
+          "text": "34"
+        },
+        {
+          "index": 274,
+          "text": "APP"
+        },
+        {
+          "index": 275,
+          "text": "SEQ:"
+        },
+        {
+          "index": 276,
+          "text": "APP"
+        },
+        {
+          "index": 277,
+          "text": "SEQ:"
+        },
+        {
+          "index": 278,
+          "text": "00"
+        },
+        {
+          "index": 279,
+          "text": "Type:"
+        },
+        {
+          "index": 280,
+          "text": "Type:"
+        },
+        {
+          "index": 281,
+          "text": "EI"
+        },
+        {
+          "index": 282,
+          "text": "Scheme:"
+        },
+        {
+          "index": 283,
+          "text": "Scheme:"
+        },
+        {
+          "index": 284,
+          "text": "VI"
+        },
+        {
+          "index": 285,
+          "text": "Mask:"
+        },
+        {
+          "index": 286,
+          "text": "Mask:"
+        },
+        {
+          "index": 287,
+          "text": "**********93"
+        },
+        {
+          "index": 288,
+          "text": "Response"
+        },
+        {
+          "index": 289,
+          "text": "Code:"
+        },
+        {
+          "index": 290,
+          "text": "0140"
+        },
+        {
+          "index": 291,
+          "text": "Auth"
+        },
+        {
+          "index": 292,
+          "text": "Code:"
+        },
+        {
+          "index": 293,
+          "text": "Auth"
+        },
+        {
+          "index": 294,
+          "text": "Code:"
+        },
+        {
+          "index": 295,
+          "text": "---"
+        },
+        {
+          "index": 296,
+          "text": "<table>"
+        },
+        {
+          "index": 297,
+          "text": "<tr>"
+        },
+        {
+          "index": 298,
+          "text": "<th>£</th>"
+        },
+        {
+          "index": 299,
+          "text": "<th>p</th>"
+        },
+        {
+          "index": 300,
+          "text": "</tr>"
+        },
+        {
+          "index": 301,
+          "text": "<tr>"
+        },
+        {
+          "index": 302,
+          "text": "<td></td>"
+        },
+        {
+          "index": 303,
+          "text": "<td></td>"
+        },
+        {
+          "index": 304,
+          "text": "</tr>"
+        },
+        {
+          "index": 305,
+          "text": "<tr>"
+        },
+        {
+          "index": 306,
+          "text": "<td></td>"
+        },
+        {
+          "index": 307,
+          "text": "<td></td>"
+        },
+        {
+          "index": 308,
+          "text": "</tr>"
+        },
+        {
+          "index": 309,
+          "text": "<tr>"
+        },
+        {
+          "index": 310,
+          "text": "<td></td>"
+        },
+        {
+          "index": 311,
+          "text": "<td></td>"
+        },
+        {
+          "index": 312,
+          "text": "</tr>"
+        },
+        {
+          "index": 313,
+          "text": "<tr>"
+        },
+        {
+          "index": 314,
+          "text": "<td>1.6"
+        },
+        {
+          "index": 315,
+          "text": "00</td>"
+        },
+        {
+          "index": 316,
+          "text": "<td></td>"
+        },
+        {
+          "index": 317,
+          "text": "</tr>"
+        },
+        {
+          "index": 318,
+          "text": "<tr>"
+        },
+        {
+          "index": 319,
+          "text": "<td>289</td>"
+        },
+        {
+          "index": 320,
+          "text": "<td></td>"
+        },
+        {
+          "index": 321,
+          "text": "</tr>"
+        },
+        {
+          "index": 322,
+          "text": "<tr>"
+        },
+        {
+          "index": 323,
+          "text": "<td>depq</td>"
+        },
+        {
+          "index": 324,
+          "text": "<td></td>"
+        },
+        {
+          "index": 325,
+          "text": "</tr>"
+        },
+        {
+          "index": 326,
+          "text": "<tr>"
+        },
+        {
+          "index": 327,
+          "text": "<td>ccird</td>"
+        },
+        {
+          "index": 328,
+          "text": "<td></td>"
+        },
+        {
+          "index": 329,
+          "text": "</tr>"
+        },
+        {
+          "index": 330,
+          "text": "<tr>"
+        },
+        {
+          "index": 331,
+          "text": "<td>1.4cc</td>"
+        },
+        {
+          "index": 332,
+          "text": "<td></td>"
+        },
+        {
+          "index": 333,
+          "text": "</tr>"
+        },
+        {
+          "index": 334,
+          "text": "<tr>"
+        },
+        {
+          "index": 335,
+          "text": "<td>to"
+        },
+        {
+          "index": 336,
+          "text": "pay</td>"
+        },
+        {
+          "index": 337,
+          "text": "<td></td>"
+        },
+        {
+          "index": 338,
+          "text": "</tr>"
+        },
+        {
+          "index": 339,
+          "text": "<tr>"
+        },
+        {
+          "index": 340,
+          "text": "<td>Pan</td>"
+        },
+        {
+          "index": 341,
+          "text": "<td></td>"
+        },
+        {
+          "index": 342,
+          "text": "</tr>"
+        },
+        {
+          "index": 343,
+          "text": "<tr>"
+        },
+        {
+          "index": 344,
+          "text": "<td"
+        },
+        {
+          "index": 345,
+          "text": "colspan=\"2\">3"
+        },
+        {
+          "index": 346,
+          "text": "MONTHS"
+        },
+        {
+          "index": 347,
+          "text": "WARRANTY"
+        },
+        {
+          "index": 348,
+          "text": "INCLUDED</td>"
+        },
+        {
+          "index": 349,
+          "text": "</tr>"
+        },
+        {
+          "index": 350,
+          "text": "</table>"
+        },
+        {
+          "index": 351,
+          "text": "---"
+        },
+        {
+          "index": 352,
+          "text": "<table>"
+        },
+        {
+          "index": 353,
+          "text": "<tr>"
+        },
+        {
+          "index": 354,
+          "text": "<th>£</th>"
+        },
+        {
+          "index": 355,
+          "text": "<th>p</th>"
+        },
+        {
+          "index": 356,
+          "text": "</tr>"
+        },
+        {
+          "index": 357,
+          "text": "<tr>"
+        },
+        {
+          "index": 358,
+          "text": "<td></td>"
+        },
+        {
+          "index": 359,
+          "text": "<td></td>"
+        },
+        {
+          "index": 360,
+          "text": "</tr>"
+        },
+        {
+          "index": 361,
+          "text": "<tr>"
+        },
+        {
+          "index": 362,
+          "text": "<td></td>"
+        },
+        {
+          "index": 363,
+          "text": "<td></td>"
+        },
+        {
+          "index": 364,
+          "text": "</tr>"
+        },
+        {
+          "index": 365,
+          "text": "<tr>"
+        },
+        {
+          "index": 366,
+          "text": "<td></td>"
+        },
+        {
+          "index": 367,
+          "text": "<td></td>"
+        },
+        {
+          "index": 368,
+          "text": "</tr>"
+        },
+        {
+          "index": 369,
+          "text": "<tr>"
+        },
+        {
+          "index": 370,
+          "text": "<td>1.6"
+        },
+        {
+          "index": 371,
+          "text": "00</td>"
+        },
+        {
+          "index": 372,
+          "text": "<td></td>"
+        },
+        {
+          "index": 373,
+          "text": "</tr>"
+        },
+        {
+          "index": 374,
+          "text": "<tr>"
+        },
+        {
+          "index": 375,
+          "text": "<td>289</td>"
+        },
+        {
+          "index": 376,
+          "text": "<td></td>"
+        },
+        {
+          "index": 377,
+          "text": "</tr>"
+        },
+        {
+          "index": 378,
+          "text": "<tr>"
+        },
+        {
+          "index": 379,
+          "text": "<td>depq</td>"
+        },
+        {
+          "index": 380,
+          "text": "<td></td>"
+        },
+        {
+          "index": 381,
+          "text": "</tr>"
+        },
+        {
+          "index": 382,
+          "text": "<tr>"
+        },
+        {
+          "index": 383,
+          "text": "<td>ccird</td>"
+        },
+        {
+          "index": 384,
+          "text": "<td></td>"
+        },
+        {
+          "index": 385,
+          "text": "</tr>"
+        },
+        {
+          "index": 386,
+          "text": "<tr>"
+        },
+        {
+          "index": 387,
+          "text": "<td>1.4cc</td>"
+        },
+        {
+          "index": 388,
+          "text": "<td></td>"
+        },
+        {
+          "index": 389,
+          "text": "</tr>"
+        },
+        {
+          "index": 390,
+          "text": "<tr>"
+        },
+        {
+          "index": 391,
+          "text": "<td>to"
+        },
+        {
+          "index": 392,
+          "text": "pay</td>"
+        },
+        {
+          "index": 393,
+          "text": "<td></td>"
+        },
+        {
+          "index": 394,
+          "text": "</tr>"
+        },
+        {
+          "index": 395,
+          "text": "<tr>"
+        },
+        {
+          "index": 396,
+          "text": "<td>Pan</td>"
+        },
+        {
+          "index": 397,
+          "text": "<td></td>"
+        },
+        {
+          "index": 398,
+          "text": "</tr>"
+        },
+        {
+          "index": 399,
+          "text": "<tr>"
+        },
+        {
+          "index": 400,
+          "text": "<td"
+        },
+        {
+          "index": 401,
+          "text": "colspan=\"2\">3"
+        },
+        {
+          "index": 402,
+          "text": "MONTHS"
+        },
+        {
+          "index": 403,
+          "text": "WARRANTY"
+        },
+        {
+          "index": 404,
+          "text": "INCLUDED</td>"
+        },
+        {
+          "index": 405,
+          "text": "</tr>"
+        },
+        {
+          "index": 406,
+          "text": "</table>"
+        },
+        {
+          "index": 407,
+          "text": "---"
+        },
+        {
+          "index": 408,
+          "text": "UCI005/a"
+        }
+      ],
+      "detections": []
+    }
+  ]
+}

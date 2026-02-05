@@ -1,0 +1,1428 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "",
+      "supplier": "",
+      "inv_ref_no": "",
+      "make": "",
+      "model": "",
+      "colour": "",
+      "reg_no": "N/A",
+      "buying_price": "N/A",
+      "non_vat": "N/A",
+      "std_net": "N/A",
+      "vat_amount": "N/A"
+    },
+    {
+      "sr_no": 2,
+      "category": "expense",
+      "document_date": "",
+      "supplier": "1 salt&pepper chicken 1 spring rolls 6.30 1 salt & pepper Ribs 9 1 plain fried noodles 7.6 ~veg with: with chicken 1 chicken katsu & curry sauce (4 with: boiled rice (38W) 1 yum yum beef rice 9 with:",
+      "inv_ref_no": "",
+      "make": "",
+      "model": "",
+      "colour": "",
+      "reg_no": "N/A",
+      "buying_price": 6.3,
+      "non_vat": 6.3,
+      "std_net": "N/A",
+      "vat_amount": "N/A"
+    },
+    {
+      "sr_no": 3,
+      "category": "purchase",
+      "document_date": "",
+      "supplier": "",
+      "inv_ref_no": "",
+      "make": "",
+      "model": "",
+      "colour": "",
+      "reg_no": "N/A",
+      "buying_price": "N/A",
+      "non_vat": "N/A",
+      "std_net": "N/A",
+      "vat_amount": "N/A"
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "img20250223_11432878.pdf",
+      "content_type": "application/pdf",
+      "model_name": "LightOnOCR-2-1B (Best OCR)",
+      "has_bbox": false,
+      "engine": "easyocr",
+      "raw_output": "Chingford Warehouse (0208 501 9305 ) Costco Wholesale UK Limited UK Home Off Ice , HartsprIng Lane Watford, Herts. WD25 8JS Reg . In England No: 2635489 AWRS No: Xvawooooo102593 VaT No: 650 1862 52\n\n1 salt&pepper chicken 1 spring rolls 6.30 1 salt & pepper Ribs 9 1 plain fried noodles 7.6 ~veg with: with chicken 1 chicken katsu & curry sauce (4 with: boiled rice (38W) 1 yum yum beef rice 9 with: -NO RICE 1 still water 330ml 2.8 Meal total 55.60 Payable {55.60 M8: E55,60 pork\n\nCongratulatlons as an executive You have E10.23 towards annual executIve reward. Not an executlve member 2 VIsit our Membershle Desk to learn More. earned",
+      "cleaned_text": "Chingford Warehouse (0208 501 9305 ) Costco Wholesale UK Limited UK Home Off Ice , HartsprIng Lane Watford, Herts. WD25 8JS Reg . In England No: 2635489 AWRS No: Xvawooooo102593 VaT No: 650 1862 52\n\n1 salt&pepper chicken 1 spring rolls 6.30 1 salt & pepper Ribs 9 1 plain fried noodles 7.6 ~veg with: with chicken 1 chicken katsu & curry sauce (4 with: boiled rice (38W) 1 yum yum beef rice 9 with: -NO RICE 1 still water 330ml 2.8 Meal total 55.60 Payable {55.60 M8: E55,60 pork\n\nCongratulatlons as an executive You have E10.23 towards annual executIve reward. Not an executlve member 2 VIsit our Membershle Desk to learn More. earned",
+      "lines": [
+        {
+          "index": 1,
+          "text": "Chingford Warehouse (0208 501 9305 ) Costco Wholesale UK Limited UK Home Off Ice , HartsprIng Lane Watford, Herts. WD25 8JS Reg . In England No: 2635489 AWRS No: Xvawooooo102593 VaT No: 650 1862 52"
+        },
+        {
+          "index": 2,
+          "text": "1 salt&pepper chicken 1 spring rolls 6.30 1 salt & pepper Ribs 9 1 plain fried noodles 7.6 ~veg with: with chicken 1 chicken katsu & curry sauce (4 with: boiled rice (38W) 1 yum yum beef rice 9 with: -NO RICE 1 still water 330ml 2.8 Meal total 55.60 Payable {55.60 M8: E55,60 pork"
+        },
+        {
+          "index": 3,
+          "text": "Congratulatlons as an executive You have E10.23 towards annual executIve reward. Not an executlve member 2 VIsit our Membershle Desk to learn More. earned"
+        }
+      ],
+      "words": [
+        {
+          "index": 1,
+          "text": "Chingford"
+        },
+        {
+          "index": 2,
+          "text": "Warehouse"
+        },
+        {
+          "index": 3,
+          "text": "(0208"
+        },
+        {
+          "index": 4,
+          "text": "501"
+        },
+        {
+          "index": 5,
+          "text": "9305"
+        },
+        {
+          "index": 6,
+          "text": ")"
+        },
+        {
+          "index": 7,
+          "text": "Costco"
+        },
+        {
+          "index": 8,
+          "text": "Wholesale"
+        },
+        {
+          "index": 9,
+          "text": "UK"
+        },
+        {
+          "index": 10,
+          "text": "Limited"
+        },
+        {
+          "index": 11,
+          "text": "UK"
+        },
+        {
+          "index": 12,
+          "text": "Home"
+        },
+        {
+          "index": 13,
+          "text": "Off"
+        },
+        {
+          "index": 14,
+          "text": "Ice"
+        },
+        {
+          "index": 15,
+          "text": ","
+        },
+        {
+          "index": 16,
+          "text": "HartsprIng"
+        },
+        {
+          "index": 17,
+          "text": "Lane"
+        },
+        {
+          "index": 18,
+          "text": "Watford,"
+        },
+        {
+          "index": 19,
+          "text": "Herts."
+        },
+        {
+          "index": 20,
+          "text": "WD25"
+        },
+        {
+          "index": 21,
+          "text": "8JS"
+        },
+        {
+          "index": 22,
+          "text": "Reg"
+        },
+        {
+          "index": 23,
+          "text": "."
+        },
+        {
+          "index": 24,
+          "text": "In"
+        },
+        {
+          "index": 25,
+          "text": "England"
+        },
+        {
+          "index": 26,
+          "text": "No:"
+        },
+        {
+          "index": 27,
+          "text": "2635489"
+        },
+        {
+          "index": 28,
+          "text": "AWRS"
+        },
+        {
+          "index": 29,
+          "text": "No:"
+        },
+        {
+          "index": 30,
+          "text": "Xvawooooo102593"
+        },
+        {
+          "index": 31,
+          "text": "VaT"
+        },
+        {
+          "index": 32,
+          "text": "No:"
+        },
+        {
+          "index": 33,
+          "text": "650"
+        },
+        {
+          "index": 34,
+          "text": "1862"
+        },
+        {
+          "index": 35,
+          "text": "52"
+        },
+        {
+          "index": 36,
+          "text": "1"
+        },
+        {
+          "index": 37,
+          "text": "salt&pepper"
+        },
+        {
+          "index": 38,
+          "text": "chicken"
+        },
+        {
+          "index": 39,
+          "text": "1"
+        },
+        {
+          "index": 40,
+          "text": "spring"
+        },
+        {
+          "index": 41,
+          "text": "rolls"
+        },
+        {
+          "index": 42,
+          "text": "6.30"
+        },
+        {
+          "index": 43,
+          "text": "1"
+        },
+        {
+          "index": 44,
+          "text": "salt"
+        },
+        {
+          "index": 45,
+          "text": "&"
+        },
+        {
+          "index": 46,
+          "text": "pepper"
+        },
+        {
+          "index": 47,
+          "text": "Ribs"
+        },
+        {
+          "index": 48,
+          "text": "9"
+        },
+        {
+          "index": 49,
+          "text": "1"
+        },
+        {
+          "index": 50,
+          "text": "plain"
+        },
+        {
+          "index": 51,
+          "text": "fried"
+        },
+        {
+          "index": 52,
+          "text": "noodles"
+        },
+        {
+          "index": 53,
+          "text": "7.6"
+        },
+        {
+          "index": 54,
+          "text": "~veg"
+        },
+        {
+          "index": 55,
+          "text": "with:"
+        },
+        {
+          "index": 56,
+          "text": "with"
+        },
+        {
+          "index": 57,
+          "text": "chicken"
+        },
+        {
+          "index": 58,
+          "text": "1"
+        },
+        {
+          "index": 59,
+          "text": "chicken"
+        },
+        {
+          "index": 60,
+          "text": "katsu"
+        },
+        {
+          "index": 61,
+          "text": "&"
+        },
+        {
+          "index": 62,
+          "text": "curry"
+        },
+        {
+          "index": 63,
+          "text": "sauce"
+        },
+        {
+          "index": 64,
+          "text": "(4"
+        },
+        {
+          "index": 65,
+          "text": "with:"
+        },
+        {
+          "index": 66,
+          "text": "boiled"
+        },
+        {
+          "index": 67,
+          "text": "rice"
+        },
+        {
+          "index": 68,
+          "text": "(38W)"
+        },
+        {
+          "index": 69,
+          "text": "1"
+        },
+        {
+          "index": 70,
+          "text": "yum"
+        },
+        {
+          "index": 71,
+          "text": "yum"
+        },
+        {
+          "index": 72,
+          "text": "beef"
+        },
+        {
+          "index": 73,
+          "text": "rice"
+        },
+        {
+          "index": 74,
+          "text": "9"
+        },
+        {
+          "index": 75,
+          "text": "with:"
+        },
+        {
+          "index": 76,
+          "text": "-NO"
+        },
+        {
+          "index": 77,
+          "text": "RICE"
+        },
+        {
+          "index": 78,
+          "text": "1"
+        },
+        {
+          "index": 79,
+          "text": "still"
+        },
+        {
+          "index": 80,
+          "text": "water"
+        },
+        {
+          "index": 81,
+          "text": "330ml"
+        },
+        {
+          "index": 82,
+          "text": "2.8"
+        },
+        {
+          "index": 83,
+          "text": "Meal"
+        },
+        {
+          "index": 84,
+          "text": "total"
+        },
+        {
+          "index": 85,
+          "text": "55.60"
+        },
+        {
+          "index": 86,
+          "text": "Payable"
+        },
+        {
+          "index": 87,
+          "text": "{55.60"
+        },
+        {
+          "index": 88,
+          "text": "M8:"
+        },
+        {
+          "index": 89,
+          "text": "E55,60"
+        },
+        {
+          "index": 90,
+          "text": "pork"
+        },
+        {
+          "index": 91,
+          "text": "Congratulatlons"
+        },
+        {
+          "index": 92,
+          "text": "as"
+        },
+        {
+          "index": 93,
+          "text": "an"
+        },
+        {
+          "index": 94,
+          "text": "executive"
+        },
+        {
+          "index": 95,
+          "text": "You"
+        },
+        {
+          "index": 96,
+          "text": "have"
+        },
+        {
+          "index": 97,
+          "text": "E10.23"
+        },
+        {
+          "index": 98,
+          "text": "towards"
+        },
+        {
+          "index": 99,
+          "text": "annual"
+        },
+        {
+          "index": 100,
+          "text": "executIve"
+        },
+        {
+          "index": 101,
+          "text": "reward."
+        },
+        {
+          "index": 102,
+          "text": "Not"
+        },
+        {
+          "index": 103,
+          "text": "an"
+        },
+        {
+          "index": 104,
+          "text": "executlve"
+        },
+        {
+          "index": 105,
+          "text": "member"
+        },
+        {
+          "index": 106,
+          "text": "2"
+        },
+        {
+          "index": 107,
+          "text": "VIsit"
+        },
+        {
+          "index": 108,
+          "text": "our"
+        },
+        {
+          "index": 109,
+          "text": "Membershle"
+        },
+        {
+          "index": 110,
+          "text": "Desk"
+        },
+        {
+          "index": 111,
+          "text": "to"
+        },
+        {
+          "index": 112,
+          "text": "learn"
+        },
+        {
+          "index": 113,
+          "text": "More."
+        },
+        {
+          "index": 114,
+          "text": "earned"
+        }
+      ],
+      "all_words": [
+        "Chingford",
+        "Warehouse",
+        "(0208",
+        "501",
+        "9305",
+        ")",
+        "Costco",
+        "Wholesale",
+        "UK",
+        "Limited",
+        "UK",
+        "Home",
+        "Off",
+        "Ice",
+        ",",
+        "HartsprIng",
+        "Lane",
+        "Watford,",
+        "Herts.",
+        "WD25",
+        "8JS",
+        "Reg",
+        ".",
+        "In",
+        "England",
+        "No:",
+        "2635489",
+        "AWRS",
+        "No:",
+        "Xvawooooo102593",
+        "VaT",
+        "No:",
+        "650",
+        "1862",
+        "52",
+        "1",
+        "salt&pepper",
+        "chicken",
+        "1",
+        "spring",
+        "rolls",
+        "6.30",
+        "1",
+        "salt",
+        "&",
+        "pepper",
+        "Ribs",
+        "9",
+        "1",
+        "plain",
+        "fried",
+        "noodles",
+        "7.6",
+        "~veg",
+        "with:",
+        "with",
+        "chicken",
+        "1",
+        "chicken",
+        "katsu",
+        "&",
+        "curry",
+        "sauce",
+        "(4",
+        "with:",
+        "boiled",
+        "rice",
+        "(38W)",
+        "1",
+        "yum",
+        "yum",
+        "beef",
+        "rice",
+        "9",
+        "with:",
+        "-NO",
+        "RICE",
+        "1",
+        "still",
+        "water",
+        "330ml",
+        "2.8",
+        "Meal",
+        "total",
+        "55.60",
+        "Payable",
+        "{55.60",
+        "M8:",
+        "E55,60",
+        "pork",
+        "Congratulatlons",
+        "as",
+        "an",
+        "executive",
+        "You",
+        "have",
+        "E10.23",
+        "towards",
+        "annual",
+        "executIve",
+        "reward.",
+        "Not",
+        "an",
+        "executlve",
+        "member",
+        "2",
+        "VIsit",
+        "our",
+        "Membershle",
+        "Desk",
+        "to",
+        "learn",
+        "More.",
+        "earned"
+      ],
+      "ocr_items": [],
+      "ocr_debug": {
+        "lighton_error": "",
+        "easyocr_error": "",
+        "tesseract_error": "",
+        "lighton_raw_len": 0,
+        "easyocr_items": 0,
+        "cleaned_len": 635
+      },
+      "detections": [],
+      "receipts": [
+        {
+          "index": 1,
+          "page_index": 1,
+          "bbox": [
+            1,
+            378,
+            951,
+            798
+          ],
+          "engine": "easyocr",
+          "raw_output": "Chingford Warehouse (0208 501 9305 ) Costco Wholesale UK Limited UK Home Off Ice , HartsprIng Lane Watford, Herts. WD25 8JS Reg . In England No: 2635489 AWRS No: Xvawooooo102593 VaT No: 650 1862 52",
+          "cleaned_text": "Chingford Warehouse (0208 501 9305 ) Costco Wholesale UK Limited UK Home Off Ice , HartsprIng Lane Watford, Herts. WD25 8JS Reg . In England No: 2635489 AWRS No: Xvawooooo102593 VaT No: 650 1862 52",
+          "lines": [
+            {
+              "index": 1,
+              "text": "Chingford Warehouse (0208 501 9305 ) Costco Wholesale UK Limited UK Home Off Ice , HartsprIng Lane Watford, Herts. WD25 8JS Reg . In England No: 2635489 AWRS No: Xvawooooo102593 VaT No: 650 1862 52"
+            }
+          ],
+          "words": [
+            {
+              "index": 1,
+              "text": "Chingford"
+            },
+            {
+              "index": 2,
+              "text": "Warehouse"
+            },
+            {
+              "index": 3,
+              "text": "(0208"
+            },
+            {
+              "index": 4,
+              "text": "501"
+            },
+            {
+              "index": 5,
+              "text": "9305"
+            },
+            {
+              "index": 6,
+              "text": ")"
+            },
+            {
+              "index": 7,
+              "text": "Costco"
+            },
+            {
+              "index": 8,
+              "text": "Wholesale"
+            },
+            {
+              "index": 9,
+              "text": "UK"
+            },
+            {
+              "index": 10,
+              "text": "Limited"
+            },
+            {
+              "index": 11,
+              "text": "UK"
+            },
+            {
+              "index": 12,
+              "text": "Home"
+            },
+            {
+              "index": 13,
+              "text": "Off"
+            },
+            {
+              "index": 14,
+              "text": "Ice"
+            },
+            {
+              "index": 15,
+              "text": ","
+            },
+            {
+              "index": 16,
+              "text": "HartsprIng"
+            },
+            {
+              "index": 17,
+              "text": "Lane"
+            },
+            {
+              "index": 18,
+              "text": "Watford,"
+            },
+            {
+              "index": 19,
+              "text": "Herts."
+            },
+            {
+              "index": 20,
+              "text": "WD25"
+            },
+            {
+              "index": 21,
+              "text": "8JS"
+            },
+            {
+              "index": 22,
+              "text": "Reg"
+            },
+            {
+              "index": 23,
+              "text": "."
+            },
+            {
+              "index": 24,
+              "text": "In"
+            },
+            {
+              "index": 25,
+              "text": "England"
+            },
+            {
+              "index": 26,
+              "text": "No:"
+            },
+            {
+              "index": 27,
+              "text": "2635489"
+            },
+            {
+              "index": 28,
+              "text": "AWRS"
+            },
+            {
+              "index": 29,
+              "text": "No:"
+            },
+            {
+              "index": 30,
+              "text": "Xvawooooo102593"
+            },
+            {
+              "index": 31,
+              "text": "VaT"
+            },
+            {
+              "index": 32,
+              "text": "No:"
+            },
+            {
+              "index": 33,
+              "text": "650"
+            },
+            {
+              "index": 34,
+              "text": "1862"
+            },
+            {
+              "index": 35,
+              "text": "52"
+            }
+          ],
+          "all_words": [
+            "Chingford",
+            "Warehouse",
+            "(0208",
+            "501",
+            "9305",
+            ")",
+            "Costco",
+            "Wholesale",
+            "UK",
+            "Limited",
+            "UK",
+            "Home",
+            "Off",
+            "Ice",
+            ",",
+            "HartsprIng",
+            "Lane",
+            "Watford,",
+            "Herts.",
+            "WD25",
+            "8JS",
+            "Reg",
+            ".",
+            "In",
+            "England",
+            "No:",
+            "2635489",
+            "AWRS",
+            "No:",
+            "Xvawooooo102593",
+            "VaT",
+            "No:",
+            "650",
+            "1862",
+            "52"
+          ],
+          "ocr_items": [],
+          "detections": [],
+          "ocr_debug": {
+            "lighton_error": "",
+            "easyocr_error": "",
+            "tesseract_error": "",
+            "easyocr_items": 17,
+            "cleaned_len": 197
+          }
+        },
+        {
+          "index": 2,
+          "page_index": 1,
+          "bbox": [
+            1220,
+            1024,
+            2021,
+            1872
+          ],
+          "engine": "easyocr",
+          "raw_output": "1 salt&pepper chicken 1 spring rolls 6.30 1 salt & pepper Ribs 9 1 plain fried noodles 7.6 ~veg with: with chicken 1 chicken katsu & curry sauce (4 with: boiled rice (38W) 1 yum yum beef rice 9 with: -NO RICE 1 still water 330ml 2.8 Meal total 55.60 Payable {55.60 M8: E55,60 pork",
+          "cleaned_text": "1 salt&pepper chicken 1 spring rolls 6.30 1 salt & pepper Ribs 9 1 plain fried noodles 7.6 ~veg with: with chicken 1 chicken katsu & curry sauce (4 with: boiled rice (38W) 1 yum yum beef rice 9 with: -NO RICE 1 still water 330ml 2.8 Meal total 55.60 Payable {55.60 M8: E55,60 pork",
+          "lines": [
+            {
+              "index": 1,
+              "text": "1 salt&pepper chicken 1 spring rolls 6.30 1 salt & pepper Ribs 9 1 plain fried noodles 7.6 ~veg with: with chicken 1 chicken katsu & curry sauce (4 with: boiled rice (38W) 1 yum yum beef rice 9 with: -NO RICE 1 still water 330ml 2.8 Meal total 55.60 Payable {55.60 M8: E55,60 pork"
+            }
+          ],
+          "words": [
+            {
+              "index": 1,
+              "text": "1"
+            },
+            {
+              "index": 2,
+              "text": "salt&pepper"
+            },
+            {
+              "index": 3,
+              "text": "chicken"
+            },
+            {
+              "index": 4,
+              "text": "1"
+            },
+            {
+              "index": 5,
+              "text": "spring"
+            },
+            {
+              "index": 6,
+              "text": "rolls"
+            },
+            {
+              "index": 7,
+              "text": "6.30"
+            },
+            {
+              "index": 8,
+              "text": "1"
+            },
+            {
+              "index": 9,
+              "text": "salt"
+            },
+            {
+              "index": 10,
+              "text": "&"
+            },
+            {
+              "index": 11,
+              "text": "pepper"
+            },
+            {
+              "index": 12,
+              "text": "Ribs"
+            },
+            {
+              "index": 13,
+              "text": "9"
+            },
+            {
+              "index": 14,
+              "text": "1"
+            },
+            {
+              "index": 15,
+              "text": "plain"
+            },
+            {
+              "index": 16,
+              "text": "fried"
+            },
+            {
+              "index": 17,
+              "text": "noodles"
+            },
+            {
+              "index": 18,
+              "text": "7.6"
+            },
+            {
+              "index": 19,
+              "text": "~veg"
+            },
+            {
+              "index": 20,
+              "text": "with:"
+            },
+            {
+              "index": 21,
+              "text": "with"
+            },
+            {
+              "index": 22,
+              "text": "chicken"
+            },
+            {
+              "index": 23,
+              "text": "1"
+            },
+            {
+              "index": 24,
+              "text": "chicken"
+            },
+            {
+              "index": 25,
+              "text": "katsu"
+            },
+            {
+              "index": 26,
+              "text": "&"
+            },
+            {
+              "index": 27,
+              "text": "curry"
+            },
+            {
+              "index": 28,
+              "text": "sauce"
+            },
+            {
+              "index": 29,
+              "text": "(4"
+            },
+            {
+              "index": 30,
+              "text": "with:"
+            },
+            {
+              "index": 31,
+              "text": "boiled"
+            },
+            {
+              "index": 32,
+              "text": "rice"
+            },
+            {
+              "index": 33,
+              "text": "(38W)"
+            },
+            {
+              "index": 34,
+              "text": "1"
+            },
+            {
+              "index": 35,
+              "text": "yum"
+            },
+            {
+              "index": 36,
+              "text": "yum"
+            },
+            {
+              "index": 37,
+              "text": "beef"
+            },
+            {
+              "index": 38,
+              "text": "rice"
+            },
+            {
+              "index": 39,
+              "text": "9"
+            },
+            {
+              "index": 40,
+              "text": "with:"
+            },
+            {
+              "index": 41,
+              "text": "-NO"
+            },
+            {
+              "index": 42,
+              "text": "RICE"
+            },
+            {
+              "index": 43,
+              "text": "1"
+            },
+            {
+              "index": 44,
+              "text": "still"
+            },
+            {
+              "index": 45,
+              "text": "water"
+            },
+            {
+              "index": 46,
+              "text": "330ml"
+            },
+            {
+              "index": 47,
+              "text": "2.8"
+            },
+            {
+              "index": 48,
+              "text": "Meal"
+            },
+            {
+              "index": 49,
+              "text": "total"
+            },
+            {
+              "index": 50,
+              "text": "55.60"
+            },
+            {
+              "index": 51,
+              "text": "Payable"
+            },
+            {
+              "index": 52,
+              "text": "{55.60"
+            },
+            {
+              "index": 53,
+              "text": "M8:"
+            },
+            {
+              "index": 54,
+              "text": "E55,60"
+            },
+            {
+              "index": 55,
+              "text": "pork"
+            }
+          ],
+          "all_words": [
+            "1",
+            "salt&pepper",
+            "chicken",
+            "1",
+            "spring",
+            "rolls",
+            "6.30",
+            "1",
+            "salt",
+            "&",
+            "pepper",
+            "Ribs",
+            "9",
+            "1",
+            "plain",
+            "fried",
+            "noodles",
+            "7.6",
+            "~veg",
+            "with:",
+            "with",
+            "chicken",
+            "1",
+            "chicken",
+            "katsu",
+            "&",
+            "curry",
+            "sauce",
+            "(4",
+            "with:",
+            "boiled",
+            "rice",
+            "(38W)",
+            "1",
+            "yum",
+            "yum",
+            "beef",
+            "rice",
+            "9",
+            "with:",
+            "-NO",
+            "RICE",
+            "1",
+            "still",
+            "water",
+            "330ml",
+            "2.8",
+            "Meal",
+            "total",
+            "55.60",
+            "Payable",
+            "{55.60",
+            "M8:",
+            "E55,60",
+            "pork"
+          ],
+          "ocr_items": [],
+          "detections": [],
+          "ocr_debug": {
+            "lighton_error": "",
+            "easyocr_error": "",
+            "tesseract_error": "",
+            "easyocr_items": 27,
+            "cleaned_len": 280
+          }
+        },
+        {
+          "index": 3,
+          "page_index": 1,
+          "bbox": [
+            75,
+            3174,
+            920,
+            3558
+          ],
+          "engine": "easyocr",
+          "raw_output": "Congratulatlons as an executive You have E10.23 towards annual executIve reward. Not an executlve member 2 VIsit our Membershle Desk to learn More. earned",
+          "cleaned_text": "Congratulatlons as an executive You have E10.23 towards annual executIve reward. Not an executlve member 2 VIsit our Membershle Desk to learn More. earned",
+          "lines": [
+            {
+              "index": 1,
+              "text": "Congratulatlons as an executive You have E10.23 towards annual executIve reward. Not an executlve member 2 VIsit our Membershle Desk to learn More. earned"
+            }
+          ],
+          "words": [
+            {
+              "index": 1,
+              "text": "Congratulatlons"
+            },
+            {
+              "index": 2,
+              "text": "as"
+            },
+            {
+              "index": 3,
+              "text": "an"
+            },
+            {
+              "index": 4,
+              "text": "executive"
+            },
+            {
+              "index": 5,
+              "text": "You"
+            },
+            {
+              "index": 6,
+              "text": "have"
+            },
+            {
+              "index": 7,
+              "text": "E10.23"
+            },
+            {
+              "index": 8,
+              "text": "towards"
+            },
+            {
+              "index": 9,
+              "text": "annual"
+            },
+            {
+              "index": 10,
+              "text": "executIve"
+            },
+            {
+              "index": 11,
+              "text": "reward."
+            },
+            {
+              "index": 12,
+              "text": "Not"
+            },
+            {
+              "index": 13,
+              "text": "an"
+            },
+            {
+              "index": 14,
+              "text": "executlve"
+            },
+            {
+              "index": 15,
+              "text": "member"
+            },
+            {
+              "index": 16,
+              "text": "2"
+            },
+            {
+              "index": 17,
+              "text": "VIsit"
+            },
+            {
+              "index": 18,
+              "text": "our"
+            },
+            {
+              "index": 19,
+              "text": "Membershle"
+            },
+            {
+              "index": 20,
+              "text": "Desk"
+            },
+            {
+              "index": 21,
+              "text": "to"
+            },
+            {
+              "index": 22,
+              "text": "learn"
+            },
+            {
+              "index": 23,
+              "text": "More."
+            },
+            {
+              "index": 24,
+              "text": "earned"
+            }
+          ],
+          "all_words": [
+            "Congratulatlons",
+            "as",
+            "an",
+            "executive",
+            "You",
+            "have",
+            "E10.23",
+            "towards",
+            "annual",
+            "executIve",
+            "reward.",
+            "Not",
+            "an",
+            "executlve",
+            "member",
+            "2",
+            "VIsit",
+            "our",
+            "Membershle",
+            "Desk",
+            "to",
+            "learn",
+            "More.",
+            "earned"
+          ],
+          "ocr_items": [],
+          "detections": [],
+          "ocr_debug": {
+            "lighton_error": "",
+            "easyocr_error": "",
+            "tesseract_error": "",
+            "easyocr_items": 16,
+            "cleaned_len": 154
+          }
+        }
+      ],
+      "receipts_count": 3,
+      "receipts_summary": [
+        {
+          "index": 1,
+          "page_index": 1,
+          "bbox": [
+            1,
+            378,
+            951,
+            798
+          ],
+          "engine": "easyocr",
+          "text_len": 197,
+          "words": 35,
+          "preview": "Chingford Warehouse (0208 501 9305 ) Costco Wholesale UK Limited UK Home Off Ice , HartsprIng Lane Watford, Herts. WD25 8JS Reg . In England No: 2635489 AWRS No: Xvawooooo102593 VaT No: 650 1862 52"
+        },
+        {
+          "index": 2,
+          "page_index": 1,
+          "bbox": [
+            1220,
+            1024,
+            2021,
+            1872
+          ],
+          "engine": "easyocr",
+          "text_len": 280,
+          "words": 55,
+          "preview": "1 salt&pepper chicken 1 spring rolls 6.30 1 salt & pepper Ribs 9 1 plain fried noodles 7.6 ~veg with: with chicken 1 chicken katsu & curry sauce (4 with: boiled rice (38W) 1 yum yum beef rice 9 with: -NO RICE 1 still water 330ml 2.8 Meal to"
+        },
+        {
+          "index": 3,
+          "page_index": 1,
+          "bbox": [
+            75,
+            3174,
+            920,
+            3558
+          ],
+          "engine": "easyocr",
+          "text_len": 154,
+          "words": 24,
+          "preview": "Congratulatlons as an executive You have E10.23 towards annual executIve reward. Not an executlve member 2 VIsit our Membershle Desk to learn More. earned"
+        }
+      ],
+      "segmentation_debug": [
+        {
+          "enabled": true,
+          "method": "connected_components",
+          "regions": [
+            {
+              "bbox": [
+                1,
+                378,
+                951,
+                798
+              ],
+              "area": 399000
+            },
+            {
+              "bbox": [
+                1220,
+                1024,
+                2021,
+                1872
+              ],
+              "area": 679248
+            },
+            {
+              "bbox": [
+                75,
+                3174,
+                920,
+                3558
+              ],
+              "area": 324480
+            }
+          ],
+          "page_index": 1,
+          "image_wh": [
+            2975,
+            4205
+          ],
+          "candidates": 3,
+          "regions_count": 3
+        }
+      ]
+    }
+  ]
+}

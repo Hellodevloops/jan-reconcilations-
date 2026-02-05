@@ -26,6 +26,12 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from collections import OrderedDict
 
+import bank_statements
+
+import invoices
+
+import handwritten
+
 
 
 try:
@@ -110,11 +116,25 @@ try:
 
 except Exception:
 
-    AutoProcessor = None  # type: ignore
+    try:
+        from transformers import AutoProcessor, AutoModelForVision2Seq  # type: ignore
+        AutoModelForCausalLM = None
+    except Exception:
+        try:
+            from transformers import AutoProcessor, AutoModelForMultimodalLM  # type: ignore
+            AutoModelForVision2Seq = AutoModelForMultimodalLM
+            AutoModelForCausalLM = AutoModelForMultimodalLM
+        except Exception:
+            try:
+                from transformers import AutoProcessor, AutoModel  # type: ignore
+                AutoModelForVision2Seq = AutoModel
+                AutoModelForCausalLM = AutoModel
+            except Exception:
+                AutoProcessor = None  # type: ignore
 
-    AutoModelForVision2Seq = None  # type: ignore
+                AutoModelForVision2Seq = None  # type: ignore
 
-    AutoModelForCausalLM = None  # type: ignore
+                AutoModelForCausalLM = None  # type: ignore
 
 
 
@@ -227,6 +247,38 @@ except Exception:
 
 
     pytesseract = None  # type: ignore
+
+
+
+try:
+
+
+
+    import torch  # type: ignore
+
+
+
+except Exception:
+
+
+
+    torch = None  # type: ignore
+
+
+
+try:
+
+
+
+    import easyocr  # type: ignore
+
+
+
+except Exception:
+
+
+
+    easyocr = None  # type: ignore
 
 
 
@@ -372,6 +424,7 @@ def _crop_from_bbox(source_image: Any, bbox: Dict[str, Any], padding: int = 5) -
 
         return None
 
+
     try:
 
         w, h = source_image.size
@@ -515,28 +568,43 @@ def _vllm_chat_ocr(image_png_bytes: bytes, model_id: str, base_url: str, tempera
 def _lighton_local_chat_ocr(image_png_bytes: bytes, model_name: str, temperature: float, max_tokens: int) -> str:
 
     if torch is None:
-
+        print("DEBUG: Local OCR - torch not available")
         return ""
 
     if Image is None:
-
+        print("DEBUG: Local OCR - PIL not available")
         return ""
 
     try:
-
         img = Image.open(io.BytesIO(image_png_bytes)).convert("RGB")
-
-    except Exception:
-
+        print(f"DEBUG: Local OCR - Image loaded, size: {img.size}")
+    except Exception as e:
+        print(f"DEBUG: Local OCR - Failed to load image: {e}")
         return ""
 
     try:
-
+        print(f"DEBUG: Local OCR - Getting model: {model_name}")
         model, processor, device = model_manager.get_model(model_name)
-
-    except Exception:
-
-        return ""
+        print(f"DEBUG: Local OCR - Model loaded on device: {device}")
+    except Exception as e:
+        print(f"DEBUG: Local OCR - Failed to load model: {e}")
+        # Try direct model loading as fallback
+        try:
+            print("DEBUG: Trying direct model loading")
+            from transformers import AutoProcessor, AutoModelForMultimodalLM
+            model_id = "lightonai/LightOnOCR-2-1B"
+            processor = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
+            model = AutoModelForMultimodalLM.from_pretrained(
+                model_id,
+                torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+                device_map="auto" if torch.cuda.is_available() else "cpu",
+                trust_remote_code=True
+            )
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+            print(f"DEBUG: Direct model loading successful on {device}")
+        except Exception as e2:
+            print(f"DEBUG: Direct model loading also failed: {e2}")
+            return ""
 
     try:
 
@@ -549,6 +617,7 @@ def _lighton_local_chat_ocr(image_png_bytes: bytes, model_name: str, temperature
                 "content": [
 
                     {"type": "image", "url": img},
+                    {"type": "text", "text": "Extract all readable text from this image. Output plain text only."},
 
                 ],
 
@@ -576,9 +645,14 @@ def _lighton_local_chat_ocr(image_png_bytes: bytes, model_name: str, temperature
 
             inputs = processor(images=img, return_tensors="pt")
 
-        if isinstance(inputs, dict):
-
-            inputs = {k: (v.to(device) if hasattr(v, "to") else v) for k, v in inputs.items()}
+        try:
+            if hasattr(inputs, "to") and callable(getattr(inputs, "to")):
+                inputs = inputs.to(device)
+            elif isinstance(inputs, dict):
+                inputs = {k: (v.to(device) if hasattr(v, "to") else v) for k, v in inputs.items()}
+        except Exception:
+            if isinstance(inputs, dict):
+                inputs = {k: (v.to(device) if hasattr(v, "to") else v) for k, v in inputs.items()}
 
         gen = model.generate(
 
@@ -630,28 +704,41 @@ def _handwritten_lighton_multimodel_ocr(image_png_bytes: bytes, model_name: str,
 
     vllm = _clean_text(cfg.get("vllm_endpoint"))
 
+    print(f"DEBUG OCR: model_name={model_name}, model_id={model_id}, vllm={vllm}")
+
     if vllm and model_id:
 
+        print("DEBUG OCR: Trying VLLM endpoint")
         txt = _vllm_chat_ocr(image_png_bytes, model_id=model_id, base_url=vllm, temperature=temperature, max_tokens=max_tokens)
 
         if txt:
-
+            print("DEBUG OCR: VLLM succeeded")
             return txt
+        else:
+            print("DEBUG OCR: VLLM returned empty")
 
+    print(f"DEBUG OCR: LIGHTON_LOCAL_ENABLED={LIGHTON_LOCAL_ENABLED}")
     if LIGHTON_LOCAL_ENABLED:
 
+        print("DEBUG OCR: Trying local LightOn model")
         txt2 = _lighton_local_chat_ocr(image_png_bytes, model_name=model_name, temperature=temperature, max_tokens=max_tokens)
 
         if txt2:
-
+            print("DEBUG OCR: Local LightOn succeeded")
             return txt2
+        else:
+            print("DEBUG OCR: Local LightOn returned empty")
 
+    print(f"DEBUG OCR: Trying fallback vision OCR with model_id={model_id}")
     if model_id:
 
         txt3 = _lighton_vision_ocr_text(image_png_bytes, prompt="Extract all readable text from this image. Output plain text only.")
 
-        return _clean_output_text(txt3)
+        result = _clean_output_text(txt3)
+        print(f"DEBUG OCR: Fallback OCR result length: {len(result)}")
+        return result
 
+    print("DEBUG OCR: All OCR methods failed")
     return ""
 
 
@@ -729,6 +816,56 @@ BANKPDF_OCR = os.getenv("BANKPDF_OCR", "").strip().lower() not in {"0", "false",
 
 
 OCR_PROVIDER = os.getenv("OCR_PROVIDER", "tesseract").strip().lower()
+
+
+
+USE_CUDA = os.getenv("USE_CUDA", "").strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
+
+_EASYOCR_READER: Any = None
+
+
+
+def _easyocr_available() -> Tuple[bool, str]:
+
+    if easyocr is None:
+
+        return False, "easyocr is not installed"
+
+    if torch is None:
+
+        return False, "torch is not installed"
+
+    return True, ""
+
+
+
+def _get_easyocr_reader() -> Any:
+
+    global _EASYOCR_READER
+
+    if _EASYOCR_READER is not None:
+
+        return _EASYOCR_READER
+
+    ok, _detail = _easyocr_available()
+
+    if not ok:
+
+        return None
+
+    use_gpu = bool(USE_CUDA and (torch is not None) and bool(getattr(torch, "cuda", None)) and bool(torch.cuda.is_available()))
+
+    try:
+
+        _EASYOCR_READER = easyocr.Reader(["en"], gpu=bool(use_gpu))  # type: ignore[union-attr]
+
+    except Exception:
+
+        _EASYOCR_READER = None
+
+    return _EASYOCR_READER
 
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "").strip()
 
@@ -991,6 +1128,13 @@ class ModelManager:
         if not use_lighton and not use_auto:
 
             raise RuntimeError("Local LightOnOCR requires transformers (LightOn classes or AutoModel/AutoProcessor)")
+
+        if (not use_lighton) and model_id.lower().startswith("lightonai/"):
+
+            raise RuntimeError(
+                "Local LightOnOCR model requires LightOn transformers classes (LightOnOcrForConditionalGeneration/LightOnOcrProcessor). "
+                "AutoModel fallback is disabled for LightOn models to avoid incompatible model-type instantiation."
+            )
 
         device = "cuda" if bool(getattr(torch, "cuda", None)) and torch.cuda.is_available() else "cpu"  # type: ignore[union-attr]
 
@@ -1653,6 +1797,7 @@ def _ocr_preprocess_variants(pil_img: Any) -> List[Any]:
             heightA = np.linalg.norm(tr - br)
 
             heightB = np.linalg.norm(tl - bl)
+            
 
             maxH = int(max(heightA, heightB))
 
@@ -1995,6 +2140,96 @@ def _ocr_words_and_lines_from_pil_image(img: Any) -> Dict[str, Any]:
     if img is None:
 
         return out
+
+    easyocr_enabled = (OCR_PROVIDER == "easyocr") or (USE_CUDA and OCR_PROVIDER in {"tesseract", "easyocr"})
+
+    if easyocr_enabled:
+
+        reader = _get_easyocr_reader()
+
+        if reader is not None:
+
+            try:
+
+                results = reader.readtext(img, detail=1, paragraph=False)  # type: ignore[union-attr]
+
+            except Exception:
+
+                results = []
+
+            lines: List[str] = []
+
+            words: List[Dict[str, Any]] = []
+
+            for r in results or []:
+
+                try:
+
+                    bbox, text, conf = r
+
+                except Exception:
+
+                    continue
+
+                t = _clean_text(text)
+
+                if not t:
+
+                    continue
+
+                lines.append(t)
+
+                try:
+
+                    xs = [float(p[0]) for p in (bbox or [])]
+
+                    ys = [float(p[1]) for p in (bbox or [])]
+
+                    x0 = int(min(xs)) if xs else 0
+
+                    y0 = int(min(ys)) if ys else 0
+
+                    x1 = int(max(xs)) if xs else 0
+
+                    y1 = int(max(ys)) if ys else 0
+
+                    w = max(0, x1 - x0)
+
+                    h = max(0, y1 - y0)
+
+                except Exception:
+
+                    x0, y0, w, h = 0, 0, 0, 0
+
+                try:
+
+                    conf_val = float(conf) if conf not in (None, "") else None
+
+                except Exception:
+
+                    conf_val = None
+
+                words.append(
+
+                    {
+
+                        "index": int(len(words) + 1),
+
+                        "text": t,
+
+                        "confidence": conf_val,
+
+                        "bbox": {"x": x0, "y": y0, "w": w, "h": h},
+
+                    }
+
+                )
+
+            out["lines"] = [{"index": i + 1, "text": ln} for i, ln in enumerate(lines)]
+
+            out["words"] = words
+
+            return out
 
     if pytesseract is None:
 
@@ -2682,16 +2917,23 @@ def _invoice_ocr_autotrader_costs_box(pdf_path: str) -> Dict[str, Any]:
         W, H = base_img.size
 
         # Costs box is on the right side of the page, mid-lower area.
+        # Using broader ROI to survive template shifts and capture more content
+        roi1 = (int(W * 0.55), int(H * 0.30), int(W * 0.99), int(H * 0.80))
+        roi2 = (int(W * 0.50), int(H * 0.35), int(W * 0.99), int(H * 0.85))
+        roi3 = (int(W * 0.60), int(H * 0.25), int(W * 0.98), int(H * 0.90))
 
-        # Using broad ROI to survive template shifts.
+        def _ocr_roi(roi: Tuple[int, int, int, int]) -> str:
+            c = base_img.crop(roi)
+            c = c.resize((max(1, c.size[0] * 3), max(1, c.size[1] * 3)))
+            c = _invoice_preprocess_crop(c)
+            return pytesseract.image_to_string(c, config="--oem 1 --psm 6")
 
-        crop = base_img.crop((int(W * 0.60), int(H * 0.36), int(W * 0.98), int(H * 0.72)))
-
-        crop = crop.resize((max(1, crop.size[0] * 3), max(1, crop.size[1] * 3)))
-
-        crop = _invoice_preprocess_crop(crop)
-
-        txt = pytesseract.image_to_string(crop, config="--oem 1 --psm 6")
+        # Try multiple regions until we get good text
+        txt = _ocr_roi(roi1)
+        if not _clean_text(txt) or len(_clean_text(txt).split()) < 10:
+            txt = _ocr_roi(roi2)
+        if not _clean_text(txt) or len(_clean_text(txt).split()) < 10:
+            txt = _ocr_roi(roi3)
 
     except Exception:
 
@@ -2709,16 +2951,18 @@ def _invoice_ocr_autotrader_costs_box(pdf_path: str) -> Dict[str, Any]:
 
     def _amt_after(label: str) -> Optional[float]:
 
-        m = re.search(
-
+        patterns = [
             rf"\b{label}\b[^0-9]{{0,40}}(\(?\s*-?\s*(?:£|Â£|\$|€)?\s*\d[\d,]*(?:[\.,]\s*\d{{1,2}})?\s*\)?)",
-
-            t,
-
-            flags=re.IGNORECASE,
-
-        )
-
+            rf"{label}[^0-9]{{0,40}}(\d[\d,]*(?:[\.,]\d{{1,2}})?)",
+            rf"{label}\s*[:\-]?\s*(\d[\d,]*(?:[\.,]\d{{1,2}})?)",
+            rf"{label}\s*(\d[\d,]*(?:[\.,]\d{{1,2}})?)"
+        ]
+        
+        for pattern in patterns:
+            m = re.search(pattern, t, flags=re.IGNORECASE)
+            if m:
+                break
+        
         if not m:
 
             return None
@@ -2745,11 +2989,11 @@ def _invoice_ocr_autotrader_costs_box(pdf_path: str) -> Dict[str, Any]:
 
 
 
-    sub = _amt_after("Subtotal")
+    sub = _amt_after("Subtotal") or _amt_after("Sub Total") or _amt_after("Net") or _amt_after("Total Net")
 
-    vat = _amt_after("VAT\s*Total")
+    vat = _amt_after(r"VAT\s*Total") or _amt_after("VAT") or _amt_after("Tax") or _amt_after("Total VAT")
 
-    grand = _amt_after("Grand\s*Total")
+    grand = _amt_after(r"Grand\s*Total") or _amt_after("Total") or _amt_after("Grand Total")
 
 
 
@@ -2766,6 +3010,21 @@ def _invoice_ocr_autotrader_costs_box(pdf_path: str) -> Dict[str, Any]:
         out["buying_price"] = grand
 
         out["non_vat"] = grand
+
+    # Fallback calculations
+    if grand is None and sub is not None and vat is not None:
+        # Calculate grand total from net + VAT
+        calculated_grand = sub + vat
+        out["buying_price"] = calculated_grand
+        out["non_vat"] = calculated_grand
+    elif vat is None and grand is not None and sub is not None:
+        # Calculate VAT from grand total - net
+        calculated_vat = grand - sub
+        out["vat_amount"] = calculated_vat
+    elif sub is None and grand is not None and vat is not None:
+        # Calculate net from grand total - VAT
+        calculated_net = grand - vat
+        out["std_net"] = calculated_net
 
 
 
@@ -4707,16 +4966,6 @@ def convert_pdf_to_rows(pdf_path: str, preextracted_lines: Optional[List[str]] =
 
                         "subcategory": subcat or "",
 
-                        "money_in": money_in,
-
-                        "money_out": money_out,
-
-                        "balance": balance,
-
-                        "amount": txn_val,
-
-                        "used_ocr": bool(used_ocr_hint),
-
                     }
 
                 )
@@ -4906,15 +5155,174 @@ def _to_float_or_none(value: Any) -> Optional[float]:
 
 
     except Exception:
-
-
-
         return None
 
 
+def _extract_used_vehicle_invoice_fields(lines: List[str]) -> Dict[str, Any]:
 
+    cleaned = [_clean_text(ln) for ln in lines]
 
+    cleaned = [ln for ln in cleaned if ln]
 
+    out: Dict[str, Any] = {}
+
+    if not cleaned:
+
+        return out
+
+    def _value_after_label(label_re: "re.Pattern[str]") -> str:
+
+        for i, ln in enumerate(cleaned[:340]):
+
+            m = label_re.search(ln)
+
+            if not m:
+
+                continue
+
+            tail = _clean_text(ln[m.end() :]).strip(" :-\t")
+
+            if tail:
+
+                return tail
+
+            for j in range(1, 6):
+
+                if i + j >= len(cleaned):
+
+                    break
+
+                nxt = _clean_text(cleaned[i + j]).strip(" :-\t")
+
+                if nxt:
+
+                    return nxt
+
+        return ""
+
+    sold_by = _value_after_label(re.compile(r"\bSold\s*By\b\s*[:\-]?", flags=re.IGNORECASE))
+
+    if sold_by:
+
+        out["supplier"] = _clean_text(sold_by)[:200]
+
+    inv_no = _value_after_label(re.compile(r"\bInvoice\s*(?:No\.?|Number)\b\s*[:\-]?", flags=re.IGNORECASE))
+
+    inv_no = _clean_text(inv_no)
+
+    if inv_no:
+
+        mref = re.search(r"\b([A-Za-z0-9\-/]+)\b", inv_no)
+
+        out["inv_ref_no"] = _clean_text(mref.group(1)) if mref else inv_no
+
+    date_raw = _value_after_label(re.compile(r"\b(?:Invoice\s*Date|Date)\b\s*[:\-]?", flags=re.IGNORECASE))
+
+    date_raw = _clean_text(date_raw).replace("-", "/")
+
+    mdate = re.search(r"\b(\d{1,2}[\/-]\d{1,2}[\/-]\d{2,4})\b", date_raw)
+
+    if mdate:
+
+        out["document_date"] = _clean_text(mdate.group(1)).replace("-", "/")
+
+    make = _value_after_label(re.compile(r"\bMake\b\s*[:\-]?", flags=re.IGNORECASE))
+
+    model = _value_after_label(re.compile(r"\bModel\b\s*[:\-]?", flags=re.IGNORECASE))
+
+    colour = _value_after_label(re.compile(r"\b(?:Colour|Color)\b\s*[:\-]?", flags=re.IGNORECASE))
+
+    if make:
+
+        out["make"] = _clean_text(make)[:160]
+
+    if model:
+
+        out["model"] = _clean_text(model)[:160]
+
+    if colour:
+
+        out["colour"] = _clean_text(colour)[:80]
+
+    reg = _value_after_label(
+
+        re.compile(
+
+            r"\b(?:Registration\s*(?:No\.?|Number)?|Reg\s*(?:No\.?|Number)?)\b\s*[:\-]?",
+
+            flags=re.IGNORECASE,
+
+        )
+
+    )
+
+    reg = _clean_text(reg)
+
+    if not reg:
+
+        for ln in cleaned[:300]:
+
+            m = re.search(r"\b([A-Z]{2}[0-9O]{2}\s*[A-Z]{3})\b", ln, flags=re.IGNORECASE)
+
+            if m:
+
+                reg = _format_uk_reg(m.group(1))
+
+                break
+
+    if reg:
+
+        out["reg_no"] = reg
+
+    def _money_after_label(label_re: "re.Pattern[str]") -> Optional[float]:
+
+        for i, ln in enumerate(cleaned[:650]):
+
+            if not label_re.search(ln):
+
+                continue
+
+            m0 = CURRENCY_RE.search(ln)
+
+            if m0:
+
+                return _to_float_or_none(m0.group(0))
+
+            for j in range(1, 6):
+
+                if i + j >= len(cleaned):
+
+                    break
+
+                m1 = CURRENCY_RE.search(cleaned[i + j])
+
+                if m1:
+
+                    return _to_float_or_none(m1.group(0))
+
+        return None
+
+    total_v = _money_after_label(re.compile(r"\b(?:Total\s*Due|Invoice\s*Total|Total\s*Amount|Grand\s*Total|Total)\b", flags=re.IGNORECASE))
+
+    sub_v = _money_after_label(re.compile(r"\b(?:Sub\s*Total|Subtotal|Net\s*Total|Total\s*Net)\b", flags=re.IGNORECASE))
+
+    vat_v = _money_after_label(re.compile(r"\b(?:VAT\s*Total|VAT|Tax\s*Total|Tax)\b", flags=re.IGNORECASE))
+
+    if isinstance(total_v, (int, float)):
+
+        out["buying_price"] = abs(float(total_v))
+
+        out["non_vat"] = abs(float(total_v))
+
+    if isinstance(sub_v, (int, float)):
+
+        out["std_net"] = abs(float(sub_v))
+
+    if isinstance(vat_v, (int, float)):
+
+        out["vat_amount"] = abs(float(vat_v))
+
+    return out
 
 
 def _extract_invoice_fields(lines: List[str]) -> Dict[str, Any]:
@@ -4992,6 +5400,37 @@ def _extract_invoice_fields(lines: List[str]) -> Dict[str, Any]:
                     nxt = _clean_text(cleaned[i + j])
 
                     if nxt:
+
+                        low_nxt = nxt.lower()
+
+                        if any(
+
+                            x in low_nxt
+                            for x in [
+
+                                "order code",
+
+                                "payment method",
+
+                                "payment date",
+
+                                "description",
+
+                                "package",
+
+                                "costs",
+
+                                "subtotal",
+
+                                "vat total",
+
+                                "grand total",
+
+                            ]
+
+                        ):
+
+                            continue
 
                         return nxt
 
@@ -6647,7 +7086,27 @@ def _extract_invoice_fields(lines: List[str]) -> Dict[str, Any]:
 
 
 
-        # Description (table) -> supplier (as requested)
+        # Supplier: prefer company name line if present
+
+        supplier_name = ""
+
+        for ln in cleaned[:260]:
+
+            low = ln.lower()
+
+            if "auto trader limited" in low:
+
+                supplier_name = "Auto Trader Limited"
+
+                break
+
+            if low.strip() == "autotrader" or low.strip() == "auto trader":
+
+                supplier_name = "AutoTrader"
+
+                break
+
+        # Fallback: Description (table)
 
         desc_value = ""
 
@@ -6683,7 +7142,33 @@ def _extract_invoice_fields(lines: List[str]) -> Dict[str, Any]:
 
                 break
 
-        out["supplier"] = desc_value[:240] if desc_value else "N/A"
+        if supplier_name:
+
+            out["supplier"] = supplier_name
+
+        else:
+
+            bad_phrases = [
+
+                "service based email",
+
+                "marketing communications",
+
+                "registered in england",
+
+                "company number",
+
+                "vat number",
+
+                "copyright",
+
+            ]
+
+            if desc_value and any(p in desc_value.lower() for p in bad_phrases):
+
+                desc_value = ""
+
+            out["supplier"] = desc_value[:240] if desc_value else "N/A"
 
 
 
@@ -18685,646 +19170,48 @@ def diagnostics() -> JSONResponse:
 
 async def convert_bank_statements(request: Request) -> JSONResponse:
 
-    form = await request.form()
-
-    files: List[UploadFile] = []
-
-    for key in ("files", "file"):
-
-        try:
-
-            items = form.getlist(key)  # type: ignore[attr-defined]
-
-        except Exception:
-
-            items = []
-
-        for it in items:
-
-            if isinstance(it, (UploadFile, StarletteUploadFile)):
-
-                files.append(it)  # type: ignore[arg-type]
-
-            elif hasattr(it, "filename") and hasattr(it, "read"):
-
-                files.append(it)  # type: ignore[arg-type]
-
-    if not files:
-
-        return JSONResponse({"error": "No files uploaded"}, status_code=400)
-
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-    job_id = str(uuid.uuid4())
-
-    job_folder = os.path.join(OUTPUT_DIR, job_id)
-
-    os.makedirs(job_folder, exist_ok=True)
-
-    all_rows: List[Dict[str, Any]] = []
-
-    all_pending_rows: List[Dict[str, Any]] = []
-
-    per_file_csv_paths: List[Tuple[str, str]] = []
-
-    warnings: List[str] = []
-
-    fieldnames = ["source_file", "account", "subcategory", "date", "description", "money_in", "money_out", "amount", "balance"]
-
-    combined_preamble: Optional[List[List[str]]] = None
-
-    combined_preamble_is_barclays = False
-
-    seen_any_file = False
-
-    skipped: List[str] = []
-
-
-
-    def _read_csv_bytes_to_rows(content_bytes: bytes) -> List[Dict[str, Any]]:
-
-        try:
-
-            text = content_bytes.decode("utf-8-sig", errors="replace")
-
-        except Exception:
-
-            try:
-
-                text = content_bytes.decode("latin-1", errors="replace")
-
-            except Exception:
-
-                return []
-
-
-
-        # Sniff delimiter lightly
-
-        sample = text[:2000]
-
-        try:
-
-            dialect = csv.Sniffer().sniff(sample, delimiters=[",", "\t", ";", "|"])
-
-        except Exception:
-
-            dialect = csv.excel
-
-
-
-        f = io.StringIO(text)
-
-        try:
-
-            reader = csv.DictReader(f, dialect=dialect)
-
-        except Exception:
-
-            f.seek(0)
-
-            reader = csv.DictReader(f)
-
-
-
-        def _pick(d: Dict[str, Any], keys: List[str]) -> Any:
-
-            for k in keys:
-
-                for kk, vv in d.items():
-
-                    if _clean_text(kk).lower() == k:
-
-                        return vv
-
-            return ""
-
-
-
-        out: List[Dict[str, Any]] = []
-
-        for row in reader:
-
-            if not row:
-
-                continue
-
-            date_v = _pick(row, ["date", "transaction date", "txn date"])
-
-            desc_v = _pick(row, ["description", "transaction", "details", "narrative"])
-
-            mi_v = _pick(row, ["money_in", "money in", "credit", "in"])
-
-            mo_v = _pick(row, ["money_out", "money out", "debit", "out"])
-
-            bal_v = _pick(row, ["balance", "running balance"])
-
-            amt_v = _pick(row, ["amount", "transaction amount", "txn amount"])
-
-            sub_v = _pick(row, ["subcategory", "category", "type"])
-
-            acc_v = _pick(row, ["account", "account number"])
-
-
-
-            rr: Dict[str, Any] = {
-
-                "source_file": "",
-
-                "account": _clean_text(acc_v) or "",
-
-                "subcategory": _clean_text(sub_v) or "",
-
-                "date": _clean_text(date_v) or "",
-
-                "description": _clean_text(desc_v) or "",
-
-                "money_in": _clean_text(mi_v) or "",
-
-                "money_out": _clean_text(mo_v) or "",
-
-                "balance": _clean_text(bal_v) or "",
-
-            }
-
-
-
-            if amt_v not in (None, ""):
-
-                rr["amount"] = _to_float_or_none(amt_v)
-
-            else:
-
-                rr["amount"] = _to_float_or_none(rr.get("money_in") or rr.get("money_out") or "")
-
-
-
-            # Skip empty rows
-
-            if not any(_clean_text(rr.get(k)) for k in ["date", "description", "money_in", "money_out", "balance"]):
-
-                continue
-
-            out.append(rr)
-
-
-
-        return out
-
-
-
-    for f in files:
-
-        filename = os.path.basename(f.filename or "statement.pdf")
-
-        content_type = (f.content_type or "").lower()
-
-        ext = os.path.splitext(filename.lower())[1]
-
-        is_pdf = ext == ".pdf" or content_type == "application/pdf"
-
-        is_image = (content_type.startswith("image/") or ext in {".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff", ".webp"})
-
-        is_csv = ext == ".csv" or content_type in {"text/csv", "application/csv", "application/vnd.ms-excel"}
-
-        if not is_pdf and not is_image and not is_csv:
-
-            skipped.append(f"{filename} ({content_type or 'unknown'})")
-
-            continue
-
-        seen_any_file = True
-
-        tmp_path = os.path.join(job_folder, filename)
-
-        content = await f.read()
-
-        with open(tmp_path, "wb") as out:
-
-            out.write(content)
-
-
-
-        if is_csv:
-
-            csv_rows = _read_csv_bytes_to_rows(content)
-
-            normalized: List[Dict[str, Any]] = []
-
-            for r in csv_rows:
-
-                rr = {
-
-                    "source_file": filename,
-
-                    "account": r.get("account") or "",
-
-                    "subcategory": r.get("subcategory")
-
-                    or _infer_subcategory(
-
-                        r.get("description") or "",
-
-                        r.get("amount"),
-
-                        r.get("money_in"),
-
-                        r.get("money_out"),
-
-                    ),
-
-                    "date": r.get("date"),
-
-                    "description": r.get("description"),
-
-                    "money_in": r.get("money_in"),
-
-                    "money_out": r.get("money_out"),
-
-                    "amount": r.get("amount"),
-
-                    "balance": r.get("balance"),
-
-                }
-
-                normalized.append(rr)
-
-
-
-            csv_name = os.path.splitext(filename)[0] + ".csv"
-
-            csv_path = os.path.join(job_folder, csv_name)
-
-            _write_csv(csv_path, normalized, fieldnames)
-
-            per_file_csv_paths.append((csv_name, csv_path))
-
-            all_rows.extend(normalized)
-
-            continue
-
-
-
-        used_ocr = False
-
-        lines: List[str] = []
-
-        if is_pdf:
-
-            lines, used_ocr = _extract_text_lines_from_pdf_with_ocr(tmp_path)
-
-        elif is_image:
-
-            if not BANKPDF_OCR:
-
-                warnings.append(
-
-                    f"'{filename}': File is an image; OCR is disabled (set BANKPDF_OCR=1)."
-
-                )
-
-                lines = []
-
-                used_ocr = False
-
-            else:
-
-                lines, used_ocr = _extract_text_lines_from_image_with_ocr(tmp_path)
-
-                if not used_ocr:
-
-                    ok, detail = _tesseract_available()
-
-                    if not ok:
-
-                        warnings.append(
-
-                            f"'{filename}': Image OCR could not run. Install Tesseract OCR for Windows and/or set TESSERACT_CMD. Details: {detail}"
-
-                        )
-
-        if len(lines) < 1:
-
-            if pytesseract is None:
-
-                warnings.append(
-
-                    f"'{filename}': No readable text was extracted. Also 'pytesseract' is not installed. Install it and install Tesseract OCR for Windows to convert scanned PDFs."
-
-                )
-
-            else:
-
-                ok, detail = _tesseract_available()
-
-                if not ok:
-
-                    warnings.append(
-
-                        f"'{filename}': No readable text was extracted, and Tesseract OCR is not available to run. Install Tesseract OCR for Windows and/or set TESSERACT_CMD. Details: {detail}"
-
-                    )
-
-                else:
-
-                    if fitz is None and pdfium is None:
-
-                        warnings.append(
-
-                            f"'{filename}': OCR is enabled but a PDF-to-image renderer is not available. Install 'pypdfium2' (recommended) or 'PyMuPDF' so pages can be rendered to images for OCR."
-
-                        )
-
-                    warnings.append(
-
-                        f"'{filename}': No readable text was extracted from the PDF. This usually means the PDF is scanned/image-based. OCR is required (install Tesseract OCR and set TESSERACT_CMD if needed)."
-
-                    )
-
-        elif used_ocr:
-
-            warnings.append(f"'{filename}': Extracted text using OCR (scanned PDF detected).")
-
-        account = _extract_account_from_lines(lines)
-
-        barclays_preamble: Optional[List[List[str]]] = None
-
-        if _looks_like_barclays_statement(lines):
-
-            if _looks_like_barclays_business_premium_statement(lines):
-
-                info2 = _extract_barclays_business_premium_header_info(lines)
-
-                barclays_preamble = _barclays_business_premium_preamble_lines(info2)
-
-            else:
-
-                info = _extract_barclays_header_info(lines)
-
-                if info.get("account"):
-
-                    account = str(info.get("account") or "")
-
-                barclays_preamble = _barclays_header_preamble_lines(info)
-
-            combined_preamble = barclays_preamble
-
-            combined_preamble_is_barclays = True
-
-        monzo_preamble: Optional[List[List[str]]] = None
-
-        if _looks_like_monzo_statement(lines):
-
-            minfo = _extract_monzo_header_info(lines)
-
-            monzo_preamble = _monzo_header_preamble_lines(minfo)
-
-            combined_preamble = monzo_preamble
-
-            combined_preamble_is_barclays = False
-
-        virgin_preamble: Optional[List[List[str]]] = None
-
-        if _looks_like_virgin_money_statement(lines):
-
-            vinfo = _extract_virgin_money_header_info(lines)
-
-            virgin_preamble = _virgin_money_header_preamble_lines(vinfo)
-
-            combined_preamble = virgin_preamble
-
-            combined_preamble_is_barclays = False
-
-        tide_preamble: Optional[List[List[str]]] = None
-
-        if _looks_like_tide_statement(lines):
-
-            tinfo = _extract_tide_header_info(lines)
-
-            tide_preamble = _tide_header_preamble_lines(tinfo)
-
-            combined_preamble = tide_preamble
-
-            combined_preamble_is_barclays = False
-
-        revolut_preamble: Optional[List[List[str]]] = None
-
-        if _looks_like_revolut_business_statement(lines):
-
-            rinfo = _extract_revolut_business_header_info(lines)
-
-            revolut_preamble = _revolut_business_preamble_lines(rinfo)
-
-            combined_preamble = revolut_preamble
-
-            combined_preamble_is_barclays = False
-
-        rows = convert_pdf_to_rows(tmp_path, preextracted_lines=lines, used_ocr_hint=used_ocr)
-
-        normalized: List[Dict[str, Any]] = []
-
-        for r in rows:
-
-            rr = {
-
-                "__section": r.get("__section"),
-
-                "source_file": filename,
-
-                "account": account,
-
-                "subcategory": r.get("subcategory")
-
-                or _infer_subcategory(
-
-                    r.get("description") or "",
-
-                    r.get("amount"),
-
-                    r.get("money_in"),
-
-                    r.get("money_out"),
-
-                ),
-
-                "date": r.get("date"),
-
-                "description": r.get("description"),
-
-                "money_in": r.get("money_in"),
-
-                "money_out": r.get("money_out"),
-
-                "amount": r.get("amount"),
-
-                "balance": r.get("balance"),
-
-            }
-
-            normalized.append(rr)
-
-        pending_norm = [r for r in normalized if r.get("__section") == "barclays_pending_debit_card"]
-
-        main_norm = [r for r in normalized if r.get("__section") != "barclays_pending_debit_card"]
-
-        if not normalized and not used_ocr:
-
-            if is_pdf:
-
-                lines2, used_ocr2 = _extract_text_lines_from_pdf_with_ocr(tmp_path, force_ocr=True)
-
-                if used_ocr2 and lines2:
-
-                    warnings.append(f"'{filename}': Retried extraction using OCR because no transactions were detected.")
-
-                    account = _extract_account_from_lines(lines2)
-
-                    rows2 = convert_pdf_to_rows(tmp_path, preextracted_lines=lines2, used_ocr_hint=True)
-
-                    normalized = []
-
-                    for r in rows2:
-
-                        rr = {
-
-                            "source_file": filename,
-
-                            "account": account,
-
-                            "subcategory": r.get("subcategory")
-
-                            or _infer_subcategory(
-
-                                r.get("description") or "",
-
-                                r.get("amount"),
-
-                                r.get("money_in"),
-
-                                r.get("money_out"),
-
-                            ),
-
-                            "date": r.get("date"),
-
-                            "description": r.get("description"),
-
-                            "money_in": r.get("money_in"),
-
-                            "money_out": r.get("money_out"),
-
-                            "amount": r.get("amount"),
-
-                            "balance": r.get("balance"),
-
-                        }
-
-                        normalized.append(rr)
-
-        if not normalized:
-
-            warnings.append(
-
-                f"No transactions extracted from '{filename}'. This usually happens when the PDF is scanned (image-only) or the layout is different. CSV was generated with headers only."
-
-            )
-
-            if used_ocr and lines:
-
-                sample = " | ".join(lines[:12])
-
-                if sample:
-
-                    warnings.append(f"'{filename}': OCR sample (first lines): {sample}")
-
-        csv_name = os.path.splitext(filename)[0] + ".csv"
-
-        csv_path = os.path.join(job_folder, csv_name)
-
-        if barclays_preamble:
-
-            _write_barclays_csv_with_pending(csv_path, barclays_preamble, pending_norm, main_norm, fieldnames)
-
-        elif monzo_preamble:
-
-            _write_csv_with_preamble(csv_path, monzo_preamble, main_norm, fieldnames)
-
-        elif virgin_preamble:
-
-            _write_csv_with_preamble(csv_path, virgin_preamble, main_norm, fieldnames)
-
-        elif tide_preamble:
-
-            _write_csv_with_preamble(csv_path, tide_preamble, main_norm, fieldnames)
-
-        elif revolut_preamble:
-
-            _write_csv_with_preamble(csv_path, revolut_preamble, main_norm, fieldnames)
-
-        else:
-
-            _write_csv(csv_path, main_norm, fieldnames)
-
-        per_file_csv_paths.append((csv_name, csv_path))
-
-        all_rows.extend(main_norm)
-
-        all_pending_rows.extend(pending_norm)
-
-    if not seen_any_file:
-
-        msg = "No valid files found"
-
-        if skipped:
-
-            msg += ". Skipped: " + ", ".join(skipped[:20])
-
-        return JSONResponse({"error": msg}, status_code=400)
-
-    combined_path = os.path.join(job_folder, "combined.csv")
-
-    # Always include preamble if available, regardless of file count
-
-    if combined_preamble and combined_preamble_is_barclays:
-
-        _write_barclays_csv_with_pending(combined_path, combined_preamble, all_pending_rows, all_rows, fieldnames)
-
-    elif combined_preamble:
-
-        _write_csv_with_preamble(combined_path, combined_preamble, all_rows, fieldnames)
-
-    else:
-
-        _write_csv(combined_path, all_rows, fieldnames)
-
-    JOBS[job_id] = combined_path
-
-    preview = []
-
-    for r in all_rows[:25]:
-
-        preview.append({k: _format_csv_value(r.get(k)) for k in fieldnames})
-
-    return JSONResponse(
-
-        {
-
-            "job_id": job_id,
-
-            "files_processed": len(per_file_csv_paths),
-
-            "rows_total": int(len(all_rows)),
-
-            "warnings": warnings,
-
-            "fieldnames": fieldnames,
-
-            "preview": preview,
-
-            "download_url": f"/api/download/{job_id}",
-
-        }
-
+    return await bank_statements.convert_bank_statements(
+        request,
+        output_dir=OUTPUT_DIR,
+        jobs=JOBS,
+        UploadFileT=UploadFile,
+        StarletteUploadFileT=StarletteUploadFile,
+        clean_text=_clean_text,
+        to_float_or_none=_to_float_or_none,
+        infer_subcategory=_infer_subcategory,
+        extract_text_lines_from_pdf_with_ocr=_extract_text_lines_from_pdf_with_ocr,
+        extract_text_lines_from_image_with_ocr=_extract_text_lines_from_image_with_ocr,
+        tesseract_available=_tesseract_available,
+        convert_pdf_to_rows=convert_pdf_to_rows,
+        extract_account_from_lines=_extract_account_from_lines,
+        looks_like_barclays_statement=_looks_like_barclays_statement,
+        looks_like_barclays_business_premium_statement=_looks_like_barclays_business_premium_statement,
+        extract_barclays_business_premium_header_info=_extract_barclays_business_premium_header_info,
+        barclays_business_premium_preamble_lines=_barclays_business_premium_preamble_lines,
+        extract_barclays_header_info=_extract_barclays_header_info,
+        barclays_header_preamble_lines=_barclays_header_preamble_lines,
+        looks_like_monzo_statement=_looks_like_monzo_statement,
+        extract_monzo_header_info=_extract_monzo_header_info,
+        monzo_header_preamble_lines=_monzo_header_preamble_lines,
+        looks_like_virgin_money_statement=_looks_like_virgin_money_statement,
+        extract_virgin_money_header_info=_extract_virgin_money_header_info,
+        virgin_money_header_preamble_lines=_virgin_money_header_preamble_lines,
+        looks_like_tide_statement=_looks_like_tide_statement,
+        extract_tide_header_info=_extract_tide_header_info,
+        tide_header_preamble_lines=_tide_header_preamble_lines,
+        looks_like_revolut_business_statement=_looks_like_revolut_business_statement,
+        extract_revolut_business_header_info=_extract_revolut_business_header_info,
+        revolut_business_preamble_lines=_revolut_business_preamble_lines,
+        write_csv=_write_csv,
+        write_csv_with_preamble=_write_csv_with_preamble,
+        write_barclays_csv_with_pending=_write_barclays_csv_with_pending,
+        format_csv_value=_format_csv_value,
+        JSONResponseT=JSONResponse,
+        BANKPDF_OCR=BANKPDF_OCR,
+        pytesseract_installed=pytesseract is not None,
+        fitz_available=fitz is not None,
+        pdfium_available=pdfium is not None,
+        uuid4=uuid.uuid4,
     )
 
 
@@ -19335,23 +19222,7 @@ async def convert_bank_statements(request: Request) -> JSONResponse:
 
 def download(job_id: str) -> FileResponse:
 
-    csv_path = JOBS.get(job_id)
-
-    if not csv_path or not os.path.exists(csv_path):
-
-        job_folder = os.path.join(OUTPUT_DIR, job_id)
-
-        fallback = os.path.join(job_folder, "combined.csv")
-
-        if os.path.exists(fallback):
-
-            csv_path = fallback
-
-        else:
-
-            return FileResponse(path="", status_code=404)
-
-    return FileResponse(csv_path, filename=f"bank_statements_{job_id}.csv", media_type="text/csv")
+    return bank_statements.download_bank_statements(job_id, output_dir=OUTPUT_DIR, jobs=JOBS, FileResponseT=FileResponse)
 
 
 
@@ -19359,1477 +19230,37 @@ def download(job_id: str) -> FileResponse:
 
 @app.post("/api/convert-invoice")
 
-
-
 async def invoice_convert(request: Request) -> JSONResponse:
 
-
-
-    form = await request.form()
-
-
-
-    files: List[UploadFile] = []
-
-
-
-    for key in ("files", "file"):
-
-
-
-        try:
-
-
-
-            items = form.getlist(key)  # type: ignore[attr-defined]
-
-
-
-        except Exception:
-
-
-
-            items = []
-
-
-
-        for it in items:
-
-
-
-            if isinstance(it, (UploadFile, StarletteUploadFile)):
-
-
-
-                files.append(it)  # type: ignore[arg-type]
-
-
-
-            elif hasattr(it, "filename") and hasattr(it, "read"):
-
-
-
-                files.append(it)  # type: ignore[arg-type]
-
-
-
-
-
-
-
-    if not files:
-
-
-
-        return JSONResponse({"error": "No files uploaded"}, status_code=400)
-
-
-
-
-
-
-
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-
-
-    job_id = str(uuid.uuid4())
-
-
-
-    job_folder = os.path.join(OUTPUT_DIR, job_id)
-
-
-
-    os.makedirs(job_folder, exist_ok=True)
-
-
-
-
-
-
-
-    fieldnames = [
-
-
-
-        "sr_no",
-
-
-
-        "category",
-
-
-
-        "document_date",
-
-
-
-        "supplier",
-
-
-
-        "inv_ref_no",
-
-
-
-        "make",
-
-
-
-        "model",
-
-
-
-        "colour",
-
-
-
-        "reg_no",
-
-
-
-        "buying_price",
-
-
-
-        "non_vat",
-
-
-
-        "std_net",
-
-
-
-        "vat_amount",
-
-
-
-    ]
-
-
-
-
-
-
-
-    rows_out: List[Dict[str, Any]] = []
-
-
-
-    warnings: List[str] = []
-
-
-
-
-
-
-
-    seen_any_pdf = False
-
-
-
-    skipped: List[str] = []
-
-
-
-    sr = 1
-
-
-
-    for f in files:
-
-
-
-        filename = os.path.basename(f.filename or "invoice.pdf")
-
-
-
-        content_type = (f.content_type or "").lower()
-
-
-
-        is_pdf = filename.lower().endswith(".pdf") or content_type == "application/pdf"
-
-
-
-        if not is_pdf:
-
-
-
-            skipped.append(f"{filename} ({content_type or 'unknown'})")
-
-
-
-            continue
-
-
-
-        seen_any_pdf = True
-
-
-
-
-
-
-
-        tmp_pdf = os.path.join(job_folder, filename)
-
-
-
-        content = await f.read()
-
-
-
-        with open(tmp_pdf, "wb") as out:
-
-
-
-            out.write(content)
-
-
-
-
-
-
-
-        page_count = _invoice_pdf_page_count(tmp_pdf)
-
-        if page_count > 1:
-
-            pages_lines, used_ocr_pages = _invoice_extract_text_lines_from_pdf_pages_with_ocr(tmp_pdf)
-
-            if not pages_lines:
-
-                warnings.append(f"'{filename}': Could not extract any text from PDF pages.")
-
-            else:
-
-                if used_ocr_pages:
-
-                    warnings.append(f"'{filename}': Extracted text using OCR (scanned PDF detected).")
-
-                for page_idx, page_lines in enumerate(pages_lines, start=1):
-
-                    if not page_lines:
-
-                        warnings.append(f"'{filename}': Page {page_idx}: No readable text extracted.")
-
-                        continue
-
-                    parsed_page = _extract_invoice_fields(page_lines)
-
-                    inv_ref_fallback_page = os.path.splitext(filename)[0] + f"_p{page_idx}"
-
-                    inv_ref_value_page = _clean_text(parsed_page.get("inv_ref_no")) or inv_ref_fallback_page
-
-                    row = _invoice_row_from_parsed(sr, parsed_page, inv_ref_value_page, used_vehicle_purchase=False)
-
-                    rows_out.append(row)
-
-                    sr += 1
-
-            continue
-
-
-
-
-
-
-
-        fn_low = filename.lower()
-
-
-
-        # Always try the fast region OCR first (cheap) and accept it only when it yields
-
-        # plausible key fields. This avoids long full-page OCR timeouts on scanned PDFs,
-
-        # even when the filename doesn't contain useful hints.
-
-        quick_used_vehicle = bool(
-
-            ("used vehicle" in fn_low and "invoice" in fn_low)
-
-            or ("vehicle purchase" in fn_low and "invoice" in fn_low)
-
-            or ("used_vehicle" in fn_low and "invoice" in fn_low)
-
-        )
-
-
-
-        # Fast-path: for used vehicle purchase invoices, avoid full-PDF OCR (slow on scanned PDFs).
-
-        # Try first-page region OCR (DeepSeek/Tesseract) immediately.
-
-        parsed: Dict[str, Any] = {}
-
-
-
-        used_ocr = False
-
-
-
-        is_used_vehicle_purchase = False
-
-
-
-        if quick_used_vehicle:
-
-
-
-            try:
-
-
-
-                extra0 = _invoice_ocr_used_vehicle_purchase_fields(tmp_pdf)
-
-
-
-            except Exception:
-
-
-
-                extra0 = {}
-
-
-
-            def _has_key_fields(x: Dict[str, Any]) -> bool:
-
-
-
-                if not isinstance(x, dict):
-
-
-
-                    return False
-
-
-
-                # Require at least one strong identifier (valid date or valid UK VRM).
-
-                # This prevents accepting noisy OCR output that only contains some random amount.
-
-                dd = _clean_text(x.get("document_date")).replace("-", "/")
-
-                rn = _clean_text(x.get("reg_no")).upper()
-
-                has_date = _is_valid_uk_date(dd)
-
-                has_vrm = bool(re.search(r"\b[A-Z]{2}[0-9O]{2}\s*[A-Z]{3}\b", rn))
-
-                has_amount = x.get("buying_price") not in (None, "")
-
-                return bool((has_date or has_vrm) and has_amount)
-
-
-
-
-
-
-
-            if extra0 and _has_key_fields(extra0):
-
-
-
-                parsed = {
-
-
-
-                    "document_date": extra0.get("document_date") or "",
-
-
-
-                    "supplier": extra0.get("supplier") or "",
-
-
-
-                    "inv_ref_no": "",
-
-
-
-                    "make": extra0.get("make") or "",
-
-
-
-                    "model": extra0.get("model") or "",
-
-
-
-                    "colour": extra0.get("colour") or "",
-
-
-
-                    "reg_no": extra0.get("reg_no") or "",
-
-
-
-                    "buying_price": extra0.get("buying_price"),
-
-
-
-                    "non_vat": extra0.get("non_vat") if extra0.get("non_vat") not in (None, "") else extra0.get("buying_price"),
-
-
-
-                    "std_net": "N/A",
-
-
-
-                    "vat_amount": "N/A",
-
-
-
-                }
-
-
-
-                used_ocr = True
-
-
-
-                is_used_vehicle_purchase = True
-
-
-
-                warnings.append(f"'{filename}': Used fast region OCR for handwritten fields (skipped full-page OCR).")
-
-
-
-
-
-
-
-            # Structured fallback: when ROI OCR doesn't capture handwriting well, ask DeepSeek to
-
-            # output strict JSON for the fields from the first page.
-
-            if (not parsed) and OCR_PROVIDER == "deepseek":
-
-
-
-                try:
-
-
-
-                    ds = _deepseek_extract_used_vehicle_fields_from_pdf(tmp_pdf)
-
-
-
-                except Exception:
-
-
-
-                    ds = {}
-
-
-
-                if ds and isinstance(ds, dict):
-
-
-
-                    dd = _clean_text(ds.get("document_date")).replace("-", "/")
-
-
-
-                    rn = _clean_text(ds.get("reg_no")).upper()
-
-
-
-                    mreg = re.search(r"\b([A-Z]{2}[0-9O]{2}\s*[A-Z]{3})\b", rn)
-
-
-
-                    bp: Any = ds.get("buying_price")
-
-
-
-                    try:
-
-
-
-                        bp_num = float(bp) if bp not in (None, "") else None
-
-
-
-                    except Exception:
-
-
-
-                        bp_num = None
-
-
-
-                    if _is_valid_uk_date(dd) and mreg and (bp_num is not None and 0 < bp_num < 100000):
-
-
-
-                        reg_raw = _clean_text(mreg.group(1)).upper().replace(" ", "")
-
-
-
-                        reg_raw = reg_raw[:2] + reg_raw[2:4].replace("O", "0") + reg_raw[4:]
-
-
-
-                        parsed = {
-
-
-
-                            "document_date": dd,
-
-
-
-                            "supplier": _clean_text(ds.get("supplier"))[:120],
-
-
-
-                            "inv_ref_no": "",
-
-
-
-                            "make": _clean_text(ds.get("make"))[:80],
-
-
-
-                            "model": _clean_text(ds.get("model"))[:60],
-
-
-
-                            "colour": _clean_text(ds.get("colour"))[:40],
-
-
-
-                            "reg_no": reg_raw[:4] + " " + reg_raw[4:],
-
-
-
-                            "buying_price": float(bp_num),
-
-
-
-                            "non_vat": float(bp_num),
-
-
-
-                            "std_net": "N/A",
-
-
-
-                            "vat_amount": "N/A",
-
-
-
-                        }
-
-
-
-                        used_ocr = True
-
-
-
-                        is_used_vehicle_purchase = True
-
-
-
-                        warnings.append(f"'{filename}': Used DeepSeek structured extraction for handwritten fields.")
-
-
-
-
-
-
-
-        lines: List[str] = []
-
-
-
-        if not is_used_vehicle_purchase:
-
-
-
-            lines, used_ocr = _invoice_extract_text_lines_from_pdf_with_ocr(tmp_pdf)
-
-
-
-        if len(lines) < 1:
-
-
-
-            ok, detail = _invoice_tesseract_available()
-
-
-
-            ocr_reason = ""
-
-
-
-            if not ok:
-
-
-
-                ocr_reason = f" OCR unavailable: {detail or 'Tesseract not available'}."
-
-
-
-            elif Image is None:
-
-
-
-                ocr_reason = " OCR unavailable: Pillow (PIL) is not installed."
-
-
-
-            elif fitz is None and pdfium is None:
-
-
-
-                ocr_reason = " OCR unavailable: no PDF renderer (install pypdfium2 or pymupdf)."
-
-
-
-            warnings.append(
-
-
-
-                f"'{filename}': No readable text extracted.{ocr_reason} If this is a scanned/handwritten invoice, install and configure OCR (Tesseract) and set TESSERACT_CMD if needed."
-
-
-
-            )
-
-
-
-        elif used_ocr:
-
-
-
-            warnings.append(f"'{filename}': Extracted text using OCR (scanned PDF detected).")
-
-
-
-
-
-
-
-        if not parsed:
-
-
-
-            parsed = _extract_invoice_fields(lines)
-
-
-
-        # AutoTrader: totals are inside a table that is often missed by PDF text extraction.
-
-        # If key totals are missing, OCR the costs box and merge.
-
-        joined_low = "\n".join([_clean_text(x) for x in lines]).lower()
-
-        if ("autotrader" in joined_low or "auto trader" in joined_low) and (
-
-            parsed.get("buying_price") in (None, "", "N/A") or parsed.get("non_vat") in (None, "", "N/A")
-
-        ):
-
-            extra_at = _invoice_ocr_autotrader_costs_box(tmp_pdf)
-
-            for k, v in extra_at.items():
-
-                if v not in (None, ""):
-
-                    parsed[k] = v
-
-
-
-
-
-
-
-        joined_low = "\n".join([_clean_text(x) for x in lines]).lower()
-
-
-
-        # Avoid overly-broad filename heuristics (e.g. "PURCHASE INV") which can misclassify
-
-        # unrelated invoices and cause region OCR to overwrite correct totals.
-
-        is_used_vehicle_purchase = (
-
-            is_used_vehicle_purchase
-
-            or ("used vehicle purchase invoice" in joined_low)
-
-            or ("vehicle purchase invoice" in joined_low)
-
-            or ("used" in fn_low and "vehicle" in fn_low and "invoice" in fn_low)
-
-        )
-
-
-
-        # If it looks like a BCA invoice, do NOT treat it as used-vehicle unless the explicit phrase exists.
-
-        is_bca_like = ("british car auctions" in joined_low) or ("document date" in joined_low and bool(re.search(r"\bbca\b", joined_low)))
-
-        if is_bca_like and ("used vehicle purchase invoice" not in joined_low and "vehicle purchase invoice" not in joined_low):
-
-            is_used_vehicle_purchase = False
-
-
-
-
-
-
-
-        missing_critical_any = (
-
-
-
-            not _clean_text(parsed.get("document_date"))
-
-
-
-            or not _clean_text(parsed.get("supplier"))
-
-
-
-            or not _clean_text(parsed.get("make"))
-
-
-
-            or not _clean_text(parsed.get("reg_no"))
-
-
-
-            or parsed.get("buying_price") in (None, "")
-
-
-
-        )
-
-
-
-
-
-
-
-        if is_used_vehicle_purchase and not used_ocr and missing_critical_any:
-
-
-
-            missing_critical = (
-
-
-
-                not _clean_text(parsed.get("document_date"))
-
-
-
-                or not _clean_text(parsed.get("supplier"))
-
-
-
-                or not _clean_text(parsed.get("make"))
-
-
-
-                or not _clean_text(parsed.get("reg_no"))
-
-
-
-                or parsed.get("buying_price") in (None, "")
-
-
-
-            )
-
-
-
-            if missing_critical:
-
-
-
-                lines2, used_ocr2 = _invoice_extract_text_lines_from_pdf_with_ocr(tmp_pdf, force_ocr=True)
-
-
-
-                if used_ocr2 and lines2:
-
-
-
-                    parsed2 = _extract_invoice_fields(lines2)
-
-
-
-                    parsed = parsed2
-
-
-
-                    used_ocr = True
-
-
-
-                    warnings.append(f"'{filename}': Forced OCR to capture handwritten fields.")
-
-
-
-
-
-
-
-        if is_used_vehicle_purchase:
-
-
-
-            extra = _invoice_ocr_used_vehicle_purchase_fields(tmp_pdf)
-
-
-
-            if extra:
-
-
-
-                # Only merge when region OCR has strong identifiers; otherwise it can overwrite totals
-
-                # with random amounts on rotated/scanned non-matching invoices.
-
-                ddx = _clean_text(extra.get("document_date")).replace("-", "/")
-
-                rnx = _clean_text(extra.get("reg_no")).upper()
-
-                ok_merge = bool((_is_valid_uk_date(ddx) or re.search(r"\b[A-Z]{2}[0-9O]{2}\s*[A-Z]{3}\b", rnx)) and (extra.get("buying_price") not in (None, "")))
-
-
-
-                if ok_merge:
-
-                    for k, v in extra.items():
-
-                        if v not in (None, ""):
-
-                            parsed[k] = v
-
-                    warnings.append(f"'{filename}': Applied region OCR for handwritten fields.")
-
-
-
-            else:
-
-
-
-                ok_ocr, _detail_ocr = _invoice_tesseract_available()
-
-
-
-                if missing_critical_any and ok_ocr:
-
-
-
-                    warnings.append(
-
-
-
-                        f"'{filename}': Region OCR returned no usable handwritten text (scan may be cropped/rotated or too low quality)."
-
-
-
-                    )
-
-
-
-
-
-
-
-        # BCA scans can have noisy OCR (wrong dates like 21/20/02). If OCR was used and critical
-
-
-
-        # fields are missing/invalid, run BCA label-based region OCR and apply only validated values.
-
-
-
-        reg_no_val = _clean_text(parsed.get("reg_no")).upper()
-
-
-
-        reg_no_vehicle = bool(re.match(r"^[A-Z]{2}\d{2}\s?[A-Z]{3}$", reg_no_val)) if reg_no_val else False
-
-
-
-        joined_low2 = "\n".join([_clean_text(x) for x in lines]).lower()
-
-
-
-        is_bca = ("british car auctions" in joined_low2) or ("document date" in joined_low2 and bool(re.search(r"\bbca\b", joined_low2)))
-
-
-
-        need_bca_ocr = bool(
-
-
-
-            used_ocr
-
-
-
-            and is_bca
-
-
-
-            and (not is_used_vehicle_purchase)
-
-
-
-            and (
-
-
-
-                (not _is_valid_uk_date(parsed.get("document_date")))
-
-
-
-                or (parsed.get("buying_price") in (None, ""))
-
-
-
-                or (not _clean_text(parsed.get("inv_ref_no")))
-
-
-
-                or (not _clean_text(parsed.get("supplier")))
-
-
-
-                or (not _clean_text(parsed.get("make")))
-
-
-
-                or (not _clean_text(parsed.get("reg_no")))
-
-
-
-                or reg_no_vehicle
-
-
-
-            )
-
-
-
-        )
-
-
-
-        if need_bca_ocr:
-
-
-
-            extra_bca = _invoice_ocr_bca_fields(tmp_pdf)
-
-
-
-            if extra_bca:
-
-
-
-                applied = False
-
-
-
-                dd = extra_bca.get("document_date")
-
-
-
-                if _is_valid_uk_date(dd):
-
-
-
-                    parsed["document_date"] = dd
-
-
-
-                    applied = True
-
-
-
-                ir = _clean_text(extra_bca.get("inv_ref_no"))
-
-
-
-                if ir:
-
-
-
-                    parsed["inv_ref_no"] = ir
-
-
-
-                    applied = True
-
-
-
-                sup = _clean_text(extra_bca.get("supplier"))
-
-
-
-                if sup:
-
-
-
-                    parsed["supplier"] = sup
-
-
-
-                    applied = True
-
-
-
-                bp = extra_bca.get("buying_price")
-
-
-
-                if isinstance(bp, (int, float)) and 0 < float(bp) < 100000:
-
-
-
-                    parsed["buying_price"] = float(bp)
-
-
-
-                    parsed["non_vat"] = float(extra_bca.get("non_vat") or bp)
-
-
-
-                    applied = True
-
-
-
-                mk = _clean_text(extra_bca.get("make"))
-
-
-
-                if mk:
-
-
-
-                    parsed["make"] = mk
-
-
-
-                    applied = True
-
-
-
-                rn = _clean_text(extra_bca.get("reg_no"))
-
-
-
-                if rn and rn.upper().startswith("GB"):
-
-
-
-                    parsed["reg_no"] = rn
-
-
-
-                    applied = True
-
-
-
-                elif rn and (not _clean_text(parsed.get("reg_no"))):
-
-
-
-                    parsed["reg_no"] = rn
-
-
-
-                    applied = True
-
-
-
-                if applied:
-
-
-
-                    warnings.append(f"'{filename}': Applied BCA region OCR for header/total fields.")
-
-
-
-        inv_ref_fallback = os.path.splitext(filename)[0]
-
-
-
-        inv_ref_value = _clean_text(parsed.get("inv_ref_no"))
-
-
-
-        if is_used_vehicle_purchase:
-
-
-
-            inv_ref_value = inv_ref_fallback
-
-
-
-        elif not inv_ref_value:
-
-
-
-            inv_ref_value = inv_ref_fallback
-
-
-
-
-
-
-
-        bp_val = parsed.get("buying_price")
-
-
-
-        try:
-
-
-
-            bp_num = float(bp_val) if bp_val not in (None, "") else None
-
-
-
-        except Exception:
-
-
-
-            bp_num = None
-
-
-
-        if is_used_vehicle_purchase and (bp_num is not None and bp_num > 2500):
-
-
-
-            bp_num = None
-
-
-
-            parsed["buying_price"] = None
-
-
-
-            parsed["non_vat"] = None
-
-
-
-
-
-
-
-        row_document_date = parsed.get("document_date")
-
-
-
-        row_supplier = parsed.get("supplier")
-
-
-
-        row_make = parsed.get("make")
-
-
-
-        row_model = parsed.get("model")
-
-
-
-        row_colour = parsed.get("colour")
-
-
-
-        row_reg_no = parsed.get("reg_no")
-
-
-
-        row_buying_price: Any = parsed.get("buying_price")
-
-
-
-        row_non_vat: Any = parsed.get("non_vat")
-
-
-
-        row_std_net: Any = parsed.get("std_net")
-
-
-
-        row_vat_amount: Any = parsed.get("vat_amount")
-
-
-
-
-
-
-
-        if is_used_vehicle_purchase:
-
-
-
-            if not _clean_text(row_document_date):
-
-
-
-                row_document_date = "N/A"
-
-
-
-            if not _clean_text(row_supplier):
-
-
-
-                row_supplier = "N/A"
-
-
-
-            if not _clean_text(row_make):
-
-
-
-                row_make = "N/A"
-
-
-
-            if not _clean_text(row_model):
-
-
-
-                row_model = "N/A"
-
-
-
-            if not _clean_text(row_colour):
-
-
-
-                row_colour = "N/A"
-
-
-
-            if not _clean_text(row_reg_no):
-
-
-
-                row_reg_no = "N/A"
-
-
-
-            if row_buying_price in (None, ""):
-
-
-
-                row_buying_price = "N/A"
-
-
-
-            if row_non_vat in (None, ""):
-
-
-
-                row_non_vat = "N/A"
-
-
-
-            if row_std_net in (None, ""):
-
-
-
-                row_std_net = "N/A"
-
-
-
-            if row_vat_amount in (None, ""):
-
-
-
-                row_vat_amount = "N/A"
-
-
-
-
-
-
-
-        row = {
-
-
-
-            "sr_no": sr,
-
-
-
-            "category": _clean_text(parsed.get("category")) or "purchase",
-
-
-
-            "document_date": row_document_date,
-
-
-
-            "supplier": row_supplier,
-
-
-
-            "inv_ref_no": inv_ref_value,
-
-
-
-            "make": row_make,
-
-
-
-            "model": row_model,
-
-
-
-            "colour": row_colour,
-
-
-
-            "reg_no": row_reg_no,
-
-
-
-            "buying_price": row_buying_price,
-
-
-
-            "non_vat": row_non_vat,
-
-
-
-            "std_net": row_std_net,
-
-
-
-            "vat_amount": row_vat_amount,
-
-
-
-        }
-
-
-
-        rows_out.append(row)
-
-
-
-        sr += 1
-
-
-
-
-
-
-
-    if not seen_any_pdf:
-
-
-
-        msg = "No valid PDF files found"
-
-
-
-        if skipped:
-
-
-
-            msg += ". Skipped: " + ", ".join(skipped[:20])
-
-
-
-        return JSONResponse({"error": msg}, status_code=400)
-
-
-
-
-
-
-
-    combined_path = os.path.join(job_folder, "combined.csv")
-
-
-
-    _write_csv(combined_path, rows_out, fieldnames)
-
-
-
-    INVOICE_JOBS[job_id] = combined_path
-
-
-
-
-
-
-
-    preview = []
-
-
-
-    for r in rows_out[:25]:
-
-
-
-        preview.append({k: _format_csv_value(r.get(k)) for k in fieldnames})
-
-
-
-
-
-
-
-    return JSONResponse(
-
-
-
-        {
-
-
-
-            "job_id": job_id,
-
-
-
-            "files_processed": int(len(rows_out)),
-
-
-
-            "rows_total": int(len(rows_out)),
-
-
-
-            "warnings": warnings,
-
-
-
-            "fieldnames": fieldnames,
-
-
-
-            "preview": preview,
-
-
-
-            "download_url": f"/api/invoice-download/{job_id}",
-
-
-
-        }
-
-
-
+    return await invoices.invoice_convert(
+        request,
+        output_dir=OUTPUT_DIR,
+        invoice_jobs=INVOICE_JOBS,
+        UploadFileT=UploadFile,
+        StarletteUploadFileT=StarletteUploadFile,
+        clean_text=_clean_text,
+        format_csv_value=_format_csv_value,
+        JSONResponseT=JSONResponse,
+        uuid4=uuid.uuid4,
+        invoice_pdf_page_count=_invoice_pdf_page_count,
+        invoice_extract_text_lines_from_pdf_pages_with_ocr=_invoice_extract_text_lines_from_pdf_pages_with_ocr,
+        extract_invoice_fields=_extract_invoice_fields,
+        invoice_row_from_parsed=_invoice_row_from_parsed,
+        invoice_extract_text_lines_from_pdf_with_ocr=_invoice_extract_text_lines_from_pdf_with_ocr,
+        invoice_tesseract_available=_invoice_tesseract_available,
+        Image_available=Image is not None,
+        fitz_available=fitz is not None,
+        pdfium_available=pdfium is not None,
+        OCR_PROVIDER=OCR_PROVIDER,
+        deepseek_extract_used_vehicle_fields_from_pdf=_deepseek_extract_used_vehicle_fields_from_pdf,
+        invoice_ocr_used_vehicle_purchase_fields=_invoice_ocr_used_vehicle_purchase_fields,
+        is_valid_uk_date=_is_valid_uk_date,
+        invoice_ocr_autotrader_costs_box=_invoice_ocr_autotrader_costs_box,
+        invoice_ocr_bca_fields=_invoice_ocr_bca_fields,
+        write_csv=_write_csv,
+        to_float_or_none=_to_float_or_none,
+        re_mod=re,
     )
-
-
 
 
 
@@ -20845,2140 +19276,116 @@ async def invoice_convert(request: Request) -> JSONResponse:
 
 async def invoice_convert_review(request: Request) -> JSONResponse:
 
-
-
-    form = await request.form()
-
-
-
-    files: List[UploadFile] = []
-
-
-
-    for key in ("files", "file"):
-
-
-
-        try:
-
-
-
-            items = form.getlist(key)  # type: ignore[attr-defined]
-
-
-
-        except Exception:
-
-
-
-            items = []
-
-
-
-        for it in items:
-
-
-
-            if isinstance(it, (UploadFile, StarletteUploadFile)):
-
-
-
-                files.append(it)  # type: ignore[arg-type]
-
-
-
-            elif hasattr(it, "filename") and hasattr(it, "read"):
-
-
-
-                files.append(it)  # type: ignore[arg-type]
-
-
-
-
-
-
-
-    if not files:
-
-
-
-        return JSONResponse({"error": "No files uploaded"}, status_code=400)
-
-
-
-
-
-
-
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-
-
-    job_id = str(uuid.uuid4())
-
-
-
-    job_folder = os.path.join(OUTPUT_DIR, job_id)
-
-
-
-    os.makedirs(job_folder, exist_ok=True)
-
-
-
-
-
-
-
-    fieldnames = [
-
-
-
-        "sr_no",
-
-
-
-        "category",
-
-
-
-        "document_date",
-
-
-
-        "supplier",
-
-
-
-        "inv_ref_no",
-
-
-
-        "make",
-
-
-
-        "model",
-
-
-
-        "colour",
-
-
-
-        "reg_no",
-
-
-
-        "buying_price",
-
-
-
-        "non_vat",
-
-
-
-        "std_net",
-
-
-
-        "vat_amount",
-
-
-
-    ]
-
-
-
-
-
-
-
-    rows_out: List[Dict[str, Any]] = []
-
-
-
-    warnings: List[str] = []
-
-
-
-
-
-
-
-    seen_any_pdf = False
-
-
-
-    skipped: List[str] = []
-
-
-
-    sr = 1
-
-
-
-    for f in files:
-
-
-
-        filename = os.path.basename(f.filename or "invoice.pdf")
-
-
-
-        content_type = (f.content_type or "").lower()
-
-
-
-        is_pdf = filename.lower().endswith(".pdf") or content_type == "application/pdf"
-
-
-
-        if not is_pdf:
-
-
-
-            skipped.append(f"{filename} ({content_type or 'unknown'})")
-
-
-
-            continue
-
-
-
-        seen_any_pdf = True
-
-
-
-
-
-
-
-        tmp_pdf = os.path.join(job_folder, filename)
-
-
-
-        content = await f.read()
-
-
-
-        with open(tmp_pdf, "wb") as out:
-
-
-
-            out.write(content)
-
-
-
-
-
-
-
-        page_count = _invoice_pdf_page_count(tmp_pdf)
-
-        if page_count > 1:
-
-            pages_lines, used_ocr_pages = _invoice_extract_text_lines_from_pdf_pages_with_ocr(tmp_pdf)
-
-            if not pages_lines:
-
-                warnings.append(f"'{filename}': Could not extract any text from PDF pages.")
-
-            else:
-
-                if used_ocr_pages:
-
-                    warnings.append(f"'{filename}': Extracted text using OCR (scanned PDF detected).")
-
-                for page_idx, page_lines in enumerate(pages_lines, start=1):
-
-                    if not page_lines:
-
-                        warnings.append(f"'{filename}': Page {page_idx}: No readable text extracted.")
-
-                        continue
-
-                    parsed_page = _extract_invoice_fields(page_lines)
-
-                    inv_ref_fallback_page = os.path.splitext(filename)[0] + f"_p{page_idx}"
-
-                    inv_ref_value_page = _clean_text(parsed_page.get("inv_ref_no")) or inv_ref_fallback_page
-
-                    row = _invoice_row_from_parsed(sr, parsed_page, inv_ref_value_page, used_vehicle_purchase=False)
-
-                    rows_out.append(row)
-
-                    sr += 1
-
-            continue
-
-
-
-
-
-
-
-        lines, used_ocr = _invoice_extract_text_lines_from_pdf_with_ocr(tmp_pdf)
-
-
-
-        if len(lines) < 1:
-
-
-
-            ok, detail = _invoice_tesseract_available()
-
-
-
-            ocr_reason = ""
-
-
-
-            if not ok:
-
-
-
-                ocr_reason = f" OCR unavailable: {detail or 'Tesseract not available'}."
-
-
-
-            elif Image is None:
-
-
-
-                ocr_reason = " OCR unavailable: Pillow (PIL) is not installed."
-
-
-
-            elif fitz is None and pdfium is None:
-
-
-
-                ocr_reason = " OCR unavailable: no PDF renderer (install pypdfium2 or pymupdf)."
-
-
-
-            warnings.append(
-
-
-
-                f"'{filename}': No readable text extracted.{ocr_reason} If this is a scanned/handwritten invoice, install and configure OCR (Tesseract) and set TESSERACT_CMD if needed."
-
-
-
-            )
-
-
-
-        elif used_ocr:
-
-
-
-            warnings.append(f"'{filename}': Extracted text using OCR (scanned PDF detected).")
-
-
-
-
-
-
-
-        parsed = _extract_invoice_fields(lines)
-
-
-
-        # AutoTrader: totals are inside a table that is often missed by PDF text extraction.
-
-        # If key totals are missing, OCR the costs box and merge.
-
-        joined_low = "\n".join([_clean_text(x) for x in lines]).lower()
-
-        if ("autotrader" in joined_low or "auto trader" in joined_low) and (
-
-            parsed.get("buying_price") in (None, "", "N/A") or parsed.get("non_vat") in (None, "", "N/A")
-
-        ):
-
-            extra_at = _invoice_ocr_autotrader_costs_box(tmp_pdf)
-
-            for k, v in extra_at.items():
-
-                if v not in (None, ""):
-
-                    parsed[k] = v
-
-
-
-
-
-
-
-        joined_low = "\n".join([_clean_text(x) for x in lines]).lower()
-
-
-
-        fn_low = filename.lower()
-
-
-
-        is_used_vehicle_purchase = (
-
-
-
-            "used vehicle purchase invoice" in joined_low
-
-
-
-            or "vehicle purchase invoice" in joined_low
-
-
-
-            or ("purchase" in fn_low and "inv" in fn_low)
-
-
-
-            or ("used" in fn_low and "vehicle" in fn_low and "invoice" in fn_low)
-
-
-
-        )
-
-
-
-
-
-
-
-        missing_critical_any = (
-
-
-
-            not _clean_text(parsed.get("document_date"))
-
-
-
-            or not _clean_text(parsed.get("supplier"))
-
-
-
-            or not _clean_text(parsed.get("make"))
-
-
-
-            or not _clean_text(parsed.get("reg_no"))
-
-
-
-            or parsed.get("buying_price") in (None, "")
-
-
-
-        )
-
-
-
-
-
-
-
-        if is_used_vehicle_purchase and not used_ocr and missing_critical_any:
-
-
-
-            missing_critical = (
-
-
-
-                not _clean_text(parsed.get("document_date"))
-
-
-
-                or not _clean_text(parsed.get("supplier"))
-
-
-
-                or not _clean_text(parsed.get("make"))
-
-
-
-                or not _clean_text(parsed.get("reg_no"))
-
-
-
-                or parsed.get("buying_price") in (None, "")
-
-
-
-            )
-
-
-
-            if missing_critical:
-
-
-
-                lines2, used_ocr2 = _invoice_extract_text_lines_from_pdf_with_ocr(tmp_pdf, force_ocr=True)
-
-
-
-                if used_ocr2 and lines2:
-
-
-
-                    parsed2 = _extract_invoice_fields(lines2)
-
-
-
-                    parsed = parsed2
-
-
-
-                    used_ocr = True
-
-
-
-                    warnings.append(f"'{filename}': Forced OCR to capture handwritten fields.")
-
-
-
-
-
-
-
-        if is_used_vehicle_purchase:
-
-
-
-            extra = _invoice_ocr_used_vehicle_purchase_fields(tmp_pdf)
-
-
-
-            if extra:
-
-
-
-                for k, v in extra.items():
-
-
-
-                    if v not in (None, ""):
-
-
-
-                        parsed[k] = v
-
-
-
-                if _clean_text(extra.get("supplier")) or _clean_text(extra.get("make")) or _clean_text(extra.get("reg_no")):
-
-
-
-                    warnings.append(f"'{filename}': Applied region OCR for handwritten fields.")
-
-
-
-            else:
-
-
-
-                ok_ocr, _detail_ocr = _invoice_tesseract_available()
-
-
-
-                if missing_critical_any and ok_ocr:
-
-
-
-                    warnings.append(
-
-
-
-                        f"'{filename}': Region OCR returned no usable handwritten text (scan may be cropped/rotated or too low quality)."
-
-
-
-                    )
-
-
-
-
-
-
-
-        # BCA scans can have very noisy OCR (wrong dates like 21/20/02). If OCR was used and
-
-
-
-        # critical header/total fields are missing or invalid, run label-based BCA region OCR.
-
-
-
-        reg_no_val = _clean_text(parsed.get("reg_no")).upper()
-
-
-
-        reg_no_vehicle = bool(re.match(r"^[A-Z]{2}\d{2}\s?[A-Z]{3}$", reg_no_val)) if reg_no_val else False
-
-
-
-        joined_low2 = "\n".join([_clean_text(x) for x in lines]).lower()
-
-
-
-        is_bca = ("british car auctions" in joined_low2) or ("document date" in joined_low2 and bool(re.search(r"\bbca\b", joined_low2)))
-
-
-
-        need_bca_ocr = bool(
-
-
-
-            used_ocr
-
-
-
-            and is_bca
-
-
-
-            and (not is_used_vehicle_purchase)
-
-
-
-            and (
-
-
-
-                (not _is_valid_uk_date(parsed.get("document_date")))
-
-
-
-                or (parsed.get("buying_price") in (None, ""))
-
-
-
-                or (not _clean_text(parsed.get("inv_ref_no")))
-
-
-
-                or (not _clean_text(parsed.get("supplier")))
-
-
-
-                or (not _clean_text(parsed.get("make")))
-
-
-
-                or (not _clean_text(parsed.get("reg_no")))
-
-
-
-                or reg_no_vehicle
-
-
-
-            )
-
-
-
-        )
-
-
-
-        if need_bca_ocr:
-
-
-
-            extra_bca = _invoice_ocr_bca_fields(tmp_pdf)
-
-
-
-            if extra_bca:
-
-
-
-                applied = False
-
-
-
-                dd = extra_bca.get("document_date")
-
-
-
-                if _is_valid_uk_date(dd):
-
-
-
-                    parsed["document_date"] = dd
-
-
-
-                    applied = True
-
-
-
-                ir = _clean_text(extra_bca.get("inv_ref_no"))
-
-
-
-                if ir:
-
-
-
-                    parsed["inv_ref_no"] = ir
-
-
-
-                    applied = True
-
-
-
-                sup = _clean_text(extra_bca.get("supplier"))
-
-
-
-                if sup:
-
-
-
-                    parsed["supplier"] = sup
-
-
-
-                    applied = True
-
-
-
-                bp = extra_bca.get("buying_price")
-
-
-
-                if isinstance(bp, (int, float)) and 0 < float(bp) < 100000:
-
-
-
-                    parsed["buying_price"] = float(bp)
-
-
-
-                    parsed["non_vat"] = float(extra_bca.get("non_vat") or bp)
-
-
-
-                    applied = True
-
-
-
-                mk = _clean_text(extra_bca.get("make"))
-
-
-
-                if mk:
-
-
-
-                    parsed["make"] = mk
-
-
-
-                    applied = True
-
-
-
-                rn = _clean_text(extra_bca.get("reg_no"))
-
-
-
-                if rn and rn.upper().startswith("GB"):
-
-
-
-                    parsed["reg_no"] = rn
-
-
-
-                    applied = True
-
-
-
-                elif rn and (not _clean_text(parsed.get("reg_no"))):
-
-
-
-                    parsed["reg_no"] = rn
-
-
-
-                    applied = True
-
-
-
-                if applied:
-
-
-
-                    warnings.append(f"'{filename}': Applied BCA region OCR for header/total fields.")
-
-
-
-
-
-
-
-        inv_ref_fallback = os.path.splitext(filename)[0]
-
-
-
-        inv_ref_value = _clean_text(parsed.get("inv_ref_no"))
-
-
-
-        if is_used_vehicle_purchase:
-
-
-
-            inv_ref_value = inv_ref_fallback
-
-
-
-        elif not inv_ref_value:
-
-
-
-            inv_ref_value = inv_ref_fallback
-
-
-
-
-
-
-
-        bp_val = parsed.get("buying_price")
-
-
-
-        try:
-
-
-
-            bp_num = float(bp_val) if bp_val not in (None, "") else None
-
-
-
-        except Exception:
-
-
-
-            bp_num = None
-
-
-
-        if is_used_vehicle_purchase and (bp_num is not None and bp_num > 2500):
-
-
-
-            bp_num = None
-
-
-
-            parsed["buying_price"] = None
-
-
-
-            parsed["non_vat"] = None
-
-
-
-
-
-
-
-        row_document_date = parsed.get("document_date")
-
-
-
-        row_supplier = parsed.get("supplier")
-
-
-
-        row_make = parsed.get("make")
-
-
-
-        row_reg_no = parsed.get("reg_no")
-
-
-
-        row_buying_price: Any = parsed.get("buying_price")
-
-
-
-        row_non_vat: Any = parsed.get("non_vat")
-
-
-
-        row_std_net: Any = parsed.get("std_net")
-
-
-
-        row_vat_amount: Any = parsed.get("vat_amount")
-
-
-
-
-
-
-
-        if is_used_vehicle_purchase:
-
-
-
-            if not _clean_text(row_document_date):
-
-
-
-                row_document_date = "N/A"
-
-
-
-            if not _clean_text(row_supplier):
-
-
-
-                row_supplier = "N/A"
-
-
-
-            if not _clean_text(row_make):
-
-
-
-                row_make = "N/A"
-
-
-
-            if not _clean_text(row_reg_no):
-
-
-
-                row_reg_no = "N/A"
-
-
-
-            if row_buying_price in (None, ""):
-
-
-
-                row_buying_price = "N/A"
-
-
-
-            if row_non_vat in (None, ""):
-
-
-
-                row_non_vat = "N/A"
-
-
-
-            if row_std_net in (None, ""):
-
-
-
-                row_std_net = "N/A"
-
-
-
-            if row_vat_amount in (None, ""):
-
-
-
-                row_vat_amount = "N/A"
-
-
-
-
-
-
-
-        row = {
-
-
-
-            "sr_no": sr,
-
-
-
-            "category": _clean_text(parsed.get("category")) or "purchase",
-
-
-
-            "document_date": row_document_date,
-
-
-
-            "supplier": row_supplier,
-
-
-
-            "inv_ref_no": inv_ref_value,
-
-
-
-            "make": row_make,
-
-
-
-            "reg_no": row_reg_no,
-
-
-
-            "buying_price": row_buying_price,
-
-
-
-            "non_vat": row_non_vat,
-
-
-
-            "std_net": row_std_net,
-
-
-
-            "vat_amount": row_vat_amount,
-
-
-
-        }
-
-
-
-        rows_out.append(row)
-
-
-
-        sr += 1
-
-
-
-
-
-
-
-    if not seen_any_pdf:
-
-
-
-        msg = "No valid PDF files found"
-
-
-
-        if skipped:
-
-
-
-            msg += ". Skipped: " + ", ".join(skipped[:20])
-
-
-
-        return JSONResponse({"error": msg}, status_code=400)
-
-
-
-
-
-
-
-    draft_path = os.path.join(job_folder, "draft.json")
-
-
-
-    payload = {"fieldnames": fieldnames, "rows": rows_out}
-
-
-
-    _write_json(draft_path, payload)
-
-
-
-    INVOICE_REVIEW_JOBS[job_id] = draft_path
-
-
-
-
-
-
-
-    preview = []
-
-
-
-    for r in rows_out[:25]:
-
-
-
-        preview.append({k: _format_csv_value(r.get(k)) for k in fieldnames})
-
-
-
-
-
-
-
-    return JSONResponse(
-
-
-
-        {
-
-
-
-            "job_id": job_id,
-
-
-
-            "files_processed": int(len(rows_out)),
-
-
-
-            "rows_total": int(len(rows_out)),
-
-
-
-            "warnings": warnings,
-
-
-
-            "fieldnames": fieldnames,
-
-
-
-            "preview": preview,
-
-
-
-            "draft_rows": rows_out,
-
-
-
-        }
-
-
-
+    return await invoices.invoice_convert_review(
+        request,
+        output_dir=OUTPUT_DIR,
+        invoice_review_jobs=INVOICE_REVIEW_JOBS,
+        invoice_jobs=INVOICE_JOBS,
+        UploadFileT=UploadFile,
+        StarletteUploadFileT=StarletteUploadFile,
+        clean_text=_clean_text,
+        format_csv_value=_format_csv_value,
+        JSONResponseT=JSONResponse,
+        uuid4=uuid.uuid4,
+        invoice_pdf_page_count=_invoice_pdf_page_count,
+        invoice_extract_text_lines_from_pdf_pages_with_ocr=_invoice_extract_text_lines_from_pdf_pages_with_ocr,
+        extract_invoice_fields=_extract_invoice_fields,
+        invoice_row_from_parsed=_invoice_row_from_parsed,
+        invoice_extract_text_lines_from_pdf_with_ocr=_invoice_extract_text_lines_from_pdf_with_ocr,
+        invoice_tesseract_available=_invoice_tesseract_available,
+        Image_available=Image is not None,
+        fitz_available=fitz is not None,
+        pdfium_available=pdfium is not None,
+        OCR_PROVIDER=OCR_PROVIDER,
+        deepseek_extract_used_vehicle_fields_from_pdf=_deepseek_extract_used_vehicle_fields_from_pdf,
+        invoice_ocr_used_vehicle_purchase_fields=_invoice_ocr_used_vehicle_purchase_fields,
+        is_valid_uk_date=_is_valid_uk_date,
+        invoice_ocr_autotrader_costs_box=_invoice_ocr_autotrader_costs_box,
+        invoice_ocr_bca_fields=_invoice_ocr_bca_fields,
+        write_csv=_write_csv,
+        write_json=_write_json,
+        to_float_or_none=_to_float_or_none,
+        re_mod=re,
     )
-
-
-
 
 
 @app.post("/api/handwritten-invoice-convert-review")
-
-
-
 async def handwritten_invoice_convert_review(request: Request) -> JSONResponse:
-
-    form = await request.form()
-
-    model_name_in = _clean_text(form.get("model_name") if hasattr(form, "get") else "")
-
-    if not model_name_in:
-
-        model_name_in = _clean_text(form.get("model") if hasattr(form, "get") else "")
-
-    model_name = model_name_in if model_name_in in MODEL_REGISTRY else (LIGHTON_LOCAL_MODEL_NAME if LIGHTON_LOCAL_MODEL_NAME in MODEL_REGISTRY else "LightOnOCR-2-1B (Best OCR)")
-
-    try:
-
-        temperature = float(_clean_text(form.get("temperature") if hasattr(form, "get") else "") or "0.2")
-
-    except Exception:
-
-        temperature = 0.2
-
-    try:
-
-        max_tokens = int(_clean_text(form.get("max_tokens") if hasattr(form, "get") else "") or _clean_text(form.get("max_output_tokens") if hasattr(form, "get") else "") or "2048")
-
-    except Exception:
-
-        max_tokens = 2048
-
-    try:
-
-        page_num = int(_clean_text(form.get("page_num") if hasattr(form, "get") else "") or "1")
-
-    except Exception:
-
-        page_num = 1
-
-    include_crops = _clean_text(form.get("include_crops") if hasattr(form, "get") else "").strip().lower() in {"1", "true", "yes", "y", "on"}
-
-    try:
-
-        crops_limit = int(_clean_text(form.get("crops_limit") if hasattr(form, "get") else "") or "25")
-
-    except Exception:
-
-        crops_limit = 25
-
-    files: List[UploadFile] = []
-
-    for key in ("files", "file"):
-
-        try:
-
-            items = form.getlist(key)  # type: ignore[attr-defined]
-
-        except Exception:
-
-            items = []
-
-        for it in items:
-
-            if isinstance(it, (UploadFile, StarletteUploadFile)):
-
-                files.append(it)  # type: ignore[arg-type]
-
-            elif hasattr(it, "filename") and hasattr(it, "read"):
-
-                files.append(it)  # type: ignore[arg-type]
-
-    if not files:
-
-        return JSONResponse({"error": "No files uploaded"}, status_code=400)
-
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-    job_id = str(uuid.uuid4())
-
-    job_folder = os.path.join(OUTPUT_DIR, job_id)
-
-    os.makedirs(job_folder, exist_ok=True)
-
-    outputs: List[Dict[str, Any]] = []
-
-    warnings: List[str] = []
-
-    skipped: List[str] = []
-
-    for f in files:
-
-        filename = os.path.basename(f.filename or "handwritten")
-
-        content_type = (f.content_type or "").lower()
-
-        is_pdf = filename.lower().endswith(".pdf") or content_type == "application/pdf"
-
-        is_image = content_type.startswith("image/") or filename.lower().endswith((".png", ".jpg", ".jpeg", ".webp"))
-
-        if not (is_pdf or is_image):
-
-            skipped.append(f"{filename} ({content_type or 'unknown'})")
-
-            continue
-
-        content = await f.read()
-
-        if not content:
-
-            warnings.append(f"'{filename}': Empty file.")
-
-            continue
-
-        pil_img: Any = None
-
-        png_bytes: bytes = b""
-
-        if is_image:
-
-            if Image is not None:
-
-                try:
-
-                    pil_img = Image.open(io.BytesIO(content)).convert("RGB")
-
-                    buf0 = io.BytesIO()
-
-                    pil_img.save(buf0, format="PNG")
-
-                    png_bytes = buf0.getvalue()
-
-                except Exception:
-
-                    pil_img = None
-
-                    png_bytes = b""
-
-        else:
-
-            tmp_pdf = os.path.join(job_folder, filename)
-
-            try:
-
-                with open(tmp_pdf, "wb") as out:
-
-                    out.write(content)
-
-            except Exception:
-
-                tmp_pdf = ""
-
-            if tmp_pdf and os.path.exists(tmp_pdf):
-
-                try:
-
-                    pil_img = _invoice_render_page(tmp_pdf, page_num)
-
-                except Exception:
-
-                    pil_img = None
-
-                if pil_img is None:
-
-                    try:
-
-                        pil_img = _invoice_render_first_page(tmp_pdf)
-
-                    except Exception:
-
-                        pil_img = None
-
-                if pil_img is not None:
-
-                    try:
-
-                        buf1 = io.BytesIO()
-
-                        pil_img.save(buf1, format="PNG")
-
-                        png_bytes = buf1.getvalue()
-
-                    except Exception:
-
-                        png_bytes = b""
-
-        raw_output = ""
-
-        cleaned_text = ""
-
-        detections: List[Dict[str, Any]] = []
-
-        crops: List[Dict[str, Any]] = []
-
-        engine = ""
-
-        has_bbox = bool((MODEL_REGISTRY.get(model_name) or {}).get("has_bbox"))
-
-        if png_bytes:
-
-            try:
-
-                raw_output = _handwritten_lighton_multimodel_ocr(png_bytes, model_name=model_name, temperature=temperature, max_tokens=max_tokens)
-
-            except Exception:
-
-                raw_output = ""
-
-            if raw_output:
-
-                engine = "lighton"
-
-                if has_bbox:
-
-                    cleaned_text, detections = _parse_bbox_output(raw_output)
-
-                else:
-
-                    cleaned_text = _clean_output_text(raw_output)
-
-        if not cleaned_text:
-
-            if pil_img is not None:
-
-                try:
-
-                    t_ocr = _ocr_words_and_lines_from_pil_image(pil_img)
-
-                except Exception:
-
-                    t_ocr = {"lines": [], "words": []}
-
-            else:
-
-                t_ocr = {"lines": [], "words": []}
-
-            if (t_ocr.get("lines") or t_ocr.get("words")) and isinstance(t_ocr, dict):
-
-                engine = engine or "tesseract"
-
-                line_txt = "\n".join([_clean_text(x.get("text")) for x in (t_ocr.get("lines") or []) if isinstance(x, dict)])
-
-                cleaned_text = _clean_output_text(line_txt)
-
-        if include_crops and has_bbox and detections and pil_img is not None:
-
-            for det in detections[: max(0, crops_limit)]:
-
-                crop_img = _crop_from_bbox(pil_img, det)
-
-                if crop_img is None:
-
-                    continue
-
-                try:
-
-                    b = io.BytesIO()
-
-                    crop_img.save(b, format="PNG")
-
-                    crops.append({"ref": det.get("ref"), "coords": det.get("coords"), "png_base64": base64.b64encode(b.getvalue()).decode("ascii")})
-
-                except Exception:
-
-                    continue
-
-        lines_out = [x for x in [_clean_text(x) for x in str(cleaned_text or "").splitlines()] if x]
-
-        words_out = [x for x in re.split(r"\s+", _clean_text(cleaned_text)) if x]
-
-        payload_out: Dict[str, Any] = {
-
-            "filename": filename,
-
-            "content_type": content_type,
-
-            "model_name": model_name,
-
-            "has_bbox": bool(has_bbox),
-
-            "engine": engine or "",
-
-            "raw_output": raw_output,
-
-            "cleaned_text": cleaned_text,
-
-            "lines": [{"index": i + 1, "text": ln} for i, ln in enumerate(lines_out)],
-
-            "words": [{"index": i + 1, "text": w} for i, w in enumerate(words_out)],
-
-            "detections": detections,
-
-        }
-
-        if include_crops:
-
-            payload_out["crops"] = crops
-
-        if cleaned_text:
-
-            warnings.append(f"'{filename}': Extracted handwritten OCR text.")
-
-        else:
-
-            warnings.append(f"'{filename}': No OCR text could be extracted.")
-
-        outputs.append(payload_out)
-    if not outputs:
-
-        msg = "No valid handwritten invoice files found"
-
-        if skipped:
-
-            msg += ". Skipped: " + ", ".join(skipped[:20])
-
-        return JSONResponse({"error": msg, "warnings": warnings, "skipped": skipped}, status_code=400)
-
-    return JSONResponse(
-
-        {
-
-            "job_id": job_id,
-
-            "files_total": int(len(files)),
-
-            "files_output": int(len(outputs)),
-
-            "warnings": warnings,
-
-            "skipped": skipped,
-
-            "outputs": outputs,
-
-        }
-
+    return await handwritten.handwritten_invoice_convert_review(
+        request,
+        output_dir=OUTPUT_DIR,
+        handwritten_review_jobs=HANDWRITTEN_REVIEW_JOBS,
+        handwritten_jobs=HANDWRITTEN_JOBS,
+        UploadFileT=UploadFile,
+        StarletteUploadFileT=StarletteUploadFile,
+        clean_text=_clean_text,
+        JSONResponseT=JSONResponse,
+        uuid4=uuid.uuid4,
+        MODEL_REGISTRY=MODEL_REGISTRY,
+        LIGHTON_LOCAL_MODEL_NAME=LIGHTON_LOCAL_MODEL_NAME,
+        handwritten_lighton_multimodel_ocr=_handwritten_lighton_multimodel_ocr,
+        parse_bbox_output=_parse_bbox_output,
+        clean_output_text=_clean_output_text,
+        ocr_words_and_lines_from_pil_image=_ocr_words_and_lines_from_pil_image,
+        crop_from_bbox=_crop_from_bbox,
+        extract_invoice_fields=_extract_invoice_fields,
+        extract_used_vehicle_invoice_fields=_extract_used_vehicle_invoice_fields,
+        invoice_render_page=_invoice_render_page,
+        invoice_render_first_page=_invoice_render_first_page,
+        ImageT=Image,
+        io_mod=io,
+        base64_mod=base64,
+        re_mod=re,
+        write_json=_write_json,
+        write_csv=_write_csv,
+        format_csv_value=_format_csv_value,
     )
-
-
-
-
-
-@app.post("/api/handwritten-invoice-confirm/{job_id}")
-
-
-
-async def handwritten_invoice_confirm(job_id: str, request: Request) -> JSONResponse:
-
-    draft_path = HANDWRITTEN_REVIEW_JOBS.get(job_id)
-
-    if not draft_path or not os.path.exists(draft_path):
-
-        return JSONResponse({"error": "Invalid or expired job_id"}, status_code=404)
-
-    try:
-
-        payload_in = await request.json()
-
-    except Exception:
-
-        return JSONResponse({"error": "Invalid JSON body"}, status_code=400)
-
-    rows_in = payload_in.get("rows") if isinstance(payload_in, dict) else None
-
-    if not isinstance(rows_in, list):
-
-        return JSONResponse({"error": "'rows' must be a list"}, status_code=400)
-
-    try:
-
-        draft = _read_json(draft_path)
-
-        fieldnames = draft.get("fieldnames") or []
-
-    except Exception:
-
-        return JSONResponse({"error": "Draft data could not be read"}, status_code=500)
-
-    if not isinstance(fieldnames, list) or not fieldnames:
-
-        fieldnames = [
-
-            "sr_no",
-
-            "category",
-
-            "document_date",
-
-            "supplier",
-
-            "inv_ref_no",
-
-            "make",
-
-            "model",
-
-            "colour",
-
-            "reg_no",
-
-            "buying_price",
-
-            "non_vat",
-
-            "std_net",
-
-            "vat_amount",
-
-        ]
-
-    cleaned_rows: List[Dict[str, Any]] = []
-
-    for idx, r in enumerate(rows_in, start=1):
-
-        if not isinstance(r, dict):
-
-            continue
-
-        sr_no = r.get("sr_no")
-
-        try:
-
-            sr_val = int(sr_no) if sr_no not in (None, "") else idx
-
-        except Exception:
-
-            sr_val = idx
-
-        category = _clean_text(r.get("category")) or "purchase"
-
-        document_date = _clean_text(r.get("document_date"))
-
-        supplier = _clean_text(r.get("supplier"))
-
-        inv_ref_no = _clean_text(r.get("inv_ref_no"))
-
-        make = _clean_text(r.get("make"))
-
-        model = _clean_text(r.get("model"))
-
-        colour = _clean_text(r.get("colour"))
-
-        reg_no = _clean_text(r.get("reg_no"))
-
-        buying_price_in = r.get("buying_price")
-
-        non_vat_in = r.get("non_vat")
-
-        vat_amount_in = r.get("vat_amount")
-
-        buying_price: Any = "N/A" if _clean_text(buying_price_in).upper() in {"N/A", "NA"} else _to_float_or_none(buying_price_in)
-
-        non_vat: Any = "N/A" if _clean_text(non_vat_in).upper() in {"N/A", "NA"} else _to_float_or_none(non_vat_in)
-
-        std_net_raw: Any = r.get("std_net")
-
-        std_net = _to_float_or_none(std_net_raw) if _clean_text(std_net_raw).upper() not in {"N/A", "NA"} else "N/A"
-
-        vat_amount: Any = "N/A" if _clean_text(vat_amount_in).upper() in {"N/A", "NA"} else _to_float_or_none(vat_amount_in)
-
-        cleaned_rows.append(
-
-            {
-
-                "sr_no": sr_val,
-
-                "category": category,
-
-                "document_date": document_date,
-
-                "supplier": supplier,
-
-                "inv_ref_no": inv_ref_no,
-
-                "make": make,
-
-                "model": model,
-
-                "colour": colour,
-
-                "reg_no": reg_no,
-
-                "buying_price": buying_price,
-
-                "non_vat": non_vat,
-
-                "std_net": std_net,
-
-                "vat_amount": vat_amount,
-
-            }
-
-        )
-
-    job_folder = os.path.dirname(draft_path)
-
-    confirmed_path = os.path.join(job_folder, "confirmed.json")
-
-    _write_json(confirmed_path, {"fieldnames": fieldnames, "rows": cleaned_rows})
-
-    preview = []
-
-    for r in cleaned_rows[:25]:
-
-        preview.append({k: _format_csv_value(r.get(k)) for k in fieldnames})
-
-    return JSONResponse(
-
-        {
-
-            "job_id": job_id,
-
-            "rows_total": int(len(cleaned_rows)),
-
-            "fieldnames": fieldnames,
-
-            "preview": preview,
-
-            "confirmed_rows": cleaned_rows,
-
-        }
-
-    )
-
-
-
 
 
 @app.post("/api/invoice-confirm/{job_id}")
-
-
-
 async def invoice_confirm(job_id: str, request: Request) -> JSONResponse:
-
-
-
-    draft_path = INVOICE_REVIEW_JOBS.get(job_id)
-
-
-
-    if not draft_path or not os.path.exists(draft_path):
-
-
-
-        return JSONResponse({"error": "Invalid or expired job_id"}, status_code=404)
-
-
-
-
-
-
-
-    try:
-
-
-
-        payload_in = await request.json()
-
-
-
-    except Exception:
-
-
-
-        return JSONResponse({"error": "Invalid JSON body"}, status_code=400)
-
-
-
-
-
-
-
-    rows_in = payload_in.get("rows") if isinstance(payload_in, dict) else None
-
-
-
-    if not isinstance(rows_in, list):
-
-
-
-        return JSONResponse({"error": "'rows' must be a list"}, status_code=400)
-
-
-
-
-
-
-
-    try:
-
-
-
-        draft = _read_json(draft_path)
-
-
-
-        fieldnames = draft.get("fieldnames") or []
-
-
-
-    except Exception:
-
-
-
-        return JSONResponse({"error": "Draft data could not be read"}, status_code=500)
-
-
-
-
-
-
-
-    if not isinstance(fieldnames, list) or not fieldnames:
-
-
-
-        fieldnames = [
-
-
-
-            "sr_no",
-
-
-
-            "category",
-
-
-
-            "document_date",
-
-
-
-            "supplier",
-
-
-
-            "inv_ref_no",
-
-
-
-            "make",
-
-
-
-            "model",
-
-
-
-            "colour",
-
-
-
-            "reg_no",
-
-
-
-            "buying_price",
-
-
-
-            "non_vat",
-
-
-
-            "std_net",
-
-
-
-            "vat_amount",
-
-
-
-        ]
-
-
-
-
-
-
-
-    cleaned_rows: List[Dict[str, Any]] = []
-
-
-
-    for idx, r in enumerate(rows_in, start=1):
-
-
-
-        if not isinstance(r, dict):
-
-
-
-            continue
-
-
-
-        sr_no = r.get("sr_no")
-
-
-
-        try:
-
-
-
-            sr_val = int(sr_no) if sr_no not in (None, "") else idx
-
-
-
-        except Exception:
-
-
-
-            sr_val = idx
-
-
-
-        category = _clean_text(r.get("category")) or "purchase"
-
-
-
-        document_date = _clean_text(r.get("document_date"))
-
-
-
-        supplier = _clean_text(r.get("supplier"))
-
-
-
-        inv_ref_no = _clean_text(r.get("inv_ref_no"))
-
-
-
-        make = _clean_text(r.get("make"))
-
-
-
-        model = _clean_text(r.get("model"))
-
-
-
-        colour = _clean_text(r.get("colour"))
-
-
-
-        reg_no = _clean_text(r.get("reg_no"))
-
-
-
-
-
-
-
-        buying_price_in = r.get("buying_price")
-
-
-
-        non_vat_in = r.get("non_vat")
-
-
-
-        vat_amount_in = r.get("vat_amount")
-
-
-
-
-
-
-
-        buying_price: Any = (
-
-
-
-            "N/A" if _clean_text(buying_price_in).upper() in {"N/A", "NA"} else _to_float_or_none(buying_price_in)
-
-
-
-        )
-
-
-
-        non_vat: Any = "N/A" if _clean_text(non_vat_in).upper() in {"N/A", "NA"} else _to_float_or_none(non_vat_in)
-
-
-
-        std_net_raw: Any = r.get("std_net")
-
-
-
-        std_net = _to_float_or_none(std_net_raw) if _clean_text(std_net_raw).upper() not in {"N/A", "NA"} else "N/A"
-
-
-
-
-
-
-
-        vat_amount: Any = "N/A" if _clean_text(vat_amount_in).upper() in {"N/A", "NA"} else _to_float_or_none(vat_amount_in)
-
-
-
-
-
-
-
-        cleaned_rows.append(
-
-
-
-            {
-
-
-
-                "sr_no": sr_val,
-
-
-
-                "category": category,
-
-
-
-                "document_date": document_date,
-
-
-
-                "supplier": supplier,
-
-
-
-                "inv_ref_no": inv_ref_no,
-
-
-
-                "make": make,
-
-
-
-                "model": model,
-
-
-
-                "colour": colour,
-
-
-
-                "reg_no": reg_no,
-
-
-
-                "buying_price": buying_price,
-
-
-
-                "non_vat": non_vat,
-
-
-
-                "std_net": std_net,
-
-
-
-                "vat_amount": vat_amount,
-
-
-
-            }
-
-
-
-        )
-
-
-
-
-
-
-
-    job_folder = os.path.dirname(draft_path)
-
-
-
-    combined_path = os.path.join(job_folder, "combined.csv")
-
-
-
-    _write_csv(combined_path, cleaned_rows, fieldnames)
-
-
-
-    INVOICE_JOBS[job_id] = combined_path
-
-
-
-
-
-
-
-    preview = []
-
-
-
-    for r in cleaned_rows[:25]:
-
-
-
-        preview.append({k: _format_csv_value(r.get(k)) for k in fieldnames})
-
-
-
-
-
-
-
-    return JSONResponse(
-
-
-
-        {
-
-
-
-            "job_id": job_id,
-
-
-
-            "rows_total": int(len(cleaned_rows)),
-
-
-
-            "fieldnames": fieldnames,
-
-
-
-            "preview": preview,
-
-
-
-            "download_url": f"/api/invoice-download/{job_id}",
-
-
-
-        }
-
-
-
+    return await invoices.invoice_confirm(
+        job_id,
+        request,
+        invoice_review_jobs=INVOICE_REVIEW_JOBS,
+        invoice_jobs=INVOICE_JOBS,
+        clean_text=_clean_text,
+        to_float_or_none=_to_float_or_none,
+        read_json=_read_json,
+        write_json=_write_json,
+        write_csv=_write_csv,
+        format_csv_value=_format_csv_value,
+        JSONResponseT=JSONResponse,
     )
 
 
-
-
-
-
-
-
-
+@app.post("/api/handwritten-invoice-confirm/{job_id}")
+async def handwritten_invoice_confirm(job_id: str, request: Request) -> JSONResponse:
+    return await handwritten.handwritten_invoice_confirm(
+        job_id,
+        request,
+        handwritten_review_jobs=HANDWRITTEN_REVIEW_JOBS,
+        handwritten_jobs=HANDWRITTEN_JOBS,
+        clean_text=_clean_text,
+        to_float_or_none=_to_float_or_none,
+        read_json=_read_json,
+        write_json=_write_json,
+        write_csv=_write_csv,
+        format_csv_value=_format_csv_value,
+        JSONResponseT=JSONResponse,
+    )
 
 
 @app.get("/api/invoice-download/{job_id}")
-
-
-
 def invoice_download(job_id: str) -> FileResponse:
-
-
-
-    csv_path = INVOICE_JOBS.get(job_id)
-
-
-
-    if not csv_path or not os.path.exists(csv_path):
-
-
-
-        return FileResponse(path="", status_code=404)
-
-
-
-    return FileResponse(csv_path, filename=f"invoices_{job_id}.csv", media_type="text/csv")
+    return invoices.invoice_download(job_id, invoice_jobs=INVOICE_JOBS, FileResponseT=FileResponse)
 
 
 @app.get("/api/handwritten-invoice-download/{job_id}")
 
 def handwritten_invoice_download(job_id: str) -> FileResponse:
-    csv_path = HANDWRITTEN_JOBS.get(job_id)
-    if not csv_path or not os.path.exists(csv_path):
-        return FileResponse(path="", status_code=404)
-    return FileResponse(csv_path, filename=f"handwritten_invoices_{job_id}.csv", media_type="text/csv")
 
-
-@app.get("/api/download/{job_id}")
-
-
-
-def download(job_id: str) -> FileResponse:
-
-
-
-    csv_path = JOBS.get(job_id)
-
-
-
-    if not csv_path or not os.path.exists(csv_path):
-
-
-
-        return FileResponse(path="", status_code=404)
-
-
-
-    return FileResponse(csv_path, filename=f"bank_statements_{job_id}.csv", media_type="text/csv")
+    return handwritten.handwritten_invoice_download(job_id, handwritten_jobs=HANDWRITTEN_JOBS, FileResponseT=FileResponse)
 
 
 

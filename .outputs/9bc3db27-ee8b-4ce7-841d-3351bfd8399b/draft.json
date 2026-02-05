@@ -1,0 +1,4398 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount",
+    "receipt_type",
+    "station_name",
+    "fuel_type",
+    "quantity_litres",
+    "price_per_litre",
+    "total_amount",
+    "payment_method",
+    "time",
+    "receipt_no",
+    "transaction_no",
+    "terminal_id"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "fuel_expense",
+      "document_date": "10/01/2025",
+      "supplier": "",
+      "inv_ref_no": "0521",
+      "make": "Tel : 01442575773 Tel: 01992814580 VA 91\"m10 1,2,3,' VAT: GB126348810 (Retai ler) 1,2,3,4,5 RECETIPT VA 0 VAT: GB235763255 6 USTOMER LE VAT AMOUNT RECEIPT leaded 6 € 20.06 Cl' | OMER RECEIPT CUSTOMER 2 6; 13.94 & * € 1.439/0) AMOUNT AR! ICi ( VAT AMOUNT ARTICLE VAT #FS (iesel 6 : 84.24 #FS Diesel 6 f 104.19 TAL € 20 06 (PUMP 3; 58.14 Q * € 1.449/0) (PUMP 1; 67.70 & 4 : 1,539/0) € 20.06 TOTAL € 84.24 TOTAL € 104 . 19 VISA € 84.24 VISA 8 104.19 a| ID. : 05052101 no : 1337 ction ne 000159 IPT IPT 000159 Termina / ID. : 05091901 Terminal ID_ 05052101 t no. 1457 ime: 10-01-2025 11:05 Per iod no. : 2059 Per iod no. \" Transact ion no : 000168 Transact no. 0oooo= A Receipt no. : 000168 Receipt no : 0oooo Datelt 18-01-2025 12:22 Date/time: 11-02-2025 14:38 10/01/25 11:05:42 VISA VISA Customer 05052101 18/01/25 12:22:45 11/02/25 14:38.44 na | ID 0000031606/000159/0000001337 Customer Copy Customer Copy Mode Contact less Name Visa DEBIT Termina ID 05091901 Termina| ID 05052101 Number 00 EFT 0000509840/000168/0000002059 EFT 0000048935/000003/0000001457 A0000000031010 Entry Mode Contact less Entry Mode Contact less Crypt. DICBE274F891F?OC Card Name Visa DEBIT Card Name Visa DEBIT XXXXXXX6469 Seq . Number 00 Seq. Number 00 Contact less AID A0000000031010 AID A0000000031010 e5 44 App. Crypt . 1D8E40477C513C74 App. Crypt. FD4EA34D67278037 AMOUNT GBP 20 . 06 XXXXXXXXXXXX6469 XXXXXXXXXXXX29g] nse 000 APPROVED Visa Contact less Visa Contact less Code 013600 Expires #/** Expires Ix ication ODCVM SALE AMOUNT GBP 84.24 SALE AMOUNT GBP 104.19 fied By Device Response 000 APPROVED Response 00o APPROVED se retain this copy Ta)r yourrecords Auth Code 087224 Auth Code 020826 Ver i fication ODCVM Ver fication ODCVM Ver i fied By Device Ver ified By Device type % Nett VAT amount Please retain th' $ €py for your records Please retain this copy for 5 20.00 : 16.72 € 3.34 1-2025 11:05:42 521 0918 1156110316 VAT type 9 Nett VAT amount VAT type % 55409-50582233 4485 6 20.00 € 70.20 1 14.04 6 20.L k you for choos ing Shel / 18-01-2025 12:22:45 919 0985 1041110217 11-02-2025 14: 36 . 11-054684-52452321 2065 11-079665-62660232 Thank you for choos ing Shel | Thank you for choos ing ion ime: Copy in",
+      "model": "",
+      "colour": "",
+      "reg_no": "CM16 SHW",
+      "buying_price": 20.06,
+      "non_vat": 20.06,
+      "std_net": "N/A",
+      "vat_amount": 20.06,
+      "receipt_type": "fuel",
+      "station_name": "",
+      "fuel_type": "Diesel",
+      "quantity_litres": 20.0,
+      "price_per_litre": 1.439,
+      "total_amount": 20.06,
+      "payment_method": "VISA",
+      "time": "11:05",
+      "receipt_no": "0521",
+      "transaction_no": "",
+      "terminal_id": "0521"
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "img20250223_11350174.pdf",
+      "content_type": "application/pdf",
+      "model_name": "LightOnOCR-2-1B (Best OCR)",
+      "has_bbox": false,
+      "engine": "easyocr",
+      "raw_output": "pping ad ms Roundabout Epp She L ttle Waitrose Ha/ fmoon She | | Epping ; 0521 28-26 #igh Street High Road IW Epp ing Wake Arms Roundabout Epping 11992814580 B126348810 (Retai ler) 1,2,3,4,5 Stat No: 0919 Stat No: 0521 3235763255 6 CM16 4AE CM16 SHW Tel : 01442575773 Tel: 01992814580 VA 91\"m10 1,2,3,' VAT: GB126348810 (Retai ler) 1,2,3,4,5 RECETIPT VA 0 VAT: GB235763255 6 USTOMER LE VAT AMOUNT RECEIPT leaded 6 € 20.06 Cl' | OMER RECEIPT CUSTOMER 2 6; 13.94 & * € 1.439/0) AMOUNT AR! ICi ( VAT AMOUNT ARTICLE VAT #FS (iesel 6 : 84.24 #FS Diesel 6 f 104.19 TAL € 20 06 (PUMP 3; 58.14 Q * € 1.449/0) (PUMP 1; 67.70 & 4 : 1,539/0) € 20.06 TOTAL € 84.24 TOTAL € 104 . 19 VISA € 84.24 VISA 8 104.19 a| ID. : 05052101 no : 1337 ction ne 000159 IPT IPT 000159 Termina / ID. : 05091901 Terminal ID_ 05052101 t no. 1457 ime: 10-01-2025 11:05 Per iod no. : 2059 Per iod no. \" Transact ion no : 000168 Transact no. 0oooo= A Receipt no. : 000168 Receipt no : 0oooo Datelt 18-01-2025 12:22 Date/time: 11-02-2025 14:38 10/01/25 11:05:42 VISA VISA Customer 05052101 18/01/25 12:22:45 11/02/25 14:38.44 na | ID 0000031606/000159/0000001337 Customer Copy Customer Copy Mode Contact less Name Visa DEBIT Termina ID 05091901 Termina| ID 05052101 Number 00 EFT 0000509840/000168/0000002059 EFT 0000048935/000003/0000001457 A0000000031010 Entry Mode Contact less Entry Mode Contact less Crypt. DICBE274F891F?OC Card Name Visa DEBIT Card Name Visa DEBIT XXXXXXX6469 Seq . Number 00 Seq. Number 00 Contact less AID A0000000031010 AID A0000000031010 e5 44 App. Crypt . 1D8E40477C513C74 App. Crypt. FD4EA34D67278037 AMOUNT GBP 20 . 06 XXXXXXXXXXXX6469 XXXXXXXXXXXX29g] nse 000 APPROVED Visa Contact less Visa Contact less Code 013600 Expires #/** Expires Ix ication ODCVM SALE AMOUNT GBP 84.24 SALE AMOUNT GBP 104.19 fied By Device Response 000 APPROVED Response 00o APPROVED se retain this copy Ta)r yourrecords Auth Code 087224 Auth Code 020826 Ver i fication ODCVM Ver fication ODCVM Ver i fied By Device Ver ified By Device type % Nett VAT amount Please retain th' $ €py for your records Please retain this copy for 5 20.00 : 16.72 € 3.34 1-2025 11:05:42 521 0918 1156110316 VAT type 9 Nett VAT amount VAT type % 55409-50582233 4485 6 20.00 € 70.20 1 14.04 6 20.L k you for choos ing Shel / 18-01-2025 12:22:45 919 0985 1041110217 11-02-2025 14: 36 . 11-054684-52452321 2065 11-079665-62660232 Thank you for choos ing Shel | Thank you for choos ing ion ime: Copy in",
+      "cleaned_text": "pping ad ms Roundabout Epp She L ttle Waitrose Ha/ fmoon She | | Epping ; 0521 28-26 #igh Street High Road IW Epp ing Wake Arms Roundabout Epping 11992814580 B126348810 (Retai ler) 1,2,3,4,5 Stat No: 0919 Stat No: 0521 3235763255 6 CM16 4AE CM16 SHW Tel : 01442575773 Tel: 01992814580 VA 91\"m10 1,2,3,' VAT: GB126348810 (Retai ler) 1,2,3,4,5 RECETIPT VA 0 VAT: GB235763255 6 USTOMER LE VAT AMOUNT RECEIPT leaded 6 € 20.06 Cl' | OMER RECEIPT CUSTOMER 2 6; 13.94 & * € 1.439/0) AMOUNT AR! ICi ( VAT AMOUNT ARTICLE VAT #FS (iesel 6 : 84.24 #FS Diesel 6 f 104.19 TAL € 20 06 (PUMP 3; 58.14 Q * € 1.449/0) (PUMP 1; 67.70 & 4 : 1,539/0) € 20.06 TOTAL € 84.24 TOTAL € 104 . 19 VISA € 84.24 VISA 8 104.19 a| ID. : 05052101 no : 1337 ction ne 000159 IPT IPT 000159 Termina / ID. : 05091901 Terminal ID_ 05052101 t no. 1457 ime: 10-01-2025 11:05 Per iod no. : 2059 Per iod no. \" Transact ion no : 000168 Transact no. 0oooo= A Receipt no. : 000168 Receipt no : 0oooo Datelt 18-01-2025 12:22 Date/time: 11-02-2025 14:38 10/01/25 11:05:42 VISA VISA Customer 05052101 18/01/25 12:22:45 11/02/25 14:38.44 na | ID 0000031606/000159/0000001337 Customer Copy Customer Copy Mode Contact less Name Visa DEBIT Termina ID 05091901 Termina| ID 05052101 Number 00 EFT 0000509840/000168/0000002059 EFT 0000048935/000003/0000001457 A0000000031010 Entry Mode Contact less Entry Mode Contact less Crypt. DICBE274F891F?OC Card Name Visa DEBIT Card Name Visa DEBIT XXXXXXX6469 Seq . Number 00 Seq. Number 00 Contact less AID A0000000031010 AID A0000000031010 e5 44 App. Crypt . 1D8E40477C513C74 App. Crypt. FD4EA34D67278037 AMOUNT GBP 20 . 06 XXXXXXXXXXXX6469 XXXXXXXXXXXX29g] nse 000 APPROVED Visa Contact less Visa Contact less Code 013600 Expires #/** Expires Ix ication ODCVM SALE AMOUNT GBP 84.24 SALE AMOUNT GBP 104.19 fied By Device Response 000 APPROVED Response 00o APPROVED se retain this copy Ta)r yourrecords Auth Code 087224 Auth Code 020826 Ver i fication ODCVM Ver fication ODCVM Ver i fied By Device Ver ified By Device type % Nett VAT amount Please retain th' $ €py for your records Please retain this copy for 5 20.00 : 16.72 € 3.34 1-2025 11:05:42 521 0918 1156110316 VAT type 9 Nett VAT amount VAT type % 55409-50582233 4485 6 20.00 € 70.20 1 14.04 6 20.L k you for choos ing Shel / 18-01-2025 12:22:45 919 0985 1041110217 11-02-2025 14: 36 . 11-054684-52452321 2065 11-079665-62660232 Thank you for choos ing Shel | Thank you for choos ing ion ime: Copy in",
+      "lines": [
+        {
+          "index": 1,
+          "text": "pping ad ms Roundabout Epp She L ttle Waitrose Ha/ fmoon She | | Epping ; 0521 28-26 #igh Street High Road IW Epp ing Wake Arms Roundabout Epping 11992814580 B126348810 (Retai ler) 1,2,3,4,5 Stat No: 0919 Stat No: 0521 3235763255 6 CM16 4AE CM16 SHW Tel : 01442575773 Tel: 01992814580 VA 91\"m10 1,2,3,' VAT: GB126348810 (Retai ler) 1,2,3,4,5 RECETIPT VA 0 VAT: GB235763255 6 USTOMER LE VAT AMOUNT RECEIPT leaded 6 € 20.06 Cl' | OMER RECEIPT CUSTOMER 2 6; 13.94 & * € 1.439/0) AMOUNT AR! ICi ( VAT AMOUNT ARTICLE VAT #FS (iesel 6 : 84.24 #FS Diesel 6 f 104.19 TAL € 20 06 (PUMP 3; 58.14 Q * € 1.449/0) (PUMP 1; 67.70 & 4 : 1,539/0) € 20.06 TOTAL € 84.24 TOTAL € 104 . 19 VISA € 84.24 VISA 8 104.19 a| ID. : 05052101 no : 1337 ction ne 000159 IPT IPT 000159 Termina / ID. : 05091901 Terminal ID_ 05052101 t no. 1457 ime: 10-01-2025 11:05 Per iod no. : 2059 Per iod no. \" Transact ion no : 000168 Transact no. 0oooo= A Receipt no. : 000168 Receipt no : 0oooo Datelt 18-01-2025 12:22 Date/time: 11-02-2025 14:38 10/01/25 11:05:42 VISA VISA Customer 05052101 18/01/25 12:22:45 11/02/25 14:38.44 na | ID 0000031606/000159/0000001337 Customer Copy Customer Copy Mode Contact less Name Visa DEBIT Termina ID 05091901 Termina| ID 05052101 Number 00 EFT 0000509840/000168/0000002059 EFT 0000048935/000003/0000001457 A0000000031010 Entry Mode Contact less Entry Mode Contact less Crypt. DICBE274F891F?OC Card Name Visa DEBIT Card Name Visa DEBIT XXXXXXX6469 Seq . Number 00 Seq. Number 00 Contact less AID A0000000031010 AID A0000000031010 e5 44 App. Crypt . 1D8E40477C513C74 App. Crypt. FD4EA34D67278037 AMOUNT GBP 20 . 06 XXXXXXXXXXXX6469 XXXXXXXXXXXX29g] nse 000 APPROVED Visa Contact less Visa Contact less Code 013600 Expires #/** Expires Ix ication ODCVM SALE AMOUNT GBP 84.24 SALE AMOUNT GBP 104.19 fied By Device Response 000 APPROVED Response 00o APPROVED se retain this copy Ta)r yourrecords Auth Code 087224 Auth Code 020826 Ver i fication ODCVM Ver fication ODCVM Ver i fied By Device Ver ified By Device type % Nett VAT amount Please retain th' $ €py for your records Please retain this copy for 5 20.00 : 16.72 € 3.34 1-2025 11:05:42 521 0918 1156110316 VAT type 9 Nett VAT amount VAT type % 55409-50582233 4485 6 20.00 € 70.20 1 14.04 6 20.L k you for choos ing Shel / 18-01-2025 12:22:45 919 0985 1041110217 11-02-2025 14: 36 . 11-054684-52452321 2065 11-079665-62660232 Thank you for choos ing Shel | Thank you for choos ing ion ime: Copy in"
+        }
+      ],
+      "words": [
+        {
+          "index": 1,
+          "text": "pping"
+        },
+        {
+          "index": 2,
+          "text": "ad"
+        },
+        {
+          "index": 3,
+          "text": "ms"
+        },
+        {
+          "index": 4,
+          "text": "Roundabout"
+        },
+        {
+          "index": 5,
+          "text": "Epp"
+        },
+        {
+          "index": 6,
+          "text": "She"
+        },
+        {
+          "index": 7,
+          "text": "L"
+        },
+        {
+          "index": 8,
+          "text": "ttle"
+        },
+        {
+          "index": 9,
+          "text": "Waitrose"
+        },
+        {
+          "index": 10,
+          "text": "Ha/"
+        },
+        {
+          "index": 11,
+          "text": "fmoon"
+        },
+        {
+          "index": 12,
+          "text": "She"
+        },
+        {
+          "index": 13,
+          "text": "|"
+        },
+        {
+          "index": 14,
+          "text": "|"
+        },
+        {
+          "index": 15,
+          "text": "Epping"
+        },
+        {
+          "index": 16,
+          "text": ";"
+        },
+        {
+          "index": 17,
+          "text": "0521"
+        },
+        {
+          "index": 18,
+          "text": "28-26"
+        },
+        {
+          "index": 19,
+          "text": "#igh"
+        },
+        {
+          "index": 20,
+          "text": "Street"
+        },
+        {
+          "index": 21,
+          "text": "High"
+        },
+        {
+          "index": 22,
+          "text": "Road"
+        },
+        {
+          "index": 23,
+          "text": "IW"
+        },
+        {
+          "index": 24,
+          "text": "Epp"
+        },
+        {
+          "index": 25,
+          "text": "ing"
+        },
+        {
+          "index": 26,
+          "text": "Wake"
+        },
+        {
+          "index": 27,
+          "text": "Arms"
+        },
+        {
+          "index": 28,
+          "text": "Roundabout"
+        },
+        {
+          "index": 29,
+          "text": "Epping"
+        },
+        {
+          "index": 30,
+          "text": "11992814580"
+        },
+        {
+          "index": 31,
+          "text": "B126348810"
+        },
+        {
+          "index": 32,
+          "text": "(Retai"
+        },
+        {
+          "index": 33,
+          "text": "ler)"
+        },
+        {
+          "index": 34,
+          "text": "1,2,3,4,5"
+        },
+        {
+          "index": 35,
+          "text": "Stat"
+        },
+        {
+          "index": 36,
+          "text": "No:"
+        },
+        {
+          "index": 37,
+          "text": "0919"
+        },
+        {
+          "index": 38,
+          "text": "Stat"
+        },
+        {
+          "index": 39,
+          "text": "No:"
+        },
+        {
+          "index": 40,
+          "text": "0521"
+        },
+        {
+          "index": 41,
+          "text": "3235763255"
+        },
+        {
+          "index": 42,
+          "text": "6"
+        },
+        {
+          "index": 43,
+          "text": "CM16"
+        },
+        {
+          "index": 44,
+          "text": "4AE"
+        },
+        {
+          "index": 45,
+          "text": "CM16"
+        },
+        {
+          "index": 46,
+          "text": "SHW"
+        },
+        {
+          "index": 47,
+          "text": "Tel"
+        },
+        {
+          "index": 48,
+          "text": ":"
+        },
+        {
+          "index": 49,
+          "text": "01442575773"
+        },
+        {
+          "index": 50,
+          "text": "Tel:"
+        },
+        {
+          "index": 51,
+          "text": "01992814580"
+        },
+        {
+          "index": 52,
+          "text": "VA"
+        },
+        {
+          "index": 53,
+          "text": "91\"m10"
+        },
+        {
+          "index": 54,
+          "text": "1,2,3,'"
+        },
+        {
+          "index": 55,
+          "text": "VAT:"
+        },
+        {
+          "index": 56,
+          "text": "GB126348810"
+        },
+        {
+          "index": 57,
+          "text": "(Retai"
+        },
+        {
+          "index": 58,
+          "text": "ler)"
+        },
+        {
+          "index": 59,
+          "text": "1,2,3,4,5"
+        },
+        {
+          "index": 60,
+          "text": "RECETIPT"
+        },
+        {
+          "index": 61,
+          "text": "VA"
+        },
+        {
+          "index": 62,
+          "text": "0"
+        },
+        {
+          "index": 63,
+          "text": "VAT:"
+        },
+        {
+          "index": 64,
+          "text": "GB235763255"
+        },
+        {
+          "index": 65,
+          "text": "6"
+        },
+        {
+          "index": 66,
+          "text": "USTOMER"
+        },
+        {
+          "index": 67,
+          "text": "LE"
+        },
+        {
+          "index": 68,
+          "text": "VAT"
+        },
+        {
+          "index": 69,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 70,
+          "text": "RECEIPT"
+        },
+        {
+          "index": 71,
+          "text": "leaded"
+        },
+        {
+          "index": 72,
+          "text": "6"
+        },
+        {
+          "index": 73,
+          "text": "€"
+        },
+        {
+          "index": 74,
+          "text": "20.06"
+        },
+        {
+          "index": 75,
+          "text": "Cl'"
+        },
+        {
+          "index": 76,
+          "text": "|"
+        },
+        {
+          "index": 77,
+          "text": "OMER"
+        },
+        {
+          "index": 78,
+          "text": "RECEIPT"
+        },
+        {
+          "index": 79,
+          "text": "CUSTOMER"
+        },
+        {
+          "index": 80,
+          "text": "2"
+        },
+        {
+          "index": 81,
+          "text": "6;"
+        },
+        {
+          "index": 82,
+          "text": "13.94"
+        },
+        {
+          "index": 83,
+          "text": "&"
+        },
+        {
+          "index": 84,
+          "text": "*"
+        },
+        {
+          "index": 85,
+          "text": "€"
+        },
+        {
+          "index": 86,
+          "text": "1.439/0)"
+        },
+        {
+          "index": 87,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 88,
+          "text": "AR!"
+        },
+        {
+          "index": 89,
+          "text": "ICi"
+        },
+        {
+          "index": 90,
+          "text": "("
+        },
+        {
+          "index": 91,
+          "text": "VAT"
+        },
+        {
+          "index": 92,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 93,
+          "text": "ARTICLE"
+        },
+        {
+          "index": 94,
+          "text": "VAT"
+        },
+        {
+          "index": 95,
+          "text": "#FS"
+        },
+        {
+          "index": 96,
+          "text": "(iesel"
+        },
+        {
+          "index": 97,
+          "text": "6"
+        },
+        {
+          "index": 98,
+          "text": ":"
+        },
+        {
+          "index": 99,
+          "text": "84.24"
+        },
+        {
+          "index": 100,
+          "text": "#FS"
+        },
+        {
+          "index": 101,
+          "text": "Diesel"
+        },
+        {
+          "index": 102,
+          "text": "6"
+        },
+        {
+          "index": 103,
+          "text": "f"
+        },
+        {
+          "index": 104,
+          "text": "104.19"
+        },
+        {
+          "index": 105,
+          "text": "TAL"
+        },
+        {
+          "index": 106,
+          "text": "€"
+        },
+        {
+          "index": 107,
+          "text": "20"
+        },
+        {
+          "index": 108,
+          "text": "06"
+        },
+        {
+          "index": 109,
+          "text": "(PUMP"
+        },
+        {
+          "index": 110,
+          "text": "3;"
+        },
+        {
+          "index": 111,
+          "text": "58.14"
+        },
+        {
+          "index": 112,
+          "text": "Q"
+        },
+        {
+          "index": 113,
+          "text": "*"
+        },
+        {
+          "index": 114,
+          "text": "€"
+        },
+        {
+          "index": 115,
+          "text": "1.449/0)"
+        },
+        {
+          "index": 116,
+          "text": "(PUMP"
+        },
+        {
+          "index": 117,
+          "text": "1;"
+        },
+        {
+          "index": 118,
+          "text": "67.70"
+        },
+        {
+          "index": 119,
+          "text": "&"
+        },
+        {
+          "index": 120,
+          "text": "4"
+        },
+        {
+          "index": 121,
+          "text": ":"
+        },
+        {
+          "index": 122,
+          "text": "1,539/0)"
+        },
+        {
+          "index": 123,
+          "text": "€"
+        },
+        {
+          "index": 124,
+          "text": "20.06"
+        },
+        {
+          "index": 125,
+          "text": "TOTAL"
+        },
+        {
+          "index": 126,
+          "text": "€"
+        },
+        {
+          "index": 127,
+          "text": "84.24"
+        },
+        {
+          "index": 128,
+          "text": "TOTAL"
+        },
+        {
+          "index": 129,
+          "text": "€"
+        },
+        {
+          "index": 130,
+          "text": "104"
+        },
+        {
+          "index": 131,
+          "text": "."
+        },
+        {
+          "index": 132,
+          "text": "19"
+        },
+        {
+          "index": 133,
+          "text": "VISA"
+        },
+        {
+          "index": 134,
+          "text": "€"
+        },
+        {
+          "index": 135,
+          "text": "84.24"
+        },
+        {
+          "index": 136,
+          "text": "VISA"
+        },
+        {
+          "index": 137,
+          "text": "8"
+        },
+        {
+          "index": 138,
+          "text": "104.19"
+        },
+        {
+          "index": 139,
+          "text": "a|"
+        },
+        {
+          "index": 140,
+          "text": "ID."
+        },
+        {
+          "index": 141,
+          "text": ":"
+        },
+        {
+          "index": 142,
+          "text": "05052101"
+        },
+        {
+          "index": 143,
+          "text": "no"
+        },
+        {
+          "index": 144,
+          "text": ":"
+        },
+        {
+          "index": 145,
+          "text": "1337"
+        },
+        {
+          "index": 146,
+          "text": "ction"
+        },
+        {
+          "index": 147,
+          "text": "ne"
+        },
+        {
+          "index": 148,
+          "text": "000159"
+        },
+        {
+          "index": 149,
+          "text": "IPT"
+        },
+        {
+          "index": 150,
+          "text": "IPT"
+        },
+        {
+          "index": 151,
+          "text": "000159"
+        },
+        {
+          "index": 152,
+          "text": "Termina"
+        },
+        {
+          "index": 153,
+          "text": "/"
+        },
+        {
+          "index": 154,
+          "text": "ID."
+        },
+        {
+          "index": 155,
+          "text": ":"
+        },
+        {
+          "index": 156,
+          "text": "05091901"
+        },
+        {
+          "index": 157,
+          "text": "Terminal"
+        },
+        {
+          "index": 158,
+          "text": "ID_"
+        },
+        {
+          "index": 159,
+          "text": "05052101"
+        },
+        {
+          "index": 160,
+          "text": "t"
+        },
+        {
+          "index": 161,
+          "text": "no."
+        },
+        {
+          "index": 162,
+          "text": "1457"
+        },
+        {
+          "index": 163,
+          "text": "ime:"
+        },
+        {
+          "index": 164,
+          "text": "10-01-2025"
+        },
+        {
+          "index": 165,
+          "text": "11:05"
+        },
+        {
+          "index": 166,
+          "text": "Per"
+        },
+        {
+          "index": 167,
+          "text": "iod"
+        },
+        {
+          "index": 168,
+          "text": "no."
+        },
+        {
+          "index": 169,
+          "text": ":"
+        },
+        {
+          "index": 170,
+          "text": "2059"
+        },
+        {
+          "index": 171,
+          "text": "Per"
+        },
+        {
+          "index": 172,
+          "text": "iod"
+        },
+        {
+          "index": 173,
+          "text": "no."
+        },
+        {
+          "index": 174,
+          "text": "\""
+        },
+        {
+          "index": 175,
+          "text": "Transact"
+        },
+        {
+          "index": 176,
+          "text": "ion"
+        },
+        {
+          "index": 177,
+          "text": "no"
+        },
+        {
+          "index": 178,
+          "text": ":"
+        },
+        {
+          "index": 179,
+          "text": "000168"
+        },
+        {
+          "index": 180,
+          "text": "Transact"
+        },
+        {
+          "index": 181,
+          "text": "no."
+        },
+        {
+          "index": 182,
+          "text": "0oooo="
+        },
+        {
+          "index": 183,
+          "text": "A"
+        },
+        {
+          "index": 184,
+          "text": "Receipt"
+        },
+        {
+          "index": 185,
+          "text": "no."
+        },
+        {
+          "index": 186,
+          "text": ":"
+        },
+        {
+          "index": 187,
+          "text": "000168"
+        },
+        {
+          "index": 188,
+          "text": "Receipt"
+        },
+        {
+          "index": 189,
+          "text": "no"
+        },
+        {
+          "index": 190,
+          "text": ":"
+        },
+        {
+          "index": 191,
+          "text": "0oooo"
+        },
+        {
+          "index": 192,
+          "text": "Datelt"
+        },
+        {
+          "index": 193,
+          "text": "18-01-2025"
+        },
+        {
+          "index": 194,
+          "text": "12:22"
+        },
+        {
+          "index": 195,
+          "text": "Date/time:"
+        },
+        {
+          "index": 196,
+          "text": "11-02-2025"
+        },
+        {
+          "index": 197,
+          "text": "14:38"
+        },
+        {
+          "index": 198,
+          "text": "10/01/25"
+        },
+        {
+          "index": 199,
+          "text": "11:05:42"
+        },
+        {
+          "index": 200,
+          "text": "VISA"
+        },
+        {
+          "index": 201,
+          "text": "VISA"
+        },
+        {
+          "index": 202,
+          "text": "Customer"
+        },
+        {
+          "index": 203,
+          "text": "05052101"
+        },
+        {
+          "index": 204,
+          "text": "18/01/25"
+        },
+        {
+          "index": 205,
+          "text": "12:22:45"
+        },
+        {
+          "index": 206,
+          "text": "11/02/25"
+        },
+        {
+          "index": 207,
+          "text": "14:38.44"
+        },
+        {
+          "index": 208,
+          "text": "na"
+        },
+        {
+          "index": 209,
+          "text": "|"
+        },
+        {
+          "index": 210,
+          "text": "ID"
+        },
+        {
+          "index": 211,
+          "text": "0000031606/000159/0000001337"
+        },
+        {
+          "index": 212,
+          "text": "Customer"
+        },
+        {
+          "index": 213,
+          "text": "Copy"
+        },
+        {
+          "index": 214,
+          "text": "Customer"
+        },
+        {
+          "index": 215,
+          "text": "Copy"
+        },
+        {
+          "index": 216,
+          "text": "Mode"
+        },
+        {
+          "index": 217,
+          "text": "Contact"
+        },
+        {
+          "index": 218,
+          "text": "less"
+        },
+        {
+          "index": 219,
+          "text": "Name"
+        },
+        {
+          "index": 220,
+          "text": "Visa"
+        },
+        {
+          "index": 221,
+          "text": "DEBIT"
+        },
+        {
+          "index": 222,
+          "text": "Termina"
+        },
+        {
+          "index": 223,
+          "text": "ID"
+        },
+        {
+          "index": 224,
+          "text": "05091901"
+        },
+        {
+          "index": 225,
+          "text": "Termina|"
+        },
+        {
+          "index": 226,
+          "text": "ID"
+        },
+        {
+          "index": 227,
+          "text": "05052101"
+        },
+        {
+          "index": 228,
+          "text": "Number"
+        },
+        {
+          "index": 229,
+          "text": "00"
+        },
+        {
+          "index": 230,
+          "text": "EFT"
+        },
+        {
+          "index": 231,
+          "text": "0000509840/000168/0000002059"
+        },
+        {
+          "index": 232,
+          "text": "EFT"
+        },
+        {
+          "index": 233,
+          "text": "0000048935/000003/0000001457"
+        },
+        {
+          "index": 234,
+          "text": "A0000000031010"
+        },
+        {
+          "index": 235,
+          "text": "Entry"
+        },
+        {
+          "index": 236,
+          "text": "Mode"
+        },
+        {
+          "index": 237,
+          "text": "Contact"
+        },
+        {
+          "index": 238,
+          "text": "less"
+        },
+        {
+          "index": 239,
+          "text": "Entry"
+        },
+        {
+          "index": 240,
+          "text": "Mode"
+        },
+        {
+          "index": 241,
+          "text": "Contact"
+        },
+        {
+          "index": 242,
+          "text": "less"
+        },
+        {
+          "index": 243,
+          "text": "Crypt."
+        },
+        {
+          "index": 244,
+          "text": "DICBE274F891F?OC"
+        },
+        {
+          "index": 245,
+          "text": "Card"
+        },
+        {
+          "index": 246,
+          "text": "Name"
+        },
+        {
+          "index": 247,
+          "text": "Visa"
+        },
+        {
+          "index": 248,
+          "text": "DEBIT"
+        },
+        {
+          "index": 249,
+          "text": "Card"
+        },
+        {
+          "index": 250,
+          "text": "Name"
+        },
+        {
+          "index": 251,
+          "text": "Visa"
+        },
+        {
+          "index": 252,
+          "text": "DEBIT"
+        },
+        {
+          "index": 253,
+          "text": "XXXXXXX6469"
+        },
+        {
+          "index": 254,
+          "text": "Seq"
+        },
+        {
+          "index": 255,
+          "text": "."
+        },
+        {
+          "index": 256,
+          "text": "Number"
+        },
+        {
+          "index": 257,
+          "text": "00"
+        },
+        {
+          "index": 258,
+          "text": "Seq."
+        },
+        {
+          "index": 259,
+          "text": "Number"
+        },
+        {
+          "index": 260,
+          "text": "00"
+        },
+        {
+          "index": 261,
+          "text": "Contact"
+        },
+        {
+          "index": 262,
+          "text": "less"
+        },
+        {
+          "index": 263,
+          "text": "AID"
+        },
+        {
+          "index": 264,
+          "text": "A0000000031010"
+        },
+        {
+          "index": 265,
+          "text": "AID"
+        },
+        {
+          "index": 266,
+          "text": "A0000000031010"
+        },
+        {
+          "index": 267,
+          "text": "e5"
+        },
+        {
+          "index": 268,
+          "text": "44"
+        },
+        {
+          "index": 269,
+          "text": "App."
+        },
+        {
+          "index": 270,
+          "text": "Crypt"
+        },
+        {
+          "index": 271,
+          "text": "."
+        },
+        {
+          "index": 272,
+          "text": "1D8E40477C513C74"
+        },
+        {
+          "index": 273,
+          "text": "App."
+        },
+        {
+          "index": 274,
+          "text": "Crypt."
+        },
+        {
+          "index": 275,
+          "text": "FD4EA34D67278037"
+        },
+        {
+          "index": 276,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 277,
+          "text": "GBP"
+        },
+        {
+          "index": 278,
+          "text": "20"
+        },
+        {
+          "index": 279,
+          "text": "."
+        },
+        {
+          "index": 280,
+          "text": "06"
+        },
+        {
+          "index": 281,
+          "text": "XXXXXXXXXXXX6469"
+        },
+        {
+          "index": 282,
+          "text": "XXXXXXXXXXXX29g]"
+        },
+        {
+          "index": 283,
+          "text": "nse"
+        },
+        {
+          "index": 284,
+          "text": "000"
+        },
+        {
+          "index": 285,
+          "text": "APPROVED"
+        },
+        {
+          "index": 286,
+          "text": "Visa"
+        },
+        {
+          "index": 287,
+          "text": "Contact"
+        },
+        {
+          "index": 288,
+          "text": "less"
+        },
+        {
+          "index": 289,
+          "text": "Visa"
+        },
+        {
+          "index": 290,
+          "text": "Contact"
+        },
+        {
+          "index": 291,
+          "text": "less"
+        },
+        {
+          "index": 292,
+          "text": "Code"
+        },
+        {
+          "index": 293,
+          "text": "013600"
+        },
+        {
+          "index": 294,
+          "text": "Expires"
+        },
+        {
+          "index": 295,
+          "text": "#/**"
+        },
+        {
+          "index": 296,
+          "text": "Expires"
+        },
+        {
+          "index": 297,
+          "text": "Ix"
+        },
+        {
+          "index": 298,
+          "text": "ication"
+        },
+        {
+          "index": 299,
+          "text": "ODCVM"
+        },
+        {
+          "index": 300,
+          "text": "SALE"
+        },
+        {
+          "index": 301,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 302,
+          "text": "GBP"
+        },
+        {
+          "index": 303,
+          "text": "84.24"
+        },
+        {
+          "index": 304,
+          "text": "SALE"
+        },
+        {
+          "index": 305,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 306,
+          "text": "GBP"
+        },
+        {
+          "index": 307,
+          "text": "104.19"
+        },
+        {
+          "index": 308,
+          "text": "fied"
+        },
+        {
+          "index": 309,
+          "text": "By"
+        },
+        {
+          "index": 310,
+          "text": "Device"
+        },
+        {
+          "index": 311,
+          "text": "Response"
+        },
+        {
+          "index": 312,
+          "text": "000"
+        },
+        {
+          "index": 313,
+          "text": "APPROVED"
+        },
+        {
+          "index": 314,
+          "text": "Response"
+        },
+        {
+          "index": 315,
+          "text": "00o"
+        },
+        {
+          "index": 316,
+          "text": "APPROVED"
+        },
+        {
+          "index": 317,
+          "text": "se"
+        },
+        {
+          "index": 318,
+          "text": "retain"
+        },
+        {
+          "index": 319,
+          "text": "this"
+        },
+        {
+          "index": 320,
+          "text": "copy"
+        },
+        {
+          "index": 321,
+          "text": "Ta)r"
+        },
+        {
+          "index": 322,
+          "text": "yourrecords"
+        },
+        {
+          "index": 323,
+          "text": "Auth"
+        },
+        {
+          "index": 324,
+          "text": "Code"
+        },
+        {
+          "index": 325,
+          "text": "087224"
+        },
+        {
+          "index": 326,
+          "text": "Auth"
+        },
+        {
+          "index": 327,
+          "text": "Code"
+        },
+        {
+          "index": 328,
+          "text": "020826"
+        },
+        {
+          "index": 329,
+          "text": "Ver"
+        },
+        {
+          "index": 330,
+          "text": "i"
+        },
+        {
+          "index": 331,
+          "text": "fication"
+        },
+        {
+          "index": 332,
+          "text": "ODCVM"
+        },
+        {
+          "index": 333,
+          "text": "Ver"
+        },
+        {
+          "index": 334,
+          "text": "fication"
+        },
+        {
+          "index": 335,
+          "text": "ODCVM"
+        },
+        {
+          "index": 336,
+          "text": "Ver"
+        },
+        {
+          "index": 337,
+          "text": "i"
+        },
+        {
+          "index": 338,
+          "text": "fied"
+        },
+        {
+          "index": 339,
+          "text": "By"
+        },
+        {
+          "index": 340,
+          "text": "Device"
+        },
+        {
+          "index": 341,
+          "text": "Ver"
+        },
+        {
+          "index": 342,
+          "text": "ified"
+        },
+        {
+          "index": 343,
+          "text": "By"
+        },
+        {
+          "index": 344,
+          "text": "Device"
+        },
+        {
+          "index": 345,
+          "text": "type"
+        },
+        {
+          "index": 346,
+          "text": "%"
+        },
+        {
+          "index": 347,
+          "text": "Nett"
+        },
+        {
+          "index": 348,
+          "text": "VAT"
+        },
+        {
+          "index": 349,
+          "text": "amount"
+        },
+        {
+          "index": 350,
+          "text": "Please"
+        },
+        {
+          "index": 351,
+          "text": "retain"
+        },
+        {
+          "index": 352,
+          "text": "th'"
+        },
+        {
+          "index": 353,
+          "text": "$"
+        },
+        {
+          "index": 354,
+          "text": "€py"
+        },
+        {
+          "index": 355,
+          "text": "for"
+        },
+        {
+          "index": 356,
+          "text": "your"
+        },
+        {
+          "index": 357,
+          "text": "records"
+        },
+        {
+          "index": 358,
+          "text": "Please"
+        },
+        {
+          "index": 359,
+          "text": "retain"
+        },
+        {
+          "index": 360,
+          "text": "this"
+        },
+        {
+          "index": 361,
+          "text": "copy"
+        },
+        {
+          "index": 362,
+          "text": "for"
+        },
+        {
+          "index": 363,
+          "text": "5"
+        },
+        {
+          "index": 364,
+          "text": "20.00"
+        },
+        {
+          "index": 365,
+          "text": ":"
+        },
+        {
+          "index": 366,
+          "text": "16.72"
+        },
+        {
+          "index": 367,
+          "text": "€"
+        },
+        {
+          "index": 368,
+          "text": "3.34"
+        },
+        {
+          "index": 369,
+          "text": "1-2025"
+        },
+        {
+          "index": 370,
+          "text": "11:05:42"
+        },
+        {
+          "index": 371,
+          "text": "521"
+        },
+        {
+          "index": 372,
+          "text": "0918"
+        },
+        {
+          "index": 373,
+          "text": "1156110316"
+        },
+        {
+          "index": 374,
+          "text": "VAT"
+        },
+        {
+          "index": 375,
+          "text": "type"
+        },
+        {
+          "index": 376,
+          "text": "9"
+        },
+        {
+          "index": 377,
+          "text": "Nett"
+        },
+        {
+          "index": 378,
+          "text": "VAT"
+        },
+        {
+          "index": 379,
+          "text": "amount"
+        },
+        {
+          "index": 380,
+          "text": "VAT"
+        },
+        {
+          "index": 381,
+          "text": "type"
+        },
+        {
+          "index": 382,
+          "text": "%"
+        },
+        {
+          "index": 383,
+          "text": "55409-50582233"
+        },
+        {
+          "index": 384,
+          "text": "4485"
+        },
+        {
+          "index": 385,
+          "text": "6"
+        },
+        {
+          "index": 386,
+          "text": "20.00"
+        },
+        {
+          "index": 387,
+          "text": "€"
+        },
+        {
+          "index": 388,
+          "text": "70.20"
+        },
+        {
+          "index": 389,
+          "text": "1"
+        },
+        {
+          "index": 390,
+          "text": "14.04"
+        },
+        {
+          "index": 391,
+          "text": "6"
+        },
+        {
+          "index": 392,
+          "text": "20.L"
+        },
+        {
+          "index": 393,
+          "text": "k"
+        },
+        {
+          "index": 394,
+          "text": "you"
+        },
+        {
+          "index": 395,
+          "text": "for"
+        },
+        {
+          "index": 396,
+          "text": "choos"
+        },
+        {
+          "index": 397,
+          "text": "ing"
+        },
+        {
+          "index": 398,
+          "text": "Shel"
+        },
+        {
+          "index": 399,
+          "text": "/"
+        },
+        {
+          "index": 400,
+          "text": "18-01-2025"
+        },
+        {
+          "index": 401,
+          "text": "12:22:45"
+        },
+        {
+          "index": 402,
+          "text": "919"
+        },
+        {
+          "index": 403,
+          "text": "0985"
+        },
+        {
+          "index": 404,
+          "text": "1041110217"
+        },
+        {
+          "index": 405,
+          "text": "11-02-2025"
+        },
+        {
+          "index": 406,
+          "text": "14:"
+        },
+        {
+          "index": 407,
+          "text": "36"
+        },
+        {
+          "index": 408,
+          "text": "."
+        },
+        {
+          "index": 409,
+          "text": "11-054684-52452321"
+        },
+        {
+          "index": 410,
+          "text": "2065"
+        },
+        {
+          "index": 411,
+          "text": "11-079665-62660232"
+        },
+        {
+          "index": 412,
+          "text": "Thank"
+        },
+        {
+          "index": 413,
+          "text": "you"
+        },
+        {
+          "index": 414,
+          "text": "for"
+        },
+        {
+          "index": 415,
+          "text": "choos"
+        },
+        {
+          "index": 416,
+          "text": "ing"
+        },
+        {
+          "index": 417,
+          "text": "Shel"
+        },
+        {
+          "index": 418,
+          "text": "|"
+        },
+        {
+          "index": 419,
+          "text": "Thank"
+        },
+        {
+          "index": 420,
+          "text": "you"
+        },
+        {
+          "index": 421,
+          "text": "for"
+        },
+        {
+          "index": 422,
+          "text": "choos"
+        },
+        {
+          "index": 423,
+          "text": "ing"
+        },
+        {
+          "index": 424,
+          "text": "ion"
+        },
+        {
+          "index": 425,
+          "text": "ime:"
+        },
+        {
+          "index": 426,
+          "text": "Copy"
+        },
+        {
+          "index": 427,
+          "text": "in"
+        }
+      ],
+      "all_words": [
+        "pping",
+        "ad",
+        "ms",
+        "Roundabout",
+        "Epp",
+        "She",
+        "L",
+        "ttle",
+        "Waitrose",
+        "Ha/",
+        "fmoon",
+        "She",
+        "|",
+        "|",
+        "Epping",
+        ";",
+        "0521",
+        "28-26",
+        "#igh",
+        "Street",
+        "High",
+        "Road",
+        "IW",
+        "Epp",
+        "ing",
+        "Wake",
+        "Arms",
+        "Roundabout",
+        "Epping",
+        "11992814580",
+        "B126348810",
+        "(Retai",
+        "ler)",
+        "1,2,3,4,5",
+        "Stat",
+        "No:",
+        "0919",
+        "Stat",
+        "No:",
+        "0521",
+        "3235763255",
+        "6",
+        "CM16",
+        "4AE",
+        "CM16",
+        "SHW",
+        "Tel",
+        ":",
+        "01442575773",
+        "Tel:",
+        "01992814580",
+        "VA",
+        "91\"m10",
+        "1,2,3,'",
+        "VAT:",
+        "GB126348810",
+        "(Retai",
+        "ler)",
+        "1,2,3,4,5",
+        "RECETIPT",
+        "VA",
+        "0",
+        "VAT:",
+        "GB235763255",
+        "6",
+        "USTOMER",
+        "LE",
+        "VAT",
+        "AMOUNT",
+        "RECEIPT",
+        "leaded",
+        "6",
+        "€",
+        "20.06",
+        "Cl'",
+        "|",
+        "OMER",
+        "RECEIPT",
+        "CUSTOMER",
+        "2",
+        "6;",
+        "13.94",
+        "&",
+        "*",
+        "€",
+        "1.439/0)",
+        "AMOUNT",
+        "AR!",
+        "ICi",
+        "(",
+        "VAT",
+        "AMOUNT",
+        "ARTICLE",
+        "VAT",
+        "#FS",
+        "(iesel",
+        "6",
+        ":",
+        "84.24",
+        "#FS",
+        "Diesel",
+        "6",
+        "f",
+        "104.19",
+        "TAL",
+        "€",
+        "20",
+        "06",
+        "(PUMP",
+        "3;",
+        "58.14",
+        "Q",
+        "*",
+        "€",
+        "1.449/0)",
+        "(PUMP",
+        "1;",
+        "67.70",
+        "&",
+        "4",
+        ":",
+        "1,539/0)",
+        "€",
+        "20.06",
+        "TOTAL",
+        "€",
+        "84.24",
+        "TOTAL",
+        "€",
+        "104",
+        ".",
+        "19",
+        "VISA",
+        "€",
+        "84.24",
+        "VISA",
+        "8",
+        "104.19",
+        "a|",
+        "ID.",
+        ":",
+        "05052101",
+        "no",
+        ":",
+        "1337",
+        "ction",
+        "ne",
+        "000159",
+        "IPT",
+        "IPT",
+        "000159",
+        "Termina",
+        "/",
+        "ID.",
+        ":",
+        "05091901",
+        "Terminal",
+        "ID_",
+        "05052101",
+        "t",
+        "no.",
+        "1457",
+        "ime:",
+        "10-01-2025",
+        "11:05",
+        "Per",
+        "iod",
+        "no.",
+        ":",
+        "2059",
+        "Per",
+        "iod",
+        "no.",
+        "\"",
+        "Transact",
+        "ion",
+        "no",
+        ":",
+        "000168",
+        "Transact",
+        "no.",
+        "0oooo=",
+        "A",
+        "Receipt",
+        "no.",
+        ":",
+        "000168",
+        "Receipt",
+        "no",
+        ":",
+        "0oooo",
+        "Datelt",
+        "18-01-2025",
+        "12:22",
+        "Date/time:",
+        "11-02-2025",
+        "14:38",
+        "10/01/25",
+        "11:05:42",
+        "VISA",
+        "VISA",
+        "Customer",
+        "05052101",
+        "18/01/25",
+        "12:22:45",
+        "11/02/25",
+        "14:38.44",
+        "na",
+        "|",
+        "ID",
+        "0000031606/000159/0000001337",
+        "Customer",
+        "Copy",
+        "Customer",
+        "Copy",
+        "Mode",
+        "Contact",
+        "less",
+        "Name",
+        "Visa",
+        "DEBIT",
+        "Termina",
+        "ID",
+        "05091901",
+        "Termina|",
+        "ID",
+        "05052101",
+        "Number",
+        "00",
+        "EFT",
+        "0000509840/000168/0000002059",
+        "EFT",
+        "0000048935/000003/0000001457",
+        "A0000000031010",
+        "Entry",
+        "Mode",
+        "Contact",
+        "less",
+        "Entry",
+        "Mode",
+        "Contact",
+        "less",
+        "Crypt.",
+        "DICBE274F891F?OC",
+        "Card",
+        "Name",
+        "Visa",
+        "DEBIT",
+        "Card",
+        "Name",
+        "Visa",
+        "DEBIT",
+        "XXXXXXX6469",
+        "Seq",
+        ".",
+        "Number",
+        "00",
+        "Seq.",
+        "Number",
+        "00",
+        "Contact",
+        "less",
+        "AID",
+        "A0000000031010",
+        "AID",
+        "A0000000031010",
+        "e5",
+        "44",
+        "App.",
+        "Crypt",
+        ".",
+        "1D8E40477C513C74",
+        "App.",
+        "Crypt.",
+        "FD4EA34D67278037",
+        "AMOUNT",
+        "GBP",
+        "20",
+        ".",
+        "06",
+        "XXXXXXXXXXXX6469",
+        "XXXXXXXXXXXX29g]",
+        "nse",
+        "000",
+        "APPROVED",
+        "Visa",
+        "Contact",
+        "less",
+        "Visa",
+        "Contact",
+        "less",
+        "Code",
+        "013600",
+        "Expires",
+        "#/**",
+        "Expires",
+        "Ix",
+        "ication",
+        "ODCVM",
+        "SALE",
+        "AMOUNT",
+        "GBP",
+        "84.24",
+        "SALE",
+        "AMOUNT",
+        "GBP",
+        "104.19",
+        "fied",
+        "By",
+        "Device",
+        "Response",
+        "000",
+        "APPROVED",
+        "Response",
+        "00o",
+        "APPROVED",
+        "se",
+        "retain",
+        "this",
+        "copy",
+        "Ta)r",
+        "yourrecords",
+        "Auth",
+        "Code",
+        "087224",
+        "Auth",
+        "Code",
+        "020826",
+        "Ver",
+        "i",
+        "fication",
+        "ODCVM",
+        "Ver",
+        "fication",
+        "ODCVM",
+        "Ver",
+        "i",
+        "fied",
+        "By",
+        "Device",
+        "Ver",
+        "ified",
+        "By",
+        "Device",
+        "type",
+        "%",
+        "Nett",
+        "VAT",
+        "amount",
+        "Please",
+        "retain",
+        "th'",
+        "$",
+        "€py",
+        "for",
+        "your",
+        "records",
+        "Please",
+        "retain",
+        "this",
+        "copy",
+        "for",
+        "5",
+        "20.00",
+        ":",
+        "16.72",
+        "€",
+        "3.34",
+        "1-2025",
+        "11:05:42",
+        "521",
+        "0918",
+        "1156110316",
+        "VAT",
+        "type",
+        "9",
+        "Nett",
+        "VAT",
+        "amount",
+        "VAT",
+        "type",
+        "%",
+        "55409-50582233",
+        "4485",
+        "6",
+        "20.00",
+        "€",
+        "70.20",
+        "1",
+        "14.04",
+        "6",
+        "20.L",
+        "k",
+        "you",
+        "for",
+        "choos",
+        "ing",
+        "Shel",
+        "/",
+        "18-01-2025",
+        "12:22:45",
+        "919",
+        "0985",
+        "1041110217",
+        "11-02-2025",
+        "14:",
+        "36",
+        ".",
+        "11-054684-52452321",
+        "2065",
+        "11-079665-62660232",
+        "Thank",
+        "you",
+        "for",
+        "choos",
+        "ing",
+        "Shel",
+        "|",
+        "Thank",
+        "you",
+        "for",
+        "choos",
+        "ing",
+        "ion",
+        "ime:",
+        "Copy",
+        "in"
+      ],
+      "ocr_items": [],
+      "ocr_debug": {
+        "lighton_error": "",
+        "easyocr_error": "",
+        "tesseract_error": "",
+        "lighton_raw_len": 0,
+        "easyocr_items": 0,
+        "cleaned_len": 2447
+      },
+      "detections": [],
+      "receipts": [
+        {
+          "index": 1,
+          "page_index": 1,
+          "bbox": null,
+          "engine": "easyocr",
+          "raw_output": "pping ad ms Roundabout Epp She L ttle Waitrose Ha/ fmoon She | | Epping ; 0521 28-26 #igh Street High Road IW Epp ing Wake Arms Roundabout Epping 11992814580 B126348810 (Retai ler) 1,2,3,4,5 Stat No: 0919 Stat No: 0521 3235763255 6 CM16 4AE CM16 SHW Tel : 01442575773 Tel: 01992814580 VA 91\"m10 1,2,3,' VAT: GB126348810 (Retai ler) 1,2,3,4,5 RECETIPT VA 0 VAT: GB235763255 6 USTOMER LE VAT AMOUNT RECEIPT leaded 6 € 20.06 Cl' | OMER RECEIPT CUSTOMER 2 6; 13.94 & * € 1.439/0) AMOUNT AR! ICi ( VAT AMOUNT ARTICLE VAT #FS (iesel 6 : 84.24 #FS Diesel 6 f 104.19 TAL € 20 06 (PUMP 3; 58.14 Q * € 1.449/0) (PUMP 1; 67.70 & 4 : 1,539/0) € 20.06 TOTAL € 84.24 TOTAL € 104 . 19 VISA € 84.24 VISA 8 104.19 a| ID. : 05052101 no : 1337 ction ne 000159 IPT IPT 000159 Termina / ID. : 05091901 Terminal ID_ 05052101 t no. 1457 ime: 10-01-2025 11:05 Per iod no. : 2059 Per iod no. \" Transact ion no : 000168 Transact no. 0oooo= A Receipt no. : 000168 Receipt no : 0oooo Datelt 18-01-2025 12:22 Date/time: 11-02-2025 14:38 10/01/25 11:05:42 VISA VISA Customer 05052101 18/01/25 12:22:45 11/02/25 14:38.44 na | ID 0000031606/000159/0000001337 Customer Copy Customer Copy Mode Contact less Name Visa DEBIT Termina ID 05091901 Termina| ID 05052101 Number 00 EFT 0000509840/000168/0000002059 EFT 0000048935/000003/0000001457 A0000000031010 Entry Mode Contact less Entry Mode Contact less Crypt. DICBE274F891F?OC Card Name Visa DEBIT Card Name Visa DEBIT XXXXXXX6469 Seq . Number 00 Seq. Number 00 Contact less AID A0000000031010 AID A0000000031010 e5 44 App. Crypt . 1D8E40477C513C74 App. Crypt. FD4EA34D67278037 AMOUNT GBP 20 . 06 XXXXXXXXXXXX6469 XXXXXXXXXXXX29g] nse 000 APPROVED Visa Contact less Visa Contact less Code 013600 Expires #/** Expires Ix ication ODCVM SALE AMOUNT GBP 84.24 SALE AMOUNT GBP 104.19 fied By Device Response 000 APPROVED Response 00o APPROVED se retain this copy Ta)r yourrecords Auth Code 087224 Auth Code 020826 Ver i fication ODCVM Ver fication ODCVM Ver i fied By Device Ver ified By Device type % Nett VAT amount Please retain th' $ €py for your records Please retain this copy for 5 20.00 : 16.72 € 3.34 1-2025 11:05:42 521 0918 1156110316 VAT type 9 Nett VAT amount VAT type % 55409-50582233 4485 6 20.00 € 70.20 1 14.04 6 20.L k you for choos ing Shel / 18-01-2025 12:22:45 919 0985 1041110217 11-02-2025 14: 36 . 11-054684-52452321 2065 11-079665-62660232 Thank you for choos ing Shel | Thank you for choos ing ion ime: Copy in",
+          "cleaned_text": "pping ad ms Roundabout Epp She L ttle Waitrose Ha/ fmoon She | | Epping ; 0521 28-26 #igh Street High Road IW Epp ing Wake Arms Roundabout Epping 11992814580 B126348810 (Retai ler) 1,2,3,4,5 Stat No: 0919 Stat No: 0521 3235763255 6 CM16 4AE CM16 SHW Tel : 01442575773 Tel: 01992814580 VA 91\"m10 1,2,3,' VAT: GB126348810 (Retai ler) 1,2,3,4,5 RECETIPT VA 0 VAT: GB235763255 6 USTOMER LE VAT AMOUNT RECEIPT leaded 6 € 20.06 Cl' | OMER RECEIPT CUSTOMER 2 6; 13.94 & * € 1.439/0) AMOUNT AR! ICi ( VAT AMOUNT ARTICLE VAT #FS (iesel 6 : 84.24 #FS Diesel 6 f 104.19 TAL € 20 06 (PUMP 3; 58.14 Q * € 1.449/0) (PUMP 1; 67.70 & 4 : 1,539/0) € 20.06 TOTAL € 84.24 TOTAL € 104 . 19 VISA € 84.24 VISA 8 104.19 a| ID. : 05052101 no : 1337 ction ne 000159 IPT IPT 000159 Termina / ID. : 05091901 Terminal ID_ 05052101 t no. 1457 ime: 10-01-2025 11:05 Per iod no. : 2059 Per iod no. \" Transact ion no : 000168 Transact no. 0oooo= A Receipt no. : 000168 Receipt no : 0oooo Datelt 18-01-2025 12:22 Date/time: 11-02-2025 14:38 10/01/25 11:05:42 VISA VISA Customer 05052101 18/01/25 12:22:45 11/02/25 14:38.44 na | ID 0000031606/000159/0000001337 Customer Copy Customer Copy Mode Contact less Name Visa DEBIT Termina ID 05091901 Termina| ID 05052101 Number 00 EFT 0000509840/000168/0000002059 EFT 0000048935/000003/0000001457 A0000000031010 Entry Mode Contact less Entry Mode Contact less Crypt. DICBE274F891F?OC Card Name Visa DEBIT Card Name Visa DEBIT XXXXXXX6469 Seq . Number 00 Seq. Number 00 Contact less AID A0000000031010 AID A0000000031010 e5 44 App. Crypt . 1D8E40477C513C74 App. Crypt. FD4EA34D67278037 AMOUNT GBP 20 . 06 XXXXXXXXXXXX6469 XXXXXXXXXXXX29g] nse 000 APPROVED Visa Contact less Visa Contact less Code 013600 Expires #/** Expires Ix ication ODCVM SALE AMOUNT GBP 84.24 SALE AMOUNT GBP 104.19 fied By Device Response 000 APPROVED Response 00o APPROVED se retain this copy Ta)r yourrecords Auth Code 087224 Auth Code 020826 Ver i fication ODCVM Ver fication ODCVM Ver i fied By Device Ver ified By Device type % Nett VAT amount Please retain th' $ €py for your records Please retain this copy for 5 20.00 : 16.72 € 3.34 1-2025 11:05:42 521 0918 1156110316 VAT type 9 Nett VAT amount VAT type % 55409-50582233 4485 6 20.00 € 70.20 1 14.04 6 20.L k you for choos ing Shel / 18-01-2025 12:22:45 919 0985 1041110217 11-02-2025 14: 36 . 11-054684-52452321 2065 11-079665-62660232 Thank you for choos ing Shel | Thank you for choos ing ion ime: Copy in",
+          "lines": [
+            {
+              "index": 1,
+              "text": "pping ad ms Roundabout Epp She L ttle Waitrose Ha/ fmoon She | | Epping ; 0521 28-26 #igh Street High Road IW Epp ing Wake Arms Roundabout Epping 11992814580 B126348810 (Retai ler) 1,2,3,4,5 Stat No: 0919 Stat No: 0521 3235763255 6 CM16 4AE CM16 SHW Tel : 01442575773 Tel: 01992814580 VA 91\"m10 1,2,3,' VAT: GB126348810 (Retai ler) 1,2,3,4,5 RECETIPT VA 0 VAT: GB235763255 6 USTOMER LE VAT AMOUNT RECEIPT leaded 6 € 20.06 Cl' | OMER RECEIPT CUSTOMER 2 6; 13.94 & * € 1.439/0) AMOUNT AR! ICi ( VAT AMOUNT ARTICLE VAT #FS (iesel 6 : 84.24 #FS Diesel 6 f 104.19 TAL € 20 06 (PUMP 3; 58.14 Q * € 1.449/0) (PUMP 1; 67.70 & 4 : 1,539/0) € 20.06 TOTAL € 84.24 TOTAL € 104 . 19 VISA € 84.24 VISA 8 104.19 a| ID. : 05052101 no : 1337 ction ne 000159 IPT IPT 000159 Termina / ID. : 05091901 Terminal ID_ 05052101 t no. 1457 ime: 10-01-2025 11:05 Per iod no. : 2059 Per iod no. \" Transact ion no : 000168 Transact no. 0oooo= A Receipt no. : 000168 Receipt no : 0oooo Datelt 18-01-2025 12:22 Date/time: 11-02-2025 14:38 10/01/25 11:05:42 VISA VISA Customer 05052101 18/01/25 12:22:45 11/02/25 14:38.44 na | ID 0000031606/000159/0000001337 Customer Copy Customer Copy Mode Contact less Name Visa DEBIT Termina ID 05091901 Termina| ID 05052101 Number 00 EFT 0000509840/000168/0000002059 EFT 0000048935/000003/0000001457 A0000000031010 Entry Mode Contact less Entry Mode Contact less Crypt. DICBE274F891F?OC Card Name Visa DEBIT Card Name Visa DEBIT XXXXXXX6469 Seq . Number 00 Seq. Number 00 Contact less AID A0000000031010 AID A0000000031010 e5 44 App. Crypt . 1D8E40477C513C74 App. Crypt. FD4EA34D67278037 AMOUNT GBP 20 . 06 XXXXXXXXXXXX6469 XXXXXXXXXXXX29g] nse 000 APPROVED Visa Contact less Visa Contact less Code 013600 Expires #/** Expires Ix ication ODCVM SALE AMOUNT GBP 84.24 SALE AMOUNT GBP 104.19 fied By Device Response 000 APPROVED Response 00o APPROVED se retain this copy Ta)r yourrecords Auth Code 087224 Auth Code 020826 Ver i fication ODCVM Ver fication ODCVM Ver i fied By Device Ver ified By Device type % Nett VAT amount Please retain th' $ €py for your records Please retain this copy for 5 20.00 : 16.72 € 3.34 1-2025 11:05:42 521 0918 1156110316 VAT type 9 Nett VAT amount VAT type % 55409-50582233 4485 6 20.00 € 70.20 1 14.04 6 20.L k you for choos ing Shel / 18-01-2025 12:22:45 919 0985 1041110217 11-02-2025 14: 36 . 11-054684-52452321 2065 11-079665-62660232 Thank you for choos ing Shel | Thank you for choos ing ion ime: Copy in"
+            }
+          ],
+          "words": [
+            {
+              "index": 1,
+              "text": "pping"
+            },
+            {
+              "index": 2,
+              "text": "ad"
+            },
+            {
+              "index": 3,
+              "text": "ms"
+            },
+            {
+              "index": 4,
+              "text": "Roundabout"
+            },
+            {
+              "index": 5,
+              "text": "Epp"
+            },
+            {
+              "index": 6,
+              "text": "She"
+            },
+            {
+              "index": 7,
+              "text": "L"
+            },
+            {
+              "index": 8,
+              "text": "ttle"
+            },
+            {
+              "index": 9,
+              "text": "Waitrose"
+            },
+            {
+              "index": 10,
+              "text": "Ha/"
+            },
+            {
+              "index": 11,
+              "text": "fmoon"
+            },
+            {
+              "index": 12,
+              "text": "She"
+            },
+            {
+              "index": 13,
+              "text": "|"
+            },
+            {
+              "index": 14,
+              "text": "|"
+            },
+            {
+              "index": 15,
+              "text": "Epping"
+            },
+            {
+              "index": 16,
+              "text": ";"
+            },
+            {
+              "index": 17,
+              "text": "0521"
+            },
+            {
+              "index": 18,
+              "text": "28-26"
+            },
+            {
+              "index": 19,
+              "text": "#igh"
+            },
+            {
+              "index": 20,
+              "text": "Street"
+            },
+            {
+              "index": 21,
+              "text": "High"
+            },
+            {
+              "index": 22,
+              "text": "Road"
+            },
+            {
+              "index": 23,
+              "text": "IW"
+            },
+            {
+              "index": 24,
+              "text": "Epp"
+            },
+            {
+              "index": 25,
+              "text": "ing"
+            },
+            {
+              "index": 26,
+              "text": "Wake"
+            },
+            {
+              "index": 27,
+              "text": "Arms"
+            },
+            {
+              "index": 28,
+              "text": "Roundabout"
+            },
+            {
+              "index": 29,
+              "text": "Epping"
+            },
+            {
+              "index": 30,
+              "text": "11992814580"
+            },
+            {
+              "index": 31,
+              "text": "B126348810"
+            },
+            {
+              "index": 32,
+              "text": "(Retai"
+            },
+            {
+              "index": 33,
+              "text": "ler)"
+            },
+            {
+              "index": 34,
+              "text": "1,2,3,4,5"
+            },
+            {
+              "index": 35,
+              "text": "Stat"
+            },
+            {
+              "index": 36,
+              "text": "No:"
+            },
+            {
+              "index": 37,
+              "text": "0919"
+            },
+            {
+              "index": 38,
+              "text": "Stat"
+            },
+            {
+              "index": 39,
+              "text": "No:"
+            },
+            {
+              "index": 40,
+              "text": "0521"
+            },
+            {
+              "index": 41,
+              "text": "3235763255"
+            },
+            {
+              "index": 42,
+              "text": "6"
+            },
+            {
+              "index": 43,
+              "text": "CM16"
+            },
+            {
+              "index": 44,
+              "text": "4AE"
+            },
+            {
+              "index": 45,
+              "text": "CM16"
+            },
+            {
+              "index": 46,
+              "text": "SHW"
+            },
+            {
+              "index": 47,
+              "text": "Tel"
+            },
+            {
+              "index": 48,
+              "text": ":"
+            },
+            {
+              "index": 49,
+              "text": "01442575773"
+            },
+            {
+              "index": 50,
+              "text": "Tel:"
+            },
+            {
+              "index": 51,
+              "text": "01992814580"
+            },
+            {
+              "index": 52,
+              "text": "VA"
+            },
+            {
+              "index": 53,
+              "text": "91\"m10"
+            },
+            {
+              "index": 54,
+              "text": "1,2,3,'"
+            },
+            {
+              "index": 55,
+              "text": "VAT:"
+            },
+            {
+              "index": 56,
+              "text": "GB126348810"
+            },
+            {
+              "index": 57,
+              "text": "(Retai"
+            },
+            {
+              "index": 58,
+              "text": "ler)"
+            },
+            {
+              "index": 59,
+              "text": "1,2,3,4,5"
+            },
+            {
+              "index": 60,
+              "text": "RECETIPT"
+            },
+            {
+              "index": 61,
+              "text": "VA"
+            },
+            {
+              "index": 62,
+              "text": "0"
+            },
+            {
+              "index": 63,
+              "text": "VAT:"
+            },
+            {
+              "index": 64,
+              "text": "GB235763255"
+            },
+            {
+              "index": 65,
+              "text": "6"
+            },
+            {
+              "index": 66,
+              "text": "USTOMER"
+            },
+            {
+              "index": 67,
+              "text": "LE"
+            },
+            {
+              "index": 68,
+              "text": "VAT"
+            },
+            {
+              "index": 69,
+              "text": "AMOUNT"
+            },
+            {
+              "index": 70,
+              "text": "RECEIPT"
+            },
+            {
+              "index": 71,
+              "text": "leaded"
+            },
+            {
+              "index": 72,
+              "text": "6"
+            },
+            {
+              "index": 73,
+              "text": "€"
+            },
+            {
+              "index": 74,
+              "text": "20.06"
+            },
+            {
+              "index": 75,
+              "text": "Cl'"
+            },
+            {
+              "index": 76,
+              "text": "|"
+            },
+            {
+              "index": 77,
+              "text": "OMER"
+            },
+            {
+              "index": 78,
+              "text": "RECEIPT"
+            },
+            {
+              "index": 79,
+              "text": "CUSTOMER"
+            },
+            {
+              "index": 80,
+              "text": "2"
+            },
+            {
+              "index": 81,
+              "text": "6;"
+            },
+            {
+              "index": 82,
+              "text": "13.94"
+            },
+            {
+              "index": 83,
+              "text": "&"
+            },
+            {
+              "index": 84,
+              "text": "*"
+            },
+            {
+              "index": 85,
+              "text": "€"
+            },
+            {
+              "index": 86,
+              "text": "1.439/0)"
+            },
+            {
+              "index": 87,
+              "text": "AMOUNT"
+            },
+            {
+              "index": 88,
+              "text": "AR!"
+            },
+            {
+              "index": 89,
+              "text": "ICi"
+            },
+            {
+              "index": 90,
+              "text": "("
+            },
+            {
+              "index": 91,
+              "text": "VAT"
+            },
+            {
+              "index": 92,
+              "text": "AMOUNT"
+            },
+            {
+              "index": 93,
+              "text": "ARTICLE"
+            },
+            {
+              "index": 94,
+              "text": "VAT"
+            },
+            {
+              "index": 95,
+              "text": "#FS"
+            },
+            {
+              "index": 96,
+              "text": "(iesel"
+            },
+            {
+              "index": 97,
+              "text": "6"
+            },
+            {
+              "index": 98,
+              "text": ":"
+            },
+            {
+              "index": 99,
+              "text": "84.24"
+            },
+            {
+              "index": 100,
+              "text": "#FS"
+            },
+            {
+              "index": 101,
+              "text": "Diesel"
+            },
+            {
+              "index": 102,
+              "text": "6"
+            },
+            {
+              "index": 103,
+              "text": "f"
+            },
+            {
+              "index": 104,
+              "text": "104.19"
+            },
+            {
+              "index": 105,
+              "text": "TAL"
+            },
+            {
+              "index": 106,
+              "text": "€"
+            },
+            {
+              "index": 107,
+              "text": "20"
+            },
+            {
+              "index": 108,
+              "text": "06"
+            },
+            {
+              "index": 109,
+              "text": "(PUMP"
+            },
+            {
+              "index": 110,
+              "text": "3;"
+            },
+            {
+              "index": 111,
+              "text": "58.14"
+            },
+            {
+              "index": 112,
+              "text": "Q"
+            },
+            {
+              "index": 113,
+              "text": "*"
+            },
+            {
+              "index": 114,
+              "text": "€"
+            },
+            {
+              "index": 115,
+              "text": "1.449/0)"
+            },
+            {
+              "index": 116,
+              "text": "(PUMP"
+            },
+            {
+              "index": 117,
+              "text": "1;"
+            },
+            {
+              "index": 118,
+              "text": "67.70"
+            },
+            {
+              "index": 119,
+              "text": "&"
+            },
+            {
+              "index": 120,
+              "text": "4"
+            },
+            {
+              "index": 121,
+              "text": ":"
+            },
+            {
+              "index": 122,
+              "text": "1,539/0)"
+            },
+            {
+              "index": 123,
+              "text": "€"
+            },
+            {
+              "index": 124,
+              "text": "20.06"
+            },
+            {
+              "index": 125,
+              "text": "TOTAL"
+            },
+            {
+              "index": 126,
+              "text": "€"
+            },
+            {
+              "index": 127,
+              "text": "84.24"
+            },
+            {
+              "index": 128,
+              "text": "TOTAL"
+            },
+            {
+              "index": 129,
+              "text": "€"
+            },
+            {
+              "index": 130,
+              "text": "104"
+            },
+            {
+              "index": 131,
+              "text": "."
+            },
+            {
+              "index": 132,
+              "text": "19"
+            },
+            {
+              "index": 133,
+              "text": "VISA"
+            },
+            {
+              "index": 134,
+              "text": "€"
+            },
+            {
+              "index": 135,
+              "text": "84.24"
+            },
+            {
+              "index": 136,
+              "text": "VISA"
+            },
+            {
+              "index": 137,
+              "text": "8"
+            },
+            {
+              "index": 138,
+              "text": "104.19"
+            },
+            {
+              "index": 139,
+              "text": "a|"
+            },
+            {
+              "index": 140,
+              "text": "ID."
+            },
+            {
+              "index": 141,
+              "text": ":"
+            },
+            {
+              "index": 142,
+              "text": "05052101"
+            },
+            {
+              "index": 143,
+              "text": "no"
+            },
+            {
+              "index": 144,
+              "text": ":"
+            },
+            {
+              "index": 145,
+              "text": "1337"
+            },
+            {
+              "index": 146,
+              "text": "ction"
+            },
+            {
+              "index": 147,
+              "text": "ne"
+            },
+            {
+              "index": 148,
+              "text": "000159"
+            },
+            {
+              "index": 149,
+              "text": "IPT"
+            },
+            {
+              "index": 150,
+              "text": "IPT"
+            },
+            {
+              "index": 151,
+              "text": "000159"
+            },
+            {
+              "index": 152,
+              "text": "Termina"
+            },
+            {
+              "index": 153,
+              "text": "/"
+            },
+            {
+              "index": 154,
+              "text": "ID."
+            },
+            {
+              "index": 155,
+              "text": ":"
+            },
+            {
+              "index": 156,
+              "text": "05091901"
+            },
+            {
+              "index": 157,
+              "text": "Terminal"
+            },
+            {
+              "index": 158,
+              "text": "ID_"
+            },
+            {
+              "index": 159,
+              "text": "05052101"
+            },
+            {
+              "index": 160,
+              "text": "t"
+            },
+            {
+              "index": 161,
+              "text": "no."
+            },
+            {
+              "index": 162,
+              "text": "1457"
+            },
+            {
+              "index": 163,
+              "text": "ime:"
+            },
+            {
+              "index": 164,
+              "text": "10-01-2025"
+            },
+            {
+              "index": 165,
+              "text": "11:05"
+            },
+            {
+              "index": 166,
+              "text": "Per"
+            },
+            {
+              "index": 167,
+              "text": "iod"
+            },
+            {
+              "index": 168,
+              "text": "no."
+            },
+            {
+              "index": 169,
+              "text": ":"
+            },
+            {
+              "index": 170,
+              "text": "2059"
+            },
+            {
+              "index": 171,
+              "text": "Per"
+            },
+            {
+              "index": 172,
+              "text": "iod"
+            },
+            {
+              "index": 173,
+              "text": "no."
+            },
+            {
+              "index": 174,
+              "text": "\""
+            },
+            {
+              "index": 175,
+              "text": "Transact"
+            },
+            {
+              "index": 176,
+              "text": "ion"
+            },
+            {
+              "index": 177,
+              "text": "no"
+            },
+            {
+              "index": 178,
+              "text": ":"
+            },
+            {
+              "index": 179,
+              "text": "000168"
+            },
+            {
+              "index": 180,
+              "text": "Transact"
+            },
+            {
+              "index": 181,
+              "text": "no."
+            },
+            {
+              "index": 182,
+              "text": "0oooo="
+            },
+            {
+              "index": 183,
+              "text": "A"
+            },
+            {
+              "index": 184,
+              "text": "Receipt"
+            },
+            {
+              "index": 185,
+              "text": "no."
+            },
+            {
+              "index": 186,
+              "text": ":"
+            },
+            {
+              "index": 187,
+              "text": "000168"
+            },
+            {
+              "index": 188,
+              "text": "Receipt"
+            },
+            {
+              "index": 189,
+              "text": "no"
+            },
+            {
+              "index": 190,
+              "text": ":"
+            },
+            {
+              "index": 191,
+              "text": "0oooo"
+            },
+            {
+              "index": 192,
+              "text": "Datelt"
+            },
+            {
+              "index": 193,
+              "text": "18-01-2025"
+            },
+            {
+              "index": 194,
+              "text": "12:22"
+            },
+            {
+              "index": 195,
+              "text": "Date/time:"
+            },
+            {
+              "index": 196,
+              "text": "11-02-2025"
+            },
+            {
+              "index": 197,
+              "text": "14:38"
+            },
+            {
+              "index": 198,
+              "text": "10/01/25"
+            },
+            {
+              "index": 199,
+              "text": "11:05:42"
+            },
+            {
+              "index": 200,
+              "text": "VISA"
+            },
+            {
+              "index": 201,
+              "text": "VISA"
+            },
+            {
+              "index": 202,
+              "text": "Customer"
+            },
+            {
+              "index": 203,
+              "text": "05052101"
+            },
+            {
+              "index": 204,
+              "text": "18/01/25"
+            },
+            {
+              "index": 205,
+              "text": "12:22:45"
+            },
+            {
+              "index": 206,
+              "text": "11/02/25"
+            },
+            {
+              "index": 207,
+              "text": "14:38.44"
+            },
+            {
+              "index": 208,
+              "text": "na"
+            },
+            {
+              "index": 209,
+              "text": "|"
+            },
+            {
+              "index": 210,
+              "text": "ID"
+            },
+            {
+              "index": 211,
+              "text": "0000031606/000159/0000001337"
+            },
+            {
+              "index": 212,
+              "text": "Customer"
+            },
+            {
+              "index": 213,
+              "text": "Copy"
+            },
+            {
+              "index": 214,
+              "text": "Customer"
+            },
+            {
+              "index": 215,
+              "text": "Copy"
+            },
+            {
+              "index": 216,
+              "text": "Mode"
+            },
+            {
+              "index": 217,
+              "text": "Contact"
+            },
+            {
+              "index": 218,
+              "text": "less"
+            },
+            {
+              "index": 219,
+              "text": "Name"
+            },
+            {
+              "index": 220,
+              "text": "Visa"
+            },
+            {
+              "index": 221,
+              "text": "DEBIT"
+            },
+            {
+              "index": 222,
+              "text": "Termina"
+            },
+            {
+              "index": 223,
+              "text": "ID"
+            },
+            {
+              "index": 224,
+              "text": "05091901"
+            },
+            {
+              "index": 225,
+              "text": "Termina|"
+            },
+            {
+              "index": 226,
+              "text": "ID"
+            },
+            {
+              "index": 227,
+              "text": "05052101"
+            },
+            {
+              "index": 228,
+              "text": "Number"
+            },
+            {
+              "index": 229,
+              "text": "00"
+            },
+            {
+              "index": 230,
+              "text": "EFT"
+            },
+            {
+              "index": 231,
+              "text": "0000509840/000168/0000002059"
+            },
+            {
+              "index": 232,
+              "text": "EFT"
+            },
+            {
+              "index": 233,
+              "text": "0000048935/000003/0000001457"
+            },
+            {
+              "index": 234,
+              "text": "A0000000031010"
+            },
+            {
+              "index": 235,
+              "text": "Entry"
+            },
+            {
+              "index": 236,
+              "text": "Mode"
+            },
+            {
+              "index": 237,
+              "text": "Contact"
+            },
+            {
+              "index": 238,
+              "text": "less"
+            },
+            {
+              "index": 239,
+              "text": "Entry"
+            },
+            {
+              "index": 240,
+              "text": "Mode"
+            },
+            {
+              "index": 241,
+              "text": "Contact"
+            },
+            {
+              "index": 242,
+              "text": "less"
+            },
+            {
+              "index": 243,
+              "text": "Crypt."
+            },
+            {
+              "index": 244,
+              "text": "DICBE274F891F?OC"
+            },
+            {
+              "index": 245,
+              "text": "Card"
+            },
+            {
+              "index": 246,
+              "text": "Name"
+            },
+            {
+              "index": 247,
+              "text": "Visa"
+            },
+            {
+              "index": 248,
+              "text": "DEBIT"
+            },
+            {
+              "index": 249,
+              "text": "Card"
+            },
+            {
+              "index": 250,
+              "text": "Name"
+            },
+            {
+              "index": 251,
+              "text": "Visa"
+            },
+            {
+              "index": 252,
+              "text": "DEBIT"
+            },
+            {
+              "index": 253,
+              "text": "XXXXXXX6469"
+            },
+            {
+              "index": 254,
+              "text": "Seq"
+            },
+            {
+              "index": 255,
+              "text": "."
+            },
+            {
+              "index": 256,
+              "text": "Number"
+            },
+            {
+              "index": 257,
+              "text": "00"
+            },
+            {
+              "index": 258,
+              "text": "Seq."
+            },
+            {
+              "index": 259,
+              "text": "Number"
+            },
+            {
+              "index": 260,
+              "text": "00"
+            },
+            {
+              "index": 261,
+              "text": "Contact"
+            },
+            {
+              "index": 262,
+              "text": "less"
+            },
+            {
+              "index": 263,
+              "text": "AID"
+            },
+            {
+              "index": 264,
+              "text": "A0000000031010"
+            },
+            {
+              "index": 265,
+              "text": "AID"
+            },
+            {
+              "index": 266,
+              "text": "A0000000031010"
+            },
+            {
+              "index": 267,
+              "text": "e5"
+            },
+            {
+              "index": 268,
+              "text": "44"
+            },
+            {
+              "index": 269,
+              "text": "App."
+            },
+            {
+              "index": 270,
+              "text": "Crypt"
+            },
+            {
+              "index": 271,
+              "text": "."
+            },
+            {
+              "index": 272,
+              "text": "1D8E40477C513C74"
+            },
+            {
+              "index": 273,
+              "text": "App."
+            },
+            {
+              "index": 274,
+              "text": "Crypt."
+            },
+            {
+              "index": 275,
+              "text": "FD4EA34D67278037"
+            },
+            {
+              "index": 276,
+              "text": "AMOUNT"
+            },
+            {
+              "index": 277,
+              "text": "GBP"
+            },
+            {
+              "index": 278,
+              "text": "20"
+            },
+            {
+              "index": 279,
+              "text": "."
+            },
+            {
+              "index": 280,
+              "text": "06"
+            },
+            {
+              "index": 281,
+              "text": "XXXXXXXXXXXX6469"
+            },
+            {
+              "index": 282,
+              "text": "XXXXXXXXXXXX29g]"
+            },
+            {
+              "index": 283,
+              "text": "nse"
+            },
+            {
+              "index": 284,
+              "text": "000"
+            },
+            {
+              "index": 285,
+              "text": "APPROVED"
+            },
+            {
+              "index": 286,
+              "text": "Visa"
+            },
+            {
+              "index": 287,
+              "text": "Contact"
+            },
+            {
+              "index": 288,
+              "text": "less"
+            },
+            {
+              "index": 289,
+              "text": "Visa"
+            },
+            {
+              "index": 290,
+              "text": "Contact"
+            },
+            {
+              "index": 291,
+              "text": "less"
+            },
+            {
+              "index": 292,
+              "text": "Code"
+            },
+            {
+              "index": 293,
+              "text": "013600"
+            },
+            {
+              "index": 294,
+              "text": "Expires"
+            },
+            {
+              "index": 295,
+              "text": "#/**"
+            },
+            {
+              "index": 296,
+              "text": "Expires"
+            },
+            {
+              "index": 297,
+              "text": "Ix"
+            },
+            {
+              "index": 298,
+              "text": "ication"
+            },
+            {
+              "index": 299,
+              "text": "ODCVM"
+            },
+            {
+              "index": 300,
+              "text": "SALE"
+            },
+            {
+              "index": 301,
+              "text": "AMOUNT"
+            },
+            {
+              "index": 302,
+              "text": "GBP"
+            },
+            {
+              "index": 303,
+              "text": "84.24"
+            },
+            {
+              "index": 304,
+              "text": "SALE"
+            },
+            {
+              "index": 305,
+              "text": "AMOUNT"
+            },
+            {
+              "index": 306,
+              "text": "GBP"
+            },
+            {
+              "index": 307,
+              "text": "104.19"
+            },
+            {
+              "index": 308,
+              "text": "fied"
+            },
+            {
+              "index": 309,
+              "text": "By"
+            },
+            {
+              "index": 310,
+              "text": "Device"
+            },
+            {
+              "index": 311,
+              "text": "Response"
+            },
+            {
+              "index": 312,
+              "text": "000"
+            },
+            {
+              "index": 313,
+              "text": "APPROVED"
+            },
+            {
+              "index": 314,
+              "text": "Response"
+            },
+            {
+              "index": 315,
+              "text": "00o"
+            },
+            {
+              "index": 316,
+              "text": "APPROVED"
+            },
+            {
+              "index": 317,
+              "text": "se"
+            },
+            {
+              "index": 318,
+              "text": "retain"
+            },
+            {
+              "index": 319,
+              "text": "this"
+            },
+            {
+              "index": 320,
+              "text": "copy"
+            },
+            {
+              "index": 321,
+              "text": "Ta)r"
+            },
+            {
+              "index": 322,
+              "text": "yourrecords"
+            },
+            {
+              "index": 323,
+              "text": "Auth"
+            },
+            {
+              "index": 324,
+              "text": "Code"
+            },
+            {
+              "index": 325,
+              "text": "087224"
+            },
+            {
+              "index": 326,
+              "text": "Auth"
+            },
+            {
+              "index": 327,
+              "text": "Code"
+            },
+            {
+              "index": 328,
+              "text": "020826"
+            },
+            {
+              "index": 329,
+              "text": "Ver"
+            },
+            {
+              "index": 330,
+              "text": "i"
+            },
+            {
+              "index": 331,
+              "text": "fication"
+            },
+            {
+              "index": 332,
+              "text": "ODCVM"
+            },
+            {
+              "index": 333,
+              "text": "Ver"
+            },
+            {
+              "index": 334,
+              "text": "fication"
+            },
+            {
+              "index": 335,
+              "text": "ODCVM"
+            },
+            {
+              "index": 336,
+              "text": "Ver"
+            },
+            {
+              "index": 337,
+              "text": "i"
+            },
+            {
+              "index": 338,
+              "text": "fied"
+            },
+            {
+              "index": 339,
+              "text": "By"
+            },
+            {
+              "index": 340,
+              "text": "Device"
+            },
+            {
+              "index": 341,
+              "text": "Ver"
+            },
+            {
+              "index": 342,
+              "text": "ified"
+            },
+            {
+              "index": 343,
+              "text": "By"
+            },
+            {
+              "index": 344,
+              "text": "Device"
+            },
+            {
+              "index": 345,
+              "text": "type"
+            },
+            {
+              "index": 346,
+              "text": "%"
+            },
+            {
+              "index": 347,
+              "text": "Nett"
+            },
+            {
+              "index": 348,
+              "text": "VAT"
+            },
+            {
+              "index": 349,
+              "text": "amount"
+            },
+            {
+              "index": 350,
+              "text": "Please"
+            },
+            {
+              "index": 351,
+              "text": "retain"
+            },
+            {
+              "index": 352,
+              "text": "th'"
+            },
+            {
+              "index": 353,
+              "text": "$"
+            },
+            {
+              "index": 354,
+              "text": "€py"
+            },
+            {
+              "index": 355,
+              "text": "for"
+            },
+            {
+              "index": 356,
+              "text": "your"
+            },
+            {
+              "index": 357,
+              "text": "records"
+            },
+            {
+              "index": 358,
+              "text": "Please"
+            },
+            {
+              "index": 359,
+              "text": "retain"
+            },
+            {
+              "index": 360,
+              "text": "this"
+            },
+            {
+              "index": 361,
+              "text": "copy"
+            },
+            {
+              "index": 362,
+              "text": "for"
+            },
+            {
+              "index": 363,
+              "text": "5"
+            },
+            {
+              "index": 364,
+              "text": "20.00"
+            },
+            {
+              "index": 365,
+              "text": ":"
+            },
+            {
+              "index": 366,
+              "text": "16.72"
+            },
+            {
+              "index": 367,
+              "text": "€"
+            },
+            {
+              "index": 368,
+              "text": "3.34"
+            },
+            {
+              "index": 369,
+              "text": "1-2025"
+            },
+            {
+              "index": 370,
+              "text": "11:05:42"
+            },
+            {
+              "index": 371,
+              "text": "521"
+            },
+            {
+              "index": 372,
+              "text": "0918"
+            },
+            {
+              "index": 373,
+              "text": "1156110316"
+            },
+            {
+              "index": 374,
+              "text": "VAT"
+            },
+            {
+              "index": 375,
+              "text": "type"
+            },
+            {
+              "index": 376,
+              "text": "9"
+            },
+            {
+              "index": 377,
+              "text": "Nett"
+            },
+            {
+              "index": 378,
+              "text": "VAT"
+            },
+            {
+              "index": 379,
+              "text": "amount"
+            },
+            {
+              "index": 380,
+              "text": "VAT"
+            },
+            {
+              "index": 381,
+              "text": "type"
+            },
+            {
+              "index": 382,
+              "text": "%"
+            },
+            {
+              "index": 383,
+              "text": "55409-50582233"
+            },
+            {
+              "index": 384,
+              "text": "4485"
+            },
+            {
+              "index": 385,
+              "text": "6"
+            },
+            {
+              "index": 386,
+              "text": "20.00"
+            },
+            {
+              "index": 387,
+              "text": "€"
+            },
+            {
+              "index": 388,
+              "text": "70.20"
+            },
+            {
+              "index": 389,
+              "text": "1"
+            },
+            {
+              "index": 390,
+              "text": "14.04"
+            },
+            {
+              "index": 391,
+              "text": "6"
+            },
+            {
+              "index": 392,
+              "text": "20.L"
+            },
+            {
+              "index": 393,
+              "text": "k"
+            },
+            {
+              "index": 394,
+              "text": "you"
+            },
+            {
+              "index": 395,
+              "text": "for"
+            },
+            {
+              "index": 396,
+              "text": "choos"
+            },
+            {
+              "index": 397,
+              "text": "ing"
+            },
+            {
+              "index": 398,
+              "text": "Shel"
+            },
+            {
+              "index": 399,
+              "text": "/"
+            },
+            {
+              "index": 400,
+              "text": "18-01-2025"
+            },
+            {
+              "index": 401,
+              "text": "12:22:45"
+            },
+            {
+              "index": 402,
+              "text": "919"
+            },
+            {
+              "index": 403,
+              "text": "0985"
+            },
+            {
+              "index": 404,
+              "text": "1041110217"
+            },
+            {
+              "index": 405,
+              "text": "11-02-2025"
+            },
+            {
+              "index": 406,
+              "text": "14:"
+            },
+            {
+              "index": 407,
+              "text": "36"
+            },
+            {
+              "index": 408,
+              "text": "."
+            },
+            {
+              "index": 409,
+              "text": "11-054684-52452321"
+            },
+            {
+              "index": 410,
+              "text": "2065"
+            },
+            {
+              "index": 411,
+              "text": "11-079665-62660232"
+            },
+            {
+              "index": 412,
+              "text": "Thank"
+            },
+            {
+              "index": 413,
+              "text": "you"
+            },
+            {
+              "index": 414,
+              "text": "for"
+            },
+            {
+              "index": 415,
+              "text": "choos"
+            },
+            {
+              "index": 416,
+              "text": "ing"
+            },
+            {
+              "index": 417,
+              "text": "Shel"
+            },
+            {
+              "index": 418,
+              "text": "|"
+            },
+            {
+              "index": 419,
+              "text": "Thank"
+            },
+            {
+              "index": 420,
+              "text": "you"
+            },
+            {
+              "index": 421,
+              "text": "for"
+            },
+            {
+              "index": 422,
+              "text": "choos"
+            },
+            {
+              "index": 423,
+              "text": "ing"
+            },
+            {
+              "index": 424,
+              "text": "ion"
+            },
+            {
+              "index": 425,
+              "text": "ime:"
+            },
+            {
+              "index": 426,
+              "text": "Copy"
+            },
+            {
+              "index": 427,
+              "text": "in"
+            }
+          ],
+          "all_words": [
+            "pping",
+            "ad",
+            "ms",
+            "Roundabout",
+            "Epp",
+            "She",
+            "L",
+            "ttle",
+            "Waitrose",
+            "Ha/",
+            "fmoon",
+            "She",
+            "|",
+            "|",
+            "Epping",
+            ";",
+            "0521",
+            "28-26",
+            "#igh",
+            "Street",
+            "High",
+            "Road",
+            "IW",
+            "Epp",
+            "ing",
+            "Wake",
+            "Arms",
+            "Roundabout",
+            "Epping",
+            "11992814580",
+            "B126348810",
+            "(Retai",
+            "ler)",
+            "1,2,3,4,5",
+            "Stat",
+            "No:",
+            "0919",
+            "Stat",
+            "No:",
+            "0521",
+            "3235763255",
+            "6",
+            "CM16",
+            "4AE",
+            "CM16",
+            "SHW",
+            "Tel",
+            ":",
+            "01442575773",
+            "Tel:",
+            "01992814580",
+            "VA",
+            "91\"m10",
+            "1,2,3,'",
+            "VAT:",
+            "GB126348810",
+            "(Retai",
+            "ler)",
+            "1,2,3,4,5",
+            "RECETIPT",
+            "VA",
+            "0",
+            "VAT:",
+            "GB235763255",
+            "6",
+            "USTOMER",
+            "LE",
+            "VAT",
+            "AMOUNT",
+            "RECEIPT",
+            "leaded",
+            "6",
+            "€",
+            "20.06",
+            "Cl'",
+            "|",
+            "OMER",
+            "RECEIPT",
+            "CUSTOMER",
+            "2",
+            "6;",
+            "13.94",
+            "&",
+            "*",
+            "€",
+            "1.439/0)",
+            "AMOUNT",
+            "AR!",
+            "ICi",
+            "(",
+            "VAT",
+            "AMOUNT",
+            "ARTICLE",
+            "VAT",
+            "#FS",
+            "(iesel",
+            "6",
+            ":",
+            "84.24",
+            "#FS",
+            "Diesel",
+            "6",
+            "f",
+            "104.19",
+            "TAL",
+            "€",
+            "20",
+            "06",
+            "(PUMP",
+            "3;",
+            "58.14",
+            "Q",
+            "*",
+            "€",
+            "1.449/0)",
+            "(PUMP",
+            "1;",
+            "67.70",
+            "&",
+            "4",
+            ":",
+            "1,539/0)",
+            "€",
+            "20.06",
+            "TOTAL",
+            "€",
+            "84.24",
+            "TOTAL",
+            "€",
+            "104",
+            ".",
+            "19",
+            "VISA",
+            "€",
+            "84.24",
+            "VISA",
+            "8",
+            "104.19",
+            "a|",
+            "ID.",
+            ":",
+            "05052101",
+            "no",
+            ":",
+            "1337",
+            "ction",
+            "ne",
+            "000159",
+            "IPT",
+            "IPT",
+            "000159",
+            "Termina",
+            "/",
+            "ID.",
+            ":",
+            "05091901",
+            "Terminal",
+            "ID_",
+            "05052101",
+            "t",
+            "no.",
+            "1457",
+            "ime:",
+            "10-01-2025",
+            "11:05",
+            "Per",
+            "iod",
+            "no.",
+            ":",
+            "2059",
+            "Per",
+            "iod",
+            "no.",
+            "\"",
+            "Transact",
+            "ion",
+            "no",
+            ":",
+            "000168",
+            "Transact",
+            "no.",
+            "0oooo=",
+            "A",
+            "Receipt",
+            "no.",
+            ":",
+            "000168",
+            "Receipt",
+            "no",
+            ":",
+            "0oooo",
+            "Datelt",
+            "18-01-2025",
+            "12:22",
+            "Date/time:",
+            "11-02-2025",
+            "14:38",
+            "10/01/25",
+            "11:05:42",
+            "VISA",
+            "VISA",
+            "Customer",
+            "05052101",
+            "18/01/25",
+            "12:22:45",
+            "11/02/25",
+            "14:38.44",
+            "na",
+            "|",
+            "ID",
+            "0000031606/000159/0000001337",
+            "Customer",
+            "Copy",
+            "Customer",
+            "Copy",
+            "Mode",
+            "Contact",
+            "less",
+            "Name",
+            "Visa",
+            "DEBIT",
+            "Termina",
+            "ID",
+            "05091901",
+            "Termina|",
+            "ID",
+            "05052101",
+            "Number",
+            "00",
+            "EFT",
+            "0000509840/000168/0000002059",
+            "EFT",
+            "0000048935/000003/0000001457",
+            "A0000000031010",
+            "Entry",
+            "Mode",
+            "Contact",
+            "less",
+            "Entry",
+            "Mode",
+            "Contact",
+            "less",
+            "Crypt.",
+            "DICBE274F891F?OC",
+            "Card",
+            "Name",
+            "Visa",
+            "DEBIT",
+            "Card",
+            "Name",
+            "Visa",
+            "DEBIT",
+            "XXXXXXX6469",
+            "Seq",
+            ".",
+            "Number",
+            "00",
+            "Seq.",
+            "Number",
+            "00",
+            "Contact",
+            "less",
+            "AID",
+            "A0000000031010",
+            "AID",
+            "A0000000031010",
+            "e5",
+            "44",
+            "App.",
+            "Crypt",
+            ".",
+            "1D8E40477C513C74",
+            "App.",
+            "Crypt.",
+            "FD4EA34D67278037",
+            "AMOUNT",
+            "GBP",
+            "20",
+            ".",
+            "06",
+            "XXXXXXXXXXXX6469",
+            "XXXXXXXXXXXX29g]",
+            "nse",
+            "000",
+            "APPROVED",
+            "Visa",
+            "Contact",
+            "less",
+            "Visa",
+            "Contact",
+            "less",
+            "Code",
+            "013600",
+            "Expires",
+            "#/**",
+            "Expires",
+            "Ix",
+            "ication",
+            "ODCVM",
+            "SALE",
+            "AMOUNT",
+            "GBP",
+            "84.24",
+            "SALE",
+            "AMOUNT",
+            "GBP",
+            "104.19",
+            "fied",
+            "By",
+            "Device",
+            "Response",
+            "000",
+            "APPROVED",
+            "Response",
+            "00o",
+            "APPROVED",
+            "se",
+            "retain",
+            "this",
+            "copy",
+            "Ta)r",
+            "yourrecords",
+            "Auth",
+            "Code",
+            "087224",
+            "Auth",
+            "Code",
+            "020826",
+            "Ver",
+            "i",
+            "fication",
+            "ODCVM",
+            "Ver",
+            "fication",
+            "ODCVM",
+            "Ver",
+            "i",
+            "fied",
+            "By",
+            "Device",
+            "Ver",
+            "ified",
+            "By",
+            "Device",
+            "type",
+            "%",
+            "Nett",
+            "VAT",
+            "amount",
+            "Please",
+            "retain",
+            "th'",
+            "$",
+            "€py",
+            "for",
+            "your",
+            "records",
+            "Please",
+            "retain",
+            "this",
+            "copy",
+            "for",
+            "5",
+            "20.00",
+            ":",
+            "16.72",
+            "€",
+            "3.34",
+            "1-2025",
+            "11:05:42",
+            "521",
+            "0918",
+            "1156110316",
+            "VAT",
+            "type",
+            "9",
+            "Nett",
+            "VAT",
+            "amount",
+            "VAT",
+            "type",
+            "%",
+            "55409-50582233",
+            "4485",
+            "6",
+            "20.00",
+            "€",
+            "70.20",
+            "1",
+            "14.04",
+            "6",
+            "20.L",
+            "k",
+            "you",
+            "for",
+            "choos",
+            "ing",
+            "Shel",
+            "/",
+            "18-01-2025",
+            "12:22:45",
+            "919",
+            "0985",
+            "1041110217",
+            "11-02-2025",
+            "14:",
+            "36",
+            ".",
+            "11-054684-52452321",
+            "2065",
+            "11-079665-62660232",
+            "Thank",
+            "you",
+            "for",
+            "choos",
+            "ing",
+            "Shel",
+            "|",
+            "Thank",
+            "you",
+            "for",
+            "choos",
+            "ing",
+            "ion",
+            "ime:",
+            "Copy",
+            "in"
+          ],
+          "ocr_items": [],
+          "detections": [],
+          "ocr_debug": {
+            "lighton_error": "",
+            "easyocr_error": "",
+            "tesseract_error": "",
+            "easyocr_items": 260,
+            "cleaned_len": 2447
+          }
+        }
+      ],
+      "receipts_count": 1,
+      "receipts_summary": [
+        {
+          "index": 1,
+          "page_index": 1,
+          "bbox": null,
+          "engine": "easyocr",
+          "text_len": 2447,
+          "words": 427,
+          "preview": "pping ad ms Roundabout Epp She L ttle Waitrose Ha/ fmoon She | | Epping ; 0521 28-26 #igh Street High Road IW Epp ing Wake Arms Roundabout Epping 11992814580 B126348810 (Retai ler) 1,2,3,4,5 Stat No: 0919 Stat No: 0521 3235763255 6 CM16 4AE"
+        }
+      ]
+    }
+  ]
+}

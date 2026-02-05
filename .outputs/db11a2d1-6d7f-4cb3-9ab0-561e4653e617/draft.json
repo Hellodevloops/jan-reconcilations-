@@ -1,0 +1,800 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "",
+      "supplier": "",
+      "inv_ref_no": "",
+      "make": "",
+      "model": "",
+      "colour": "",
+      "reg_no": "N/A",
+      "buying_price": "N/A",
+      "non_vat": "N/A",
+      "std_net": "N/A",
+      "vat_amount": "N/A"
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "img20250223_11484886.pdf",
+      "content_type": "application/pdf",
+      "model_name": "LightOnOCR-2-1B (Best OCR)",
+      "has_bbox": false,
+      "engine": "easyocr",
+      "raw_output": "/ to 243 High EPPING 729195176 MACADAMTA NuT5 24.00 00199032 GARIIC BULE c0 5o* 00833172 BANANA SHALLOTS E1.75 00197946 F/R ECGS X12 04,00 00568517 COCONUT MILK ' 63.30 3 C1.10 S0.40 '29386680 Food Paper Bag 6.90 29088577 POMERGNTE 350g ARRABIATA SCE\" [2.10 006,70319 RYL GALA TRAY C1. 90 00424851 RRAGOA FrURAV ^ 00579261 03.50 P C10.50 3 53 Bal ance to Pay E104.55 Items: Str eel",
+      "cleaned_text": "/ to 243 High EPPING 729195176 MACADAMTA NuT5 24.00 00199032 GARIIC BULE c0 5o* 00833172 BANANA SHALLOTS E1.75 00197946 F/R ECGS X12 04,00 00568517 COCONUT MILK ' 63.30 3 C1.10 S0.40 '29386680 Food Paper Bag 6.90 29088577 POMERGNTE 350g ARRABIATA SCE\" [2.10 006,70319 RYL GALA TRAY C1. 90 00424851 RRAGOA FrURAV ^ 00579261 03.50 P C10.50 3 53 Bal ance to Pay E104.55 Items: Str eel",
+      "lines": [
+        {
+          "index": 1,
+          "text": "/ to 243 High EPPING 729195176 MACADAMTA NuT5 24.00 00199032 GARIIC BULE c0 5o* 00833172 BANANA SHALLOTS E1.75 00197946 F/R ECGS X12 04,00 00568517 COCONUT MILK ' 63.30 3 C1.10 S0.40 '29386680 Food Paper Bag 6.90 29088577 POMERGNTE 350g ARRABIATA SCE\" [2.10 006,70319 RYL GALA TRAY C1. 90 00424851 RRAGOA FrURAV ^ 00579261 03.50 P C10.50 3 53 Bal ance to Pay E104.55 Items: Str eel"
+        }
+      ],
+      "words": [
+        {
+          "index": 1,
+          "text": "/"
+        },
+        {
+          "index": 2,
+          "text": "to"
+        },
+        {
+          "index": 3,
+          "text": "243"
+        },
+        {
+          "index": 4,
+          "text": "High"
+        },
+        {
+          "index": 5,
+          "text": "EPPING"
+        },
+        {
+          "index": 6,
+          "text": "729195176"
+        },
+        {
+          "index": 7,
+          "text": "MACADAMTA"
+        },
+        {
+          "index": 8,
+          "text": "NuT5"
+        },
+        {
+          "index": 9,
+          "text": "24.00"
+        },
+        {
+          "index": 10,
+          "text": "00199032"
+        },
+        {
+          "index": 11,
+          "text": "GARIIC"
+        },
+        {
+          "index": 12,
+          "text": "BULE"
+        },
+        {
+          "index": 13,
+          "text": "c0"
+        },
+        {
+          "index": 14,
+          "text": "5o*"
+        },
+        {
+          "index": 15,
+          "text": "00833172"
+        },
+        {
+          "index": 16,
+          "text": "BANANA"
+        },
+        {
+          "index": 17,
+          "text": "SHALLOTS"
+        },
+        {
+          "index": 18,
+          "text": "E1.75"
+        },
+        {
+          "index": 19,
+          "text": "00197946"
+        },
+        {
+          "index": 20,
+          "text": "F/R"
+        },
+        {
+          "index": 21,
+          "text": "ECGS"
+        },
+        {
+          "index": 22,
+          "text": "X12"
+        },
+        {
+          "index": 23,
+          "text": "04,00"
+        },
+        {
+          "index": 24,
+          "text": "00568517"
+        },
+        {
+          "index": 25,
+          "text": "COCONUT"
+        },
+        {
+          "index": 26,
+          "text": "MILK"
+        },
+        {
+          "index": 27,
+          "text": "'"
+        },
+        {
+          "index": 28,
+          "text": "63.30"
+        },
+        {
+          "index": 29,
+          "text": "3"
+        },
+        {
+          "index": 30,
+          "text": "C1.10"
+        },
+        {
+          "index": 31,
+          "text": "S0.40"
+        },
+        {
+          "index": 32,
+          "text": "'29386680"
+        },
+        {
+          "index": 33,
+          "text": "Food"
+        },
+        {
+          "index": 34,
+          "text": "Paper"
+        },
+        {
+          "index": 35,
+          "text": "Bag"
+        },
+        {
+          "index": 36,
+          "text": "6.90"
+        },
+        {
+          "index": 37,
+          "text": "29088577"
+        },
+        {
+          "index": 38,
+          "text": "POMERGNTE"
+        },
+        {
+          "index": 39,
+          "text": "350g"
+        },
+        {
+          "index": 40,
+          "text": "ARRABIATA"
+        },
+        {
+          "index": 41,
+          "text": "SCE\""
+        },
+        {
+          "index": 42,
+          "text": "[2.10"
+        },
+        {
+          "index": 43,
+          "text": "006,70319"
+        },
+        {
+          "index": 44,
+          "text": "RYL"
+        },
+        {
+          "index": 45,
+          "text": "GALA"
+        },
+        {
+          "index": 46,
+          "text": "TRAY"
+        },
+        {
+          "index": 47,
+          "text": "C1."
+        },
+        {
+          "index": 48,
+          "text": "90"
+        },
+        {
+          "index": 49,
+          "text": "00424851"
+        },
+        {
+          "index": 50,
+          "text": "RRAGOA"
+        },
+        {
+          "index": 51,
+          "text": "FrURAV"
+        },
+        {
+          "index": 52,
+          "text": "^"
+        },
+        {
+          "index": 53,
+          "text": "00579261"
+        },
+        {
+          "index": 54,
+          "text": "03.50"
+        },
+        {
+          "index": 55,
+          "text": "P"
+        },
+        {
+          "index": 56,
+          "text": "C10.50"
+        },
+        {
+          "index": 57,
+          "text": "3"
+        },
+        {
+          "index": 58,
+          "text": "53"
+        },
+        {
+          "index": 59,
+          "text": "Bal"
+        },
+        {
+          "index": 60,
+          "text": "ance"
+        },
+        {
+          "index": 61,
+          "text": "to"
+        },
+        {
+          "index": 62,
+          "text": "Pay"
+        },
+        {
+          "index": 63,
+          "text": "E104.55"
+        },
+        {
+          "index": 64,
+          "text": "Items:"
+        },
+        {
+          "index": 65,
+          "text": "Str"
+        },
+        {
+          "index": 66,
+          "text": "eel"
+        }
+      ],
+      "all_words": [
+        "/",
+        "to",
+        "243",
+        "High",
+        "EPPING",
+        "729195176",
+        "MACADAMTA",
+        "NuT5",
+        "24.00",
+        "00199032",
+        "GARIIC",
+        "BULE",
+        "c0",
+        "5o*",
+        "00833172",
+        "BANANA",
+        "SHALLOTS",
+        "E1.75",
+        "00197946",
+        "F/R",
+        "ECGS",
+        "X12",
+        "04,00",
+        "00568517",
+        "COCONUT",
+        "MILK",
+        "'",
+        "63.30",
+        "3",
+        "C1.10",
+        "S0.40",
+        "'29386680",
+        "Food",
+        "Paper",
+        "Bag",
+        "6.90",
+        "29088577",
+        "POMERGNTE",
+        "350g",
+        "ARRABIATA",
+        "SCE\"",
+        "[2.10",
+        "006,70319",
+        "RYL",
+        "GALA",
+        "TRAY",
+        "C1.",
+        "90",
+        "00424851",
+        "RRAGOA",
+        "FrURAV",
+        "^",
+        "00579261",
+        "03.50",
+        "P",
+        "C10.50",
+        "3",
+        "53",
+        "Bal",
+        "ance",
+        "to",
+        "Pay",
+        "E104.55",
+        "Items:",
+        "Str",
+        "eel"
+      ],
+      "ocr_items": [],
+      "ocr_debug": {
+        "lighton_error": "",
+        "easyocr_error": "",
+        "tesseract_error": "",
+        "lighton_raw_len": 0,
+        "easyocr_items": 0,
+        "cleaned_len": 381
+      },
+      "detections": [],
+      "receipts": [
+        {
+          "index": 1,
+          "page_index": 1,
+          "bbox": [
+            1929,
+            499,
+            2975,
+            1231
+          ],
+          "engine": "easyocr",
+          "raw_output": "/ to 243 High EPPING 729195176 MACADAMTA NuT5 24.00 00199032 GARIIC BULE c0 5o* 00833172 BANANA SHALLOTS E1.75 00197946 F/R ECGS X12 04,00 00568517 COCONUT MILK ' 63.30 3 C1.10 S0.40 '29386680 Food Paper Bag 6.90 29088577 POMERGNTE 350g ARRABIATA SCE\" [2.10 006,70319 RYL GALA TRAY C1. 90 00424851 RRAGOA FrURAV ^ 00579261 03.50 P C10.50 3 53 Bal ance to Pay E104.55 Items: Str eel",
+          "cleaned_text": "/ to 243 High EPPING 729195176 MACADAMTA NuT5 24.00 00199032 GARIIC BULE c0 5o* 00833172 BANANA SHALLOTS E1.75 00197946 F/R ECGS X12 04,00 00568517 COCONUT MILK ' 63.30 3 C1.10 S0.40 '29386680 Food Paper Bag 6.90 29088577 POMERGNTE 350g ARRABIATA SCE\" [2.10 006,70319 RYL GALA TRAY C1. 90 00424851 RRAGOA FrURAV ^ 00579261 03.50 P C10.50 3 53 Bal ance to Pay E104.55 Items: Str eel",
+          "lines": [
+            {
+              "index": 1,
+              "text": "/ to 243 High EPPING 729195176 MACADAMTA NuT5 24.00 00199032 GARIIC BULE c0 5o* 00833172 BANANA SHALLOTS E1.75 00197946 F/R ECGS X12 04,00 00568517 COCONUT MILK ' 63.30 3 C1.10 S0.40 '29386680 Food Paper Bag 6.90 29088577 POMERGNTE 350g ARRABIATA SCE\" [2.10 006,70319 RYL GALA TRAY C1. 90 00424851 RRAGOA FrURAV ^ 00579261 03.50 P C10.50 3 53 Bal ance to Pay E104.55 Items: Str eel"
+            }
+          ],
+          "words": [
+            {
+              "index": 1,
+              "text": "/"
+            },
+            {
+              "index": 2,
+              "text": "to"
+            },
+            {
+              "index": 3,
+              "text": "243"
+            },
+            {
+              "index": 4,
+              "text": "High"
+            },
+            {
+              "index": 5,
+              "text": "EPPING"
+            },
+            {
+              "index": 6,
+              "text": "729195176"
+            },
+            {
+              "index": 7,
+              "text": "MACADAMTA"
+            },
+            {
+              "index": 8,
+              "text": "NuT5"
+            },
+            {
+              "index": 9,
+              "text": "24.00"
+            },
+            {
+              "index": 10,
+              "text": "00199032"
+            },
+            {
+              "index": 11,
+              "text": "GARIIC"
+            },
+            {
+              "index": 12,
+              "text": "BULE"
+            },
+            {
+              "index": 13,
+              "text": "c0"
+            },
+            {
+              "index": 14,
+              "text": "5o*"
+            },
+            {
+              "index": 15,
+              "text": "00833172"
+            },
+            {
+              "index": 16,
+              "text": "BANANA"
+            },
+            {
+              "index": 17,
+              "text": "SHALLOTS"
+            },
+            {
+              "index": 18,
+              "text": "E1.75"
+            },
+            {
+              "index": 19,
+              "text": "00197946"
+            },
+            {
+              "index": 20,
+              "text": "F/R"
+            },
+            {
+              "index": 21,
+              "text": "ECGS"
+            },
+            {
+              "index": 22,
+              "text": "X12"
+            },
+            {
+              "index": 23,
+              "text": "04,00"
+            },
+            {
+              "index": 24,
+              "text": "00568517"
+            },
+            {
+              "index": 25,
+              "text": "COCONUT"
+            },
+            {
+              "index": 26,
+              "text": "MILK"
+            },
+            {
+              "index": 27,
+              "text": "'"
+            },
+            {
+              "index": 28,
+              "text": "63.30"
+            },
+            {
+              "index": 29,
+              "text": "3"
+            },
+            {
+              "index": 30,
+              "text": "C1.10"
+            },
+            {
+              "index": 31,
+              "text": "S0.40"
+            },
+            {
+              "index": 32,
+              "text": "'29386680"
+            },
+            {
+              "index": 33,
+              "text": "Food"
+            },
+            {
+              "index": 34,
+              "text": "Paper"
+            },
+            {
+              "index": 35,
+              "text": "Bag"
+            },
+            {
+              "index": 36,
+              "text": "6.90"
+            },
+            {
+              "index": 37,
+              "text": "29088577"
+            },
+            {
+              "index": 38,
+              "text": "POMERGNTE"
+            },
+            {
+              "index": 39,
+              "text": "350g"
+            },
+            {
+              "index": 40,
+              "text": "ARRABIATA"
+            },
+            {
+              "index": 41,
+              "text": "SCE\""
+            },
+            {
+              "index": 42,
+              "text": "[2.10"
+            },
+            {
+              "index": 43,
+              "text": "006,70319"
+            },
+            {
+              "index": 44,
+              "text": "RYL"
+            },
+            {
+              "index": 45,
+              "text": "GALA"
+            },
+            {
+              "index": 46,
+              "text": "TRAY"
+            },
+            {
+              "index": 47,
+              "text": "C1."
+            },
+            {
+              "index": 48,
+              "text": "90"
+            },
+            {
+              "index": 49,
+              "text": "00424851"
+            },
+            {
+              "index": 50,
+              "text": "RRAGOA"
+            },
+            {
+              "index": 51,
+              "text": "FrURAV"
+            },
+            {
+              "index": 52,
+              "text": "^"
+            },
+            {
+              "index": 53,
+              "text": "00579261"
+            },
+            {
+              "index": 54,
+              "text": "03.50"
+            },
+            {
+              "index": 55,
+              "text": "P"
+            },
+            {
+              "index": 56,
+              "text": "C10.50"
+            },
+            {
+              "index": 57,
+              "text": "3"
+            },
+            {
+              "index": 58,
+              "text": "53"
+            },
+            {
+              "index": 59,
+              "text": "Bal"
+            },
+            {
+              "index": 60,
+              "text": "ance"
+            },
+            {
+              "index": 61,
+              "text": "to"
+            },
+            {
+              "index": 62,
+              "text": "Pay"
+            },
+            {
+              "index": 63,
+              "text": "E104.55"
+            },
+            {
+              "index": 64,
+              "text": "Items:"
+            },
+            {
+              "index": 65,
+              "text": "Str"
+            },
+            {
+              "index": 66,
+              "text": "eel"
+            }
+          ],
+          "all_words": [
+            "/",
+            "to",
+            "243",
+            "High",
+            "EPPING",
+            "729195176",
+            "MACADAMTA",
+            "NuT5",
+            "24.00",
+            "00199032",
+            "GARIIC",
+            "BULE",
+            "c0",
+            "5o*",
+            "00833172",
+            "BANANA",
+            "SHALLOTS",
+            "E1.75",
+            "00197946",
+            "F/R",
+            "ECGS",
+            "X12",
+            "04,00",
+            "00568517",
+            "COCONUT",
+            "MILK",
+            "'",
+            "63.30",
+            "3",
+            "C1.10",
+            "S0.40",
+            "'29386680",
+            "Food",
+            "Paper",
+            "Bag",
+            "6.90",
+            "29088577",
+            "POMERGNTE",
+            "350g",
+            "ARRABIATA",
+            "SCE\"",
+            "[2.10",
+            "006,70319",
+            "RYL",
+            "GALA",
+            "TRAY",
+            "C1.",
+            "90",
+            "00424851",
+            "RRAGOA",
+            "FrURAV",
+            "^",
+            "00579261",
+            "03.50",
+            "P",
+            "C10.50",
+            "3",
+            "53",
+            "Bal",
+            "ance",
+            "to",
+            "Pay",
+            "E104.55",
+            "Items:",
+            "Str",
+            "eel"
+          ],
+          "ocr_items": [],
+          "detections": [],
+          "ocr_debug": {
+            "lighton_error": "",
+            "easyocr_error": "",
+            "tesseract_error": "",
+            "easyocr_items": 44,
+            "cleaned_len": 381
+          }
+        }
+      ],
+      "receipts_count": 1,
+      "receipts_summary": [
+        {
+          "index": 1,
+          "page_index": 1,
+          "bbox": [
+            1929,
+            499,
+            2975,
+            1231
+          ],
+          "engine": "easyocr",
+          "text_len": 381,
+          "words": 66,
+          "preview": "/ to 243 High EPPING 729195176 MACADAMTA NuT5 24.00 00199032 GARIIC BULE c0 5o* 00833172 BANANA SHALLOTS E1.75 00197946 F/R ECGS X12 04,00 00568517 COCONUT MILK ' 63.30 3 C1.10 S0.40 '29386680 Food Paper Bag 6.90 29088577 POMERGNTE 350g ARR"
+        }
+      ],
+      "segmentation_debug": [
+        {
+          "enabled": true,
+          "method": "connected_components",
+          "regions": [
+            {
+              "bbox": [
+                1929,
+                499,
+                2975,
+                1231
+              ],
+              "area": 765672
+            }
+          ],
+          "page_index": 1,
+          "image_wh": [
+            2975,
+            4205
+          ],
+          "candidates": 1,
+          "regions_count": 1
+        }
+      ]
+    }
+  ]
+}

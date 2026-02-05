@@ -1,0 +1,49 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": "1",
+      "category": "purchase",
+      "document_date": "11/02/2025",
+      "supplier": "Sold by Amazon EU S.à r.l., UK Branch | VAT # GB727255821",
+      "inv_ref_no": "Invoice",
+      "make": "Amazon EU S.à r.l., UK Branch",
+      "model": "",
+      "colour": "",
+      "reg_no": "GB727255821",
+      "buying_price": "20.38",
+      "non_vat": "20.38",
+      "std_net": "4.50",
+      "vat_amount": ""
+    },
+    {
+      "sr_no": "2",
+      "category": "purchase",
+      "document_date": "",
+      "supplier": "",
+      "inv_ref_no": "Invoice",
+      "make": "",
+      "model": "",
+      "colour": "",
+      "reg_no": "",
+      "buying_price": "16.98",
+      "non_vat": "16.98",
+      "std_net": "N/A",
+      "vat_amount": ""
+    }
+  ]
+}

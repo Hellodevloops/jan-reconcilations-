@@ -1,0 +1,34 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": "1",
+      "category": "purchase",
+      "document_date": "",
+      "supplier": "",
+      "inv_ref_no": "204-3759598-2929148",
+      "make": "",
+      "model": "",
+      "colour": "",
+      "reg_no": "",
+      "buying_price": "0.00",
+      "non_vat": "0.00",
+      "std_net": "1.00",
+      "vat_amount": ""
+    }
+  ]
+}

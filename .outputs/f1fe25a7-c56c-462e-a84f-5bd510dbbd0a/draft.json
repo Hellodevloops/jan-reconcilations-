@@ -1,0 +1,4486 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "fuel_expense",
+      "document_date": "02 3 10",
+      "supplier": "",
+      "inv_ref_no": "7258",
+      "make": "Petrol",
+      "model": "",
+      "colour": "",
+      "reg_no": "N/A",
+      "buying_price": 813.66,
+      "non_vat": 813.66,
+      "std_net": "N/A",
+      "vat_amount": "N/A"
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "img20250304_12202637.pdf",
+      "content_type": "application/pdf",
+      "model_name": "LightOnOCR-2-1B (Best OCR)",
+      "has_bbox": false,
+      "engine": "easyocr",
+      "raw_output": ".' 7 ' 4 ' '. {c\"s 41 ' mv: | Hot #4 n0i \"M1 ~ ,1 '\"c` 3 WALTFAN \"119TC ^ .. 81 24\"_ :\" ha ha off Fe Ts 7B2 4 T 7258 81 4 1 # 6 701 05 1j @ [CU] 9 P/L JeA ~J 813.66 € 0| 1 Bxu:h Dulus (3 027 # 3 66 Gicss Ftw 7.34 11 1 d 2.EL 5.00 @ 1O 3 9 SALE Tcta] 32.00 E9.98 C a 37 . Visa 7, ( = 00 AID iw926 Jc: Jua Alth Ce Amo: 64 1 SEQ No X*t* 00 - 0 00 'Co 192 9269/9 flziv DUE 3Qn Y6 VaT OU Kt C trie Ily ac 31: NET speci With E19.70 No: 83.94 7\" For n C1 a 37.C( 20 8 vou could VA col VA 6,15 %ad the P2 ot 6.16 t 2 C1e 241 Kic nal Ask For and Or; 0 Uals 'OUr\" Foi- wili > a ainstth 5 sEto sna priv n fi onitor to Fr Oolicy WI g1 Jvicle 7), our Ie Rour noc 0hi iged E_\"Afuind dleta is Wi. to \"6 YJur visTt Us Uk 'OUr tpi10 Ci !o` ' ~1 '1 ,10+9 4 . Wickes 013;0 ' P; (4 \"1 . . . . . ' \" . - 97i 4\"6 45 ^) 7 ^ 4 ' ' 1 vIdewe 01-1\"'r ' 7ofy / . ' WICKE CRoss TESCQ uTes thani Mrarcri Petrol Tross Filling Wav EK8 Station Te] ' '0191,2 WAL 62222 THAM ABBEY any PFS quest Tons Www please 336 tesco visit com/store- Atw ocator eqodz- PUMP #AArbdT UNL -EADED 33/02 3 10 . tre 09;25 135 . 213 TiJi ~~J: 02-1404 ToTAL Per Ones pese 60062c 'inches PUMP 213 UNLE EADED -73664 tre [CU] 02 135 _ PAL Juok `ods brx: ToTALJo 7av doner) Lok 1 Debi t '72 SALE 823 0C 64 19261991 AOOO000003101O NUMBER 523 . Visd 3219 PAN Deb xxkxXke Merchcr t 37 . 4011 AUTH E103453 CODE ermira ICC MERCHANT 035045 COqOudoooduooouo CHANGE 30471902 Card XA TX*6u11 Contact T0 , 055 RECEIPT Rate Flease SUMMARY cebit 20% VAT Count ajunt VAT PLEA E ied VAT *r*t*r*r*t*rx*trrrtx*xr*x RETA_N 220430231 THIS Joi V,A. V(UF 3reakdcwr RESUF DS, This ubcard ZX**r* visit Today Juux have Clubcard IruRl Z Jected Total points Total inok Tesco 'pue Grocery 4WM _ Jnuisit Tte 5;2 Jnok Tesco ubcard pnpojd com/Clubcard 'inoqe 4i4am puiu_ 03c4- wnjaj styv inok aseld #yuju abueyznok 'aseypind akn pinoys Ki4 *223021 404130225\" {is detei 14 #vert lsec auu [iata SV Hcccr lance veri You ar e (ptaim pereonal fiomn ckes Fow Wi$ Jet toclav? Kow trus 6xpo ence cqm",
+      "cleaned_text": ".' 7 ' 4 ' '. {c\"s 41 ' mv: | Hot #4 n0i \"M1 ~ ,1 '\"c` 3 WALTFAN \"119TC ^ .. 81 24\"_ :\" ha ha off Fe Ts 7B2 4 T 7258 81 4 1 # 6 701 05 1j @ [CU] 9 P/L JeA ~J 813.66 € 0| 1 Bxu:h Dulus (3 027 # 3 66 Gicss Ftw 7.34 11 1 d 2.EL 5.00 @ 1O 3 9 SALE Tcta] 32.00 E9.98 C a 37 . Visa 7, ( = 00 AID iw926 Jc: Jua Alth Ce Amo: 64 1 SEQ No X*t* 00 - 0 00 'Co 192 9269/9 flziv DUE 3Qn Y6 VaT OU Kt C trie Ily ac 31: NET speci With E19.70 No: 83.94 7\" For n C1 a 37.C( 20 8 vou could VA col VA 6,15 %ad the P2 ot 6.16 t 2 C1e 241 Kic nal Ask For and Or; 0 Uals 'OUr\" Foi- wili > a ainstth 5 sEto sna priv n fi onitor to Fr Oolicy WI g1 Jvicle 7), our Ie Rour noc 0hi iged E_\"Afuind dleta is Wi. to \"6 YJur visTt Us Uk 'OUr tpi10 Ci !o` ' ~1 '1 ,10+9 4 . Wickes 013;0 ' P; (4 \"1 . . . . . ' \" . - 97i 4\"6 45 ^) 7 ^ 4 ' ' 1 vIdewe 01-1\"'r ' 7ofy / . ' WICKE CRoss TESCQ uTes thani Mrarcri Petrol Tross Filling Wav EK8 Station Te] ' '0191,2 WAL 62222 THAM ABBEY any PFS quest Tons Www please 336 tesco visit com/store- Atw ocator eqodz- PUMP #AArbdT UNL -EADED 33/02 3 10 . tre 09;25 135 . 213 TiJi ~~J: 02-1404 ToTAL Per Ones pese 60062c 'inches PUMP 213 UNLE EADED -73664 tre [CU] 02 135 _ PAL Juok `ods brx: ToTALJo 7av doner) Lok 1 Debi t '72 SALE 823 0C 64 19261991 AOOO000003101O NUMBER 523 . Visd 3219 PAN Deb xxkxXke Merchcr t 37 . 4011 AUTH E103453 CODE ermira ICC MERCHANT 035045 COqOudoooduooouo CHANGE 30471902 Card XA TX*6u11 Contact T0 , 055 RECEIPT Rate Flease SUMMARY cebit 20% VAT Count ajunt VAT PLEA E ied VAT *r*t*r*r*t*rx*trrrtx*xr*x RETA_N 220430231 THIS Joi V,A. V(UF 3reakdcwr RESUF DS, This ubcard ZX**r* visit Today Juux have Clubcard IruRl Z Jected Total points Total inok Tesco 'pue Grocery 4WM _ Jnuisit Tte 5;2 Jnok Tesco ubcard pnpojd com/Clubcard 'inoqe 4i4am puiu_ 03c4- wnjaj styv inok aseld #yuju abueyznok 'aseypind akn pinoys Ki4 *223021 404130225\" {is detei 14 #vert lsec auu [iata SV Hcccr lance veri You ar e (ptaim pereonal fiomn ckes Fow Wi$ Jet toclav? Kow trus 6xpo ence cqm",
+      "lines": [
+        {
+          "index": 1,
+          "text": ".' 7 ' 4 ' '. {c\"s 41 ' mv: | Hot #4 n0i \"M1 ~ ,1 '\"c` 3 WALTFAN \"119TC ^ .. 81 24\"_ :\" ha ha off Fe Ts 7B2 4 T 7258 81 4 1 # 6 701 05 1j @ [CU] 9 P/L JeA ~J 813.66 € 0| 1 Bxu:h Dulus (3 027 # 3 66 Gicss Ftw 7.34 11 1 d 2.EL 5.00 @ 1O 3 9 SALE Tcta] 32.00 E9.98 C a 37 . Visa 7, ( = 00 AID iw926 Jc: Jua Alth Ce Amo: 64 1 SEQ No X*t* 00 - 0 00 'Co 192 9269/9 flziv DUE 3Qn Y6 VaT OU Kt C trie Ily ac 31: NET speci With E19.70 No: 83.94 7\" For n C1 a 37.C( 20 8 vou could VA col VA 6,15 %ad the P2 ot 6.16 t 2 C1e 241 Kic nal Ask For and Or; 0 Uals 'OUr\" Foi- wili > a ainstth 5 sEto sna priv n fi onitor to Fr Oolicy WI g1 Jvicle 7), our Ie Rour noc 0hi iged E_\"Afuind dleta is Wi. to \"6 YJur visTt Us Uk 'OUr tpi10 Ci !o` ' ~1 '1 ,10+9 4 . Wickes 013;0 ' P; (4 \"1 . . . . . ' \" . - 97i 4\"6 45 ^) 7 ^ 4 ' ' 1 vIdewe 01-1\"'r ' 7ofy / . ' WICKE CRoss TESCQ uTes thani Mrarcri Petrol Tross Filling Wav EK8 Station Te] ' '0191,2 WAL 62222 THAM ABBEY any PFS quest Tons Www please 336 tesco visit com/store- Atw ocator eqodz- PUMP #AArbdT UNL -EADED 33/02 3 10 . tre 09;25 135 . 213 TiJi ~~J: 02-1404 ToTAL Per Ones pese 60062c 'inches PUMP 213 UNLE EADED -73664 tre [CU] 02 135 _ PAL Juok `ods brx: ToTALJo 7av doner) Lok 1 Debi t '72 SALE 823 0C 64 19261991 AOOO000003101O NUMBER 523 . Visd 3219 PAN Deb xxkxXke Merchcr t 37 . 4011 AUTH E103453 CODE ermira ICC MERCHANT 035045 COqOudoooduooouo CHANGE 30471902 Card XA TX*6u11 Contact T0 , 055 RECEIPT Rate Flease SUMMARY cebit 20% VAT Count ajunt VAT PLEA E ied VAT *r*t*r*r*t*rx*trrrtx*xr*x RETA_N 220430231 THIS Joi V,A. V(UF 3reakdcwr RESUF DS, This ubcard ZX**r* visit Today Juux have Clubcard IruRl Z Jected Total points Total inok Tesco 'pue Grocery 4WM _ Jnuisit Tte 5;2 Jnok Tesco ubcard pnpojd com/Clubcard 'inoqe 4i4am puiu_ 03c4- wnjaj styv inok aseld #yuju abueyznok 'aseypind akn pinoys Ki4 *223021 404130225\" {is detei 14 #vert lsec auu [iata SV Hcccr lance veri You ar e (ptaim pereonal fiomn ckes Fow Wi$ Jet toclav? Kow trus 6xpo ence cqm"
+        }
+      ],
+      "words": [
+        {
+          "index": 1,
+          "text": ".'"
+        },
+        {
+          "index": 2,
+          "text": "7"
+        },
+        {
+          "index": 3,
+          "text": "'"
+        },
+        {
+          "index": 4,
+          "text": "4"
+        },
+        {
+          "index": 5,
+          "text": "'"
+        },
+        {
+          "index": 6,
+          "text": "'."
+        },
+        {
+          "index": 7,
+          "text": "{c\"s"
+        },
+        {
+          "index": 8,
+          "text": "41"
+        },
+        {
+          "index": 9,
+          "text": "'"
+        },
+        {
+          "index": 10,
+          "text": "mv:"
+        },
+        {
+          "index": 11,
+          "text": "|"
+        },
+        {
+          "index": 12,
+          "text": "Hot"
+        },
+        {
+          "index": 13,
+          "text": "#4"
+        },
+        {
+          "index": 14,
+          "text": "n0i"
+        },
+        {
+          "index": 15,
+          "text": "\"M1"
+        },
+        {
+          "index": 16,
+          "text": "~"
+        },
+        {
+          "index": 17,
+          "text": ",1"
+        },
+        {
+          "index": 18,
+          "text": "'\"c`"
+        },
+        {
+          "index": 19,
+          "text": "3"
+        },
+        {
+          "index": 20,
+          "text": "WALTFAN"
+        },
+        {
+          "index": 21,
+          "text": "\"119TC"
+        },
+        {
+          "index": 22,
+          "text": "^"
+        },
+        {
+          "index": 23,
+          "text": ".."
+        },
+        {
+          "index": 24,
+          "text": "81"
+        },
+        {
+          "index": 25,
+          "text": "24\"_"
+        },
+        {
+          "index": 26,
+          "text": ":\""
+        },
+        {
+          "index": 27,
+          "text": "ha"
+        },
+        {
+          "index": 28,
+          "text": "ha"
+        },
+        {
+          "index": 29,
+          "text": "off"
+        },
+        {
+          "index": 30,
+          "text": "Fe"
+        },
+        {
+          "index": 31,
+          "text": "Ts"
+        },
+        {
+          "index": 32,
+          "text": "7B2"
+        },
+        {
+          "index": 33,
+          "text": "4"
+        },
+        {
+          "index": 34,
+          "text": "T"
+        },
+        {
+          "index": 35,
+          "text": "7258"
+        },
+        {
+          "index": 36,
+          "text": "81"
+        },
+        {
+          "index": 37,
+          "text": "4"
+        },
+        {
+          "index": 38,
+          "text": "1"
+        },
+        {
+          "index": 39,
+          "text": "#"
+        },
+        {
+          "index": 40,
+          "text": "6"
+        },
+        {
+          "index": 41,
+          "text": "701"
+        },
+        {
+          "index": 42,
+          "text": "05"
+        },
+        {
+          "index": 43,
+          "text": "1j"
+        },
+        {
+          "index": 44,
+          "text": "@"
+        },
+        {
+          "index": 45,
+          "text": "[CU]"
+        },
+        {
+          "index": 46,
+          "text": "9"
+        },
+        {
+          "index": 47,
+          "text": "P/L"
+        },
+        {
+          "index": 48,
+          "text": "JeA"
+        },
+        {
+          "index": 49,
+          "text": "~J"
+        },
+        {
+          "index": 50,
+          "text": "813.66"
+        },
+        {
+          "index": 51,
+          "text": "€"
+        },
+        {
+          "index": 52,
+          "text": "0|"
+        },
+        {
+          "index": 53,
+          "text": "1"
+        },
+        {
+          "index": 54,
+          "text": "Bxu:h"
+        },
+        {
+          "index": 55,
+          "text": "Dulus"
+        },
+        {
+          "index": 56,
+          "text": "(3"
+        },
+        {
+          "index": 57,
+          "text": "027"
+        },
+        {
+          "index": 58,
+          "text": "#"
+        },
+        {
+          "index": 59,
+          "text": "3"
+        },
+        {
+          "index": 60,
+          "text": "66"
+        },
+        {
+          "index": 61,
+          "text": "Gicss"
+        },
+        {
+          "index": 62,
+          "text": "Ftw"
+        },
+        {
+          "index": 63,
+          "text": "7.34"
+        },
+        {
+          "index": 64,
+          "text": "11"
+        },
+        {
+          "index": 65,
+          "text": "1"
+        },
+        {
+          "index": 66,
+          "text": "d"
+        },
+        {
+          "index": 67,
+          "text": "2.EL"
+        },
+        {
+          "index": 68,
+          "text": "5.00"
+        },
+        {
+          "index": 69,
+          "text": "@"
+        },
+        {
+          "index": 70,
+          "text": "1O"
+        },
+        {
+          "index": 71,
+          "text": "3"
+        },
+        {
+          "index": 72,
+          "text": "9"
+        },
+        {
+          "index": 73,
+          "text": "SALE"
+        },
+        {
+          "index": 74,
+          "text": "Tcta]"
+        },
+        {
+          "index": 75,
+          "text": "32.00"
+        },
+        {
+          "index": 76,
+          "text": "E9.98"
+        },
+        {
+          "index": 77,
+          "text": "C"
+        },
+        {
+          "index": 78,
+          "text": "a"
+        },
+        {
+          "index": 79,
+          "text": "37"
+        },
+        {
+          "index": 80,
+          "text": "."
+        },
+        {
+          "index": 81,
+          "text": "Visa"
+        },
+        {
+          "index": 82,
+          "text": "7,"
+        },
+        {
+          "index": 83,
+          "text": "("
+        },
+        {
+          "index": 84,
+          "text": "="
+        },
+        {
+          "index": 85,
+          "text": "00"
+        },
+        {
+          "index": 86,
+          "text": "AID"
+        },
+        {
+          "index": 87,
+          "text": "iw926"
+        },
+        {
+          "index": 88,
+          "text": "Jc:"
+        },
+        {
+          "index": 89,
+          "text": "Jua"
+        },
+        {
+          "index": 90,
+          "text": "Alth"
+        },
+        {
+          "index": 91,
+          "text": "Ce"
+        },
+        {
+          "index": 92,
+          "text": "Amo:"
+        },
+        {
+          "index": 93,
+          "text": "64"
+        },
+        {
+          "index": 94,
+          "text": "1"
+        },
+        {
+          "index": 95,
+          "text": "SEQ"
+        },
+        {
+          "index": 96,
+          "text": "No"
+        },
+        {
+          "index": 97,
+          "text": "X*t*"
+        },
+        {
+          "index": 98,
+          "text": "00"
+        },
+        {
+          "index": 99,
+          "text": "-"
+        },
+        {
+          "index": 100,
+          "text": "0"
+        },
+        {
+          "index": 101,
+          "text": "00"
+        },
+        {
+          "index": 102,
+          "text": "'Co"
+        },
+        {
+          "index": 103,
+          "text": "192"
+        },
+        {
+          "index": 104,
+          "text": "9269/9"
+        },
+        {
+          "index": 105,
+          "text": "flziv"
+        },
+        {
+          "index": 106,
+          "text": "DUE"
+        },
+        {
+          "index": 107,
+          "text": "3Qn"
+        },
+        {
+          "index": 108,
+          "text": "Y6"
+        },
+        {
+          "index": 109,
+          "text": "VaT"
+        },
+        {
+          "index": 110,
+          "text": "OU"
+        },
+        {
+          "index": 111,
+          "text": "Kt"
+        },
+        {
+          "index": 112,
+          "text": "C"
+        },
+        {
+          "index": 113,
+          "text": "trie"
+        },
+        {
+          "index": 114,
+          "text": "Ily"
+        },
+        {
+          "index": 115,
+          "text": "ac"
+        },
+        {
+          "index": 116,
+          "text": "31:"
+        },
+        {
+          "index": 117,
+          "text": "NET"
+        },
+        {
+          "index": 118,
+          "text": "speci"
+        },
+        {
+          "index": 119,
+          "text": "With"
+        },
+        {
+          "index": 120,
+          "text": "E19.70"
+        },
+        {
+          "index": 121,
+          "text": "No:"
+        },
+        {
+          "index": 122,
+          "text": "83.94"
+        },
+        {
+          "index": 123,
+          "text": "7\""
+        },
+        {
+          "index": 124,
+          "text": "For"
+        },
+        {
+          "index": 125,
+          "text": "n"
+        },
+        {
+          "index": 126,
+          "text": "C1"
+        },
+        {
+          "index": 127,
+          "text": "a"
+        },
+        {
+          "index": 128,
+          "text": "37.C("
+        },
+        {
+          "index": 129,
+          "text": "20"
+        },
+        {
+          "index": 130,
+          "text": "8"
+        },
+        {
+          "index": 131,
+          "text": "vou"
+        },
+        {
+          "index": 132,
+          "text": "could"
+        },
+        {
+          "index": 133,
+          "text": "VA"
+        },
+        {
+          "index": 134,
+          "text": "col"
+        },
+        {
+          "index": 135,
+          "text": "VA"
+        },
+        {
+          "index": 136,
+          "text": "6,15"
+        },
+        {
+          "index": 137,
+          "text": "%ad"
+        },
+        {
+          "index": 138,
+          "text": "the"
+        },
+        {
+          "index": 139,
+          "text": "P2"
+        },
+        {
+          "index": 140,
+          "text": "ot"
+        },
+        {
+          "index": 141,
+          "text": "6.16"
+        },
+        {
+          "index": 142,
+          "text": "t"
+        },
+        {
+          "index": 143,
+          "text": "2"
+        },
+        {
+          "index": 144,
+          "text": "C1e"
+        },
+        {
+          "index": 145,
+          "text": "241"
+        },
+        {
+          "index": 146,
+          "text": "Kic"
+        },
+        {
+          "index": 147,
+          "text": "nal"
+        },
+        {
+          "index": 148,
+          "text": "Ask"
+        },
+        {
+          "index": 149,
+          "text": "For"
+        },
+        {
+          "index": 150,
+          "text": "and"
+        },
+        {
+          "index": 151,
+          "text": "Or;"
+        },
+        {
+          "index": 152,
+          "text": "0"
+        },
+        {
+          "index": 153,
+          "text": "Uals"
+        },
+        {
+          "index": 154,
+          "text": "'OUr\""
+        },
+        {
+          "index": 155,
+          "text": "Foi-"
+        },
+        {
+          "index": 156,
+          "text": "wili"
+        },
+        {
+          "index": 157,
+          "text": ">"
+        },
+        {
+          "index": 158,
+          "text": "a"
+        },
+        {
+          "index": 159,
+          "text": "ainstth"
+        },
+        {
+          "index": 160,
+          "text": "5"
+        },
+        {
+          "index": 161,
+          "text": "sEto"
+        },
+        {
+          "index": 162,
+          "text": "sna"
+        },
+        {
+          "index": 163,
+          "text": "priv"
+        },
+        {
+          "index": 164,
+          "text": "n"
+        },
+        {
+          "index": 165,
+          "text": "fi"
+        },
+        {
+          "index": 166,
+          "text": "onitor"
+        },
+        {
+          "index": 167,
+          "text": "to"
+        },
+        {
+          "index": 168,
+          "text": "Fr"
+        },
+        {
+          "index": 169,
+          "text": "Oolicy"
+        },
+        {
+          "index": 170,
+          "text": "WI"
+        },
+        {
+          "index": 171,
+          "text": "g1"
+        },
+        {
+          "index": 172,
+          "text": "Jvicle"
+        },
+        {
+          "index": 173,
+          "text": "7),"
+        },
+        {
+          "index": 174,
+          "text": "our"
+        },
+        {
+          "index": 175,
+          "text": "Ie"
+        },
+        {
+          "index": 176,
+          "text": "Rour"
+        },
+        {
+          "index": 177,
+          "text": "noc"
+        },
+        {
+          "index": 178,
+          "text": "0hi"
+        },
+        {
+          "index": 179,
+          "text": "iged"
+        },
+        {
+          "index": 180,
+          "text": "E_\"Afuind"
+        },
+        {
+          "index": 181,
+          "text": "dleta"
+        },
+        {
+          "index": 182,
+          "text": "is"
+        },
+        {
+          "index": 183,
+          "text": "Wi."
+        },
+        {
+          "index": 184,
+          "text": "to"
+        },
+        {
+          "index": 185,
+          "text": "\"6"
+        },
+        {
+          "index": 186,
+          "text": "YJur"
+        },
+        {
+          "index": 187,
+          "text": "visTt"
+        },
+        {
+          "index": 188,
+          "text": "Us"
+        },
+        {
+          "index": 189,
+          "text": "Uk"
+        },
+        {
+          "index": 190,
+          "text": "'OUr"
+        },
+        {
+          "index": 191,
+          "text": "tpi10"
+        },
+        {
+          "index": 192,
+          "text": "Ci"
+        },
+        {
+          "index": 193,
+          "text": "!o`"
+        },
+        {
+          "index": 194,
+          "text": "'"
+        },
+        {
+          "index": 195,
+          "text": "~1"
+        },
+        {
+          "index": 196,
+          "text": "'1"
+        },
+        {
+          "index": 197,
+          "text": ",10+9"
+        },
+        {
+          "index": 198,
+          "text": "4"
+        },
+        {
+          "index": 199,
+          "text": "."
+        },
+        {
+          "index": 200,
+          "text": "Wickes"
+        },
+        {
+          "index": 201,
+          "text": "013;0"
+        },
+        {
+          "index": 202,
+          "text": "'"
+        },
+        {
+          "index": 203,
+          "text": "P;"
+        },
+        {
+          "index": 204,
+          "text": "(4"
+        },
+        {
+          "index": 205,
+          "text": "\"1"
+        },
+        {
+          "index": 206,
+          "text": "."
+        },
+        {
+          "index": 207,
+          "text": "."
+        },
+        {
+          "index": 208,
+          "text": "."
+        },
+        {
+          "index": 209,
+          "text": "."
+        },
+        {
+          "index": 210,
+          "text": "."
+        },
+        {
+          "index": 211,
+          "text": "'"
+        },
+        {
+          "index": 212,
+          "text": "\""
+        },
+        {
+          "index": 213,
+          "text": "."
+        },
+        {
+          "index": 214,
+          "text": "-"
+        },
+        {
+          "index": 215,
+          "text": "97i"
+        },
+        {
+          "index": 216,
+          "text": "4\"6"
+        },
+        {
+          "index": 217,
+          "text": "45"
+        },
+        {
+          "index": 218,
+          "text": "^)"
+        },
+        {
+          "index": 219,
+          "text": "7"
+        },
+        {
+          "index": 220,
+          "text": "^"
+        },
+        {
+          "index": 221,
+          "text": "4"
+        },
+        {
+          "index": 222,
+          "text": "'"
+        },
+        {
+          "index": 223,
+          "text": "'"
+        },
+        {
+          "index": 224,
+          "text": "1"
+        },
+        {
+          "index": 225,
+          "text": "vIdewe"
+        },
+        {
+          "index": 226,
+          "text": "01-1\"'r"
+        },
+        {
+          "index": 227,
+          "text": "'"
+        },
+        {
+          "index": 228,
+          "text": "7ofy"
+        },
+        {
+          "index": 229,
+          "text": "/"
+        },
+        {
+          "index": 230,
+          "text": "."
+        },
+        {
+          "index": 231,
+          "text": "'"
+        },
+        {
+          "index": 232,
+          "text": "WICKE"
+        },
+        {
+          "index": 233,
+          "text": "CRoss"
+        },
+        {
+          "index": 234,
+          "text": "TESCQ"
+        },
+        {
+          "index": 235,
+          "text": "uTes"
+        },
+        {
+          "index": 236,
+          "text": "thani"
+        },
+        {
+          "index": 237,
+          "text": "Mrarcri"
+        },
+        {
+          "index": 238,
+          "text": "Petrol"
+        },
+        {
+          "index": 239,
+          "text": "Tross"
+        },
+        {
+          "index": 240,
+          "text": "Filling"
+        },
+        {
+          "index": 241,
+          "text": "Wav"
+        },
+        {
+          "index": 242,
+          "text": "EK8"
+        },
+        {
+          "index": 243,
+          "text": "Station"
+        },
+        {
+          "index": 244,
+          "text": "Te]"
+        },
+        {
+          "index": 245,
+          "text": "'"
+        },
+        {
+          "index": 246,
+          "text": "'0191,2"
+        },
+        {
+          "index": 247,
+          "text": "WAL"
+        },
+        {
+          "index": 248,
+          "text": "62222"
+        },
+        {
+          "index": 249,
+          "text": "THAM"
+        },
+        {
+          "index": 250,
+          "text": "ABBEY"
+        },
+        {
+          "index": 251,
+          "text": "any"
+        },
+        {
+          "index": 252,
+          "text": "PFS"
+        },
+        {
+          "index": 253,
+          "text": "quest"
+        },
+        {
+          "index": 254,
+          "text": "Tons"
+        },
+        {
+          "index": 255,
+          "text": "Www"
+        },
+        {
+          "index": 256,
+          "text": "please"
+        },
+        {
+          "index": 257,
+          "text": "336"
+        },
+        {
+          "index": 258,
+          "text": "tesco"
+        },
+        {
+          "index": 259,
+          "text": "visit"
+        },
+        {
+          "index": 260,
+          "text": "com/store-"
+        },
+        {
+          "index": 261,
+          "text": "Atw"
+        },
+        {
+          "index": 262,
+          "text": "ocator"
+        },
+        {
+          "index": 263,
+          "text": "eqodz-"
+        },
+        {
+          "index": 264,
+          "text": "PUMP"
+        },
+        {
+          "index": 265,
+          "text": "#AArbdT"
+        },
+        {
+          "index": 266,
+          "text": "UNL"
+        },
+        {
+          "index": 267,
+          "text": "-EADED"
+        },
+        {
+          "index": 268,
+          "text": "33/02"
+        },
+        {
+          "index": 269,
+          "text": "3"
+        },
+        {
+          "index": 270,
+          "text": "10"
+        },
+        {
+          "index": 271,
+          "text": "."
+        },
+        {
+          "index": 272,
+          "text": "tre"
+        },
+        {
+          "index": 273,
+          "text": "09;25"
+        },
+        {
+          "index": 274,
+          "text": "135"
+        },
+        {
+          "index": 275,
+          "text": "."
+        },
+        {
+          "index": 276,
+          "text": "213"
+        },
+        {
+          "index": 277,
+          "text": "TiJi"
+        },
+        {
+          "index": 278,
+          "text": "~~J:"
+        },
+        {
+          "index": 279,
+          "text": "02-1404"
+        },
+        {
+          "index": 280,
+          "text": "ToTAL"
+        },
+        {
+          "index": 281,
+          "text": "Per"
+        },
+        {
+          "index": 282,
+          "text": "Ones"
+        },
+        {
+          "index": 283,
+          "text": "pese"
+        },
+        {
+          "index": 284,
+          "text": "60062c"
+        },
+        {
+          "index": 285,
+          "text": "'inches"
+        },
+        {
+          "index": 286,
+          "text": "PUMP"
+        },
+        {
+          "index": 287,
+          "text": "213"
+        },
+        {
+          "index": 288,
+          "text": "UNLE"
+        },
+        {
+          "index": 289,
+          "text": "EADED"
+        },
+        {
+          "index": 290,
+          "text": "-73664"
+        },
+        {
+          "index": 291,
+          "text": "tre"
+        },
+        {
+          "index": 292,
+          "text": "[CU]"
+        },
+        {
+          "index": 293,
+          "text": "02"
+        },
+        {
+          "index": 294,
+          "text": "135"
+        },
+        {
+          "index": 295,
+          "text": "_"
+        },
+        {
+          "index": 296,
+          "text": "PAL"
+        },
+        {
+          "index": 297,
+          "text": "Juok"
+        },
+        {
+          "index": 298,
+          "text": "`ods"
+        },
+        {
+          "index": 299,
+          "text": "brx:"
+        },
+        {
+          "index": 300,
+          "text": "ToTALJo"
+        },
+        {
+          "index": 301,
+          "text": "7av"
+        },
+        {
+          "index": 302,
+          "text": "doner)"
+        },
+        {
+          "index": 303,
+          "text": "Lok"
+        },
+        {
+          "index": 304,
+          "text": "1"
+        },
+        {
+          "index": 305,
+          "text": "Debi"
+        },
+        {
+          "index": 306,
+          "text": "t"
+        },
+        {
+          "index": 307,
+          "text": "'72"
+        },
+        {
+          "index": 308,
+          "text": "SALE"
+        },
+        {
+          "index": 309,
+          "text": "823"
+        },
+        {
+          "index": 310,
+          "text": "0C"
+        },
+        {
+          "index": 311,
+          "text": "64"
+        },
+        {
+          "index": 312,
+          "text": "19261991"
+        },
+        {
+          "index": 313,
+          "text": "AOOO000003101O"
+        },
+        {
+          "index": 314,
+          "text": "NUMBER"
+        },
+        {
+          "index": 315,
+          "text": "523"
+        },
+        {
+          "index": 316,
+          "text": "."
+        },
+        {
+          "index": 317,
+          "text": "Visd"
+        },
+        {
+          "index": 318,
+          "text": "3219"
+        },
+        {
+          "index": 319,
+          "text": "PAN"
+        },
+        {
+          "index": 320,
+          "text": "Deb"
+        },
+        {
+          "index": 321,
+          "text": "xxkxXke"
+        },
+        {
+          "index": 322,
+          "text": "Merchcr"
+        },
+        {
+          "index": 323,
+          "text": "t"
+        },
+        {
+          "index": 324,
+          "text": "37"
+        },
+        {
+          "index": 325,
+          "text": "."
+        },
+        {
+          "index": 326,
+          "text": "4011"
+        },
+        {
+          "index": 327,
+          "text": "AUTH"
+        },
+        {
+          "index": 328,
+          "text": "E103453"
+        },
+        {
+          "index": 329,
+          "text": "CODE"
+        },
+        {
+          "index": 330,
+          "text": "ermira"
+        },
+        {
+          "index": 331,
+          "text": "ICC"
+        },
+        {
+          "index": 332,
+          "text": "MERCHANT"
+        },
+        {
+          "index": 333,
+          "text": "035045"
+        },
+        {
+          "index": 334,
+          "text": "COqOudoooduooouo"
+        },
+        {
+          "index": 335,
+          "text": "CHANGE"
+        },
+        {
+          "index": 336,
+          "text": "30471902"
+        },
+        {
+          "index": 337,
+          "text": "Card"
+        },
+        {
+          "index": 338,
+          "text": "XA"
+        },
+        {
+          "index": 339,
+          "text": "TX*6u11"
+        },
+        {
+          "index": 340,
+          "text": "Contact"
+        },
+        {
+          "index": 341,
+          "text": "T0"
+        },
+        {
+          "index": 342,
+          "text": ","
+        },
+        {
+          "index": 343,
+          "text": "055"
+        },
+        {
+          "index": 344,
+          "text": "RECEIPT"
+        },
+        {
+          "index": 345,
+          "text": "Rate"
+        },
+        {
+          "index": 346,
+          "text": "Flease"
+        },
+        {
+          "index": 347,
+          "text": "SUMMARY"
+        },
+        {
+          "index": 348,
+          "text": "cebit"
+        },
+        {
+          "index": 349,
+          "text": "20%"
+        },
+        {
+          "index": 350,
+          "text": "VAT"
+        },
+        {
+          "index": 351,
+          "text": "Count"
+        },
+        {
+          "index": 352,
+          "text": "ajunt"
+        },
+        {
+          "index": 353,
+          "text": "VAT"
+        },
+        {
+          "index": 354,
+          "text": "PLEA"
+        },
+        {
+          "index": 355,
+          "text": "E"
+        },
+        {
+          "index": 356,
+          "text": "ied"
+        },
+        {
+          "index": 357,
+          "text": "VAT"
+        },
+        {
+          "index": 358,
+          "text": "*r*t*r*r*t*rx*trrrtx*xr*x"
+        },
+        {
+          "index": 359,
+          "text": "RETA_N"
+        },
+        {
+          "index": 360,
+          "text": "220430231"
+        },
+        {
+          "index": 361,
+          "text": "THIS"
+        },
+        {
+          "index": 362,
+          "text": "Joi"
+        },
+        {
+          "index": 363,
+          "text": "V,A."
+        },
+        {
+          "index": 364,
+          "text": "V(UF"
+        },
+        {
+          "index": 365,
+          "text": "3reakdcwr"
+        },
+        {
+          "index": 366,
+          "text": "RESUF"
+        },
+        {
+          "index": 367,
+          "text": "DS,"
+        },
+        {
+          "index": 368,
+          "text": "This"
+        },
+        {
+          "index": 369,
+          "text": "ubcard"
+        },
+        {
+          "index": 370,
+          "text": "ZX**r*"
+        },
+        {
+          "index": 371,
+          "text": "visit"
+        },
+        {
+          "index": 372,
+          "text": "Today"
+        },
+        {
+          "index": 373,
+          "text": "Juux"
+        },
+        {
+          "index": 374,
+          "text": "have"
+        },
+        {
+          "index": 375,
+          "text": "Clubcard"
+        },
+        {
+          "index": 376,
+          "text": "IruRl"
+        },
+        {
+          "index": 377,
+          "text": "Z"
+        },
+        {
+          "index": 378,
+          "text": "Jected"
+        },
+        {
+          "index": 379,
+          "text": "Total"
+        },
+        {
+          "index": 380,
+          "text": "points"
+        },
+        {
+          "index": 381,
+          "text": "Total"
+        },
+        {
+          "index": 382,
+          "text": "inok"
+        },
+        {
+          "index": 383,
+          "text": "Tesco"
+        },
+        {
+          "index": 384,
+          "text": "'pue"
+        },
+        {
+          "index": 385,
+          "text": "Grocery"
+        },
+        {
+          "index": 386,
+          "text": "4WM"
+        },
+        {
+          "index": 387,
+          "text": "_"
+        },
+        {
+          "index": 388,
+          "text": "Jnuisit"
+        },
+        {
+          "index": 389,
+          "text": "Tte"
+        },
+        {
+          "index": 390,
+          "text": "5;2"
+        },
+        {
+          "index": 391,
+          "text": "Jnok"
+        },
+        {
+          "index": 392,
+          "text": "Tesco"
+        },
+        {
+          "index": 393,
+          "text": "ubcard"
+        },
+        {
+          "index": 394,
+          "text": "pnpojd"
+        },
+        {
+          "index": 395,
+          "text": "com/Clubcard"
+        },
+        {
+          "index": 396,
+          "text": "'inoqe"
+        },
+        {
+          "index": 397,
+          "text": "4i4am"
+        },
+        {
+          "index": 398,
+          "text": "puiu_"
+        },
+        {
+          "index": 399,
+          "text": "03c4-"
+        },
+        {
+          "index": 400,
+          "text": "wnjaj"
+        },
+        {
+          "index": 401,
+          "text": "styv"
+        },
+        {
+          "index": 402,
+          "text": "inok"
+        },
+        {
+          "index": 403,
+          "text": "aseld"
+        },
+        {
+          "index": 404,
+          "text": "#yuju"
+        },
+        {
+          "index": 405,
+          "text": "abueyznok"
+        },
+        {
+          "index": 406,
+          "text": "'aseypind"
+        },
+        {
+          "index": 407,
+          "text": "akn"
+        },
+        {
+          "index": 408,
+          "text": "pinoys"
+        },
+        {
+          "index": 409,
+          "text": "Ki4"
+        },
+        {
+          "index": 410,
+          "text": "*223021"
+        },
+        {
+          "index": 411,
+          "text": "404130225\""
+        },
+        {
+          "index": 412,
+          "text": "{is"
+        },
+        {
+          "index": 413,
+          "text": "detei"
+        },
+        {
+          "index": 414,
+          "text": "14"
+        },
+        {
+          "index": 415,
+          "text": "#vert"
+        },
+        {
+          "index": 416,
+          "text": "lsec"
+        },
+        {
+          "index": 417,
+          "text": "auu"
+        },
+        {
+          "index": 418,
+          "text": "[iata"
+        },
+        {
+          "index": 419,
+          "text": "SV"
+        },
+        {
+          "index": 420,
+          "text": "Hcccr"
+        },
+        {
+          "index": 421,
+          "text": "lance"
+        },
+        {
+          "index": 422,
+          "text": "veri"
+        },
+        {
+          "index": 423,
+          "text": "You"
+        },
+        {
+          "index": 424,
+          "text": "ar"
+        },
+        {
+          "index": 425,
+          "text": "e"
+        },
+        {
+          "index": 426,
+          "text": "(ptaim"
+        },
+        {
+          "index": 427,
+          "text": "pereonal"
+        },
+        {
+          "index": 428,
+          "text": "fiomn"
+        },
+        {
+          "index": 429,
+          "text": "ckes"
+        },
+        {
+          "index": 430,
+          "text": "Fow"
+        },
+        {
+          "index": 431,
+          "text": "Wi$"
+        },
+        {
+          "index": 432,
+          "text": "Jet"
+        },
+        {
+          "index": 433,
+          "text": "toclav?"
+        },
+        {
+          "index": 434,
+          "text": "Kow"
+        },
+        {
+          "index": 435,
+          "text": "trus"
+        },
+        {
+          "index": 436,
+          "text": "6xpo"
+        },
+        {
+          "index": 437,
+          "text": "ence"
+        },
+        {
+          "index": 438,
+          "text": "cqm"
+        }
+      ],
+      "all_words": [
+        ".'",
+        "7",
+        "'",
+        "4",
+        "'",
+        "'.",
+        "{c\"s",
+        "41",
+        "'",
+        "mv:",
+        "|",
+        "Hot",
+        "#4",
+        "n0i",
+        "\"M1",
+        "~",
+        ",1",
+        "'\"c`",
+        "3",
+        "WALTFAN",
+        "\"119TC",
+        "^",
+        "..",
+        "81",
+        "24\"_",
+        ":\"",
+        "ha",
+        "ha",
+        "off",
+        "Fe",
+        "Ts",
+        "7B2",
+        "4",
+        "T",
+        "7258",
+        "81",
+        "4",
+        "1",
+        "#",
+        "6",
+        "701",
+        "05",
+        "1j",
+        "@",
+        "[CU]",
+        "9",
+        "P/L",
+        "JeA",
+        "~J",
+        "813.66",
+        "€",
+        "0|",
+        "1",
+        "Bxu:h",
+        "Dulus",
+        "(3",
+        "027",
+        "#",
+        "3",
+        "66",
+        "Gicss",
+        "Ftw",
+        "7.34",
+        "11",
+        "1",
+        "d",
+        "2.EL",
+        "5.00",
+        "@",
+        "1O",
+        "3",
+        "9",
+        "SALE",
+        "Tcta]",
+        "32.00",
+        "E9.98",
+        "C",
+        "a",
+        "37",
+        ".",
+        "Visa",
+        "7,",
+        "(",
+        "=",
+        "00",
+        "AID",
+        "iw926",
+        "Jc:",
+        "Jua",
+        "Alth",
+        "Ce",
+        "Amo:",
+        "64",
+        "1",
+        "SEQ",
+        "No",
+        "X*t*",
+        "00",
+        "-",
+        "0",
+        "00",
+        "'Co",
+        "192",
+        "9269/9",
+        "flziv",
+        "DUE",
+        "3Qn",
+        "Y6",
+        "VaT",
+        "OU",
+        "Kt",
+        "C",
+        "trie",
+        "Ily",
+        "ac",
+        "31:",
+        "NET",
+        "speci",
+        "With",
+        "E19.70",
+        "No:",
+        "83.94",
+        "7\"",
+        "For",
+        "n",
+        "C1",
+        "a",
+        "37.C(",
+        "20",
+        "8",
+        "vou",
+        "could",
+        "VA",
+        "col",
+        "VA",
+        "6,15",
+        "%ad",
+        "the",
+        "P2",
+        "ot",
+        "6.16",
+        "t",
+        "2",
+        "C1e",
+        "241",
+        "Kic",
+        "nal",
+        "Ask",
+        "For",
+        "and",
+        "Or;",
+        "0",
+        "Uals",
+        "'OUr\"",
+        "Foi-",
+        "wili",
+        ">",
+        "a",
+        "ainstth",
+        "5",
+        "sEto",
+        "sna",
+        "priv",
+        "n",
+        "fi",
+        "onitor",
+        "to",
+        "Fr",
+        "Oolicy",
+        "WI",
+        "g1",
+        "Jvicle",
+        "7),",
+        "our",
+        "Ie",
+        "Rour",
+        "noc",
+        "0hi",
+        "iged",
+        "E_\"Afuind",
+        "dleta",
+        "is",
+        "Wi.",
+        "to",
+        "\"6",
+        "YJur",
+        "visTt",
+        "Us",
+        "Uk",
+        "'OUr",
+        "tpi10",
+        "Ci",
+        "!o`",
+        "'",
+        "~1",
+        "'1",
+        ",10+9",
+        "4",
+        ".",
+        "Wickes",
+        "013;0",
+        "'",
+        "P;",
+        "(4",
+        "\"1",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "'",
+        "\"",
+        ".",
+        "-",
+        "97i",
+        "4\"6",
+        "45",
+        "^)",
+        "7",
+        "^",
+        "4",
+        "'",
+        "'",
+        "1",
+        "vIdewe",
+        "01-1\"'r",
+        "'",
+        "7ofy",
+        "/",
+        ".",
+        "'",
+        "WICKE",
+        "CRoss",
+        "TESCQ",
+        "uTes",
+        "thani",
+        "Mrarcri",
+        "Petrol",
+        "Tross",
+        "Filling",
+        "Wav",
+        "EK8",
+        "Station",
+        "Te]",
+        "'",
+        "'0191,2",
+        "WAL",
+        "62222",
+        "THAM",
+        "ABBEY",
+        "any",
+        "PFS",
+        "quest",
+        "Tons",
+        "Www",
+        "please",
+        "336",
+        "tesco",
+        "visit",
+        "com/store-",
+        "Atw",
+        "ocator",
+        "eqodz-",
+        "PUMP",
+        "#AArbdT",
+        "UNL",
+        "-EADED",
+        "33/02",
+        "3",
+        "10",
+        ".",
+        "tre",
+        "09;25",
+        "135",
+        ".",
+        "213",
+        "TiJi",
+        "~~J:",
+        "02-1404",
+        "ToTAL",
+        "Per",
+        "Ones",
+        "pese",
+        "60062c",
+        "'inches",
+        "PUMP",
+        "213",
+        "UNLE",
+        "EADED",
+        "-73664",
+        "tre",
+        "[CU]",
+        "02",
+        "135",
+        "_",
+        "PAL",
+        "Juok",
+        "`ods",
+        "brx:",
+        "ToTALJo",
+        "7av",
+        "doner)",
+        "Lok",
+        "1",
+        "Debi",
+        "t",
+        "'72",
+        "SALE",
+        "823",
+        "0C",
+        "64",
+        "19261991",
+        "AOOO000003101O",
+        "NUMBER",
+        "523",
+        ".",
+        "Visd",
+        "3219",
+        "PAN",
+        "Deb",
+        "xxkxXke",
+        "Merchcr",
+        "t",
+        "37",
+        ".",
+        "4011",
+        "AUTH",
+        "E103453",
+        "CODE",
+        "ermira",
+        "ICC",
+        "MERCHANT",
+        "035045",
+        "COqOudoooduooouo",
+        "CHANGE",
+        "30471902",
+        "Card",
+        "XA",
+        "TX*6u11",
+        "Contact",
+        "T0",
+        ",",
+        "055",
+        "RECEIPT",
+        "Rate",
+        "Flease",
+        "SUMMARY",
+        "cebit",
+        "20%",
+        "VAT",
+        "Count",
+        "ajunt",
+        "VAT",
+        "PLEA",
+        "E",
+        "ied",
+        "VAT",
+        "*r*t*r*r*t*rx*trrrtx*xr*x",
+        "RETA_N",
+        "220430231",
+        "THIS",
+        "Joi",
+        "V,A.",
+        "V(UF",
+        "3reakdcwr",
+        "RESUF",
+        "DS,",
+        "This",
+        "ubcard",
+        "ZX**r*",
+        "visit",
+        "Today",
+        "Juux",
+        "have",
+        "Clubcard",
+        "IruRl",
+        "Z",
+        "Jected",
+        "Total",
+        "points",
+        "Total",
+        "inok",
+        "Tesco",
+        "'pue",
+        "Grocery",
+        "4WM",
+        "_",
+        "Jnuisit",
+        "Tte",
+        "5;2",
+        "Jnok",
+        "Tesco",
+        "ubcard",
+        "pnpojd",
+        "com/Clubcard",
+        "'inoqe",
+        "4i4am",
+        "puiu_",
+        "03c4-",
+        "wnjaj",
+        "styv",
+        "inok",
+        "aseld",
+        "#yuju",
+        "abueyznok",
+        "'aseypind",
+        "akn",
+        "pinoys",
+        "Ki4",
+        "*223021",
+        "404130225\"",
+        "{is",
+        "detei",
+        "14",
+        "#vert",
+        "lsec",
+        "auu",
+        "[iata",
+        "SV",
+        "Hcccr",
+        "lance",
+        "veri",
+        "You",
+        "ar",
+        "e",
+        "(ptaim",
+        "pereonal",
+        "fiomn",
+        "ckes",
+        "Fow",
+        "Wi$",
+        "Jet",
+        "toclav?",
+        "Kow",
+        "trus",
+        "6xpo",
+        "ence",
+        "cqm"
+      ],
+      "ocr_items": [],
+      "ocr_debug": {
+        "lighton_error": "",
+        "easyocr_error": "",
+        "tesseract_error": "",
+        "lighton_raw_len": 0,
+        "easyocr_items": 0,
+        "cleaned_len": 2002
+      },
+      "detections": [],
+      "receipts": [
+        {
+          "index": 1,
+          "page_index": 1,
+          "bbox": null,
+          "engine": "easyocr",
+          "raw_output": ".' 7 ' 4 ' '. {c\"s 41 ' mv: | Hot #4 n0i \"M1 ~ ,1 '\"c` 3 WALTFAN \"119TC ^ .. 81 24\"_ :\" ha ha off Fe Ts 7B2 4 T 7258 81 4 1 # 6 701 05 1j @ [CU] 9 P/L JeA ~J 813.66 € 0| 1 Bxu:h Dulus (3 027 # 3 66 Gicss Ftw 7.34 11 1 d 2.EL 5.00 @ 1O 3 9 SALE Tcta] 32.00 E9.98 C a 37 . Visa 7, ( = 00 AID iw926 Jc: Jua Alth Ce Amo: 64 1 SEQ No X*t* 00 - 0 00 'Co 192 9269/9 flziv DUE 3Qn Y6 VaT OU Kt C trie Ily ac 31: NET speci With E19.70 No: 83.94 7\" For n C1 a 37.C( 20 8 vou could VA col VA 6,15 %ad the P2 ot 6.16 t 2 C1e 241 Kic nal Ask For and Or; 0 Uals 'OUr\" Foi- wili > a ainstth 5 sEto sna priv n fi onitor to Fr Oolicy WI g1 Jvicle 7), our Ie Rour noc 0hi iged E_\"Afuind dleta is Wi. to \"6 YJur visTt Us Uk 'OUr tpi10 Ci !o` ' ~1 '1 ,10+9 4 . Wickes 013;0 ' P; (4 \"1 . . . . . ' \" . - 97i 4\"6 45 ^) 7 ^ 4 ' ' 1 vIdewe 01-1\"'r ' 7ofy / . ' WICKE CRoss TESCQ uTes thani Mrarcri Petrol Tross Filling Wav EK8 Station Te] ' '0191,2 WAL 62222 THAM ABBEY any PFS quest Tons Www please 336 tesco visit com/store- Atw ocator eqodz- PUMP #AArbdT UNL -EADED 33/02 3 10 . tre 09;25 135 . 213 TiJi ~~J: 02-1404 ToTAL Per Ones pese 60062c 'inches PUMP 213 UNLE EADED -73664 tre [CU] 02 135 _ PAL Juok `ods brx: ToTALJo 7av doner) Lok 1 Debi t '72 SALE 823 0C 64 19261991 AOOO000003101O NUMBER 523 . Visd 3219 PAN Deb xxkxXke Merchcr t 37 . 4011 AUTH E103453 CODE ermira ICC MERCHANT 035045 COqOudoooduooouo CHANGE 30471902 Card XA TX*6u11 Contact T0 , 055 RECEIPT Rate Flease SUMMARY cebit 20% VAT Count ajunt VAT PLEA E ied VAT *r*t*r*r*t*rx*trrrtx*xr*x RETA_N 220430231 THIS Joi V,A. V(UF 3reakdcwr RESUF DS, This ubcard ZX**r* visit Today Juux have Clubcard IruRl Z Jected Total points Total inok Tesco 'pue Grocery 4WM _ Jnuisit Tte 5;2 Jnok Tesco ubcard pnpojd com/Clubcard 'inoqe 4i4am puiu_ 03c4- wnjaj styv inok aseld #yuju abueyznok 'aseypind akn pinoys Ki4 *223021 404130225\" {is detei 14 #vert lsec auu [iata SV Hcccr lance veri You ar e (ptaim pereonal fiomn ckes Fow Wi$ Jet toclav? Kow trus 6xpo ence cqm",
+          "cleaned_text": ".' 7 ' 4 ' '. {c\"s 41 ' mv: | Hot #4 n0i \"M1 ~ ,1 '\"c` 3 WALTFAN \"119TC ^ .. 81 24\"_ :\" ha ha off Fe Ts 7B2 4 T 7258 81 4 1 # 6 701 05 1j @ [CU] 9 P/L JeA ~J 813.66 € 0| 1 Bxu:h Dulus (3 027 # 3 66 Gicss Ftw 7.34 11 1 d 2.EL 5.00 @ 1O 3 9 SALE Tcta] 32.00 E9.98 C a 37 . Visa 7, ( = 00 AID iw926 Jc: Jua Alth Ce Amo: 64 1 SEQ No X*t* 00 - 0 00 'Co 192 9269/9 flziv DUE 3Qn Y6 VaT OU Kt C trie Ily ac 31: NET speci With E19.70 No: 83.94 7\" For n C1 a 37.C( 20 8 vou could VA col VA 6,15 %ad the P2 ot 6.16 t 2 C1e 241 Kic nal Ask For and Or; 0 Uals 'OUr\" Foi- wili > a ainstth 5 sEto sna priv n fi onitor to Fr Oolicy WI g1 Jvicle 7), our Ie Rour noc 0hi iged E_\"Afuind dleta is Wi. to \"6 YJur visTt Us Uk 'OUr tpi10 Ci !o` ' ~1 '1 ,10+9 4 . Wickes 013;0 ' P; (4 \"1 . . . . . ' \" . - 97i 4\"6 45 ^) 7 ^ 4 ' ' 1 vIdewe 01-1\"'r ' 7ofy / . ' WICKE CRoss TESCQ uTes thani Mrarcri Petrol Tross Filling Wav EK8 Station Te] ' '0191,2 WAL 62222 THAM ABBEY any PFS quest Tons Www please 336 tesco visit com/store- Atw ocator eqodz- PUMP #AArbdT UNL -EADED 33/02 3 10 . tre 09;25 135 . 213 TiJi ~~J: 02-1404 ToTAL Per Ones pese 60062c 'inches PUMP 213 UNLE EADED -73664 tre [CU] 02 135 _ PAL Juok `ods brx: ToTALJo 7av doner) Lok 1 Debi t '72 SALE 823 0C 64 19261991 AOOO000003101O NUMBER 523 . Visd 3219 PAN Deb xxkxXke Merchcr t 37 . 4011 AUTH E103453 CODE ermira ICC MERCHANT 035045 COqOudoooduooouo CHANGE 30471902 Card XA TX*6u11 Contact T0 , 055 RECEIPT Rate Flease SUMMARY cebit 20% VAT Count ajunt VAT PLEA E ied VAT *r*t*r*r*t*rx*trrrtx*xr*x RETA_N 220430231 THIS Joi V,A. V(UF 3reakdcwr RESUF DS, This ubcard ZX**r* visit Today Juux have Clubcard IruRl Z Jected Total points Total inok Tesco 'pue Grocery 4WM _ Jnuisit Tte 5;2 Jnok Tesco ubcard pnpojd com/Clubcard 'inoqe 4i4am puiu_ 03c4- wnjaj styv inok aseld #yuju abueyznok 'aseypind akn pinoys Ki4 *223021 404130225\" {is detei 14 #vert lsec auu [iata SV Hcccr lance veri You ar e (ptaim pereonal fiomn ckes Fow Wi$ Jet toclav? Kow trus 6xpo ence cqm",
+          "lines": [
+            {
+              "index": 1,
+              "text": ".' 7 ' 4 ' '. {c\"s 41 ' mv: | Hot #4 n0i \"M1 ~ ,1 '\"c` 3 WALTFAN \"119TC ^ .. 81 24\"_ :\" ha ha off Fe Ts 7B2 4 T 7258 81 4 1 # 6 701 05 1j @ [CU] 9 P/L JeA ~J 813.66 € 0| 1 Bxu:h Dulus (3 027 # 3 66 Gicss Ftw 7.34 11 1 d 2.EL 5.00 @ 1O 3 9 SALE Tcta] 32.00 E9.98 C a 37 . Visa 7, ( = 00 AID iw926 Jc: Jua Alth Ce Amo: 64 1 SEQ No X*t* 00 - 0 00 'Co 192 9269/9 flziv DUE 3Qn Y6 VaT OU Kt C trie Ily ac 31: NET speci With E19.70 No: 83.94 7\" For n C1 a 37.C( 20 8 vou could VA col VA 6,15 %ad the P2 ot 6.16 t 2 C1e 241 Kic nal Ask For and Or; 0 Uals 'OUr\" Foi- wili > a ainstth 5 sEto sna priv n fi onitor to Fr Oolicy WI g1 Jvicle 7), our Ie Rour noc 0hi iged E_\"Afuind dleta is Wi. to \"6 YJur visTt Us Uk 'OUr tpi10 Ci !o` ' ~1 '1 ,10+9 4 . Wickes 013;0 ' P; (4 \"1 . . . . . ' \" . - 97i 4\"6 45 ^) 7 ^ 4 ' ' 1 vIdewe 01-1\"'r ' 7ofy / . ' WICKE CRoss TESCQ uTes thani Mrarcri Petrol Tross Filling Wav EK8 Station Te] ' '0191,2 WAL 62222 THAM ABBEY any PFS quest Tons Www please 336 tesco visit com/store- Atw ocator eqodz- PUMP #AArbdT UNL -EADED 33/02 3 10 . tre 09;25 135 . 213 TiJi ~~J: 02-1404 ToTAL Per Ones pese 60062c 'inches PUMP 213 UNLE EADED -73664 tre [CU] 02 135 _ PAL Juok `ods brx: ToTALJo 7av doner) Lok 1 Debi t '72 SALE 823 0C 64 19261991 AOOO000003101O NUMBER 523 . Visd 3219 PAN Deb xxkxXke Merchcr t 37 . 4011 AUTH E103453 CODE ermira ICC MERCHANT 035045 COqOudoooduooouo CHANGE 30471902 Card XA TX*6u11 Contact T0 , 055 RECEIPT Rate Flease SUMMARY cebit 20% VAT Count ajunt VAT PLEA E ied VAT *r*t*r*r*t*rx*trrrtx*xr*x RETA_N 220430231 THIS Joi V,A. V(UF 3reakdcwr RESUF DS, This ubcard ZX**r* visit Today Juux have Clubcard IruRl Z Jected Total points Total inok Tesco 'pue Grocery 4WM _ Jnuisit Tte 5;2 Jnok Tesco ubcard pnpojd com/Clubcard 'inoqe 4i4am puiu_ 03c4- wnjaj styv inok aseld #yuju abueyznok 'aseypind akn pinoys Ki4 *223021 404130225\" {is detei 14 #vert lsec auu [iata SV Hcccr lance veri You ar e (ptaim pereonal fiomn ckes Fow Wi$ Jet toclav? Kow trus 6xpo ence cqm"
+            }
+          ],
+          "words": [
+            {
+              "index": 1,
+              "text": ".'"
+            },
+            {
+              "index": 2,
+              "text": "7"
+            },
+            {
+              "index": 3,
+              "text": "'"
+            },
+            {
+              "index": 4,
+              "text": "4"
+            },
+            {
+              "index": 5,
+              "text": "'"
+            },
+            {
+              "index": 6,
+              "text": "'."
+            },
+            {
+              "index": 7,
+              "text": "{c\"s"
+            },
+            {
+              "index": 8,
+              "text": "41"
+            },
+            {
+              "index": 9,
+              "text": "'"
+            },
+            {
+              "index": 10,
+              "text": "mv:"
+            },
+            {
+              "index": 11,
+              "text": "|"
+            },
+            {
+              "index": 12,
+              "text": "Hot"
+            },
+            {
+              "index": 13,
+              "text": "#4"
+            },
+            {
+              "index": 14,
+              "text": "n0i"
+            },
+            {
+              "index": 15,
+              "text": "\"M1"
+            },
+            {
+              "index": 16,
+              "text": "~"
+            },
+            {
+              "index": 17,
+              "text": ",1"
+            },
+            {
+              "index": 18,
+              "text": "'\"c`"
+            },
+            {
+              "index": 19,
+              "text": "3"
+            },
+            {
+              "index": 20,
+              "text": "WALTFAN"
+            },
+            {
+              "index": 21,
+              "text": "\"119TC"
+            },
+            {
+              "index": 22,
+              "text": "^"
+            },
+            {
+              "index": 23,
+              "text": ".."
+            },
+            {
+              "index": 24,
+              "text": "81"
+            },
+            {
+              "index": 25,
+              "text": "24\"_"
+            },
+            {
+              "index": 26,
+              "text": ":\""
+            },
+            {
+              "index": 27,
+              "text": "ha"
+            },
+            {
+              "index": 28,
+              "text": "ha"
+            },
+            {
+              "index": 29,
+              "text": "off"
+            },
+            {
+              "index": 30,
+              "text": "Fe"
+            },
+            {
+              "index": 31,
+              "text": "Ts"
+            },
+            {
+              "index": 32,
+              "text": "7B2"
+            },
+            {
+              "index": 33,
+              "text": "4"
+            },
+            {
+              "index": 34,
+              "text": "T"
+            },
+            {
+              "index": 35,
+              "text": "7258"
+            },
+            {
+              "index": 36,
+              "text": "81"
+            },
+            {
+              "index": 37,
+              "text": "4"
+            },
+            {
+              "index": 38,
+              "text": "1"
+            },
+            {
+              "index": 39,
+              "text": "#"
+            },
+            {
+              "index": 40,
+              "text": "6"
+            },
+            {
+              "index": 41,
+              "text": "701"
+            },
+            {
+              "index": 42,
+              "text": "05"
+            },
+            {
+              "index": 43,
+              "text": "1j"
+            },
+            {
+              "index": 44,
+              "text": "@"
+            },
+            {
+              "index": 45,
+              "text": "[CU]"
+            },
+            {
+              "index": 46,
+              "text": "9"
+            },
+            {
+              "index": 47,
+              "text": "P/L"
+            },
+            {
+              "index": 48,
+              "text": "JeA"
+            },
+            {
+              "index": 49,
+              "text": "~J"
+            },
+            {
+              "index": 50,
+              "text": "813.66"
+            },
+            {
+              "index": 51,
+              "text": "€"
+            },
+            {
+              "index": 52,
+              "text": "0|"
+            },
+            {
+              "index": 53,
+              "text": "1"
+            },
+            {
+              "index": 54,
+              "text": "Bxu:h"
+            },
+            {
+              "index": 55,
+              "text": "Dulus"
+            },
+            {
+              "index": 56,
+              "text": "(3"
+            },
+            {
+              "index": 57,
+              "text": "027"
+            },
+            {
+              "index": 58,
+              "text": "#"
+            },
+            {
+              "index": 59,
+              "text": "3"
+            },
+            {
+              "index": 60,
+              "text": "66"
+            },
+            {
+              "index": 61,
+              "text": "Gicss"
+            },
+            {
+              "index": 62,
+              "text": "Ftw"
+            },
+            {
+              "index": 63,
+              "text": "7.34"
+            },
+            {
+              "index": 64,
+              "text": "11"
+            },
+            {
+              "index": 65,
+              "text": "1"
+            },
+            {
+              "index": 66,
+              "text": "d"
+            },
+            {
+              "index": 67,
+              "text": "2.EL"
+            },
+            {
+              "index": 68,
+              "text": "5.00"
+            },
+            {
+              "index": 69,
+              "text": "@"
+            },
+            {
+              "index": 70,
+              "text": "1O"
+            },
+            {
+              "index": 71,
+              "text": "3"
+            },
+            {
+              "index": 72,
+              "text": "9"
+            },
+            {
+              "index": 73,
+              "text": "SALE"
+            },
+            {
+              "index": 74,
+              "text": "Tcta]"
+            },
+            {
+              "index": 75,
+              "text": "32.00"
+            },
+            {
+              "index": 76,
+              "text": "E9.98"
+            },
+            {
+              "index": 77,
+              "text": "C"
+            },
+            {
+              "index": 78,
+              "text": "a"
+            },
+            {
+              "index": 79,
+              "text": "37"
+            },
+            {
+              "index": 80,
+              "text": "."
+            },
+            {
+              "index": 81,
+              "text": "Visa"
+            },
+            {
+              "index": 82,
+              "text": "7,"
+            },
+            {
+              "index": 83,
+              "text": "("
+            },
+            {
+              "index": 84,
+              "text": "="
+            },
+            {
+              "index": 85,
+              "text": "00"
+            },
+            {
+              "index": 86,
+              "text": "AID"
+            },
+            {
+              "index": 87,
+              "text": "iw926"
+            },
+            {
+              "index": 88,
+              "text": "Jc:"
+            },
+            {
+              "index": 89,
+              "text": "Jua"
+            },
+            {
+              "index": 90,
+              "text": "Alth"
+            },
+            {
+              "index": 91,
+              "text": "Ce"
+            },
+            {
+              "index": 92,
+              "text": "Amo:"
+            },
+            {
+              "index": 93,
+              "text": "64"
+            },
+            {
+              "index": 94,
+              "text": "1"
+            },
+            {
+              "index": 95,
+              "text": "SEQ"
+            },
+            {
+              "index": 96,
+              "text": "No"
+            },
+            {
+              "index": 97,
+              "text": "X*t*"
+            },
+            {
+              "index": 98,
+              "text": "00"
+            },
+            {
+              "index": 99,
+              "text": "-"
+            },
+            {
+              "index": 100,
+              "text": "0"
+            },
+            {
+              "index": 101,
+              "text": "00"
+            },
+            {
+              "index": 102,
+              "text": "'Co"
+            },
+            {
+              "index": 103,
+              "text": "192"
+            },
+            {
+              "index": 104,
+              "text": "9269/9"
+            },
+            {
+              "index": 105,
+              "text": "flziv"
+            },
+            {
+              "index": 106,
+              "text": "DUE"
+            },
+            {
+              "index": 107,
+              "text": "3Qn"
+            },
+            {
+              "index": 108,
+              "text": "Y6"
+            },
+            {
+              "index": 109,
+              "text": "VaT"
+            },
+            {
+              "index": 110,
+              "text": "OU"
+            },
+            {
+              "index": 111,
+              "text": "Kt"
+            },
+            {
+              "index": 112,
+              "text": "C"
+            },
+            {
+              "index": 113,
+              "text": "trie"
+            },
+            {
+              "index": 114,
+              "text": "Ily"
+            },
+            {
+              "index": 115,
+              "text": "ac"
+            },
+            {
+              "index": 116,
+              "text": "31:"
+            },
+            {
+              "index": 117,
+              "text": "NET"
+            },
+            {
+              "index": 118,
+              "text": "speci"
+            },
+            {
+              "index": 119,
+              "text": "With"
+            },
+            {
+              "index": 120,
+              "text": "E19.70"
+            },
+            {
+              "index": 121,
+              "text": "No:"
+            },
+            {
+              "index": 122,
+              "text": "83.94"
+            },
+            {
+              "index": 123,
+              "text": "7\""
+            },
+            {
+              "index": 124,
+              "text": "For"
+            },
+            {
+              "index": 125,
+              "text": "n"
+            },
+            {
+              "index": 126,
+              "text": "C1"
+            },
+            {
+              "index": 127,
+              "text": "a"
+            },
+            {
+              "index": 128,
+              "text": "37.C("
+            },
+            {
+              "index": 129,
+              "text": "20"
+            },
+            {
+              "index": 130,
+              "text": "8"
+            },
+            {
+              "index": 131,
+              "text": "vou"
+            },
+            {
+              "index": 132,
+              "text": "could"
+            },
+            {
+              "index": 133,
+              "text": "VA"
+            },
+            {
+              "index": 134,
+              "text": "col"
+            },
+            {
+              "index": 135,
+              "text": "VA"
+            },
+            {
+              "index": 136,
+              "text": "6,15"
+            },
+            {
+              "index": 137,
+              "text": "%ad"
+            },
+            {
+              "index": 138,
+              "text": "the"
+            },
+            {
+              "index": 139,
+              "text": "P2"
+            },
+            {
+              "index": 140,
+              "text": "ot"
+            },
+            {
+              "index": 141,
+              "text": "6.16"
+            },
+            {
+              "index": 142,
+              "text": "t"
+            },
+            {
+              "index": 143,
+              "text": "2"
+            },
+            {
+              "index": 144,
+              "text": "C1e"
+            },
+            {
+              "index": 145,
+              "text": "241"
+            },
+            {
+              "index": 146,
+              "text": "Kic"
+            },
+            {
+              "index": 147,
+              "text": "nal"
+            },
+            {
+              "index": 148,
+              "text": "Ask"
+            },
+            {
+              "index": 149,
+              "text": "For"
+            },
+            {
+              "index": 150,
+              "text": "and"
+            },
+            {
+              "index": 151,
+              "text": "Or;"
+            },
+            {
+              "index": 152,
+              "text": "0"
+            },
+            {
+              "index": 153,
+              "text": "Uals"
+            },
+            {
+              "index": 154,
+              "text": "'OUr\""
+            },
+            {
+              "index": 155,
+              "text": "Foi-"
+            },
+            {
+              "index": 156,
+              "text": "wili"
+            },
+            {
+              "index": 157,
+              "text": ">"
+            },
+            {
+              "index": 158,
+              "text": "a"
+            },
+            {
+              "index": 159,
+              "text": "ainstth"
+            },
+            {
+              "index": 160,
+              "text": "5"
+            },
+            {
+              "index": 161,
+              "text": "sEto"
+            },
+            {
+              "index": 162,
+              "text": "sna"
+            },
+            {
+              "index": 163,
+              "text": "priv"
+            },
+            {
+              "index": 164,
+              "text": "n"
+            },
+            {
+              "index": 165,
+              "text": "fi"
+            },
+            {
+              "index": 166,
+              "text": "onitor"
+            },
+            {
+              "index": 167,
+              "text": "to"
+            },
+            {
+              "index": 168,
+              "text": "Fr"
+            },
+            {
+              "index": 169,
+              "text": "Oolicy"
+            },
+            {
+              "index": 170,
+              "text": "WI"
+            },
+            {
+              "index": 171,
+              "text": "g1"
+            },
+            {
+              "index": 172,
+              "text": "Jvicle"
+            },
+            {
+              "index": 173,
+              "text": "7),"
+            },
+            {
+              "index": 174,
+              "text": "our"
+            },
+            {
+              "index": 175,
+              "text": "Ie"
+            },
+            {
+              "index": 176,
+              "text": "Rour"
+            },
+            {
+              "index": 177,
+              "text": "noc"
+            },
+            {
+              "index": 178,
+              "text": "0hi"
+            },
+            {
+              "index": 179,
+              "text": "iged"
+            },
+            {
+              "index": 180,
+              "text": "E_\"Afuind"
+            },
+            {
+              "index": 181,
+              "text": "dleta"
+            },
+            {
+              "index": 182,
+              "text": "is"
+            },
+            {
+              "index": 183,
+              "text": "Wi."
+            },
+            {
+              "index": 184,
+              "text": "to"
+            },
+            {
+              "index": 185,
+              "text": "\"6"
+            },
+            {
+              "index": 186,
+              "text": "YJur"
+            },
+            {
+              "index": 187,
+              "text": "visTt"
+            },
+            {
+              "index": 188,
+              "text": "Us"
+            },
+            {
+              "index": 189,
+              "text": "Uk"
+            },
+            {
+              "index": 190,
+              "text": "'OUr"
+            },
+            {
+              "index": 191,
+              "text": "tpi10"
+            },
+            {
+              "index": 192,
+              "text": "Ci"
+            },
+            {
+              "index": 193,
+              "text": "!o`"
+            },
+            {
+              "index": 194,
+              "text": "'"
+            },
+            {
+              "index": 195,
+              "text": "~1"
+            },
+            {
+              "index": 196,
+              "text": "'1"
+            },
+            {
+              "index": 197,
+              "text": ",10+9"
+            },
+            {
+              "index": 198,
+              "text": "4"
+            },
+            {
+              "index": 199,
+              "text": "."
+            },
+            {
+              "index": 200,
+              "text": "Wickes"
+            },
+            {
+              "index": 201,
+              "text": "013;0"
+            },
+            {
+              "index": 202,
+              "text": "'"
+            },
+            {
+              "index": 203,
+              "text": "P;"
+            },
+            {
+              "index": 204,
+              "text": "(4"
+            },
+            {
+              "index": 205,
+              "text": "\"1"
+            },
+            {
+              "index": 206,
+              "text": "."
+            },
+            {
+              "index": 207,
+              "text": "."
+            },
+            {
+              "index": 208,
+              "text": "."
+            },
+            {
+              "index": 209,
+              "text": "."
+            },
+            {
+              "index": 210,
+              "text": "."
+            },
+            {
+              "index": 211,
+              "text": "'"
+            },
+            {
+              "index": 212,
+              "text": "\""
+            },
+            {
+              "index": 213,
+              "text": "."
+            },
+            {
+              "index": 214,
+              "text": "-"
+            },
+            {
+              "index": 215,
+              "text": "97i"
+            },
+            {
+              "index": 216,
+              "text": "4\"6"
+            },
+            {
+              "index": 217,
+              "text": "45"
+            },
+            {
+              "index": 218,
+              "text": "^)"
+            },
+            {
+              "index": 219,
+              "text": "7"
+            },
+            {
+              "index": 220,
+              "text": "^"
+            },
+            {
+              "index": 221,
+              "text": "4"
+            },
+            {
+              "index": 222,
+              "text": "'"
+            },
+            {
+              "index": 223,
+              "text": "'"
+            },
+            {
+              "index": 224,
+              "text": "1"
+            },
+            {
+              "index": 225,
+              "text": "vIdewe"
+            },
+            {
+              "index": 226,
+              "text": "01-1\"'r"
+            },
+            {
+              "index": 227,
+              "text": "'"
+            },
+            {
+              "index": 228,
+              "text": "7ofy"
+            },
+            {
+              "index": 229,
+              "text": "/"
+            },
+            {
+              "index": 230,
+              "text": "."
+            },
+            {
+              "index": 231,
+              "text": "'"
+            },
+            {
+              "index": 232,
+              "text": "WICKE"
+            },
+            {
+              "index": 233,
+              "text": "CRoss"
+            },
+            {
+              "index": 234,
+              "text": "TESCQ"
+            },
+            {
+              "index": 235,
+              "text": "uTes"
+            },
+            {
+              "index": 236,
+              "text": "thani"
+            },
+            {
+              "index": 237,
+              "text": "Mrarcri"
+            },
+            {
+              "index": 238,
+              "text": "Petrol"
+            },
+            {
+              "index": 239,
+              "text": "Tross"
+            },
+            {
+              "index": 240,
+              "text": "Filling"
+            },
+            {
+              "index": 241,
+              "text": "Wav"
+            },
+            {
+              "index": 242,
+              "text": "EK8"
+            },
+            {
+              "index": 243,
+              "text": "Station"
+            },
+            {
+              "index": 244,
+              "text": "Te]"
+            },
+            {
+              "index": 245,
+              "text": "'"
+            },
+            {
+              "index": 246,
+              "text": "'0191,2"
+            },
+            {
+              "index": 247,
+              "text": "WAL"
+            },
+            {
+              "index": 248,
+              "text": "62222"
+            },
+            {
+              "index": 249,
+              "text": "THAM"
+            },
+            {
+              "index": 250,
+              "text": "ABBEY"
+            },
+            {
+              "index": 251,
+              "text": "any"
+            },
+            {
+              "index": 252,
+              "text": "PFS"
+            },
+            {
+              "index": 253,
+              "text": "quest"
+            },
+            {
+              "index": 254,
+              "text": "Tons"
+            },
+            {
+              "index": 255,
+              "text": "Www"
+            },
+            {
+              "index": 256,
+              "text": "please"
+            },
+            {
+              "index": 257,
+              "text": "336"
+            },
+            {
+              "index": 258,
+              "text": "tesco"
+            },
+            {
+              "index": 259,
+              "text": "visit"
+            },
+            {
+              "index": 260,
+              "text": "com/store-"
+            },
+            {
+              "index": 261,
+              "text": "Atw"
+            },
+            {
+              "index": 262,
+              "text": "ocator"
+            },
+            {
+              "index": 263,
+              "text": "eqodz-"
+            },
+            {
+              "index": 264,
+              "text": "PUMP"
+            },
+            {
+              "index": 265,
+              "text": "#AArbdT"
+            },
+            {
+              "index": 266,
+              "text": "UNL"
+            },
+            {
+              "index": 267,
+              "text": "-EADED"
+            },
+            {
+              "index": 268,
+              "text": "33/02"
+            },
+            {
+              "index": 269,
+              "text": "3"
+            },
+            {
+              "index": 270,
+              "text": "10"
+            },
+            {
+              "index": 271,
+              "text": "."
+            },
+            {
+              "index": 272,
+              "text": "tre"
+            },
+            {
+              "index": 273,
+              "text": "09;25"
+            },
+            {
+              "index": 274,
+              "text": "135"
+            },
+            {
+              "index": 275,
+              "text": "."
+            },
+            {
+              "index": 276,
+              "text": "213"
+            },
+            {
+              "index": 277,
+              "text": "TiJi"
+            },
+            {
+              "index": 278,
+              "text": "~~J:"
+            },
+            {
+              "index": 279,
+              "text": "02-1404"
+            },
+            {
+              "index": 280,
+              "text": "ToTAL"
+            },
+            {
+              "index": 281,
+              "text": "Per"
+            },
+            {
+              "index": 282,
+              "text": "Ones"
+            },
+            {
+              "index": 283,
+              "text": "pese"
+            },
+            {
+              "index": 284,
+              "text": "60062c"
+            },
+            {
+              "index": 285,
+              "text": "'inches"
+            },
+            {
+              "index": 286,
+              "text": "PUMP"
+            },
+            {
+              "index": 287,
+              "text": "213"
+            },
+            {
+              "index": 288,
+              "text": "UNLE"
+            },
+            {
+              "index": 289,
+              "text": "EADED"
+            },
+            {
+              "index": 290,
+              "text": "-73664"
+            },
+            {
+              "index": 291,
+              "text": "tre"
+            },
+            {
+              "index": 292,
+              "text": "[CU]"
+            },
+            {
+              "index": 293,
+              "text": "02"
+            },
+            {
+              "index": 294,
+              "text": "135"
+            },
+            {
+              "index": 295,
+              "text": "_"
+            },
+            {
+              "index": 296,
+              "text": "PAL"
+            },
+            {
+              "index": 297,
+              "text": "Juok"
+            },
+            {
+              "index": 298,
+              "text": "`ods"
+            },
+            {
+              "index": 299,
+              "text": "brx:"
+            },
+            {
+              "index": 300,
+              "text": "ToTALJo"
+            },
+            {
+              "index": 301,
+              "text": "7av"
+            },
+            {
+              "index": 302,
+              "text": "doner)"
+            },
+            {
+              "index": 303,
+              "text": "Lok"
+            },
+            {
+              "index": 304,
+              "text": "1"
+            },
+            {
+              "index": 305,
+              "text": "Debi"
+            },
+            {
+              "index": 306,
+              "text": "t"
+            },
+            {
+              "index": 307,
+              "text": "'72"
+            },
+            {
+              "index": 308,
+              "text": "SALE"
+            },
+            {
+              "index": 309,
+              "text": "823"
+            },
+            {
+              "index": 310,
+              "text": "0C"
+            },
+            {
+              "index": 311,
+              "text": "64"
+            },
+            {
+              "index": 312,
+              "text": "19261991"
+            },
+            {
+              "index": 313,
+              "text": "AOOO000003101O"
+            },
+            {
+              "index": 314,
+              "text": "NUMBER"
+            },
+            {
+              "index": 315,
+              "text": "523"
+            },
+            {
+              "index": 316,
+              "text": "."
+            },
+            {
+              "index": 317,
+              "text": "Visd"
+            },
+            {
+              "index": 318,
+              "text": "3219"
+            },
+            {
+              "index": 319,
+              "text": "PAN"
+            },
+            {
+              "index": 320,
+              "text": "Deb"
+            },
+            {
+              "index": 321,
+              "text": "xxkxXke"
+            },
+            {
+              "index": 322,
+              "text": "Merchcr"
+            },
+            {
+              "index": 323,
+              "text": "t"
+            },
+            {
+              "index": 324,
+              "text": "37"
+            },
+            {
+              "index": 325,
+              "text": "."
+            },
+            {
+              "index": 326,
+              "text": "4011"
+            },
+            {
+              "index": 327,
+              "text": "AUTH"
+            },
+            {
+              "index": 328,
+              "text": "E103453"
+            },
+            {
+              "index": 329,
+              "text": "CODE"
+            },
+            {
+              "index": 330,
+              "text": "ermira"
+            },
+            {
+              "index": 331,
+              "text": "ICC"
+            },
+            {
+              "index": 332,
+              "text": "MERCHANT"
+            },
+            {
+              "index": 333,
+              "text": "035045"
+            },
+            {
+              "index": 334,
+              "text": "COqOudoooduooouo"
+            },
+            {
+              "index": 335,
+              "text": "CHANGE"
+            },
+            {
+              "index": 336,
+              "text": "30471902"
+            },
+            {
+              "index": 337,
+              "text": "Card"
+            },
+            {
+              "index": 338,
+              "text": "XA"
+            },
+            {
+              "index": 339,
+              "text": "TX*6u11"
+            },
+            {
+              "index": 340,
+              "text": "Contact"
+            },
+            {
+              "index": 341,
+              "text": "T0"
+            },
+            {
+              "index": 342,
+              "text": ","
+            },
+            {
+              "index": 343,
+              "text": "055"
+            },
+            {
+              "index": 344,
+              "text": "RECEIPT"
+            },
+            {
+              "index": 345,
+              "text": "Rate"
+            },
+            {
+              "index": 346,
+              "text": "Flease"
+            },
+            {
+              "index": 347,
+              "text": "SUMMARY"
+            },
+            {
+              "index": 348,
+              "text": "cebit"
+            },
+            {
+              "index": 349,
+              "text": "20%"
+            },
+            {
+              "index": 350,
+              "text": "VAT"
+            },
+            {
+              "index": 351,
+              "text": "Count"
+            },
+            {
+              "index": 352,
+              "text": "ajunt"
+            },
+            {
+              "index": 353,
+              "text": "VAT"
+            },
+            {
+              "index": 354,
+              "text": "PLEA"
+            },
+            {
+              "index": 355,
+              "text": "E"
+            },
+            {
+              "index": 356,
+              "text": "ied"
+            },
+            {
+              "index": 357,
+              "text": "VAT"
+            },
+            {
+              "index": 358,
+              "text": "*r*t*r*r*t*rx*trrrtx*xr*x"
+            },
+            {
+              "index": 359,
+              "text": "RETA_N"
+            },
+            {
+              "index": 360,
+              "text": "220430231"
+            },
+            {
+              "index": 361,
+              "text": "THIS"
+            },
+            {
+              "index": 362,
+              "text": "Joi"
+            },
+            {
+              "index": 363,
+              "text": "V,A."
+            },
+            {
+              "index": 364,
+              "text": "V(UF"
+            },
+            {
+              "index": 365,
+              "text": "3reakdcwr"
+            },
+            {
+              "index": 366,
+              "text": "RESUF"
+            },
+            {
+              "index": 367,
+              "text": "DS,"
+            },
+            {
+              "index": 368,
+              "text": "This"
+            },
+            {
+              "index": 369,
+              "text": "ubcard"
+            },
+            {
+              "index": 370,
+              "text": "ZX**r*"
+            },
+            {
+              "index": 371,
+              "text": "visit"
+            },
+            {
+              "index": 372,
+              "text": "Today"
+            },
+            {
+              "index": 373,
+              "text": "Juux"
+            },
+            {
+              "index": 374,
+              "text": "have"
+            },
+            {
+              "index": 375,
+              "text": "Clubcard"
+            },
+            {
+              "index": 376,
+              "text": "IruRl"
+            },
+            {
+              "index": 377,
+              "text": "Z"
+            },
+            {
+              "index": 378,
+              "text": "Jected"
+            },
+            {
+              "index": 379,
+              "text": "Total"
+            },
+            {
+              "index": 380,
+              "text": "points"
+            },
+            {
+              "index": 381,
+              "text": "Total"
+            },
+            {
+              "index": 382,
+              "text": "inok"
+            },
+            {
+              "index": 383,
+              "text": "Tesco"
+            },
+            {
+              "index": 384,
+              "text": "'pue"
+            },
+            {
+              "index": 385,
+              "text": "Grocery"
+            },
+            {
+              "index": 386,
+              "text": "4WM"
+            },
+            {
+              "index": 387,
+              "text": "_"
+            },
+            {
+              "index": 388,
+              "text": "Jnuisit"
+            },
+            {
+              "index": 389,
+              "text": "Tte"
+            },
+            {
+              "index": 390,
+              "text": "5;2"
+            },
+            {
+              "index": 391,
+              "text": "Jnok"
+            },
+            {
+              "index": 392,
+              "text": "Tesco"
+            },
+            {
+              "index": 393,
+              "text": "ubcard"
+            },
+            {
+              "index": 394,
+              "text": "pnpojd"
+            },
+            {
+              "index": 395,
+              "text": "com/Clubcard"
+            },
+            {
+              "index": 396,
+              "text": "'inoqe"
+            },
+            {
+              "index": 397,
+              "text": "4i4am"
+            },
+            {
+              "index": 398,
+              "text": "puiu_"
+            },
+            {
+              "index": 399,
+              "text": "03c4-"
+            },
+            {
+              "index": 400,
+              "text": "wnjaj"
+            },
+            {
+              "index": 401,
+              "text": "styv"
+            },
+            {
+              "index": 402,
+              "text": "inok"
+            },
+            {
+              "index": 403,
+              "text": "aseld"
+            },
+            {
+              "index": 404,
+              "text": "#yuju"
+            },
+            {
+              "index": 405,
+              "text": "abueyznok"
+            },
+            {
+              "index": 406,
+              "text": "'aseypind"
+            },
+            {
+              "index": 407,
+              "text": "akn"
+            },
+            {
+              "index": 408,
+              "text": "pinoys"
+            },
+            {
+              "index": 409,
+              "text": "Ki4"
+            },
+            {
+              "index": 410,
+              "text": "*223021"
+            },
+            {
+              "index": 411,
+              "text": "404130225\""
+            },
+            {
+              "index": 412,
+              "text": "{is"
+            },
+            {
+              "index": 413,
+              "text": "detei"
+            },
+            {
+              "index": 414,
+              "text": "14"
+            },
+            {
+              "index": 415,
+              "text": "#vert"
+            },
+            {
+              "index": 416,
+              "text": "lsec"
+            },
+            {
+              "index": 417,
+              "text": "auu"
+            },
+            {
+              "index": 418,
+              "text": "[iata"
+            },
+            {
+              "index": 419,
+              "text": "SV"
+            },
+            {
+              "index": 420,
+              "text": "Hcccr"
+            },
+            {
+              "index": 421,
+              "text": "lance"
+            },
+            {
+              "index": 422,
+              "text": "veri"
+            },
+            {
+              "index": 423,
+              "text": "You"
+            },
+            {
+              "index": 424,
+              "text": "ar"
+            },
+            {
+              "index": 425,
+              "text": "e"
+            },
+            {
+              "index": 426,
+              "text": "(ptaim"
+            },
+            {
+              "index": 427,
+              "text": "pereonal"
+            },
+            {
+              "index": 428,
+              "text": "fiomn"
+            },
+            {
+              "index": 429,
+              "text": "ckes"
+            },
+            {
+              "index": 430,
+              "text": "Fow"
+            },
+            {
+              "index": 431,
+              "text": "Wi$"
+            },
+            {
+              "index": 432,
+              "text": "Jet"
+            },
+            {
+              "index": 433,
+              "text": "toclav?"
+            },
+            {
+              "index": 434,
+              "text": "Kow"
+            },
+            {
+              "index": 435,
+              "text": "trus"
+            },
+            {
+              "index": 436,
+              "text": "6xpo"
+            },
+            {
+              "index": 437,
+              "text": "ence"
+            },
+            {
+              "index": 438,
+              "text": "cqm"
+            }
+          ],
+          "all_words": [
+            ".'",
+            "7",
+            "'",
+            "4",
+            "'",
+            "'.",
+            "{c\"s",
+            "41",
+            "'",
+            "mv:",
+            "|",
+            "Hot",
+            "#4",
+            "n0i",
+            "\"M1",
+            "~",
+            ",1",
+            "'\"c`",
+            "3",
+            "WALTFAN",
+            "\"119TC",
+            "^",
+            "..",
+            "81",
+            "24\"_",
+            ":\"",
+            "ha",
+            "ha",
+            "off",
+            "Fe",
+            "Ts",
+            "7B2",
+            "4",
+            "T",
+            "7258",
+            "81",
+            "4",
+            "1",
+            "#",
+            "6",
+            "701",
+            "05",
+            "1j",
+            "@",
+            "[CU]",
+            "9",
+            "P/L",
+            "JeA",
+            "~J",
+            "813.66",
+            "€",
+            "0|",
+            "1",
+            "Bxu:h",
+            "Dulus",
+            "(3",
+            "027",
+            "#",
+            "3",
+            "66",
+            "Gicss",
+            "Ftw",
+            "7.34",
+            "11",
+            "1",
+            "d",
+            "2.EL",
+            "5.00",
+            "@",
+            "1O",
+            "3",
+            "9",
+            "SALE",
+            "Tcta]",
+            "32.00",
+            "E9.98",
+            "C",
+            "a",
+            "37",
+            ".",
+            "Visa",
+            "7,",
+            "(",
+            "=",
+            "00",
+            "AID",
+            "iw926",
+            "Jc:",
+            "Jua",
+            "Alth",
+            "Ce",
+            "Amo:",
+            "64",
+            "1",
+            "SEQ",
+            "No",
+            "X*t*",
+            "00",
+            "-",
+            "0",
+            "00",
+            "'Co",
+            "192",
+            "9269/9",
+            "flziv",
+            "DUE",
+            "3Qn",
+            "Y6",
+            "VaT",
+            "OU",
+            "Kt",
+            "C",
+            "trie",
+            "Ily",
+            "ac",
+            "31:",
+            "NET",
+            "speci",
+            "With",
+            "E19.70",
+            "No:",
+            "83.94",
+            "7\"",
+            "For",
+            "n",
+            "C1",
+            "a",
+            "37.C(",
+            "20",
+            "8",
+            "vou",
+            "could",
+            "VA",
+            "col",
+            "VA",
+            "6,15",
+            "%ad",
+            "the",
+            "P2",
+            "ot",
+            "6.16",
+            "t",
+            "2",
+            "C1e",
+            "241",
+            "Kic",
+            "nal",
+            "Ask",
+            "For",
+            "and",
+            "Or;",
+            "0",
+            "Uals",
+            "'OUr\"",
+            "Foi-",
+            "wili",
+            ">",
+            "a",
+            "ainstth",
+            "5",
+            "sEto",
+            "sna",
+            "priv",
+            "n",
+            "fi",
+            "onitor",
+            "to",
+            "Fr",
+            "Oolicy",
+            "WI",
+            "g1",
+            "Jvicle",
+            "7),",
+            "our",
+            "Ie",
+            "Rour",
+            "noc",
+            "0hi",
+            "iged",
+            "E_\"Afuind",
+            "dleta",
+            "is",
+            "Wi.",
+            "to",
+            "\"6",
+            "YJur",
+            "visTt",
+            "Us",
+            "Uk",
+            "'OUr",
+            "tpi10",
+            "Ci",
+            "!o`",
+            "'",
+            "~1",
+            "'1",
+            ",10+9",
+            "4",
+            ".",
+            "Wickes",
+            "013;0",
+            "'",
+            "P;",
+            "(4",
+            "\"1",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "'",
+            "\"",
+            ".",
+            "-",
+            "97i",
+            "4\"6",
+            "45",
+            "^)",
+            "7",
+            "^",
+            "4",
+            "'",
+            "'",
+            "1",
+            "vIdewe",
+            "01-1\"'r",
+            "'",
+            "7ofy",
+            "/",
+            ".",
+            "'",
+            "WICKE",
+            "CRoss",
+            "TESCQ",
+            "uTes",
+            "thani",
+            "Mrarcri",
+            "Petrol",
+            "Tross",
+            "Filling",
+            "Wav",
+            "EK8",
+            "Station",
+            "Te]",
+            "'",
+            "'0191,2",
+            "WAL",
+            "62222",
+            "THAM",
+            "ABBEY",
+            "any",
+            "PFS",
+            "quest",
+            "Tons",
+            "Www",
+            "please",
+            "336",
+            "tesco",
+            "visit",
+            "com/store-",
+            "Atw",
+            "ocator",
+            "eqodz-",
+            "PUMP",
+            "#AArbdT",
+            "UNL",
+            "-EADED",
+            "33/02",
+            "3",
+            "10",
+            ".",
+            "tre",
+            "09;25",
+            "135",
+            ".",
+            "213",
+            "TiJi",
+            "~~J:",
+            "02-1404",
+            "ToTAL",
+            "Per",
+            "Ones",
+            "pese",
+            "60062c",
+            "'inches",
+            "PUMP",
+            "213",
+            "UNLE",
+            "EADED",
+            "-73664",
+            "tre",
+            "[CU]",
+            "02",
+            "135",
+            "_",
+            "PAL",
+            "Juok",
+            "`ods",
+            "brx:",
+            "ToTALJo",
+            "7av",
+            "doner)",
+            "Lok",
+            "1",
+            "Debi",
+            "t",
+            "'72",
+            "SALE",
+            "823",
+            "0C",
+            "64",
+            "19261991",
+            "AOOO000003101O",
+            "NUMBER",
+            "523",
+            ".",
+            "Visd",
+            "3219",
+            "PAN",
+            "Deb",
+            "xxkxXke",
+            "Merchcr",
+            "t",
+            "37",
+            ".",
+            "4011",
+            "AUTH",
+            "E103453",
+            "CODE",
+            "ermira",
+            "ICC",
+            "MERCHANT",
+            "035045",
+            "COqOudoooduooouo",
+            "CHANGE",
+            "30471902",
+            "Card",
+            "XA",
+            "TX*6u11",
+            "Contact",
+            "T0",
+            ",",
+            "055",
+            "RECEIPT",
+            "Rate",
+            "Flease",
+            "SUMMARY",
+            "cebit",
+            "20%",
+            "VAT",
+            "Count",
+            "ajunt",
+            "VAT",
+            "PLEA",
+            "E",
+            "ied",
+            "VAT",
+            "*r*t*r*r*t*rx*trrrtx*xr*x",
+            "RETA_N",
+            "220430231",
+            "THIS",
+            "Joi",
+            "V,A.",
+            "V(UF",
+            "3reakdcwr",
+            "RESUF",
+            "DS,",
+            "This",
+            "ubcard",
+            "ZX**r*",
+            "visit",
+            "Today",
+            "Juux",
+            "have",
+            "Clubcard",
+            "IruRl",
+            "Z",
+            "Jected",
+            "Total",
+            "points",
+            "Total",
+            "inok",
+            "Tesco",
+            "'pue",
+            "Grocery",
+            "4WM",
+            "_",
+            "Jnuisit",
+            "Tte",
+            "5;2",
+            "Jnok",
+            "Tesco",
+            "ubcard",
+            "pnpojd",
+            "com/Clubcard",
+            "'inoqe",
+            "4i4am",
+            "puiu_",
+            "03c4-",
+            "wnjaj",
+            "styv",
+            "inok",
+            "aseld",
+            "#yuju",
+            "abueyznok",
+            "'aseypind",
+            "akn",
+            "pinoys",
+            "Ki4",
+            "*223021",
+            "404130225\"",
+            "{is",
+            "detei",
+            "14",
+            "#vert",
+            "lsec",
+            "auu",
+            "[iata",
+            "SV",
+            "Hcccr",
+            "lance",
+            "veri",
+            "You",
+            "ar",
+            "e",
+            "(ptaim",
+            "pereonal",
+            "fiomn",
+            "ckes",
+            "Fow",
+            "Wi$",
+            "Jet",
+            "toclav?",
+            "Kow",
+            "trus",
+            "6xpo",
+            "ence",
+            "cqm"
+          ],
+          "ocr_items": [],
+          "detections": [],
+          "ocr_debug": {
+            "lighton_error": "",
+            "easyocr_error": "",
+            "tesseract_error": "",
+            "easyocr_items": 359,
+            "cleaned_len": 2002
+          }
+        }
+      ],
+      "receipts_count": 1,
+      "receipts_summary": [
+        {
+          "index": 1,
+          "page_index": 1,
+          "bbox": null,
+          "engine": "easyocr",
+          "text_len": 2002,
+          "words": 438,
+          "preview": ".' 7 ' 4 ' '. {c\"s 41 ' mv: | Hot #4 n0i \"M1 ~ ,1 '\"c` 3 WALTFAN \"119TC ^ .. 81 24\"_ :\" ha ha off Fe Ts 7B2 4 T 7258 81 4 1 # 6 701 05 1j @ [CU] 9 P/L JeA ~J 813.66 € 0| 1 Bxu:h Dulus (3 027 # 3 66 Gicss Ftw 7.34 11 1 d 2.EL 5.00 @ 1O 3 9 S"
+        }
+      ]
+    }
+  ]
+}

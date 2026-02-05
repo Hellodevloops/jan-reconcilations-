@@ -1,0 +1,4996 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "fuel_expense",
+      "document_date": "20/01/2025",
+      "supplier": "13Qam FAN seq: no_ 00 'C Trade 98180824510 AID: A0000000031010 DISNEY DOLL Qty item Sub-Total No Ot Ttems ZO Sale #*r* T",
+      "inv_ref_no": "0208",
+      "make": "",
+      "model": "",
+      "colour": "",
+      "reg_no": "IN ENGLAND",
+      "buying_price": 39.1,
+      "non_vat": 39.1,
+      "std_net": "N/A",
+      "vat_amount": 39.1
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "img20250223_11432878.pdf",
+      "content_type": "application/pdf",
+      "model_name": "LightOnOCR-2-1B (Best OCR)",
+      "has_bbox": false,
+      "engine": "easyocr",
+      "raw_output": "CoOStco mui & koko noodle bar EWHOLESALE restaurant Crown Gate Harleys bistro and lounge Chirgford Warehouse (0208 501 9305 ) CM2O 1FL Cm1g 4AQ Costco Wholesale UK Linited KING\" DU comedny MID: *****21613 UK Home Off Ice, HartsprIng Lane 4tt 5624 Watford, Herts_ WD25 8JS Harlow, Essex TID: Reg in England No: 2635489 VAT 195 2487 71 AWRS No: Xvawooooo1 02593 Visa debit VaT No: 650 1862 52 tel: 01279 450456 453066 Caru n0: Unn '6469 open daily from 13Qam FAN seq: no_ 00 'C Trade 98180824510 AID: A0000000031010 DISNEY DOLL Qty item Sub-Total No Ot Ttems ZO Sale #*r* TOTAL( INCL VaT ) LjK36r1 1 salt& pepper chicken 8,10 Amount F39.10 CASH 70 . 00 pork spring rolls 6.30 Total: E39.10 salt & pepper Ribs 9.30 plain fried noodles 7.60 APPROVED ~veg Date & time 20/01/2025 12.17 with: with chicken Auth code: 031711 chicken katsu & curry sauce (4 11.80 Payment method Contactless with: + boiled rice (38W) Verificalion melhod Device THIS FOR YOUR RECORDS 1 yum yum beef rice 9.70 Transaction ID: bbdab PLEASE KEEP with: -NO RICE Pan: XXXXXXXXXXXX6469 T Sea No: 9 1 still water 330ml 2.80 Merchant ID: 540436506051085 Meal total 55.60 Processed by DOJO Tran ID: 433900010955_ {55.60 Privacy policy dojo lech/legal/privacy/ Payable AMOUNT : E513.63 APPROVED MB: E55.60 receipt#: 46 Na CVM products; 7 Card;VIsa DEBIT CTLS EMV Date: 15/12/2024 17.07 APPROVAL CODE:055047 Server: TAKEOUT HEC Epping AID: 90000000031010 Take Out Arms Roundabout 04/12/2024 13.20 113 10 134 148 Ch16 5HW jack Check No: 12 VIsa 513.63 Date: 2025-01-17 CHANGE 0.00 service not included Type: PURCHASE Card Type : VA thank you for your customl Ent 3 Hode. Visa Contactless VAT Code Exc] Vat Vat Acct 1 \"6469 A 20.O07 358_ 63 71.72 Auth 011317 2 0.007 153.28 0.00 Subtotal ; GBP 100 .0 Gratuity; Kxr* TOTAL( EXCL VaT ) 511.91 Total = GBP 0.OC 71.72 GBP 100 . OC Vat Amount 4m EMV PURCHASE TOTAL NUMBER OF ITEMS SOLD 40 App Label DEBIT SavIngs: E20.50 6 Couponl s ) NORTH CTRCULAR GOLF Ad: , Issuer 044742024 13:20 113 10 134 148 75 HILLGROVE BUS INESS PK AR: Goooooooo3ioio NAZEING ROAD ESSEX IAD: an executive member ENg 2HB 01992 893241 1F426332A0OOOOOC 1302730000000040 Congratulatlons as Oooodooooooooooo_ooooooooooo You have earned E10.23 towards your REG 28-08 2024 11:00 TSI; annual executIve reward. 004241 ARC; 00 Ive member 2 PSN: 00 Not an execut 1 DEPOSTT 200 . 00 CVM; 1F0001 VIst our Membershle Desk TL 200 Oo ATC: 0158 to Learn More . CASH 200 UO TT; 00 AC; SSCAEBEEFZCAGDAB Jack DANCE VA | NO 589 895 540 CID; 80 FOREST CAR COMPANY LTD sales@northcirculargo| f CROWN HILL FARM HOUSE co:Uk We would to hear vour thoughts WALTHAM ABBEY HTV inrestsurvey Co uk Jaoureraodcarteat ler & Carter of Steak Club Shon vour %9 t9 Servers to acd points Tel 01992 814 807 EN9 3TF CUSTOHER Copv Wake Trans 14,23 11 Trans Code: Visa love Hasters",
+      "cleaned_text": "CoOStco mui & koko noodle bar EWHOLESALE restaurant Crown Gate Harleys bistro and lounge Chirgford Warehouse (0208 501 9305 ) CM2O 1FL Cm1g 4AQ Costco Wholesale UK Linited KING\" DU comedny MID: *****21613 UK Home Off Ice, HartsprIng Lane 4tt 5624 Watford, Herts_ WD25 8JS Harlow, Essex TID: Reg in England No: 2635489 VAT 195 2487 71 AWRS No: Xvawooooo1 02593 Visa debit VaT No: 650 1862 52 tel: 01279 450456 453066 Caru n0: Unn '6469 open daily from 13Qam FAN seq: no_ 00 'C Trade 98180824510 AID: A0000000031010 DISNEY DOLL Qty item Sub-Total No Ot Ttems ZO Sale #*r* TOTAL( INCL VaT ) LjK36r1 1 salt& pepper chicken 8,10 Amount F39.10 CASH 70 . 00 pork spring rolls 6.30 Total: E39.10 salt & pepper Ribs 9.30 plain fried noodles 7.60 APPROVED ~veg Date & time 20/01/2025 12.17 with: with chicken Auth code: 031711 chicken katsu & curry sauce (4 11.80 Payment method Contactless with: + boiled rice (38W) Verificalion melhod Device THIS FOR YOUR RECORDS 1 yum yum beef rice 9.70 Transaction ID: bbdab PLEASE KEEP with: -NO RICE Pan: XXXXXXXXXXXX6469 T Sea No: 9 1 still water 330ml 2.80 Merchant ID: 540436506051085 Meal total 55.60 Processed by DOJO Tran ID: 433900010955_ {55.60 Privacy policy dojo lech/legal/privacy/ Payable AMOUNT : E513.63 APPROVED MB: E55.60 receipt#: 46 Na CVM products; 7 Card;VIsa DEBIT CTLS EMV Date: 15/12/2024 17.07 APPROVAL CODE:055047 Server: TAKEOUT HEC Epping AID: 90000000031010 Take Out Arms Roundabout 04/12/2024 13.20 113 10 134 148 Ch16 5HW jack Check No: 12 VIsa 513.63 Date: 2025-01-17 CHANGE 0.00 service not included Type: PURCHASE Card Type : VA thank you for your customl Ent 3 Hode. Visa Contactless VAT Code Exc] Vat Vat Acct 1 \"6469 A 20.O07 358_ 63 71.72 Auth 011317 2 0.007 153.28 0.00 Subtotal ; GBP 100 .0 Gratuity; Kxr* TOTAL( EXCL VaT ) 511.91 Total = GBP 0.OC 71.72 GBP 100 . OC Vat Amount 4m EMV PURCHASE TOTAL NUMBER OF ITEMS SOLD 40 App Label DEBIT SavIngs: E20.50 6 Couponl s ) NORTH CTRCULAR GOLF Ad: , Issuer 044742024 13:20 113 10 134 148 75 HILLGROVE BUS INESS PK AR: Goooooooo3ioio NAZEING ROAD ESSEX IAD: an executive member ENg 2HB 01992 893241 1F426332A0OOOOOC 1302730000000040 Congratulatlons as Oooodooooooooooo_ooooooooooo You have earned E10.23 towards your REG 28-08 2024 11:00 TSI; annual executIve reward. 004241 ARC; 00 Ive member 2 PSN: 00 Not an execut 1 DEPOSTT 200 . 00 CVM; 1F0001 VIst our Membershle Desk TL 200 Oo ATC: 0158 to Learn More . CASH 200 UO TT; 00 AC; SSCAEBEEFZCAGDAB Jack DANCE VA | NO 589 895 540 CID; 80 FOREST CAR COMPANY LTD sales@northcirculargo| f CROWN HILL FARM HOUSE co:Uk We would to hear vour thoughts WALTHAM ABBEY HTV inrestsurvey Co uk Jaoureraodcarteat ler & Carter of Steak Club Shon vour %9 t9 Servers to acd points Tel 01992 814 807 EN9 3TF CUSTOHER Copv Wake Trans 14,23 11 Trans Code: Visa love Hasters",
+      "lines": [
+        {
+          "index": 1,
+          "text": "CoOStco mui & koko noodle bar EWHOLESALE restaurant Crown Gate Harleys bistro and lounge Chirgford Warehouse (0208 501 9305 ) CM2O 1FL Cm1g 4AQ Costco Wholesale UK Linited KING\" DU comedny MID: *****21613 UK Home Off Ice, HartsprIng Lane 4tt 5624 Watford, Herts_ WD25 8JS Harlow, Essex TID: Reg in England No: 2635489 VAT 195 2487 71 AWRS No: Xvawooooo1 02593 Visa debit VaT No: 650 1862 52 tel: 01279 450456 453066 Caru n0: Unn '6469 open daily from 13Qam FAN seq: no_ 00 'C Trade 98180824510 AID: A0000000031010 DISNEY DOLL Qty item Sub-Total No Ot Ttems ZO Sale #*r* TOTAL( INCL VaT ) LjK36r1 1 salt& pepper chicken 8,10 Amount F39.10 CASH 70 . 00 pork spring rolls 6.30 Total: E39.10 salt & pepper Ribs 9.30 plain fried noodles 7.60 APPROVED ~veg Date & time 20/01/2025 12.17 with: with chicken Auth code: 031711 chicken katsu & curry sauce (4 11.80 Payment method Contactless with: + boiled rice (38W) Verificalion melhod Device THIS FOR YOUR RECORDS 1 yum yum beef rice 9.70 Transaction ID: bbdab PLEASE KEEP with: -NO RICE Pan: XXXXXXXXXXXX6469 T Sea No: 9 1 still water 330ml 2.80 Merchant ID: 540436506051085 Meal total 55.60 Processed by DOJO Tran ID: 433900010955_ {55.60 Privacy policy dojo lech/legal/privacy/ Payable AMOUNT : E513.63 APPROVED MB: E55.60 receipt#: 46 Na CVM products; 7 Card;VIsa DEBIT CTLS EMV Date: 15/12/2024 17.07 APPROVAL CODE:055047 Server: TAKEOUT HEC Epping AID: 90000000031010 Take Out Arms Roundabout 04/12/2024 13.20 113 10 134 148 Ch16 5HW jack Check No: 12 VIsa 513.63 Date: 2025-01-17 CHANGE 0.00 service not included Type: PURCHASE Card Type : VA thank you for your customl Ent 3 Hode. Visa Contactless VAT Code Exc] Vat Vat Acct 1 \"6469 A 20.O07 358_ 63 71.72 Auth 011317 2 0.007 153.28 0.00 Subtotal ; GBP 100 .0 Gratuity; Kxr* TOTAL( EXCL VaT ) 511.91 Total = GBP 0.OC 71.72 GBP 100 . OC Vat Amount 4m EMV PURCHASE TOTAL NUMBER OF ITEMS SOLD 40 App Label DEBIT SavIngs: E20.50 6 Couponl s ) NORTH CTRCULAR GOLF Ad: , Issuer 044742024 13:20 113 10 134 148 75 HILLGROVE BUS INESS PK AR: Goooooooo3ioio NAZEING ROAD ESSEX IAD: an executive member ENg 2HB 01992 893241 1F426332A0OOOOOC 1302730000000040 Congratulatlons as Oooodooooooooooo_ooooooooooo You have earned E10.23 towards your REG 28-08 2024 11:00 TSI; annual executIve reward. 004241 ARC; 00 Ive member 2 PSN: 00 Not an execut 1 DEPOSTT 200 . 00 CVM; 1F0001 VIst our Membershle Desk TL 200 Oo ATC: 0158 to Learn More . CASH 200 UO TT; 00 AC; SSCAEBEEFZCAGDAB Jack DANCE VA | NO 589 895 540 CID; 80 FOREST CAR COMPANY LTD sales@northcirculargo| f CROWN HILL FARM HOUSE co:Uk We would to hear vour thoughts WALTHAM ABBEY HTV inrestsurvey Co uk Jaoureraodcarteat ler & Carter of Steak Club Shon vour %9 t9 Servers to acd points Tel 01992 814 807 EN9 3TF CUSTOHER Copv Wake Trans 14,23 11 Trans Code: Visa love Hasters"
+        }
+      ],
+      "words": [
+        {
+          "index": 1,
+          "text": "CoOStco"
+        },
+        {
+          "index": 2,
+          "text": "mui"
+        },
+        {
+          "index": 3,
+          "text": "&"
+        },
+        {
+          "index": 4,
+          "text": "koko"
+        },
+        {
+          "index": 5,
+          "text": "noodle"
+        },
+        {
+          "index": 6,
+          "text": "bar"
+        },
+        {
+          "index": 7,
+          "text": "EWHOLESALE"
+        },
+        {
+          "index": 8,
+          "text": "restaurant"
+        },
+        {
+          "index": 9,
+          "text": "Crown"
+        },
+        {
+          "index": 10,
+          "text": "Gate"
+        },
+        {
+          "index": 11,
+          "text": "Harleys"
+        },
+        {
+          "index": 12,
+          "text": "bistro"
+        },
+        {
+          "index": 13,
+          "text": "and"
+        },
+        {
+          "index": 14,
+          "text": "lounge"
+        },
+        {
+          "index": 15,
+          "text": "Chirgford"
+        },
+        {
+          "index": 16,
+          "text": "Warehouse"
+        },
+        {
+          "index": 17,
+          "text": "(0208"
+        },
+        {
+          "index": 18,
+          "text": "501"
+        },
+        {
+          "index": 19,
+          "text": "9305"
+        },
+        {
+          "index": 20,
+          "text": ")"
+        },
+        {
+          "index": 21,
+          "text": "CM2O"
+        },
+        {
+          "index": 22,
+          "text": "1FL"
+        },
+        {
+          "index": 23,
+          "text": "Cm1g"
+        },
+        {
+          "index": 24,
+          "text": "4AQ"
+        },
+        {
+          "index": 25,
+          "text": "Costco"
+        },
+        {
+          "index": 26,
+          "text": "Wholesale"
+        },
+        {
+          "index": 27,
+          "text": "UK"
+        },
+        {
+          "index": 28,
+          "text": "Linited"
+        },
+        {
+          "index": 29,
+          "text": "KING\""
+        },
+        {
+          "index": 30,
+          "text": "DU"
+        },
+        {
+          "index": 31,
+          "text": "comedny"
+        },
+        {
+          "index": 32,
+          "text": "MID:"
+        },
+        {
+          "index": 33,
+          "text": "*****21613"
+        },
+        {
+          "index": 34,
+          "text": "UK"
+        },
+        {
+          "index": 35,
+          "text": "Home"
+        },
+        {
+          "index": 36,
+          "text": "Off"
+        },
+        {
+          "index": 37,
+          "text": "Ice,"
+        },
+        {
+          "index": 38,
+          "text": "HartsprIng"
+        },
+        {
+          "index": 39,
+          "text": "Lane"
+        },
+        {
+          "index": 40,
+          "text": "4tt"
+        },
+        {
+          "index": 41,
+          "text": "5624"
+        },
+        {
+          "index": 42,
+          "text": "Watford,"
+        },
+        {
+          "index": 43,
+          "text": "Herts_"
+        },
+        {
+          "index": 44,
+          "text": "WD25"
+        },
+        {
+          "index": 45,
+          "text": "8JS"
+        },
+        {
+          "index": 46,
+          "text": "Harlow,"
+        },
+        {
+          "index": 47,
+          "text": "Essex"
+        },
+        {
+          "index": 48,
+          "text": "TID:"
+        },
+        {
+          "index": 49,
+          "text": "Reg"
+        },
+        {
+          "index": 50,
+          "text": "in"
+        },
+        {
+          "index": 51,
+          "text": "England"
+        },
+        {
+          "index": 52,
+          "text": "No:"
+        },
+        {
+          "index": 53,
+          "text": "2635489"
+        },
+        {
+          "index": 54,
+          "text": "VAT"
+        },
+        {
+          "index": 55,
+          "text": "195"
+        },
+        {
+          "index": 56,
+          "text": "2487"
+        },
+        {
+          "index": 57,
+          "text": "71"
+        },
+        {
+          "index": 58,
+          "text": "AWRS"
+        },
+        {
+          "index": 59,
+          "text": "No:"
+        },
+        {
+          "index": 60,
+          "text": "Xvawooooo1"
+        },
+        {
+          "index": 61,
+          "text": "02593"
+        },
+        {
+          "index": 62,
+          "text": "Visa"
+        },
+        {
+          "index": 63,
+          "text": "debit"
+        },
+        {
+          "index": 64,
+          "text": "VaT"
+        },
+        {
+          "index": 65,
+          "text": "No:"
+        },
+        {
+          "index": 66,
+          "text": "650"
+        },
+        {
+          "index": 67,
+          "text": "1862"
+        },
+        {
+          "index": 68,
+          "text": "52"
+        },
+        {
+          "index": 69,
+          "text": "tel:"
+        },
+        {
+          "index": 70,
+          "text": "01279"
+        },
+        {
+          "index": 71,
+          "text": "450456"
+        },
+        {
+          "index": 72,
+          "text": "453066"
+        },
+        {
+          "index": 73,
+          "text": "Caru"
+        },
+        {
+          "index": 74,
+          "text": "n0:"
+        },
+        {
+          "index": 75,
+          "text": "Unn"
+        },
+        {
+          "index": 76,
+          "text": "'6469"
+        },
+        {
+          "index": 77,
+          "text": "open"
+        },
+        {
+          "index": 78,
+          "text": "daily"
+        },
+        {
+          "index": 79,
+          "text": "from"
+        },
+        {
+          "index": 80,
+          "text": "13Qam"
+        },
+        {
+          "index": 81,
+          "text": "FAN"
+        },
+        {
+          "index": 82,
+          "text": "seq:"
+        },
+        {
+          "index": 83,
+          "text": "no_"
+        },
+        {
+          "index": 84,
+          "text": "00"
+        },
+        {
+          "index": 85,
+          "text": "'C"
+        },
+        {
+          "index": 86,
+          "text": "Trade"
+        },
+        {
+          "index": 87,
+          "text": "98180824510"
+        },
+        {
+          "index": 88,
+          "text": "AID:"
+        },
+        {
+          "index": 89,
+          "text": "A0000000031010"
+        },
+        {
+          "index": 90,
+          "text": "DISNEY"
+        },
+        {
+          "index": 91,
+          "text": "DOLL"
+        },
+        {
+          "index": 92,
+          "text": "Qty"
+        },
+        {
+          "index": 93,
+          "text": "item"
+        },
+        {
+          "index": 94,
+          "text": "Sub-Total"
+        },
+        {
+          "index": 95,
+          "text": "No"
+        },
+        {
+          "index": 96,
+          "text": "Ot"
+        },
+        {
+          "index": 97,
+          "text": "Ttems"
+        },
+        {
+          "index": 98,
+          "text": "ZO"
+        },
+        {
+          "index": 99,
+          "text": "Sale"
+        },
+        {
+          "index": 100,
+          "text": "#*r*"
+        },
+        {
+          "index": 101,
+          "text": "TOTAL("
+        },
+        {
+          "index": 102,
+          "text": "INCL"
+        },
+        {
+          "index": 103,
+          "text": "VaT"
+        },
+        {
+          "index": 104,
+          "text": ")"
+        },
+        {
+          "index": 105,
+          "text": "LjK36r1"
+        },
+        {
+          "index": 106,
+          "text": "1"
+        },
+        {
+          "index": 107,
+          "text": "salt&"
+        },
+        {
+          "index": 108,
+          "text": "pepper"
+        },
+        {
+          "index": 109,
+          "text": "chicken"
+        },
+        {
+          "index": 110,
+          "text": "8,10"
+        },
+        {
+          "index": 111,
+          "text": "Amount"
+        },
+        {
+          "index": 112,
+          "text": "F39.10"
+        },
+        {
+          "index": 113,
+          "text": "CASH"
+        },
+        {
+          "index": 114,
+          "text": "70"
+        },
+        {
+          "index": 115,
+          "text": "."
+        },
+        {
+          "index": 116,
+          "text": "00"
+        },
+        {
+          "index": 117,
+          "text": "pork"
+        },
+        {
+          "index": 118,
+          "text": "spring"
+        },
+        {
+          "index": 119,
+          "text": "rolls"
+        },
+        {
+          "index": 120,
+          "text": "6.30"
+        },
+        {
+          "index": 121,
+          "text": "Total:"
+        },
+        {
+          "index": 122,
+          "text": "E39.10"
+        },
+        {
+          "index": 123,
+          "text": "salt"
+        },
+        {
+          "index": 124,
+          "text": "&"
+        },
+        {
+          "index": 125,
+          "text": "pepper"
+        },
+        {
+          "index": 126,
+          "text": "Ribs"
+        },
+        {
+          "index": 127,
+          "text": "9.30"
+        },
+        {
+          "index": 128,
+          "text": "plain"
+        },
+        {
+          "index": 129,
+          "text": "fried"
+        },
+        {
+          "index": 130,
+          "text": "noodles"
+        },
+        {
+          "index": 131,
+          "text": "7.60"
+        },
+        {
+          "index": 132,
+          "text": "APPROVED"
+        },
+        {
+          "index": 133,
+          "text": "~veg"
+        },
+        {
+          "index": 134,
+          "text": "Date"
+        },
+        {
+          "index": 135,
+          "text": "&"
+        },
+        {
+          "index": 136,
+          "text": "time"
+        },
+        {
+          "index": 137,
+          "text": "20/01/2025"
+        },
+        {
+          "index": 138,
+          "text": "12.17"
+        },
+        {
+          "index": 139,
+          "text": "with:"
+        },
+        {
+          "index": 140,
+          "text": "with"
+        },
+        {
+          "index": 141,
+          "text": "chicken"
+        },
+        {
+          "index": 142,
+          "text": "Auth"
+        },
+        {
+          "index": 143,
+          "text": "code:"
+        },
+        {
+          "index": 144,
+          "text": "031711"
+        },
+        {
+          "index": 145,
+          "text": "chicken"
+        },
+        {
+          "index": 146,
+          "text": "katsu"
+        },
+        {
+          "index": 147,
+          "text": "&"
+        },
+        {
+          "index": 148,
+          "text": "curry"
+        },
+        {
+          "index": 149,
+          "text": "sauce"
+        },
+        {
+          "index": 150,
+          "text": "(4"
+        },
+        {
+          "index": 151,
+          "text": "11.80"
+        },
+        {
+          "index": 152,
+          "text": "Payment"
+        },
+        {
+          "index": 153,
+          "text": "method"
+        },
+        {
+          "index": 154,
+          "text": "Contactless"
+        },
+        {
+          "index": 155,
+          "text": "with:"
+        },
+        {
+          "index": 156,
+          "text": "+"
+        },
+        {
+          "index": 157,
+          "text": "boiled"
+        },
+        {
+          "index": 158,
+          "text": "rice"
+        },
+        {
+          "index": 159,
+          "text": "(38W)"
+        },
+        {
+          "index": 160,
+          "text": "Verificalion"
+        },
+        {
+          "index": 161,
+          "text": "melhod"
+        },
+        {
+          "index": 162,
+          "text": "Device"
+        },
+        {
+          "index": 163,
+          "text": "THIS"
+        },
+        {
+          "index": 164,
+          "text": "FOR"
+        },
+        {
+          "index": 165,
+          "text": "YOUR"
+        },
+        {
+          "index": 166,
+          "text": "RECORDS"
+        },
+        {
+          "index": 167,
+          "text": "1"
+        },
+        {
+          "index": 168,
+          "text": "yum"
+        },
+        {
+          "index": 169,
+          "text": "yum"
+        },
+        {
+          "index": 170,
+          "text": "beef"
+        },
+        {
+          "index": 171,
+          "text": "rice"
+        },
+        {
+          "index": 172,
+          "text": "9.70"
+        },
+        {
+          "index": 173,
+          "text": "Transaction"
+        },
+        {
+          "index": 174,
+          "text": "ID:"
+        },
+        {
+          "index": 175,
+          "text": "bbdab"
+        },
+        {
+          "index": 176,
+          "text": "PLEASE"
+        },
+        {
+          "index": 177,
+          "text": "KEEP"
+        },
+        {
+          "index": 178,
+          "text": "with:"
+        },
+        {
+          "index": 179,
+          "text": "-NO"
+        },
+        {
+          "index": 180,
+          "text": "RICE"
+        },
+        {
+          "index": 181,
+          "text": "Pan:"
+        },
+        {
+          "index": 182,
+          "text": "XXXXXXXXXXXX6469"
+        },
+        {
+          "index": 183,
+          "text": "T"
+        },
+        {
+          "index": 184,
+          "text": "Sea"
+        },
+        {
+          "index": 185,
+          "text": "No:"
+        },
+        {
+          "index": 186,
+          "text": "9"
+        },
+        {
+          "index": 187,
+          "text": "1"
+        },
+        {
+          "index": 188,
+          "text": "still"
+        },
+        {
+          "index": 189,
+          "text": "water"
+        },
+        {
+          "index": 190,
+          "text": "330ml"
+        },
+        {
+          "index": 191,
+          "text": "2.80"
+        },
+        {
+          "index": 192,
+          "text": "Merchant"
+        },
+        {
+          "index": 193,
+          "text": "ID:"
+        },
+        {
+          "index": 194,
+          "text": "540436506051085"
+        },
+        {
+          "index": 195,
+          "text": "Meal"
+        },
+        {
+          "index": 196,
+          "text": "total"
+        },
+        {
+          "index": 197,
+          "text": "55.60"
+        },
+        {
+          "index": 198,
+          "text": "Processed"
+        },
+        {
+          "index": 199,
+          "text": "by"
+        },
+        {
+          "index": 200,
+          "text": "DOJO"
+        },
+        {
+          "index": 201,
+          "text": "Tran"
+        },
+        {
+          "index": 202,
+          "text": "ID:"
+        },
+        {
+          "index": 203,
+          "text": "433900010955_"
+        },
+        {
+          "index": 204,
+          "text": "{55.60"
+        },
+        {
+          "index": 205,
+          "text": "Privacy"
+        },
+        {
+          "index": 206,
+          "text": "policy"
+        },
+        {
+          "index": 207,
+          "text": "dojo"
+        },
+        {
+          "index": 208,
+          "text": "lech/legal/privacy/"
+        },
+        {
+          "index": 209,
+          "text": "Payable"
+        },
+        {
+          "index": 210,
+          "text": "AMOUNT"
+        },
+        {
+          "index": 211,
+          "text": ":"
+        },
+        {
+          "index": 212,
+          "text": "E513.63"
+        },
+        {
+          "index": 213,
+          "text": "APPROVED"
+        },
+        {
+          "index": 214,
+          "text": "MB:"
+        },
+        {
+          "index": 215,
+          "text": "E55.60"
+        },
+        {
+          "index": 216,
+          "text": "receipt#:"
+        },
+        {
+          "index": 217,
+          "text": "46"
+        },
+        {
+          "index": 218,
+          "text": "Na"
+        },
+        {
+          "index": 219,
+          "text": "CVM"
+        },
+        {
+          "index": 220,
+          "text": "products;"
+        },
+        {
+          "index": 221,
+          "text": "7"
+        },
+        {
+          "index": 222,
+          "text": "Card;VIsa"
+        },
+        {
+          "index": 223,
+          "text": "DEBIT"
+        },
+        {
+          "index": 224,
+          "text": "CTLS"
+        },
+        {
+          "index": 225,
+          "text": "EMV"
+        },
+        {
+          "index": 226,
+          "text": "Date:"
+        },
+        {
+          "index": 227,
+          "text": "15/12/2024"
+        },
+        {
+          "index": 228,
+          "text": "17.07"
+        },
+        {
+          "index": 229,
+          "text": "APPROVAL"
+        },
+        {
+          "index": 230,
+          "text": "CODE:055047"
+        },
+        {
+          "index": 231,
+          "text": "Server:"
+        },
+        {
+          "index": 232,
+          "text": "TAKEOUT"
+        },
+        {
+          "index": 233,
+          "text": "HEC"
+        },
+        {
+          "index": 234,
+          "text": "Epping"
+        },
+        {
+          "index": 235,
+          "text": "AID:"
+        },
+        {
+          "index": 236,
+          "text": "90000000031010"
+        },
+        {
+          "index": 237,
+          "text": "Take"
+        },
+        {
+          "index": 238,
+          "text": "Out"
+        },
+        {
+          "index": 239,
+          "text": "Arms"
+        },
+        {
+          "index": 240,
+          "text": "Roundabout"
+        },
+        {
+          "index": 241,
+          "text": "04/12/2024"
+        },
+        {
+          "index": 242,
+          "text": "13.20"
+        },
+        {
+          "index": 243,
+          "text": "113"
+        },
+        {
+          "index": 244,
+          "text": "10"
+        },
+        {
+          "index": 245,
+          "text": "134"
+        },
+        {
+          "index": 246,
+          "text": "148"
+        },
+        {
+          "index": 247,
+          "text": "Ch16"
+        },
+        {
+          "index": 248,
+          "text": "5HW"
+        },
+        {
+          "index": 249,
+          "text": "jack"
+        },
+        {
+          "index": 250,
+          "text": "Check"
+        },
+        {
+          "index": 251,
+          "text": "No:"
+        },
+        {
+          "index": 252,
+          "text": "12"
+        },
+        {
+          "index": 253,
+          "text": "VIsa"
+        },
+        {
+          "index": 254,
+          "text": "513.63"
+        },
+        {
+          "index": 255,
+          "text": "Date:"
+        },
+        {
+          "index": 256,
+          "text": "2025-01-17"
+        },
+        {
+          "index": 257,
+          "text": "CHANGE"
+        },
+        {
+          "index": 258,
+          "text": "0.00"
+        },
+        {
+          "index": 259,
+          "text": "service"
+        },
+        {
+          "index": 260,
+          "text": "not"
+        },
+        {
+          "index": 261,
+          "text": "included"
+        },
+        {
+          "index": 262,
+          "text": "Type:"
+        },
+        {
+          "index": 263,
+          "text": "PURCHASE"
+        },
+        {
+          "index": 264,
+          "text": "Card"
+        },
+        {
+          "index": 265,
+          "text": "Type"
+        },
+        {
+          "index": 266,
+          "text": ":"
+        },
+        {
+          "index": 267,
+          "text": "VA"
+        },
+        {
+          "index": 268,
+          "text": "thank"
+        },
+        {
+          "index": 269,
+          "text": "you"
+        },
+        {
+          "index": 270,
+          "text": "for"
+        },
+        {
+          "index": 271,
+          "text": "your"
+        },
+        {
+          "index": 272,
+          "text": "customl"
+        },
+        {
+          "index": 273,
+          "text": "Ent"
+        },
+        {
+          "index": 274,
+          "text": "3"
+        },
+        {
+          "index": 275,
+          "text": "Hode."
+        },
+        {
+          "index": 276,
+          "text": "Visa"
+        },
+        {
+          "index": 277,
+          "text": "Contactless"
+        },
+        {
+          "index": 278,
+          "text": "VAT"
+        },
+        {
+          "index": 279,
+          "text": "Code"
+        },
+        {
+          "index": 280,
+          "text": "Exc]"
+        },
+        {
+          "index": 281,
+          "text": "Vat"
+        },
+        {
+          "index": 282,
+          "text": "Vat"
+        },
+        {
+          "index": 283,
+          "text": "Acct"
+        },
+        {
+          "index": 284,
+          "text": "1"
+        },
+        {
+          "index": 285,
+          "text": "\"6469"
+        },
+        {
+          "index": 286,
+          "text": "A"
+        },
+        {
+          "index": 287,
+          "text": "20.O07"
+        },
+        {
+          "index": 288,
+          "text": "358_"
+        },
+        {
+          "index": 289,
+          "text": "63"
+        },
+        {
+          "index": 290,
+          "text": "71.72"
+        },
+        {
+          "index": 291,
+          "text": "Auth"
+        },
+        {
+          "index": 292,
+          "text": "011317"
+        },
+        {
+          "index": 293,
+          "text": "2"
+        },
+        {
+          "index": 294,
+          "text": "0.007"
+        },
+        {
+          "index": 295,
+          "text": "153.28"
+        },
+        {
+          "index": 296,
+          "text": "0.00"
+        },
+        {
+          "index": 297,
+          "text": "Subtotal"
+        },
+        {
+          "index": 298,
+          "text": ";"
+        },
+        {
+          "index": 299,
+          "text": "GBP"
+        },
+        {
+          "index": 300,
+          "text": "100"
+        },
+        {
+          "index": 301,
+          "text": ".0"
+        },
+        {
+          "index": 302,
+          "text": "Gratuity;"
+        },
+        {
+          "index": 303,
+          "text": "Kxr*"
+        },
+        {
+          "index": 304,
+          "text": "TOTAL("
+        },
+        {
+          "index": 305,
+          "text": "EXCL"
+        },
+        {
+          "index": 306,
+          "text": "VaT"
+        },
+        {
+          "index": 307,
+          "text": ")"
+        },
+        {
+          "index": 308,
+          "text": "511.91"
+        },
+        {
+          "index": 309,
+          "text": "Total"
+        },
+        {
+          "index": 310,
+          "text": "="
+        },
+        {
+          "index": 311,
+          "text": "GBP"
+        },
+        {
+          "index": 312,
+          "text": "0.OC"
+        },
+        {
+          "index": 313,
+          "text": "71.72"
+        },
+        {
+          "index": 314,
+          "text": "GBP"
+        },
+        {
+          "index": 315,
+          "text": "100"
+        },
+        {
+          "index": 316,
+          "text": "."
+        },
+        {
+          "index": 317,
+          "text": "OC"
+        },
+        {
+          "index": 318,
+          "text": "Vat"
+        },
+        {
+          "index": 319,
+          "text": "Amount"
+        },
+        {
+          "index": 320,
+          "text": "4m"
+        },
+        {
+          "index": 321,
+          "text": "EMV"
+        },
+        {
+          "index": 322,
+          "text": "PURCHASE"
+        },
+        {
+          "index": 323,
+          "text": "TOTAL"
+        },
+        {
+          "index": 324,
+          "text": "NUMBER"
+        },
+        {
+          "index": 325,
+          "text": "OF"
+        },
+        {
+          "index": 326,
+          "text": "ITEMS"
+        },
+        {
+          "index": 327,
+          "text": "SOLD"
+        },
+        {
+          "index": 328,
+          "text": "40"
+        },
+        {
+          "index": 329,
+          "text": "App"
+        },
+        {
+          "index": 330,
+          "text": "Label"
+        },
+        {
+          "index": 331,
+          "text": "DEBIT"
+        },
+        {
+          "index": 332,
+          "text": "SavIngs:"
+        },
+        {
+          "index": 333,
+          "text": "E20.50"
+        },
+        {
+          "index": 334,
+          "text": "6"
+        },
+        {
+          "index": 335,
+          "text": "Couponl"
+        },
+        {
+          "index": 336,
+          "text": "s"
+        },
+        {
+          "index": 337,
+          "text": ")"
+        },
+        {
+          "index": 338,
+          "text": "NORTH"
+        },
+        {
+          "index": 339,
+          "text": "CTRCULAR"
+        },
+        {
+          "index": 340,
+          "text": "GOLF"
+        },
+        {
+          "index": 341,
+          "text": "Ad:"
+        },
+        {
+          "index": 342,
+          "text": ","
+        },
+        {
+          "index": 343,
+          "text": "Issuer"
+        },
+        {
+          "index": 344,
+          "text": "044742024"
+        },
+        {
+          "index": 345,
+          "text": "13:20"
+        },
+        {
+          "index": 346,
+          "text": "113"
+        },
+        {
+          "index": 347,
+          "text": "10"
+        },
+        {
+          "index": 348,
+          "text": "134"
+        },
+        {
+          "index": 349,
+          "text": "148"
+        },
+        {
+          "index": 350,
+          "text": "75"
+        },
+        {
+          "index": 351,
+          "text": "HILLGROVE"
+        },
+        {
+          "index": 352,
+          "text": "BUS"
+        },
+        {
+          "index": 353,
+          "text": "INESS"
+        },
+        {
+          "index": 354,
+          "text": "PK"
+        },
+        {
+          "index": 355,
+          "text": "AR:"
+        },
+        {
+          "index": 356,
+          "text": "Goooooooo3ioio"
+        },
+        {
+          "index": 357,
+          "text": "NAZEING"
+        },
+        {
+          "index": 358,
+          "text": "ROAD"
+        },
+        {
+          "index": 359,
+          "text": "ESSEX"
+        },
+        {
+          "index": 360,
+          "text": "IAD:"
+        },
+        {
+          "index": 361,
+          "text": "an"
+        },
+        {
+          "index": 362,
+          "text": "executive"
+        },
+        {
+          "index": 363,
+          "text": "member"
+        },
+        {
+          "index": 364,
+          "text": "ENg"
+        },
+        {
+          "index": 365,
+          "text": "2HB"
+        },
+        {
+          "index": 366,
+          "text": "01992"
+        },
+        {
+          "index": 367,
+          "text": "893241"
+        },
+        {
+          "index": 368,
+          "text": "1F426332A0OOOOOC"
+        },
+        {
+          "index": 369,
+          "text": "1302730000000040"
+        },
+        {
+          "index": 370,
+          "text": "Congratulatlons"
+        },
+        {
+          "index": 371,
+          "text": "as"
+        },
+        {
+          "index": 372,
+          "text": "Oooodooooooooooo_ooooooooooo"
+        },
+        {
+          "index": 373,
+          "text": "You"
+        },
+        {
+          "index": 374,
+          "text": "have"
+        },
+        {
+          "index": 375,
+          "text": "earned"
+        },
+        {
+          "index": 376,
+          "text": "E10.23"
+        },
+        {
+          "index": 377,
+          "text": "towards"
+        },
+        {
+          "index": 378,
+          "text": "your"
+        },
+        {
+          "index": 379,
+          "text": "REG"
+        },
+        {
+          "index": 380,
+          "text": "28-08"
+        },
+        {
+          "index": 381,
+          "text": "2024"
+        },
+        {
+          "index": 382,
+          "text": "11:00"
+        },
+        {
+          "index": 383,
+          "text": "TSI;"
+        },
+        {
+          "index": 384,
+          "text": "annual"
+        },
+        {
+          "index": 385,
+          "text": "executIve"
+        },
+        {
+          "index": 386,
+          "text": "reward."
+        },
+        {
+          "index": 387,
+          "text": "004241"
+        },
+        {
+          "index": 388,
+          "text": "ARC;"
+        },
+        {
+          "index": 389,
+          "text": "00"
+        },
+        {
+          "index": 390,
+          "text": "Ive"
+        },
+        {
+          "index": 391,
+          "text": "member"
+        },
+        {
+          "index": 392,
+          "text": "2"
+        },
+        {
+          "index": 393,
+          "text": "PSN:"
+        },
+        {
+          "index": 394,
+          "text": "00"
+        },
+        {
+          "index": 395,
+          "text": "Not"
+        },
+        {
+          "index": 396,
+          "text": "an"
+        },
+        {
+          "index": 397,
+          "text": "execut"
+        },
+        {
+          "index": 398,
+          "text": "1"
+        },
+        {
+          "index": 399,
+          "text": "DEPOSTT"
+        },
+        {
+          "index": 400,
+          "text": "200"
+        },
+        {
+          "index": 401,
+          "text": "."
+        },
+        {
+          "index": 402,
+          "text": "00"
+        },
+        {
+          "index": 403,
+          "text": "CVM;"
+        },
+        {
+          "index": 404,
+          "text": "1F0001"
+        },
+        {
+          "index": 405,
+          "text": "VIst"
+        },
+        {
+          "index": 406,
+          "text": "our"
+        },
+        {
+          "index": 407,
+          "text": "Membershle"
+        },
+        {
+          "index": 408,
+          "text": "Desk"
+        },
+        {
+          "index": 409,
+          "text": "TL"
+        },
+        {
+          "index": 410,
+          "text": "200"
+        },
+        {
+          "index": 411,
+          "text": "Oo"
+        },
+        {
+          "index": 412,
+          "text": "ATC:"
+        },
+        {
+          "index": 413,
+          "text": "0158"
+        },
+        {
+          "index": 414,
+          "text": "to"
+        },
+        {
+          "index": 415,
+          "text": "Learn"
+        },
+        {
+          "index": 416,
+          "text": "More"
+        },
+        {
+          "index": 417,
+          "text": "."
+        },
+        {
+          "index": 418,
+          "text": "CASH"
+        },
+        {
+          "index": 419,
+          "text": "200"
+        },
+        {
+          "index": 420,
+          "text": "UO"
+        },
+        {
+          "index": 421,
+          "text": "TT;"
+        },
+        {
+          "index": 422,
+          "text": "00"
+        },
+        {
+          "index": 423,
+          "text": "AC;"
+        },
+        {
+          "index": 424,
+          "text": "SSCAEBEEFZCAGDAB"
+        },
+        {
+          "index": 425,
+          "text": "Jack"
+        },
+        {
+          "index": 426,
+          "text": "DANCE"
+        },
+        {
+          "index": 427,
+          "text": "VA"
+        },
+        {
+          "index": 428,
+          "text": "|"
+        },
+        {
+          "index": 429,
+          "text": "NO"
+        },
+        {
+          "index": 430,
+          "text": "589"
+        },
+        {
+          "index": 431,
+          "text": "895"
+        },
+        {
+          "index": 432,
+          "text": "540"
+        },
+        {
+          "index": 433,
+          "text": "CID;"
+        },
+        {
+          "index": 434,
+          "text": "80"
+        },
+        {
+          "index": 435,
+          "text": "FOREST"
+        },
+        {
+          "index": 436,
+          "text": "CAR"
+        },
+        {
+          "index": 437,
+          "text": "COMPANY"
+        },
+        {
+          "index": 438,
+          "text": "LTD"
+        },
+        {
+          "index": 439,
+          "text": "sales@northcirculargo|"
+        },
+        {
+          "index": 440,
+          "text": "f"
+        },
+        {
+          "index": 441,
+          "text": "CROWN"
+        },
+        {
+          "index": 442,
+          "text": "HILL"
+        },
+        {
+          "index": 443,
+          "text": "FARM"
+        },
+        {
+          "index": 444,
+          "text": "HOUSE"
+        },
+        {
+          "index": 445,
+          "text": "co:Uk"
+        },
+        {
+          "index": 446,
+          "text": "We"
+        },
+        {
+          "index": 447,
+          "text": "would"
+        },
+        {
+          "index": 448,
+          "text": "to"
+        },
+        {
+          "index": 449,
+          "text": "hear"
+        },
+        {
+          "index": 450,
+          "text": "vour"
+        },
+        {
+          "index": 451,
+          "text": "thoughts"
+        },
+        {
+          "index": 452,
+          "text": "WALTHAM"
+        },
+        {
+          "index": 453,
+          "text": "ABBEY"
+        },
+        {
+          "index": 454,
+          "text": "HTV"
+        },
+        {
+          "index": 455,
+          "text": "inrestsurvey"
+        },
+        {
+          "index": 456,
+          "text": "Co"
+        },
+        {
+          "index": 457,
+          "text": "uk"
+        },
+        {
+          "index": 458,
+          "text": "Jaoureraodcarteat"
+        },
+        {
+          "index": 459,
+          "text": "ler"
+        },
+        {
+          "index": 460,
+          "text": "&"
+        },
+        {
+          "index": 461,
+          "text": "Carter"
+        },
+        {
+          "index": 462,
+          "text": "of"
+        },
+        {
+          "index": 463,
+          "text": "Steak"
+        },
+        {
+          "index": 464,
+          "text": "Club"
+        },
+        {
+          "index": 465,
+          "text": "Shon"
+        },
+        {
+          "index": 466,
+          "text": "vour"
+        },
+        {
+          "index": 467,
+          "text": "%9"
+        },
+        {
+          "index": 468,
+          "text": "t9"
+        },
+        {
+          "index": 469,
+          "text": "Servers"
+        },
+        {
+          "index": 470,
+          "text": "to"
+        },
+        {
+          "index": 471,
+          "text": "acd"
+        },
+        {
+          "index": 472,
+          "text": "points"
+        },
+        {
+          "index": 473,
+          "text": "Tel"
+        },
+        {
+          "index": 474,
+          "text": "01992"
+        },
+        {
+          "index": 475,
+          "text": "814"
+        },
+        {
+          "index": 476,
+          "text": "807"
+        },
+        {
+          "index": 477,
+          "text": "EN9"
+        },
+        {
+          "index": 478,
+          "text": "3TF"
+        },
+        {
+          "index": 479,
+          "text": "CUSTOHER"
+        },
+        {
+          "index": 480,
+          "text": "Copv"
+        },
+        {
+          "index": 481,
+          "text": "Wake"
+        },
+        {
+          "index": 482,
+          "text": "Trans"
+        },
+        {
+          "index": 483,
+          "text": "14,23"
+        },
+        {
+          "index": 484,
+          "text": "11"
+        },
+        {
+          "index": 485,
+          "text": "Trans"
+        },
+        {
+          "index": 486,
+          "text": "Code:"
+        },
+        {
+          "index": 487,
+          "text": "Visa"
+        },
+        {
+          "index": 488,
+          "text": "love"
+        },
+        {
+          "index": 489,
+          "text": "Hasters"
+        }
+      ],
+      "all_words": [
+        "CoOStco",
+        "mui",
+        "&",
+        "koko",
+        "noodle",
+        "bar",
+        "EWHOLESALE",
+        "restaurant",
+        "Crown",
+        "Gate",
+        "Harleys",
+        "bistro",
+        "and",
+        "lounge",
+        "Chirgford",
+        "Warehouse",
+        "(0208",
+        "501",
+        "9305",
+        ")",
+        "CM2O",
+        "1FL",
+        "Cm1g",
+        "4AQ",
+        "Costco",
+        "Wholesale",
+        "UK",
+        "Linited",
+        "KING\"",
+        "DU",
+        "comedny",
+        "MID:",
+        "*****21613",
+        "UK",
+        "Home",
+        "Off",
+        "Ice,",
+        "HartsprIng",
+        "Lane",
+        "4tt",
+        "5624",
+        "Watford,",
+        "Herts_",
+        "WD25",
+        "8JS",
+        "Harlow,",
+        "Essex",
+        "TID:",
+        "Reg",
+        "in",
+        "England",
+        "No:",
+        "2635489",
+        "VAT",
+        "195",
+        "2487",
+        "71",
+        "AWRS",
+        "No:",
+        "Xvawooooo1",
+        "02593",
+        "Visa",
+        "debit",
+        "VaT",
+        "No:",
+        "650",
+        "1862",
+        "52",
+        "tel:",
+        "01279",
+        "450456",
+        "453066",
+        "Caru",
+        "n0:",
+        "Unn",
+        "'6469",
+        "open",
+        "daily",
+        "from",
+        "13Qam",
+        "FAN",
+        "seq:",
+        "no_",
+        "00",
+        "'C",
+        "Trade",
+        "98180824510",
+        "AID:",
+        "A0000000031010",
+        "DISNEY",
+        "DOLL",
+        "Qty",
+        "item",
+        "Sub-Total",
+        "No",
+        "Ot",
+        "Ttems",
+        "ZO",
+        "Sale",
+        "#*r*",
+        "TOTAL(",
+        "INCL",
+        "VaT",
+        ")",
+        "LjK36r1",
+        "1",
+        "salt&",
+        "pepper",
+        "chicken",
+        "8,10",
+        "Amount",
+        "F39.10",
+        "CASH",
+        "70",
+        ".",
+        "00",
+        "pork",
+        "spring",
+        "rolls",
+        "6.30",
+        "Total:",
+        "E39.10",
+        "salt",
+        "&",
+        "pepper",
+        "Ribs",
+        "9.30",
+        "plain",
+        "fried",
+        "noodles",
+        "7.60",
+        "APPROVED",
+        "~veg",
+        "Date",
+        "&",
+        "time",
+        "20/01/2025",
+        "12.17",
+        "with:",
+        "with",
+        "chicken",
+        "Auth",
+        "code:",
+        "031711",
+        "chicken",
+        "katsu",
+        "&",
+        "curry",
+        "sauce",
+        "(4",
+        "11.80",
+        "Payment",
+        "method",
+        "Contactless",
+        "with:",
+        "+",
+        "boiled",
+        "rice",
+        "(38W)",
+        "Verificalion",
+        "melhod",
+        "Device",
+        "THIS",
+        "FOR",
+        "YOUR",
+        "RECORDS",
+        "1",
+        "yum",
+        "yum",
+        "beef",
+        "rice",
+        "9.70",
+        "Transaction",
+        "ID:",
+        "bbdab",
+        "PLEASE",
+        "KEEP",
+        "with:",
+        "-NO",
+        "RICE",
+        "Pan:",
+        "XXXXXXXXXXXX6469",
+        "T",
+        "Sea",
+        "No:",
+        "9",
+        "1",
+        "still",
+        "water",
+        "330ml",
+        "2.80",
+        "Merchant",
+        "ID:",
+        "540436506051085",
+        "Meal",
+        "total",
+        "55.60",
+        "Processed",
+        "by",
+        "DOJO",
+        "Tran",
+        "ID:",
+        "433900010955_",
+        "{55.60",
+        "Privacy",
+        "policy",
+        "dojo",
+        "lech/legal/privacy/",
+        "Payable",
+        "AMOUNT",
+        ":",
+        "E513.63",
+        "APPROVED",
+        "MB:",
+        "E55.60",
+        "receipt#:",
+        "46",
+        "Na",
+        "CVM",
+        "products;",
+        "7",
+        "Card;VIsa",
+        "DEBIT",
+        "CTLS",
+        "EMV",
+        "Date:",
+        "15/12/2024",
+        "17.07",
+        "APPROVAL",
+        "CODE:055047",
+        "Server:",
+        "TAKEOUT",
+        "HEC",
+        "Epping",
+        "AID:",
+        "90000000031010",
+        "Take",
+        "Out",
+        "Arms",
+        "Roundabout",
+        "04/12/2024",
+        "13.20",
+        "113",
+        "10",
+        "134",
+        "148",
+        "Ch16",
+        "5HW",
+        "jack",
+        "Check",
+        "No:",
+        "12",
+        "VIsa",
+        "513.63",
+        "Date:",
+        "2025-01-17",
+        "CHANGE",
+        "0.00",
+        "service",
+        "not",
+        "included",
+        "Type:",
+        "PURCHASE",
+        "Card",
+        "Type",
+        ":",
+        "VA",
+        "thank",
+        "you",
+        "for",
+        "your",
+        "customl",
+        "Ent",
+        "3",
+        "Hode.",
+        "Visa",
+        "Contactless",
+        "VAT",
+        "Code",
+        "Exc]",
+        "Vat",
+        "Vat",
+        "Acct",
+        "1",
+        "\"6469",
+        "A",
+        "20.O07",
+        "358_",
+        "63",
+        "71.72",
+        "Auth",
+        "011317",
+        "2",
+        "0.007",
+        "153.28",
+        "0.00",
+        "Subtotal",
+        ";",
+        "GBP",
+        "100",
+        ".0",
+        "Gratuity;",
+        "Kxr*",
+        "TOTAL(",
+        "EXCL",
+        "VaT",
+        ")",
+        "511.91",
+        "Total",
+        "=",
+        "GBP",
+        "0.OC",
+        "71.72",
+        "GBP",
+        "100",
+        ".",
+        "OC",
+        "Vat",
+        "Amount",
+        "4m",
+        "EMV",
+        "PURCHASE",
+        "TOTAL",
+        "NUMBER",
+        "OF",
+        "ITEMS",
+        "SOLD",
+        "40",
+        "App",
+        "Label",
+        "DEBIT",
+        "SavIngs:",
+        "E20.50",
+        "6",
+        "Couponl",
+        "s",
+        ")",
+        "NORTH",
+        "CTRCULAR",
+        "GOLF",
+        "Ad:",
+        ",",
+        "Issuer",
+        "044742024",
+        "13:20",
+        "113",
+        "10",
+        "134",
+        "148",
+        "75",
+        "HILLGROVE",
+        "BUS",
+        "INESS",
+        "PK",
+        "AR:",
+        "Goooooooo3ioio",
+        "NAZEING",
+        "ROAD",
+        "ESSEX",
+        "IAD:",
+        "an",
+        "executive",
+        "member",
+        "ENg",
+        "2HB",
+        "01992",
+        "893241",
+        "1F426332A0OOOOOC",
+        "1302730000000040",
+        "Congratulatlons",
+        "as",
+        "Oooodooooooooooo_ooooooooooo",
+        "You",
+        "have",
+        "earned",
+        "E10.23",
+        "towards",
+        "your",
+        "REG",
+        "28-08",
+        "2024",
+        "11:00",
+        "TSI;",
+        "annual",
+        "executIve",
+        "reward.",
+        "004241",
+        "ARC;",
+        "00",
+        "Ive",
+        "member",
+        "2",
+        "PSN:",
+        "00",
+        "Not",
+        "an",
+        "execut",
+        "1",
+        "DEPOSTT",
+        "200",
+        ".",
+        "00",
+        "CVM;",
+        "1F0001",
+        "VIst",
+        "our",
+        "Membershle",
+        "Desk",
+        "TL",
+        "200",
+        "Oo",
+        "ATC:",
+        "0158",
+        "to",
+        "Learn",
+        "More",
+        ".",
+        "CASH",
+        "200",
+        "UO",
+        "TT;",
+        "00",
+        "AC;",
+        "SSCAEBEEFZCAGDAB",
+        "Jack",
+        "DANCE",
+        "VA",
+        "|",
+        "NO",
+        "589",
+        "895",
+        "540",
+        "CID;",
+        "80",
+        "FOREST",
+        "CAR",
+        "COMPANY",
+        "LTD",
+        "sales@northcirculargo|",
+        "f",
+        "CROWN",
+        "HILL",
+        "FARM",
+        "HOUSE",
+        "co:Uk",
+        "We",
+        "would",
+        "to",
+        "hear",
+        "vour",
+        "thoughts",
+        "WALTHAM",
+        "ABBEY",
+        "HTV",
+        "inrestsurvey",
+        "Co",
+        "uk",
+        "Jaoureraodcarteat",
+        "ler",
+        "&",
+        "Carter",
+        "of",
+        "Steak",
+        "Club",
+        "Shon",
+        "vour",
+        "%9",
+        "t9",
+        "Servers",
+        "to",
+        "acd",
+        "points",
+        "Tel",
+        "01992",
+        "814",
+        "807",
+        "EN9",
+        "3TF",
+        "CUSTOHER",
+        "Copv",
+        "Wake",
+        "Trans",
+        "14,23",
+        "11",
+        "Trans",
+        "Code:",
+        "Visa",
+        "love",
+        "Hasters"
+      ],
+      "ocr_items": [],
+      "ocr_debug": {
+        "lighton_error": "",
+        "easyocr_error": "",
+        "tesseract_error": "",
+        "lighton_raw_len": 0,
+        "easyocr_items": 0,
+        "cleaned_len": 2819
+      },
+      "detections": [],
+      "receipts": [
+        {
+          "index": 1,
+          "page_index": 1,
+          "bbox": null,
+          "engine": "easyocr",
+          "raw_output": "CoOStco mui & koko noodle bar EWHOLESALE restaurant Crown Gate Harleys bistro and lounge Chirgford Warehouse (0208 501 9305 ) CM2O 1FL Cm1g 4AQ Costco Wholesale UK Linited KING\" DU comedny MID: *****21613 UK Home Off Ice, HartsprIng Lane 4tt 5624 Watford, Herts_ WD25 8JS Harlow, Essex TID: Reg in England No: 2635489 VAT 195 2487 71 AWRS No: Xvawooooo1 02593 Visa debit VaT No: 650 1862 52 tel: 01279 450456 453066 Caru n0: Unn '6469 open daily from 13Qam FAN seq: no_ 00 'C Trade 98180824510 AID: A0000000031010 DISNEY DOLL Qty item Sub-Total No Ot Ttems ZO Sale #*r* TOTAL( INCL VaT ) LjK36r1 1 salt& pepper chicken 8,10 Amount F39.10 CASH 70 . 00 pork spring rolls 6.30 Total: E39.10 salt & pepper Ribs 9.30 plain fried noodles 7.60 APPROVED ~veg Date & time 20/01/2025 12.17 with: with chicken Auth code: 031711 chicken katsu & curry sauce (4 11.80 Payment method Contactless with: + boiled rice (38W) Verificalion melhod Device THIS FOR YOUR RECORDS 1 yum yum beef rice 9.70 Transaction ID: bbdab PLEASE KEEP with: -NO RICE Pan: XXXXXXXXXXXX6469 T Sea No: 9 1 still water 330ml 2.80 Merchant ID: 540436506051085 Meal total 55.60 Processed by DOJO Tran ID: 433900010955_ {55.60 Privacy policy dojo lech/legal/privacy/ Payable AMOUNT : E513.63 APPROVED MB: E55.60 receipt#: 46 Na CVM products; 7 Card;VIsa DEBIT CTLS EMV Date: 15/12/2024 17.07 APPROVAL CODE:055047 Server: TAKEOUT HEC Epping AID: 90000000031010 Take Out Arms Roundabout 04/12/2024 13.20 113 10 134 148 Ch16 5HW jack Check No: 12 VIsa 513.63 Date: 2025-01-17 CHANGE 0.00 service not included Type: PURCHASE Card Type : VA thank you for your customl Ent 3 Hode. Visa Contactless VAT Code Exc] Vat Vat Acct 1 \"6469 A 20.O07 358_ 63 71.72 Auth 011317 2 0.007 153.28 0.00 Subtotal ; GBP 100 .0 Gratuity; Kxr* TOTAL( EXCL VaT ) 511.91 Total = GBP 0.OC 71.72 GBP 100 . OC Vat Amount 4m EMV PURCHASE TOTAL NUMBER OF ITEMS SOLD 40 App Label DEBIT SavIngs: E20.50 6 Couponl s ) NORTH CTRCULAR GOLF Ad: , Issuer 044742024 13:20 113 10 134 148 75 HILLGROVE BUS INESS PK AR: Goooooooo3ioio NAZEING ROAD ESSEX IAD: an executive member ENg 2HB 01992 893241 1F426332A0OOOOOC 1302730000000040 Congratulatlons as Oooodooooooooooo_ooooooooooo You have earned E10.23 towards your REG 28-08 2024 11:00 TSI; annual executIve reward. 004241 ARC; 00 Ive member 2 PSN: 00 Not an execut 1 DEPOSTT 200 . 00 CVM; 1F0001 VIst our Membershle Desk TL 200 Oo ATC: 0158 to Learn More . CASH 200 UO TT; 00 AC; SSCAEBEEFZCAGDAB Jack DANCE VA | NO 589 895 540 CID; 80 FOREST CAR COMPANY LTD sales@northcirculargo| f CROWN HILL FARM HOUSE co:Uk We would to hear vour thoughts WALTHAM ABBEY HTV inrestsurvey Co uk Jaoureraodcarteat ler & Carter of Steak Club Shon vour %9 t9 Servers to acd points Tel 01992 814 807 EN9 3TF CUSTOHER Copv Wake Trans 14,23 11 Trans Code: Visa love Hasters",
+          "cleaned_text": "CoOStco mui & koko noodle bar EWHOLESALE restaurant Crown Gate Harleys bistro and lounge Chirgford Warehouse (0208 501 9305 ) CM2O 1FL Cm1g 4AQ Costco Wholesale UK Linited KING\" DU comedny MID: *****21613 UK Home Off Ice, HartsprIng Lane 4tt 5624 Watford, Herts_ WD25 8JS Harlow, Essex TID: Reg in England No: 2635489 VAT 195 2487 71 AWRS No: Xvawooooo1 02593 Visa debit VaT No: 650 1862 52 tel: 01279 450456 453066 Caru n0: Unn '6469 open daily from 13Qam FAN seq: no_ 00 'C Trade 98180824510 AID: A0000000031010 DISNEY DOLL Qty item Sub-Total No Ot Ttems ZO Sale #*r* TOTAL( INCL VaT ) LjK36r1 1 salt& pepper chicken 8,10 Amount F39.10 CASH 70 . 00 pork spring rolls 6.30 Total: E39.10 salt & pepper Ribs 9.30 plain fried noodles 7.60 APPROVED ~veg Date & time 20/01/2025 12.17 with: with chicken Auth code: 031711 chicken katsu & curry sauce (4 11.80 Payment method Contactless with: + boiled rice (38W) Verificalion melhod Device THIS FOR YOUR RECORDS 1 yum yum beef rice 9.70 Transaction ID: bbdab PLEASE KEEP with: -NO RICE Pan: XXXXXXXXXXXX6469 T Sea No: 9 1 still water 330ml 2.80 Merchant ID: 540436506051085 Meal total 55.60 Processed by DOJO Tran ID: 433900010955_ {55.60 Privacy policy dojo lech/legal/privacy/ Payable AMOUNT : E513.63 APPROVED MB: E55.60 receipt#: 46 Na CVM products; 7 Card;VIsa DEBIT CTLS EMV Date: 15/12/2024 17.07 APPROVAL CODE:055047 Server: TAKEOUT HEC Epping AID: 90000000031010 Take Out Arms Roundabout 04/12/2024 13.20 113 10 134 148 Ch16 5HW jack Check No: 12 VIsa 513.63 Date: 2025-01-17 CHANGE 0.00 service not included Type: PURCHASE Card Type : VA thank you for your customl Ent 3 Hode. Visa Contactless VAT Code Exc] Vat Vat Acct 1 \"6469 A 20.O07 358_ 63 71.72 Auth 011317 2 0.007 153.28 0.00 Subtotal ; GBP 100 .0 Gratuity; Kxr* TOTAL( EXCL VaT ) 511.91 Total = GBP 0.OC 71.72 GBP 100 . OC Vat Amount 4m EMV PURCHASE TOTAL NUMBER OF ITEMS SOLD 40 App Label DEBIT SavIngs: E20.50 6 Couponl s ) NORTH CTRCULAR GOLF Ad: , Issuer 044742024 13:20 113 10 134 148 75 HILLGROVE BUS INESS PK AR: Goooooooo3ioio NAZEING ROAD ESSEX IAD: an executive member ENg 2HB 01992 893241 1F426332A0OOOOOC 1302730000000040 Congratulatlons as Oooodooooooooooo_ooooooooooo You have earned E10.23 towards your REG 28-08 2024 11:00 TSI; annual executIve reward. 004241 ARC; 00 Ive member 2 PSN: 00 Not an execut 1 DEPOSTT 200 . 00 CVM; 1F0001 VIst our Membershle Desk TL 200 Oo ATC: 0158 to Learn More . CASH 200 UO TT; 00 AC; SSCAEBEEFZCAGDAB Jack DANCE VA | NO 589 895 540 CID; 80 FOREST CAR COMPANY LTD sales@northcirculargo| f CROWN HILL FARM HOUSE co:Uk We would to hear vour thoughts WALTHAM ABBEY HTV inrestsurvey Co uk Jaoureraodcarteat ler & Carter of Steak Club Shon vour %9 t9 Servers to acd points Tel 01992 814 807 EN9 3TF CUSTOHER Copv Wake Trans 14,23 11 Trans Code: Visa love Hasters",
+          "lines": [
+            {
+              "index": 1,
+              "text": "CoOStco mui & koko noodle bar EWHOLESALE restaurant Crown Gate Harleys bistro and lounge Chirgford Warehouse (0208 501 9305 ) CM2O 1FL Cm1g 4AQ Costco Wholesale UK Linited KING\" DU comedny MID: *****21613 UK Home Off Ice, HartsprIng Lane 4tt 5624 Watford, Herts_ WD25 8JS Harlow, Essex TID: Reg in England No: 2635489 VAT 195 2487 71 AWRS No: Xvawooooo1 02593 Visa debit VaT No: 650 1862 52 tel: 01279 450456 453066 Caru n0: Unn '6469 open daily from 13Qam FAN seq: no_ 00 'C Trade 98180824510 AID: A0000000031010 DISNEY DOLL Qty item Sub-Total No Ot Ttems ZO Sale #*r* TOTAL( INCL VaT ) LjK36r1 1 salt& pepper chicken 8,10 Amount F39.10 CASH 70 . 00 pork spring rolls 6.30 Total: E39.10 salt & pepper Ribs 9.30 plain fried noodles 7.60 APPROVED ~veg Date & time 20/01/2025 12.17 with: with chicken Auth code: 031711 chicken katsu & curry sauce (4 11.80 Payment method Contactless with: + boiled rice (38W) Verificalion melhod Device THIS FOR YOUR RECORDS 1 yum yum beef rice 9.70 Transaction ID: bbdab PLEASE KEEP with: -NO RICE Pan: XXXXXXXXXXXX6469 T Sea No: 9 1 still water 330ml 2.80 Merchant ID: 540436506051085 Meal total 55.60 Processed by DOJO Tran ID: 433900010955_ {55.60 Privacy policy dojo lech/legal/privacy/ Payable AMOUNT : E513.63 APPROVED MB: E55.60 receipt#: 46 Na CVM products; 7 Card;VIsa DEBIT CTLS EMV Date: 15/12/2024 17.07 APPROVAL CODE:055047 Server: TAKEOUT HEC Epping AID: 90000000031010 Take Out Arms Roundabout 04/12/2024 13.20 113 10 134 148 Ch16 5HW jack Check No: 12 VIsa 513.63 Date: 2025-01-17 CHANGE 0.00 service not included Type: PURCHASE Card Type : VA thank you for your customl Ent 3 Hode. Visa Contactless VAT Code Exc] Vat Vat Acct 1 \"6469 A 20.O07 358_ 63 71.72 Auth 011317 2 0.007 153.28 0.00 Subtotal ; GBP 100 .0 Gratuity; Kxr* TOTAL( EXCL VaT ) 511.91 Total = GBP 0.OC 71.72 GBP 100 . OC Vat Amount 4m EMV PURCHASE TOTAL NUMBER OF ITEMS SOLD 40 App Label DEBIT SavIngs: E20.50 6 Couponl s ) NORTH CTRCULAR GOLF Ad: , Issuer 044742024 13:20 113 10 134 148 75 HILLGROVE BUS INESS PK AR: Goooooooo3ioio NAZEING ROAD ESSEX IAD: an executive member ENg 2HB 01992 893241 1F426332A0OOOOOC 1302730000000040 Congratulatlons as Oooodooooooooooo_ooooooooooo You have earned E10.23 towards your REG 28-08 2024 11:00 TSI; annual executIve reward. 004241 ARC; 00 Ive member 2 PSN: 00 Not an execut 1 DEPOSTT 200 . 00 CVM; 1F0001 VIst our Membershle Desk TL 200 Oo ATC: 0158 to Learn More . CASH 200 UO TT; 00 AC; SSCAEBEEFZCAGDAB Jack DANCE VA | NO 589 895 540 CID; 80 FOREST CAR COMPANY LTD sales@northcirculargo| f CROWN HILL FARM HOUSE co:Uk We would to hear vour thoughts WALTHAM ABBEY HTV inrestsurvey Co uk Jaoureraodcarteat ler & Carter of Steak Club Shon vour %9 t9 Servers to acd points Tel 01992 814 807 EN9 3TF CUSTOHER Copv Wake Trans 14,23 11 Trans Code: Visa love Hasters"
+            }
+          ],
+          "words": [
+            {
+              "index": 1,
+              "text": "CoOStco"
+            },
+            {
+              "index": 2,
+              "text": "mui"
+            },
+            {
+              "index": 3,
+              "text": "&"
+            },
+            {
+              "index": 4,
+              "text": "koko"
+            },
+            {
+              "index": 5,
+              "text": "noodle"
+            },
+            {
+              "index": 6,
+              "text": "bar"
+            },
+            {
+              "index": 7,
+              "text": "EWHOLESALE"
+            },
+            {
+              "index": 8,
+              "text": "restaurant"
+            },
+            {
+              "index": 9,
+              "text": "Crown"
+            },
+            {
+              "index": 10,
+              "text": "Gate"
+            },
+            {
+              "index": 11,
+              "text": "Harleys"
+            },
+            {
+              "index": 12,
+              "text": "bistro"
+            },
+            {
+              "index": 13,
+              "text": "and"
+            },
+            {
+              "index": 14,
+              "text": "lounge"
+            },
+            {
+              "index": 15,
+              "text": "Chirgford"
+            },
+            {
+              "index": 16,
+              "text": "Warehouse"
+            },
+            {
+              "index": 17,
+              "text": "(0208"
+            },
+            {
+              "index": 18,
+              "text": "501"
+            },
+            {
+              "index": 19,
+              "text": "9305"
+            },
+            {
+              "index": 20,
+              "text": ")"
+            },
+            {
+              "index": 21,
+              "text": "CM2O"
+            },
+            {
+              "index": 22,
+              "text": "1FL"
+            },
+            {
+              "index": 23,
+              "text": "Cm1g"
+            },
+            {
+              "index": 24,
+              "text": "4AQ"
+            },
+            {
+              "index": 25,
+              "text": "Costco"
+            },
+            {
+              "index": 26,
+              "text": "Wholesale"
+            },
+            {
+              "index": 27,
+              "text": "UK"
+            },
+            {
+              "index": 28,
+              "text": "Linited"
+            },
+            {
+              "index": 29,
+              "text": "KING\""
+            },
+            {
+              "index": 30,
+              "text": "DU"
+            },
+            {
+              "index": 31,
+              "text": "comedny"
+            },
+            {
+              "index": 32,
+              "text": "MID:"
+            },
+            {
+              "index": 33,
+              "text": "*****21613"
+            },
+            {
+              "index": 34,
+              "text": "UK"
+            },
+            {
+              "index": 35,
+              "text": "Home"
+            },
+            {
+              "index": 36,
+              "text": "Off"
+            },
+            {
+              "index": 37,
+              "text": "Ice,"
+            },
+            {
+              "index": 38,
+              "text": "HartsprIng"
+            },
+            {
+              "index": 39,
+              "text": "Lane"
+            },
+            {
+              "index": 40,
+              "text": "4tt"
+            },
+            {
+              "index": 41,
+              "text": "5624"
+            },
+            {
+              "index": 42,
+              "text": "Watford,"
+            },
+            {
+              "index": 43,
+              "text": "Herts_"
+            },
+            {
+              "index": 44,
+              "text": "WD25"
+            },
+            {
+              "index": 45,
+              "text": "8JS"
+            },
+            {
+              "index": 46,
+              "text": "Harlow,"
+            },
+            {
+              "index": 47,
+              "text": "Essex"
+            },
+            {
+              "index": 48,
+              "text": "TID:"
+            },
+            {
+              "index": 49,
+              "text": "Reg"
+            },
+            {
+              "index": 50,
+              "text": "in"
+            },
+            {
+              "index": 51,
+              "text": "England"
+            },
+            {
+              "index": 52,
+              "text": "No:"
+            },
+            {
+              "index": 53,
+              "text": "2635489"
+            },
+            {
+              "index": 54,
+              "text": "VAT"
+            },
+            {
+              "index": 55,
+              "text": "195"
+            },
+            {
+              "index": 56,
+              "text": "2487"
+            },
+            {
+              "index": 57,
+              "text": "71"
+            },
+            {
+              "index": 58,
+              "text": "AWRS"
+            },
+            {
+              "index": 59,
+              "text": "No:"
+            },
+            {
+              "index": 60,
+              "text": "Xvawooooo1"
+            },
+            {
+              "index": 61,
+              "text": "02593"
+            },
+            {
+              "index": 62,
+              "text": "Visa"
+            },
+            {
+              "index": 63,
+              "text": "debit"
+            },
+            {
+              "index": 64,
+              "text": "VaT"
+            },
+            {
+              "index": 65,
+              "text": "No:"
+            },
+            {
+              "index": 66,
+              "text": "650"
+            },
+            {
+              "index": 67,
+              "text": "1862"
+            },
+            {
+              "index": 68,
+              "text": "52"
+            },
+            {
+              "index": 69,
+              "text": "tel:"
+            },
+            {
+              "index": 70,
+              "text": "01279"
+            },
+            {
+              "index": 71,
+              "text": "450456"
+            },
+            {
+              "index": 72,
+              "text": "453066"
+            },
+            {
+              "index": 73,
+              "text": "Caru"
+            },
+            {
+              "index": 74,
+              "text": "n0:"
+            },
+            {
+              "index": 75,
+              "text": "Unn"
+            },
+            {
+              "index": 76,
+              "text": "'6469"
+            },
+            {
+              "index": 77,
+              "text": "open"
+            },
+            {
+              "index": 78,
+              "text": "daily"
+            },
+            {
+              "index": 79,
+              "text": "from"
+            },
+            {
+              "index": 80,
+              "text": "13Qam"
+            },
+            {
+              "index": 81,
+              "text": "FAN"
+            },
+            {
+              "index": 82,
+              "text": "seq:"
+            },
+            {
+              "index": 83,
+              "text": "no_"
+            },
+            {
+              "index": 84,
+              "text": "00"
+            },
+            {
+              "index": 85,
+              "text": "'C"
+            },
+            {
+              "index": 86,
+              "text": "Trade"
+            },
+            {
+              "index": 87,
+              "text": "98180824510"
+            },
+            {
+              "index": 88,
+              "text": "AID:"
+            },
+            {
+              "index": 89,
+              "text": "A0000000031010"
+            },
+            {
+              "index": 90,
+              "text": "DISNEY"
+            },
+            {
+              "index": 91,
+              "text": "DOLL"
+            },
+            {
+              "index": 92,
+              "text": "Qty"
+            },
+            {
+              "index": 93,
+              "text": "item"
+            },
+            {
+              "index": 94,
+              "text": "Sub-Total"
+            },
+            {
+              "index": 95,
+              "text": "No"
+            },
+            {
+              "index": 96,
+              "text": "Ot"
+            },
+            {
+              "index": 97,
+              "text": "Ttems"
+            },
+            {
+              "index": 98,
+              "text": "ZO"
+            },
+            {
+              "index": 99,
+              "text": "Sale"
+            },
+            {
+              "index": 100,
+              "text": "#*r*"
+            },
+            {
+              "index": 101,
+              "text": "TOTAL("
+            },
+            {
+              "index": 102,
+              "text": "INCL"
+            },
+            {
+              "index": 103,
+              "text": "VaT"
+            },
+            {
+              "index": 104,
+              "text": ")"
+            },
+            {
+              "index": 105,
+              "text": "LjK36r1"
+            },
+            {
+              "index": 106,
+              "text": "1"
+            },
+            {
+              "index": 107,
+              "text": "salt&"
+            },
+            {
+              "index": 108,
+              "text": "pepper"
+            },
+            {
+              "index": 109,
+              "text": "chicken"
+            },
+            {
+              "index": 110,
+              "text": "8,10"
+            },
+            {
+              "index": 111,
+              "text": "Amount"
+            },
+            {
+              "index": 112,
+              "text": "F39.10"
+            },
+            {
+              "index": 113,
+              "text": "CASH"
+            },
+            {
+              "index": 114,
+              "text": "70"
+            },
+            {
+              "index": 115,
+              "text": "."
+            },
+            {
+              "index": 116,
+              "text": "00"
+            },
+            {
+              "index": 117,
+              "text": "pork"
+            },
+            {
+              "index": 118,
+              "text": "spring"
+            },
+            {
+              "index": 119,
+              "text": "rolls"
+            },
+            {
+              "index": 120,
+              "text": "6.30"
+            },
+            {
+              "index": 121,
+              "text": "Total:"
+            },
+            {
+              "index": 122,
+              "text": "E39.10"
+            },
+            {
+              "index": 123,
+              "text": "salt"
+            },
+            {
+              "index": 124,
+              "text": "&"
+            },
+            {
+              "index": 125,
+              "text": "pepper"
+            },
+            {
+              "index": 126,
+              "text": "Ribs"
+            },
+            {
+              "index": 127,
+              "text": "9.30"
+            },
+            {
+              "index": 128,
+              "text": "plain"
+            },
+            {
+              "index": 129,
+              "text": "fried"
+            },
+            {
+              "index": 130,
+              "text": "noodles"
+            },
+            {
+              "index": 131,
+              "text": "7.60"
+            },
+            {
+              "index": 132,
+              "text": "APPROVED"
+            },
+            {
+              "index": 133,
+              "text": "~veg"
+            },
+            {
+              "index": 134,
+              "text": "Date"
+            },
+            {
+              "index": 135,
+              "text": "&"
+            },
+            {
+              "index": 136,
+              "text": "time"
+            },
+            {
+              "index": 137,
+              "text": "20/01/2025"
+            },
+            {
+              "index": 138,
+              "text": "12.17"
+            },
+            {
+              "index": 139,
+              "text": "with:"
+            },
+            {
+              "index": 140,
+              "text": "with"
+            },
+            {
+              "index": 141,
+              "text": "chicken"
+            },
+            {
+              "index": 142,
+              "text": "Auth"
+            },
+            {
+              "index": 143,
+              "text": "code:"
+            },
+            {
+              "index": 144,
+              "text": "031711"
+            },
+            {
+              "index": 145,
+              "text": "chicken"
+            },
+            {
+              "index": 146,
+              "text": "katsu"
+            },
+            {
+              "index": 147,
+              "text": "&"
+            },
+            {
+              "index": 148,
+              "text": "curry"
+            },
+            {
+              "index": 149,
+              "text": "sauce"
+            },
+            {
+              "index": 150,
+              "text": "(4"
+            },
+            {
+              "index": 151,
+              "text": "11.80"
+            },
+            {
+              "index": 152,
+              "text": "Payment"
+            },
+            {
+              "index": 153,
+              "text": "method"
+            },
+            {
+              "index": 154,
+              "text": "Contactless"
+            },
+            {
+              "index": 155,
+              "text": "with:"
+            },
+            {
+              "index": 156,
+              "text": "+"
+            },
+            {
+              "index": 157,
+              "text": "boiled"
+            },
+            {
+              "index": 158,
+              "text": "rice"
+            },
+            {
+              "index": 159,
+              "text": "(38W)"
+            },
+            {
+              "index": 160,
+              "text": "Verificalion"
+            },
+            {
+              "index": 161,
+              "text": "melhod"
+            },
+            {
+              "index": 162,
+              "text": "Device"
+            },
+            {
+              "index": 163,
+              "text": "THIS"
+            },
+            {
+              "index": 164,
+              "text": "FOR"
+            },
+            {
+              "index": 165,
+              "text": "YOUR"
+            },
+            {
+              "index": 166,
+              "text": "RECORDS"
+            },
+            {
+              "index": 167,
+              "text": "1"
+            },
+            {
+              "index": 168,
+              "text": "yum"
+            },
+            {
+              "index": 169,
+              "text": "yum"
+            },
+            {
+              "index": 170,
+              "text": "beef"
+            },
+            {
+              "index": 171,
+              "text": "rice"
+            },
+            {
+              "index": 172,
+              "text": "9.70"
+            },
+            {
+              "index": 173,
+              "text": "Transaction"
+            },
+            {
+              "index": 174,
+              "text": "ID:"
+            },
+            {
+              "index": 175,
+              "text": "bbdab"
+            },
+            {
+              "index": 176,
+              "text": "PLEASE"
+            },
+            {
+              "index": 177,
+              "text": "KEEP"
+            },
+            {
+              "index": 178,
+              "text": "with:"
+            },
+            {
+              "index": 179,
+              "text": "-NO"
+            },
+            {
+              "index": 180,
+              "text": "RICE"
+            },
+            {
+              "index": 181,
+              "text": "Pan:"
+            },
+            {
+              "index": 182,
+              "text": "XXXXXXXXXXXX6469"
+            },
+            {
+              "index": 183,
+              "text": "T"
+            },
+            {
+              "index": 184,
+              "text": "Sea"
+            },
+            {
+              "index": 185,
+              "text": "No:"
+            },
+            {
+              "index": 186,
+              "text": "9"
+            },
+            {
+              "index": 187,
+              "text": "1"
+            },
+            {
+              "index": 188,
+              "text": "still"
+            },
+            {
+              "index": 189,
+              "text": "water"
+            },
+            {
+              "index": 190,
+              "text": "330ml"
+            },
+            {
+              "index": 191,
+              "text": "2.80"
+            },
+            {
+              "index": 192,
+              "text": "Merchant"
+            },
+            {
+              "index": 193,
+              "text": "ID:"
+            },
+            {
+              "index": 194,
+              "text": "540436506051085"
+            },
+            {
+              "index": 195,
+              "text": "Meal"
+            },
+            {
+              "index": 196,
+              "text": "total"
+            },
+            {
+              "index": 197,
+              "text": "55.60"
+            },
+            {
+              "index": 198,
+              "text": "Processed"
+            },
+            {
+              "index": 199,
+              "text": "by"
+            },
+            {
+              "index": 200,
+              "text": "DOJO"
+            },
+            {
+              "index": 201,
+              "text": "Tran"
+            },
+            {
+              "index": 202,
+              "text": "ID:"
+            },
+            {
+              "index": 203,
+              "text": "433900010955_"
+            },
+            {
+              "index": 204,
+              "text": "{55.60"
+            },
+            {
+              "index": 205,
+              "text": "Privacy"
+            },
+            {
+              "index": 206,
+              "text": "policy"
+            },
+            {
+              "index": 207,
+              "text": "dojo"
+            },
+            {
+              "index": 208,
+              "text": "lech/legal/privacy/"
+            },
+            {
+              "index": 209,
+              "text": "Payable"
+            },
+            {
+              "index": 210,
+              "text": "AMOUNT"
+            },
+            {
+              "index": 211,
+              "text": ":"
+            },
+            {
+              "index": 212,
+              "text": "E513.63"
+            },
+            {
+              "index": 213,
+              "text": "APPROVED"
+            },
+            {
+              "index": 214,
+              "text": "MB:"
+            },
+            {
+              "index": 215,
+              "text": "E55.60"
+            },
+            {
+              "index": 216,
+              "text": "receipt#:"
+            },
+            {
+              "index": 217,
+              "text": "46"
+            },
+            {
+              "index": 218,
+              "text": "Na"
+            },
+            {
+              "index": 219,
+              "text": "CVM"
+            },
+            {
+              "index": 220,
+              "text": "products;"
+            },
+            {
+              "index": 221,
+              "text": "7"
+            },
+            {
+              "index": 222,
+              "text": "Card;VIsa"
+            },
+            {
+              "index": 223,
+              "text": "DEBIT"
+            },
+            {
+              "index": 224,
+              "text": "CTLS"
+            },
+            {
+              "index": 225,
+              "text": "EMV"
+            },
+            {
+              "index": 226,
+              "text": "Date:"
+            },
+            {
+              "index": 227,
+              "text": "15/12/2024"
+            },
+            {
+              "index": 228,
+              "text": "17.07"
+            },
+            {
+              "index": 229,
+              "text": "APPROVAL"
+            },
+            {
+              "index": 230,
+              "text": "CODE:055047"
+            },
+            {
+              "index": 231,
+              "text": "Server:"
+            },
+            {
+              "index": 232,
+              "text": "TAKEOUT"
+            },
+            {
+              "index": 233,
+              "text": "HEC"
+            },
+            {
+              "index": 234,
+              "text": "Epping"
+            },
+            {
+              "index": 235,
+              "text": "AID:"
+            },
+            {
+              "index": 236,
+              "text": "90000000031010"
+            },
+            {
+              "index": 237,
+              "text": "Take"
+            },
+            {
+              "index": 238,
+              "text": "Out"
+            },
+            {
+              "index": 239,
+              "text": "Arms"
+            },
+            {
+              "index": 240,
+              "text": "Roundabout"
+            },
+            {
+              "index": 241,
+              "text": "04/12/2024"
+            },
+            {
+              "index": 242,
+              "text": "13.20"
+            },
+            {
+              "index": 243,
+              "text": "113"
+            },
+            {
+              "index": 244,
+              "text": "10"
+            },
+            {
+              "index": 245,
+              "text": "134"
+            },
+            {
+              "index": 246,
+              "text": "148"
+            },
+            {
+              "index": 247,
+              "text": "Ch16"
+            },
+            {
+              "index": 248,
+              "text": "5HW"
+            },
+            {
+              "index": 249,
+              "text": "jack"
+            },
+            {
+              "index": 250,
+              "text": "Check"
+            },
+            {
+              "index": 251,
+              "text": "No:"
+            },
+            {
+              "index": 252,
+              "text": "12"
+            },
+            {
+              "index": 253,
+              "text": "VIsa"
+            },
+            {
+              "index": 254,
+              "text": "513.63"
+            },
+            {
+              "index": 255,
+              "text": "Date:"
+            },
+            {
+              "index": 256,
+              "text": "2025-01-17"
+            },
+            {
+              "index": 257,
+              "text": "CHANGE"
+            },
+            {
+              "index": 258,
+              "text": "0.00"
+            },
+            {
+              "index": 259,
+              "text": "service"
+            },
+            {
+              "index": 260,
+              "text": "not"
+            },
+            {
+              "index": 261,
+              "text": "included"
+            },
+            {
+              "index": 262,
+              "text": "Type:"
+            },
+            {
+              "index": 263,
+              "text": "PURCHASE"
+            },
+            {
+              "index": 264,
+              "text": "Card"
+            },
+            {
+              "index": 265,
+              "text": "Type"
+            },
+            {
+              "index": 266,
+              "text": ":"
+            },
+            {
+              "index": 267,
+              "text": "VA"
+            },
+            {
+              "index": 268,
+              "text": "thank"
+            },
+            {
+              "index": 269,
+              "text": "you"
+            },
+            {
+              "index": 270,
+              "text": "for"
+            },
+            {
+              "index": 271,
+              "text": "your"
+            },
+            {
+              "index": 272,
+              "text": "customl"
+            },
+            {
+              "index": 273,
+              "text": "Ent"
+            },
+            {
+              "index": 274,
+              "text": "3"
+            },
+            {
+              "index": 275,
+              "text": "Hode."
+            },
+            {
+              "index": 276,
+              "text": "Visa"
+            },
+            {
+              "index": 277,
+              "text": "Contactless"
+            },
+            {
+              "index": 278,
+              "text": "VAT"
+            },
+            {
+              "index": 279,
+              "text": "Code"
+            },
+            {
+              "index": 280,
+              "text": "Exc]"
+            },
+            {
+              "index": 281,
+              "text": "Vat"
+            },
+            {
+              "index": 282,
+              "text": "Vat"
+            },
+            {
+              "index": 283,
+              "text": "Acct"
+            },
+            {
+              "index": 284,
+              "text": "1"
+            },
+            {
+              "index": 285,
+              "text": "\"6469"
+            },
+            {
+              "index": 286,
+              "text": "A"
+            },
+            {
+              "index": 287,
+              "text": "20.O07"
+            },
+            {
+              "index": 288,
+              "text": "358_"
+            },
+            {
+              "index": 289,
+              "text": "63"
+            },
+            {
+              "index": 290,
+              "text": "71.72"
+            },
+            {
+              "index": 291,
+              "text": "Auth"
+            },
+            {
+              "index": 292,
+              "text": "011317"
+            },
+            {
+              "index": 293,
+              "text": "2"
+            },
+            {
+              "index": 294,
+              "text": "0.007"
+            },
+            {
+              "index": 295,
+              "text": "153.28"
+            },
+            {
+              "index": 296,
+              "text": "0.00"
+            },
+            {
+              "index": 297,
+              "text": "Subtotal"
+            },
+            {
+              "index": 298,
+              "text": ";"
+            },
+            {
+              "index": 299,
+              "text": "GBP"
+            },
+            {
+              "index": 300,
+              "text": "100"
+            },
+            {
+              "index": 301,
+              "text": ".0"
+            },
+            {
+              "index": 302,
+              "text": "Gratuity;"
+            },
+            {
+              "index": 303,
+              "text": "Kxr*"
+            },
+            {
+              "index": 304,
+              "text": "TOTAL("
+            },
+            {
+              "index": 305,
+              "text": "EXCL"
+            },
+            {
+              "index": 306,
+              "text": "VaT"
+            },
+            {
+              "index": 307,
+              "text": ")"
+            },
+            {
+              "index": 308,
+              "text": "511.91"
+            },
+            {
+              "index": 309,
+              "text": "Total"
+            },
+            {
+              "index": 310,
+              "text": "="
+            },
+            {
+              "index": 311,
+              "text": "GBP"
+            },
+            {
+              "index": 312,
+              "text": "0.OC"
+            },
+            {
+              "index": 313,
+              "text": "71.72"
+            },
+            {
+              "index": 314,
+              "text": "GBP"
+            },
+            {
+              "index": 315,
+              "text": "100"
+            },
+            {
+              "index": 316,
+              "text": "."
+            },
+            {
+              "index": 317,
+              "text": "OC"
+            },
+            {
+              "index": 318,
+              "text": "Vat"
+            },
+            {
+              "index": 319,
+              "text": "Amount"
+            },
+            {
+              "index": 320,
+              "text": "4m"
+            },
+            {
+              "index": 321,
+              "text": "EMV"
+            },
+            {
+              "index": 322,
+              "text": "PURCHASE"
+            },
+            {
+              "index": 323,
+              "text": "TOTAL"
+            },
+            {
+              "index": 324,
+              "text": "NUMBER"
+            },
+            {
+              "index": 325,
+              "text": "OF"
+            },
+            {
+              "index": 326,
+              "text": "ITEMS"
+            },
+            {
+              "index": 327,
+              "text": "SOLD"
+            },
+            {
+              "index": 328,
+              "text": "40"
+            },
+            {
+              "index": 329,
+              "text": "App"
+            },
+            {
+              "index": 330,
+              "text": "Label"
+            },
+            {
+              "index": 331,
+              "text": "DEBIT"
+            },
+            {
+              "index": 332,
+              "text": "SavIngs:"
+            },
+            {
+              "index": 333,
+              "text": "E20.50"
+            },
+            {
+              "index": 334,
+              "text": "6"
+            },
+            {
+              "index": 335,
+              "text": "Couponl"
+            },
+            {
+              "index": 336,
+              "text": "s"
+            },
+            {
+              "index": 337,
+              "text": ")"
+            },
+            {
+              "index": 338,
+              "text": "NORTH"
+            },
+            {
+              "index": 339,
+              "text": "CTRCULAR"
+            },
+            {
+              "index": 340,
+              "text": "GOLF"
+            },
+            {
+              "index": 341,
+              "text": "Ad:"
+            },
+            {
+              "index": 342,
+              "text": ","
+            },
+            {
+              "index": 343,
+              "text": "Issuer"
+            },
+            {
+              "index": 344,
+              "text": "044742024"
+            },
+            {
+              "index": 345,
+              "text": "13:20"
+            },
+            {
+              "index": 346,
+              "text": "113"
+            },
+            {
+              "index": 347,
+              "text": "10"
+            },
+            {
+              "index": 348,
+              "text": "134"
+            },
+            {
+              "index": 349,
+              "text": "148"
+            },
+            {
+              "index": 350,
+              "text": "75"
+            },
+            {
+              "index": 351,
+              "text": "HILLGROVE"
+            },
+            {
+              "index": 352,
+              "text": "BUS"
+            },
+            {
+              "index": 353,
+              "text": "INESS"
+            },
+            {
+              "index": 354,
+              "text": "PK"
+            },
+            {
+              "index": 355,
+              "text": "AR:"
+            },
+            {
+              "index": 356,
+              "text": "Goooooooo3ioio"
+            },
+            {
+              "index": 357,
+              "text": "NAZEING"
+            },
+            {
+              "index": 358,
+              "text": "ROAD"
+            },
+            {
+              "index": 359,
+              "text": "ESSEX"
+            },
+            {
+              "index": 360,
+              "text": "IAD:"
+            },
+            {
+              "index": 361,
+              "text": "an"
+            },
+            {
+              "index": 362,
+              "text": "executive"
+            },
+            {
+              "index": 363,
+              "text": "member"
+            },
+            {
+              "index": 364,
+              "text": "ENg"
+            },
+            {
+              "index": 365,
+              "text": "2HB"
+            },
+            {
+              "index": 366,
+              "text": "01992"
+            },
+            {
+              "index": 367,
+              "text": "893241"
+            },
+            {
+              "index": 368,
+              "text": "1F426332A0OOOOOC"
+            },
+            {
+              "index": 369,
+              "text": "1302730000000040"
+            },
+            {
+              "index": 370,
+              "text": "Congratulatlons"
+            },
+            {
+              "index": 371,
+              "text": "as"
+            },
+            {
+              "index": 372,
+              "text": "Oooodooooooooooo_ooooooooooo"
+            },
+            {
+              "index": 373,
+              "text": "You"
+            },
+            {
+              "index": 374,
+              "text": "have"
+            },
+            {
+              "index": 375,
+              "text": "earned"
+            },
+            {
+              "index": 376,
+              "text": "E10.23"
+            },
+            {
+              "index": 377,
+              "text": "towards"
+            },
+            {
+              "index": 378,
+              "text": "your"
+            },
+            {
+              "index": 379,
+              "text": "REG"
+            },
+            {
+              "index": 380,
+              "text": "28-08"
+            },
+            {
+              "index": 381,
+              "text": "2024"
+            },
+            {
+              "index": 382,
+              "text": "11:00"
+            },
+            {
+              "index": 383,
+              "text": "TSI;"
+            },
+            {
+              "index": 384,
+              "text": "annual"
+            },
+            {
+              "index": 385,
+              "text": "executIve"
+            },
+            {
+              "index": 386,
+              "text": "reward."
+            },
+            {
+              "index": 387,
+              "text": "004241"
+            },
+            {
+              "index": 388,
+              "text": "ARC;"
+            },
+            {
+              "index": 389,
+              "text": "00"
+            },
+            {
+              "index": 390,
+              "text": "Ive"
+            },
+            {
+              "index": 391,
+              "text": "member"
+            },
+            {
+              "index": 392,
+              "text": "2"
+            },
+            {
+              "index": 393,
+              "text": "PSN:"
+            },
+            {
+              "index": 394,
+              "text": "00"
+            },
+            {
+              "index": 395,
+              "text": "Not"
+            },
+            {
+              "index": 396,
+              "text": "an"
+            },
+            {
+              "index": 397,
+              "text": "execut"
+            },
+            {
+              "index": 398,
+              "text": "1"
+            },
+            {
+              "index": 399,
+              "text": "DEPOSTT"
+            },
+            {
+              "index": 400,
+              "text": "200"
+            },
+            {
+              "index": 401,
+              "text": "."
+            },
+            {
+              "index": 402,
+              "text": "00"
+            },
+            {
+              "index": 403,
+              "text": "CVM;"
+            },
+            {
+              "index": 404,
+              "text": "1F0001"
+            },
+            {
+              "index": 405,
+              "text": "VIst"
+            },
+            {
+              "index": 406,
+              "text": "our"
+            },
+            {
+              "index": 407,
+              "text": "Membershle"
+            },
+            {
+              "index": 408,
+              "text": "Desk"
+            },
+            {
+              "index": 409,
+              "text": "TL"
+            },
+            {
+              "index": 410,
+              "text": "200"
+            },
+            {
+              "index": 411,
+              "text": "Oo"
+            },
+            {
+              "index": 412,
+              "text": "ATC:"
+            },
+            {
+              "index": 413,
+              "text": "0158"
+            },
+            {
+              "index": 414,
+              "text": "to"
+            },
+            {
+              "index": 415,
+              "text": "Learn"
+            },
+            {
+              "index": 416,
+              "text": "More"
+            },
+            {
+              "index": 417,
+              "text": "."
+            },
+            {
+              "index": 418,
+              "text": "CASH"
+            },
+            {
+              "index": 419,
+              "text": "200"
+            },
+            {
+              "index": 420,
+              "text": "UO"
+            },
+            {
+              "index": 421,
+              "text": "TT;"
+            },
+            {
+              "index": 422,
+              "text": "00"
+            },
+            {
+              "index": 423,
+              "text": "AC;"
+            },
+            {
+              "index": 424,
+              "text": "SSCAEBEEFZCAGDAB"
+            },
+            {
+              "index": 425,
+              "text": "Jack"
+            },
+            {
+              "index": 426,
+              "text": "DANCE"
+            },
+            {
+              "index": 427,
+              "text": "VA"
+            },
+            {
+              "index": 428,
+              "text": "|"
+            },
+            {
+              "index": 429,
+              "text": "NO"
+            },
+            {
+              "index": 430,
+              "text": "589"
+            },
+            {
+              "index": 431,
+              "text": "895"
+            },
+            {
+              "index": 432,
+              "text": "540"
+            },
+            {
+              "index": 433,
+              "text": "CID;"
+            },
+            {
+              "index": 434,
+              "text": "80"
+            },
+            {
+              "index": 435,
+              "text": "FOREST"
+            },
+            {
+              "index": 436,
+              "text": "CAR"
+            },
+            {
+              "index": 437,
+              "text": "COMPANY"
+            },
+            {
+              "index": 438,
+              "text": "LTD"
+            },
+            {
+              "index": 439,
+              "text": "sales@northcirculargo|"
+            },
+            {
+              "index": 440,
+              "text": "f"
+            },
+            {
+              "index": 441,
+              "text": "CROWN"
+            },
+            {
+              "index": 442,
+              "text": "HILL"
+            },
+            {
+              "index": 443,
+              "text": "FARM"
+            },
+            {
+              "index": 444,
+              "text": "HOUSE"
+            },
+            {
+              "index": 445,
+              "text": "co:Uk"
+            },
+            {
+              "index": 446,
+              "text": "We"
+            },
+            {
+              "index": 447,
+              "text": "would"
+            },
+            {
+              "index": 448,
+              "text": "to"
+            },
+            {
+              "index": 449,
+              "text": "hear"
+            },
+            {
+              "index": 450,
+              "text": "vour"
+            },
+            {
+              "index": 451,
+              "text": "thoughts"
+            },
+            {
+              "index": 452,
+              "text": "WALTHAM"
+            },
+            {
+              "index": 453,
+              "text": "ABBEY"
+            },
+            {
+              "index": 454,
+              "text": "HTV"
+            },
+            {
+              "index": 455,
+              "text": "inrestsurvey"
+            },
+            {
+              "index": 456,
+              "text": "Co"
+            },
+            {
+              "index": 457,
+              "text": "uk"
+            },
+            {
+              "index": 458,
+              "text": "Jaoureraodcarteat"
+            },
+            {
+              "index": 459,
+              "text": "ler"
+            },
+            {
+              "index": 460,
+              "text": "&"
+            },
+            {
+              "index": 461,
+              "text": "Carter"
+            },
+            {
+              "index": 462,
+              "text": "of"
+            },
+            {
+              "index": 463,
+              "text": "Steak"
+            },
+            {
+              "index": 464,
+              "text": "Club"
+            },
+            {
+              "index": 465,
+              "text": "Shon"
+            },
+            {
+              "index": 466,
+              "text": "vour"
+            },
+            {
+              "index": 467,
+              "text": "%9"
+            },
+            {
+              "index": 468,
+              "text": "t9"
+            },
+            {
+              "index": 469,
+              "text": "Servers"
+            },
+            {
+              "index": 470,
+              "text": "to"
+            },
+            {
+              "index": 471,
+              "text": "acd"
+            },
+            {
+              "index": 472,
+              "text": "points"
+            },
+            {
+              "index": 473,
+              "text": "Tel"
+            },
+            {
+              "index": 474,
+              "text": "01992"
+            },
+            {
+              "index": 475,
+              "text": "814"
+            },
+            {
+              "index": 476,
+              "text": "807"
+            },
+            {
+              "index": 477,
+              "text": "EN9"
+            },
+            {
+              "index": 478,
+              "text": "3TF"
+            },
+            {
+              "index": 479,
+              "text": "CUSTOHER"
+            },
+            {
+              "index": 480,
+              "text": "Copv"
+            },
+            {
+              "index": 481,
+              "text": "Wake"
+            },
+            {
+              "index": 482,
+              "text": "Trans"
+            },
+            {
+              "index": 483,
+              "text": "14,23"
+            },
+            {
+              "index": 484,
+              "text": "11"
+            },
+            {
+              "index": 485,
+              "text": "Trans"
+            },
+            {
+              "index": 486,
+              "text": "Code:"
+            },
+            {
+              "index": 487,
+              "text": "Visa"
+            },
+            {
+              "index": 488,
+              "text": "love"
+            },
+            {
+              "index": 489,
+              "text": "Hasters"
+            }
+          ],
+          "all_words": [
+            "CoOStco",
+            "mui",
+            "&",
+            "koko",
+            "noodle",
+            "bar",
+            "EWHOLESALE",
+            "restaurant",
+            "Crown",
+            "Gate",
+            "Harleys",
+            "bistro",
+            "and",
+            "lounge",
+            "Chirgford",
+            "Warehouse",
+            "(0208",
+            "501",
+            "9305",
+            ")",
+            "CM2O",
+            "1FL",
+            "Cm1g",
+            "4AQ",
+            "Costco",
+            "Wholesale",
+            "UK",
+            "Linited",
+            "KING\"",
+            "DU",
+            "comedny",
+            "MID:",
+            "*****21613",
+            "UK",
+            "Home",
+            "Off",
+            "Ice,",
+            "HartsprIng",
+            "Lane",
+            "4tt",
+            "5624",
+            "Watford,",
+            "Herts_",
+            "WD25",
+            "8JS",
+            "Harlow,",
+            "Essex",
+            "TID:",
+            "Reg",
+            "in",
+            "England",
+            "No:",
+            "2635489",
+            "VAT",
+            "195",
+            "2487",
+            "71",
+            "AWRS",
+            "No:",
+            "Xvawooooo1",
+            "02593",
+            "Visa",
+            "debit",
+            "VaT",
+            "No:",
+            "650",
+            "1862",
+            "52",
+            "tel:",
+            "01279",
+            "450456",
+            "453066",
+            "Caru",
+            "n0:",
+            "Unn",
+            "'6469",
+            "open",
+            "daily",
+            "from",
+            "13Qam",
+            "FAN",
+            "seq:",
+            "no_",
+            "00",
+            "'C",
+            "Trade",
+            "98180824510",
+            "AID:",
+            "A0000000031010",
+            "DISNEY",
+            "DOLL",
+            "Qty",
+            "item",
+            "Sub-Total",
+            "No",
+            "Ot",
+            "Ttems",
+            "ZO",
+            "Sale",
+            "#*r*",
+            "TOTAL(",
+            "INCL",
+            "VaT",
+            ")",
+            "LjK36r1",
+            "1",
+            "salt&",
+            "pepper",
+            "chicken",
+            "8,10",
+            "Amount",
+            "F39.10",
+            "CASH",
+            "70",
+            ".",
+            "00",
+            "pork",
+            "spring",
+            "rolls",
+            "6.30",
+            "Total:",
+            "E39.10",
+            "salt",
+            "&",
+            "pepper",
+            "Ribs",
+            "9.30",
+            "plain",
+            "fried",
+            "noodles",
+            "7.60",
+            "APPROVED",
+            "~veg",
+            "Date",
+            "&",
+            "time",
+            "20/01/2025",
+            "12.17",
+            "with:",
+            "with",
+            "chicken",
+            "Auth",
+            "code:",
+            "031711",
+            "chicken",
+            "katsu",
+            "&",
+            "curry",
+            "sauce",
+            "(4",
+            "11.80",
+            "Payment",
+            "method",
+            "Contactless",
+            "with:",
+            "+",
+            "boiled",
+            "rice",
+            "(38W)",
+            "Verificalion",
+            "melhod",
+            "Device",
+            "THIS",
+            "FOR",
+            "YOUR",
+            "RECORDS",
+            "1",
+            "yum",
+            "yum",
+            "beef",
+            "rice",
+            "9.70",
+            "Transaction",
+            "ID:",
+            "bbdab",
+            "PLEASE",
+            "KEEP",
+            "with:",
+            "-NO",
+            "RICE",
+            "Pan:",
+            "XXXXXXXXXXXX6469",
+            "T",
+            "Sea",
+            "No:",
+            "9",
+            "1",
+            "still",
+            "water",
+            "330ml",
+            "2.80",
+            "Merchant",
+            "ID:",
+            "540436506051085",
+            "Meal",
+            "total",
+            "55.60",
+            "Processed",
+            "by",
+            "DOJO",
+            "Tran",
+            "ID:",
+            "433900010955_",
+            "{55.60",
+            "Privacy",
+            "policy",
+            "dojo",
+            "lech/legal/privacy/",
+            "Payable",
+            "AMOUNT",
+            ":",
+            "E513.63",
+            "APPROVED",
+            "MB:",
+            "E55.60",
+            "receipt#:",
+            "46",
+            "Na",
+            "CVM",
+            "products;",
+            "7",
+            "Card;VIsa",
+            "DEBIT",
+            "CTLS",
+            "EMV",
+            "Date:",
+            "15/12/2024",
+            "17.07",
+            "APPROVAL",
+            "CODE:055047",
+            "Server:",
+            "TAKEOUT",
+            "HEC",
+            "Epping",
+            "AID:",
+            "90000000031010",
+            "Take",
+            "Out",
+            "Arms",
+            "Roundabout",
+            "04/12/2024",
+            "13.20",
+            "113",
+            "10",
+            "134",
+            "148",
+            "Ch16",
+            "5HW",
+            "jack",
+            "Check",
+            "No:",
+            "12",
+            "VIsa",
+            "513.63",
+            "Date:",
+            "2025-01-17",
+            "CHANGE",
+            "0.00",
+            "service",
+            "not",
+            "included",
+            "Type:",
+            "PURCHASE",
+            "Card",
+            "Type",
+            ":",
+            "VA",
+            "thank",
+            "you",
+            "for",
+            "your",
+            "customl",
+            "Ent",
+            "3",
+            "Hode.",
+            "Visa",
+            "Contactless",
+            "VAT",
+            "Code",
+            "Exc]",
+            "Vat",
+            "Vat",
+            "Acct",
+            "1",
+            "\"6469",
+            "A",
+            "20.O07",
+            "358_",
+            "63",
+            "71.72",
+            "Auth",
+            "011317",
+            "2",
+            "0.007",
+            "153.28",
+            "0.00",
+            "Subtotal",
+            ";",
+            "GBP",
+            "100",
+            ".0",
+            "Gratuity;",
+            "Kxr*",
+            "TOTAL(",
+            "EXCL",
+            "VaT",
+            ")",
+            "511.91",
+            "Total",
+            "=",
+            "GBP",
+            "0.OC",
+            "71.72",
+            "GBP",
+            "100",
+            ".",
+            "OC",
+            "Vat",
+            "Amount",
+            "4m",
+            "EMV",
+            "PURCHASE",
+            "TOTAL",
+            "NUMBER",
+            "OF",
+            "ITEMS",
+            "SOLD",
+            "40",
+            "App",
+            "Label",
+            "DEBIT",
+            "SavIngs:",
+            "E20.50",
+            "6",
+            "Couponl",
+            "s",
+            ")",
+            "NORTH",
+            "CTRCULAR",
+            "GOLF",
+            "Ad:",
+            ",",
+            "Issuer",
+            "044742024",
+            "13:20",
+            "113",
+            "10",
+            "134",
+            "148",
+            "75",
+            "HILLGROVE",
+            "BUS",
+            "INESS",
+            "PK",
+            "AR:",
+            "Goooooooo3ioio",
+            "NAZEING",
+            "ROAD",
+            "ESSEX",
+            "IAD:",
+            "an",
+            "executive",
+            "member",
+            "ENg",
+            "2HB",
+            "01992",
+            "893241",
+            "1F426332A0OOOOOC",
+            "1302730000000040",
+            "Congratulatlons",
+            "as",
+            "Oooodooooooooooo_ooooooooooo",
+            "You",
+            "have",
+            "earned",
+            "E10.23",
+            "towards",
+            "your",
+            "REG",
+            "28-08",
+            "2024",
+            "11:00",
+            "TSI;",
+            "annual",
+            "executIve",
+            "reward.",
+            "004241",
+            "ARC;",
+            "00",
+            "Ive",
+            "member",
+            "2",
+            "PSN:",
+            "00",
+            "Not",
+            "an",
+            "execut",
+            "1",
+            "DEPOSTT",
+            "200",
+            ".",
+            "00",
+            "CVM;",
+            "1F0001",
+            "VIst",
+            "our",
+            "Membershle",
+            "Desk",
+            "TL",
+            "200",
+            "Oo",
+            "ATC:",
+            "0158",
+            "to",
+            "Learn",
+            "More",
+            ".",
+            "CASH",
+            "200",
+            "UO",
+            "TT;",
+            "00",
+            "AC;",
+            "SSCAEBEEFZCAGDAB",
+            "Jack",
+            "DANCE",
+            "VA",
+            "|",
+            "NO",
+            "589",
+            "895",
+            "540",
+            "CID;",
+            "80",
+            "FOREST",
+            "CAR",
+            "COMPANY",
+            "LTD",
+            "sales@northcirculargo|",
+            "f",
+            "CROWN",
+            "HILL",
+            "FARM",
+            "HOUSE",
+            "co:Uk",
+            "We",
+            "would",
+            "to",
+            "hear",
+            "vour",
+            "thoughts",
+            "WALTHAM",
+            "ABBEY",
+            "HTV",
+            "inrestsurvey",
+            "Co",
+            "uk",
+            "Jaoureraodcarteat",
+            "ler",
+            "&",
+            "Carter",
+            "of",
+            "Steak",
+            "Club",
+            "Shon",
+            "vour",
+            "%9",
+            "t9",
+            "Servers",
+            "to",
+            "acd",
+            "points",
+            "Tel",
+            "01992",
+            "814",
+            "807",
+            "EN9",
+            "3TF",
+            "CUSTOHER",
+            "Copv",
+            "Wake",
+            "Trans",
+            "14,23",
+            "11",
+            "Trans",
+            "Code:",
+            "Visa",
+            "love",
+            "Hasters"
+          ],
+          "ocr_items": [],
+          "detections": [],
+          "ocr_debug": {
+            "lighton_error": "",
+            "easyocr_error": "",
+            "tesseract_error": "",
+            "easyocr_items": 266,
+            "cleaned_len": 2819
+          }
+        }
+      ],
+      "receipts_count": 1,
+      "receipts_summary": [
+        {
+          "index": 1,
+          "page_index": 1,
+          "bbox": null,
+          "engine": "easyocr",
+          "text_len": 2819,
+          "words": 489,
+          "preview": "CoOStco mui & koko noodle bar EWHOLESALE restaurant Crown Gate Harleys bistro and lounge Chirgford Warehouse (0208 501 9305 ) CM2O 1FL Cm1g 4AQ Costco Wholesale UK Linited KING\" DU comedny MID: *****21613 UK Home Off Ice, HartsprIng Lane 4t"
+        }
+      ]
+    }
+  ]
+}

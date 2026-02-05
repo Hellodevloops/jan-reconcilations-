@@ -1,0 +1,4 @@
+sr_no,category,document_date,supplier,inv_ref_no,make,model,colour,reg_no,buying_price,non_vat,std_net,vat_amount
+1,purchase,,,,,,,N/A,N/A,N/A,N/A,N/A
+2,expense,,1 salt&pepper chicken 1 spring rolls 6.30 1 salt & pepper Ribs 9 1 plain fried noodles 7.6 ~veg with: with chicken 1 chicken katsu & curry sauce (4 with: boiled rice (38W) 1 yum yum beef rice 9 with:,,,,,N/A,6.30,6.30,N/A,N/A
+3,purchase,,,,,,,N/A,N/A,N/A,N/A,N/A

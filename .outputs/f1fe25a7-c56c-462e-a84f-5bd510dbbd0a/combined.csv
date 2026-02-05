@@ -1,0 +1,2 @@
+sr_no,category,document_date,supplier,inv_ref_no,make,model,colour,reg_no,buying_price,non_vat,std_net,vat_amount
+1,fuel_expense,02 3 10,,7258,Petrol,,,N/A,813.66,813.66,N/A,N/A

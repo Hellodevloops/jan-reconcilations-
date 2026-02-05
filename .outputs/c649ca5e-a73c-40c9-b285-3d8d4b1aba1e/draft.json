@@ -1,0 +1,48 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "",
+      "supplier": "",
+      "inv_ref_no": "",
+      "make": "",
+      "model": "",
+      "colour": "",
+      "reg_no": "N/A",
+      "buying_price": "N/A",
+      "non_vat": "N/A",
+      "std_net": "N/A",
+      "vat_amount": "N/A"
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "AX12 EZW SALES.pdf",
+      "content_type": "application/pdf",
+      "model_name": "LightOnOCR-2-1B (Best OCR)",
+      "has_bbox": false,
+      "engine": "",
+      "raw_output": "",
+      "cleaned_text": "",
+      "lines": [],
+      "words": [],
+      "detections": []
+    }
+  ]
+}

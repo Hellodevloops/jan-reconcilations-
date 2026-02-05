@@ -1,0 +1,1454 @@
+{
+  "fieldnames": [
+    "sr_no",
+    "category",
+    "document_date",
+    "supplier",
+    "inv_ref_no",
+    "make",
+    "model",
+    "colour",
+    "reg_no",
+    "buying_price",
+    "non_vat",
+    "std_net",
+    "vat_amount"
+  ],
+  "rows": [
+    {
+      "sr_no": 1,
+      "category": "purchase",
+      "document_date": "",
+      "supplier": "Name ............................................................",
+      "inv_ref_no": ". .....................................................",
+      "make": "............................................................",
+      "model": "OR TYPE ..................................................",
+      "colour": "..........................................................",
+      "reg_no": ". No. ........................................................",
+      "buying_price": "N/A",
+      "non_vat": "N/A",
+      "std_net": "N/A",
+      "vat_amount": "N/A"
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "BK10 EEF SALES.pdf",
+      "content_type": "application/pdf",
+      "model_name": "LightOnOCR-2-1B (Best OCR)",
+      "has_bbox": false,
+      "engine": "lighton",
+      "raw_output": "# USED VEHICLE INVOICE\nFCC \nFOREST CROWN HILL \nFARM, EN93TF\nSOLD By: \nName ............................................................ \nAddress .......................................................... \n................................................................. \n................................................................. \nVAT No.\n---\nSOLD TO: \nName ............................................................ \nAddress .......................................................... \n................................................................. \nTel No. .......................................................... \nMob No. .......................................................... \nVAT No. .......................................................... \nInvoice No. ..................................................... \nDate ............................................................. \nFolio No. ........................................................ \nStock Book No. .................................................\n---\nI/We the undersigned agree to purchase from the above named seller\nMAKE ............................................................ \nREG. No. ........................................................ \nCHASSIS No. ..................................................... \nENGINE No. ...................................................... \nDATE FIRST REG IN UK ........................................... \nSPEEDOMETER READING ............................................ \nMODEL OR TYPE .................................................. \nCOLOUR .......................................................... \n*Commercial Vehicles only\nDate: 21/12/24 \nSignature: [Signature]\nDEDUCT: Allowance for used vehicle which I/we certify conforms to the following description (is my/our own property and free from any lien or legal encumbrances/is subject to H.P. as stated).\nMAKE ............................................................ \nREG. No. ........................................................ \nCHASSIS No. ..................................................... \nENGINE No. ...................................................... \nFIRST REG ...................................................... \nLESS Amount outstanding subject to H.P. with \n................................................................. \n(Company)\nNET ALLOWANCE \nCASH DEPOSIT\nDeclaration by the seller: \nInput tax deduction has not been and will not be claimed by me in respect of the vehicle sold on this invoice.\nDate 21/12/24 \nSignature [Signature]\n---\nCAUTION Mileages on recorders of used motor vehicles may differ from actual total distances run and must be disregarded\n<table>\n <tr>\n <th>£</th>\n <th>p</th>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td>2800</td>\n <td>212</td>\n </tr>\n <tr>\n <td>based</td>\n <td>bank</td>\n </tr>\n <tr>\n <td>we</td>\n <td></td>\n </tr>\n <tr>\n <td>wasn't</td>\n <td></td>\n </tr>\n</table>\n<table>\n <tr>\n <th>£</th>\n <th>p</th>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n</table>\nUCI005/a",
+      "cleaned_text": "# USED VEHICLE INVOICE\nFCC \nFOREST CROWN HILL \nFARM, EN93TF\nSOLD By: \nName ............................................................ \nAddress .......................................................... \n................................................................. \n................................................................. \nVAT No.\n---\nSOLD TO: \nName ............................................................ \nAddress .......................................................... \n................................................................. \nTel No. .......................................................... \nMob No. .......................................................... \nVAT No. .......................................................... \nInvoice No. ..................................................... \nDate ............................................................. \nFolio No. ........................................................ \nStock Book No. .................................................\n---\nI/We the undersigned agree to purchase from the above named seller\nMAKE ............................................................ \nREG. No. ........................................................ \nCHASSIS No. ..................................................... \nENGINE No. ...................................................... \nDATE FIRST REG IN UK ........................................... \nSPEEDOMETER READING ............................................ \nMODEL OR TYPE .................................................. \nCOLOUR .......................................................... \n*Commercial Vehicles only\nDate: 21/12/24 \nSignature: [Signature]\nDEDUCT: Allowance for used vehicle which I/we certify conforms to the following description (is my/our own property and free from any lien or legal encumbrances/is subject to H.P. as stated).\nMAKE ............................................................ \nREG. No. ........................................................ \nCHASSIS No. ..................................................... \nENGINE No. ...................................................... \nFIRST REG ...................................................... \nLESS Amount outstanding subject to H.P. with \n................................................................. \n(Company)\nNET ALLOWANCE \nCASH DEPOSIT\nDeclaration by the seller: \nInput tax deduction has not been and will not be claimed by me in respect of the vehicle sold on this invoice.\nDate 21/12/24 \nSignature [Signature]\n---\nCAUTION Mileages on recorders of used motor vehicles may differ from actual total distances run and must be disregarded\n<table>\n <tr>\n <th>£</th>\n <th>p</th>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td>2800</td>\n <td>212</td>\n </tr>\n <tr>\n <td>based</td>\n <td>bank</td>\n </tr>\n <tr>\n <td>we</td>\n <td></td>\n </tr>\n <tr>\n <td>wasn't</td>\n <td></td>\n </tr>\n</table>\n<table>\n <tr>\n <th>£</th>\n <th>p</th>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n <tr>\n <td></td>\n <td></td>\n </tr>\n</table>\nUCI005/a",
+      "lines": [
+        {
+          "index": 1,
+          "text": "# USED VEHICLE INVOICE"
+        },
+        {
+          "index": 2,
+          "text": "FCC"
+        },
+        {
+          "index": 3,
+          "text": "FOREST CROWN HILL"
+        },
+        {
+          "index": 4,
+          "text": "FARM, EN93TF"
+        },
+        {
+          "index": 5,
+          "text": "SOLD By:"
+        },
+        {
+          "index": 6,
+          "text": "Name ............................................................"
+        },
+        {
+          "index": 7,
+          "text": "Address .........................................................."
+        },
+        {
+          "index": 8,
+          "text": "................................................................."
+        },
+        {
+          "index": 9,
+          "text": "................................................................."
+        },
+        {
+          "index": 10,
+          "text": "VAT No."
+        },
+        {
+          "index": 11,
+          "text": "---"
+        },
+        {
+          "index": 12,
+          "text": "SOLD TO:"
+        },
+        {
+          "index": 13,
+          "text": "Name ............................................................"
+        },
+        {
+          "index": 14,
+          "text": "Address .........................................................."
+        },
+        {
+          "index": 15,
+          "text": "................................................................."
+        },
+        {
+          "index": 16,
+          "text": "Tel No. .........................................................."
+        },
+        {
+          "index": 17,
+          "text": "Mob No. .........................................................."
+        },
+        {
+          "index": 18,
+          "text": "VAT No. .........................................................."
+        },
+        {
+          "index": 19,
+          "text": "Invoice No. ....................................................."
+        },
+        {
+          "index": 20,
+          "text": "Date ............................................................."
+        },
+        {
+          "index": 21,
+          "text": "Folio No. ........................................................"
+        },
+        {
+          "index": 22,
+          "text": "Stock Book No. ................................................."
+        },
+        {
+          "index": 23,
+          "text": "---"
+        },
+        {
+          "index": 24,
+          "text": "I/We the undersigned agree to purchase from the above named seller"
+        },
+        {
+          "index": 25,
+          "text": "MAKE ............................................................"
+        },
+        {
+          "index": 26,
+          "text": "REG. No. ........................................................"
+        },
+        {
+          "index": 27,
+          "text": "CHASSIS No. ....................................................."
+        },
+        {
+          "index": 28,
+          "text": "ENGINE No. ......................................................"
+        },
+        {
+          "index": 29,
+          "text": "DATE FIRST REG IN UK ..........................................."
+        },
+        {
+          "index": 30,
+          "text": "SPEEDOMETER READING ............................................"
+        },
+        {
+          "index": 31,
+          "text": "MODEL OR TYPE .................................................."
+        },
+        {
+          "index": 32,
+          "text": "COLOUR .........................................................."
+        },
+        {
+          "index": 33,
+          "text": "*Commercial Vehicles only"
+        },
+        {
+          "index": 34,
+          "text": "Date: 21/12/24"
+        },
+        {
+          "index": 35,
+          "text": "Signature: [Signature]"
+        },
+        {
+          "index": 36,
+          "text": "DEDUCT: Allowance for used vehicle which I/we certify conforms to the following description (is my/our own property and free from any lien or legal encumbrances/is subject to H.P. as stated)."
+        },
+        {
+          "index": 37,
+          "text": "MAKE ............................................................"
+        },
+        {
+          "index": 38,
+          "text": "REG. No. ........................................................"
+        },
+        {
+          "index": 39,
+          "text": "CHASSIS No. ....................................................."
+        },
+        {
+          "index": 40,
+          "text": "ENGINE No. ......................................................"
+        },
+        {
+          "index": 41,
+          "text": "FIRST REG ......................................................"
+        },
+        {
+          "index": 42,
+          "text": "LESS Amount outstanding subject to H.P. with"
+        },
+        {
+          "index": 43,
+          "text": "................................................................."
+        },
+        {
+          "index": 44,
+          "text": "(Company)"
+        },
+        {
+          "index": 45,
+          "text": "NET ALLOWANCE"
+        },
+        {
+          "index": 46,
+          "text": "CASH DEPOSIT"
+        },
+        {
+          "index": 47,
+          "text": "Declaration by the seller:"
+        },
+        {
+          "index": 48,
+          "text": "Input tax deduction has not been and will not be claimed by me in respect of the vehicle sold on this invoice."
+        },
+        {
+          "index": 49,
+          "text": "Date 21/12/24"
+        },
+        {
+          "index": 50,
+          "text": "Signature [Signature]"
+        },
+        {
+          "index": 51,
+          "text": "---"
+        },
+        {
+          "index": 52,
+          "text": "CAUTION Mileages on recorders of used motor vehicles may differ from actual total distances run and must be disregarded"
+        },
+        {
+          "index": 53,
+          "text": "<table>"
+        },
+        {
+          "index": 54,
+          "text": "<tr>"
+        },
+        {
+          "index": 55,
+          "text": "<th>£</th>"
+        },
+        {
+          "index": 56,
+          "text": "<th>p</th>"
+        },
+        {
+          "index": 57,
+          "text": "</tr>"
+        },
+        {
+          "index": 58,
+          "text": "<tr>"
+        },
+        {
+          "index": 59,
+          "text": "<td></td>"
+        },
+        {
+          "index": 60,
+          "text": "<td></td>"
+        },
+        {
+          "index": 61,
+          "text": "</tr>"
+        },
+        {
+          "index": 62,
+          "text": "<tr>"
+        },
+        {
+          "index": 63,
+          "text": "<td></td>"
+        },
+        {
+          "index": 64,
+          "text": "<td></td>"
+        },
+        {
+          "index": 65,
+          "text": "</tr>"
+        },
+        {
+          "index": 66,
+          "text": "<tr>"
+        },
+        {
+          "index": 67,
+          "text": "<td>2800</td>"
+        },
+        {
+          "index": 68,
+          "text": "<td>212</td>"
+        },
+        {
+          "index": 69,
+          "text": "</tr>"
+        },
+        {
+          "index": 70,
+          "text": "<tr>"
+        },
+        {
+          "index": 71,
+          "text": "<td>based</td>"
+        },
+        {
+          "index": 72,
+          "text": "<td>bank</td>"
+        },
+        {
+          "index": 73,
+          "text": "</tr>"
+        },
+        {
+          "index": 74,
+          "text": "<tr>"
+        },
+        {
+          "index": 75,
+          "text": "<td>we</td>"
+        },
+        {
+          "index": 76,
+          "text": "<td></td>"
+        },
+        {
+          "index": 77,
+          "text": "</tr>"
+        },
+        {
+          "index": 78,
+          "text": "<tr>"
+        },
+        {
+          "index": 79,
+          "text": "<td>wasn't</td>"
+        },
+        {
+          "index": 80,
+          "text": "<td></td>"
+        },
+        {
+          "index": 81,
+          "text": "</tr>"
+        },
+        {
+          "index": 82,
+          "text": "</table>"
+        },
+        {
+          "index": 83,
+          "text": "<table>"
+        },
+        {
+          "index": 84,
+          "text": "<tr>"
+        },
+        {
+          "index": 85,
+          "text": "<th>£</th>"
+        },
+        {
+          "index": 86,
+          "text": "<th>p</th>"
+        },
+        {
+          "index": 87,
+          "text": "</tr>"
+        },
+        {
+          "index": 88,
+          "text": "<tr>"
+        },
+        {
+          "index": 89,
+          "text": "<td></td>"
+        },
+        {
+          "index": 90,
+          "text": "<td></td>"
+        },
+        {
+          "index": 91,
+          "text": "</tr>"
+        },
+        {
+          "index": 92,
+          "text": "<tr>"
+        },
+        {
+          "index": 93,
+          "text": "<td></td>"
+        },
+        {
+          "index": 94,
+          "text": "<td></td>"
+        },
+        {
+          "index": 95,
+          "text": "</tr>"
+        },
+        {
+          "index": 96,
+          "text": "<tr>"
+        },
+        {
+          "index": 97,
+          "text": "<td></td>"
+        },
+        {
+          "index": 98,
+          "text": "<td></td>"
+        },
+        {
+          "index": 99,
+          "text": "</tr>"
+        },
+        {
+          "index": 100,
+          "text": "</table>"
+        },
+        {
+          "index": 101,
+          "text": "UCI005/a"
+        }
+      ],
+      "words": [
+        {
+          "index": 1,
+          "text": "#"
+        },
+        {
+          "index": 2,
+          "text": "USED"
+        },
+        {
+          "index": 3,
+          "text": "VEHICLE"
+        },
+        {
+          "index": 4,
+          "text": "INVOICE"
+        },
+        {
+          "index": 5,
+          "text": "FCC"
+        },
+        {
+          "index": 6,
+          "text": "FOREST"
+        },
+        {
+          "index": 7,
+          "text": "CROWN"
+        },
+        {
+          "index": 8,
+          "text": "HILL"
+        },
+        {
+          "index": 9,
+          "text": "FARM,"
+        },
+        {
+          "index": 10,
+          "text": "EN93TF"
+        },
+        {
+          "index": 11,
+          "text": "SOLD"
+        },
+        {
+          "index": 12,
+          "text": "By:"
+        },
+        {
+          "index": 13,
+          "text": "Name"
+        },
+        {
+          "index": 14,
+          "text": "............................................................"
+        },
+        {
+          "index": 15,
+          "text": "Address"
+        },
+        {
+          "index": 16,
+          "text": ".........................................................."
+        },
+        {
+          "index": 17,
+          "text": "................................................................."
+        },
+        {
+          "index": 18,
+          "text": "................................................................."
+        },
+        {
+          "index": 19,
+          "text": "VAT"
+        },
+        {
+          "index": 20,
+          "text": "No."
+        },
+        {
+          "index": 21,
+          "text": "---"
+        },
+        {
+          "index": 22,
+          "text": "SOLD"
+        },
+        {
+          "index": 23,
+          "text": "TO:"
+        },
+        {
+          "index": 24,
+          "text": "Name"
+        },
+        {
+          "index": 25,
+          "text": "............................................................"
+        },
+        {
+          "index": 26,
+          "text": "Address"
+        },
+        {
+          "index": 27,
+          "text": ".........................................................."
+        },
+        {
+          "index": 28,
+          "text": "................................................................."
+        },
+        {
+          "index": 29,
+          "text": "Tel"
+        },
+        {
+          "index": 30,
+          "text": "No."
+        },
+        {
+          "index": 31,
+          "text": ".........................................................."
+        },
+        {
+          "index": 32,
+          "text": "Mob"
+        },
+        {
+          "index": 33,
+          "text": "No."
+        },
+        {
+          "index": 34,
+          "text": ".........................................................."
+        },
+        {
+          "index": 35,
+          "text": "VAT"
+        },
+        {
+          "index": 36,
+          "text": "No."
+        },
+        {
+          "index": 37,
+          "text": ".........................................................."
+        },
+        {
+          "index": 38,
+          "text": "Invoice"
+        },
+        {
+          "index": 39,
+          "text": "No."
+        },
+        {
+          "index": 40,
+          "text": "....................................................."
+        },
+        {
+          "index": 41,
+          "text": "Date"
+        },
+        {
+          "index": 42,
+          "text": "............................................................."
+        },
+        {
+          "index": 43,
+          "text": "Folio"
+        },
+        {
+          "index": 44,
+          "text": "No."
+        },
+        {
+          "index": 45,
+          "text": "........................................................"
+        },
+        {
+          "index": 46,
+          "text": "Stock"
+        },
+        {
+          "index": 47,
+          "text": "Book"
+        },
+        {
+          "index": 48,
+          "text": "No."
+        },
+        {
+          "index": 49,
+          "text": "................................................."
+        },
+        {
+          "index": 50,
+          "text": "---"
+        },
+        {
+          "index": 51,
+          "text": "I/We"
+        },
+        {
+          "index": 52,
+          "text": "the"
+        },
+        {
+          "index": 53,
+          "text": "undersigned"
+        },
+        {
+          "index": 54,
+          "text": "agree"
+        },
+        {
+          "index": 55,
+          "text": "to"
+        },
+        {
+          "index": 56,
+          "text": "purchase"
+        },
+        {
+          "index": 57,
+          "text": "from"
+        },
+        {
+          "index": 58,
+          "text": "the"
+        },
+        {
+          "index": 59,
+          "text": "above"
+        },
+        {
+          "index": 60,
+          "text": "named"
+        },
+        {
+          "index": 61,
+          "text": "seller"
+        },
+        {
+          "index": 62,
+          "text": "MAKE"
+        },
+        {
+          "index": 63,
+          "text": "............................................................"
+        },
+        {
+          "index": 64,
+          "text": "REG."
+        },
+        {
+          "index": 65,
+          "text": "No."
+        },
+        {
+          "index": 66,
+          "text": "........................................................"
+        },
+        {
+          "index": 67,
+          "text": "CHASSIS"
+        },
+        {
+          "index": 68,
+          "text": "No."
+        },
+        {
+          "index": 69,
+          "text": "....................................................."
+        },
+        {
+          "index": 70,
+          "text": "ENGINE"
+        },
+        {
+          "index": 71,
+          "text": "No."
+        },
+        {
+          "index": 72,
+          "text": "......................................................"
+        },
+        {
+          "index": 73,
+          "text": "DATE"
+        },
+        {
+          "index": 74,
+          "text": "FIRST"
+        },
+        {
+          "index": 75,
+          "text": "REG"
+        },
+        {
+          "index": 76,
+          "text": "IN"
+        },
+        {
+          "index": 77,
+          "text": "UK"
+        },
+        {
+          "index": 78,
+          "text": "..........................................."
+        },
+        {
+          "index": 79,
+          "text": "SPEEDOMETER"
+        },
+        {
+          "index": 80,
+          "text": "READING"
+        },
+        {
+          "index": 81,
+          "text": "............................................"
+        },
+        {
+          "index": 82,
+          "text": "MODEL"
+        },
+        {
+          "index": 83,
+          "text": "OR"
+        },
+        {
+          "index": 84,
+          "text": "TYPE"
+        },
+        {
+          "index": 85,
+          "text": ".................................................."
+        },
+        {
+          "index": 86,
+          "text": "COLOUR"
+        },
+        {
+          "index": 87,
+          "text": ".........................................................."
+        },
+        {
+          "index": 88,
+          "text": "*Commercial"
+        },
+        {
+          "index": 89,
+          "text": "Vehicles"
+        },
+        {
+          "index": 90,
+          "text": "only"
+        },
+        {
+          "index": 91,
+          "text": "Date:"
+        },
+        {
+          "index": 92,
+          "text": "21/12/24"
+        },
+        {
+          "index": 93,
+          "text": "Signature:"
+        },
+        {
+          "index": 94,
+          "text": "[Signature]"
+        },
+        {
+          "index": 95,
+          "text": "DEDUCT:"
+        },
+        {
+          "index": 96,
+          "text": "Allowance"
+        },
+        {
+          "index": 97,
+          "text": "for"
+        },
+        {
+          "index": 98,
+          "text": "used"
+        },
+        {
+          "index": 99,
+          "text": "vehicle"
+        },
+        {
+          "index": 100,
+          "text": "which"
+        },
+        {
+          "index": 101,
+          "text": "I/we"
+        },
+        {
+          "index": 102,
+          "text": "certify"
+        },
+        {
+          "index": 103,
+          "text": "conforms"
+        },
+        {
+          "index": 104,
+          "text": "to"
+        },
+        {
+          "index": 105,
+          "text": "the"
+        },
+        {
+          "index": 106,
+          "text": "following"
+        },
+        {
+          "index": 107,
+          "text": "description"
+        },
+        {
+          "index": 108,
+          "text": "(is"
+        },
+        {
+          "index": 109,
+          "text": "my/our"
+        },
+        {
+          "index": 110,
+          "text": "own"
+        },
+        {
+          "index": 111,
+          "text": "property"
+        },
+        {
+          "index": 112,
+          "text": "and"
+        },
+        {
+          "index": 113,
+          "text": "free"
+        },
+        {
+          "index": 114,
+          "text": "from"
+        },
+        {
+          "index": 115,
+          "text": "any"
+        },
+        {
+          "index": 116,
+          "text": "lien"
+        },
+        {
+          "index": 117,
+          "text": "or"
+        },
+        {
+          "index": 118,
+          "text": "legal"
+        },
+        {
+          "index": 119,
+          "text": "encumbrances/is"
+        },
+        {
+          "index": 120,
+          "text": "subject"
+        },
+        {
+          "index": 121,
+          "text": "to"
+        },
+        {
+          "index": 122,
+          "text": "H.P."
+        },
+        {
+          "index": 123,
+          "text": "as"
+        },
+        {
+          "index": 124,
+          "text": "stated)."
+        },
+        {
+          "index": 125,
+          "text": "MAKE"
+        },
+        {
+          "index": 126,
+          "text": "............................................................"
+        },
+        {
+          "index": 127,
+          "text": "REG."
+        },
+        {
+          "index": 128,
+          "text": "No."
+        },
+        {
+          "index": 129,
+          "text": "........................................................"
+        },
+        {
+          "index": 130,
+          "text": "CHASSIS"
+        },
+        {
+          "index": 131,
+          "text": "No."
+        },
+        {
+          "index": 132,
+          "text": "....................................................."
+        },
+        {
+          "index": 133,
+          "text": "ENGINE"
+        },
+        {
+          "index": 134,
+          "text": "No."
+        },
+        {
+          "index": 135,
+          "text": "......................................................"
+        },
+        {
+          "index": 136,
+          "text": "FIRST"
+        },
+        {
+          "index": 137,
+          "text": "REG"
+        },
+        {
+          "index": 138,
+          "text": "......................................................"
+        },
+        {
+          "index": 139,
+          "text": "LESS"
+        },
+        {
+          "index": 140,
+          "text": "Amount"
+        },
+        {
+          "index": 141,
+          "text": "outstanding"
+        },
+        {
+          "index": 142,
+          "text": "subject"
+        },
+        {
+          "index": 143,
+          "text": "to"
+        },
+        {
+          "index": 144,
+          "text": "H.P."
+        },
+        {
+          "index": 145,
+          "text": "with"
+        },
+        {
+          "index": 146,
+          "text": "................................................................."
+        },
+        {
+          "index": 147,
+          "text": "(Company)"
+        },
+        {
+          "index": 148,
+          "text": "NET"
+        },
+        {
+          "index": 149,
+          "text": "ALLOWANCE"
+        },
+        {
+          "index": 150,
+          "text": "CASH"
+        },
+        {
+          "index": 151,
+          "text": "DEPOSIT"
+        },
+        {
+          "index": 152,
+          "text": "Declaration"
+        },
+        {
+          "index": 153,
+          "text": "by"
+        },
+        {
+          "index": 154,
+          "text": "the"
+        },
+        {
+          "index": 155,
+          "text": "seller:"
+        },
+        {
+          "index": 156,
+          "text": "Input"
+        },
+        {
+          "index": 157,
+          "text": "tax"
+        },
+        {
+          "index": 158,
+          "text": "deduction"
+        },
+        {
+          "index": 159,
+          "text": "has"
+        },
+        {
+          "index": 160,
+          "text": "not"
+        },
+        {
+          "index": 161,
+          "text": "been"
+        },
+        {
+          "index": 162,
+          "text": "and"
+        },
+        {
+          "index": 163,
+          "text": "will"
+        },
+        {
+          "index": 164,
+          "text": "not"
+        },
+        {
+          "index": 165,
+          "text": "be"
+        },
+        {
+          "index": 166,
+          "text": "claimed"
+        },
+        {
+          "index": 167,
+          "text": "by"
+        },
+        {
+          "index": 168,
+          "text": "me"
+        },
+        {
+          "index": 169,
+          "text": "in"
+        },
+        {
+          "index": 170,
+          "text": "respect"
+        },
+        {
+          "index": 171,
+          "text": "of"
+        },
+        {
+          "index": 172,
+          "text": "the"
+        },
+        {
+          "index": 173,
+          "text": "vehicle"
+        },
+        {
+          "index": 174,
+          "text": "sold"
+        },
+        {
+          "index": 175,
+          "text": "on"
+        },
+        {
+          "index": 176,
+          "text": "this"
+        },
+        {
+          "index": 177,
+          "text": "invoice."
+        },
+        {
+          "index": 178,
+          "text": "Date"
+        },
+        {
+          "index": 179,
+          "text": "21/12/24"
+        },
+        {
+          "index": 180,
+          "text": "Signature"
+        },
+        {
+          "index": 181,
+          "text": "[Signature]"
+        },
+        {
+          "index": 182,
+          "text": "---"
+        },
+        {
+          "index": 183,
+          "text": "CAUTION"
+        },
+        {
+          "index": 184,
+          "text": "Mileages"
+        },
+        {
+          "index": 185,
+          "text": "on"
+        },
+        {
+          "index": 186,
+          "text": "recorders"
+        },
+        {
+          "index": 187,
+          "text": "of"
+        },
+        {
+          "index": 188,
+          "text": "used"
+        },
+        {
+          "index": 189,
+          "text": "motor"
+        },
+        {
+          "index": 190,
+          "text": "vehicles"
+        },
+        {
+          "index": 191,
+          "text": "may"
+        },
+        {
+          "index": 192,
+          "text": "differ"
+        },
+        {
+          "index": 193,
+          "text": "from"
+        },
+        {
+          "index": 194,
+          "text": "actual"
+        },
+        {
+          "index": 195,
+          "text": "total"
+        },
+        {
+          "index": 196,
+          "text": "distances"
+        },
+        {
+          "index": 197,
+          "text": "run"
+        },
+        {
+          "index": 198,
+          "text": "and"
+        },
+        {
+          "index": 199,
+          "text": "must"
+        },
+        {
+          "index": 200,
+          "text": "be"
+        },
+        {
+          "index": 201,
+          "text": "disregarded"
+        },
+        {
+          "index": 202,
+          "text": "<table>"
+        },
+        {
+          "index": 203,
+          "text": "<tr>"
+        },
+        {
+          "index": 204,
+          "text": "<th>£</th>"
+        },
+        {
+          "index": 205,
+          "text": "<th>p</th>"
+        },
+        {
+          "index": 206,
+          "text": "</tr>"
+        },
+        {
+          "index": 207,
+          "text": "<tr>"
+        },
+        {
+          "index": 208,
+          "text": "<td></td>"
+        },
+        {
+          "index": 209,
+          "text": "<td></td>"
+        },
+        {
+          "index": 210,
+          "text": "</tr>"
+        },
+        {
+          "index": 211,
+          "text": "<tr>"
+        },
+        {
+          "index": 212,
+          "text": "<td></td>"
+        },
+        {
+          "index": 213,
+          "text": "<td></td>"
+        },
+        {
+          "index": 214,
+          "text": "</tr>"
+        },
+        {
+          "index": 215,
+          "text": "<tr>"
+        },
+        {
+          "index": 216,
+          "text": "<td>2800</td>"
+        },
+        {
+          "index": 217,
+          "text": "<td>212</td>"
+        },
+        {
+          "index": 218,
+          "text": "</tr>"
+        },
+        {
+          "index": 219,
+          "text": "<tr>"
+        },
+        {
+          "index": 220,
+          "text": "<td>based</td>"
+        },
+        {
+          "index": 221,
+          "text": "<td>bank</td>"
+        },
+        {
+          "index": 222,
+          "text": "</tr>"
+        },
+        {
+          "index": 223,
+          "text": "<tr>"
+        },
+        {
+          "index": 224,
+          "text": "<td>we</td>"
+        },
+        {
+          "index": 225,
+          "text": "<td></td>"
+        },
+        {
+          "index": 226,
+          "text": "</tr>"
+        },
+        {
+          "index": 227,
+          "text": "<tr>"
+        },
+        {
+          "index": 228,
+          "text": "<td>wasn't</td>"
+        },
+        {
+          "index": 229,
+          "text": "<td></td>"
+        },
+        {
+          "index": 230,
+          "text": "</tr>"
+        },
+        {
+          "index": 231,
+          "text": "</table>"
+        },
+        {
+          "index": 232,
+          "text": "<table>"
+        },
+        {
+          "index": 233,
+          "text": "<tr>"
+        },
+        {
+          "index": 234,
+          "text": "<th>£</th>"
+        },
+        {
+          "index": 235,
+          "text": "<th>p</th>"
+        },
+        {
+          "index": 236,
+          "text": "</tr>"
+        },
+        {
+          "index": 237,
+          "text": "<tr>"
+        },
+        {
+          "index": 238,
+          "text": "<td></td>"
+        },
+        {
+          "index": 239,
+          "text": "<td></td>"
+        },
+        {
+          "index": 240,
+          "text": "</tr>"
+        },
+        {
+          "index": 241,
+          "text": "<tr>"
+        },
+        {
+          "index": 242,
+          "text": "<td></td>"
+        },
+        {
+          "index": 243,
+          "text": "<td></td>"
+        },
+        {
+          "index": 244,
+          "text": "</tr>"
+        },
+        {
+          "index": 245,
+          "text": "<tr>"
+        },
+        {
+          "index": 246,
+          "text": "<td></td>"
+        },
+        {
+          "index": 247,
+          "text": "<td></td>"
+        },
+        {
+          "index": 248,
+          "text": "</tr>"
+        },
+        {
+          "index": 249,
+          "text": "</table>"
+        },
+        {
+          "index": 250,
+          "text": "UCI005/a"
+        }
+      ],
+      "detections": []
+    }
+  ]
+}
