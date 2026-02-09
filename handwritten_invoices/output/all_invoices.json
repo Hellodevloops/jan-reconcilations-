@@ -1,0 +1,33 @@
+[
+  {
+    "filename": "test_invoice.png",
+    "full_text": "INVOICE Date: 12/05/2024 From: John Smith Services To: Jane Doe Description Amount Garden Maintenance S150.00 Materials 850.00 Total: $200.00 Thank you for your business!",
+    "word_count": 24,
+    "words": [
+      "INVOICE",
+      "Date:",
+      "12/05/2024",
+      "From:",
+      "John",
+      "Smith",
+      "Services",
+      "To:",
+      "Jane",
+      "Doe",
+      "Description",
+      "Amount",
+      "Garden",
+      "Maintenance",
+      "S150.00",
+      "Materials",
+      "850.00",
+      "Total:",
+      "$200.00",
+      "Thank",
+      "you",
+      "for",
+      "your",
+      "business!"
+    ]
+  }
+]
